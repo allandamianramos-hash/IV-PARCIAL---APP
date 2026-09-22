@@ -1523,3 +1523,1458 @@ button.circle-link:hover,
     animation: none !important;
   }
 }
+
+/* ==================================================
+   RUMBO / REFINAMIENTO VISUAL
+   Acento cálido + servicios independientes
+   ================================================== */
+
+:root {
+  --accent: #e8bd78;
+  --accent-hover: #ddb06a;
+  --accent-soft: #fbf2e3;
+  --accent-ink: #513b20;
+  --hero-tint: #edf5f2;
+}
+
+/* NAVEGACIÓN: MAYOR JERARQUÍA */
+
+.main-nav {
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.main-nav a {
+  padding: 10px 12px;
+  border-radius: 9px;
+  color: var(--ink);
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+.login-button {
+  min-height: 46px;
+  padding-inline: 16px;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 3px 0 rgb(81 59 32 / 8%);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.login-button:hover {
+  border-color: var(--accent-hover);
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.cart-button {
+  min-height: 46px;
+  width: 46px;
+  background: white;
+}
+
+.cart-button:hover {
+  border-color: var(--primary);
+}
+
+/* PORTADA: COLOR SUAVE, SIN EFECTOS DECORATIVOS EXCESIVOS */
+
+.hero {
+  gap: 44px;
+  margin-top: 28px;
+  margin-bottom: 34px;
+  padding: 42px;
+  border: 1px solid #dce9e3;
+  border-radius: 32px;
+  background: var(--hero-tint);
+}
+
+.hero-copy h1 {
+  font-size: clamp(38px, 4.1vw, 58px);
+}
+
+.hero-copy h1 span {
+  padding-inline: 3px;
+  background-image:
+    linear-gradient(
+      transparent 76%,
+      rgb(232 189 120 / 65%) 76%,
+      rgb(232 189 120 / 65%) 94%,
+      transparent 94%
+    );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.hero-image {
+  height: 500px;
+}
+
+.hero-note {
+  width: fit-content;
+  padding: 13px 17px;
+  border: 1px solid #d5e3dc;
+  border-radius: 14px;
+  background: rgb(255 255 255 / 65%);
+}
+
+.note-number {
+  color: var(--primary-dark);
+}
+
+.floating-note {
+  border-color: #ebd7b4;
+  background: var(--accent-soft);
+}
+
+/* ACCIONES SECUNDARIAS QUE SÍ SE VEN */
+
+.reset-button {
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid var(--primary);
+  border-radius: 11px;
+  background: white;
+  color: var(--primary-dark);
+  font-size: 12px;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.reset-button:hover {
+  background: var(--primary-dark);
+  color: white;
+  text-decoration: none;
+}
+
+.hero-actions > .text-link {
+  padding-inline: 5px;
+}
+
+/* SERVICIOS: DOS PRINCIPALES Y CUATRO COMPLEMENTARIOS */
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.booking-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 310px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: white;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.booking-card:hover {
+  border-color: #a9c9c8;
+  box-shadow: 0 10px 26px rgb(24 48 68 / 5%);
+}
+
+.booking-card-featured {
+  grid-column: span 2;
+  min-height: 330px;
+  padding: 30px;
+}
+
+.booking-flight {
+  background: var(--primary-soft);
+  border-color: #c7dfdf;
+}
+
+.booking-stay {
+  background: #f3f1e9;
+  border-color: #e2ded0;
+}
+
+.booking-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 23px;
+}
+
+.booking-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: white;
+  color: var(--primary-dark);
+}
+
+.booking-icon .icon {
+  width: 25px;
+  height: 25px;
+}
+
+.booking-label,
+.booking-category {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.booking-label {
+  padding: 7px 10px;
+  border: 1px solid rgb(24 48 68 / 12%);
+  border-radius: 30px;
+}
+
+.booking-content {
+  flex: 1;
+}
+
+.booking-content h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -.5px;
+}
+
+.booking-card-featured h3 {
+  font-size: clamp(25px, 2.5vw, 32px);
+  letter-spacing: -.9px;
+}
+
+.booking-content p {
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.booking-card-featured .booking-content p {
+  max-width: 420px;
+  font-size: 14px;
+}
+
+.booking-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 16px;
+  margin: 0 0 25px;
+  padding: 0;
+  list-style: none;
+}
+
+.booking-features li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--primary-dark);
+  font-size: 11px;
+}
+
+.booking-features li::before {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  content: "";
+}
+
+.booking-card > .button {
+  align-self: flex-start;
+  min-width: 190px;
+}
+
+.booking-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 47px;
+  margin-top: 8px;
+  padding: 12px 0 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+  background: transparent;
+  color: var(--primary-dark);
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.booking-action span {
+  font-size: 19px;
+  transition: transform 180ms ease;
+}
+
+.booking-action:hover span {
+  transform: translate(2px, -2px);
+}
+
+.booking-action:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.booking-shop {
+  background: var(--accent-soft);
+  border-color: #e8d6b7;
+}
+
+.booking-shop .booking-icon {
+  border-color: #e8d6b7;
+  color: var(--accent-ink);
+}
+
+.booking-shop .booking-action {
+  border-top-color: #e8d6b7;
+  color: var(--accent-ink);
+}
+
+/* LISTA DE PREPARACIÓN */
+
+.preparation-section {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 55px;
+  margin-top: 5px;
+  padding: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-alt);
+}
+
+.preparation-copy h2 {
+  margin-bottom: 18px;
+  font-size: clamp(28px, 3vw, 39px);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -1.2px;
+}
+
+.preparation-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.preparation-progress {
+  margin-top: 24px;
+}
+
+.preparation-progress label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.preparation-progress progress {
+  display: block;
+  width: 100%;
+  height: 8px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 20px;
+  background: #dbe4df;
+  accent-color: var(--primary);
+}
+
+.preparation-progress progress::-webkit-progress-bar {
+  border-radius: 20px;
+  background: #dbe4df;
+}
+
+.preparation-progress progress::-webkit-progress-value {
+  border-radius: 20px;
+  background: var(--primary);
+}
+
+.preparation-progress progress::-moz-progress-bar {
+  border-radius: 20px;
+  background: var(--primary);
+}
+
+#checklist-status {
+  display: block;
+  margin-top: 10px;
+  color: var(--primary-dark);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.preparation-copy .preparation-note {
+  margin: 18px 0 0;
+  font-size: 10px;
+}
+
+.travel-checklist {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.travel-checklist legend {
+  margin-bottom: 15px;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: white;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.checklist-item:hover {
+  border-color: #9dbfba;
+}
+
+.checklist-item:has(input:checked) {
+  border-color: #a7c9bb;
+  background: #eaf4ee;
+}
+
+.checklist-item input {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  margin: 2px 0 0;
+  accent-color: var(--primary);
+}
+
+.checklist-item strong,
+.checklist-item small {
+  display: block;
+}
+
+.checklist-item strong {
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.checklist-item small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* CHAT: MÁS VISIBLE SIN MOVIMIENTOS NI NOTIFICACIONES FALSAS */
+
+.chat-launcher {
+  min-height: 54px;
+  padding: 14px 21px;
+  border: 1px solid #d6aa65;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 0 7px 24px rgb(81 59 32 / 17%);
+  font-size: 13px;
+}
+
+.chat-launcher:hover {
+  background: var(--accent-hover);
+}
+
+.chat-launcher .icon {
+  width: 23px;
+  height: 23px;
+}
+
+.chat-panel {
+  border-color: #d9c49f;
+  box-shadow: 0 18px 55px rgb(24 48 68 / 20%);
+}
+
+.chat-header {
+  border-bottom: 4px solid var(--accent);
+}
+
+.chat-options button {
+  min-height: 36px;
+  padding: 9px 12px;
+  border-color: #e5d4b8;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 11px;
+}
+
+.chat-options button:hover {
+  border-color: var(--accent);
+  background: #f3e4c9;
+}
+
+.chat-message.user-message {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+
+/* AJUSTES RESPONSIVE */
+
+@media (max-width: 1150px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding-block: 18px;
+  }
+
+  .main-nav {
+    order: 3;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .booking-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-card-featured {
+    grid-column: span 1;
+  }
+
+  .hero {
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .preparation-section {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 720px) {
+  .main-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 4px;
+  }
+
+  .main-nav a {
+    flex-shrink: 0;
+    padding: 10px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .login-button {
+    min-height: 44px;
+    padding-inline: 12px;
+    font-size: 11px;
+  }
+
+  .cart-button {
+    width: 42px;
+    min-height: 44px;
+  }
+
+  .hero {
+    gap: 28px;
+    margin-top: 18px;
+    margin-bottom: 24px;
+    padding: 25px 20px;
+    border-radius: 24px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(34px, 8vw, 49px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-image {
+    height: 310px;
+  }
+
+  .hero-note {
+    margin-top: 22px;
+  }
+
+  .floating-note {
+    top: 16px;
+    right: 10px;
+    max-width: calc(100% - 20px);
+  }
+
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .booking-card,
+  .booking-card-featured {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .booking-card-featured {
+    min-height: 325px;
+  }
+
+  .booking-card > .button {
+    width: 100%;
+  }
+
+  .booking-content h3 {
+    max-width: 350px;
+  }
+
+  .reset-button {
+    width: 100%;
+  }
+
+  .preparation-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 25px;
+  }
+
+  .chat-launcher {
+    min-height: 50px;
+    padding: 12px 17px;
+  }
+}
+
+/* Debe permanecer después de las nuevas transiciones. */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ==================================================
+   RUMBO / LEGIBILIDAD, PORTADA Y ORIENTADOR
+   ================================================== */
+
+:root {
+  --muted: #4f626d;
+  --hero-tint: #d2e5eb;
+}
+
+/* UTILIDAD DE ACCESIBILIDAD */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* PORTADA: AZUL SUAVE, PERO VISUALMENTE PRESENTE */
+
+.hero {
+  background: var(--hero-tint);
+  border-color: #b7d2da;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 55%);
+}
+
+.hero-description {
+  color: #354f5c;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hero .eyebrow {
+  color: #24596a;
+}
+
+.hero-note {
+  background: #eaf3f6;
+  border-color: #b7d2da;
+}
+
+.hero-note p {
+  font-size: 13px;
+}
+
+.hero-copy h1 {
+  font-weight: 700;
+}
+
+.hero-copy h1 span {
+  color: var(--primary-dark);
+}
+
+.floating-note strong {
+  font-size: 14px;
+}
+
+.floating-note span {
+  color: #59615d;
+  font-size: 12px;
+}
+
+/* LEGIBILIDAD GENERAL */
+
+.main-nav a,
+.login-button {
+  font-size: 14px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.25px;
+}
+
+.section-heading > p,
+.editorial-copy > p:not(.eyebrow),
+.destination-body > p,
+.booking-content p,
+.guide-details details p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.search-field label {
+  font-size: 13px;
+}
+
+.search-field input,
+.search-field select {
+  font-size: 14px;
+}
+
+.search-topline > span,
+.results-line {
+  font-size: 13px;
+}
+
+.demo-note {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.booking-label,
+.booking-category {
+  font-size: 11px;
+}
+
+.booking-features li {
+  font-size: 12px;
+}
+
+.booking-action {
+  font-size: 14px;
+}
+
+.card-title-row > span,
+.price small,
+.price strong span {
+  font-size: 12px;
+}
+
+.image-tag {
+  font-size: 12px;
+}
+
+.guide-link {
+  font-size: 15px;
+}
+
+.guide-link small {
+  font-size: 11px;
+}
+
+.guide-details summary {
+  font-size: 15px;
+}
+
+.help-banner p:not(.eyebrow),
+.footer-brand p,
+.footer-project p,
+.footer-grid nav a {
+  font-size: 14px;
+}
+
+.footer-grid h2 {
+  font-size: 14px;
+}
+
+.footer-bottom p,
+.prototype-label {
+  font-size: 12px;
+}
+
+/* NUEVO CIERRE: EL PRIMER BORRADOR DEL VIAJE */
+
+.trip-starter {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 55px;
+  padding: 45px;
+  border: 1px solid #ddcfb5;
+  border-radius: var(--radius-lg);
+  background: #f5eddf;
+}
+
+.trip-starter-copy h2 {
+  max-width: 500px;
+  margin-bottom: 20px;
+  font-size: clamp(29px, 3.2vw, 42px);
+  line-height: 1.14;
+  letter-spacing: -1.2px;
+  font-weight: 650;
+}
+
+.trip-starter-copy > p:not(.eyebrow) {
+  max-width: 460px;
+  color: #5b605d;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.trip-starter-copy .button {
+  margin-top: 8px;
+}
+
+.trip-starter-copy .trip-starter-note {
+  margin: 18px 0 0;
+  font-size: 12px;
+}
+
+.trip-outline {
+  padding: 28px;
+  border: 1px solid #e0d9cc;
+  border-radius: 22px;
+  background: #fffdf8;
+  box-shadow: 0 12px 30px rgb(81 59 32 / 5%);
+}
+
+.trip-outline-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e8e1d5;
+}
+
+.outline-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 30px;
+}
+
+.trip-outline-header .eyebrow {
+  margin-bottom: 6px;
+  font-size: 10px;
+}
+
+.trip-outline-header h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.trip-outline-list {
+  margin: 8px 0 0;
+}
+
+.trip-outline-list > div {
+  padding: 17px 0;
+  border-bottom: 1px solid #ece6db;
+}
+
+.trip-outline-list dt {
+  margin-bottom: 6px;
+  color: #64716b;
+  font-size: 12px;
+}
+
+.trip-outline-list dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.trip-outline-footer {
+  margin: 20px 0 0;
+  padding-left: 13px;
+  border-left: 3px solid var(--accent);
+  color: #53645f;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* CHAT: MÁS ESPACIO PARA UNA CONVERSACIÓN REAL */
+
+.chat-panel {
+  width: 410px;
+  height: 640px;
+  max-height: calc(100dvh - 110px);
+}
+
+.chat-header {
+  flex-shrink: 0;
+  padding: 19px 20px;
+}
+
+.chat-header h2 {
+  font-size: 18px;
+}
+
+.chat-header p {
+  font-size: 11px;
+}
+
+.chat-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 11px 18px;
+  border-bottom: 1px solid var(--border);
+  background: #f5f8f6;
+  font-size: 11px;
+}
+
+#chat-step-label {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.chat-mode {
+  color: var(--muted);
+}
+
+.chat-messages {
+  flex: 1;
+  min-height: 100px;
+  max-height: none;
+  padding: 18px;
+  scrollbar-width: thin;
+}
+
+.chat-message {
+  padding: 14px;
+  font-size: 14px;
+  line-height: 1.65;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.chat-message.user-message {
+  margin-left: 36px;
+}
+
+.chat-message a {
+  width: fit-content;
+  min-height: 32px;
+  padding-block: 4px;
+}
+
+.chat-options {
+  flex-shrink: 0;
+  padding: 10px 18px;
+}
+
+.chat-options button {
+  min-height: 38px;
+  font-size: 12px;
+}
+
+.chat-form {
+  flex-shrink: 0;
+  padding: 8px 18px 0;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 9px;
+}
+
+.chat-input-row input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #b8cecc;
+  border-radius: 12px;
+  background: white;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.chat-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 12px;
+  background: var(--primary-dark);
+  color: white;
+  font-size: 25px;
+}
+
+.chat-send:hover {
+  background: var(--ink);
+}
+
+#chat-input-hint {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.chat-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 18px;
+}
+
+.chat-tools button {
+  min-height: 36px;
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.chat-tools > span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.chat-disclaimer {
+  flex-shrink: 0;
+  padding: 10px 15px;
+  font-size: 10px;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .trip-starter {
+    gap: 30px;
+    padding: 30px;
+  }
+}
+
+/* MÓVIL */
+
+@media (max-width: 720px) {
+  .main-nav a {
+    font-size: 13px;
+  }
+
+  .login-button {
+    font-size: 12px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero .eyebrow {
+    font-size: 11px;
+  }
+
+  .search-field input,
+  .search-field select {
+    font-size: 16px;
+  }
+
+  .trip-starter {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 25px;
+  }
+
+  .trip-outline {
+    padding: 22px;
+  }
+
+  .trip-starter-copy .button {
+    width: 100%;
+  }
+
+  .chat-panel {
+    right: 12px;
+    bottom: 78px;
+    width: min(410px, calc(100% - 24px));
+    max-height: calc(100dvh - 94px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/* ==================================================
+   RUMBO / AJUSTE TIPOGRÁFICO
+   ================================================== */
+
+:root {
+  --font-main: "DM Sans", "Segoe UI", Arial, sans-serif;
+  --muted: #52636c;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Mantener el carácter del logotipo anterior. */
+.logo {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-main);
+}
+
+.hero-copy h1 {
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -1.7px;
+}
+
+.section-heading h2,
+.editorial h2,
+.help-banner h2,
+.trip-starter-copy h2 {
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -0.8px;
+}
+
+.booking-content h3,
+.card-title-row h3,
+.trip-outline-header h3 {
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+/* Menos espaciado artificial en los textos pequeños. */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.hero-description,
+.editorial-copy > p:not(.eyebrow),
+.trip-starter-copy > p:not(.eyebrow) {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.booking-content p,
+.destination-body > p,
+.section-heading > p,
+.guide-details details p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.main-nav a,
+.login-button,
+.button,
+.booking-action,
+.reset-button {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.main-nav a,
+.login-button {
+  font-size: 14px;
+}
+
+.button {
+  font-size: 15px;
+}
+
+.search-field label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.search-field input,
+.search-field select {
+  font-size: 15px;
+}
+
+.booking-label,
+.booking-category,
+.guide-link small {
+  font-size: 11px;
+  letter-spacing: 0.7px;
+}
+
+.demo-note,
+.footer-bottom p,
+.prototype-label,
+.trip-starter-copy .trip-starter-note {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ==================================================
+   CHAT / FORMULARIO Y BOTONES
+   ================================================== */
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  width: min(410px, calc(100vw - 32px));
+  height: 650px;
+  max-height: calc(100dvh - 110px);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.chat-panel[hidden] {
+  display: none !important;
+}
+
+.chat-header,
+.chat-progress,
+.chat-options,
+.chat-form,
+.chat-tools,
+.chat-disclaimer {
+  flex-shrink: 0;
+}
+
+.chat-header h2 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.chat-header p {
+  font-size: 12px;
+}
+
+.chat-messages {
+  flex: 1 1 auto;
+  min-height: 90px;
+  max-height: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 18px;
+}
+
+.chat-message {
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.chat-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 145px;
+  overflow-y: auto;
+  padding: 10px 18px;
+}
+
+.chat-options button {
+  min-height: 40px;
+  padding: 9px 13px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.chat-form {
+  display: block;
+  margin: 0;
+  padding: 10px 18px 0;
+}
+
+.chat-input-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.chat-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-input-row input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 11px 12px;
+  border: 1px solid #acc8ca;
+  border-radius: 11px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.chat-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 11px;
+  background: var(--primary-dark);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.chat-send:hover {
+  background: var(--ink);
+}
+
+.chat-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px;
+}
+
+.chat-tools button {
+  min-height: 36px;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  color: var(--primary-dark);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.chat-tools span,
+.chat-disclaimer {
+  font-size: 11px;
+}
+
+@media (max-width: 720px) {
+  .hero-copy h1 {
+    font-size: clamp(35px, 8vw, 48px);
+    letter-spacing: -1.1px;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+  }
+
+  .login-button {
+    font-size: 12px;
+  }
+
+  .search-field input,
+  .search-field select {
+    font-size: 16px;
+  }
+
+  .chat-panel {
+    right: 12px;
+    bottom: 78px;
+    width: calc(100vw - 24px);
+    max-width: 410px;
+    max-height: calc(100dvh - 94px);
+  }
+}

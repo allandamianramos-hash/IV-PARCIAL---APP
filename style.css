@@ -1,0 +1,234 @@
+/* ============================================================
+   ESTILO DE LA PAGINA
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+:root {
+  /* Paleta cromática orgánica */
+  --bg-lienzo: #F5F2EB;          /* Arena / blanco roto */
+  --verde-oscuro: #1C2A27;       /* Bosque profundo / pizarra */
+  --verde-salvia: #586F64;       /* Salvia medio */
+  --beige-tarjeta: #E5DFC5;      /* Avena / lino */
+  --terracota: #BA5D42;          /* Óxido / terracota vibrante */
+  --terracota-hover: #A34E35;
+  
+  /* Textos */
+  --texto-principal: #1A2220;
+  --texto-suave: #697470;
+  --texto-blanco: #FAF8F5;
+
+  /* Tipografías */
+  --fuente-editorial: 'Cormorant Garamond', Georgia, serif;
+  --fuente-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-lienzo);
+  color: var(--texto-principal);
+  font-family: var(--fuente-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Micro-etiquetas editoriales --- */
+.micro-tag {
+  font-family: var(--fuente-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--terracota);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Encabezados con carácter --- */
+h1, h2, h3 {
+  font-family: var(--fuente-editorial);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* --- Botones píldora --- */
+.btn-pildora {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-terracota {
+  background-color: var(--terracota);
+  color: var(--texto-blanco);
+}
+
+.btn-terracota:hover {
+  background-color: var(--terracota-hover);
+  transform: translateY(-1px);
+}
+
+/* --- Barra de navegación superior --- */
+.header-editorial {
+  padding: 24px 0;
+}
+
+.nav-bar {
+  background-color: var(--verde-oscuro);
+  color: var(--texto-blanco);
+  border-radius: 9999px;
+  padding: 12px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--fuente-editorial);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--texto-blanco);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #B8C2BE;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--texto-blanco);
+}
+
+/* --- Hero Banner Oscuro --- */
+.hero-editorial {
+  background-color: var(--verde-oscuro);
+  color: var(--texto-blanco);
+  border-radius: 24px;
+  padding: 80px 48px;
+  margin: 16px 0 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-editorial h1 {
+  font-size: 3.4rem;
+  max-width: 650px;
+  margin-bottom: 24px;
+}
+
+.hero-editorial p {
+  color: #A9B7B1;
+  font-size: 1.05rem;
+  max-width: 480px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 24px;
+  margin-top: 40px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #8C9C95;
+}
+
+/* --- Rejilla de tarjetas estilo revista --- */
+.seccion-editorial {
+  padding: 40px 0 80px 0;
+}
+
+.seccion-editorial h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.tarjeta-editorial {
+  border-radius: 20px;
+  padding: 32px 24px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-editorial:hover {
+  transform: translateY(-4px);
+}
+
+.tarjeta-salvia {
+  background-color: var(--verde-salvia);
+  color: var(--texto-blanco);
+}
+
+.tarjeta-avena {
+  background-color: var(--beige-tarjeta);
+  color: var(--texto-principal);
+}
+
+.tarjeta-pino {
+  background-color: #2D3D38;
+  color: var(--texto-blanco);
+}
+
+.numero-card {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  opacity: 0.75;
+}
+
+.tarjeta-editorial h3 {
+  font-size: 1.8rem;
+  margin: 12px 0 8px 0;
+}
+
+.tarjeta-editorial p {
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+
+/* Ventana en forma de arco para fotografía */
+.marco-arco {
+  width: 100%;
+  height: 140px;
+  border-radius: 100px 100px 12px 12px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}

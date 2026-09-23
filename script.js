@@ -818,3 +818,20 @@
     initRumbo();
   }
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Seleccionamos el botón "Entendido" dentro del modal genérico
+  const modalDialog = document.getElementById('module-dialog');
+  const btnEntendido = modalDialog.querySelector('button[type="submit"]');
+
+  btnEntendido.addEventListener('click', (e) => {
+    // Revisamos el título actual de la ventana
+    const tituloModal = document.getElementById('module-title').innerText;
+    
+    // Si es la ventana de la tienda, cancelamos el cierre normal y redirigimos
+    if (tituloModal === 'La tienda del viajero') {
+      e.preventDefault(); 
+      window.location.href = 'tienda.html';
+    }
+  });
+});

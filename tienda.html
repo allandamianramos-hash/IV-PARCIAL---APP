@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda del Viajero | Rumbo</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Vinculamos los archivos CSS y JS separados -->
+  <link rel="stylesheet" href="tienda.css">
+  <script src="tienda.js" defer></script>
+</head>
+<body>
+
+  <main class="store-container">
+    <header class="store-header">
+      <div class="header-left">
+        <a href="index.html" class="back-link">← Volver a Inicio</a>
+        <h1>La tienda del viajero</h1>
+      </div>
+      <button class="cart-btn" id="open-cart-btn">
+        🛒 Carrito (<span id="cart-count">0</span>)
+      </button>
+    </header>
+
+    <nav class="store-filters" aria-label="Filtros de tienda">
+      <button class="filter-btn active" data-category="all">Todos</button>
+      <button class="filter-btn" data-category="Equipaje">Equipaje</button>
+      <button class="filter-btn" data-category="Tecnología">Tecnología</button>
+      <button class="filter-btn" data-category="Confort">Confort</button>
+      <button class="filter-btn" data-category="Seguridad">Seguridad</button>
+      <button class="filter-btn" data-category="Cuidado">Cuidado Personal</button>
+    </nav>
+
+    <!-- Aquí se inyectarán los productos desde JavaScript -->
+    <div class="products-grid" id="products-grid"></div>
+  </main>
+
+  <!-- MODAL DEL CARRITO -->
+  <dialog id="cart-modal" class="cart-dialog" aria-labelledby="cart-title">
+    <div class="dialog-header">
+      <h2 id="cart-title">Tu Carrito</h2>
+      <button id="close-cart-btn" class="close-btn" aria-label="Cerrar carrito">×</button>
+    </div>
+    
+    <div id="cart-items" class="cart-items">
+      <!-- Los artículos del carrito aparecerán aquí -->
+    </div>
+
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal">L. 0.00</span>
+      </div>
+      <div class="summary-row total-row">
+        <span>Total a pagar:</span>
+        <span id="cart-total">L. 0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn" disabled>Confirmar Compra</button>
+    </div>
+  </dialog>
+
+</body>
+</html>

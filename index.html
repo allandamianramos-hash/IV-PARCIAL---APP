@@ -1,25 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#087f8c">
-  <meta
-    name="description"
-    content="Explora destinos, organiza tu presupuesto y descubre los servicios de viaje de Rumbo."
-  >
+  <meta name="description" content="Explora destinos, organiza tu presupuesto y descubre los servicios de viaje de Rumbo.">
   <title>Rumbo | Viajes y experiencias</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
 
+  <script src="script.js" defer></script>
+  <script src="viajes.js" defer></script>
+</head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <symbol id="i-user" viewBox="0 0 24 24">
@@ -87,17 +83,10 @@
           <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
           <span>Iniciar sesión</span>
         </button>
-
         <button class="register-button" type="button" data-module="register">
           Registrarse
         </button>
-
-        <button
-          class="cart-button"
-          type="button"
-          data-module="cart"
-          aria-label="Abrir carrito"
-        >
+        <button class="cart-button" type="button" data-module="cart" aria-label="Abrir carrito">
           <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
         </button>
       </div>
@@ -144,14 +133,14 @@
           height="1400"
           fetchpriority="high"
         >
-
         <button class="photo-link surprise-button" id="surprise-destination" type="button">
-  <span>
-    <strong>Sorpréndeme</strong>
-    <small>Descubre un destino al azar</small>
-  </span>
-  <span class="surprise-arrow" aria-hidden="true">↗</span>
-</button>
+          <span>
+            <strong>Sorpréndeme</strong>
+            <small>Descubre un destino al azar</small>
+          </span>
+          <span class="surprise-arrow" aria-hidden="true">↗</span>
+        </button>
+      </div>
     </section>
 
     <!-- BUSCADOR -->
@@ -161,11 +150,7 @@
       <form class="search-form" id="travel-search" role="search" aria-labelledby="search-title">
         <div class="search-field">
           <label for="destination">Destino</label>
-          <input
-            type="search"
-            id="destination"
-            placeholder="País o ciudad"
-          >
+          <input type="search" id="destination" placeholder="País o ciudad">
         </div>
 
         <div class="search-field">
@@ -279,105 +264,91 @@
           </span>
           <h3 id="shop-title">Tienda de viaje</h3>
           <p>Maletas, mochilas, lentes, adaptadores y accesorios en un solo catálogo.</p>
-          <button class="booking-action" type="button" data-module="shop">
+          <a class="booking-action" href="tienda.html">
             Explorar tienda <span aria-hidden="true">↗</span>
-          </button>
+          </a>
         </article>
       </div>
 
       <p class="demo-note">
-        Los módulos de búsqueda, contratación y compra están pendientes de integración.
+        Explora los módulos de vuelos, hospedaje y tienda. Los importes son de demostración.
       </p>
     </section>
 
     <!-- DESTINOS -->
-    <!-- CARRUSEL DE DESTINOS -->
-<section
-  class="section destinations-section"
-  id="destinos"
-  aria-labelledby="destinations-title"
->
-  <div class="container">
-    <div class="section-heading">
-      <div>
-        <h2 id="destinations-title">Destinos para explorar</h2>
-        <p class="destination-intro">
-          Opciones en Honduras y fuera de ella para empezar a comparar.
+    <section class="section destinations-section" id="destinos" aria-labelledby="destinations-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 id="destinations-title">Destinos para explorar</h2>
+            <p class="destination-intro">
+              Opciones en Honduras y fuera de ella para empezar a comparar.
+            </p>
+          </div>
+          <button class="button button-outline" id="reset-filters" type="button">
+            Mostrar todos
+          </button>
+        </div>
+
+        <div class="carousel-toolbar">
+          <p class="results-line" id="result-count" role="status" aria-live="polite"></p>
+          <div class="carousel-controls" aria-label="Controles de destinos">
+            <button
+              class="carousel-arrow"
+              id="destinations-prev"
+              type="button"
+              aria-label="Ver destinos anteriores"
+              aria-controls="destinations-track"
+            >←</button>
+            <button
+              class="carousel-arrow"
+              id="destinations-next"
+              type="button"
+              aria-label="Ver siguientes destinos"
+              aria-controls="destinations-track"
+            >→</button>
+          </div>
+        </div>
+
+        <div
+          class="destinations-track"
+          id="destinations-track"
+          role="region"
+          aria-label="Destinos de muestra, desplázate para ver más"
+          tabindex="0"
+        ></div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No hay coincidencias en este catálogo.</h3>
+          <p>Prueba otro destino, estilo o presupuesto.</p>
+        </div>
+
+        <noscript>
+          <p>Activa JavaScript para consultar el catálogo de destinos.</p>
+        </noscript>
+
+        <p class="demo-note">
+          Fotografías ilustrativas. Importes ficticios en HNL, sin disponibilidad
+          verificada ni servicios incluidos definidos.
         </p>
       </div>
+    </section>
 
-      <button
-        class="button button-outline"
-        id="reset-filters"
-        type="button"
-      >
-        Mostrar todos
-      </button>
-    </div>
-
-    <div class="carousel-toolbar">
-      <p
-        class="results-line"
-        id="result-count"
-        role="status"
-        aria-live="polite"
-      ></p>
-
-      <div class="carousel-controls" aria-label="Controles de destinos">
-        <button
-          class="carousel-arrow"
-          id="destinations-prev"
-          type="button"
-          aria-label="Ver destinos anteriores"
-          aria-controls="destinations-track"
-        >←</button>
-
-        <button
-          class="carousel-arrow"
-          id="destinations-next"
-          type="button"
-          aria-label="Ver siguientes destinos"
-          aria-controls="destinations-track"
-        >→</button>
-      </div>
-    </div>
-
-    <div
-      class="destinations-track"
-      id="destinations-track"
-      role="region"
-      aria-label="Destinos de muestra, desplázate para ver más"
-      tabindex="0"
-    ></div>
-
-    <div class="empty-state" id="empty-state" hidden>
-      <h3>No hay coincidencias en este catálogo.</h3>
-      <p>Prueba otro destino, estilo o presupuesto.</p>
-    </div>
-
-    <noscript>
-      <p>Activa JavaScript para consultar el catálogo de destinos.</p>
-    </noscript>
-
-    <p class="demo-note">
-      Fotografías ilustrativas. Importes ficticios en HNL, sin disponibilidad
-      verificada ni servicios incluidos definidos.
-    </p>
-  </div>
-</section>
-
-    <!-- GUÍAS: el menú conduce a esta sección -->
+    <!-- GUÍAS -->
     <section class="section container" id="guias" aria-labelledby="guides-title">
       <div class="guides-layout">
         <div class="guides-image">
           <img
             src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
             alt="Paisaje natural al atardecer"
-            width="1000" height="900" loading="lazy"
+            width="1000"
+            height="900"
+            loading="lazy"
           >
         </div>
 
-        <div>
+        <div class="guides-copy">
+          <p class="eyebrow">ANTES DE HACER LAS MALETAS</p>
           <h2 id="guides-title">Guías para preparar tu viaje</h2>
           <p class="section-description">
             Consulta recomendaciones de presupuesto, equipaje y documentación.
@@ -385,23 +356,25 @@
 
           <div class="guide-details">
             <details id="guia-presupuesto">
-              <summary>Cómo organizar tu presupuesto</summary>
+              <summary><span class="guide-number">01</span> Organiza tu presupuesto</summary>
               <p>
                 Separa transporte, hospedaje, comidas, traslados y actividades.
                 Reserva una cantidad para imprevistos. Comprueba qué incluye
                 cada tarifa y su moneda antes de comparar o pagar.
               </p>
             </details>
+
             <details id="guia-equipaje">
-              <summary>Qué llevar en tu equipaje</summary>
+              <summary><span class="guide-number">02</span> Prepara tu equipaje</summary>
               <p>
                 Prepara ropa según el clima, calzado cómodo y tus artículos
                 de uso diario. Lleva contigo documentación y objetos de valor.
                 Confirma medidas, peso y artículos permitidos con tu aerolínea.
               </p>
             </details>
+
             <details id="guia-documentos">
-              <summary>Documentación y requisitos de entrada</summary>
+              <summary><span class="guide-number">03</span> Revisa tus documentos</summary>
               <p>
                 Revisa la vigencia de tus documentos y los requisitos oficiales
                 de entrada y tránsito. Consulta también las condiciones de
@@ -409,147 +382,156 @@
               </p>
             </details>
           </div>
+
+          <a class="text-link guide-catalog" id="rv-open-catalog" href="viajes.html">
+            Explorar destinos, vuelos y hoteles ↗
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ORIENTACIÓN PERSONALIZADA -->
-    <!-- PASE DE VIAJE INTERACTIVO -->
-<section
-  class="container trip-starter pass-section"
-  aria-labelledby="plan-title"
->
-  <div class="trip-starter-copy">
-    <p class="eyebrow">TU IDEA, EN UN PASE</p>
+    <!-- PASE INTERACTIVO -->
+    <section class="container trip-starter pass-section" id="mi-pase" aria-labelledby="plan-title">
+      <div class="trip-starter-copy">
+        <p class="eyebrow">EL SIGUIENTE PASO LO ELIGES TÚ</p>
+        <h2 id="plan-title">Una idea hoy.<br>Tu próximo rumbo mañana.</h2>
 
-    <h2 id="plan-title">Dale forma a tu próximo viaje.</h2>
-
-    <p>
-      Responde las preguntas del orientador. Tu pase se completará
-      con los viajeros, la experiencia y el presupuesto que elijas.
-      Después podrás guardarlo o compartirlo.
-    </p>
-
-    <button
-      class="button button-primary"
-      type="button"
-      data-open-planner
-    >
-      Crear mi pase
-      <span aria-hidden="true">↗</span>
-    </button>
-
-    <p class="demo-note">
-      Es un recuerdo de tu idea, no un boleto ni una reserva.
-      No necesitas introducir nombres ni documentos.
-    </p>
-  </div>
-
-  <div class="pass-workspace">
-    <article
-      class="boarding-pass"
-      id="boarding-pass"
-      aria-labelledby="pass-title"
-    >
-      <div class="pass-header">
-        <span class="pass-brand">rumbo↗</span>
-        <span class="pass-status" id="pass-status">Por completar</span>
-      </div>
-
-      <div class="pass-main">
-        <p class="pass-kicker" id="pass-title">PASE DE INSPIRACIÓN</p>
-
-        <div class="pass-route">
-          <div>
-            <span class="pass-field-label">Desde</span>
-            <strong class="pass-origin">TU IDEA</strong>
-          </div>
-
-          <span class="pass-route-arrow" aria-hidden="true">↗</span>
-
-          <div class="pass-destination">
-            <span class="pass-field-label">Destino</span>
-            <strong id="pass-destination-name">Por descubrir</strong>
-          </div>
-        </div>
-
-        <div class="pass-progress-track" aria-hidden="true">
-          <span id="pass-progress-fill"></span>
-        </div>
-
-        <p class="pass-progress-text" id="pass-progress-text">
-          0 de 4 datos completados
+        <p>
+          Cuéntanos con quién viajas, qué te inspira y cuánto quieres gastar.
+          El orientador te ayudará a convertirlo en un pase que puedes guardar.
         </p>
 
-        <dl class="pass-data">
-          <div>
-            <dt>Viajeros</dt>
-            <dd id="plan-company">Por definir</dd>
-          </div>
-          <div>
-            <dt>Experiencia</dt>
-            <dd id="plan-experience">Por definir</dd>
-          </div>
-          <div class="pass-budget">
-            <dt>Presupuesto total · HNL</dt>
-            <dd id="plan-budget">Por definir</dd>
-          </div>
-        </dl>
+        <ol class="planner-steps" aria-label="Cómo crear tu pase">
+          <li>
+            <span>01</span>
+            <div>
+              <strong>Imagina tu escapada</strong>
+              <small>Elige compañía y experiencia.</small>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <strong>Encuentra tu opción</strong>
+              <small>Compara según tu presupuesto.</small>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <strong>Llévate la idea</strong>
+              <small>Guarda tu pase y explora vuelos y hoteles.</small>
+            </div>
+          </li>
+        </ol>
+
+        <button class="button button-primary" type="button" data-open-planner>
+          <span id="planner-button-label">Crear mi pase</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+
+        <p class="demo-note">
+          Es un recuerdo de tu idea, no un boleto ni una reserva.
+          No necesitas introducir nombres ni documentos.
+        </p>
       </div>
 
-      <div class="pass-stub">
-        <div>
-          <span class="pass-field-label">Ruta conceptual</span>
-          <strong id="pass-route-code">RMB — —</strong>
+      <div class="pass-workspace">
+        <article class="boarding-pass" id="boarding-pass" aria-labelledby="pass-title">
+          <div class="pass-header">
+            <span class="pass-brand">rumbo↗</span>
+            <span class="pass-status" id="pass-status">Por completar</span>
+          </div>
+
+          <div class="pass-main">
+            <p class="pass-kicker" id="pass-title">PASE DE INSPIRACIÓN</p>
+
+            <div class="pass-route">
+              <div>
+                <span class="pass-field-label">Desde</span>
+                <strong class="pass-origin">TU IDEA</strong>
+              </div>
+              <span class="pass-route-arrow" aria-hidden="true">↗</span>
+              <div class="pass-destination">
+                <span class="pass-field-label">Destino</span>
+                <strong id="pass-destination-name">Por descubrir</strong>
+              </div>
+            </div>
+
+            <div class="pass-progress-track" aria-hidden="true">
+              <span id="pass-progress-fill"></span>
+            </div>
+            <p class="pass-progress-text" id="pass-progress-text">
+              0 de 4 datos completados
+            </p>
+
+            <dl class="pass-data">
+              <div>
+                <dt>Viajeros</dt>
+                <dd id="plan-company">Por definir</dd>
+              </div>
+              <div>
+                <dt>Experiencia</dt>
+                <dd id="plan-experience">Por definir</dd>
+              </div>
+              <div class="pass-budget">
+                <dt>Presupuesto total · HNL</dt>
+                <dd id="plan-budget">Por definir</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="pass-stub">
+            <div>
+              <span class="pass-field-label">Ruta conceptual</span>
+              <strong id="pass-route-code">RMB — —</strong>
+            </div>
+            <div>
+              <span class="pass-field-label">Código de tu idea</span>
+              <strong id="pass-idea-code">Pendiente</strong>
+            </div>
+          </div>
+
+          <p class="pass-disclaimer">
+            Inspiración · No válido para viajar · Sin reserva
+          </p>
+        </article>
+
+        <div class="pass-destination-picker" id="pass-picker" hidden>
+          <label for="pass-destination-select">Elige el destino de tu pase</label>
+          <select id="pass-destination-select"></select>
         </div>
-        <div>
-          <span class="pass-field-label">Código de tu idea</span>
-          <strong id="pass-idea-code">Pendiente</strong>
+
+        <p class="pass-result" id="plan-result">
+          Tu pase se actualizará mientras conversas.
+        </p>
+
+        <div class="pass-actions">
+          <button class="button button-primary" id="download-pass" type="button" disabled>
+            Descargar pase
+          </button>
+          <button class="button button-outline" id="share-pass" type="button" disabled>
+            Compartir
+          </button>
         </div>
+
+        <div id="rv-pass-services" hidden>
+          <p class="demo-note">
+            Continúa con tu idea: el subtotal dependerá del vuelo y hotel que elijas.
+          </p>
+          <div class="pass-actions">
+            <a class="button button-primary" id="rv-pass-flight" href="viajes.html?pantalla=vuelos">
+              Elegir vuelo ↗
+            </a>
+            <a class="button button-outline" id="rv-pass-hotel" href="viajes.html?pantalla=hoteles">
+              Elegir hotel ↗
+            </a>
+          </div>
+        </div>
+
+        <p class="pass-feedback" id="pass-feedback" role="status" aria-live="polite"></p>
       </div>
-
-      <p class="pass-disclaimer">
-        Inspiración · No válido para viajar · Sin reserva
-      </p>
-    </article>
-
-    <div class="pass-destination-picker" id="pass-picker" hidden>
-      <label for="pass-destination-select">Elige el destino de tu pase</label>
-      <select id="pass-destination-select"></select>
-    </div>
-
-    <p class="pass-result" id="plan-result">
-      Tu pase se actualizará mientras conversas.
-    </p>
-
-    <div class="pass-actions">
-      <button
-        class="button button-primary"
-        id="download-pass"
-        type="button"
-        disabled
-      >
-        Descargar pase
-      </button>
-
-      <button
-        class="button button-outline"
-        id="share-pass"
-        type="button"
-        disabled
-      >
-        Compartir
-      </button>
-    </div>
-
-    <p
-      class="pass-feedback"
-      id="pass-feedback"
-      role="status"
-      aria-live="polite"
-    ></p>
-  </div>
-</section>
+    </section>
   </main>
 
   <!-- FOOTER -->
@@ -561,7 +543,9 @@
         </a>
         <p>Viajes, servicios y accesorios.</p>
       </div>
-      <a class="back-top" href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a>
+      <a class="back-top" href="#inicio">
+        Volver arriba <span aria-hidden="true">↑</span>
+      </a>
     </div>
 
     <div class="container footer-grid">
@@ -602,18 +586,10 @@
       <div class="footer-column footer-emails">
         <h2>Correo electrónico</h2>
         <address>
-          <a href="mailto:allanramos@franciscojavier.edu.hn">
-            allanramos@franciscojavier.edu.hn
-          </a>
-          <a href="mailto:omartabora@franciscojavier.edu.hn">
-            omartabora@franciscojavier.edu.hn
-          </a>
-          <a href="mailto:diannymoreira@franciscojavier.edu.hn">
-            diannymoreira@franciscojavier.edu.hn
-          </a>
-          <a href="mailto:dilanbanegas@franciscojavier.edu.hn">
-            dilanbanegas@franciscojavier.edu.hn
-          </a>
+          <a href="mailto:allanramos@franciscojavier.edu.hn">allanramos@franciscojavier.edu.hn</a>
+          <a href="mailto:omartabora@franciscojavier.edu.hn">omartabora@franciscojavier.edu.hn</a>
+          <a href="mailto:diannymoreira@franciscojavier.edu.hn">diannymoreira@franciscojavier.edu.hn</a>
+          <a href="mailto:dilanbanegas@franciscojavier.edu.hn">dilanbanegas@franciscojavier.edu.hn</a>
         </address>
       </div>
     </div>
@@ -636,23 +612,28 @@
     <span>Planear mi viaje</span>
   </button>
 
-  <section class="chat-panel" id="help-chat" aria-labelledby="chat-title" hidden>
+  <section
+    class="chat-panel"
+    id="help-chat"
+    role="dialog"
+    aria-modal="false"
+    aria-labelledby="chat-title"
+    hidden
+  >
     <div class="chat-header">
       <div>
         <h2 id="chat-title">Orientador Rumbo</h2>
-        <p>Presupuestos de muestra en lempiras</p>
+        <p>Tu idea de viaje, paso a paso · HNL</p>
       </div>
-      <button
-        class="close-button"
-        id="close-chat"
-        type="button"
-        aria-label="Cerrar chat"
-      >
+      <button class="close-button" id="close-chat" type="button" aria-label="Cerrar chat">
         <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
       </button>
     </div>
 
-    <div class="chat-progress" id="chat-step-label">¿Cómo podemos orientarte?</div>
+    <div class="chat-progress">
+      <span id="chat-step-label">¿Cómo podemos orientarte?</span>
+      <button type="button" id="chat-back" disabled>← Atrás</button>
+    </div>
 
     <div
       class="chat-messages"
@@ -688,7 +669,12 @@
     <p class="chat-disclaimer">Orientación programada · No consulta precios reales.</p>
   </section>
 
-  <dialog id="module-dialog" class="module-dialog" aria-labelledby="module-title" aria-describedby="module-description">
+  <dialog
+    id="module-dialog"
+    class="module-dialog"
+    aria-labelledby="module-title"
+    aria-describedby="module-description"
+  >
     <h2 id="module-title"></h2>
     <p id="module-description"></p>
     <form method="dialog">

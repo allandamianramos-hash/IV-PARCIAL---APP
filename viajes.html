@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explora destinos y elige vuelos y hoteles para tu viaje con Rumbo.">
+  <meta name="theme-color" content="#087f8c">
+  <title>Destinos, vuelos y hoteles | Rumbo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- INTEGRANTE 2: este módulo utiliza únicamente viajes.css y viajes.js. -->
+  <link rel="stylesheet" href="viajes.css">
+  <script src="viajes.js" defer></script>
+</head>
+<body class="rv-page">
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="announcement">Un destino, mil formas de vivirlo. <a href="viajes.html?pantalla=destinos">Encuentra tu próximo rumbo ↗</a></div>
+  <header class="site-header rv-header"><div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Rumbo, inicio">rumbo<span aria-hidden="true">↗</span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a><a href="viajes.html?pantalla=destinos" data-nav="destinos">Destinos</a>
+      <a href="viajes.html?pantalla=vuelos" data-nav="vuelos" data-path="vuelos" data-context>Vuelos</a><a href="viajes.html?pantalla=hoteles" data-nav="hoteles" data-path="hoteles" data-context>Hoteles</a>
+      <a href="tienda.html">Tienda de viaje</a>
+    </nav>
+    <a class="rv-my-trip" href="viajes.html?pantalla=hoteles#resumen-viaje" data-path="hoteles#resumen-viaje" data-context>Mi viaje <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main class="container rv-main" id="contenido" tabindex="-1"></main>
+  <footer class="rv-footer"><div class="container">
+    <div><a class="logo" href="index.html">rumbo<span aria-hidden="true">↗</span></a><p>Elige el destino. Haz tuya la experiencia.</p></div>
+    <p>Proyecto académico · Precios en lempiras.<br>Hoteles, horarios y tarifas de ejemplo. Sin reservas reales.<br><a class="rv-link-button" href="viajes.html?pantalla=destinos#creditos-imagenes">Créditos de imágenes</a></p>
+  </div></footer>
+  <div class="rv-toast" id="rv-toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="container rv-notice">Activa JavaScript para ver los destinos, vuelos y hoteles.</p></noscript>
+
+  <!-- Las cuatro vistas comparten esta página; el parámetro pantalla elige cuál abrir. -->
+  <!-- DESTINOS -->
+  <template id="rv-vista-destinos">
+    <section class="rv-discover" aria-labelledby="page-title">
+      <div><p class="eyebrow">TU SIGUIENTE HISTORIA</p><h1 id="page-title">Hay un lugar<br>para <em>tu próximo rumbo.</em></h1>
+      <p>Una escapada cerca de casa o ese viaje que llevas tiempo imaginando. Encuentra tu destino y empieza a organizarlo.</p>
+      <a class="button button-primary" href="#catalogo">Explorar destinos <span aria-hidden="true">↓</span></a>
+      <div class="rv-discover-note"><strong>06 destinos</strong><span>Honduras y el mundo, a tu ritmo.</span></div></div>
+      <figure class="rv-discover-photo"><img src="imagenes-viajes/playa.jpg" alt="Playa tropical, fotografía de inspiración" width="1100" height="760" fetchpriority="high"><figcaption>UN POCO MÁS CERCA DE TU PRÓXIMA AVENTURA <span aria-hidden="true">↗</span></figcaption></figure>
+    </section>
+    <section id="catalogo" class="rv-catalog" aria-labelledby="catalog-title">
+      <div class="rv-section-title"><div><p class="eyebrow">ELIGE A DÓNDE IR</p><h2 id="catalog-title">Encuentra tu lugar.</h2></div><p>Primero el destino. Después, los detalles.</p></div>
+      <form class="rv-filter-bar" id="destination-filters" role="search">
+        <div class="rv-field rv-search-field"><label for="buscar-destino">Buscar destino</label><input id="buscar-destino" name="q" type="search" autocomplete="off" placeholder="Roatán, cultura, Japón…" maxlength="100"></div>
+        <div class="rv-field"><label for="tipo-viaje">Tipo de viaje</label><select id="tipo-viaje" name="tipo"><option value="all">Todos los estilos</option><option value="playa">Playa y descanso</option><option value="naturaleza">Naturaleza</option><option value="cultura">Cultura e historia</option></select></div>
+        <div class="rv-field"><label for="zona-destino">Dónde</label><select id="zona-destino" name="zona"><option value="all">Todos los destinos</option><option value="honduras">Honduras</option><option value="internacional">Internacional</option></select></div>
+        <div class="rv-field"><label for="presupuesto-vuelo">Vuelo por persona</label><select id="presupuesto-vuelo" name="presupuesto"><option value="all">Cualquier precio</option><option value="3000">Hasta L. 3,000</option><option value="5000">Hasta L. 5,000</option><option value="25000">Hasta L. 25,000</option><option value="40000">Hasta L. 40,000</option></select></div>
+        <button class="button button-primary" type="submit">Buscar ↗</button>
+      </form>
+      <div class="rv-results-toolbar"><p id="destination-count" role="status" aria-live="polite"></p><div><label for="orden-destinos" class="sr-only">Ordenar destinos</label><select id="orden-destinos"><option value="recommended">Recomendados</option><option value="price-low">Menor precio de vuelo</option><option value="name">Nombre A–Z</option></select><button class="rv-link-button" id="limpiar-destinos" type="button">Limpiar filtros</button></div></div>
+      <div class="rv-destination-grid" id="destination-list"></div>
+      <div class="rv-empty" id="destination-empty" hidden><span aria-hidden="true">↗</span><h3>No encontramos destinos con esos filtros.</h3><p>Prueba otro nombre, amplía el presupuesto o limpia los filtros.</p><button class="button button-primary" type="button" id="restablecer-destinos">Ver todos los destinos</button></div>
+      <p class="rv-caption">Precios desde por persona, en clase económica y solo ida desde Tegucigalpa. Fotografías de inspiración.</p>
+    </section>
+    <details id="creditos-imagenes" class="rv-credits">
+      <summary>Créditos de imágenes</summary>
+      <div><h3>Copán Ruinas</h3><p>Fotografía de Mónica J. Mora (Ayaita): <a class="rv-link-button" href="https://commons.wikimedia.org/wiki/File:Ruinas_MAYA_Copan_Honduras_11.jpg">Ruinas MAYA Copan Honduras 11</a>, Wikimedia Commons.</p><p><a class="rv-link-button" href="https://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0</a>. Se utiliza la versión de 1280 píxeles y el encuadre se adapta mediante CSS. La fotografía conserva esta licencia.</p><h3>Fotografías de inspiración</h3><p>Imágenes de Unsplash utilizadas en destinos y hoteles:</p><ul class="rv-highlight-list"><li><a href="https://images.unsplash.com/photo-1519046904884-53103b34b206">playa.jpg — Unsplash</a></li><li><a href="https://images.unsplash.com/photo-1441974231531-c6227db76b6e">naturaleza.jpg — Unsplash</a></li><li><a href="https://images.unsplash.com/photo-1537996194471-e657df975ab4">bali.jpg — Unsplash</a></li><li><a href="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b">dolomitas.jpg — Unsplash</a></li><li><a href="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e">kioto.jpg — Unsplash</a></li><li><a href="https://images.unsplash.com/photo-1540541338287-41700207dee6">hotel-playa.jpg — Unsplash</a></li><li><a href="https://images.unsplash.com/photo-1611892440504-42a792e24d32">hotel-habitacion.jpg — Unsplash</a></li><li><a href="https://images.unsplash.com/photo-1571896349842-33c89424de2d">hotel-piscina.jpg — Unsplash</a></li></ul><p>Las imágenes que ya venían en los archivos originales se conservan sin cambios.</p></div>
+    </details>
+  </template>
+
+  <!-- DETALLE-DESTINO -->
+  <template id="rv-vista-detalle-destino">
+    <div id="destination-detail"></div>
+  </template>
+
+  <!-- VUELOS -->
+  <template id="rv-vista-vuelos">
+    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title"><p class="eyebrow">EL VIAJE EMPIEZA AQUÍ</p><h1 id="page-title">Elige cómo llegar.</h1><p>Compara horarios y encuentra una clase que vaya contigo.</p></section>
+    <form id="flight-search" class="rv-search-panel">
+      <div class="rv-field"><label for="flight-destination">Destino</label><select id="flight-destination" name="destination"></select></div>
+      <div class="rv-field"><label for="flight-origin">Origen</label><select id="flight-origin" name="origin"></select></div>
+      <div class="rv-field"><label for="flight-date">Fecha de salida</label><input id="flight-date" name="date" type="date" required></div>
+      <div class="rv-field"><label for="flight-travelers">Pasajeros</label><input id="flight-travelers" name="travelers" type="number" min="1" max="12" step="1" required></div>
+      <div class="rv-field"><label for="flight-cabin">Clase</label><select id="flight-cabin" name="cabin"><option value="economica">Económica</option><option value="ejecutiva">Ejecutiva</option></select></div>
+      <div class="rv-search-bottom"><p id="flight-form-notice" role="status">Vuelos de ida · todos los pasajeros usan la misma tarifa de ejemplo.</p><button class="button button-primary" type="submit">Actualizar búsqueda ↗</button></div>
+    </form>
+    <div class="rv-flow-layout"><section aria-labelledby="flight-result-title"><div class="rv-results-heading"><div><h2 id="flight-result-title"></h2><p id="flight-results-meta" role="status"></p></div><label class="rv-sort">Ordenar<select id="flight-sort"><option value="recommended">Recomendados</option><option value="price-low">Menor precio</option><option value="time">Salida más temprana</option></select></label></div>
+      <p id="flight-transfer" class="rv-notice" hidden></p><div id="flight-list" class="rv-options-list"></div>
+      <p class="rv-caption">Horarios simulados expresados en la zona horaria del origen. No incluyen vuelo de regreso.</p>
+    </section><aside id="resumen-viaje" class="rv-trip-summary" aria-label="Resumen de tu selección"></aside></div>
+  </template>
+
+  <!-- HOTELES -->
+  <template id="rv-vista-hoteles">
+    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title"><p class="eyebrow">TU LUGAR AL LLEGAR</p><h1 id="page-title">Quédate donde quieras estar.</h1><p>Elige tu habitación. Nosotros hacemos las cuentas.</p></section>
+    <form id="hotel-search" class="rv-search-panel rv-hotel-search">
+      <div class="rv-field"><label for="hotel-destination">Destino</label><select id="hotel-destination" name="destination"></select></div>
+      <div class="rv-field"><label for="hotel-date">Entrada al hotel</label><input id="hotel-date" name="checkIn" type="date" required></div>
+      <div class="rv-field"><label for="hotel-nights">Noches</label><input id="hotel-nights" name="nights" type="number" min="1" max="30" step="1" required></div>
+      <div class="rv-field"><label for="hotel-travelers">Huéspedes</label><input id="hotel-travelers" name="travelers" type="number" min="1" max="12" step="1" required></div>
+      <div class="rv-field"><label for="hotel-rooms">Habitaciones</label><input id="hotel-rooms" name="rooms" type="number" min="1" max="6" step="1" required></div>
+      <div class="rv-search-bottom"><p id="hotel-form-notice" role="status"></p><button class="button button-primary" type="submit">Actualizar estancia ↗</button></div>
+    </form>
+    <div class="rv-flow-layout"><section aria-labelledby="hotel-result-title">
+      <div class="rv-results-heading"><div><h2 id="hotel-result-title"></h2><p id="hotel-results-meta" role="status"></p></div></div>
+      <form id="hotel-filters" class="rv-hotel-filters">
+        <div class="rv-field"><label for="hotel-stars">Categoría</label><select id="hotel-stars"><option value="all">Todas</option><option value="4">4 estrellas o más</option><option value="5">5 estrellas</option></select></div>
+        <div class="rv-field"><label for="hotel-max-price">Máximo / noche / hab.</label><input id="hotel-max-price" type="number" min="0" step="1" placeholder="Sin límite"></div>
+        <div class="rv-field"><label for="hotel-sort">Ordenar</label><select id="hotel-sort"><option value="recommended">Recomendados</option><option value="price-low">Menor precio</option><option value="stars">Más estrellas</option></select></div>
+        <label class="rv-checkbox"><input id="hotel-breakfast" type="checkbox"> Con desayuno</label>
+        <button type="reset" class="rv-link-button">Limpiar</button>
+      </form>
+      <div id="hotel-list" class="rv-options-list"></div>
+      <div id="hotel-empty" class="rv-empty" hidden><h3>No hay hoteles con esos filtros.</h3><p>Amplía el precio o cambia la categoría.</p><button id="hotel-reset-empty" type="button" class="button button-primary">Limpiar filtros</button></div>
+      <p class="rv-caption">Nombres, categorías, servicios y tarifas de ejemplo. Fotografías de inspiración. Precio por habitación y por noche.</p>
+    </section><aside id="resumen-viaje" class="rv-trip-summary" aria-label="Resumen de tu selección"></aside></div>
+    <dialog id="selection-dialog" class="rv-dialog" aria-labelledby="selection-title"><form method="dialog"><button class="rv-dialog-close" aria-label="Cerrar resumen">×</button></form><p class="eyebrow">TU PRÓXIMO RUMBO</p><h2 id="selection-title">Tu selección está lista.</h2><div id="selection-details"></div><p class="rv-caption">Es una selección de demostración. No se ha realizado ninguna reserva ni pago.</p><form method="dialog"><button class="button button-primary">Seguir explorando ↗</button></form></dialog>
+  </template>
+</body>
+</html>

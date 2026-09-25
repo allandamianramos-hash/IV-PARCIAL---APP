@@ -1,67 +1,274 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda del Viajero | Rumbo</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Vinculamos los archivos CSS y JS separados -->
-  <link rel="stylesheet" href="tienda.css">
-  <script src="tienda.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La tienda del viajero | Rumbo</title>
+
+    <link rel="stylesheet" href="tienda.css">
 </head>
+
 <body>
 
-  <main class="store-container">
-    <header class="store-header">
-      <div class="header-left">
-        <a href="index.html" class="back-link">← Volver a Inicio</a>
-        <h1>La tienda del viajero</h1>
-      </div>
-      <button class="cart-btn" id="open-cart-btn">
-        🛒 Carrito (<span id="cart-count">0</span>)
-      </button>
+    <!-- ENCABEZADO -->
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="#" class="logo">
+                <div class="logo-icon">✈️</div>
+
+                <div>
+                    <strong>La tienda del viajero</strong>
+                    <small>Rumbo</small>
+                </div>
+            </a>
+
+            <button id="open-cart-btn" class="cart-button">
+                🛒 Carrito
+                <span id="cart-count">0</span>
+            </button>
+
+        </div>
     </header>
 
-    <nav class="store-filters" aria-label="Filtros de tienda">
-      <button class="filter-btn active" data-category="all">Todos</button>
-      <button class="filter-btn" data-category="Equipaje">Equipaje</button>
-      <button class="filter-btn" data-category="Tecnología">Tecnología</button>
-      <button class="filter-btn" data-category="Confort">Confort</button>
-      <button class="filter-btn" data-category="Seguridad">Seguridad</button>
-      <button class="filter-btn" data-category="Cuidado">Cuidado Personal</button>
-    </nav>
 
-    <!-- Aquí se inyectarán los productos desde JavaScript -->
-    <div class="products-grid" id="products-grid"></div>
-  </main>
+    <!-- PRESENTACIÓN -->
+    <section class="hero">
 
-  <!-- MODAL DEL CARRITO -->
-  <dialog id="cart-modal" class="cart-dialog" aria-labelledby="cart-title">
-    <div class="dialog-header">
-      <h2 id="cart-title">Tu Carrito</h2>
-      <button id="close-cart-btn" class="close-btn" aria-label="Cerrar carrito">×</button>
+        <div class="container hero-content">
+
+            <div class="hero-text-content">
+
+                <p class="eyebrow">
+                    TODO PARA TU VIAJE
+                </p>
+
+                <h1>
+                    Viaja preparado con
+                    <span>Rumbo</span>
+                </h1>
+
+                <p class="hero-description">
+                    Encuentra productos prácticos para equipaje,
+                    tecnología, confort, seguridad y cuidado personal.
+                </p>
+
+                <div class="hero-badges">
+
+                    <span>✓ Precios accesibles</span>
+                    <span>✓ Sin costo de envío</span>
+                    <span>✓ Productos para viajar</span>
+
+                </div>
+
+            </div>
+
+            <div class="hero-plane">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+    <main class="products-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-kicker">
+                        CATÁLOGO
+                    </p>
+
+                    <h2>
+                        Productos para tu viaje
+                    </h2>
+
+                </div>
+
+                <p id="products-result">
+                    30 productos
+                </p>
+
+            </div>
+
+
+            <!-- FILTROS -->
+            <div class="filters">
+
+                <button
+                    class="filter-btn active"
+                    data-category="Todos">
+                    Todos
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="Equipaje">
+                    Equipaje
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="Tecnología">
+                    Tecnología
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="Confort">
+                    Confort
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="Seguridad">
+                    Seguridad
+                </button>
+
+                <button
+                    class="filter-btn"
+                    data-category="Cuidado">
+                    Cuidado
+                </button>
+
+            </div>
+
+
+            <!-- AQUÍ APARECERÁN LOS PRODUCTOS -->
+            <div id="products-grid" class="products-grid"></div>
+
+        </div>
+
+    </main>
+
+
+    <!-- CARRITO -->
+    <div id="cart-modal" class="modal hidden">
+
+        <div
+            id="close-cart-overlay"
+            class="modal-overlay">
+        </div>
+
+
+        <aside class="cart-panel">
+
+            <div class="cart-header">
+
+                <div>
+
+                    <p class="section-kicker">
+                        TU COMPRA
+                    </p>
+
+                    <h2>
+                        Mi carrito
+                    </h2>
+
+                </div>
+
+                <button
+                    id="close-cart-btn"
+                    class="close-btn">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="cart-products">
+
+                <div id="cart-items"></div>
+
+            </div>
+
+
+            <div class="cart-summary">
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="cart-subtotal">
+                        L. 0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Envío
+                    </span>
+
+                    <strong class="free">
+                        GRATIS
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row total-row">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cart-total">
+                        L. 0.00
+                    </strong>
+
+                </div>
+
+
+                <button
+                    id="checkout-btn"
+                    class="checkout-btn">
+                    Finalizar compra
+                </button>
+
+
+                <p class="cart-note">
+                    El envío no tiene costo.
+                </p>
+
+            </div>
+
+        </aside>
+
     </div>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <p>
+                © 2026 La tienda del viajero | Rumbo
+            </p>
+
+            <p>
+                Productos prácticos para tus viajes
+            </p>
+
+        </div>
+
+    </footer>
+
+
     
-    <div id="cart-items" class="cart-items">
-      <!-- Los artículos del carrito aparecerán aquí -->
-    </div>
-
-    <div class="cart-summary">
-      <div class="summary-row">
-        <span>Subtotal:</span>
-        <span id="cart-subtotal">L. 0.00</span>
-      </div>
-      <div class="summary-row total-row">
-        <span>Total a pagar:</span>
-        <span id="cart-total">L. 0.00</span>
-      </div>
-      <button class="checkout-btn" id="checkout-btn" disabled>Confirmar Compra</button>
-    </div>
-  </dialog>
+    <script src="tienda.js"></script>
 
 </body>
 </html>

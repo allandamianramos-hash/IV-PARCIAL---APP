@@ -2,141 +2,103 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087f8c">
   <meta
     name="description"
-    content="Descubre destinos, hospedajes, guías y accesorios para tu próxima aventura con Rumbo."
+    content="Explora destinos, organiza tu presupuesto y descubre los servicios de viaje de Rumbo."
   >
-
-  <meta name="theme-color" content="#087f8c">
-
-  <title>Rumbo | Tu próxima historia</title>
+  <title>Rumbo | Viajes y experiencias</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
-
-<link
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <!-- ICONOS REUTILIZABLES -->
-  <svg
-    class="icon-library"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <symbol id="icon-user" viewBox="0 0 24 24">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-user" viewBox="0 0 24 24">
       <circle cx="12" cy="8" r="4"/>
       <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
     </symbol>
-
-    <symbol id="icon-bag" viewBox="0 0 24 24">
+    <symbol id="i-bag" viewBox="0 0 24 24">
       <path d="M5 7h14l1 14H4L5 7Z"/>
       <path d="M9 8V6a3 3 0 0 1 6 0v2"/>
     </symbol>
-
-    <symbol id="icon-pin" viewBox="0 0 24 24">
+    <symbol id="i-pin" viewBox="0 0 24 24">
       <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
       <circle cx="12" cy="10" r="2.5"/>
     </symbol>
-
-    <symbol id="icon-plane" viewBox="0 0 24 24">
+    <symbol id="i-plane" viewBox="0 0 24 24">
       <path d="m22 2-7 20-4-9-9-4L22 2Z"/>
       <path d="m11 13 6-6"/>
     </symbol>
-
-    <symbol id="icon-bed" viewBox="0 0 24 24">
-      <path d="M3 18V5m18 13V9H3m0 6h18M3 18v3m18-3v3"/>
-      <path d="M7 9V6h5v3"/>
+    <symbol id="i-bed" viewBox="0 0 24 24">
+      <path d="M3 21V5m18 16V9H3m0 7h18M7 9V6h5v3"/>
     </symbol>
-
-    <symbol id="icon-book" viewBox="0 0 24 24">
-      <path d="M12 5v16M12 5C8 2 4 3 2 4v15c3-1 6-1 10 2 4-3 7-3 10-2V4c-3-1-6-2-10 1Z"/>
-    </symbol>
-
-    <symbol id="icon-chat" viewBox="0 0 24 24">
-      <path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-7a9 9 0 1 1 18-4Z"/>
-      <path d="M7 10h10M7 14h6"/>
-    </symbol>
-
-    <symbol id="icon-search" viewBox="0 0 24 24">
-      <circle cx="10" cy="10" r="7"/>
-      <path d="m15 15 6 6"/>
-    </symbol>
-
-    <symbol id="icon-transfer" viewBox="0 0 24 24">
+    <symbol id="i-car" viewBox="0 0 24 24">
       <path d="m5 7 2-4h10l2 4"/>
       <rect x="3" y="7" width="18" height="11" rx="3"/>
       <path d="M7 18v3m10-3v3M3 12h18M7 15h1m8 0h1"/>
     </symbol>
-
-    <symbol id="icon-shield" viewBox="0 0 24 24">
+    <symbol id="i-shield" viewBox="0 0 24 24">
       <path d="m12 2 8 3v6c0 5-8 11-8 11S4 16 4 11V5l8-3Z"/>
       <path d="m8 11 3 3 5-6"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24">
+      <path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-7a9 9 0 1 1 18-4Z"/>
+      <path d="M7 10h10M7 14h6"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+      <circle cx="10" cy="10" r="7"/>
+      <path d="m15 15 6 6"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18"/>
     </symbol>
   </svg>
 
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <!-- FRANJA SUPERIOR -->
   <div class="announcement">
-    Un destino, mil formas de vivirlo.
-    <a href="#destinos">
-      Encuentra tu próximo rumbo
-      <span aria-hidden="true">↗</span>
-    </a>
+    Precios de muestra en lempiras hondureños · HNL
   </div>
 
-  <!-- CABECERA -->
-  <header class="site-header">
+  <header class="site-header" id="inicio">
     <div class="container header-inner">
-      <a class="logo" href="#" aria-label="Rumbo, inicio">
+      <a class="logo" href="#inicio" aria-label="Rumbo, inicio">
         rumbo<span aria-hidden="true">↗</span>
       </a>
 
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="#destinos">Destinos</a>
-        <a href="#servicios">Reservas y servicios</a>
-        <a href="#tienda">Tienda de viaje</a>
-        <a href="#inspiracion">Guías</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#guias">Guías</a>
       </nav>
 
       <div class="header-actions">
-        <button
-          class="login-button"
-          type="button"
-          data-module="login"
-          aria-haspopup="dialog"
-        >
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-user"/>
-          </svg>
+        <button class="login-button" type="button" data-module="login">
+          <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
           <span>Iniciar sesión</span>
+        </button>
+
+        <button class="register-button" type="button" data-module="register">
+          Registrarse
         </button>
 
         <button
           class="cart-button"
           type="button"
           data-module="cart"
-          aria-label="Abrir carrito, módulo de demostración"
-          aria-haspopup="dialog"
+          aria-label="Abrir carrito"
         >
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-bag"/>
-          </svg>
+          <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
         </button>
       </div>
     </div>
@@ -146,41 +108,31 @@
     <!-- PORTADA -->
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">
-          <span class="small-line" aria-hidden="true"></span>
-          EL MUNDO TE ESTÁ ESPERANDO
-        </p>
-
         <h1 id="hero-title">
           Tu próxima historia comienza con un
           <span>nuevo rumbo.</span>
         </h1>
 
         <p class="hero-description">
-          Ese lugar que guardaste. La escapada que tienes pendiente.
-          Encuentra inspiración y reúne todo lo que necesitas para dar
-          el siguiente paso.
+          Explora destinos, compara presupuestos y organiza los servicios
+          que necesitas para tu próximo viaje.
         </p>
 
         <div class="hero-actions">
           <a class="button button-primary" href="#destinos">
-            Explorar destinos
-            <span aria-hidden="true">↗</span>
+            Explorar destinos <span aria-hidden="true">↗</span>
           </a>
-
-          <a class="text-link" href="#servicios">
-            Organizar mi viaje
-            <span aria-hidden="true">→</span>
-          </a>
+          <a class="text-link" href="#servicios">Ver servicios →</a>
         </div>
 
-        <div class="hero-note">
-          <span class="note-number" aria-hidden="true">01 /</span>
-          <p>
-            Elige el destino.<br>
-            <strong>Haz tuya la experiencia.</strong>
-          </p>
-        </div>
+        <button class="hero-adviser" type="button" data-open-planner>
+          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+          <span>
+            <strong>¿No sabes qué destino elegir?</strong>
+            <small>Compara opciones según tus gustos y presupuesto.</small>
+          </span>
+          <span aria-hidden="true">↗</span>
+        </button>
       </div>
 
       <div class="hero-visual">
@@ -193,62 +145,33 @@
           fetchpriority="high"
         >
 
-        <div class="image-label">
-          <span class="image-label-kicker">LEJOS DE LA RUTINA</span>
-          <strong>Más paisajes.<br>Menos pendientes.</strong>
-        </div>
-
-        <div class="floating-note">
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-pin"/>
-          </svg>
-
-          <div>
-            <strong>Encuentra tu lugar</strong>
-            <span>Nosotros ponemos la inspiración.</span>
-          </div>
-        </div>
-      </div>
+        <button class="photo-link surprise-button" id="surprise-destination" type="button">
+  <span>
+    <strong>Sorpréndeme</strong>
+    <small>Descubre un destino al azar</small>
+  </span>
+  <span class="surprise-arrow" aria-hidden="true">↗</span>
+</button>
     </section>
 
-    <!-- BUSCADOR DE DESTINOS -->
-    <section
-      class="container search-section"
-      aria-labelledby="search-title"
-    >
-      <div class="search-topline">
-        <h2 id="search-title">¿Cuál será tu próximo rumbo?</h2>
-        <span>Empieza por una idea.</span>
-      </div>
+    <!-- BUSCADOR -->
+    <section class="container search-section" id="buscador" aria-labelledby="search-title">
+      <h2 id="search-title">Encuentra una opción para tu viaje</h2>
 
-      <form
-        class="search-form"
-        id="travel-search"
-        role="search"
-        aria-labelledby="search-title"
-      >
+      <form class="search-form" id="travel-search" role="search" aria-labelledby="search-title">
         <div class="search-field">
           <label for="destination">Destino</label>
-
-          <div class="input-wrapper">
-            <svg class="icon" aria-hidden="true">
-              <use href="#icon-pin"/>
-            </svg>
-
-            <input
-              type="search"
-              id="destination"
-              name="destination"
-              placeholder="País, ciudad o experiencia"
-            >
-          </div>
+          <input
+            type="search"
+            id="destination"
+            placeholder="País o ciudad"
+          >
         </div>
 
         <div class="search-field">
-          <label for="travel-style">Tu tipo de viaje</label>
-
-          <select id="travel-style" name="style">
-            <option value="all">Quiero explorar</option>
+          <label for="travel-style">Tipo de viaje</label>
+          <select id="travel-style">
+            <option value="all">Todos los estilos</option>
             <option value="playa">Playa y descanso</option>
             <option value="naturaleza">Naturaleza y aventura</option>
             <option value="cultura">Cultura y ciudad</option>
@@ -256,734 +179,452 @@
         </div>
 
         <div class="search-field">
-          <label for="budget">Presupuesto por persona</label>
-
-          <select id="budget" name="budget">
-            <option value="all">Ver todas las opciones</option>
-            <option value="800">Hasta 800 €</option>
-            <option value="1200">Hasta 1.200 €</option>
-            <option value="2000">Hasta 2.000 €</option>
+          <label for="budget">Presupuesto por persona · HNL</label>
+          <select id="budget">
+            <option value="all">Cualquier presupuesto</option>
+            <option value="20000">Hasta L 20,000</option>
+            <option value="35000">Hasta L 35,000</option>
+            <option value="50000">Hasta L 50,000</option>
           </select>
         </div>
 
-        <button
-          class="button button-primary search-button"
-          type="submit"
-        >
-          <svg class="icon" aria-hidden="true">
-            <use href="#icon-search"/>
-          </svg>
+        <button class="button button-primary" type="submit">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
           Buscar
         </button>
       </form>
 
       <p class="demo-note">
-        Catálogo de muestra: precios ficticios en euros, sin
-        disponibilidad ni reservas reales.
+        Catálogo de demostración. Importes ficticios en HNL, sin reservas reales.
       </p>
-
       <noscript>
-        <p class="demo-note">
-          Activa JavaScript para utilizar los filtros, la ayuda
-          interactiva y las ventanas informativas.
-        </p>
+        <p>Activa JavaScript para utilizar el buscador y el orientador.</p>
       </noscript>
     </section>
 
-    <!-- RESERVAS Y SERVICIOS -->
-    <section
-      class="section container"
-      id="servicios"
-      aria-labelledby="services-title"
-    >
+    <!-- SERVICIOS -->
+    <section class="section container" id="servicios" aria-labelledby="services-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">CADA PARTE DE TU VIAJE</p>
+          <p class="eyebrow">RESERVAS Y SERVICIOS</p>
           <h2 id="services-title">¿Qué necesitas organizar?</h2>
         </div>
-
-        <p>
-          Empieza por lo que ya tienes claro.<br>
-          El resto puede tomar forma en el camino.
-        </p>
       </div>
 
       <div class="booking-grid">
-        <!-- VUELOS -->
-        <article class="booking-card booking-card-featured booking-flight">
-          <div class="booking-top">
-            <span class="booking-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-plane"/>
-              </svg>
-            </span>
-
-            <span class="booking-label">EL PRIMER PASO</span>
-          </div>
-
-          <div class="booking-content">
-            <h3>Encuentra tu vuelo.</h3>
-
-            <p>
-              Ida, vuelta o una ruta con varias paradas.
-              Elige cómo quieres llegar a tu próximo destino.
-            </p>
-
-            <ul
-              class="booking-features"
-              aria-label="Opciones previstas para vuelos"
-            >
-              <li>Origen y destino</li>
-              <li>Fechas y pasajeros</li>
-              <li>Equipaje incluido</li>
-            </ul>
-          </div>
-
-          <button
-            class="button button-primary"
-            type="button"
-            data-module="flights"
-            aria-haspopup="dialog"
-          >
-            Buscar vuelos
-            <span aria-hidden="true">↗</span>
+        <article class="booking-card featured flight-card">
+          <span class="booking-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>
+          </span>
+          <h3>Vuelos</h3>
+          <p>
+            Busca por origen, destino, fechas y pasajeros.
+            Revisa escalas, equipaje y condiciones de cada tarifa.
+          </p>
+          <button class="button button-primary" type="button" data-module="flights">
+            Buscar vuelos <span aria-hidden="true">↗</span>
           </button>
         </article>
 
-        <!-- HOSPEDAJE -->
-        <article class="booking-card booking-card-featured booking-stay">
-          <div class="booking-top">
-            <span class="booking-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-bed"/>
-              </svg>
-            </span>
-
-            <span class="booking-label">TU LUGAR AL LLEGAR</span>
-          </div>
-
-          <div class="booking-content">
-            <h3>Quédate donde quieras estar.</h3>
-
-            <p>
-              Cerca del centro, frente al mar o lejos del ruido.
-              Encuentra una estancia que encaje con tu viaje.
-            </p>
-
-            <ul
-              class="booking-features"
-              aria-label="Opciones previstas para hospedaje"
-            >
-              <li>Ubicación</li>
-              <li>Tipo de estancia</li>
-              <li>Precio por noche</li>
-            </ul>
-          </div>
-
-          <button
-            class="button button-primary"
-            type="button"
-            data-module="stays"
-            aria-haspopup="dialog"
-          >
-            Consultar hospedaje
-            <span aria-hidden="true">↗</span>
+        <article class="booking-card featured stay-card">
+          <span class="booking-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg>
+          </span>
+          <h3>Hospedaje</h3>
+          <p>
+            Explora alojamientos por ubicación, fechas y huéspedes.
+            Compara el coste de la estancia y las condiciones de cancelación.
+          </p>
+          <button class="button button-primary" type="button" data-module="stays">
+            Consultar hospedaje <span aria-hidden="true">↗</span>
           </button>
         </article>
 
-        <!-- EXPERIENCIAS -->
         <article class="booking-card">
-          <div class="booking-top">
-            <span class="booking-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-pin"/>
-              </svg>
-            </span>
-
-            <span class="booking-category">DESCUBRE</span>
-          </div>
-
-          <div class="booking-content">
-            <h3>Experiencias y guías locales</h3>
-
-            <p>
-              Recorridos, actividades y nuevas formas de conocer
-              lo que hace especial a cada lugar.
-            </p>
-          </div>
-
-          <button
-            class="booking-action"
-            type="button"
-            data-module="experiences"
-            aria-haspopup="dialog"
-          >
-            Explorar actividades
-            <span aria-hidden="true">↗</span>
+          <span class="booking-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+          </span>
+          <h3>Experiencias y guías locales</h3>
+          <p>Actividades, recorridos y excursiones para conocer cada destino.</p>
+          <button class="booking-action" type="button" data-module="experiences">
+            Ver experiencias <span aria-hidden="true">↗</span>
           </button>
         </article>
 
-        <!-- TRASLADOS -->
         <article class="booking-card">
-          <div class="booking-top">
-            <span class="booking-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-transfer"/>
-              </svg>
-            </span>
-
-            <span class="booking-category">MUÉVETE</span>
-          </div>
-
-          <div class="booking-content">
-            <h3>Traslados y movilidad</h3>
-
-            <p>
-              Del aeropuerto al hospedaje y de ahí a tu siguiente parada.
-              Organiza también los trayectos cortos.
-            </p>
-          </div>
-
-          <button
-            class="booking-action"
-            type="button"
-            data-module="transfers"
-            aria-haspopup="dialog"
-          >
-            Consultar traslados
-            <span aria-hidden="true">↗</span>
+          <span class="booking-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-car"/></svg>
+          </span>
+          <h3>Traslados</h3>
+          <p>Organiza el transporte entre el aeropuerto, tu hospedaje y otras paradas.</p>
+          <button class="booking-action" type="button" data-module="transfers">
+            Consultar traslados <span aria-hidden="true">↗</span>
           </button>
         </article>
 
-        <!-- SEGUROS -->
         <article class="booking-card">
-          <div class="booking-top">
-            <span class="booking-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-shield"/>
-              </svg>
-            </span>
-
-            <span class="booking-category">PREVÉ</span>
-          </div>
-
-          <div class="booking-content">
-            <h3>Seguro de viaje</h3>
-
-            <p>
-              Un espacio para revisar coberturas, límites y exclusiones
-              antes de elegir cómo proteger tu viaje.
-            </p>
-          </div>
-
-          <button
-            class="booking-action"
-            type="button"
-            data-module="insurance"
-            aria-haspopup="dialog"
-          >
-            Conocer las opciones
-            <span aria-hidden="true">↗</span>
+          <span class="booking-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
+          </span>
+          <h3>Seguro de viaje</h3>
+          <p>Revisa coberturas, límites y exclusiones antes de contratar.</p>
+          <button class="booking-action" type="button" data-module="insurance">
+            Conocer opciones <span aria-hidden="true">↗</span>
           </button>
         </article>
 
-        <!-- ÚNICA TARJETA DE TIENDA -->
-        <article class="booking-card booking-shop" id="tienda">
-          <div class="booking-top">
-            <span class="booking-icon">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-bag"/>
-              </svg>
-            </span>
-
-            <span class="booking-category">EQUÍPATE</span>
-          </div>
-
-          <div class="booking-content">
-            <h3>La tienda del viajero</h3>
-
-            <p>
-              Maletas, mochilas, lentes, adaptadores y organizadores.
-              Todos tus esenciales en un solo lugar.
-            </p>
-          </div>
-
-          <button
-            class="booking-action"
-            type="button"
-            data-module="shop"
-            aria-haspopup="dialog"
-          >
-            Explorar la tienda
-            <span aria-hidden="true">↗</span>
+        <article class="booking-card shop-card" id="tienda" aria-labelledby="shop-title">
+          <span class="booking-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+          </span>
+          <h3 id="shop-title">Tienda de viaje</h3>
+          <p>Maletas, mochilas, lentes, adaptadores y accesorios en un solo catálogo.</p>
+          <button class="booking-action" type="button" data-module="shop">
+            Explorar tienda <span aria-hidden="true">↗</span>
           </button>
         </article>
       </div>
 
       <p class="demo-note">
-        Vista previa de los servicios: las búsquedas, cotizaciones y
-        compras se integrarán en la siguiente etapa del proyecto.
+        Los módulos de búsqueda, contratación y compra están pendientes de integración.
       </p>
     </section>
 
-    <!-- DESTINOS DESTACADOS -->
-    <section
-      class="destinations-section section"
-      id="destinos"
-      aria-labelledby="destinations-title"
-    >
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">ELIGE TU SIGUIENTE HISTORIA</p>
-            <h2 id="destinations-title">
-              Hay lugares que lo cambian todo.
-            </h2>
-          </div>
-
-          <button
-            class="text-link reset-button"
-            id="reset-filters"
-            type="button"
-          >
-            Ver todos los destinos
-            <span aria-hidden="true">↗</span>
-          </button>
-        </div>
-
-        <div class="results-line">
-          <p id="result-count" role="status" aria-live="polite">
-            3 destinos para descubrir
-          </p>
-
-          <span>Selección de demostración</span>
-        </div>
-
-        <div class="destinations-grid">
-          <!-- BALI -->
-          <article
-            class="destination-card"
-            data-search="bali indonesia playa descanso templos"
-            data-style="playa"
-            data-price="1190"
-          >
-            <div class="destination-image">
-              <img
-                src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&amp;fit=crop&amp;w=800&amp;q=85"
-                alt="Templo tradicional de Bali junto al agua"
-                width="800"
-                height="900"
-                loading="lazy"
-              >
-
-              <span class="image-tag">Playa &amp; calma</span>
-              <span class="destination-location">INDONESIA</span>
-            </div>
-
-            <div class="destination-body">
-              <div class="card-title-row">
-                <h3>Bali</h3>
-                <span>8 días / 7 noches</span>
-              </div>
-
-              <p>
-                Entre templos, arrozales y tardes que terminan
-                frente al mar.
-              </p>
-
-              <div class="card-bottom">
-                <div class="price">
-                  <small>Desde</small>
-                  <strong>1.190 € <span>/ persona</span></strong>
-                </div>
-
-                <button
-                  class="circle-link"
-                  type="button"
-                  data-trip="Bali"
-                  aria-label="Ver propuesta de Bali"
-                  aria-haspopup="dialog"
-                >
-                  <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- DOLOMITAS -->
-          <article
-            class="destination-card"
-            data-search="dolomitas italia naturaleza aventura montañas"
-            data-style="naturaleza"
-            data-price="690"
-          >
-            <div class="destination-image">
-              <img
-                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=800&amp;q=85"
-                alt="Paisaje de cumbres rocosas entre nubes, imagen de inspiración"
-                width="800"
-                height="900"
-                loading="lazy"
-              >
-
-              <span class="image-tag">Aire libre</span>
-              <span class="destination-location">ITALIA</span>
-            </div>
-
-            <div class="destination-body">
-              <div class="card-title-row">
-                <h3>Dolomitas</h3>
-                <span>6 días / 5 noches</span>
-              </div>
-
-              <p>
-                Senderos, lagos y una buena razón para dejar
-                el teléfono guardado.
-              </p>
-
-              <div class="card-bottom">
-                <div class="price">
-                  <small>Desde</small>
-                  <strong>690 € <span>/ persona</span></strong>
-                </div>
-
-                <button
-                  class="circle-link"
-                  type="button"
-                  data-trip="Dolomitas"
-                  aria-label="Ver propuesta de Dolomitas"
-                  aria-haspopup="dialog"
-                >
-                  <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- KIOTO -->
-          <article
-            class="destination-card"
-            data-search="kioto japon cultura ciudad templos"
-            data-style="cultura"
-            data-price="1590"
-          >
-            <div class="destination-image">
-              <img
-                src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&amp;fit=crop&amp;w=800&amp;q=85"
-                alt="Calle tradicional de Kioto con una pagoda al fondo"
-                width="800"
-                height="900"
-                loading="lazy"
-              >
-
-              <span class="image-tag">Cultura &amp; ciudad</span>
-              <span class="destination-location">JAPÓN</span>
-            </div>
-
-            <div class="destination-body">
-              <div class="card-title-row">
-                <h3>Kioto</h3>
-                <span>10 días / 9 noches</span>
-              </div>
-
-              <p>
-                Calles con historia, jardines silenciosos y nuevos
-                sabores por descubrir.
-              </p>
-
-              <div class="card-bottom">
-                <div class="price">
-                  <small>Desde</small>
-                  <strong>1.590 € <span>/ persona</span></strong>
-                </div>
-
-                <button
-                  class="circle-link"
-                  type="button"
-                  data-trip="Kioto"
-                  aria-label="Ver propuesta de Kioto"
-                  aria-haspopup="dialog"
-                >
-                  <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="empty-state" id="empty-state" hidden>
-          <h3>Tu próximo rumbo todavía está por aparecer.</h3>
-          <p>
-            Prueba otro destino, un estilo diferente o un
-            presupuesto más amplio.
-          </p>
-        </div>
-
-        <p class="demo-note">
-          Fotografías de inspiración. Los paquetes y sus servicios
-          incluidos están pendientes de definir.
-        </p>
-      </div>
-    </section>
-
-    <!-- GUÍAS E INSPIRACIÓN -->
-    <section
-      class="section container"
-      id="inspiracion"
-      aria-labelledby="inspiration-title"
-    >
-      <div class="editorial">
-        <div class="editorial-image">
-          <img
-            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
-            alt="Paisaje natural abierto al atardecer"
-            width="1100"
-            height="900"
-            loading="lazy"
-          >
-
-          <span class="editorial-caption">
-            EL VIAJE TAMBIÉN ESTÁ EN LOS PEQUEÑOS DETALLES.
-          </span>
-        </div>
-
-        <div class="editorial-copy">
-          <p class="eyebrow">EL CUADERNO DE RUMBO</p>
-
-          <h2 id="inspiration-title">
-            No solo se trata de llegar.<br>
-            Se trata de descubrir.
-          </h2>
-
-          <p>
-            Dedica menos tiempo a improvisar lo imprescindible y más
-            a disfrutar lo inesperado. Empieza con estas ideas para
-            preparar tu salida.
-          </p>
-
-          <a class="guide-link" href="#guia-presupuesto">
-            <span>
-              <small>01 / ORGANIZACIÓN</small>
-              Un presupuesto que sí te acompañe
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a class="guide-link" href="#guia-equipaje">
-            <span>
-              <small>02 / EQUIPAJE</small>
-              Lleva menos. Disfruta más.
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          <a class="guide-link" href="#guia-documentos">
-            <span>
-              <small>03 / ANTES DE SALIR</small>
-              Los detalles que conviene revisar
-            </span>
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="guide-details">
-        <details id="guia-presupuesto">
-          <summary>Cómo organizar tu presupuesto</summary>
-
-          <p>
-            Separa transporte, hospedaje, comidas y actividades.
-            Reserva también una parte para imprevistos y revisa qué
-            incluye cada tarifa antes de comparar opciones. El buscador
-            de Rumbo permite explorar los ejemplos según tu presupuesto
-            por persona.
-          </p>
-        </details>
-
-        <details id="guia-equipaje">
-          <summary>Qué llevar en tu equipaje</summary>
-
-          <p>
-            Prepara ropa combinable según el clima, calzado cómodo,
-            cargadores y tus artículos de uso diario. Lleva la
-            documentación y los objetos de valor contigo. Confirma las
-            medidas, el peso y los artículos permitidos directamente
-            con tu aerolínea.
-          </p>
-        </details>
-
-        <details id="guia-documentos">
-          <summary>Qué revisar antes de viajar</summary>
-
-          <p>
-            Comprueba la vigencia de tu documentación, los requisitos
-            de entrada y las recomendaciones oficiales del destino.
-            Revisa también las condiciones de cambio, cancelación y
-            cobertura de cualquier seguro que decidas contratar.
-          </p>
-        </details>
-      </div>
-    </section>
-
-    <!-- LISTA DE PREPARACIÓN -->
-    <!-- PLAN PERSONALIZADO: CONECTADO CON EL CHAT -->
+    <!-- DESTINOS -->
+    <!-- CARRUSEL DE DESTINOS -->
 <section
-  class="container trip-starter"
-  aria-labelledby="trip-starter-title"
+  class="section destinations-section"
+  id="destinos"
+  aria-labelledby="destinations-title"
 >
-  <div class="trip-starter-copy">
-    <p class="eyebrow">DE “ALGÚN DÍA” A UNA PRIMERA IDEA</p>
-
-    <h2 id="trip-starter-title">
-      Tu viaje no tiene que empezar con todas las respuestas.
-    </h2>
-
-    <p>
-      Cuéntanos con quién viajas, qué te gustaría vivir y cuánto
-      quieres destinar. Te ayudamos a encontrar un punto de partida.
-    </p>
-
-    <button
-      class="button button-primary"
-      id="start-trip-plan"
-      type="button"
-      aria-controls="help-chat"
-    >
-      Crear mi primera idea
-      <span aria-hidden="true">↗</span>
-    </button>
-
-    <p class="trip-starter-note">
-      Sin registro. Tu selección permanece solo mientras esta página
-      siga abierta. No se realiza ninguna reserva.
-    </p>
-  </div>
-
-  <div class="trip-outline" aria-labelledby="outline-title">
-    <div class="trip-outline-header">
-      <span class="outline-mark" aria-hidden="true">↗</span>
-
+  <div class="container">
+    <div class="section-heading">
       <div>
-        <p class="eyebrow">TU PUNTO DE PARTIDA</p>
-        <h3 id="outline-title">Un viaje que encaje contigo.</h3>
-      </div>
-    </div>
-
-    <dl class="trip-outline-list">
-      <div>
-        <dt>Compañía</dt>
-        <dd id="plan-company">¿Solo, en pareja o en grupo?</dd>
-      </div>
-
-      <div>
-        <dt>Experiencia</dt>
-        <dd id="plan-experience">¿Descanso, naturaleza o cultura?</dd>
-      </div>
-
-      <div>
-        <dt>Presupuesto total</dt>
-        <dd id="plan-budget">Tú marcas el punto de partida.</dd>
-      </div>
-    </dl>
-
-    <p class="trip-outline-footer" id="plan-result">
-      Completa la conversación para comparar los destinos de muestra.
-    </p>
-  </div>
-</section>
-    <!-- AYUDA -->
-    <section
-      class="container help-banner"
-      aria-labelledby="help-title"
-    >
-      <div class="help-symbol" aria-hidden="true">↗</div>
-
-      <div class="help-copy">
-        <p class="eyebrow">
-          NO TIENES QUE TENERLO TODO DECIDIDO
-        </p>
-
-        <h2 id="help-title">
-          Un buen viaje empieza con una buena pregunta.
-        </h2>
-
-        <p>
-          Te orientamos sobre destinos, presupuesto, equipaje
-          y cómo navegar por Rumbo.
+        <h2 id="destinations-title">Destinos para explorar</h2>
+        <p class="destination-intro">
+          Opciones en Honduras y fuera de ella para empezar a comparar.
         </p>
       </div>
 
       <button
-        class="button button-light"
-        id="open-help"
+        class="button button-outline"
+        id="reset-filters"
         type="button"
-        aria-controls="help-chat"
       >
-        Abrir ayuda
-        <svg class="icon" aria-hidden="true">
-          <use href="#icon-chat"/>
-        </svg>
+        Mostrar todos
       </button>
+    </div>
+
+    <div class="carousel-toolbar">
+      <p
+        class="results-line"
+        id="result-count"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <div class="carousel-controls" aria-label="Controles de destinos">
+        <button
+          class="carousel-arrow"
+          id="destinations-prev"
+          type="button"
+          aria-label="Ver destinos anteriores"
+          aria-controls="destinations-track"
+        >←</button>
+
+        <button
+          class="carousel-arrow"
+          id="destinations-next"
+          type="button"
+          aria-label="Ver siguientes destinos"
+          aria-controls="destinations-track"
+        >→</button>
+      </div>
+    </div>
+
+    <div
+      class="destinations-track"
+      id="destinations-track"
+      role="region"
+      aria-label="Destinos de muestra, desplázate para ver más"
+      tabindex="0"
+    ></div>
+
+    <div class="empty-state" id="empty-state" hidden>
+      <h3>No hay coincidencias en este catálogo.</h3>
+      <p>Prueba otro destino, estilo o presupuesto.</p>
+    </div>
+
+    <noscript>
+      <p>Activa JavaScript para consultar el catálogo de destinos.</p>
+    </noscript>
+
+    <p class="demo-note">
+      Fotografías ilustrativas. Importes ficticios en HNL, sin disponibilidad
+      verificada ni servicios incluidos definidos.
+    </p>
+  </div>
+</section>
+
+    <!-- GUÍAS: el menú conduce a esta sección -->
+    <section class="section container" id="guias" aria-labelledby="guides-title">
+      <div class="guides-layout">
+        <div class="guides-image">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+            alt="Paisaje natural al atardecer"
+            width="1000" height="900" loading="lazy"
+          >
+        </div>
+
+        <div>
+          <h2 id="guides-title">Guías para preparar tu viaje</h2>
+          <p class="section-description">
+            Consulta recomendaciones de presupuesto, equipaje y documentación.
+          </p>
+
+          <div class="guide-details">
+            <details id="guia-presupuesto">
+              <summary>Cómo organizar tu presupuesto</summary>
+              <p>
+                Separa transporte, hospedaje, comidas, traslados y actividades.
+                Reserva una cantidad para imprevistos. Comprueba qué incluye
+                cada tarifa y su moneda antes de comparar o pagar.
+              </p>
+            </details>
+            <details id="guia-equipaje">
+              <summary>Qué llevar en tu equipaje</summary>
+              <p>
+                Prepara ropa según el clima, calzado cómodo y tus artículos
+                de uso diario. Lleva contigo documentación y objetos de valor.
+                Confirma medidas, peso y artículos permitidos con tu aerolínea.
+              </p>
+            </details>
+            <details id="guia-documentos">
+              <summary>Documentación y requisitos de entrada</summary>
+              <p>
+                Revisa la vigencia de tus documentos y los requisitos oficiales
+                de entrada y tránsito. Consulta también las condiciones de
+                cambio, cancelación y cualquier cobertura que contrates.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
     </section>
-  </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a
-          class="logo"
-          href="#"
-          aria-label="Rumbo, volver al inicio"
-        >
-          rumbo<span aria-hidden="true">↗</span>
-        </a>
+    <!-- ORIENTACIÓN PERSONALIZADA -->
+    <!-- PASE DE VIAJE INTERACTIVO -->
+<section
+  class="container trip-starter pass-section"
+  aria-labelledby="plan-title"
+>
+  <div class="trip-starter-copy">
+    <p class="eyebrow">TU IDEA, EN UN PASE</p>
 
-        <p>
-          Tu próxima historia comienza<br>
-          con un nuevo rumbo.
-        </p>
+    <h2 id="plan-title">Dale forma a tu próximo viaje.</h2>
+
+    <p>
+      Responde las preguntas del orientador. Tu pase se completará
+      con los viajeros, la experiencia y el presupuesto que elijas.
+      Después podrás guardarlo o compartirlo.
+    </p>
+
+    <button
+      class="button button-primary"
+      type="button"
+      data-open-planner
+    >
+      Crear mi pase
+      <span aria-hidden="true">↗</span>
+    </button>
+
+    <p class="demo-note">
+      Es un recuerdo de tu idea, no un boleto ni una reserva.
+      No necesitas introducir nombres ni documentos.
+    </p>
+  </div>
+
+  <div class="pass-workspace">
+    <article
+      class="boarding-pass"
+      id="boarding-pass"
+      aria-labelledby="pass-title"
+    >
+      <div class="pass-header">
+        <span class="pass-brand">rumbo↗</span>
+        <span class="pass-status" id="pass-status">Por completar</span>
       </div>
 
-      <nav aria-label="Explorar">
+      <div class="pass-main">
+        <p class="pass-kicker" id="pass-title">PASE DE INSPIRACIÓN</p>
+
+        <div class="pass-route">
+          <div>
+            <span class="pass-field-label">Desde</span>
+            <strong class="pass-origin">TU IDEA</strong>
+          </div>
+
+          <span class="pass-route-arrow" aria-hidden="true">↗</span>
+
+          <div class="pass-destination">
+            <span class="pass-field-label">Destino</span>
+            <strong id="pass-destination-name">Por descubrir</strong>
+          </div>
+        </div>
+
+        <div class="pass-progress-track" aria-hidden="true">
+          <span id="pass-progress-fill"></span>
+        </div>
+
+        <p class="pass-progress-text" id="pass-progress-text">
+          0 de 4 datos completados
+        </p>
+
+        <dl class="pass-data">
+          <div>
+            <dt>Viajeros</dt>
+            <dd id="plan-company">Por definir</dd>
+          </div>
+          <div>
+            <dt>Experiencia</dt>
+            <dd id="plan-experience">Por definir</dd>
+          </div>
+          <div class="pass-budget">
+            <dt>Presupuesto total · HNL</dt>
+            <dd id="plan-budget">Por definir</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="pass-stub">
+        <div>
+          <span class="pass-field-label">Ruta conceptual</span>
+          <strong id="pass-route-code">RMB — —</strong>
+        </div>
+        <div>
+          <span class="pass-field-label">Código de tu idea</span>
+          <strong id="pass-idea-code">Pendiente</strong>
+        </div>
+      </div>
+
+      <p class="pass-disclaimer">
+        Inspiración · No válido para viajar · Sin reserva
+      </p>
+    </article>
+
+    <div class="pass-destination-picker" id="pass-picker" hidden>
+      <label for="pass-destination-select">Elige el destino de tu pase</label>
+      <select id="pass-destination-select"></select>
+    </div>
+
+    <p class="pass-result" id="plan-result">
+      Tu pase se actualizará mientras conversas.
+    </p>
+
+    <div class="pass-actions">
+      <button
+        class="button button-primary"
+        id="download-pass"
+        type="button"
+        disabled
+      >
+        Descargar pase
+      </button>
+
+      <button
+        class="button button-outline"
+        id="share-pass"
+        type="button"
+        disabled
+      >
+        Compartir
+      </button>
+    </div>
+
+    <p
+      class="pass-feedback"
+      id="pass-feedback"
+      role="status"
+      aria-live="polite"
+    ></p>
+  </div>
+</section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contacto">
+    <div class="container footer-top">
+      <div>
+        <a class="logo" href="#inicio" aria-label="Rumbo, volver al inicio">
+          rumbo<span aria-hidden="true">↗</span>
+        </a>
+        <p>Viajes, servicios y accesorios.</p>
+      </div>
+      <a class="back-top" href="#inicio">Volver arriba <span aria-hidden="true">↑</span></a>
+    </div>
+
+    <div class="container footer-grid">
+      <nav class="footer-column" aria-label="Explorar Rumbo">
         <h2>Explora</h2>
         <a href="#destinos">Destinos</a>
         <a href="#servicios">Reservas y servicios</a>
         <a href="#tienda">Tienda de viaje</a>
+        <a href="#guias">Guías de viaje</a>
       </nav>
 
-      <nav aria-label="Preparar el viaje">
-        <h2>Antes de salir</h2>
-        <a href="#guia-presupuesto">Presupuesto</a>
-        <a href="#guia-equipaje">Guía de equipaje</a>
-        <a href="#guia-documentos">Documentación</a>
-      </nav>
+      <div class="footer-column">
+        <h2>Ayuda</h2>
+        <button type="button" data-open-help>Orientador de viajes</button>
+        <button type="button" data-module="faq">Preguntas frecuentes</button>
+        <button type="button" data-module="changes">Cambios y cancelaciones</button>
+        <button type="button" data-module="support">Centro de ayuda</button>
+      </div>
 
-      <div class="footer-project">
-        <h2>Una nueva forma de empezar</h2>
+      <div class="footer-column">
+        <h2>Nosotros</h2>
+        <button type="button" data-module="about">Acerca de Rumbo</button>
+        <button type="button" data-module="team">Nuestro equipo</button>
+        <button type="button" data-module="privacy">Privacidad</button>
+        <button type="button" data-module="terms">Términos y condiciones</button>
+      </div>
 
-        <p>
-          Viajes, ideas y esenciales reunidos alrededor
-          de tu próxima aventura.
-        </p>
+      <div class="footer-column">
+        <h2>Teléfonos</h2>
+        <address>
+          <a href="tel:+50496767669">+504 9676-7669</a>
+          <a href="tel:+50494525271">+504 9452-5271</a>
+          <a href="tel:+50499584929">+504 9958-4929</a>
+          <a href="tel:+50495197994">+504 9519-7994</a>
+        </address>
+      </div>
 
-        <span class="prototype-label">
-          Prototipo de diseño · Sin pagos reales
-        </span>
+      <div class="footer-column footer-emails">
+        <h2>Correo electrónico</h2>
+        <address>
+          <a href="mailto:allanramos@franciscojavier.edu.hn">
+            allanramos@franciscojavier.edu.hn
+          </a>
+          <a href="mailto:omartabora@franciscojavier.edu.hn">
+            omartabora@franciscojavier.edu.hn
+          </a>
+          <a href="mailto:diannymoreira@franciscojavier.edu.hn">
+            diannymoreira@franciscojavier.edu.hn
+          </a>
+          <a href="mailto:dilanbanegas@franciscojavier.edu.hn">
+            dilanbanegas@franciscojavier.edu.hn
+          </a>
+        </address>
       </div>
     </div>
 
     <div class="container footer-bottom">
-      <p>
-        © <span id="year">2026</span> Rumbo.
-        Proyecto de demostración.
-      </p>
-
-      <p>Hecho para explorar, a tu ritmo.</p>
+      <p>© <span id="year">2026</span> Rumbo · Proyecto de demostración.</p>
+      <p>Honduras · HNL · Sin reservas ni pagos reales</p>
     </div>
   </footer>
 
-  <!-- BOTÓN FLOTANTE DEL CHAT -->
+  <!-- CHAT -->
   <button
     class="chat-launcher"
     id="chat-launcher"
@@ -991,97 +632,67 @@
     aria-expanded="false"
     aria-controls="help-chat"
   >
-    <svg class="icon" aria-hidden="true">
-      <use href="#icon-chat"/>
-    </svg>
-
-    <span>¿Te orientamos?</span>
+    <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+    <span>Planear mi viaje</span>
   </button>
 
-  <!-- CHAT DE ORIENTACIÓN -->
-  <section
-    class="chat-panel"
-    id="help-chat"
-    aria-labelledby="chat-title"
-    hidden
-  >
+  <section class="chat-panel" id="help-chat" aria-labelledby="chat-title" hidden>
     <div class="chat-header">
       <div>
-        <h2 id="chat-title">Ayuda Rumbo</h2>
-        <p>Orientación rápida · respuestas predefinidas</p>
+        <h2 id="chat-title">Orientador Rumbo</h2>
+        <p>Presupuestos de muestra en lempiras</p>
       </div>
-
       <button
-        class="chat-close"
+        class="close-button"
         id="close-chat"
         type="button"
-        aria-label="Cerrar ayuda"
+        aria-label="Cerrar chat"
       >
-        <span aria-hidden="true">×</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
       </button>
     </div>
+
+    <div class="chat-progress" id="chat-step-label">¿Cómo podemos orientarte?</div>
 
     <div
       class="chat-messages"
       id="chat-messages"
       role="log"
-      aria-label="Conversación de ayuda"
+      aria-label="Conversación"
       aria-live="polite"
       aria-relevant="additions"
-    >
-      <p class="chat-message">
-        ¡Hola! Te ayudo a encontrar el apartado que necesitas.
-        ¿Por dónde quieres empezar?
-      </p>
+      tabindex="0"
+    ></div>
+
+    <div class="chat-options" id="chat-options" role="group" aria-label="Respuestas sugeridas"></div>
+
+    <form class="chat-form" id="chat-form">
+      <label for="chat-input">Tu respuesta</label>
+      <div class="chat-input-row">
+        <input
+          id="chat-input"
+          type="text"
+          placeholder="Escribe aquí"
+          maxlength="240"
+          autocomplete="off"
+          required
+        >
+        <button class="chat-send" type="submit" aria-label="Enviar mensaje">↑</button>
+      </div>
+    </form>
+
+    <div class="chat-tools">
+      <button type="button" id="chat-restart">Empezar de nuevo</button>
+      <span>Sin registro</span>
     </div>
-
-    <div class="chat-options" aria-label="Preguntas frecuentes">
-      <button type="button" data-help="destinations">
-        Elegir un destino
-      </button>
-
-      <button type="button" data-help="budget">
-        Ajustar mi presupuesto
-      </button>
-
-      <button type="button" data-help="luggage">
-        Preparar mi equipaje
-      </button>
-
-      <button type="button" data-help="booking">
-        ¿Puedo reservar aquí?
-      </button>
-
-      <button type="button" data-help="services">
-        ¿Qué puedo organizar?
-      </button>
-    </div>
-
-    <p class="chat-disclaimer">
-      No solicita datos personales ni procesa compras.
-    </p>
+    <p class="chat-disclaimer">Orientación programada · No consulta precios reales.</p>
   </section>
 
-  <!-- VENTANA PARA LOS MÓDULOS PENDIENTES -->
-  <dialog
-    class="module-dialog"
-    id="module-dialog"
-    aria-labelledby="module-title"
-    aria-describedby="module-description"
-  >
-    <p class="eyebrow">VISTA PREVIA · RUMBO</p>
-
+  <dialog id="module-dialog" class="module-dialog" aria-labelledby="module-title" aria-describedby="module-description">
     <h2 id="module-title"></h2>
     <p id="module-description"></p>
-
     <form method="dialog">
-      <button
-        class="button button-primary"
-        type="submit"
-        autofocus
-      >
-        Entendido
-      </button>
+      <button class="button button-primary" type="submit" autofocus>Entendido</button>
     </form>
   </dialog>
 </body>

@@ -18,6 +18,9 @@
   >
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+
+  <script src="viajes.js" defer></script>
+
 </head>
 
 <body>
@@ -413,6 +416,10 @@
       </div>
     </section>
 
+    <div class="container">
+      <a class="button button-outline" id="rv-open-catalog" href="viajes.html">Ver destinos, vuelos y hoteles ↗</a>
+    </div>
+
     <!-- ORIENTACIÓN PERSONALIZADA -->
     <!-- PASE DE VIAJE INTERACTIVO -->
 <section
@@ -540,6 +547,14 @@
       >
         Compartir
       </button>
+    </div>
+
+    <div id="rv-pass-services" hidden>
+      <p class="demo-note">Continúa con tu idea: el subtotal dependerá del vuelo y hotel que elijas.</p>
+      <div class="pass-actions">
+        <a class="button button-primary" id="rv-pass-flight" href="viajes.html?pantalla=vuelos">Elegir vuelo ↗</a>
+        <a class="button button-outline" id="rv-pass-hotel" href="viajes.html?pantalla=hoteles">Elegir hotel ↗</a>
+      </div>
     </div>
 
     <p

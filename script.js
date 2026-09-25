@@ -3,6 +3,7 @@
 
   function init() {
     const $ = selector => document.querySelector(selector);
+    if (!$("#travel-search") || !$("#help-chat")) return;
 
     const normalize = value => String(value)
       .normalize("NFD")
@@ -19,15 +20,10 @@
       if (element) element.textContent = text;
     };
 
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    );
-
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     setText("#year", new Date().getFullYear());
 
-    /* CATÁLOGO FICTICIO EN HNL
-       Las imágenes son ilustrativas, no prueba de disponibilidad. */
-
+    /* CATÁLOGO FICTICIO EN HNL */
     const catalog = [
       {
         id: "roatan",
@@ -98,8 +94,7 @@
       all: "Sin preferencia"
     };
 
-    /* MODALES */
-
+    /* DIÁLOGOS */
     const modules = {
       login: [
         "Iniciar sesión",
@@ -147,7 +142,7 @@
       ],
       support: [
         "Centro de ayuda",
-        "Los contactos del equipo están disponibles en el footer. No hay un sistema de tickets."
+        "Encontrarás los teléfonos y correos del equipo al final de esta página."
       ],
       about: [
         "Acerca de Rumbo",
@@ -181,8 +176,12 @@
       });
     });
 
-    /* DESTINOS Y CARRUSEL */
+    /*
+     * viajes.js conserva la navegación de vuelos, hospedaje y tarjetas.
+     * Estos diálogos mantienen el comportamiento de respaldo del inicio.
+     */
 
+    /* DESTINOS Y CARRUSEL */
     const track = $("#destinations-track");
     const searchForm = $("#travel-search");
     const previous = $("#destinations-prev");
@@ -201,7 +200,7 @@
         const card = document.createElement("article");
         card.className = "destination-card";
 
-        // Solo se interpola el catálogo fijo definido en este archivo.
+        // Solo se interpola el catálogo fijo, nunca mensajes del usuario.
         card.innerHTML = `
           <div class="destination-image">
             <img
@@ -213,21 +212,17 @@
             >
             <span class="image-tag">${trip.country}</span>
           </div>
-
           <div class="destination-body">
             <div class="card-title-row">
               <h3>${trip.name}</h3>
               <span>${trip.duration}</span>
             </div>
-
             <p>${trip.description}</p>
-
             <div class="card-bottom">
               <div class="price">
                 <small>Base de muestra por persona</small>
                 <strong>${money(trip.price)} <span>HNL</span></strong>
               </div>
-
               <button
                 class="circle-link"
                 type="button"
@@ -279,7 +274,6 @@
       if (!card) return;
 
       const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-
       track.scrollBy({
         left: direction * (card.getBoundingClientRect().width + gap),
         behavior: reducedMotion.matches ? "instant" : "smooth"
@@ -310,7 +304,6 @@
 
     $("#surprise-destination").addEventListener("click", () => {
       const trip = catalog[Math.floor(Math.random() * catalog.length)];
-
       showDestination(trip);
       $("#destinos").scrollIntoView({ block: "start" });
       setText("#result-count", `Tu destino al azar: ${trip.name}`);
@@ -319,7 +312,6 @@
     renderDestinations(catalog);
 
     /* GUÍAS */
-
     function openGuide(hash) {
       if (!hash.startsWith("#guia-")) return;
       const guide = document.getElementById(hash.slice(1));
@@ -334,8 +326,7 @@
     window.addEventListener("hashchange", () => openGuide(location.hash));
     openGuide(location.hash);
 
-    /* ESTADO DEL PLAN Y DEL PASE */
-
+    /* ESTADO DEL PLAN */
     const emptyPlan = () => ({
       company: "",
       people: 0,
@@ -347,6 +338,7 @@
     let step = "home";
     let chosenDestination = null;
     let ideaCode = "";
+    let history = [];
 
     function updatePass(message) {
       const completed = [
@@ -360,33 +352,32 @@
         "#plan-company",
         plan.company
           ? `${plan.company}${plan.people
-              ? ` · ${plan.people} ${plan.people === 1 ? "persona" : "personas"}`
-              : ""}`
+            ? ` · ${plan.people} ${plan.people === 1 ? "persona" : "personas"}`
+            : ""}`
           : "Por definir"
       );
 
       setText("#plan-experience", styles[plan.style] || "Por definir");
       setText("#plan-budget", plan.budget ? money(plan.budget) : "Por definir");
       setText("#pass-progress-text", `${completed} de 4 datos completados`);
-
       $("#pass-progress-fill").style.width = `${completed * 25}%`;
 
       const ready = Boolean(chosenDestination && completed === 4);
-
       $("#boarding-pass").classList.toggle("is-ready", ready);
       $("#download-pass").disabled = !ready;
       $("#share-pass").disabled = !ready;
+      $("#chat-back").disabled = history.length === 0;
+
+      setText(
+        "#planner-button-label",
+        ready ? "Editar mi pase" : completed ? "Continuar mi pase" : "Crear mi pase"
+      );
 
       setText(
         "#pass-status",
         ready ? "Idea preparada" : completed ? "En preparación" : "Por completar"
       );
-
-      setText(
-        "#pass-destination-name",
-        chosenDestination?.name || "Por descubrir"
-      );
-
+      setText("#pass-destination-name", chosenDestination?.name || "Por descubrir");
       setText("#pass-route-code", chosenDestination?.code || "RMB — —");
       setText("#pass-idea-code", ideaCode || "Pendiente");
 
@@ -403,7 +394,7 @@
     }
 
     function createIdeaCode() {
-      // Identificador decorativo local, NO es un localizador de reserva.
+      // Código decorativo local; no es un localizador de reserva.
       const bytes = new Uint8Array(4);
       crypto.getRandomValues(bytes);
       return "IDEA-" + Array.from(
@@ -431,7 +422,6 @@
 
       chosenDestination = destinations[0];
       ideaCode = createIdeaCode();
-
       $("#pass-picker").hidden = destinations.length < 2;
 
       updatePass(
@@ -447,9 +437,7 @@
       updatePass();
     });
 
-    /* EXPORTAR PASE A PNG
-       Dibujo propio: no necesita librerías ni fotografías externas. */
-
+    /* DESCARGA Y COMPARTIR */
     function getPassSnapshot() {
       if (!chosenDestination || !plan.budget) return null;
 
@@ -478,10 +466,8 @@
 
         ctx.fillStyle = "#edf3f1";
         ctx.fillRect(0, 0, 1200, 1450);
-
         ctx.fillStyle = "#fffefb";
         ctx.fillRect(70, 70, 1060, 1300);
-
         ctx.fillStyle = "#065f68";
         ctx.fillRect(70, 70, 1060, 180);
 
@@ -513,21 +499,16 @@
 
         text("VIAJEROS", 130, 650, 23, "#52636c");
         text(
-          `${data.company} · ${data.people} ${
-            data.people === 1 ? "persona" : "personas"
-          }`,
+          `${data.company} · ${data.people} ${data.people === 1 ? "persona" : "personas"}`,
           130, 705, 35
         );
-
         text("PREFERENCIA", 130, 795, 23, "#52636c");
         text(data.preference, 130, 850, 35);
-
         text("PRESUPUESTO TOTAL · HNL", 130, 945, 23, "#52636c");
         text(money(data.budget), 130, 1015, 62, "#065f68", 600);
 
         ctx.fillStyle = "#fbf2e3";
         ctx.fillRect(70, 1080, 1060, 290);
-
         ctx.beginPath();
         ctx.setLineDash([12, 10]);
         ctx.strokeStyle = "#c4d2ca";
@@ -539,10 +520,8 @@
 
         text("RUTA CONCEPTUAL", 130, 1145, 22, "#52636c");
         text(data.route, 130, 1200, 34, "#183044", 600);
-
         text("CÓDIGO DE TU IDEA", 570, 1145, 22, "#52636c");
         text(data.code, 570, 1200, 31, "#183044", 600);
-
         text("NO VÁLIDO PARA VIAJAR · SIN RESERVA", 130, 1280, 25, "#65563f", 600);
         text("Presupuesto personal. No es una cotización.", 130, 1325, 23, "#65563f");
 
@@ -556,13 +535,11 @@
     function downloadBlob(blob, filename) {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
-
       link.href = url;
       link.download = filename;
       document.body.appendChild(link);
       link.click();
       link.remove();
-
       setTimeout(() => URL.revokeObjectURL(url), 30000);
     }
 
@@ -590,8 +567,7 @@
         "Pase de inspiración, sin reserva.";
 
       try {
-        // Compartir texto directamente conserva la activación del clic.
-        // Para compartir la imagen, se descarga y adjunta desde el dispositivo.
+        // Se invoca directamente para conservar la activación del clic.
         if (navigator.share) {
           await navigator.share({
             title: "Mi pase de inspiración · Rumbo",
@@ -604,7 +580,10 @@
         } else {
           const blob = await createPassImage(snapshot);
           downloadBlob(blob, `rumbo-${snapshot.code.toLowerCase()}.png`);
-          setText("#pass-feedback", "Tu navegador no permite compartir aquí. Guarda la imagen y adjúntala.");
+          setText(
+            "#pass-feedback",
+            "Tu navegador no permite compartir aquí. Guarda la imagen y adjúntala."
+          );
         }
       } catch (error) {
         if (error.name === "AbortError") return;
@@ -613,13 +592,11 @@
     });
 
     /* CHAT */
-
     const panel = $("#help-chat");
     const launcher = $("#chat-launcher");
     const messages = $("#chat-messages");
     const options = $("#chat-options");
     const input = $("#chat-input");
-
     const planButtons = [...document.querySelectorAll("[data-open-planner]")];
     const helpButtons = [...document.querySelectorAll("[data-open-help]")];
     const openButtons = [launcher, ...planButtons, ...helpButtons];
@@ -638,6 +615,9 @@
       panel.hidden = false;
       setExpanded(true);
       $("#close-chat").focus();
+      requestAnimationFrame(() => {
+        messages.scrollTop = messages.scrollHeight;
+      });
     }
 
     function closeChat(restoreFocus = true) {
@@ -666,7 +646,6 @@
           closeChat(false);
 
           const target = document.getElementById(linkData.href.slice(1));
-
           if (target) {
             if (!target.hasAttribute("tabindex")) {
               target.setAttribute("tabindex", "-1");
@@ -682,6 +661,12 @@
       }
 
       messages.appendChild(message);
+
+      // Limita el historial visual y evita interpretar mensajes como HTML.
+      while (messages.children.length > 80) {
+        messages.firstElementChild.remove();
+      }
+
       messages.scrollTop = messages.scrollHeight;
     }
 
@@ -692,10 +677,16 @@
         const button = document.createElement("button");
         button.type = "button";
         button.textContent = label;
+
         button.addEventListener("click", () => {
           handleMessage(value, label);
-          input.focus();
+          if (options.firstElementChild) {
+            options.firstElementChild.focus({ preventScroll: true });
+          } else {
+            input.focus({ preventScroll: true });
+          }
         });
+
         options.appendChild(button);
       });
     }
@@ -719,12 +710,10 @@
         setText("#chat-step-label", "2 de 4 · Viajeros");
         input.placeholder = "Número de personas";
         input.inputMode = "numeric";
-
         addMessage(
           "¿Cuántas personas viajan, incluyéndote? Indica entre 2 y 12. " +
           "No calculo tarifas infantiles ni descuentos de grupo."
         );
-
         showOptions([
           ["2 personas", "2"],
           ["3 personas", "3"],
@@ -749,13 +738,11 @@
         setText("#chat-step-label", "4 de 4 · Presupuesto total");
         input.placeholder = "Total en HNL. Ejemplo: 30000";
         input.inputMode = "numeric";
-
         addMessage(
           `¿Cuál es el presupuesto TOTAL en lempiras para ${
             plan.people === 1 ? "ti" : `las ${plan.people} personas`
-          }?\nEscribe una cantidad entera sin puntos ni comas. Ejemplo: 30000.`
+          }?\nPuedes escribir 30000, 30,000 o 30 mil. No uses decimales.`
         );
-
         showOptions([
           ["L 15,000", "15000"],
           ["L 30,000", "30000"],
@@ -766,11 +753,10 @@
 
     function startPlan(clear = false) {
       if (clear) messages.replaceChildren();
-
       plan = emptyPlan();
+      history = [];
       step = "company";
       input.value = "";
-
       clearPass();
       askQuestion();
     }
@@ -838,10 +824,7 @@
           "Tu pase está preparado. Puedes elegir otro destino recomendado, " +
           "descargarlo o compartir el resumen.",
           false,
-          {
-            label: "Ver mi pase →",
-            href: "#boarding-pass"
-          }
+          { label: "Ver mi pase →", href: "#boarding-pass" }
         );
       }
 
@@ -854,6 +837,16 @@
 
     function answerHelp(topic) {
       const answers = {
+        documentos: {
+          text: "Comprueba la vigencia de tus documentos y los requisitos oficiales de entrada y tránsito del destino.",
+          href: "#guia-documentos",
+          label: "Ver guía de documentos →"
+        },
+        tienda: {
+          text: "La tienda reúne maletas, mochilas y accesorios para tu viaje.",
+          href: "tienda.html",
+          label: "Explorar tienda →"
+        },
         presupuesto: {
           text: "Separa transporte, hospedaje, comidas, traslados, actividades " +
             "e imprevistos. Comprueba qué incluye cada tarifa. Aquí trabajamos en HNL.",
@@ -867,8 +860,8 @@
           label: "Ver guía de equipaje →"
         },
         servicios: {
-          text: "Rumbo tiene previstos vuelos, hospedaje, experiencias, " +
-            "traslados, seguros y tienda. No se pueden contratar todavía.",
+          text: "Puedes explorar los módulos de vuelos, hospedaje y tienda. " +
+            "Experiencias, traslados y seguros siguen pendientes de integración.",
           href: "#servicios",
           label: "Ver servicios →"
         }
@@ -878,7 +871,8 @@
         addMessage(answers[topic].text, false, answers[topic]);
       } else {
         addMessage(
-          "Escribe «planear», «reiniciar», «presupuesto», «equipaje» o «servicios». " +
+          "Puedo ayudarte con presupuesto, equipaje, documentos, servicios y tienda. " +
+          "Escribe «planear» para crear un pase o «atrás» para corregir una respuesta. " +
           "Soy un orientador programado, no una IA generativa."
         );
       }
@@ -896,15 +890,29 @@
       addMessage(displayed, true);
       input.value = "";
 
-      if (["planear", "empezar", "reiniciar"].includes(text)) {
+      if (["atras", "volver", "anterior"].includes(text)) {
+        goBack();
+        return;
+      }
+
+      if (/^(planear|empezar|reiniciar|crear mi pase|quiero viajar|planear mi viaje)$/.test(text)) {
         startPlan();
         return;
       }
 
-      if (["ayuda", "presupuesto", "equipaje", "servicios"].includes(text)) {
-        answerHelp(text);
+      const helpTopic = /\b(equipaje|maleta|maletas)\b/.test(text) ? "equipaje"
+        : /\b(documentos|documentacion|pasaporte|visa)\b/.test(text) ? "documentos"
+        : /\b(tienda|accesorios)\b/.test(text) ? "tienda"
+        : /\b(servicios|vuelos|hoteles|hospedaje)\b/.test(text) ? "servicios"
+        : /\b(presupuesto)\b/.test(text) && !/\d/.test(text) ? "presupuesto"
+        : text === "ayuda" ? "ayuda" : "";
+
+      if (helpTopic) {
+        answerHelp(helpTopic);
         return;
       }
+
+      const snapshot = { step, plan: { ...plan } };
 
       if (step === "company") {
         if (/\b(solo|sola|solitario)\b/.test(text)) {
@@ -934,6 +942,7 @@
           );
         }
 
+        history.push(snapshot);
         updatePass();
         askQuestion();
         return;
@@ -950,14 +959,16 @@
 
         plan.people = people;
         step = "style";
+        history.push(snapshot);
         updatePass();
         askQuestion();
         return;
       }
 
       if (step === "style") {
-        if (/\b(playa|mar|descanso)\b/.test(text)) plan.style = "playa";
-        else if (/\b(naturaleza|aventura|montana|montanas|senderismo)\b/.test(text)) {
+        if (/\b(playa|mar|descanso)\b/.test(text)) {
+          plan.style = "playa";
+        } else if (/\b(naturaleza|aventura|montana|montanas|senderismo)\b/.test(text)) {
           plan.style = "naturaleza";
         } else if (/\b(cultura|ciudad|museos|historia)\b/.test(text)) {
           plan.style = "cultura";
@@ -969,23 +980,24 @@
         }
 
         step = "budget";
+        history.push(snapshot);
         updatePass();
         askQuestion();
         return;
       }
 
       if (step === "budget") {
-        const match = text.match(/^(?:l\s*)?(\d{1,7})(?:\s*(?:hnl|lempiras?))?$/);
-        const amount = match ? Number(match[1]) : 0;
+        const amount = parseBudget(text);
 
         if (amount < 1 || amount > 1000000) {
           addMessage(
-            "Indica entre 1 y 1000000 lempiras enteros, sin puntos ni comas. Ejemplo: 30000."
+            "Indica entre 1 y 1,000,000 lempiras enteros. Ejemplos: 30000, 30,000 o 30 mil."
           );
           return;
         }
 
         plan.budget = amount;
+        history.push(snapshot);
         updatePass();
         showResults();
         return;
@@ -993,6 +1005,46 @@
 
       addMessage("Escribe «planear» para crear tu pase o «ayuda» para consultar las opciones.");
     }
+
+    function parseBudget(value) {
+      const clean = value
+        .replace(/^(?:mi presupuesto es\s+)?(?:hnl\s*|l\.?\s*)?/, "")
+        .replace(/\s*(hnl|lempiras?)$/, "")
+        .trim();
+
+      if (/^\d{1,7}$/.test(clean)) return Number(clean);
+
+      if (
+        /^\d{1,3}(?:,\d{3})+$/.test(clean) ||
+        /^\d{1,3}(?:\.\d{3})+$/.test(clean)
+      ) {
+        return Number(clean.replace(/[.,]/g, ""));
+      }
+
+      const thousands = clean.match(/^(\d{1,4})\s*(mil|k)$/);
+      return thousands ? Number(thousands[1]) * 1000 : 0;
+    }
+
+    function goBack() {
+      const previous = history.pop();
+
+      if (!previous) {
+        addMessage("Aún no hay una respuesta anterior que corregir.");
+        return;
+      }
+
+      plan = { ...previous.plan };
+      step = previous.step;
+      input.value = "";
+      clearPass();
+      addMessage("Puedes cambiar esta respuesta. Actualizaré tu pase con la nueva elección.");
+      askQuestion();
+    }
+
+    $("#chat-back").addEventListener("click", () => {
+      goBack();
+      options.firstElementChild?.focus({ preventScroll: true });
+    });
 
     launcher.addEventListener("click", () => {
       if (panel.hidden) openChat(launcher);
@@ -1005,6 +1057,7 @@
       button.addEventListener("click", () => {
         openChat(button);
         if (step === "home") startPlan();
+        else if (step === "done") goBack();
       });
     });
 

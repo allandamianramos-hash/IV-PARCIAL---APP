@@ -1,972 +1,333 @@
-// ============================================================
-// LA TIENDA DEL VIAJERO | RUMBO
-// ============================================================
-
-
-// ============================================================
-// PRODUCTOS
-// ============================================================
-
+// Precios de ejemplo en lempiras para el proyecto escolar.
+// Las fotos son fotografías reales alojadas en Unsplash.
 const products = [
-
-    // =========================
-    // EQUIPAJE
-    // =========================
-
-    {
-        id: 1,
-        name: "Mochila de viaje",
-        category: "Equipaje",
-        price: 450,
-        image: "imagenes/mochila.jpg",
-        description: "Mochila práctica para llevar tus cosas durante el viaje."
-    },
-
-    {
-        id: 2,
-        name: "Maleta de viaje",
-        category: "Equipaje",
-        price: 650,
-        image: "imagenes/maleta.jpg",
-        description: "Maleta para organizar y transportar tu equipaje."
-    },
-
-    {
-        id: 3,
-        name: "Bolso de mano",
-        category: "Equipaje",
-        price: 250,
-        image: "imagenes/bolso-mano.jpg",
-        description: "Bolso cómodo para llevar objetos personales."
-    },
-
-    {
-        id: 4,
-        name: "Riñonera",
-        category: "Equipaje",
-        price: 120,
-        image: "imagenes/rinonera.jpg",
-        description: "Riñonera compacta para llevar objetos pequeños."
-    },
-
-    {
-        id: 5,
-        name: "Etiqueta para maleta",
-        category: "Equipaje",
-        price: 50,
-        image: "imagenes/etiqueta-maleta.jpg",
-        description: "Etiqueta para identificar fácilmente tu equipaje."
-    },
-
-    {
-        id: 6,
-        name: "Candado para maleta",
-        category: "Equipaje",
-        price: 80,
-        image: "imagenes/candado-maleta.jpg",
-        description: "Candado compacto para asegurar tu equipaje."
-    },
-
-
-    // =========================
-    // TECNOLOGÍA
-    // =========================
-
-    {
-        id: 7,
-        name: "Power Bank",
-        category: "Tecnología",
-        price: 350,
-        image: "imagenes/power-bank.jpg",
-        description: "Batería portátil para mantener cargado tu celular."
-    },
-
-    {
-        id: 8,
-        name: "Cargador de celular",
-        category: "Tecnología",
-        price: 150,
-        image: "imagenes/cargador.jpg",
-        description: "Cargador práctico para usar durante tus viajes."
-    },
-
-    {
-        id: 9,
-        name: "Cable USB",
-        category: "Tecnología",
-        price: 70,
-        image: "imagenes/cable-usb.jpg",
-        description: "Cable USB para cargar y conectar dispositivos."
-    },
-
-    {
-        id: 10,
-        name: "Adaptador universal",
-        category: "Tecnología",
-        price: 220,
-        image: "imagenes/adaptador.jpg",
-        description: "Adaptador para conectar dispositivos en diferentes lugares."
-    },
-
-    {
-        id: 11,
-        name: "Audífonos",
-        category: "Tecnología",
-        price: 180,
-        image: "imagenes/audifonos.jpg",
-        description: "Audífonos para escuchar música durante el viaje."
-    },
-
-    {
-        id: 12,
-        name: "Soporte para celular",
-        category: "Tecnología",
-        price: 100,
-        image: "imagenes/soporte-celular.jpg",
-        description: "Soporte pequeño y práctico para tu celular."
-    },
-
-
-    // =========================
-    // CONFORT
-    // =========================
-
-    {
-        id: 13,
-        name: "Almohada de viaje",
-        category: "Confort",
-        price: 180,
-        image: "imagenes/almohada-viaje.jpg",
-        description: "Almohada cómoda para descansar durante el viaje."
-    },
-
-    {
-        id: 14,
-        name: "Botella reutilizable",
-        category: "Confort",
-        price: 120,
-        image: "imagenes/botella.jpg",
-        description: "Botella reutilizable para llevar agua."
-    },
-
-    {
-        id: 15,
-        name: "Antifaz para dormir",
-        category: "Confort",
-        price: 60,
-        image: "imagenes/antifaz.jpg",
-        description: "Antifaz para descansar con mayor comodidad."
-    },
-
-    {
-        id: 16,
-        name: "Tapones para oídos",
-        category: "Confort",
-        price: 45,
-        image: "imagenes/tapones-oidos.jpg",
-        description: "Tapones pequeños para descansar durante el viaje."
-    },
-
-    {
-        id: 17,
-        name: "Paraguas compacto",
-        category: "Confort",
-        price: 150,
-        image: "imagenes/paraguas.jpg",
-        description: "Paraguas compacto para llevar fácilmente."
-    },
-
-    {
-        id: 18,
-        name: "Toalla de viaje",
-        category: "Confort",
-        price: 130,
-        image: "imagenes/toalla-viaje.jpg",
-        description: "Toalla práctica y fácil de transportar."
-    },
-
-
-    // =========================
-    // SEGURIDAD
-    // =========================
-
-    {
-        id: 19,
-        name: "Porta pasaporte",
-        category: "Seguridad",
-        price: 100,
-        image: "imagenes/porta-pasaporte.jpg",
-        description: "Funda para mantener protegido tu pasaporte."
-    },
-
-    {
-        id: 20,
-        name: "Porta documentos",
-        category: "Seguridad",
-        price: 120,
-        image: "imagenes/porta-documentos.jpg",
-        description: "Organizador para documentos importantes."
-    },
-
-    {
-        id: 21,
-        name: "Billetera de viaje",
-        category: "Seguridad",
-        price: 110,
-        image: "imagenes/billetera.jpg",
-        description: "Billetera práctica para guardar dinero y tarjetas."
-    },
-
-    {
-        id: 22,
-        name: "Bolsa impermeable",
-        category: "Seguridad",
-        price: 100,
-        image: "imagenes/bolsa-impermeable.jpg",
-        description: "Bolsa para proteger objetos de la humedad."
-    },
-
-    {
-        id: 23,
-        name: "Correa para maleta",
-        category: "Seguridad",
-        price: 90,
-        image: "imagenes/correa-maleta.jpg",
-        description: "Correa para sujetar y reconocer tu maleta."
-    },
-
-    {
-        id: 24,
-        name: "Linterna",
-        category: "Seguridad",
-        price: 100,
-        image: "imagenes/linterna.jpg",
-        description: "Linterna pequeña para llevar durante el viaje."
-    },
-
-
-    // =========================
-    // CUIDADO
-    // =========================
-
-    {
-        id: 25,
-        name: "Neceser de viaje",
-        category: "Cuidado",
-        price: 130,
-        image: "imagenes/neceser.jpg",
-        description: "Neceser para organizar artículos personales."
-    },
-
-    {
-        id: 26,
-        name: "Botellas para líquidos",
-        category: "Cuidado",
-        price: 80,
-        image: "imagenes/botellas-liquidos.jpg",
-        description: "Botellas pequeñas para llevar líquidos."
-    },
-
-    {
-        id: 27,
-        name: "Cepillo de dientes de viaje",
-        category: "Cuidado",
-        price: 55,
-        image: "imagenes/cepillo-dientes.jpg",
-        description: "Cepillo compacto para llevar en el equipaje."
-    },
-
-    {
-        id: 28,
-        name: "Kit de higiene",
-        category: "Cuidado",
-        price: 150,
-        image: "imagenes/kit-higiene.jpg",
-        description: "Kit práctico para artículos de higiene personal."
-    },
-
-    {
-        id: 29,
-        name: "Protector solar",
-        category: "Cuidado",
-        price: 180,
-        image: "imagenes/protector-solar.jpg",
-        description: "Protector solar para incluir en tu equipaje."
-    },
-
-    {
-        id: 30,
-        name: "Botiquín básico",
-        category: "Cuidado",
-        price: 200,
-        image: "imagenes/botiquin.jpg",
-        description: "Botiquín básico para llevar artículos de primeros auxilios."
-    }
-
+  {
+    id: 1,
+    name: "Mochila de viaje",
+    category: "Equipaje",
+    price: 349,
+    description: "Cómoda para llevar lo esencial en una escapada.",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&q=80"
+  },
+  {
+    id: 2,
+    name: "Maleta de cabina",
+    category: "Equipaje",
+    price: 599,
+    description: "Tamaño práctico para viajes cortos.",
+    image: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=700&q=80"
+  },
+  {
+    id: 3,
+    name: "Bolsa organizadora",
+    category: "Equipaje",
+    price: 89,
+    description: "Separa tus accesorios dentro del equipaje.",
+    image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=700&q=80"
+  },
+  {
+    id: 4,
+    name: "Botella reutilizable",
+    category: "Confort",
+    price: 99,
+    description: "Lleva agua durante tus recorridos.",
+    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=700&q=80"
+  },
+  {
+    id: 5,
+    name: "Almohada de viaje",
+    category: "Confort",
+    price: 149,
+    description: "Un poco más de comodidad durante el trayecto.",
+    image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=700&q=80"
+  },
+  {
+    id: 6,
+    name: "Audífonos",
+    category: "Tecnología",
+    price: 199,
+    description: "Escucha música mientras viajas.",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700&q=80"
+  },
+  {
+    id: 7,
+    name: "Cable de carga",
+    category: "Tecnología",
+    price: 75,
+    description: "Un accesorio útil para llevar de repuesto.",
+    image: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=700&q=80"
+  },
+  {
+    id: 8,
+    name: "Cámara compacta",
+    category: "Tecnología",
+    price: 749,
+    description: "Para guardar recuerdos de tu viaje.",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=700&q=80"
+  },
+  {
+    id: 9,
+    name: "Candado para maleta",
+    category: "Seguridad",
+    price: 69,
+    description: "Una forma sencilla de asegurar tu equipaje.",
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=700&q=80"
+  },
+  {
+    id: 10,
+    name: "Lentes de sol",
+    category: "Cuidado",
+    price: 129,
+    description: "Para paseos y días soleados.",
+    image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=700&q=80"
+  },
+  {
+    id: 11,
+    name: "Protector solar",
+    category: "Cuidado",
+    price: 159,
+    description: "Ideal para incluir en tus viajes a la playa.",
+    image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=700&q=80"
+  },
+  {
+    id: 12,
+    name: "Gorra para el sol",
+    category: "Cuidado",
+    price: 109,
+    description: "Ligera y fácil de llevar a cualquier destino.",
+    image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=700&q=80"
+  }
 ];
 
+const grid = document.getElementById("products-grid");
+const productCount = document.getElementById("product-count");
+const cartModal = document.getElementById("cart-modal");
+const cartItems = document.getElementById("cart-items");
+const cartCount = document.getElementById("cart-count");
+const summaryCount = document.getElementById("summary-count");
+const cartSubtotal = document.getElementById("cart-subtotal");
+const cartTotal = document.getElementById("cart-total");
+const checkoutBtn = document.getElementById("checkout-btn");
+const toast = document.getElementById("toast");
 
-// ============================================================
-// CUANDO CARGUE COMPLETAMENTE EL HTML
-// ============================================================
+const STORAGE_KEY = "rumbo_tienda_carrito";
+let cart = loadCart();
+let toastTimer;
 
-document.addEventListener("DOMContentLoaded", function () {
+function loadCart() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (!Array.isArray(saved)) return {};
 
+    const restored = {};
+    saved.forEach(item => {
+      const id = Number(item.id);
+      const quantity = Number(item.quantity);
 
-    // ========================================================
-    // ELEMENTOS DEL HTML
-    // ========================================================
+      if (
+        products.some(product => product.id === id) &&
+        Number.isInteger(quantity) &&
+        quantity > 0
+      ) {
+        restored[id] = Math.min(quantity, 99);
+      }
+    });
 
-    const productsGrid =
-        document.getElementById("products-grid");
+    return restored;
+  } catch {
+    return {};
+  }
+}
 
-    const productsResult =
-        document.getElementById("products-result");
+function saveCart() {
+  const items = Object.entries(cart).map(([id, quantity]) => ({
+    id: Number(id),
+    quantity
+  }));
 
-    const cartModal =
-        document.getElementById("cart-modal");
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  } catch {
+    // La tienda sigue funcionando si el navegador bloquea el almacenamiento.
+  }
+}
 
-    const cartItems =
-        document.getElementById("cart-items");
+function money(amount) {
+  return `L. ${amount.toFixed(2)}`;
+}
 
-    const cartCount =
-        document.getElementById("cart-count");
+function showToast(message) {
+  toast.textContent = message;
+  toast.classList.add("visible");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("visible"), 2200);
+}
 
-    const cartSubtotal =
-        document.getElementById("cart-subtotal");
+function renderProducts(category = "all") {
+  const visible = category === "all"
+    ? products
+    : products.filter(product => product.category === category);
 
-    const cartTotal =
-        document.getElementById("cart-total");
+  productCount.textContent = `${visible.length} productos disponibles`;
 
-    const openCartBtn =
-        document.getElementById("open-cart-btn");
+  grid.innerHTML = visible.map(product => `
+    <article class="product-card">
+      <img
+        class="product-img"
+        src="${product.image}"
+        alt="${product.name}"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='https://placehold.co/700x500/eaf0f0/0c4a52?text=Producto';"
+      >
+      <div class="product-info">
+        <span class="product-category">${product.category}</span>
+        <h3>${product.name}</h3>
+        <p class="product-description">${product.description}</p>
+        <p class="product-price">${money(product.price)}</p>
+        <button class="add-to-cart-btn" type="button" data-add="${product.id}">
+          + Agregar al carrito
+        </button>
+      </div>
+    </article>
+  `).join("");
+}
 
-    const closeCartBtn =
-        document.getElementById("close-cart-btn");
+function renderCart() {
+  let totalItems = 0;
+  let subtotal = 0;
 
-    const closeCartOverlay =
-        document.getElementById("close-cart-overlay");
+  const selected = products.filter(product => cart[product.id] > 0);
 
-    const checkoutBtn =
-        document.getElementById("checkout-btn");
+  cartItems.innerHTML = selected.length
+    ? selected.map(product => {
+        const quantity = cart[product.id];
+        const lineTotal = product.price * quantity;
+        totalItems += quantity;
+        subtotal += lineTotal;
 
-    const filterButtons =
-        document.querySelectorAll(".filter-btn");
+        return `
+          <article class="cart-item">
+            <img
+              src="${product.image}"
+              alt=""
+              onerror="this.onerror=null;this.src='https://placehold.co/150x150/eaf0f0/0c4a52?text=Producto';"
+            >
+            <div class="cart-item-main">
+              <h3>${product.name}</h3>
+              <span class="unit-price">${money(product.price)} por unidad</span>
 
-
-    // ========================================================
-    // CARRITO
-    // ========================================================
-
-    let cart = [];
-
-
-    // ========================================================
-    // FORMATO DE PRECIO
-    // ========================================================
-
-    function formatPrice(price) {
-
-        return "L. " + price.toFixed(2);
-
-    }
-
-
-    // ========================================================
-    // MOSTRAR PRODUCTOS
-    // ========================================================
-
-    function displayProducts(category = "Todos") {
-
-        productsGrid.innerHTML = "";
-
-
-        let productsToShow;
-
-
-        if (category === "Todos") {
-
-            productsToShow = products;
-
-        } else {
-
-            productsToShow =
-                products.filter(function (product) {
-
-                    return product.category === category;
-
-                });
-
-        }
-
-
-        productsToShow.forEach(function (product) {
-
-
-            const card =
-                document.createElement("article");
-
-
-            card.className =
-                "product-card";
-
-
-            card.innerHTML = `
-
-                <div class="product-image-container">
-
-                    <img
-                        class="product-image"
-                        src="${product.image}"
-                        alt="${product.name}"
-                    >
-
+              <div class="cart-item-bottom">
+                <div class="quantity-controls">
+                  <button class="qty-btn" type="button"
+                    data-decrease="${product.id}"
+                    aria-label="Quitar una unidad de ${product.name}">−</button>
+                  <strong>${quantity}</strong>
+                  <button class="qty-btn" type="button"
+                    data-increase="${product.id}"
+                    aria-label="Agregar una unidad de ${product.name}">+</button>
                 </div>
-
-
-                <div class="product-info">
-
-                    <span class="product-category">
-                        ${product.category}
-                    </span>
-
-
-                    <h3 class="product-name">
-                        ${product.name}
-                    </h3>
-
-
-                    <p class="product-description">
-                        ${product.description}
-                    </p>
-
-
-                    <div class="product-bottom">
-
-                        <span class="product-price">
-                            ${formatPrice(product.price)}
-                        </span>
-
-
-                        <button
-                            class="add-btn"
-                            data-id="${product.id}"
-                        >
-                            Agregar
-                        </button>
-
-                    </div>
-
-                </div>
-
-            `;
-
-
-            productsGrid.appendChild(card);
-
-        });
-
-
-        productsResult.textContent =
-            productsToShow.length +
-            (productsToShow.length === 1
-                ? " producto"
-                : " productos");
-
-    }
-
-
-    // ========================================================
-    // AGREGAR PRODUCTO
-    // ========================================================
-
-    function addToCart(id) {
-
-        const product =
-            products.find(function (item) {
-
-                return item.id === id;
-
-            });
-
-
-        if (!product) {
-            return;
-        }
-
-
-        const existing =
-            cart.find(function (item) {
-
-                return item.id === id;
-
-            });
-
-
-        if (existing) {
-
-            existing.quantity++;
-
-        } else {
-
-            cart.push({
-
-                id: product.id,
-
-                name: product.name,
-
-                price: product.price,
-
-                image: product.image,
-
-                quantity: 1
-
-            });
-
-        }
-
-
-        updateCart();
-
-    }
-
-
-    // ========================================================
-    // ACTUALIZAR CARRITO
-    // ========================================================
-
-    function updateCart() {
-
-        cartItems.innerHTML = "";
-
-
-        if (cart.length === 0) {
-
-            cartItems.innerHTML = `
-
-                <div class="empty-cart">
-
-                    <div style="font-size:42px;">
-                        🛒
-                    </div>
-
-                    <strong>
-                        Tu carrito está vacío
-                    </strong>
-
-                    <p>
-                        Agrega productos para comenzar tu compra.
-                    </p>
-
-                </div>
-
-            `;
-
-        } else {
-
-
-            cart.forEach(function (item) {
-
-
-                const itemSubtotal =
-                    item.price * item.quantity;
-
-
-                const div =
-                    document.createElement("div");
-
-
-                div.className =
-                    "cart-item";
-
-
-                div.innerHTML = `
-
-                    <img
-                        class="cart-item-image"
-                        src="${item.image}"
-                        alt="${item.name}"
-                    >
-
-
-                    <div>
-
-                        <div class="cart-item-name">
-                            ${item.name}
-                        </div>
-
-
-                        <div class="cart-item-price">
-                            Precio unitario:
-                            ${formatPrice(item.price)}
-                        </div>
-
-
-                        <div class="cart-item-subtotal">
-                            Subtotal:
-                            ${formatPrice(itemSubtotal)}
-                        </div>
-
-
-                        <div class="cart-item-controls">
-
-                            <div class="quantity-controls">
-
-                                <button
-                                    class="quantity-btn"
-                                    data-id="${item.id}"
-                                    data-action="minus"
-                                >
-                                    −
-                                </button>
-
-
-                                <strong>
-                                    ${item.quantity}
-                                </strong>
-
-
-                                <button
-                                    class="quantity-btn"
-                                    data-id="${item.id}"
-                                    data-action="plus"
-                                >
-                                    +
-                                </button>
-
-                            </div>
-
-
-                            <button
-                                class="remove-btn"
-                                data-id="${item.id}"
-                                data-action="remove"
-                            >
-                                Eliminar
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                `;
-
-
-                cartItems.appendChild(div);
-
-            });
-
-        }
-
-
-        let totalQuantity = 0;
-
-        let subtotal = 0;
-
-
-        cart.forEach(function (item) {
-
-            totalQuantity += item.quantity;
-
-            subtotal +=
-                item.price * item.quantity;
-
-        });
-
-
-        cartCount.textContent =
-            totalQuantity;
-
-
-        cartSubtotal.textContent =
-            formatPrice(subtotal);
-
-
-        cartTotal.textContent =
-            formatPrice(subtotal);
-
-    }
-
-
-    // ========================================================
-    // CAMBIAR CANTIDAD
-    // ========================================================
-
-    function changeQuantity(id, amount) {
-
-        const item =
-            cart.find(function (product) {
-
-                return product.id === id;
-
-            });
-
-
-        if (!item) {
-            return;
-        }
-
-
-        item.quantity += amount;
-
-
-        if (item.quantity <= 0) {
-
-            cart =
-                cart.filter(function (product) {
-
-                    return product.id !== id;
-
-                });
-
-        }
-
-
-        updateCart();
-
-    }
-
-
-    // ========================================================
-    // ELIMINAR
-    // ========================================================
-
-    function removeFromCart(id) {
-
-        cart =
-            cart.filter(function (product) {
-
-                return product.id !== id;
-
-            });
-
-
-        updateCart();
-
-    }
-
-
-    // ========================================================
-    // CLIC EN PRODUCTOS
-    // ========================================================
-
-    productsGrid.addEventListener(
-        "click",
-        function (event) {
-
-            const button =
-                event.target.closest(".add-btn");
-
-
-            if (!button) {
-                return;
-            }
-
-
-            const id =
-                Number(button.dataset.id);
-
-
-            addToCart(id);
-
-        }
-    );
-
-
-    // ========================================================
-    // CLIC EN CARRITO
-    // ========================================================
-
-    cartItems.addEventListener(
-        "click",
-        function (event) {
-
-            const button =
-                event.target.closest("button");
-
-
-            if (!button) {
-                return;
-            }
-
-
-            const id =
-                Number(button.dataset.id);
-
-
-            const action =
-                button.dataset.action;
-
-
-            if (action === "plus") {
-
-                changeQuantity(id, 1);
-
-            }
-
-
-            if (action === "minus") {
-
-                changeQuantity(id, -1);
-
-            }
-
-
-            if (action === "remove") {
-
-                removeFromCart(id);
-
-            }
-
-        }
-    );
-
-
-    // ========================================================
-    // ABRIR CARRITO
-    // ========================================================
-
-    openCartBtn.addEventListener(
-        "click",
-        function () {
-
-            cartModal.classList.remove("hidden");
-
-        }
-    );
-
-
-    // ========================================================
-    // CERRAR CARRITO
-    // ========================================================
-
-    function closeCart() {
-
-        cartModal.classList.add("hidden");
-
-    }
-
-
-    closeCartBtn.addEventListener(
-        "click",
-        closeCart
-    );
-
-
-    closeCartOverlay.addEventListener(
-        "click",
-        closeCart
-    );
-
-
-    // ========================================================
-    // FILTROS
-    // ========================================================
-
-    filterButtons.forEach(
-        function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-
-                    filterButtons.forEach(
-                        function (btn) {
-
-                            btn.classList.remove(
-                                "active"
-                            );
-
-                        }
-                    );
-
-
-                    button.classList.add(
-                        "active"
-                    );
-
-
-                    const category =
-                        button.dataset.category;
-
-
-                    displayProducts(category);
-
-                }
-            );
-
-        }
-    );
-
-
-    // ========================================================
-    // FINALIZAR COMPRA
-    // ========================================================
-
-    checkoutBtn.addEventListener(
-        "click",
-        function () {
-
-
-            if (cart.length === 0) {
-
-                alert(
-                    "Tu carrito está vacío."
-                );
-
-                return;
-
-            }
-
-
-            let total = 0;
-
-
-            cart.forEach(
-                function (item) {
-
-                    total +=
-                        item.price *
-                        item.quantity;
-
-                }
-            );
-
-
-            alert(
-
-                "Compra registrada correctamente.\n\n" +
-
-                "Total: " +
-                formatPrice(total) +
-
-                "\nEnvío: GRATIS\n\n" +
-
-                "Gracias por comprar en " +
-                "La tienda del viajero | Rumbo."
-
-            );
-
-
-            cart = [];
-
-
-            updateCart();
-
-
-            closeCart();
-
-        }
-    );
-
-
-    // ========================================================
-    // INICIAR
-    // ========================================================
-
-    displayProducts();
-
-    updateCart();
-
+                <span class="line-total">${money(lineTotal)}</span>
+              </div>
+
+              <button class="remove-btn" type="button" data-remove="${product.id}">
+                Eliminar producto
+              </button>
+            </div>
+          </article>
+        `;
+      }).join("")
+    : `
+      <div class="empty-cart">
+        <span>🧳</span>
+        Tu carrito está vacío.<br>
+        ¡Explora los productos para tu próximo viaje!
+      </div>
+    `;
+
+  cartCount.textContent = totalItems;
+  summaryCount.textContent = totalItems;
+  cartSubtotal.textContent = money(subtotal);
+  cartTotal.textContent = money(subtotal);
+  checkoutBtn.disabled = totalItems === 0;
+  saveCart();
+}
+
+function changeQuantity(id, change) {
+  const product = products.find(item => item.id === id);
+  if (!product) return;
+
+  const newQuantity = (cart[id] || 0) + change;
+
+  if (newQuantity <= 0) {
+    delete cart[id];
+  } else if (newQuantity <= 99) {
+    cart[id] = newQuantity;
+  } else {
+    showToast("Máximo 99 unidades por producto.");
+    return;
+  }
+
+  renderCart();
+}
+
+// Un solo evento para todos los botones de productos.
+grid.addEventListener("click", event => {
+  const button = event.target.closest("[data-add]");
+  if (!button) return;
+
+  const id = Number(button.dataset.add);
+  changeQuantity(id, 1);
+
+  const product = products.find(item => item.id === id);
+  showToast(`${product.name} agregado al carrito`);
 });
+
+// Botones dentro del carrito.
+cartItems.addEventListener("click", event => {
+  const button = event.target.closest("button");
+  if (!button) return;
+
+  if (button.dataset.increase) {
+    changeQuantity(Number(button.dataset.increase), 1);
+  } else if (button.dataset.decrease) {
+    changeQuantity(Number(button.dataset.decrease), -1);
+  } else if (button.dataset.remove) {
+    delete cart[Number(button.dataset.remove)];
+    renderCart();
+  }
+});
+
+// Categorías.
+document.querySelectorAll(".filter-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelector(".filter-btn.active")?.classList.remove("active");
+    button.classList.add("active");
+    renderProducts(button.dataset.category);
+  });
+});
+
+// Abrir y cerrar el carrito.
+document.getElementById("open-cart-btn").addEventListener("click", () => {
+  cartModal.showModal();
+});
+
+document.getElementById("close-cart-btn").addEventListener("click", () => {
+  cartModal.close();
+});
+
+cartModal.addEventListener("click", event => {
+  if (event.target === cartModal) cartModal.close();
+});
+
+// Confirmación de ejemplo: todavía no hay pagos ni base de datos.
+checkoutBtn.addEventListener("click", () => {
+  if (Object.keys(cart).length === 0) return;
+
+  alert(`¡Pedido confirmado en esta demostración!\nTotal: ${cartTotal.textContent}`);
+  cart = {};
+  renderCart();
+  cartModal.close();
+});
+
+renderProducts();
+renderCart();

@@ -290,7 +290,7 @@ h1, h2, h3 { text-wrap: balance; }
 .rv-price small { display: block; font-size: 11px; color: var(--muted); margin-top: 5px; }
 .rv-select-button { border: 1px solid var(--primary); border-radius: 9px; min-height: 40px; padding: 10px 15px; color: var(--primary-dark); background: white; font-size: 12px; font-weight: 650; white-space: nowrap; }
 .rv-select-button:hover, .rv-select-button[aria-pressed='true'] { background: var(--primary); color: white; }
-.rv-trip-summary { position: sticky; top: 22px; padding: 23px; border: 1px solid var(--border); border-radius: 16px; background: white; }
+.rv-trip-summary { position: sticky; top: 22px; max-height: calc(100dvh - 44px); overflow-y: auto; padding: 23px; border: 1px solid var(--border); border-radius: 16px; background: white; }
 .rv-trip-summary h2 { font-size: 22px; margin-bottom: 18px; }
 .rv-summary-destination { display: flex; gap: 12px; align-items: center; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
 .rv-summary-destination img { width: 59px; height: 62px; flex-shrink: 0; border-radius: 9px; }
@@ -364,7 +364,7 @@ h1, h2, h3 { text-wrap: balance; }
   .rv-detail-body { grid-template-columns: 1fr 310px; gap: 25px; }
   .rv-search-panel, .rv-hotel-search { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .rv-flow-layout { grid-template-columns: 1fr; }
-  .rv-trip-summary { position: static; }
+  .rv-trip-summary { position: static; max-height: none; overflow-y: visible; }
   .rv-hotel-card { grid-template-columns: 230px minmax(0, 1fr); }
   .rv-section-title > p { max-width: 180px; }
 }

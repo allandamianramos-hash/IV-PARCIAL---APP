@@ -24,68 +24,11 @@
     setText("#year", new Date().getFullYear());
 
     /* CATÁLOGO FICTICIO EN HNL */
-    const catalog = [
-      {
-        id: "roatan",
-        name: "Roatán",
-        country: "Honduras",
-        style: "playa",
-        price: 8500,
-        duration: "4 días / 3 noches",
-        code: "RMB-01",
-        image: "photo-1514282401047-d79a71a590e8",
-        alt: "Paisaje tropical, fotografía ilustrativa de playa",
-        description: "Una propuesta de descanso junto al mar y actividades acuáticas."
-      },
-      {
-        id: "copan",
-        name: "Copán Ruinas",
-        country: "Honduras",
-        style: "cultura",
-        price: 4500,
-        duration: "3 días / 2 noches",
-        code: "RMB-02",
-        image: "photo-1500530855697-b586d89ba3ee",
-        alt: "Paisaje natural, fotografía de inspiración para una escapada",
-        description: "Una escapada para explorar el patrimonio maya y la gastronomía local."
-      },
-      {
-        id: "bali",
-        name: "Bali",
-        country: "Indonesia",
-        style: "playa",
-        price: 32000,
-        duration: "8 días / 7 noches",
-        code: "RMB-03",
-        image: "photo-1537996194471-e657df975ab4",
-        alt: "Templo tradicional de Bali junto al agua",
-        description: "Templos, arrozales y playas para combinar descanso y exploración."
-      },
-      {
-        id: "dolomitas",
-        name: "Dolomitas",
-        country: "Italia",
-        style: "naturaleza",
-        price: 19000,
-        duration: "6 días / 5 noches",
-        code: "RMB-04",
-        image: "photo-1464822759023-fed622ff2c3b",
-        alt: "Cumbres de montaña, fotografía ilustrativa",
-        description: "Senderismo, paisajes de montaña y actividades al aire libre."
-      },
-      {
-        id: "kioto",
-        name: "Kioto",
-        country: "Japón",
-        style: "cultura",
-        price: 43000,
-        duration: "10 días / 9 noches",
-        code: "RMB-05",
-        image: "photo-1493976040374-85c8e12f0c0e",
-        alt: "Calle tradicional de Kioto con una pagoda al fondo",
-        description: "Barrios tradicionales, jardines, templos y gastronomía japonesa."
-      }
-    ];
+    const catalog = window.RumboViajesDatos.destinations.map((trip,index) => ({
+      id:trip.id, name:trip.name, country:trip.country, style:trip.type,
+      price:trip.inspirationBudget, duration:`${trip.nights+1} días / ${trip.nights} noches`,
+      code:`RMB-${String(index+1).padStart(2,'0')}`, image:trip.image, alt:trip.alt, description:trip.intro
+    }));
 
     const styles = {
       playa: "Playa y descanso",
@@ -204,7 +147,7 @@
         card.innerHTML = `
           <div class="destination-image">
             <img
-              src="https://images.unsplash.com/${trip.image}?auto=format&fit=crop&w=800&q=85"
+              src="${trip.image.startsWith('imagenes-') ? trip.image : `https://images.unsplash.com/${trip.image}?auto=format&fit=crop&w=800&q=85` }"
               alt="${trip.alt}"
               width="800"
               height="900"
@@ -220,7 +163,7 @@
             <p>${trip.description}</p>
             <div class="card-bottom">
               <div class="price">
-                <small>Base de muestra por persona</small>
+                <small>Presupuesto orientativo / persona</small>
                 <strong>${money(trip.price)} <span>HNL</span></strong>
               </div>
               <button
@@ -291,7 +234,7 @@
       $("#destinos").scrollIntoView({ block: "start" });
     });
 
-    $("#reset-filters").addEventListener("click", () => {
+    $("#reset-filters")?.addEventListener("click", () => {
       searchForm.reset();
       filterDestinations();
     });
@@ -604,12 +547,21 @@
     const avatars = [...document.querySelectorAll(".rumbito-avatar")];
     avatars.forEach(avatar => {
       avatar.innerHTML = `<svg viewBox="0 0 120 120" focusable="false" aria-hidden="true">
-        <path fill="#2d8490" d="M34 9 Q30 3 39 3 L109 3 Q116 3 116 11 L114 80 Q114 88 108 83 L87 62 L43 107 Q38 112 33 107 L8 82 Q3 77 8 72 L53 28Z"/>
-        <g class="rumbito-eyes"><ellipse cx="62" cy="49" rx="12" ry="13" fill="white"/><ellipse cx="91" cy="49" rx="12" ry="13" fill="white"/>
-        <g class="rumbito-pupils" fill="#183044"><circle cx="65" cy="50" r="6.5"/><circle cx="94" cy="50" r="6.5"/></g></g>
-        <circle cx="49" cy="65" r="5" fill="#edc579"/><circle cx="101" cy="65" r="5" fill="#edc579"/>
-        <path d="M66 68 Q77 79 88 68" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        <ellipse cx="60" cy="112" rx="35" ry="5" fill="#183044" opacity=".1"/>
+        <rect x="23" y="30" width="74" height="71" rx="19" fill="#cd9d59"/>
+        <path d="M43 22v-7q17-14 34 0v7" fill="none" stroke="#1c6570" stroke-width="7"/>
+        <path d="m30 77-15 12m77-12 13-15M43 96l-5 13m39-13 5 13" stroke="#1c6570" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="60" cy="57" r="43" fill="#087f8c"/>
+        <circle cx="60" cy="57" r="35" fill="#fff9e9" stroke="#e8bd78" stroke-width="3"/>
+        <path d="M60 26v6M60 83v6M29 57h6M85 57h6" stroke="#c9ab77" stroke-width="3" stroke-linecap="round"/>
+        <path d="m61 35 7 11-14-1z" fill="#d68755"/>
+        <g class="rumbito-eyes"><ellipse cx="46" cy="53" rx="8" ry="10" fill="white"/><ellipse cx="74" cy="53" rx="8" ry="10" fill="white"/>
+        <g class="rumbito-pupils" fill="#183044"><circle cx="47" cy="54" r="4.8"/><circle cx="75" cy="54" r="4.8"/></g></g>
+        <circle cx="38" cy="66" r="5" fill="#efbd9e"/><circle cx="82" cy="66" r="5" fill="#efbd9e"/>
+        <path d="M49 68q11 12 22 0" fill="none" stroke="#1c6570" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="m95 17 3-8 3 8 8 3-8 3-3 8-3-8-8-3z" fill="#e8bd78"/>
       </svg>`;
+
     });
     let pointerFrame = 0;
     document.addEventListener("pointermove", event => {
@@ -678,7 +630,7 @@
     function appendActions(message, actions = []) {
       actions.forEach(action => {
         const url = new URL(action.href, location.href);
-        if (!["viajes.html", "tienda.html", "index.html"].some(file => url.pathname.endsWith("/" + file)) && !action.href.startsWith("#")) return;
+        if (!["viajes.html", "tienda.html", "index.html", "servicios.html"].some(file => url.pathname.endsWith("/" + file)) && !action.href.startsWith("#")) return;
         const link = document.createElement("a");
         link.href = action.href === "#mi-pase" ? "#" + $("#boarding-pass").closest("section").id : action.href;
         link.textContent = `${action.label} ↗`;
@@ -768,6 +720,8 @@
       if (event.key === "Escape" && !panel.hidden && !$("#module-dialog").open) closeChat();
     });
     resetChat();
+    if (location.hash === "#hablar-rumbito") openChat(launcher);
+    window.addEventListener("hashchange", () => { if (location.hash === "#hablar-rumbito") openChat(launcher); });
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init, { once: true });

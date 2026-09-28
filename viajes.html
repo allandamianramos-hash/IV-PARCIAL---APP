@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explora destinos y elige vuelos y hoteles para tu viaje con Rumbo.">
   <meta name="theme-color" content="#087f8c">
-  <title>Destinos, vuelos y hoteles | Rumbo</title>
+  <title>Destinos | Rumbo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- INTEGRANTE 2: este módulo utiliza únicamente viajes.css y viajes.js. -->
   <link rel="stylesheet" href="viajes.css">
   <script src="viajes.js" defer></script>
+  <link rel="stylesheet" href="common.css">
+  <script src="common.js" defer></script>
 </head>
 <body class="rv-page">
 
@@ -50,13 +52,13 @@
         <div class="rv-field rv-search-field"><label for="buscar-destino">Buscar destino</label><input id="buscar-destino" name="q" type="search" autocomplete="off" placeholder="Roatán, cultura, Japón…" maxlength="100"></div>
         <div class="rv-field"><label for="tipo-viaje">Tipo de viaje</label><select id="tipo-viaje" name="tipo"><option value="all">Todos los estilos</option><option value="playa">Playa y descanso</option><option value="naturaleza">Naturaleza</option><option value="cultura">Cultura e historia</option></select></div>
         <div class="rv-field"><label for="zona-destino">Dónde</label><select id="zona-destino" name="zona"><option value="all">Todos los destinos</option><option value="honduras">Honduras</option><option value="internacional">Internacional</option></select></div>
-        <div class="rv-field"><label for="presupuesto-vuelo">Vuelo por persona</label><select id="presupuesto-vuelo" name="presupuesto"><option value="all">Cualquier precio</option><option value="3000">Hasta L. 3,000</option><option value="5000">Hasta L. 5,000</option><option value="25000">Hasta L. 25,000</option><option value="40000">Hasta L. 40,000</option></select></div>
+        <div class="rv-field"><label for="presupuesto-vuelo">Presupuesto orientativo</label><select id="presupuesto-vuelo" name="presupuesto"><option value="all">Cualquier precio</option><option value="10000">Hasta L. 10,000</option><option value="20000">Hasta L. 20,000</option><option value="35000">Hasta L. 35,000</option><option value="50000">Hasta L. 50,000</option></select></div>
         <button class="button button-primary" type="submit">Buscar ↗</button>
       </form>
-      <div class="rv-results-toolbar"><p id="destination-count" role="status" aria-live="polite"></p><div><label for="orden-destinos" class="sr-only">Ordenar destinos</label><select id="orden-destinos"><option value="recommended">Recomendados</option><option value="price-low">Menor precio de vuelo</option><option value="name">Nombre A–Z</option></select><button class="rv-link-button" id="limpiar-destinos" type="button">Limpiar filtros</button></div></div>
+      <div class="rv-results-toolbar"><p id="destination-count" role="status" aria-live="polite"></p><div><label for="orden-destinos" class="sr-only">Ordenar destinos</label><select id="orden-destinos"><option value="recommended">Recomendados</option><option value="price-low">Menor presupuesto</option><option value="name">Nombre A–Z</option></select><button class="rv-link-button" id="limpiar-destinos" type="button">Limpiar filtros</button></div></div>
       <div class="rv-destination-grid" id="destination-list"></div>
       <div class="rv-empty" id="destination-empty" hidden><span aria-hidden="true">↗</span><h3>No encontramos destinos con esos filtros.</h3><p>Prueba otro nombre, amplía el presupuesto o limpia los filtros.</p><button class="button button-primary" type="button" id="restablecer-destinos">Ver todos los destinos</button></div>
-      <p class="rv-caption">Precios desde por persona, en clase económica y solo ida desde Tegucigalpa. Fotografías de inspiración.</p>
+      <p class="rv-caption">Presupuestos ficticios para inspirarte, por persona. No son paquetes ni incluyen servicios definidos. El vuelo y el hotel se eligen y calculan por separado.</p>
     </section>
     <details id="creditos-imagenes" class="rv-credits">
       <summary>Créditos de imágenes</summary>

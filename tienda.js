@@ -1683,6 +1683,52 @@ window.RumboProducts = PRODUCTS;
       });
 
     }
+<<<<<<< HEAD
+=======
+  });
+  $('#product-search').addEventListener('input', () => { clearTimeout(searchTimer); searchTimer=setTimeout(renderProducts,120); });
+  $('#product-sort').addEventListener('change', renderProducts);
+  document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => {category=b.dataset.category;renderProducts();}));
+  document.querySelectorAll('[data-category-shortcut]').forEach(b => b.addEventListener('click', () => {
+    resetFilters(); category=b.dataset.categoryShortcut; renderProducts(); $('#catalogo').scrollIntoView(); $(`.filter-btn[data-category="${category}"]`).focus({preventScroll:true});
+  }));
+  $('#favorites-toggle').addEventListener('click', () => { favoritesOnly=!favoritesOnly;renderProducts();$('#catalogo').scrollIntoView(); });
+  $('#reset-filters').addEventListener('click', () => {resetFilters();$('#product-search').focus();});
+  $('#empty-reset').addEventListener('click', () => {resetFilters();$('#product-search').focus();});
+  $('#open-cart-btn').addEventListener('click', openCart);
+  $('#close-cart-btn').addEventListener('click', () => cartDialog.close());
+  $('#continue-shopping').addEventListener('click', () => cartDialog.close());
+  $('#close-detail').addEventListener('click', () => detailDialog.close());
+  [cartDialog, detailDialog].forEach(dialog => {
+    dialog.addEventListener('close', () => { if(!cartDialog.open && !detailDialog.open)document.body.classList.remove('dialog-open'); });
+    let outside=false;
+    dialog.addEventListener('pointerdown', e => {const r=dialog.getBoundingClientRect();outside=e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom;});
+    dialog.addEventListener('click', e => {const r=dialog.getBoundingClientRect();if(outside && (e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))dialog.close();outside=false;});
+  });
+  $('#toast-action').addEventListener('click', () => {const action=toastAction;hideToast();action?.();});
+  $('#toast-close').addEventListener('click', () => hideToast(true));
+  $('#checkout-btn').addEventListener('click', () => {
+    if (!cart.length) return;
+    const lines=['RUMBO · MI LISTA DE VIAJE','Catálogo de demostración. No es un pedido ni un comprobante de pago.','',...cart.map(item=>{const p=productsById.get(item.id);return `${item.quantity} × ${p.name} — ${money(p.price)} por unidad — ${money(p.price*item.quantity)}`;}),'',`Subtotal de productos: ${money(total())} HNL`,'Envío e impuestos adicionales: no calculados.','Precios, características y disponibilidad sin confirmar.'];
+    const url=URL.createObjectURL(new Blob(['\uFEFF'+lines.join('\r\n')],{type:'text/plain;charset=utf-8'}));
+    const a=document.createElement('a');a.href=url;a.download='mi-lista-rumbo.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+    $('#cart-feedback').textContent='Lista preparada. Revisa las descargas de tu navegador. El carrito se ha conservado.';
+    $('#checkout-btn').textContent='✓ Lista descargada';setTimeout(()=>{$('#checkout-btn').innerHTML='Descargar mi lista <span aria-hidden="true">↓</span>';},2000);
+  });
+  window.addEventListener('storage', event => {if([CART_KEY,FAVORITES_KEY,null].includes(event.key)){loadState();renderProducts();renderCart();}});
+  document.addEventListener('error', event => {
+    const image=event.target;if(image instanceof HTMLImageElement && !image.dataset.failed){image.dataset.failed='true';image.alt='Fotografía no disponible';image.style.objectFit='contain';}
+  },true);
+  PHOTO_CREDITS.forEach(credit => {
+    const li=document.createElement('li'),link=document.createElement('a'),license=document.createElement('a');
+    link.href=credit.page;link.target='_blank';link.rel='noopener noreferrer';link.textContent=productsById.get(credit.id).name+' — '+credit.title;
+    license.href=credit.licenseUrl||credit.page;license.target='_blank';license.rel='noopener noreferrer';license.textContent=credit.license;
+    li.append(link,document.createTextNode(' · '+credit.author+' · '),license,document.createTextNode(' · Archivo reducido; encuadre de presentación.'));$('#photo-credits').appendChild(li);
+  });
+  $('#year').textContent=new Date().getFullYear();loadState();renderProducts();renderCart();
+  if (new URLSearchParams(location.search).get('carrito') === '1') openCart();
+})();
+>>>>>>> f22c22b8f03d58e2148ea5951c41d94f194b46b6
 
 
     saveCart();

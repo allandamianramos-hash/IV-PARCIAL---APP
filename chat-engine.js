@@ -36,7 +36,11 @@
     if (/reservar|reserva|pagar|pago|cancelacion|reembolso/.test(q)) return answer("Aquí puedes explorar y guardar una idea de viaje, pero no contratarla. Rumbo es una demostración: los precios, vuelos, hoteles y el carrito son de muestra. No se cobran pagos ni se emiten boletos.", ["Crear mi pase", "Contactos"]);
     if (/visa|pasaporte|documento|requisito|vacuna/.test(q)) return answer("Antes de cerrar las maletas: revisa la vigencia de tu documento, los requisitos del destino y de las escalas, y las condiciones de la aerolínea. Dependen de tu nacionalidad y fecha de viaje; confírmalos con el consulado correspondiente. No compartas documentos personales en el chat.", ["Qué llevar", "Crear mi pase"], [{ label: "Guía de documentos", href: "#guia-documentos" }]);
     if (/clima|temperatura|llover|lluvia|mejor epoca/.test(q)) return answer("No tengo pronóstico en tiempo real. Revisa el clima de tu destino cerca de la salida y deja una actividad bajo techo como plan B. Si vas a montaña, confirma también las condiciones de las rutas.", ["Qué llevar", "Ver destinos"]);
-    if (/seguro|traslado|guia local|experiencias/.test(q)) return answer("El inicio presenta seguros, traslados y experiencias, pero todavía no permite contratarlos. En viajes puedes explorar las propuestas de destinos. Para traslados, revisa la ciudad de llegada: algunos recorridos terrestres no están incluidos.", ["Ver vuelos", "Ver destinos"], [link("Explorar viajes")]);
+    if (/seguro|traslado|guias? locales?|experiencias/.test(q)) {
+      const service = /seguro/.test(q) ? 'seguros' : /traslado/.test(q) ? 'traslados' : 'guias';
+      const labels = { seguros: 'Comparar planes de seguro', traslados: 'Organizar un traslado', guias: 'Explorar guías locales' };
+      return answer('Ya puedes comparar opciones de ejemplo y guardarlas en Mi viaje. Ajusta las fechas y las personas para ver el importe. Son ideas para organizarte, sin reservas ni contrataciones reales.', ['Ver destinos', 'Ver hoteles'], [{ label: labels[service], href: 'servicios.html?' + new URLSearchParams({ seccion: service, ...(trip ? { destino: trip.id } : {}) }) }]);
+    }
     const shortFollowup = mentioned.some(t => q === normalize(t.name) || q === `y ${normalize(t.name)}` || q === `y en ${normalize(t.name)}`);
     const hotelsIntent = /hotel|hospedaje|alojamiento/.test(q) || (state.topic === "hotels" && (shortFollowup || /mas barato|mas economico/.test(q)));
     if (hotelsIntent) {

@@ -14,8 +14,10 @@
 
   <script src="tienda.js" defer></script>
   <script src="chat-engine.js" defer></script>
-  <script src="script.js" defer></script>
   <script src="viajes.js" defer></script>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="common.css">
+  <script src="common.js" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -73,10 +75,10 @@
       </a>
 
       <nav class="main-nav" aria-label="Navegación principal">
-        <a href="#destinos">Destinos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#tienda">Tienda</a>
-        <a href="#guias">Guías</a>
+        <a href="viajes.html?pantalla=destinos">Destinos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="servicios.html?seccion=guias">Guías locales</a>
       </nav>
 
       <div class="header-actions">
@@ -120,7 +122,7 @@
           <span>
             <small class="rumbito-eyebrow">TU COMPAÑERO DE VIAJE</small>
             <strong>¡Hola! Soy Rumbito.</strong>
-            <small>Tú pones las ganas. Juntos encontramos el rumbo.</small>
+            <small>Mi brújula, tu curiosidad. Encontremos tu próximo rumbo.</small>
             <span class="rumbito-invite">Planeemos tu próxima aventura ↗</span>
           </span>
           <span aria-hidden="true">↗</span>
@@ -274,7 +276,7 @@
       </div>
 
       <p class="demo-note">
-        Explora los módulos de vuelos, hospedaje y tienda. Los importes son de demostración.
+        Elige un servicio para empezar. Puedes guardar tus ideas sin crear una cuenta.
       </p>
     </section>
 
@@ -288,9 +290,7 @@
               Opciones en Honduras y fuera de ella para empezar a comparar.
             </p>
           </div>
-          <button class="button button-outline" id="reset-filters" type="button">
-            Mostrar todos
-          </button>
+          <a class="button button-outline" href="viajes.html?pantalla=destinos#catalogo">Ver todos los destinos ↗</a>
         </div>
 
         <div class="carousel-toolbar">
@@ -332,7 +332,7 @@
 
         <p class="demo-note">
           Fotografías ilustrativas. Importes ficticios en HNL, sin disponibilidad
-          verificada ni servicios incluidos definidos.
+          verificada ni servicios incluidos definidos. <a class="text-link" href="viajes.html?pantalla=destinos#creditos-imagenes">Créditos de fotografías</a>
         </p>
       </div>
     </section>
@@ -387,7 +387,7 @@
           </div>
 
           <a class="text-link guide-catalog" id="rv-open-catalog" href="viajes.html">
-            Explorar destinos, vuelos y hoteles ↗
+            Ver todos los destinos ↗
           </a>
         </div>
       </div>
@@ -612,7 +612,7 @@
     aria-controls="help-chat"
   >
     <span class="rumbito-avatar" aria-hidden="true"></span>
-    <span><strong>Rumbito</strong><small>¿A dónde vamos?</small></span>
+    <span><strong>Rumbito</strong><small>Tu brújula de viaje</small></span>
   </button>
 
   <section
@@ -627,7 +627,7 @@
       <span class="rumbito-avatar" aria-hidden="true"></span>
       <div>
         <h2 id="chat-title">Rumbito</h2>
-        <p>Tu asistente virtual de viajes</p>
+        <p>Tu brújula para empezar a viajar</p>
       </div>
       <button class="close-button" id="close-chat" type="button" aria-label="Cerrar chat">
         <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
@@ -684,9 +684,5 @@
       <button class="button button-primary" type="submit" autofocus>Entendido</button>
     </form>
   </dialog>
-<a class="booking-action" href="tienda.html">
-  Explorar tienda <span aria-hidden="true">↗</span>
-</a>
-  
 </body>
 </html>

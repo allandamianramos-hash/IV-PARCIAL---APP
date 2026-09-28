@@ -1,274 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>La tienda del viajero | Rumbo</title>
-
-    <link rel="stylesheet" href="tienda.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#087f8c">
+  <meta name="description" content="Prepara tu próxima escapada con la tienda de Rumbo. Equipaje, tecnología y esenciales de viaje en un solo lugar.">
+  <title>Tienda de viaje | Rumbo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="tienda.css?v=catalogo-limpio-3"><script src="tienda.js?v=catalogo-limpio-3" defer></script>
 </head>
-
 <body>
-
-    <!-- ENCABEZADO -->
-    <header class="header">
-        <div class="container header-content">
-
-            <a href="#" class="logo">
-                <div class="logo-icon">✈️</div>
-
-                <div>
-                    <strong>La tienda del viajero</strong>
-                    <small>Rumbo</small>
-                </div>
-            </a>
-
-            <button id="open-cart-btn" class="cart-button">
-                🛒 Carrito
-                <span id="cart-count">0</span>
-            </button>
-
-        </div>
-    </header>
-
-
-    <!-- PRESENTACIÓN -->
-    <section class="hero">
-
-        <div class="container hero-content">
-
-            <div class="hero-text-content">
-
-                <p class="eyebrow">
-                    TODO PARA TU VIAJE
-                </p>
-
-                <h1>
-                    Viaja preparado con
-                    <span>Rumbo</span>
-                </h1>
-
-                <p class="hero-description">
-                    Encuentra productos prácticos para equipaje,
-                    tecnología, confort, seguridad y cuidado personal.
-                </p>
-
-                <div class="hero-badges">
-
-                    <span>✓ Precios accesibles</span>
-                    <span>✓ Sin costo de envío</span>
-                    <span>✓ Productos para viajar</span>
-
-                </div>
-
-            </div>
-
-            <div class="hero-plane">
-
-            </div>
-
-        </div>
-
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="bag" viewBox="0 0 24 24"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></symbol>
+    <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+  </svg>
+  <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
+  <div class="announcement">Pequeños esenciales. Grandes historias. <span>Catálogo de demostración · HNL</span></div>
+  <header class="site-header"><div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Rumbo, volver al inicio">rumbo<span aria-hidden="true">↗</span></a>
+    <nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="viajes.html">Destinos</a><a href="index.html#servicios">Servicios</a><a href="tienda.html" aria-current="page">Tienda</a></nav>
+    <div class="header-actions"><button id="favorites-toggle" class="icon-button" type="button" aria-label="Mostrar favoritos" aria-pressed="false" title="Mis favoritos"><svg class="icon" aria-hidden="true"><use href="#heart"/></svg><span id="favorites-count" class="small-count" hidden>0</span></button><button id="open-cart-btn" class="cart-button" type="button" aria-haspopup="dialog" aria-controls="cart-modal"><svg class="icon" aria-hidden="true"><use href="#bag"/></svg><span>Mi carrito</span><span id="cart-count">0</span></button></div>
+  </div></header>
+  <main>
+    <section class="container store-hero" aria-labelledby="store-title"><div class="hero-copy"><p class="eyebrow">LA TIENDA DEL VIAJERO</p><h1 id="store-title">Lleva lo esencial.<br><span>Vive lo demás.</span></h1><p>De la primera maleta al último detalle. Encuentra esos compañeros de viaje que hacen más fácil salir a descubrir.</p><a class="button button-primary" href="#catalogo">Explorar la colección <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a><div class="hero-footnote"><span>30 esenciales</span><span>5 categorías</span><span>Un nuevo rumbo</span></div></div><div class="hero-photo"><img src="imagenes/bolso-mano.jpg?v=catalogo-limpio-3" alt="Bolso de viaje de cuero, fotografía de referencia" width="800" height="800" fetchpriority="high"><div class="photo-caption"><span>LISTO PARA SALIR</span><strong>La aventura empieza<br>con lo que llevas.</strong><a href="#catalogo" aria-label="Ver productos de viaje">↗</a></div></div></section>
+    <div class="container store-benefits" aria-label="Herramientas de la tienda"><div><span class="benefit-number">01</span><p><strong>Encuentra tu esencial</strong><small>Busca por nombre o categoría.</small></p></div><div><span class="benefit-number">02</span><p><strong>Guarda tus favoritos</strong><small>Tu selección, a tu ritmo.</small></p></div><div><span class="benefit-number">03</span><p><strong>Prepara tu lista</strong><small>Revisa y descarga tu carrito.</small></p></div></div>
+    <section class="container catalog-section" id="catalogo" aria-labelledby="catalog-title"><div class="section-heading"><div><p class="eyebrow">BIEN ELEGIDO, BIEN PREPARADO</p><h2 id="catalog-title">Tu viaje, mejor equipado.</h2></div><p class="catalog-note">Fotografías de referencia.<br>Precios de demostración en lempiras.</p></div>
+      <div class="catalog-tools"><div class="search-box"><svg class="icon" aria-hidden="true"><use href="#search"/></svg><label class="sr-only" for="product-search">Buscar productos</label><input id="product-search" type="search" placeholder="¿Qué te falta para viajar?" maxlength="100" autocomplete="off"></div><div class="sort-field"><label for="product-sort">Ordenar por</label><select id="product-sort"><option value="featured">Orden del catálogo</option><option value="price-asc">Menor precio</option><option value="price-desc">Mayor precio</option><option value="name">Nombre, A–Z</option></select></div></div>
+      <div class="filter-row"><div class="filters" role="group" aria-label="Categorías de productos"><button type="button" class="filter-btn active" data-category="Todos" aria-pressed="true">Todos <span>30</span></button><button type="button" class="filter-btn" data-category="Equipaje" aria-pressed="false">Equipaje</button><button type="button" class="filter-btn" data-category="Tecnología" aria-pressed="false">Tecnología</button><button type="button" class="filter-btn" data-category="Confort" aria-pressed="false">Confort</button><button type="button" class="filter-btn" data-category="Seguridad" aria-pressed="false">Seguridad</button><button type="button" class="filter-btn" data-category="Cuidado" aria-pressed="false">Cuidado</button></div><button class="text-button" id="reset-filters" type="button" hidden>Restablecer filtros</button></div>
+      <div class="results-row"><p id="products-result" role="status" aria-live="polite"></p><span id="favorites-label" hidden>♡ Tus favoritos</span></div><div id="products-grid" class="products-grid"></div><div id="empty-products" class="empty-state" hidden><span class="empty-symbol" aria-hidden="true">⌕</span><h3>No encontramos esa combinación.</h3><p>Prueba otra búsqueda o guarda algún producto como favorito.</p><button id="empty-reset" class="button button-primary" type="button">Ver todos los productos</button></div><noscript><p>Activa JavaScript para explorar los productos y utilizar el carrito.</p></noscript>
     </section>
-
-
-    <!-- PRODUCTOS -->
-    <main class="products-section">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div>
-
-                    <p class="section-kicker">
-                        CATÁLOGO
-                    </p>
-
-                    <h2>
-                        Productos para tu viaje
-                    </h2>
-
-                </div>
-
-                <p id="products-result">
-                    30 productos
-                </p>
-
-            </div>
-
-
-            <!-- FILTROS -->
-            <div class="filters">
-
-                <button
-                    class="filter-btn active"
-                    data-category="Todos">
-                    Todos
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-category="Equipaje">
-                    Equipaje
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-category="Tecnología">
-                    Tecnología
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-category="Confort">
-                    Confort
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-category="Seguridad">
-                    Seguridad
-                </button>
-
-                <button
-                    class="filter-btn"
-                    data-category="Cuidado">
-                    Cuidado
-                </button>
-
-            </div>
-
-
-            <!-- AQUÍ APARECERÁN LOS PRODUCTOS -->
-            <div id="products-grid" class="products-grid"></div>
-
-        </div>
-
-    </main>
-
-
-    <!-- CARRITO -->
-    <div id="cart-modal" class="modal hidden">
-
-        <div
-            id="close-cart-overlay"
-            class="modal-overlay">
-        </div>
-
-
-        <aside class="cart-panel">
-
-            <div class="cart-header">
-
-                <div>
-
-                    <p class="section-kicker">
-                        TU COMPRA
-                    </p>
-
-                    <h2>
-                        Mi carrito
-                    </h2>
-
-                </div>
-
-                <button
-                    id="close-cart-btn"
-                    class="close-btn">
-                    ×
-                </button>
-
-            </div>
-
-
-            <div class="cart-products">
-
-                <div id="cart-items"></div>
-
-            </div>
-
-
-            <div class="cart-summary">
-
-                <div class="summary-row">
-
-                    <span>
-                        Subtotal
-                    </span>
-
-                    <strong id="cart-subtotal">
-                        L. 0.00
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-row">
-
-                    <span>
-                        Envío
-                    </span>
-
-                    <strong class="free">
-                        GRATIS
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-row total-row">
-
-                    <span>
-                        Total
-                    </span>
-
-                    <strong id="cart-total">
-                        L. 0.00
-                    </strong>
-
-                </div>
-
-
-                <button
-                    id="checkout-btn"
-                    class="checkout-btn">
-                    Finalizar compra
-                </button>
-
-
-                <p class="cart-note">
-                    El envío no tiene costo.
-                </p>
-
-            </div>
-
-        </aside>
-
-    </div>
-
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="footer">
-
-        <div class="container footer-content">
-
-            <p>
-                © 2026 La tienda del viajero | Rumbo
-            </p>
-
-            <p>
-                Productos prácticos para tus viajes
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    
-    <script src="tienda.js"></script>
-
+    <section class="container packing-section" aria-labelledby="packing-title"><div><p class="eyebrow">EL ÚLTIMO REPASO</p><h2 id="packing-title">Antes de cerrar la maleta.</h2><p>Tres pequeños detalles que merecen un espacio en tu lista.</p><a href="index.html#guias" class="text-link">Consultar las guías de viaje ↗</a></div><div class="packing-links"><button type="button" data-category-shortcut="Tecnología"><span>01</span><div><strong>Energía para el camino</strong><small>Cargadores, cables y adaptadores.</small></div><span aria-hidden="true">↗</span></button><button type="button" data-category-shortcut="Seguridad"><span>02</span><div><strong>Todo en su lugar</strong><small>Documentos y accesorios organizados.</small></div><span aria-hidden="true">↗</span></button><button type="button" data-category-shortcut="Confort"><span>03</span><div><strong>También se vale descansar</strong><small>Comodidad para trayectos largos.</small></div><span aria-hidden="true">↗</span></button></div></section>
+    <section class="container faq-section" aria-labelledby="faq-title"><h2 id="faq-title">Antes de continuar</h2><div class="faq-grid"><details><summary>¿Cómo funciona esta tienda?</summary><p>Es un catálogo de demostración. Puedes explorar, guardar favoritos, preparar un carrito y descargar tu lista. No se procesan pagos ni se crean pedidos reales.</p></details><details><summary>¿Se conserva mi carrito?</summary><p>Tu carrito y favoritos se guardan en este navegador cuando el almacenamiento local está disponible. Puedes cambiar cantidades o eliminar productos cuando quieras.</p></details><details><summary>¿Las fotos son del producto exacto?</summary><p>Son fotografías reales de referencia, no una garantía de marca, modelo o características. Los créditos y licencias están al final de esta página.</p></details></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-top"><div><a class="logo" href="index.html">rumbo<span aria-hidden="true">↗</span></a><p>Todo listo para tu próxima historia.</p></div><nav aria-label="Enlaces de la tienda"><a href="index.html">Volver al inicio</a><a href="viajes.html">Explorar destinos</a><a href="index.html#contacto">Contactar al equipo</a></nav></div><div class="container"><details class="photo-credits"><summary>Créditos de fotografías y licencias</summary><p>Fotografías de referencia de Unsplash, Pexels y Wikimedia Commons. Cada enlace identifica la obra y su licencia. No se sugiere patrocinio de las marcas mostradas.</p><ul id="photo-credits"></ul></details></div><div class="container footer-bottom"><p>© <span id="year"></span> Rumbo · Tienda de viaje</p><p>Proyecto de demostración · Sin pagos ni reservas reales</p></div></footer>
+  <dialog id="cart-modal" class="cart-dialog" aria-labelledby="cart-title"><div class="cart-layout"><header class="dialog-header"><div><p class="eyebrow">TUS COMPAÑEROS DE VIAJE</p><h2 id="cart-title">Mi carrito <span id="cart-items-label"></span></h2></div><button class="icon-button" id="close-cart-btn" type="button" aria-label="Cerrar carrito"><svg class="icon" aria-hidden="true"><use href="#close"/></svg></button></header><div id="cart-items" class="cart-items"></div><div class="cart-summary"><div class="summary-row"><span>Subtotal de productos</span><strong id="cart-subtotal"></strong></div><div class="summary-row"><span>Envío</span><span>No calculado</span></div><div class="summary-row total-row"><span>Total de la lista</span><strong id="cart-total"></strong></div><button class="button button-primary checkout-btn" id="checkout-btn" type="button">Descargar mi lista <span aria-hidden="true">↓</span></button><button class="text-button continue-button" id="continue-shopping" type="button">Seguir explorando</button><p class="cart-note">Lista de demostración. No se realiza ningún cobro ni se registra una compra.</p><p id="cart-feedback" class="sr-only" role="status"></p></div></div></dialog>
+  <dialog id="product-modal" class="product-dialog" aria-labelledby="detail-title"><button class="icon-button detail-close" id="close-detail" type="button" aria-label="Cerrar detalle"><svg class="icon" aria-hidden="true"><use href="#close"/></svg></button><div id="product-detail"></div></dialog>
+  <div id="toast" class="toast" hidden><span class="toast-check" aria-hidden="true">✓</span><p id="toast-message" role="status" aria-live="polite"></p><button id="toast-action" type="button">Ver carrito</button><button id="toast-close" type="button" aria-label="Cerrar notificación">×</button></div>
+  <p id="storage-notice" class="storage-notice" role="status" hidden>Tu navegador no permite guardar la selección. Se conservará mientras esta página siga abierta.</p>
 </body>
 </html>
+

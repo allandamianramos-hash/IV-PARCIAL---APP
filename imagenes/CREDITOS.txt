@@ -1,0 +1,213 @@
+RUMBO — Fotografías reales de referencia
+Fuentes: Unsplash, Pexels y Wikimedia Commons.
+Archivos reducidos; encuadres de presentación mediante CSS. No acreditan marca, modelo ni inventario.
+
+imagenes/mochila.jpg
+Blue backpack
+Autor: Sun Lingyan
+Fuente: https://unsplash.com/photos/_H0fjILH5Vw
+Licencia: Unsplash License
+https://unsplash.com/license
+
+imagenes/maleta.jpg
+Olive carry-on suitcase
+Autor: American Green Travel
+Fuente: https://unsplash.com/photos/zQsEp5sRSKY
+Licencia: Unsplash License
+https://unsplash.com/license
+
+imagenes/bolso-mano.jpg
+Leather duffel bag on the ground.jpg
+Autor: Harsh Jadav
+Fuente: https://commons.wikimedia.org/wiki/File:Leather_duffel_bag_on_the_ground.jpg
+Licencia: CC0
+http://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+imagenes/rinonera.jpg
+Sling bag
+Autor: Romain B
+Fuente: https://unsplash.com/photos/0SRsZS6hXYA
+Licencia: Unsplash License
+https://unsplash.com/license
+
+imagenes/etiqueta-maleta.jpg
+UnixWare luggage tag.jpg
+Autor: Jonathan Schilling
+Fuente: https://commons.wikimedia.org/wiki/File:UnixWare_luggage_tag.jpg
+Licencia: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+
+imagenes/candado-maleta.jpg
+File:Combination-lock-254923 1920.jpg
+Autor: Huskyherz
+Fuente: https://commons.wikimedia.org/wiki/File:Combination-lock-254923_1920.jpg
+Licencia: CC0
+http://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+imagenes/power-bank.jpg
+Powerbank and cable
+Autor: MOISES RIBEIRO
+Fuente: https://www.pexels.com/photo/11031423/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/cargador.jpg
+USB charger
+Autor: Mika Baumeister
+Fuente: https://unsplash.com/photos/cQTlLkl2Fnw
+Licencia: Unsplash License
+https://unsplash.com/license
+
+imagenes/cable-usb.jpg
+White charging cable
+Autor: Matthias Zomer
+Fuente: https://www.pexels.com/photo/914912/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/adaptador.jpg
+Travel adapter
+Autor: Gavin Phillips
+Fuente: https://unsplash.com/photos/OaNfWxDJ4AI
+Licencia: Unsplash License
+https://unsplash.com/license
+
+imagenes/audifonos.jpg
+Earfun wireless black headphones, September 2024 20.jpg
+Autor: Chenspec
+Fuente: https://commons.wikimedia.org/wiki/File:Earfun_wireless_black_headphones,_September_2024_20.jpg
+Licencia: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+
+imagenes/soporte-celular.jpg
+Phone stand
+Autor: COPPERTIST WU
+Fuente: https://www.pexels.com/photo/15979597/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/almohada-viaje.jpg
+Inflatable travel pillow
+Autor: Mykhailo Petrushchak
+Fuente: https://www.pexels.com/photo/31443013/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/botella.jpg
+Reusable collapsible bottle
+Autor: cottonbro studio
+Fuente: https://www.pexels.com/photo/3738061/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/antifaz.jpg
+Silk sleep mask
+Autor: MANITO SILK
+Fuente: https://unsplash.com/photos/yJtAmnvc1bs
+Licencia: Unsplash License
+https://unsplash.com/license/
+
+imagenes/tapones-oidos.jpg
+3M EARPLUGS YELLOW.jpg
+Autor: Dinkun Chen
+Fuente: https://commons.wikimedia.org/wiki/File:3M_EARPLUGS_YELLOW.jpg
+Licencia: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+
+imagenes/paraguas.jpg
+Folding umbrella 01.jpg
+Autor: Kritzolina
+Fuente: https://commons.wikimedia.org/wiki/File:Folding_umbrella_01.jpg
+Licencia: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+
+imagenes/toalla-viaje.jpg
+Rolled white towels
+Autor: Dmitriy Steinke
+Fuente: https://www.pexels.com/photo/17428224/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/porta-pasaporte.jpg
+Passport holder
+Autor: WanderLabs
+Fuente: https://unsplash.com/photos/KbtMWr6ysrw
+Licencia: Unsplash License
+https://unsplash.com/license
+
+imagenes/porta-documentos.jpg
+Breast wallet.JPG
+Autor: KVDP
+Fuente: https://commons.wikimedia.org/wiki/File:Breast_wallet.JPG
+Licencia: Public domain
+https://commons.wikimedia.org/wiki/File:Breast_wallet.JPG
+
+imagenes/billetera.jpg
+Flap Boy Slim Wallet from JAIMIE JACOBS 01.jpg
+Autor: www.kartenetui.info
+Fuente: https://commons.wikimedia.org/wiki/File:Flap_Boy_Slim_Wallet_from_JAIMIE_JACOBS_01.jpg
+Licencia: CC BY 4.0
+https://creativecommons.org/licenses/by/4.0
+
+imagenes/bolsa-impermeable.jpg
+Ortlieb Atrack, OutDoor 2018, Friedrichshafen (1X7A9931) (cropped).jpg
+Autor: Matti Blume
+Fuente: https://commons.wikimedia.org/wiki/File:Ortlieb_Atrack,_OutDoor_2018,_Friedrichshafen_(1X7A9931)_(cropped).jpg
+Licencia: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+
+imagenes/correa-maleta.jpg
+Luggage buckle straps 2017 A.jpg
+Autor: Fructibus
+Fuente: https://commons.wikimedia.org/wiki/File:Luggage_buckle_straps_2017_A.jpg
+Licencia: CC0
+http://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+imagenes/linterna.jpg
+Fenix P1D LED flashlight (2739718566).jpg
+Autor: Darron Birgenheier from Reno, NV, USA
+Fuente: https://commons.wikimedia.org/wiki/File:Fenix_P1D_LED_flashlight_(2739718566).jpg
+Licencia: CC BY 2.0
+https://creativecommons.org/licenses/by/2.0
+
+imagenes/neceser.jpg
+Travel toiletries bag
+Autor: Timur Weber
+Fuente: https://www.pexels.com/photo/9185875/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/botellas-liquidos.jpg
+30ml PET mist spray bottle.jpg
+Autor: Plasticbottlesupplier
+Fuente: https://commons.wikimedia.org/wiki/File:30ml_PET_mist_spray_bottle.jpg
+Licencia: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0
+
+imagenes/cepillo-dientes.jpg
+Bamboo toothbrush and case
+Autor: Mikhail Nilov
+Fuente: https://www.pexels.com/photo/7814562/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/kit-higiene.jpg
+Hanging travel hygiene kit
+Autor: Timur Weber
+Fuente: https://www.pexels.com/photo/9185865/
+Licencia: Pexels License
+https://www.pexels.com/license/
+
+imagenes/protector-solar.jpg
+Sunscreen product photography
+Autor: Tuan Nguyen
+Fuente: https://unsplash.com/photos/AuDD-ejVWLA
+Licencia: Unsplash License
+https://unsplash.com/license/
+
+imagenes/botiquin.jpg
+Kit pronto soccorso moto (aperto).JPG
+Autor: Umberto NURS
+Fuente: https://commons.wikimedia.org/wiki/File:Kit_pronto_soccorso_moto_(aperto).JPG
+Licencia: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0

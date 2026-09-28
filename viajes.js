@@ -128,6 +128,8 @@
     }));
   }
 
+  const inspirationBudgets = { roatan:8500, 'la-ceiba':6500, copan:4500, bali:32000, dolomitas:19000, kioto:43000 };
+  destinations.forEach(d => { d.inspirationBudget = inspirationBudgets[d.id]; });
   window.RumboViajesDatos = { destinations, rooms, origins, flights };
 })();
 
@@ -310,17 +312,17 @@
         normalize(`${item.name} ${item.country} ${item.tag}`).includes(q) &&
         (type === 'all' || item.type === type) &&
         (region === 'all' || item.region === region) &&
-        (budget === 'all' || item.economy <= Number(budget))
+        (budget === 'all' || item.inspirationBudget <= Number(budget))
       );
       const order = $('#orden-destinos').value;
-      if (order === 'price-low') results.sort((a, b) => a.economy - b.economy);
+      if (order === 'price-low') results.sort((a, b) => a.inspirationBudget - b.inspirationBudget);
       if (order === 'name') results.sort((a, b) => a.name.localeCompare(b.name, 'es'));
       $('#destination-count').textContent = `${results.length} ${results.length === 1 ? 'destino para descubrir' : 'destinos para descubrir'}`;
       $('#destination-empty').hidden = results.length !== 0;
       $('#destination-list').innerHTML = results.map(item => {
         const href = escapeHTML(link('detalle-destino', contextFor(item)));
         return `<article class="rv-destination-card"><a href="${href}" class="rv-card-photo" tabindex="-1" aria-hidden="true"><img src="${item.image}" alt="" width="1100" height="760" loading="lazy"><span class="rv-card-tag">${item.tag}</span></a>
-          <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p>${item.intro}</p><div class="rv-card-footer"><div><small>Vuelo desde · solo ida</small><strong>${money(item.economy)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino ↗</a></div></div></article>`;
+          <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p>${item.intro}</p><div class="rv-card-footer"><div><small>Idea de presupuesto / persona</small><strong>${money(item.inspirationBudget)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino ↗</a></div></div></article>`;
       }).join('');
       const query = new URLSearchParams(new FormData(form));
       query.set('orden', order);
@@ -351,7 +353,7 @@
     document.title = `${destination.name} | Rumbo`;
     $('#destination-detail').innerHTML = `<nav class="rv-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><a href="viajes.html?pantalla=destinos">Destinos</a><span aria-hidden="true">/</span><span aria-current="page">${destination.name}</span></nav>
       <section class="rv-detail-hero" aria-labelledby="page-title"><img src="${destination.image}" alt="${destination.alt}" width="1100" height="760"><div class="rv-detail-title"><p class="rv-card-country">${destination.country} · ${destination.tag}</p><h1 id="page-title">${destination.name}</h1><p>${destination.intro}</p></div></section>
-      <div class="rv-detail-body"><section class="rv-detail-copy"><p class="eyebrow">UN POCO DE INSPIRACIÓN</p><h2>Lo que te espera.</h2><p>${destination.description}</p><ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Fotografía de inspiración. Las actividades se presentan como ideas y no están incluidas en los precios de vuelo u hotel.</p></section>
+      <div class="rv-detail-body"><section class="rv-detail-copy"><p class="eyebrow">UN POCO DE INSPIRACIÓN</p><h2>Lo que te espera.</h2><p>${destination.description}</p><ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div><p><a class="rv-link-button" href="servicios.html?seccion=guias&destino=${destination.id}">Explorar recorridos con guía en ${destination.name} ↗</a></p>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Fotografía de inspiración. Las actividades se presentan como ideas y no están incluidas en los precios de vuelo u hotel.</p></section>
       <aside class="rv-plan-panel" aria-labelledby="detail-plan-title"><p class="eyebrow">DA EL PRIMER PASO</p><h2 id="detail-plan-title">Tu escapada a ${destination.name}</h2><p class="rv-detail-price">Vuelo desde <strong>${money(destination.economy)}</strong></p><p class="rv-caption" style="margin: -8px 0 22px">Por persona · económica · solo ida desde Tegucigalpa.</p>
       <form id="detail-form"><div class="rv-field"><label for="detail-date">Fecha de salida</label><input id="detail-date" type="date" value="${state.date}" min="${today()}" required></div><div class="rv-field-pair"><div class="rv-field"><label for="detail-travelers">Viajeros</label><input id="detail-travelers" type="number" value="${state.travelers}" min="1" max="12" step="1" required></div><div class="rv-field"><label for="detail-nights">Noches de hotel</label><input id="detail-nights" type="number" value="${state.nights}" min="1" max="30" step="1" required></div></div><button class="button button-primary" type="submit" name="next" value="vuelos">Elegir vuelo <span aria-hidden="true">↗</span></button><button class="rv-link-button" type="submit" name="next" value="hoteles">Solo necesito hotel →</button></form></aside></div>`;
     $('#detail-form').addEventListener('submit', event => {

@@ -10,6 +10,13 @@ function conversation() {
   let plan = {}; const state = {};
   return text => { const result = globalThis.RumboChat.respond(text, plan, context, state); if (result.plan) plan = result.plan; return result; };
 }
+test("conecta los nuevos servicios desde el chat", () => {
+  for (const [text, section] of [["Quiero un seguro", "seguros"], ["Necesito traslados", "traslados"], ["Guías locales en Copán Ruinas", "guias"]]) {
+    const result = conversation()(text);
+    assert.match(result.actions[0].href, new RegExp(`servicios.html\\?seccion=${section}`));
+    assert.equal(result.plan, null);
+  }
+});
 test("recoge varias preferencias en lenguaje natural", () => {
   const send = conversation();
   const result = send("viajo con familia, somos dos, queremos playa y tenemos 20 mil");

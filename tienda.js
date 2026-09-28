@@ -729,6 +729,7 @@ window.RumboProducts = PRODUCTS;
     li.append(link,document.createTextNode(' · '+credit.author+' · '),license,document.createTextNode(' · Archivo reducido; encuadre de presentación.'));$('#photo-credits').appendChild(li);
   });
   $('#year').textContent=new Date().getFullYear();loadState();renderProducts();renderCart();
+  if (new URLSearchParams(location.search).get('carrito') === '1') openCart();
 })();
 
 

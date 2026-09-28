@@ -30,3 +30,21 @@ La conversacion vive en memoria: reiniciar o recargar la borra. El chat no envia
 Se retiro la integracion de Puter y su documentacion. No se necesitan archivos .env. Para publicar usa los archivos HTML, CSS, JS y las imagenes; no publiques configuracion privada.
 
 El personaje parpadea, flota y sigue el cursor. Las animaciones respetan la preferencia del sistema de reducir movimiento. Los accesos y sugerencias se pueden usar con teclado.
+
+## Primera versión de servicios
+
+- `servicios.html`: entrada de servicios, traslados, seguros, guías locales, perfil local, ayuda y Mi viaje. El parámetro `seccion` elige la vista.
+- `servicios.js`: catálogo de ejemplo, filtros, validación, cálculos, guardado y descarga de selecciones. Conserva una elección por tipo de servicio. Los cambios de formulario requieren pulsar «Ver opciones» antes de seleccionar de nuevo.
+- `servicios.css`: presentación adaptable a móvil con la paleta original.
+- `common.js` y `common.css`: enlaces compartidos, acceso a Rumbito y navegación entre páginas.
+- `viajes.js`: catálogo único de los seis destinos, sus fotografías y presupuestos de inspiración; se carga antes de `script.js` en el inicio. Las tarifas de vuelos y hoteles se calculan por separado del presupuesto orientativo.
+
+Rumbito ahora es una brújula exploradora con mochila. También puede abrir las nuevas páginas al preguntar por traslados, seguros o guías locales. Copán utiliza la fotografía local del sitio arqueológico, con créditos disponibles desde el catálogo de destinos.
+
+### Almacenamiento y próxima integración
+
+No hay base de datos, autenticación, proveedores ni pagos conectados. El perfil es un alias local, no una cuenta. Los seguros son ejemplos visuales y no activan ninguna cobertura.
+
+Las claves `rumbo.services.v1` y `rumbo.profile.v1` guardan servicios y perfil. El módulo de viajes usa `rumbo.integrante2.viaje.v1`; la tienda conserva sus claves `rumbo.store.cart.v2` y `rumbo.store.favorites.v2`. Si el navegador bloquea el almacenamiento, los servicios ofrecen descargar la selección. Para compartir almacenamiento entre páginas, se recomienda abrir el servidor local en vez de `file://`.
+
+Para integrar la base de datos después, sustituir los catálogos de muestra y las funciones de lectura/escritura local por consultas a una API, manteniendo la validación de capacidad, fechas y cantidades. La API deberá volver a calcular y validar precios y disponibilidad antes de crear reservas.

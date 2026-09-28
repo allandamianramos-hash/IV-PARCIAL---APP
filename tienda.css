@@ -2080,40 +2080,70 @@ img {
 }
 
 /* =========================================================
-   IMÁGENES DE PRODUCTOS
-   No cambia el JavaScript ni los 30 productos
+   ARREGLO DE TODAS LAS IMÁGENES DE PRODUCTOS
    ========================================================= */
 
+/* Espacio donde va cada imagen */
 .product-image-container {
     width: 100%;
     height: 200px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     background: #f4f7f7;
+    border-radius: 0;
 }
 
-.product-image {
-    display: block;
-    width: 100%;
-    height: 100%;
+/* Imágenes principales */
+.product-image,
+.product-img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
-    object-position: center;
+    object-fit: contain !important;
+    object-position: center center;
 }
 
-/* Mantiene la proporción de las fotografías */
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+/* Si la imagen está directamente dentro del contenedor */
+.product-image-container img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain !important;
+    object-position: center center;
 }
 
-/* En celulares */
+/* Evita que alguna regla anterior de tu código la recorte */
+.product-image-container img[width],
+.product-image-container img[height] {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+/* Imagen cuadrada */
+.product-image-container img[src*=".jpg"],
+.product-image-container img[src*=".jpeg"],
+.product-image-container img[src*=".png"],
+.product-image-container img[src*=".webp"] {
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* En pantallas pequeñas */
 @media (max-width: 700px) {
     .product-image-container {
         height: 180px;
+    }
+
+    .product-image,
+    .product-img,
+    .product-image-container img {
+        object-fit: contain !important;
     }
 }

@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
+  <script src="tienda.js" defer></script>
+  <script src="chat-engine.js" defer></script>
   <script src="script.js" defer></script>
   <script src="viajes.js" defer></script>
 </head>
@@ -114,10 +116,12 @@
         </div>
 
         <button class="hero-adviser" type="button" data-open-planner>
-          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+          <span class="rumbito-avatar rumbito-hero" aria-hidden="true"></span>
           <span>
-            <strong>¿No sabes qué destino elegir?</strong>
-            <small>Compara opciones según tus gustos y presupuesto.</small>
+            <small class="rumbito-eyebrow">TU COMPAÑERO DE VIAJE</small>
+            <strong>¡Hola! Soy Rumbito.</strong>
+            <small>Tú pones las ganas. Juntos encontramos el rumbo.</small>
+            <span class="rumbito-invite">Planeemos tu próxima aventura ↗</span>
           </span>
           <span aria-hidden="true">↗</span>
         </button>
@@ -607,8 +611,8 @@
     aria-expanded="false"
     aria-controls="help-chat"
   >
-    <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
-    <span>Planear mi viaje</span>
+    <span class="rumbito-avatar" aria-hidden="true"></span>
+    <span><strong>Rumbito</strong><small>¿A dónde vamos?</small></span>
   </button>
 
   <section
@@ -620,9 +624,10 @@
     hidden
   >
     <div class="chat-header">
+      <span class="rumbito-avatar" aria-hidden="true"></span>
       <div>
-        <h2 id="chat-title">Orientador Rumbo</h2>
-        <p>Tu idea de viaje, paso a paso · HNL</p>
+        <h2 id="chat-title">Rumbito</h2>
+        <p>Tu asistente virtual de viajes</p>
       </div>
       <button class="close-button" id="close-chat" type="button" aria-label="Cerrar chat">
         <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
@@ -630,8 +635,7 @@
     </div>
 
     <div class="chat-progress">
-      <span id="chat-step-label">¿Cómo podemos orientarte?</span>
-      <button type="button" id="chat-back" disabled>← Atrás</button>
+      <span id="chat-step-label">Un gran viaje empieza con una buena idea.</span>
     </div>
 
     <div
@@ -644,16 +648,16 @@
       tabindex="0"
     ></div>
 
-    <div class="chat-options" id="chat-options" role="group" aria-label="Respuestas sugeridas"></div>
 
+    <div class="chat-options" id="chat-options" aria-label="Sugerencias para conversar"></div>
     <form class="chat-form" id="chat-form">
       <label for="chat-input">Tu respuesta</label>
       <div class="chat-input-row">
         <input
           id="chat-input"
           type="text"
-          placeholder="Escribe aquí"
-          maxlength="240"
+          placeholder="Cuéntame tu idea de viaje…"
+          maxlength="2000"
           autocomplete="off"
           required
         >
@@ -663,9 +667,9 @@
 
     <div class="chat-tools">
       <button type="button" id="chat-restart">Empezar de nuevo</button>
-      <span>Sin registro</span>
+      <span>Sin cuentas. A tu ritmo.</span>
     </div>
-    <p class="chat-disclaimer">Orientación programada · No consulta precios reales.</p>
+    <p class="chat-disclaimer">Ideas para inspirarte · Precios de muestra · Sin reservas reales</p>
   </section>
 
   <dialog

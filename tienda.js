@@ -501,8 +501,10 @@ const PHOTO_CREDITS = [
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
   }
 ];
+window.RumboProducts = PRODUCTS;
 (() => {
   'use strict';
+  if (!document.querySelector('#products-grid')) return;
   const $ = selector => document.querySelector(selector);
   const money = value => 'L ' + new Intl.NumberFormat('es-HN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
   const normalize = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();

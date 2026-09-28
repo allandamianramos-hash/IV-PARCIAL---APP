@@ -1,0 +1,7 @@
+{
+  "name": "rumbo-viajes",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": { "start": "node server.mjs", "test": "node --test server.test.mjs chat.test.mjs" },
+  "engines": { "node": ">=22" }
+}

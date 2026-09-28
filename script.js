@@ -335,10 +335,8 @@
     });
 
     let plan = emptyPlan();
-    let step = "home";
     let chosenDestination = null;
     let ideaCode = "";
-    let history = [];
 
     function updatePass(message) {
       const completed = [
@@ -366,7 +364,6 @@
       $("#boarding-pass").classList.toggle("is-ready", ready);
       $("#download-pass").disabled = !ready;
       $("#share-pass").disabled = !ready;
-      $("#chat-back").disabled = history.length === 0;
 
       setText(
         "#planner-button-label",
@@ -591,517 +588,187 @@
       }
     });
 
-    /* CHAT */
+    /* RUMBITO */
     const panel = $("#help-chat");
     const launcher = $("#chat-launcher");
     const messages = $("#chat-messages");
-    const options = $("#chat-options");
     const input = $("#chat-input");
-    const planButtons = [...document.querySelectorAll("[data-open-planner]")];
-    const helpButtons = [...document.querySelectorAll("[data-open-help]")];
-    const openButtons = [launcher, ...planButtons, ...helpButtons];
-
+    const form = $("#chat-form");
+    const send = form.querySelector('button[type="submit"]');
+    const restart = $("#chat-restart");
+    const options = $("#chat-options");
+    let localState = {};
+    const openButtons = [launcher, ...document.querySelectorAll("[data-open-planner], [data-open-help]")];
     let opener = launcher;
-
-    function setExpanded(value) {
-      openButtons.forEach(button => {
-        button.setAttribute("aria-expanded", String(value));
-        button.setAttribute("aria-controls", "help-chat");
+    let busy = false;
+    const avatars = [...document.querySelectorAll(".rumbito-avatar")];
+    avatars.forEach(avatar => {
+      avatar.innerHTML = `<svg viewBox="0 0 120 120" focusable="false" aria-hidden="true">
+        <path fill="#2d8490" d="M34 9 Q30 3 39 3 L109 3 Q116 3 116 11 L114 80 Q114 88 108 83 L87 62 L43 107 Q38 112 33 107 L8 82 Q3 77 8 72 L53 28Z"/>
+        <g class="rumbito-eyes"><ellipse cx="62" cy="49" rx="12" ry="13" fill="white"/><ellipse cx="91" cy="49" rx="12" ry="13" fill="white"/>
+        <g class="rumbito-pupils" fill="#183044"><circle cx="65" cy="50" r="6.5"/><circle cx="94" cy="50" r="6.5"/></g></g>
+        <circle cx="49" cy="65" r="5" fill="#edc579"/><circle cx="101" cy="65" r="5" fill="#edc579"/>
+        <path d="M66 68 Q77 79 88 68" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+      </svg>`;
+    });
+    let pointerFrame = 0;
+    document.addEventListener("pointermove", event => {
+      if (reducedMotion.matches || event.pointerType === "touch" || pointerFrame) return;
+      pointerFrame = requestAnimationFrame(() => {
+        avatars.forEach(avatar => {
+          const rect = avatar.getBoundingClientRect();
+          if (!rect.width) return;
+          const dx = Math.max(-3, Math.min(3, (event.clientX - rect.x - rect.width / 2) / 65));
+          const dy = Math.max(-3, Math.min(3, (event.clientY - rect.y - rect.height / 2) / 65));
+          avatar.style.setProperty("--gaze-x", `${dx}px`);
+          avatar.style.setProperty("--gaze-y", `${dy}px`);
+        });
+        pointerFrame = 0;
       });
-    }
+    }, { passive: true });
 
     function openChat(button) {
       opener = button;
       panel.hidden = false;
-      setExpanded(true);
-      $("#close-chat").focus();
-      requestAnimationFrame(() => {
-        messages.scrollTop = messages.scrollHeight;
-      });
-    }
-
-    function closeChat(restoreFocus = true) {
-      panel.hidden = true;
-      setExpanded(false);
-      if (restoreFocus) opener.focus();
-    }
-
-    function addMessage(text, user = false, linkData = null) {
-      const message = document.createElement("p");
-      message.className = user ? "chat-message user" : "chat-message";
-      message.textContent = text;
-
-      if (linkData) {
-        const link = document.createElement("a");
-        link.href = linkData.href;
-        link.textContent = linkData.label;
-
-        link.addEventListener("click", () => {
-          if (linkData.destination) {
-            const trip = catalog.find(item => item.id === linkData.destination);
-            if (trip) showDestination(trip);
-          }
-
-          openGuide(linkData.href);
-          closeChat(false);
-
-          const target = document.getElementById(linkData.href.slice(1));
-          if (target) {
-            if (!target.hasAttribute("tabindex")) {
-              target.setAttribute("tabindex", "-1");
-              target.addEventListener("blur", () => {
-                target.removeAttribute("tabindex");
-              }, { once: true });
-            }
-            target.focus({ preventScroll: true });
-          }
-        });
-
-        message.appendChild(link);
-      }
-
-      messages.appendChild(message);
-
-      // Limita el historial visual y evita interpretar mensajes como HTML.
-      while (messages.children.length > 80) {
-        messages.firstElementChild.remove();
-      }
-
+      launcher.classList.add("chat-is-open");
+      openButtons.forEach(item => item.setAttribute("aria-expanded", "true"));
+      input.focus();
       messages.scrollTop = messages.scrollHeight;
     }
 
-    function showOptions(items) {
-      options.replaceChildren();
+    function closeChat() {
+      panel.hidden = true;
+      launcher.classList.remove("chat-is-open");
+      openButtons.forEach(item => item.setAttribute("aria-expanded", "false"));
+      opener.focus();
+    }
 
-      items.forEach(([label, value]) => {
+    function addMessage(text, user = false) {
+      const message = document.createElement("p");
+      message.className = user ? "chat-message user" : "chat-message";
+      message.textContent = text;
+      messages.appendChild(message);
+      while (messages.children.length > 60) messages.firstElementChild.remove();
+      messages.scrollTop = messages.scrollHeight;
+      return message;
+    }
+
+    function resetChat() {
+      localState = {};
+      plan = emptyPlan();
+      clearPass();
+      messages.replaceChildren();
+      input.value = "";
+      addMessage("¡Hola! Soy Rumbito, tu compañero de aventuras. Tú pones las ganas y yo te ayudo a encontrar el rumbo. ¿Playa, montaña o una ciudad por descubrir?");
+      renderOptions(window.RumboChat.defaults);
+      setText("#chat-step-label", "Un gran viaje empieza con una buena idea.");
+    }
+
+    function renderOptions(items = []) {
+      options.replaceChildren();
+      items.slice(0, 6).forEach(text => {
         const button = document.createElement("button");
         button.type = "button";
-        button.textContent = label;
-
-        button.addEventListener("click", () => {
-          handleMessage(value, label);
-          if (options.firstElementChild) {
-            options.firstElementChild.focus({ preventScroll: true });
-          } else {
-            input.focus({ preventScroll: true });
-          }
-        });
-
+        button.textContent = text;
+        button.addEventListener("click", () => void sendMessage(text));
         options.appendChild(button);
       });
     }
 
-    function askQuestion() {
-      input.inputMode = "text";
-
-      if (step === "company") {
-        setText("#chat-step-label", "1 de 4 · Compañía");
-        input.placeholder = "Solo, pareja, familia o amigos";
-        addMessage("¿Con quién viajarías?");
-        showOptions([
-          ["Solo", "solo"],
-          ["En pareja", "pareja"],
-          ["En familia", "familia"],
-          ["Con amigos", "amigos"]
-        ]);
-      }
-
-      if (step === "people") {
-        setText("#chat-step-label", "2 de 4 · Viajeros");
-        input.placeholder = "Número de personas";
-        input.inputMode = "numeric";
-        addMessage(
-          "¿Cuántas personas viajan, incluyéndote? Indica entre 2 y 12. " +
-          "No calculo tarifas infantiles ni descuentos de grupo."
-        );
-        showOptions([
-          ["2 personas", "2"],
-          ["3 personas", "3"],
-          ["4 personas", "4"],
-          ["5 personas", "5"]
-        ]);
-      }
-
-      if (step === "style") {
-        setText("#chat-step-label", "3 de 4 · Experiencia");
-        input.placeholder = "Playa, naturaleza o cultura";
-        addMessage("¿Qué experiencia prefieres?");
-        showOptions([
-          ["Playa", "playa"],
-          ["Naturaleza", "naturaleza"],
-          ["Cultura", "cultura"],
-          ["Cualquiera", "cualquiera"]
-        ]);
-      }
-
-      if (step === "budget") {
-        setText("#chat-step-label", "4 de 4 · Presupuesto total");
-        input.placeholder = "Total en HNL. Ejemplo: 30000";
-        input.inputMode = "numeric";
-        addMessage(
-          `¿Cuál es el presupuesto TOTAL en lempiras para ${
-            plan.people === 1 ? "ti" : `las ${plan.people} personas`
-          }?\nPuedes escribir 30000, 30,000 o 30 mil. No uses decimales.`
-        );
-        showOptions([
-          ["L 15,000", "15000"],
-          ["L 30,000", "30000"],
-          ["L 60,000", "60000"]
-        ]);
-      }
+    function appendActions(message, actions = []) {
+      actions.forEach(action => {
+        const url = new URL(action.href, location.href);
+        if (!["viajes.html", "tienda.html", "index.html"].some(file => url.pathname.endsWith("/" + file)) && !action.href.startsWith("#")) return;
+        const link = document.createElement("a");
+        link.href = action.href === "#mi-pase" ? "#" + $("#boarding-pass").closest("section").id : action.href;
+        link.textContent = `${action.label} ↗`;
+        if (action.href.startsWith("#")) link.addEventListener("click", () => closeChat());
+        message.appendChild(link);
+      });
     }
 
-    function startPlan(clear = false) {
-      if (clear) messages.replaceChildren();
-      plan = emptyPlan();
-      history = [];
-      step = "company";
-      input.value = "";
-      clearPass();
-      askQuestion();
-    }
-
-    function showResults() {
-      step = "done";
-      input.inputMode = "text";
-      input.placeholder = "Escribe ayuda o reiniciar";
-      setText("#chat-step-label", "Tu comparación y tu pase");
-
-      const affordable = catalog
-        .filter(trip => trip.price * plan.people <= plan.budget)
-        .sort((a, b) => a.price - b.price);
-
-      const matching = affordable.filter(trip =>
-        plan.style === "all" || trip.style === plan.style
-      );
-
-      const selected = matching.length ? matching : affordable.slice(0, 2);
-
-      addMessage(
-        `${plan.company} · ${plan.people} ${
-          plan.people === 1 ? "persona" : "personas"
-        }.\nPreferencia: ${styles[plan.style]}.\n` +
-        `Presupuesto total: ${money(plan.budget)} HNL.`
-      );
-
-      if (!selected.length) {
-        addMessage(
-          "Ningún ejemplo entra en ese presupuesto. No significa que " +
-          "no existan opciones reales: este catálogo es limitado."
-        );
-      } else {
-        addMessage(
-          matching.length
-            ? "Estas propuestas coinciden con tu preferencia y su base de muestra no supera el presupuesto:"
-            : "Estas alternativas encajan por importe base, pero son de otro estilo:"
-        );
-
-        selected.forEach(trip => {
-          addMessage(
-            `${trip.name} · ${trip.duration}\n` +
-            `${money(trip.price)} por persona.\n` +
-            `Base ficticia para tu grupo: ${money(trip.price * plan.people)} HNL.`,
-            false,
-            {
-              label: `Ver ${trip.name} →`,
-              href: "#destinos",
-              destination: trip.id
-            }
-          );
-        });
-      }
-
-      preparePass(selected, matching.length > 0);
-
-      addMessage(
-        "No he comprobado fechas ni disponibilidad. Los servicios incluidos " +
-        "no están definidos: estos importes no son un presupuesto completo " +
-        "ni una cotización."
-      );
-
-      if (selected.length) {
-        addMessage(
-          "Tu pase está preparado. Puedes elegir otro destino recomendado, " +
-          "descargarlo o compartir el resumen.",
-          false,
-          { label: "Ver mi pase →", href: "#boarding-pass" }
-        );
-      }
-
-      showOptions([
-        ["Cambiar respuestas", "reiniciar"],
-        ["Ayuda con presupuesto", "presupuesto"],
-        ["Equipaje", "equipaje"]
-      ]);
-    }
-
-    function answerHelp(topic) {
-      const answers = {
-        documentos: {
-          text: "Comprueba la vigencia de tus documentos y los requisitos oficiales de entrada y tránsito del destino.",
-          href: "#guia-documentos",
-          label: "Ver guía de documentos →"
-        },
-        tienda: {
-          text: "La tienda reúne maletas, mochilas y accesorios para tu viaje.",
-          href: "tienda.html",
-          label: "Explorar tienda →"
-        },
-        presupuesto: {
-          text: "Separa transporte, hospedaje, comidas, traslados, actividades " +
-            "e imprevistos. Comprueba qué incluye cada tarifa. Aquí trabajamos en HNL.",
-          href: "#guia-presupuesto",
-          label: "Ver guía de presupuesto →"
-        },
-        equipaje: {
-          text: "Revisa clima, duración y condiciones del transporte. " +
-            "Confirma las medidas y el peso con tu aerolínea.",
-          href: "#guia-equipaje",
-          label: "Ver guía de equipaje →"
-        },
-        servicios: {
-          text: "Puedes explorar los módulos de vuelos, hospedaje y tienda. " +
-            "Experiencias, traslados y seguros siguen pendientes de integración.",
-          href: "#servicios",
-          label: "Ver servicios →"
-        }
+    function applyPlan(next) {
+      if (!next) return;
+      plan = {
+        company: typeof next.company === "string" ? next.company.slice(0, 80) : "",
+        people: Number.isInteger(next.people) && next.people >= 1 && next.people <= 12 ? next.people : 0,
+        style: Object.hasOwn(styles, next.style) ? next.style : "",
+        budget: Number.isFinite(next.budget) && next.budget > 0 ? next.budget : 0
       };
-
-      if (answers[topic]) {
-        addMessage(answers[topic].text, false, answers[topic]);
-      } else {
-        addMessage(
-          "Puedo ayudarte con presupuesto, equipaje, documentos, servicios y tienda. " +
-          "Escribe «planear» para crear un pase o «atrás» para corregir una respuesta. " +
-          "Soy un orientador programado, no una IA generativa."
-        );
-      }
-
-      if (!["home", "done"].includes(step)) {
-        addMessage("Puedes continuar con la pregunta pendiente usando los botones.");
-      }
-    }
-
-    function handleMessage(value, displayed = value) {
-      const raw = String(value).trim().slice(0, 240);
-      if (!raw) return;
-
-      const text = normalize(raw);
-      addMessage(displayed, true);
-      input.value = "";
-
-      if (["atras", "volver", "anterior"].includes(text)) {
-        goBack();
-        return;
-      }
-
-      if (/^(planear|empezar|reiniciar|crear mi pase|quiero viajar|planear mi viaje)$/.test(text)) {
-        startPlan();
-        return;
-      }
-
-      const helpTopic = /\b(equipaje|maleta|maletas)\b/.test(text) ? "equipaje"
-        : /\b(documentos|documentacion|pasaporte|visa)\b/.test(text) ? "documentos"
-        : /\b(tienda|accesorios)\b/.test(text) ? "tienda"
-        : /\b(servicios|vuelos|hoteles|hospedaje)\b/.test(text) ? "servicios"
-        : /\b(presupuesto)\b/.test(text) && !/\d/.test(text) ? "presupuesto"
-        : text === "ayuda" ? "ayuda" : "";
-
-      if (helpTopic) {
-        answerHelp(helpTopic);
-        return;
-      }
-
-      const snapshot = { step, plan: { ...plan } };
-
-      if (step === "company") {
-        if (/\b(solo|sola|solitario)\b/.test(text)) {
-          plan.company = "En solitario";
-          plan.people = 1;
-          step = "style";
-        } else if (/\b(pareja|novio|novia|esposo|esposa)\b/.test(text)) {
-          plan.company = "En pareja";
-          plan.people = 2;
-          step = "style";
-        } else if (/\b(familia|hijos|hijas)\b/.test(text)) {
-          plan.company = "En familia";
-          step = "people";
-        } else if (/\b(amigos|amigas|grupo)\b/.test(text)) {
-          plan.company = "Con amigos";
-          step = "people";
-        } else {
-          addMessage("Elige solo, pareja, familia o amigos.");
-          return;
-        }
-
-        if (plan.people) {
-          addMessage(
-            `Usaré ${plan.people} ${
-              plan.people === 1 ? "persona" : "personas"
-            } para la comparación.`
-          );
-        }
-
-        history.push(snapshot);
-        updatePass();
-        askQuestion();
-        return;
-      }
-
-      if (step === "people") {
-        const match = text.match(/^(?:somos\s+)?(\d{1,2})(?:\s+personas)?$/);
-        const people = match ? Number(match[1]) : 0;
-
-        if (people < 2 || people > 12) {
-          addMessage("Escribe un número entre 2 y 12.");
-          return;
-        }
-
-        plan.people = people;
-        step = "style";
-        history.push(snapshot);
-        updatePass();
-        askQuestion();
-        return;
-      }
-
-      if (step === "style") {
-        if (/\b(playa|mar|descanso)\b/.test(text)) {
-          plan.style = "playa";
-        } else if (/\b(naturaleza|aventura|montana|montanas|senderismo)\b/.test(text)) {
-          plan.style = "naturaleza";
-        } else if (/\b(cultura|ciudad|museos|historia)\b/.test(text)) {
-          plan.style = "cultura";
-        } else if (/\b(cualquiera|ideas|todo)\b/.test(text)) {
-          plan.style = "all";
-        } else {
-          addMessage("Elige playa, naturaleza, cultura o cualquiera.");
-          return;
-        }
-
-        step = "budget";
-        history.push(snapshot);
-        updatePass();
-        askQuestion();
-        return;
-      }
-
-      if (step === "budget") {
-        const amount = parseBudget(text);
-
-        if (amount < 1 || amount > 1000000) {
-          addMessage(
-            "Indica entre 1 y 1,000,000 lempiras enteros. Ejemplos: 30000, 30,000 o 30 mil."
-          );
-          return;
-        }
-
-        plan.budget = amount;
-        history.push(snapshot);
-        updatePass();
-        showResults();
-        return;
-      }
-
-      addMessage("Escribe «planear» para crear tu pase o «ayuda» para consultar las opciones.");
-    }
-
-    function parseBudget(value) {
-      const clean = value
-        .replace(/^(?:mi presupuesto es\s+)?(?:hnl\s*|l\.?\s*)?/, "")
-        .replace(/\s*(hnl|lempiras?)$/, "")
-        .trim();
-
-      if (/^\d{1,7}$/.test(clean)) return Number(clean);
-
-      if (
-        /^\d{1,3}(?:,\d{3})+$/.test(clean) ||
-        /^\d{1,3}(?:\.\d{3})+$/.test(clean)
-      ) {
-        return Number(clean.replace(/[.,]/g, ""));
-      }
-
-      const thousands = clean.match(/^(\d{1,4})\s*(mil|k)$/);
-      return thousands ? Number(thousands[1]) * 1000 : 0;
-    }
-
-    function goBack() {
-      const previous = history.pop();
-
-      if (!previous) {
-        addMessage("Aún no hay una respuesta anterior que corregir.");
-        return;
-      }
-
-      plan = { ...previous.plan };
-      step = previous.step;
-      input.value = "";
       clearPass();
-      addMessage("Puedes cambiar esta respuesta. Actualizaré tu pase con la nueva elección.");
-      askQuestion();
+      if (plan.company && plan.people && plan.style && plan.budget) {
+        const affordable = catalog.filter(trip => trip.price * plan.people <= plan.budget);
+        const matching = affordable.filter(trip => plan.style === "all" || trip.style === plan.style);
+        const selected = next.destination ? affordable.filter(trip => trip.id === next.destination) : matching.length ? matching : affordable;
+        const preferred = selected.find(trip => trip.id === next.destination);
+        if (preferred) selected.sort((a, b) => Number(b === preferred) - Number(a === preferred));
+        preparePass(selected, matching.length > 0);
+      }
     }
 
-    $("#chat-back").addEventListener("click", () => {
-      goBack();
-      options.firstElementChild?.focus({ preventScroll: true });
-    });
+    async function sendMessage(value) {
+      const text = value.trim();
+      if (!text || busy) return;
+      if (text.length > 2000) return;
+      busy = true;
+      input.disabled = send.disabled = restart.disabled = true;
+      options.querySelectorAll("button").forEach(button => button.disabled = true);
+      panel.classList.add("is-thinking");
+      form.setAttribute("aria-busy", "true");
+      addMessage(text, true);
+      input.value = "";
+      const pending = addMessage("Rumbito está pensando…");
+      pending.classList.add("is-typing");
+      try {
+        await new Promise(resolve => setTimeout(resolve, reducedMotion.matches ? 0 : 380));
+        const context = {
+          catalog,
+          trips: window.RumboViajesDatos?.destinations || [],
+          flights: window.RumboViajesDatos?.flights,
+          contacts: Array.from(document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]'), a => a.textContent.trim())
+        };
+        const result = window.RumboChat.respond(text, plan, context, localState);
+        if (typeof result.reply !== "string" || !result.reply.trim()) throw new Error("No se recibió una respuesta. Vuelve a intentarlo.");
+        pending.textContent = result.reply;
+        appendActions(pending, result.actions);
+        renderOptions(result.options);
+        const labels = { company: "Tu compañía de viaje", people: "El equipo de esta aventura", style: "Tu forma de viajar", budget: "Un presupuesto a tu medida" };
+        setText("#chat-step-label", labels[result.step] || "Sigamos dando forma a tu aventura.");
+        applyPlan(result.plan);
+      } catch (error) {
+        pending.textContent = "Se me escapó ese detalle. Intenta otra vez o empecemos con un destino, por ejemplo Roatán.";
+        input.value = text;
+      } finally {
+        busy = false;
+        input.disabled = send.disabled = restart.disabled = false;
+        options.querySelectorAll("button").forEach(button => button.disabled = false);
+        panel.classList.remove("is-thinking");
+        pending.classList.remove("is-typing");
+        form.setAttribute("aria-busy", "false");
+        messages.scrollTop = messages.scrollHeight;
+        if (!panel.hidden) input.focus();
+      }
+    }
 
-    launcher.addEventListener("click", () => {
-      if (panel.hidden) openChat(launcher);
-      else closeChat();
-    });
-
-    $("#close-chat").addEventListener("click", () => closeChat());
-
-    planButtons.forEach(button => {
+    openButtons.forEach(button => {
+      button.setAttribute("aria-controls", "help-chat");
+      button.setAttribute("aria-expanded", "false");
       button.addEventListener("click", () => {
-        openChat(button);
-        if (step === "home") startPlan();
-        else if (step === "done") goBack();
+        if (button === launcher && !panel.hidden) closeChat();
+        else openChat(button);
       });
     });
-
-    helpButtons.forEach(button => {
-      button.addEventListener("click", () => openChat(button));
-    });
-
-    $("#chat-restart").addEventListener("click", () => {
-      startPlan(true);
-      input.focus();
-    });
-
-    $("#chat-form").addEventListener("submit", event => {
+    $("#close-chat").addEventListener("click", closeChat);
+    restart.addEventListener("click", () => { resetChat(); input.focus(); });
+    form.addEventListener("submit", event => {
       event.preventDefault();
-      handleMessage(input.value);
-      input.focus();
+      void sendMessage(input.value);
     });
-
     document.addEventListener("keydown", event => {
-      if (
-        event.key === "Escape" &&
-        !panel.hidden &&
-        !$("#module-dialog").open
-      ) {
-        closeChat();
-      }
+      if (event.key === "Escape" && !panel.hidden && !$("#module-dialog").open) closeChat();
     });
-
-    setExpanded(false);
-    updatePass();
-
-    addMessage(
-      "¡Hola! Vamos a preparar una idea de viaje y convertirla en un pase " +
-      "que puedas guardar. Trabajamos con un catálogo de muestra en lempiras."
-    );
-
-    showOptions([
-      ["Crear mi pase", "planear"],
-      ["Presupuesto", "presupuesto"],
-      ["Equipaje", "equipaje"],
-      ["Servicios", "servicios"]
-    ]);
+    resetChat();
   }
-
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init, { once: true });
   } else {

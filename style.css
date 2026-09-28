@@ -273,6 +273,53 @@ button:disabled:hover { transform: none; }
 .chat-tools button { min-height: 35px; padding: 0; border: 0; background: transparent; color: var(--primary-dark); font-size: 12px; text-decoration: underline; }
 .chat-disclaimer { flex-shrink: 0; margin: 0; padding: 9px 15px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 10px; }
 
+/* Rumbito: the arrow from Rumbo's identity becomes a travel companion. */
+.rumbito-avatar { --gaze-x: 0px; --gaze-y: 0px; display: inline-block; width: 56px; height: 56px; flex: 0 0 56px; }
+.rumbito-avatar svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.rumbito-eyes { transform-origin: 77px 49px; animation: rumbito-blink 6s infinite; }
+.rumbito-pupils { transform: translate(var(--gaze-x), var(--gaze-y)); transition: transform 100ms ease-out; }
+.rumbito-hero { width: 105px; height: 105px; flex-basis: 105px; animation: rumbito-float 4s ease-in-out infinite; }
+.hero-adviser { background: transparent; border: 0; border-top: 1px solid #9fc5ca; border-radius: 0; padding: 22px 0 0; gap: 20px; }
+.hero-adviser:hover { background: transparent; }
+.hero-adviser strong { font-size: 24px; letter-spacing: 0; color: #16444b; }
+.hero-adviser small { font-size: 13px; max-width: 270px; }
+.hero-adviser .rumbito-eyebrow { font-size: 10px; font-weight: 700; color: #29646c; }
+.rumbito-invite { display: block; margin-top: 9px; font-size: 12px; font-weight: 700; color: #075e69; }
+.hero-adviser > span:last-child { display: none; }
+.hero-adviser:hover .rumbito-hero { animation: rumbito-wave .6s ease-in-out; }
+.chat-launcher { padding: 7px 19px 7px 9px; min-height: 66px; border: 1px solid #bed6d7; background: #fff; color: #183044; box-shadow: 0 8px 30px #18304420; }
+.chat-launcher:hover { background: #f0f8f7; }
+.chat-launcher strong, .chat-launcher small { display: block; text-align: left; }
+.chat-launcher strong { font-size: 15px; }
+.chat-launcher small { font-size: 11px; color: #547078; font-weight: 400; }
+.chat-launcher .rumbito-avatar { animation: rumbito-float 4s ease-in-out infinite; }
+.chat-panel { width: min(430px, calc(100vw - 32px)); bottom: 98px; height: 710px; max-height: calc(100dvh - 118px); border-radius: 20px; }
+.chat-panel:not([hidden]) { animation: rumbito-open 200ms ease-out; }
+.chat-header { background: #f2f8f7; color: #183044; padding: 17px 18px; border-bottom: 1px solid #d8e7e4; gap: 13px; }
+.chat-header > div { flex: 1; }
+.chat-header h2 { font-size: 23px; font-weight: 700; letter-spacing: 0; }
+.chat-header p { color: #496d72; font-size: 12px; }
+.chat-header .close-button { color: #31565c; border-color: #b9d2d0; }
+.chat-progress { background: #fff9e9; color: #705627; font-size: 11px; padding-block: 8px; }
+.chat-messages { background: #fff; padding: 18px 18px 6px; }
+.chat-message { background: #f0f5f4; border-radius: 8px 8px 8px 0; animation: rumbito-open 180ms ease-out; }
+.chat-message.user { background: #166d76; border-radius: 8px 8px 0 8px; }
+.chat-options { padding: 8px 18px; gap: 6px; max-height: 102px; border-bottom: 1px solid #edf2f0; }
+.chat-options button { border-radius: 7px; background: #fff; color: #18636c; border: 1px solid #bfd5d2; min-height: 34px; padding: 6px 9px; text-align: left; line-height: 1.35; }
+.chat-options button:hover { background: #e9f4f1; border-color: #6aaba9; }
+.chat-options button:disabled { opacity: .5; }
+.chat-message a { padding-top: 7px; font-size: 13px; }
+.chat-form label { color: #52636c; }
+.chat-send:disabled { opacity: .5; }
+.chat-input-row input { border-radius: 8px; }
+.is-thinking .chat-header .rumbito-avatar { animation: rumbito-wave 900ms ease-in-out infinite; }
+.is-typing { color: #60787c; animation: rumbito-thinking 800ms ease-in-out infinite alternate; }
+@keyframes rumbito-blink { 0%, 42%, 46%, 100% { transform: scaleY(1); } 44% { transform: scaleY(.08); } }
+@keyframes rumbito-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-6px) rotate(3deg); } }
+@keyframes rumbito-wave { 0%, 100% { transform: rotate(0); } 35% { transform: rotate(-9deg); } 70% { transform: rotate(8deg); } }
+@keyframes rumbito-open { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes rumbito-thinking { from { opacity: .6; } to { opacity: 1; } }
+
 /* DIÁLOGOS */
 .module-dialog { width: min(460px, calc(100% - 32px)); max-height: calc(100dvh - 40px); padding: 30px; border: 1px solid var(--border); border-radius: 20px; color: var(--ink); }
 .module-dialog::backdrop { background: #0f232d99; }
@@ -343,6 +390,11 @@ button:disabled:hover { transform: none; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .chat-panel { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); width: calc(100% - 24px); max-height: calc(100dvh - 24px); height: 640px; }
   .chat-launcher { right: 16px; bottom: 16px; }
+  .chat-launcher.chat-is-open { visibility: hidden; }
+  .hero-adviser { gap: 12px; }
+  .hero-adviser strong { font-size: 21px; }
+  .rumbito-hero { width: 78px; height: 78px; flex-basis: 78px; }
+  .chat-header { padding-block: 12px; }
   .chat-options { max-height: 100px; }
   .chat-messages { min-height: 0; }
   .chat-disclaimer { padding-bottom: max(9px, env(safe-area-inset-bottom)); }

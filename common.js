@@ -25,4 +25,32 @@
   if(!document.getElementById('chat-launcher')){
     const link=document.createElement('a');link.className='global-rumbito';link.href='index.html#hablar-rumbito';link.innerHTML='<span aria-hidden="true">✦</span> Pregúntale a Rumbito';document.body.append(link);
   }
+
+  // Una cabecera consistente: los accesos principales llevan a las secciones del inicio.
+  const mainNav=document.querySelector('.main-nav');
+  if(mainNav)mainNav.innerHTML='<a href="index.html#servicios">Armar mi viaje</a><a href="index.html#destinos">Destinos</a><a href="index.html#antes-de-viajar">Antes de viajar</a>';
+  const header=document.querySelector('.header-inner');
+  if(header&&!header.querySelector('a[href="servicios.html?seccion=mi-viaje"]')){const trip=document.createElement('a');trip.className='button button-outline';trip.href='servicios.html?seccion=mi-viaje';trip.textContent='Mi viaje ↗';header.append(trip);}
+  document.querySelector('.login-button')?.remove();
+  if(document.getElementById('servicios')){
+    const grid=document.querySelector('.booking-grid');
+    const order=['flights','stays','transfers','insurance','experiences','shop'];
+    const names=['Vuelo','Hospedaje','Transporte','Seguro','Experiencias','Tienda'];
+    const cards=[...grid.children];
+    order.forEach((key,i)=>{const card=cards.find(c=>c.querySelector('[data-module="'+key+'"]')||c.classList.contains(({transfers:'none',insurance:'none',experiences:'none',shop:'shop-card'})[key]||'none')||c.querySelector('a[href="'+({transfers:'servicios.html?seccion=traslados',insurance:'servicios.html?seccion=seguros',experiences:'servicios.html?seccion=guias'})[key]+'"]'));
+      if(!card)return;grid.append(card);const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1)+' / '+names[i]+(i>1?' · opcional':'');card.prepend(label);
+      const link=card.querySelector('a,button');if(link){card.tabIndex=0;card.setAttribute('role','link');card.setAttribute('aria-label','Organizar '+names[i]);card.addEventListener('click',e=>{if(!e.target.closest('a,button'))link.click();});card.addEventListener('keydown',e=>{if(e.target===card&&e.key==='Enter'){e.preventDefault();link.click();}});}
+    });
+  }
+  document.addEventListener('click',event=>{const a=event.target.closest('a');if(a?.textContent.includes('Continuar solo con hotel'))window.RumboJourney.skipFlight();},true);
+  const checks=[...document.querySelectorAll('[data-departure]')];
+  if(checks.length){
+    let saved=[];try{saved=JSON.parse(localStorage.getItem('rumbo.departureChecklist.v1')||'[]');}catch{}
+    checks.forEach(c=>c.checked=Array.isArray(saved)&&saved.includes(c.dataset.departure));
+    const show=()=>{const count=checks.filter(c=>c.checked).length;document.querySelector('#departure-progress').textContent=count===4?'Todo listo. ¡Disfruta el camino!':count+' de 4 preparativos listos';document.querySelector('#departure-meter').value=count;document.querySelector('#departure-reset').hidden=count===0;};
+    const save=()=>{show();try{localStorage.setItem('rumbo.departureChecklist.v1',JSON.stringify(checks.filter(c=>c.checked).map(c=>c.dataset.departure)));}catch{document.querySelector('#departure-progress').textContent+=' · No se pudo guardar en este navegador.';}};
+    checks.forEach(c=>c.addEventListener('change',save));document.querySelector('#departure-reset').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);save();checks[0].focus();});show();
+  }
+  window.RumboJourney?.mountSteps();
 })();
+

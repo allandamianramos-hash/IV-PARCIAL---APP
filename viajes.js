@@ -359,7 +359,7 @@
     $('#detail-form').addEventListener('submit', event => {
       event.preventDefault();
       updateTrip({ date: $('#detail-date').value, travelers: Number($('#detail-travelers').value), nights: Number($('#detail-nights').value) });
-      if (event.submitter?.value === 'hoteles') { state.flightId = ''; persist(); }
+      if (event.submitter?.value === 'hoteles') { state.flightId = ''; persist(); window.RumboJourney?.skipFlight(); }
       location.href = link(event.submitter?.value === 'hoteles' ? 'hoteles' : 'vuelos');
     });
   }
@@ -383,14 +383,12 @@
       <div class="rv-summary-part"><h3>02 / Hotel</h3>${parts.hotelHTML}</div>
       <div class="rv-summary-total"><span>Subtotal elegido</span><strong id="summary-total" data-amount="${parts.total}" aria-live="polite">${money(parts.total)}</strong></div>
       <p class="rv-caption">Suma de las opciones elegidas. Actividades y traslados no incluidos.</p>
-      ${mode === 'vuelos' ? `<button class="button button-primary" id="continue-hotel" type="button" ${parts.flight ? '' : 'disabled'}>Elegir hotel ↗</button><a class="rv-link-button rv-summary-clear" href="${escapeHTML(link('hoteles', { flightId: '' }))}">Continuar solo con hotel →</a>` : `<button class="button button-primary" id="save-selection" type="button" ${parts.hotel ? '' : 'disabled'}>Guardar selección ↗</button>`}
+      ${mode === 'vuelos' ? `<button class="button button-primary" id="continue-hotel" type="button" ${parts.flight ? '' : 'disabled'}>Elegir hotel ↗</button><a class="rv-link-button rv-summary-clear" href="${escapeHTML(link('hoteles', { flightId: '' }))}">Continuar solo con hotel →</a>` : `<button class="button button-primary" id="save-selection" type="button" ${parts.hotel ? '' : 'disabled'}>Continuar a transporte →</button>`}
       ${parts.flight || parts.hotel ? '<button class="rv-link-button rv-summary-clear" id="clear-selection" type="button">Quitar selecciones</button>' : ''}`;
     $('#continue-hotel')?.addEventListener('click', () => { location.href = link('hoteles'); });
     $('#save-selection')?.addEventListener('click', () => {
       persist();
-      const updated = summaryParts();
-      $('#selection-details').innerHTML = `<p>${storageAvailable ? 'Tu elección se guardó en este navegador.' : 'Tu elección se conserva en este enlace mientras navegas.'}</p><div class="rv-summary-part"><h3>${destination.name} · ${state.travelers} ${state.travelers === 1 ? 'viajero' : 'viajeros'}</h3>${updated.flightHTML}</div><div class="rv-summary-part"><h3>Hospedaje</h3>${updated.hotelHTML}</div><div class="rv-summary-total"><span>Subtotal elegido</span><strong>${money(updated.total)}</strong></div>`;
-      $('#selection-dialog').showModal();
+      location.href = 'servicios.html?seccion=traslados';
     });
     $('#clear-selection')?.addEventListener('click', () => {
       state.flightId = ''; state.hotelId = ''; persist(); afterClear(); toast('Se quitaron el vuelo y el hotel de tu selección.');
@@ -475,7 +473,7 @@
       state.flightId = button.dataset.selectFlight;
       persist(); render();
       $(`[data-select-flight="${state.flightId}"]`)?.focus({ preventScroll: true });
-      toast('Vuelo seleccionado. Continúa con el hotel desde el resumen.');
+      toast('Vuelo guardado. Continúa con el hospedaje.');
     });
   }
 
@@ -569,7 +567,7 @@
       state.hotelId = hotel.id; state.roomType = type;
       persist(); render();
       $(`[data-select-hotel="${hotel.id}"]`)?.focus({ preventScroll: true });
-      toast('Hotel seleccionado. Puedes guardar tu elección desde el resumen.');
+      toast('Hospedaje guardado. Continúa a transporte.');
     });
   }
 
@@ -695,4 +693,5 @@
     connectHome();
   }
 })();
+
 

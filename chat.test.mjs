@@ -21,7 +21,7 @@ test("recoge varias preferencias en lenguaje natural", () => {
   const send = conversation();
   const result = send("viajo con familia, somos dos, queremos playa y tenemos 20 mil");
   assert.equal(result.plan.people, 2); assert.equal(result.plan.budget, 20000);
-  assert.equal(result.plan.destination, "roatan"); assert.match(result.reply, /preparado/);
+  assert.equal(result.plan.destination, "roatan"); assert.match(result.reply, /ticket aparece solo/);
 });
 test("normaliza presupuestos habituales", () => {
   for (const text of ["20 mil", "20,000", "20.000", "20000"]) {
@@ -47,7 +47,7 @@ test("rechaza presupuesto insuficiente y cuenta fuera del rango", () => {
   const send = conversation();
   assert.match(send("somos 20").reply, /1 a 12/);
   send("con familia somos dos cultura");
-  assert.match(send("tenemos 1000").reply, /no hay un pase/);
+  assert.match(send("tenemos 1000").reply, /no hay un plan/);
 });
 test("no convierte moneda extranjera arbitrariamente", () => {
   assert.match(conversation()("tengo 1000 dolares").reply, /tipo de cambio/);
@@ -83,3 +83,4 @@ test("preguntas ajenas no inventan respuestas ni reservas", () => {
   assert.match(conversation()("escribe codigo python").reply, /puedo comparar/);
   assert.match(conversation()("quiero reservar").reply, /no contratarla/);
 });
+

@@ -39,3 +39,13 @@ También conviene probar colores/tamaños y totales de la tienda, carrito desde 
 ## Reparación de la integración
 
 La fusión `52bd6ad` mezcló el trabajo de tienda de `13dfe7a` con las mejoras generales de `f22c22b`. El HTML contenía dos documentos y el JavaScript quedó cortado por un bloque de la versión anterior. La versión actual conserva las variantes y el diseño de la tienda nueva, junto con la navegación común y el acceso al carrito desde el inicio. Los créditos exactos de las fotografías se mantienen porque los archivos de imagen no cambiaron.
+
+## Recorrido organizado
+
+La sección «Arma tu viaje» del inicio es el punto de entrada. Las cabeceras llevan a las secciones del inicio. Cada servicio comparte siete pasos: vuelo, hospedaje, transporte, seguro, experiencias, tienda y resumen/pago. Transporte, seguro, experiencias y productos son opcionales; el vuelo también se puede omitir expresamente.
+
+`journey.js` reúne las selecciones en «Mi viaje», calcula variantes del carrito y comprueba fechas y viajeros. El botón final completa exclusivamente un pago de demostración; no cobra, no solicita datos bancarios y no genera reservas. El ticket solo aparece tras esa confirmación y deja de ser vigente si se modifica el viaje. Para cobrar de verdad hacen falta servidor de pedidos, proveedores y pasarela de pago.
+
+La sección final del inicio es una lista personal de preparativos, guardada en el navegador. Las guías conservan las explicaciones y Rumbito mantiene la orientación.
+
+Pruebas: `npm test`. El recorrido completo, el pago de demostración, la invalidación del ticket, las variantes, el chat y la vista móvil fueron comprobados. En el catálogo actual ampliado a 100 productos faltan 64 archivos de fotografía; la comprobación de recursos informa ese problema. No se sustituyeron por imágenes de otros productos.

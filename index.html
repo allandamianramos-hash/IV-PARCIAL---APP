@@ -17,7 +17,7 @@
   <script src="viajes.js" defer></script>
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="common.css">
-  <script src="common.js" defer></script>
+  <script src="journey.js" defer></script><script src="common.js" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -197,7 +197,7 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">RESERVAS Y SERVICIOS</p>
-          <h2 id="services-title">¿Qué necesitas organizar?</h2>
+          <h2 id="services-title">Arma tu viaje, paso a paso.</h2>
         </div>
       </div>
 
@@ -393,146 +393,14 @@
       </div>
     </section>
 
-    <!-- PASE INTERACTIVO -->
-    <section class="container trip-starter pass-section" id="mi-pase" aria-labelledby="plan-title">
-      <div class="trip-starter-copy">
-        <p class="eyebrow">EL SIGUIENTE PASO LO ELIGES TÚ</p>
-        <h2 id="plan-title">Una idea hoy.<br>Tu próximo rumbo mañana.</h2>
-
-        <p>
-          Cuéntanos con quién viajas, qué te inspira y cuánto quieres gastar.
-          El orientador te ayudará a convertirlo en un pase que puedes guardar.
-        </p>
-
-        <ol class="planner-steps" aria-label="Cómo crear tu pase">
-          <li>
-            <span>01</span>
-            <div>
-              <strong>Imagina tu escapada</strong>
-              <small>Elige compañía y experiencia.</small>
-            </div>
-          </li>
-          <li>
-            <span>02</span>
-            <div>
-              <strong>Encuentra tu opción</strong>
-              <small>Compara según tu presupuesto.</small>
-            </div>
-          </li>
-          <li>
-            <span>03</span>
-            <div>
-              <strong>Llévate la idea</strong>
-              <small>Guarda tu pase y explora vuelos y hoteles.</small>
-            </div>
-          </li>
-        </ol>
-
-        <button class="button button-primary" type="button" data-open-planner>
-          <span id="planner-button-label">Crear mi pase</span>
-          <span aria-hidden="true">↗</span>
-        </button>
-
-        <p class="demo-note">
-          Es un recuerdo de tu idea, no un boleto ni una reserva.
-          No necesitas introducir nombres ni documentos.
-        </p>
-      </div>
-
-      <div class="pass-workspace">
-        <article class="boarding-pass" id="boarding-pass" aria-labelledby="pass-title">
-          <div class="pass-header">
-            <span class="pass-brand">rumbo↗</span>
-            <span class="pass-status" id="pass-status">Por completar</span>
-          </div>
-
-          <div class="pass-main">
-            <p class="pass-kicker" id="pass-title">PASE DE INSPIRACIÓN</p>
-
-            <div class="pass-route">
-              <div>
-                <span class="pass-field-label">Desde</span>
-                <strong class="pass-origin">TU IDEA</strong>
-              </div>
-              <span class="pass-route-arrow" aria-hidden="true">↗</span>
-              <div class="pass-destination">
-                <span class="pass-field-label">Destino</span>
-                <strong id="pass-destination-name">Por descubrir</strong>
-              </div>
-            </div>
-
-            <div class="pass-progress-track" aria-hidden="true">
-              <span id="pass-progress-fill"></span>
-            </div>
-            <p class="pass-progress-text" id="pass-progress-text">
-              0 de 4 datos completados
-            </p>
-
-            <dl class="pass-data">
-              <div>
-                <dt>Viajeros</dt>
-                <dd id="plan-company">Por definir</dd>
-              </div>
-              <div>
-                <dt>Experiencia</dt>
-                <dd id="plan-experience">Por definir</dd>
-              </div>
-              <div class="pass-budget">
-                <dt>Presupuesto total · HNL</dt>
-                <dd id="plan-budget">Por definir</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div class="pass-stub">
-            <div>
-              <span class="pass-field-label">Ruta conceptual</span>
-              <strong id="pass-route-code">RMB — —</strong>
-            </div>
-            <div>
-              <span class="pass-field-label">Código de tu idea</span>
-              <strong id="pass-idea-code">Pendiente</strong>
-            </div>
-          </div>
-
-          <p class="pass-disclaimer">
-            Inspiración · No válido para viajar · Sin reserva
-          </p>
-        </article>
-
-        <div class="pass-destination-picker" id="pass-picker" hidden>
-          <label for="pass-destination-select">Elige el destino de tu pase</label>
-          <select id="pass-destination-select"></select>
-        </div>
-
-        <p class="pass-result" id="plan-result">
-          Tu pase se actualizará mientras conversas.
-        </p>
-
-        <div class="pass-actions">
-          <button class="button button-primary" id="download-pass" type="button" disabled>
-            Descargar pase
-          </button>
-          <button class="button button-outline" id="share-pass" type="button" disabled>
-            Compartir
-          </button>
-        </div>
-
-        <div id="rv-pass-services" hidden>
-          <p class="demo-note">
-            Continúa con tu idea: el subtotal dependerá del vuelo y hotel que elijas.
-          </p>
-          <div class="pass-actions">
-            <a class="button button-primary" id="rv-pass-flight" href="viajes.html?pantalla=vuelos">
-              Elegir vuelo ↗
-            </a>
-            <a class="button button-outline" id="rv-pass-hotel" href="viajes.html?pantalla=hoteles">
-              Elegir hotel ↗
-            </a>
-          </div>
-        </div>
-
-        <p class="pass-feedback" id="pass-feedback" role="status" aria-live="polite"></p>
+    <section class="container departure-guide" id="antes-de-viajar" aria-labelledby="departure-title">
+      <div><p class="eyebrow">EL ÚLTIMO REPASO, A TU RITMO</p><h2 id="departure-title">Sal con la tranquilidad<br>de tenerlo listo.</h2><p>Una lista personal para esos detalles que suelen quedarse para el último momento. Marca lo que ya preparaste y vuelve cuando quieras.</p><a class="text-link" id="suggested-start" href="#guias">Consultar las guías de viaje →</a></div>
+      <div class="departure-checklist"><p id="departure-progress" role="status">0 de 4 preparativos listos</p><progress id="departure-meter" max="4" value="0" aria-label="Preparativos completados"></progress>
+        <label><input type="checkbox" data-departure="documentos"><span><strong>Mis documentos están preparados</strong><small>Revisé su vigencia y guardé copias seguras.</small></span></label>
+        <label><input type="checkbox" data-departure="offline"><span><strong>Tengo la información sin conexión</strong><small>Guardé direcciones y datos de mis reservas.</small></span></label>
+        <label><input type="checkbox" data-departure="llegada"><span><strong>Sé cómo llegar al hospedaje</strong><small>Comprobé el trayecto y dejé margen de tiempo.</small></span></label>
+        <label><input type="checkbox" data-departure="equipaje"><span><strong>Revisé mi equipaje</strong><small>Incluí lo esencial y comprobé peso y medidas.</small></span></label>
+        <button type="button" id="departure-reset" class="text-link" hidden>Preparar una nueva lista</button><p class="demo-note">Lista personal guardada en este navegador; no confirma reservas.</p>
       </div>
     </section>
   </main>
@@ -686,3 +554,4 @@
   </dialog>
 </body>
 </html>
+

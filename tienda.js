@@ -1886,6 +1886,7 @@ const PHOTO_CREDITS = [
 ];
 
 window.RumboProducts = PRODUCTS;
+window.RumboProductPrice = (product, options = {}) => product.price + Object.entries(options || {}).reduce((sum, [key,value]) => sum + (Number(OPTION_PRICE_ADJUSTMENTS[product.id]?.[key]?.[value]) || 0), 0);
 
 
 // ============================================================
@@ -4215,14 +4216,3 @@ window.RumboProducts = PRODUCTS;
   renderCart();
 
 })();
-
-// ==========================================================
-  // INICIAR TIENDA esto va doble, lo borras
-  // ==========================================================
-
-  loadState();
-
-  renderProducts();
-
-  renderCart();
-

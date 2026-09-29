@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL(".", import.meta.url));
-const publicFiles = new Set(["index.html", "script.js", "chat-engine.js", "style.css", "viajes.html", "viajes.js", "viajes.css", "tienda.html", "tienda.js", "tienda.css", "logo-rumbo.jpg", "servicios.html", "servicios.js", "servicios.css", "common.js", "common.css"]);
+const publicFiles = new Set(["index.html", "script.js", "chat-engine.js", "style.css", "viajes.html", "viajes.js", "viajes.css", "tienda.html", "tienda.js", "tienda.css", "logo-rumbo.jpg", "servicios.html", "servicios.js", "servicios.css", "common.js", "common.css", "journey.js"]);
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
 export function createApp() {
   return createServer(async (req, res) => {

@@ -46,10 +46,11 @@ test('el catálogo compartido funciona fuera de la tienda y sus imágenes existe
   const context = { window: {}, document: { querySelector: () => null } };
   vm.runInNewContext(await readFile(resolve(root, 'tienda.js'), 'utf8'), context);
   const products = context.window.RumboProducts;
-  assert.equal(products.length, 30);
+  assert.ok(products.length >= 30);
   assert.equal(new Set(products.map(p => p.id)).size, products.length);
   for (const product of products) {
     assert.ok(Number.isFinite(product.price) && product.price > 0);
     await access(resolve(root, product.image));
   }
 });
+

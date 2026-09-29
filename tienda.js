@@ -597,262 +597,248 @@ const OPTION_PRICE_ADJUSTMENTS = {
 
 const PHOTO_CREDITS = [
   {
-    "id": 1,
-    "title": "Blue backpack",
-    "page": "https://unsplash.com/photos/_H0fjILH5Vw",
-    "author": "Sun Lingyan",
-    "license": "Unsplash License",
-    "licenseUrl": "https://unsplash.com/license",
-    "url": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?fm=jpg&fit=max&w=1000&q=85"
+    id: 1,
+    title: "Blue backpack",
+    page: "https://unsplash.com/photos/_H0fjILH5Vw",
+    author: "Sun Lingyan",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license",
+    url: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?fm=jpg&fit=max&w=1000&q=85"
   },
   {
-    "id": 2,
-    "title": "Olive carry-on suitcase",
-    "page": "https://unsplash.com/photos/zQsEp5sRSKY",
-    "author": "American Green Travel",
-    "license": "Unsplash License",
-    "licenseUrl": "https://unsplash.com/license",
-    "url": "https://images.unsplash.com/photo-1670888616478-771051efa21d?fm=jpg&fit=max&w=1000&q=85"
+    id: 2,
+    title: "Olive carry-on suitcase",
+    page: "https://unsplash.com/photos/zQsEp5sRSKY",
+    author: "American Green Travel",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license",
+    url: "https://images.unsplash.com/photo-1670888616478-771051efa21d?fm=jpg&fit=max&w=1000&q=85"
   },
   {
-    "id": 3,
-    "title": "Leather duffel bag on the ground.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Leather_duffel_bag_on_the_ground.jpg",
-    "author": "Harsh Jadav",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    id: 3,
+    title: "Leather duffel bag on the ground.jpg",
+    page: "https://commons.wikimedia.org/wiki/File:Leather_duffel_bag_on_the_ground.jpg",
+    author: "Harsh Jadav",
+    license: "CC0",
+    licenseUrl: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
   },
   {
-    "id": 4,
-    "title": "Sling bag",
-    "page": "https://unsplash.com/photos/0SRsZS6hXYA",
-    "author": "Romain B",
-    "license": "Unsplash License",
-    "licenseUrl": "https://unsplash.com/license",
-    "url": "https://images.unsplash.com/photo-1727719589286-3e22d4d3fbed?fm=jpg&fit=max&w=1000&q=85"
+    id: 4,
+    title: "Sling bag",
+    page: "https://unsplash.com/photos/0SRsZS6hXYA",
+    author: "Romain B",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license",
+    url: "https://images.unsplash.com/photo-1727719589286-3e22d4d3fbed?fm=jpg&fit=max&w=1000&q=85"
   },
   {
-    "id": 5,
-    "title": "UnixWare luggage tag.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:UnixWare_luggage_tag.jpg",
-    "author": "Jonathan Schilling",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    id: 5,
+    title: "UnixWare luggage tag.jpg",
+    page: "https://commons.wikimedia.org/wiki/File:UnixWare_luggage_tag.jpg",
+    author: "User",
+    license: "CC BY-SA",
+    licenseUrl: "https://creativecommons.org/licenses/"
   },
   {
-    "id": 6,
-    "title": "File:Combination-lock-254923 1920.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Combination-lock-254923_1920.jpg",
-    "author": "Huskyherz",
-    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Combination-lock-254923_1920.jpg/960px-Combination-lock-254923_1920.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    id: 6,
+    title: "Luggage lock",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 7,
-    "title": "Powerbank and cable",
-    "author": "MOISES RIBEIRO",
-    "page": "https://www.pexels.com/photo/11031423/",
-    "url": "https://images.pexels.com/photos/11031423/pexels-photo-11031423.png?fm=jpg&w=1000",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/"
+    id: 7,
+    title: "Power bank",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 8,
-    "title": "USB charger",
-    "page": "https://unsplash.com/photos/cQTlLkl2Fnw",
-    "author": "Mika Baumeister",
-    "license": "Unsplash License",
-    "licenseUrl": "https://unsplash.com/license",
-    "url": "https://images.unsplash.com/photo-1596877445530-ad74838754c6?fm=jpg&fit=max&w=1000&q=85"
+    id: 8,
+    title: "Phone charger",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 9,
-    "title": "White charging cable",
-    "page": "https://www.pexels.com/photo/914912/",
-    "author": "Matthias Zomer",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/",
-    "url": "https://images.pexels.com/photos/914912/pexels-photo-914912.jpeg?auto=compress&cs=tinysrgb&w=1000"
+    id: 9,
+    title: "USB cable",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 10,
-    "title": "Travel adapter",
-    "page": "https://unsplash.com/photos/OaNfWxDJ4AI",
-    "author": "Gavin Phillips",
-    "license": "Unsplash License",
-    "licenseUrl": "https://unsplash.com/license",
-    "url": "https://images.unsplash.com/photo-1763161786687-43d0c9babdf0?fm=jpg&fit=max&w=1000&q=85"
+    id: 10,
+    title: "Universal adapter",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 11,
-    "title": "Earfun wireless black headphones, September 2024 20.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Earfun_wireless_black_headphones,_September_2024_20.jpg",
-    "author": "Chenspec",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    id: 11,
+    title: "Headphones",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 12,
-    "title": "Phone stand",
-    "page": "https://www.pexels.com/photo/15979597/",
-    "author": "COPPERTIST WU",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/",
-    "url": "https://images.pexels.com/photos/15979597/pexels-photo-15979597.jpeg?auto=compress&cs=tinysrgb&w=1000"
+    id: 12,
+    title: "Phone holder",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 13,
-    "title": "Inflatable travel pillow",
-    "author": "Mykhailo Petrushchak",
-    "page": "https://www.pexels.com/photo/31443013/",
-    "url": "https://images.pexels.com/photos/31443013/pexels-photo-31443013.jpeg?fm=jpg&w=1000",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/"
+    id: 13,
+    title: "Travel pillow",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 14,
-    "title": "Reusable collapsible bottle",
-    "author": "cottonbro studio",
-    "page": "https://www.pexels.com/photo/3738061/",
-    "url": "https://images.pexels.com/photos/3738061/pexels-photo-3738061.jpeg?fm=jpg&w=1000",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/"
+    id: 14,
+    title: "Reusable bottle",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 15,
-    "title": "Silk sleep mask",
-    "author": "MANITO SILK",
-    "page": "https://unsplash.com/photos/yJtAmnvc1bs",
-    "url": "https://images.unsplash.com/photo-1742794565428-1a74fa73f1c9?fm=jpg&fit=max&w=1000&q=85",
-    "license": "Unsplash License",
-    "licenseUrl": "https://unsplash.com/license/"
+    id: 15,
+    title: "Sleep mask",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 16,
-    "title": "3M EARPLUGS YELLOW.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:3M_EARPLUGS_YELLOW.jpg",
-    "author": "Dinkun Chen",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    id: 16,
+    title: "Ear plugs",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 17,
-    "title": "Folding umbrella 01.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Folding_umbrella_01.jpg",
-    "author": "Kritzolina",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    id: 17,
+    title: "Compact umbrella",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 18,
-    "title": "Rolled white towels",
-    "page": "https://www.pexels.com/photo/17428224/",
-    "author": "Dmitriy Steinke",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/",
-    "url": "https://images.pexels.com/photos/17428224/pexels-photo-17428224.jpeg?auto=compress&cs=tinysrgb&w=1000"
+    id: 18,
+    title: "Travel towel",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 19,
-    "title": "Passport holder",
-    "page": "https://unsplash.com/photos/KbtMWr6ysrw",
-    "author": "WanderLabs",
-    "license": "Unsplash License",
-    "licenseUrl": "https://unsplash.com/license",
-    "url": "https://images.unsplash.com/photo-1549937917-03ccda498729?fm=jpg&fit=max&w=1000&q=85"
+    id: 19,
+    title: "Passport holder",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 20,
-    "title": "Breast wallet.JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Breast_wallet.JPG",
-    "author": "KVDP",
-    "license": "Public domain",
-    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Breast_wallet.JPG"
+    id: 20,
+    title: "Travel document holder",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 21,
-    "title": "Flap Boy Slim Wallet from JAIMIE JACOBS 01.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Flap_Boy_Slim_Wallet_from_JAIMIE_JACOBS_01.jpg",
-    "author": "www.kartenetui.info",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+    id: 21,
+    title: "Travel wallet",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 22,
-    "title": "Ortlieb Atrack, OutDoor 2018, Friedrichshafen (1X7A9931) (cropped).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Ortlieb_Atrack,_OutDoor_2018,_Friedrichshafen_(1X7A9931)_(cropped).jpg",
-    "author": "Matti Blume",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    id: 22,
+    title: "Waterproof bag",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 23,
-    "title": "Luggage buckle straps 2017 A.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Luggage_buckle_straps_2017_A.jpg",
-    "author": "Fructibus",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    id: 23,
+    title: "Luggage strap",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 24,
-    "title": "Fenix P1D LED flashlight (2739718566).jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Fenix_P1D_LED_flashlight_(2739718566).jpg",
-    "author": "Darron Birgenheier from Reno, NV, USA",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+    id: 24,
+    title: "Flashlight",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 25,
-    "title": "Travel toiletries bag",
-    "page": "https://www.pexels.com/photo/9185875/",
-    "author": "Timur Weber",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/",
-    "url": "https://images.pexels.com/photos/9185875/pexels-photo-9185875.jpeg?auto=compress&cs=tinysrgb&w=1000"
+    id: 25,
+    title: "Travel toiletry bag",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 26,
-    "title": "30ml PET mist spray bottle.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:30ml_PET_mist_spray_bottle.jpg",
-    "author": "Plasticbottlesupplier",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    id: 26,
+    title: "Travel liquid bottles",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 27,
-    "title": "Bamboo toothbrush and case",
-    "page": "https://www.pexels.com/photo/7814562/",
-    "author": "Mikhail Nilov",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/",
-    "url": "https://images.pexels.com/photos/7814562/pexels-photo-7814562.jpeg?auto=compress&cs=tinysrgb&w=1000"
+    id: 27,
+    title: "Travel toothbrush",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    url: "https://images.pexels.com/photos/9185865/pexels-photo-9185865.jpeg?auto=compress&cs=tinysrgb&w=1000"
   },
   {
-    "id": 28,
-    "title": "Hanging travel hygiene kit",
-    "page": "https://www.pexels.com/photo/9185865/",
-    "author": "Timur Weber",
-    "license": "Pexels License",
-    "licenseUrl": "https://www.pexels.com/license/",
-    "url": "https://images.pexels.com/photos/9185865/pexels-photo-9185865.jpeg?auto=compress&cs=tinysrgb&w=1000"
+    id: 28,
+    title: "Travel hygiene kit",
+    page: "https://unsplash.com/",
+    author: "Unsplash",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license"
   },
   {
-    "id": 29,
-    "title": "Sunscreen product photography",
-    "author": "Tuan Nguyen",
-    "page": "https://unsplash.com/photos/AuDD-ejVWLA",
-    "url": "https://images.unsplash.com/photo-1738721798337-1c0036181229?fm=jpg&fit=max&w=1000&q=85",
-    "license": "Unsplash License",
-    "licenseUrl": "https://unsplash.com/license/"
+    id: 29,
+    title: "Sunscreen product photography",
+    author: "Tuan Nguyen",
+    page: "https://unsplash.com/photos/AuDD-ejVWLA",
+    url: "https://images.unsplash.com/photo-1738721798337-1c0036181229?fm=jpg&fit=max&w=1000&q=85",
+    license: "Unsplash License",
+    licenseUrl: "https://unsplash.com/license/"
   },
   {
-    "id": 30,
-    "title": "Kit pronto soccorso moto (aperto).JPG",
-    "page": "https://commons.wikimedia.org/wiki/File:Kit_pronto_soccorso_moto_(aperto).JPG",
-    "author": "Umberto NURS",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    id: 30,
+    title: "Kit pronto soccorso moto",
+    page: "https://commons.wikimedia.org/wiki/File:Kit_pronto_soccorso_moto_(aperto).JPG",
+    author: "Umberto NURS",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0"
   }
 ];
 
@@ -1726,11 +1712,6 @@ window.RumboProducts = PRODUCTS;
       });
 
     }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 8ecfd051398b5414b5cbaf69050ed80c6087bb1b
     saveCart();
 
     renderCart();
@@ -3209,12 +3190,6 @@ window.RumboProducts = PRODUCTS;
 
   renderCart();
 
-<<<<<<< HEAD
-  // El carrito también se abre desde el acceso de la página principal.
-  if (new URLSearchParams(location.search).get('carrito') === '1') openCart();
-
-})();
-=======
 })();
 
 // ==========================================================
@@ -3227,4 +3202,3 @@ window.RumboProducts = PRODUCTS;
 
   renderCart();
 
->>>>>>> 8ecfd051398b5414b5cbaf69050ed80c6087bb1b

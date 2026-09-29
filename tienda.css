@@ -28,6 +28,16 @@
     box-sizing: border-box;
 }
 
+/* Estados compartidos con tienda.js; deben prevalecer sobre display:flex/grid. */
+[hidden] { display: none !important; }
+body.dialog-open { overflow: hidden; }
+.flying-product { position: fixed; z-index: 1000; pointer-events: none; object-fit: contain; }
+.photo-credits { padding-block: 20px; font-size: 13px; }
+.photo-credits summary { cursor: pointer; }
+.photo-credits li { margin-block: 8px; overflow-wrap: anywhere; }
+.cart-note, .storage-notice { color: var(--muted); font-size: 13px; }
+.storage-notice { padding: 16px; text-align: center; }
+
 
 html {
     scroll-behavior: smooth;

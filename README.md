@@ -1,0 +1,41 @@
+# Rumbo
+
+Sitio de viajes en HTML, CSS y JavaScript. Los catálogos y precios son de demostración; todavía no hay base de datos ni pagos.
+
+## Abrir la copia correcta
+
+Desde esta carpeta, ejecutar `npm start` o abrir `INICIAR-RUMBO.cmd`. Visitar `http://localhost:3000`. No requiere instalar paquetes; utiliza Node 22 o posterior.
+
+Editar los archivos de esta misma carpeta y recargar el navegador. El servidor sirve los cambios directamente y desactiva la caché. Si se abre otra copia del proyecto o un sitio publicado, no se verán necesariamente los cambios locales. Un cambio de un compañero debe estar guardado en un commit y subido a la rama compartida para poder descargarlo.
+
+## Dónde está cada parte
+
+- **Inicio y Rumbito:** `index.html`, `style.css` y `script.js`. `chat-engine.js` contiene las respuestas del asistente; `LEEME-RUMBITO.md` explica su funcionamiento.
+- **Destinos, vuelos y hoteles:** `viajes.html`, `viajes.css` y `viajes.js`. Una sola página usa `pantalla=destinos`, `detalle-destino`, `vuelos` o `hoteles`. El catálogo de `viajes.js` también alimenta el inicio.
+- **Tienda:** `tienda.html`, `tienda.css` y `tienda.js`. Incluye variantes, ajustes de precio, favoritos y carrito. `tienda.js` también proporciona los productos al asistente.
+- **Otros servicios:** `servicios.html`, `servicios.css` y `servicios.js`. El parámetro `seccion` abre traslados, seguros, guías, Mi viaje, perfil y ayuda.
+- **Navegación común:** `common.js` y `common.css`. Se utilizan en las cuatro páginas.
+- **Fotografías:** `imagenes/` para productos e `imagenes-viajes/` para destinos y alojamientos. `evidencias/` contiene capturas, no páginas del sitio.
+- **Servidor y validación:** `server.mjs`, `package.json` y los archivos `*.test.mjs`. Si se añade un recurso público, actualizar la lista permitida de `server.mjs`.
+
+Se mantienen las rutas actuales para no romper enlaces. No hace falta crear un HTML distinto para cada vista de viajes o servicios. En el inicio, `viajes.js` debe cargarse antes de `script.js`.
+
+## Compartir cambios sin mezclar versiones
+
+1. Revisar `git status` y guardar los cambios propios en un commit antes de integrar cambios del equipo.
+2. Ejecutar `git fetch origin` y comparar la rama local con `origin/main`.
+3. Si solo faltan commits remotos, ejecutar `git pull --ff-only`. Si Git informa que las ramas divergieron, integrar y resolver cada conflicto; no pegar dos versiones completas dentro de un archivo.
+4. Ejecutar `npm test` y probar la página modificada en el navegador.
+5. Revisar el diff, guardar la integración y subirla con `git push` cuando corresponda.
+
+Quitar las líneas `<<<<<<<`, `=======` y `>>>>>>>` por sí solo no resuelve un conflicto: también hay que reconciliar las dos versiones del código. Cada HTML debe conservar un único documento y cada script cargarse una sola vez.
+
+## Validación
+
+`npm test` comprueba el servidor, el asistente y la integridad del proyecto: sintaxis de todos los scripts, conflictos de Git, documentos duplicados, identificadores repetidos, recursos locales ausentes y disponibilidad del catálogo compartido.
+
+También conviene probar colores/tamaños y totales de la tienda, carrito desde el inicio, selección de vuelo/hotel y guardado de servicios. Las pruebas automáticas no sustituyen la revisión visual.
+
+## Reparación de la integración
+
+La fusión `52bd6ad` mezcló el trabajo de tienda de `13dfe7a` con las mejoras generales de `f22c22b`. El HTML contenía dos documentos y el JavaScript quedó cortado por un bloque de la versión anterior. La versión actual conserva las variantes y el diseño de la tienda nueva, junto con la navegación común y el acceso al carrito desde el inicio. Los créditos exactos de las fotografías se mantienen porque los archivos de imagen no cambiaron.

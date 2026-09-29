@@ -273,11 +273,8 @@ button:disabled:hover { transform: none; }
 .chat-tools button { min-height: 35px; padding: 0; border: 0; background: transparent; color: var(--primary-dark); font-size: 12px; text-decoration: underline; }
 .chat-disclaimer { flex-shrink: 0; margin: 0; padding: 9px 15px; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 10px; }
 
-/* Rumbito: una brújula exploradora con mochila para acompañar el viaje. */
+/* Rumbito: avatar y conversación. */
 .rumbito-avatar { --gaze-x: 0px; --gaze-y: 0px; display: inline-block; width: 56px; height: 56px; flex: 0 0 56px; }
-.rumbito-avatar svg { display: block; width: 100%; height: 100%; overflow: visible; }
-.rumbito-eyes { transform-origin: 60px 53px; animation: rumbito-blink 6s infinite; }
-.rumbito-pupils { transform: translate(var(--gaze-x), var(--gaze-y)); transition: transform 100ms ease-out; }
 .rumbito-hero { width: 105px; height: 105px; flex-basis: 105px; animation: rumbito-float 4s ease-in-out infinite; }
 .hero-adviser { background: transparent; border: 0; border-top: 1px solid #9fc5ca; border-radius: 0; padding: 22px 0 0; gap: 20px; }
 .hero-adviser:hover { background: transparent; }
@@ -314,7 +311,6 @@ button:disabled:hover { transform: none; }
 .chat-input-row input { border-radius: 8px; }
 .is-thinking .chat-header .rumbito-avatar { animation: rumbito-wave 900ms ease-in-out infinite; }
 .is-typing { color: #60787c; animation: rumbito-thinking 800ms ease-in-out infinite alternate; }
-@keyframes rumbito-blink { 0%, 42%, 46%, 100% { transform: scaleY(1); } 44% { transform: scaleY(.08); } }
 @keyframes rumbito-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-6px) rotate(3deg); } }
 @keyframes rumbito-wave { 0%, 100% { transform: rotate(0); } 35% { transform: rotate(-9deg); } 70% { transform: rotate(8deg); } }
 @keyframes rumbito-open { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
@@ -422,3 +418,63 @@ button:disabled:hover { transform: none; }
 .chat-options button { border-radius: 18px; }
 @media(max-width:600px) { .hero-adviser { padding: 15px; gap: 12px; } .hero-adviser strong { font-size: 19px; } .hero-adviser .rumbito-hero { width: 75px; height: 75px; flex-basis: 75px; } }
 @media(prefers-reduced-motion:reduce) { .rumbito-avatar, .rumbito-eyes { animation: none !important; } }
+
+/* Rumbito Integrado: el mismo copiloto en bienvenida, lanzador y conversación. */
+.rumbito-avatar { position: relative; isolation: isolate; }
+.rumbito-avatar img { display: block; width: 100%; height: 100%; object-fit: contain; transform: translate(var(--gaze-x), var(--gaze-y)); transition: transform 220ms ease-out; filter: drop-shadow(0 5px 5px #075e6918); }
+.rumbito-hero { width: 132px; height: 112px; flex-basis: 132px; }
+.hero-adviser { background: linear-gradient(125deg, #fffef8, #eff8f6); border-color: #d0e0d9; gap: 16px; box-shadow: 0 8px 24px #16444b08; transition: border-color 200ms, box-shadow 200ms, transform 200ms; }
+.hero-adviser:hover { background: linear-gradient(125deg, #fffef8, #e8f5f1); border-color: #8ebbb5; box-shadow: 0 12px 28px #16444b12; transform: translateY(-2px); }
+.hero-adviser .rumbito-eyebrow { letter-spacing: 1.4px; font-size: 9px; }
+.rumbito-invite { background: #deeee7; padding: 8px 12px; font-size: 11px; }
+.chat-launcher { gap: 9px; padding: 7px 18px 7px 8px; border: 1px solid #c4dcd8; border-radius: 26px; box-shadow: 0 8px 32px #163e4826, 0 2px 5px #163e4808; transition: transform 200ms, box-shadow 200ms, background 200ms; }
+.chat-launcher .rumbito-avatar { width: 67px; height: 54px; flex-basis: 67px; }
+.chat-launcher::after { content: ''; width: 8px; height: 8px; margin-left: 5px; border: 3px solid #e3f5ef; box-sizing: content-box; border-radius: 50%; background: #4aaf8b; }
+.chat-launcher:hover { transform: translateY(-3px); box-shadow: 0 12px 34px #163e4830; }
+.chat-launcher:active, .hero-adviser:active { transform: translateY(0) scale(.99); }
+.chat-launcher.chat-is-open::after { background: #087f8c; }
+.chat-header { background: linear-gradient(125deg,#eff8f5,#fffaf0); border-bottom-color: #e0ebe6; }
+.chat-header .rumbito-avatar { width: 80px; height: 66px; flex-basis: 80px; }
+.chat-header h2 { font-size: 21px; margin-bottom: 5px; }
+.chat-header p { font-size: 11px; }
+.chat-panel { border-radius: 24px; transform-origin: bottom right; }
+.chat-panel:not([hidden]) { animation: rumbito-arrive 260ms cubic-bezier(.2,.8,.2,1); }
+.chat-panel.is-closing { animation: rumbito-depart 180ms ease-in forwards; pointer-events: none; }
+.chat-messages { background: linear-gradient(#fcfefd, #fff); scrollbar-width: thin; scrollbar-color: #c1d8d2 transparent; }
+.chat-message { padding: 14px 16px; border: 1px solid #e3ece8; border-radius: 16px 16px 16px 4px; background: #f1f6f3; font-size: 13px; }
+.chat-message.user { background: #116b75; border-color: #116b75; border-radius: 16px 16px 4px 16px; }
+.chat-options { padding-block: 10px; }
+.chat-options button { min-height: 38px; transition: background 160ms, border-color 160ms, transform 160ms; }
+.chat-options button:hover:not(:disabled) { transform: translateY(-2px); background: #e6f3ed; }
+.chat-form { padding-top: 12px; }
+.chat-form label { font-size: 11px; }
+.chat-input-row { padding: 4px; border: 1px solid #bed5cf; border-radius: 16px; background: #fff; transition: box-shadow 180ms, border-color 180ms; }
+.chat-input-row:focus-within { border-color: #087f8c; box-shadow: 0 0 0 3px #087f8c14; }
+.chat-input-row input { border: 0; background: transparent; outline: none; }
+.chat-input-row input:focus-visible { outline: 2px solid #087f8c; outline-offset: -2px; }
+.chat-send { border-radius: 12px; transition: background 180ms, transform 180ms, opacity 180ms; }
+.chat-send:hover:not(:disabled) { background: #087f8c; transform: translateY(-1px); }
+.chat-send:disabled { opacity: .35; cursor: default; }
+.is-composing .chat-header .rumbito-avatar { animation: rumbito-listen 1.8s ease-in-out infinite; }
+.is-thinking .chat-header .rumbito-avatar { animation: rumbito-wave 1.2s ease-in-out infinite; }
+.is-typing::after { content: ' · · ·'; color: #087f8c; letter-spacing: 2px; }
+@keyframes rumbito-arrive { from { opacity: 0; transform: translateY(16px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes rumbito-depart { to { opacity: 0; transform: translateY(10px) scale(.98); } }
+@keyframes rumbito-listen { 0%,100% { transform: rotate(-4deg); } 50% { transform: translateY(-3px) rotate(2deg); } }
+@media(max-width:650px) {
+  .hero-adviser .rumbito-hero { width: 86px; height: 86px; flex-basis: 86px; }
+  .hero-adviser { padding: 16px 12px; gap: 10px; }
+  .hero-adviser strong { font-size: 19px; }
+  .hero-adviser small { font-size: 12px; }
+  .rumbito-invite { font-size: 10px; padding: 7px 9px; }
+  .chat-panel { border-radius: 22px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .rumbito-avatar img { transform: none; }
+}
+
+@media(min-width:651px) and (max-width:1100px) {
+  .hero-adviser { gap: 12px; padding: 16px 12px; }
+  .hero-adviser .rumbito-hero { width: 82px; height: 88px; flex-basis: 82px; }
+  .hero-adviser strong { font-size: 20px; }
+}

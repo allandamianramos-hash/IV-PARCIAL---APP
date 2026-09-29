@@ -20,7 +20,7 @@
   }
   document.querySelectorAll('[data-module="flights"], [data-module="stays"]').forEach(button=>button.removeAttribute('aria-haspopup'));
   if(!document.getElementById('chat-launcher')){
-    const link=document.createElement('a');link.className='global-rumbito';link.href='index.html#hablar-rumbito';link.innerHTML='<span aria-hidden="true">✦</span> Pregúntale a Rumbito';document.body.append(link);
+    const link=document.createElement('a');link.className='global-rumbito';link.href='index.html#hablar-rumbito';link.innerHTML='<img src="imagenes/rumbito.png" width="44" height="44" alt=""> Pregúntale a Rumbito';document.body.append(link);
   }
 
   // Una cabecera consistente: los accesos principales llevan a las secciones del inicio.
@@ -46,6 +46,15 @@
     const actions=header.querySelector('.header-actions')||document.createElement('div');
     actions.className='header-actions';
     actions.prepend(trip);actions.append(accounts);header.append(actions);
+    const icons = {
+      trip: '<rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M8 11v6m8-6v6"/>',
+      login: '<circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/>',
+      register: '<path d="M5 12h14m-6-6 6 6-6 6"/>'
+    };
+    const icon = key => '<svg class="header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[key]+'</svg>';
+    trip.innerHTML=icon('trip')+'<span>Mi viaje</span>';
+    accounts.querySelector('.login-button').innerHTML=icon('login')+'<span>Iniciar sesión</span>';
+    accounts.querySelector('.register-button').innerHTML='<span>Registrarse</span>'+icon('register');
     header.querySelector('.logo').href='index.html';
   }
   if(document.getElementById('servicios')){

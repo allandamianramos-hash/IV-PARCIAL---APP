@@ -293,40 +293,29 @@
     let busy = false;
     const avatars = [...document.querySelectorAll(".rumbito-avatar")];
     avatars.forEach(avatar => {
-      avatar.innerHTML = `<svg viewBox="0 0 120 120" focusable="false" aria-hidden="true">
-        <ellipse cx="60" cy="112" rx="35" ry="5" fill="#183044" opacity=".1"/>
-        <rect x="23" y="30" width="74" height="71" rx="19" fill="#cd9d59"/>
-        <path d="M43 22v-7q17-14 34 0v7" fill="none" stroke="#1c6570" stroke-width="7"/>
-        <path d="m30 77-15 12m77-12 13-15M43 96l-5 13m39-13 5 13" stroke="#1c6570" stroke-width="9" stroke-linecap="round"/>
-        <circle cx="60" cy="57" r="43" fill="#087f8c"/>
-        <circle cx="60" cy="57" r="35" fill="#fff9e9" stroke="#e8bd78" stroke-width="3"/>
-        <path d="M60 26v6M60 83v6M29 57h6M85 57h6" stroke="#c9ab77" stroke-width="3" stroke-linecap="round"/>
-        <path d="m61 35 7 11-14-1z" fill="#d68755"/>
-        <g class="rumbito-eyes"><ellipse cx="46" cy="53" rx="8" ry="10" fill="white"/><ellipse cx="74" cy="53" rx="8" ry="10" fill="white"/>
-        <g class="rumbito-pupils" fill="#183044"><circle cx="47" cy="54" r="4.8"/><circle cx="75" cy="54" r="4.8"/></g></g>
-        <circle cx="38" cy="66" r="5" fill="#efbd9e"/><circle cx="82" cy="66" r="5" fill="#efbd9e"/>
-        <path d="M49 68q11 12 22 0" fill="none" stroke="#1c6570" stroke-width="3.5" stroke-linecap="round"/>
-        <path d="m95 17 3-8 3 8 8 3-8 3-3 8-3-8-8-3z" fill="#e8bd78"/>
-      </svg>`;
-
-    });
-    let pointerFrame = 0;
-    document.addEventListener("pointermove", event => {
-      if (reducedMotion.matches || event.pointerType === "touch" || pointerFrame) return;
-      pointerFrame = requestAnimationFrame(() => {
-        avatars.forEach(avatar => {
-          const rect = avatar.getBoundingClientRect();
-          if (!rect.width) return;
-          const dx = Math.max(-3, Math.min(3, (event.clientX - rect.x - rect.width / 2) / 65));
-          const dy = Math.max(-3, Math.min(3, (event.clientY - rect.y - rect.height / 2) / 65));
-          avatar.style.setProperty("--gaze-x", `${dx}px`);
-          avatar.style.setProperty("--gaze-y", `${dy}px`);
-        });
-        pointerFrame = 0;
+      avatar.innerHTML = '<img src="imagenes/rumbito.png" width="256" height="256" alt="" draggable="false">';
+      const surface = avatar.closest('button') || avatar;
+      surface.addEventListener('pointermove', event => {
+        if (reducedMotion.matches || event.pointerType === 'touch') return;
+        const rect = surface.getBoundingClientRect();
+        avatar.style.setProperty('--gaze-x', ((event.clientX - rect.left) / rect.width * 6 - 3) + 'px');
+        avatar.style.setProperty('--gaze-y', ((event.clientY - rect.top) / rect.height * 6 - 3) + 'px');
+      }, { passive: true });
+      surface.addEventListener('pointerleave', () => {
+        avatar.style.setProperty('--gaze-x', '0px');
+        avatar.style.setProperty('--gaze-y', '0px');
       });
-    }, { passive: true });
+    });
+    let closeAnimation;
+    function updateComposer() {
+      send.disabled = busy || !input.value.trim();
+      panel.classList.toggle('is-composing', !busy && !!input.value.trim());
+    }
+    input.addEventListener('input', updateComposer);
 
     function openChat(button) {
+      clearTimeout(closeAnimation);
+      panel.classList.remove("is-closing");
       opener = button;
       panel.hidden = false;
       launcher.classList.add("chat-is-open");
@@ -336,7 +325,11 @@
     }
 
     function closeChat() {
-      panel.hidden = true;
+      panel.classList.add("is-closing");
+      closeAnimation = setTimeout(() => {
+        panel.hidden = true;
+        panel.classList.remove("is-closing");
+      }, reducedMotion.matches ? 0 : 180);
       launcher.classList.remove("chat-is-open");
       openButtons.forEach(item => item.setAttribute("aria-expanded", "false"));
       opener.focus();
@@ -358,6 +351,7 @@
       clearPass();
       messages.replaceChildren();
       input.value = "";
+      updateComposer();
       addMessage("¡Hola! Soy Rumbito, tu compañero de aventuras. Tú pones las ganas y yo te ayudo a encontrar el rumbo. ¿Playa, montaña o una ciudad por descubrir?");
       renderOptions(window.RumboChat.defaults);
       setText("#chat-step-label", "Un gran viaje empieza con una buena idea.");
@@ -412,6 +406,7 @@
       busy = true;
       input.disabled = send.disabled = restart.disabled = true;
       options.querySelectorAll("button").forEach(button => button.disabled = true);
+      panel.classList.remove("is-composing");
       panel.classList.add("is-thinking");
       form.setAttribute("aria-busy", "true");
       addMessage(text, true);
@@ -439,7 +434,8 @@
         input.value = text;
       } finally {
         busy = false;
-        input.disabled = send.disabled = restart.disabled = false;
+        input.disabled = restart.disabled = false;
+        updateComposer();
         options.querySelectorAll("button").forEach(button => button.disabled = false);
         panel.classList.remove("is-thinking");
         pending.classList.remove("is-typing");
@@ -453,7 +449,7 @@
       button.setAttribute("aria-controls", "help-chat");
       button.setAttribute("aria-expanded", "false");
       button.addEventListener("click", () => {
-        if (button === launcher && !panel.hidden) closeChat();
+        if (button === launcher && !panel.hidden && !panel.classList.contains("is-closing")) closeChat();
         else openChat(button);
       });
     });

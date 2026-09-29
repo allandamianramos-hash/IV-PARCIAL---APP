@@ -21,3 +21,34 @@
 .site-header .account-link:focus-visible{outline:3px solid #9a6c2a;outline-offset:3px}
 @media(max-width:1200px){.site-header .header-inner{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.site-header .main-nav{order:3;width:100%;justify-content:center}.site-header .account-actions{margin-left:auto}}
 @media(max-width:600px){.site-header .account-actions{order:2;width:100%;margin:0;justify-content:center}.site-header .account-link{flex:1;max-width:180px}.site-header .header-inner{row-gap:12px}.site-header .main-nav{padding-bottom:0}}
+
+/* Cabecera compartida: marca y cuenta arriba, navegación y herramientas debajo. */
+.site-header{background:#fff;border-bottom:1px solid #dce5e4;position:relative;z-index:20}
+.site-header .header-inner{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 28px;align-items:center;padding-block:18px;min-height:0;flex-wrap:initial}
+.site-header .logo{grid-column:1;grid-row:1;font-size:34px;line-height:1.1;color:#183044}
+.site-header .main-nav{grid-column:1/-1;grid-row:2;display:flex;order:initial;width:100%;gap:8px;padding:0;border:0;border-radius:0;background:transparent;justify-content:flex-start;flex-wrap:wrap}
+.site-header .main-nav a{font:500 14px/1.4 'DM Sans','Segoe UI',sans-serif;padding:10px 16px;border-radius:9px;white-space:nowrap;color:#52636c;text-decoration:none}
+.site-header .main-nav a:hover,.site-header .main-nav a[aria-current=page]{background:#e8f3f3;color:#065f68}
+.site-header .header-actions{grid-column:2;grid-row:1;display:flex;justify-content:flex-end;align-items:center;gap:12px;width:auto;flex-wrap:wrap}
+.site-header .account-actions{width:auto;order:initial;margin:0;gap:8px;border-left:1px solid #dce5e4;padding-left:12px}
+.site-header .account-link{border-radius:10px;max-width:none;flex:initial}
+.site-header .account-link.login-button{border-color:transparent;background:transparent}
+.site-header .account-link.register-button{background:#fff;color:#065f68;border-color:#bfd5d2}
+.site-header .header-trip{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border:1px solid #087f8c;border-radius:10px;background:#087f8c;color:#fff;font:700 14px/1.4 'DM Sans','Segoe UI',sans-serif;white-space:nowrap;text-decoration:none}
+.site-header .header-trip:hover{background:#065f68;border-color:#065f68}
+.site-header .cart-button,.site-header .icon-button{min-height:44px;border-radius:10px}
+.site-header .cart-button{background:#f0f6f5;color:#065f68;border:1px solid #dce5e4}
+.site-header a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #087f8c;outline-offset:3px}
+.journey-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 20px;min-height:44px}
+.journey-toolbar p{color:#065f68;font-size:14px;flex:1;margin:0}.journey-toolbar>div{display:flex;gap:12px;flex-wrap:wrap}
+.journey-remove,.journey-clear,.journey-undo{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border:1px solid #eccfcb;background:#fff8f6;border-radius:8px;color:#983d31;font:600 13px/1.4 'DM Sans','Segoe UI',sans-serif;text-decoration:none;cursor:pointer}
+.journey-remove:hover,.journey-clear:hover{background:#fae7e3}.journey-undo{border-color:#bfd5d2;background:#e8f3f3;color:#065f68}.journey-item a{display:inline-block;padding-block:12px}.journey-item>div{min-width:0;overflow-wrap:anywhere}
+.journey-empty{padding:40px 28px;text-align:center;background:#fff;border:1px dashed #bfd5d2;border-radius:18px}.journey-empty>span{display:inline-grid;place-items:center;width:64px;height:64px;background:#e8f3f3;color:#065f68;border-radius:50%;font-size:32px}.journey-empty h2{font-size:26px;margin:20px 0 12px}.journey-empty p{color:#52636c;max-width:440px;margin:0 auto 24px}
+.booking-reference{display:block;width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:18px}.booking-card{overflow:hidden}
+.service-photo{margin:0;position:relative;align-self:stretch;min-height:260px;border-radius:18px;overflow:hidden}.service-photo img{display:block;width:100%;height:100%;min-height:260px;object-fit:cover;position:absolute;inset:0}.service-photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:28px 18px 16px;background:linear-gradient(transparent,#102f36cc);color:#fff;font-size:11px}
+.service-hero-label{display:inline-block;color:#065f68;font-size:11px;font-weight:700;letter-spacing:1.4px;margin-top:24px}
+.service-stage{display:flex;align-items:center;gap:14px;margin:30px 0 18px}.service-stage>span{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#e8f3f3;color:#065f68;font-weight:700;flex-shrink:0}.service-stage h2{font-size:21px;margin:0}.service-stage p{font-size:13px;color:#52636c;margin:4px 0 0}
+.service-tile-photo{width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:20px}.service-summary{background:#e8f3f3;border-color:#bfd5d2;top:24px}.service-option ul{line-height:1.9}.service-option[data-selected=true]{background:#f4faf8;border-color:#087f8c;box-shadow:0 0 0 1px #087f8c}.service-option[data-selected=true] [data-choose]{background:#087f8c;color:white;border-color:#087f8c}
+@media(min-width:1250px){.site-header .header-inner{grid-template-columns:auto minmax(0,1fr) auto;gap:20px}.site-header .main-nav{grid-column:2;grid-row:1;justify-content:center;gap:2px}.site-header .header-actions{grid-column:3}.site-header .main-nav a{padding-inline:12px}}
+@media(max-width:650px){.site-header .header-inner{gap:14px;padding-block:16px}.site-header .logo{grid-column:1;grid-row:1}.site-header .header-actions{grid-column:1/-1;grid-row:2;justify-content:flex-start;gap:8px}.site-header .main-nav{grid-row:3;gap:4px;justify-content:space-between}.site-header .main-nav a{padding:9px 10px;font-size:13px}.site-header .account-actions{padding-left:8px;gap:2px}.site-header .account-link{padding:10px;font-size:12px}.site-header .header-trip{padding:10px 12px;font-size:13px}.service-photo{min-height:200px}.service-photo img{min-height:200px}.service-hero{gap:24px}.journey-progress>p>span{display:block;margin:5px 0 0}.journey-toolbar{align-items:stretch}.journey-toolbar p{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}

@@ -30,16 +30,54 @@
       const v=s.values||{};
       if(d&&((s.destinationId&&s.destinationId!==d.id)||(s.section==='guias'&&v.destination!==d.id)||(s.section==='traslados'&&v.route!==({roatan:'roatan',copan:'copan','la-ceiba':'ceiba'})[d.id])||Number(v.people)!==t.travelers||!dateValid(v.date)||v.date<t.date||v.date>end||(s.section==='seguros'&&(!dateValid(v.end)||v.end<end))))issues.push({label:`Ajusta ${step[1].toLowerCase()} a las fechas y viajeros de este viaje`,url:step[2]});
     }
-    const cart=read('rumbo.store.cart.v2',[]), products=window.RumboProducts||[], used=new Set();
-    if(Array.isArray(cart))for(const row of cart){const p=products.find(p=>p.id===row?.id);if(!p||!integer(row.quantity,1,99))continue;const price=window.RumboProductPrice?.(p,row.options)||p.price;const options=row.options&&typeof row.options==='object'?Object.entries(row.options).map(([key,value])=>`${key}: ${value}`).join(' · '):'';items.push({key:'tienda',label:'Tienda',title:p.name,detail:`${row.quantity} × ${money(price)}${options?' · '+options:''}`,total:price*row.quantity,url:'tienda.html?carrito=1'});}
+    const cart=read('rumbo.store.cart.v2',[]), products=window.RumboProducts||[];
+    if(Array.isArray(cart))for(const [cartIndex,row] of cart.entries()){const p=products.find(p=>p.id===row?.id);if(!p||!integer(row.quantity,1,99))continue;const price=window.RumboProductPrice?.(p,row.options)||p.price;const options=row.options&&typeof row.options==='object'?Object.entries(row.options).map(([key,value])=>`${key}: ${value}`).join(' · '):'';items.push({key:'tienda',cartIndex,label:'Tienda',title:p.name,detail:`${row.quantity} × ${money(price)}${options?' · '+options:''}`,total:price*row.quantity,url:'tienda.html?carrito=1'});}
     const total=items.reduce((sum,i)=>sum+i.total,0), signature=JSON.stringify({destination:d?.id,travelers:t.travelers,dates:[t.date,end],omit,items});
     const receipt=read(receiptKey,null), paid=receipt?.signature===signature&&issues.length===0&&receipt?.demo===true;
     return {t,d,items,issues,total,signature,paid,receipt,omit,end};
   }
   function skipFlight(){const t=read(tripKey,{})||{};return write('rumbo.no-flight.v1',`${t.destinationId}|${t.date}|${t.origin}`);}
-  function renderSummary(root){
+  const selectionKeys=[tripKey,'rumbo.services.v1','rumbo.store.cart.v2','rumbo.no-flight.v1',receiptKey];
+  let undoState=null;
+  function commitSelections(updates){
+    const before=Object.fromEntries(selectionKeys.map(key=>[key,read(key,null)]));
+    try{
+      for(const [key,value] of Object.entries(updates))localStorage.setItem(key,JSON.stringify(value));
+      localStorage.setItem(receiptKey,'null');
+      undoState=before;return true;
+    }catch{
+      for(const [key,value] of Object.entries(before)){try{localStorage.setItem(key,JSON.stringify(value));}catch{}}
+      return false;
+    }
+  }
+  function removeItem(key,cartIndex){
+    if(key==='vuelos'||key==='hoteles'){
+      const t=read(tripKey,{})||{};
+      t[key==='vuelos'?'flightId':'hotelId']='';
+      return commitSelections({[tripKey]:t,...(key==='vuelos'?{'rumbo.no-flight.v1':null}:{})});
+    }
+    if(['traslados','seguros','guias'].includes(key)){
+      const list=read('rumbo.services.v1',[]);
+      return commitSelections({'rumbo.services.v1':Array.isArray(list)?list.filter(s=>s.section!==key):[]});
+    }
+    if(key==='tienda'){
+      const cart=read('rumbo.store.cart.v2',[]);
+      if(!Array.isArray(cart)||!Number.isInteger(cartIndex)||!cart[cartIndex])return false;
+      return commitSelections({'rumbo.store.cart.v2':cart.filter((_,i)=>i!==cartIndex)});
+    }
+    return false;
+  }
+  function clearTrip(){return commitSelections({[tripKey]:{},'rumbo.services.v1':[],'rumbo.store.cart.v2':[],'rumbo.no-flight.v1':null});}
+  function undoRemoval(){
+    if(!undoState)return false;
+    const saved=undoState;
+    if(!commitSelections(saved))return false;
+    // Restoring selections does not restore a previously completed payment.
+    undoState=null;return true;
+  }
+  function renderSummary(root,notice=''){
     const s=snapshot();
-    root.innerHTML=`<section class="journey-heading"><p class="eyebrow">MI VIAJE · TODO EN UN SOLO LUGAR</p><h1>${s.paid?'Tu viaje de demostración está completo.':s.issues.length?'Tu viaje va tomando forma.':'Tu viaje está listo para pagar.'}</h1><p>${s.d?`${esc(s.d.name)} · ${esc(s.t.date)} al ${esc(s.end)} · ${esc(s.t.travelers)} viajeros`:'Empieza por el vuelo y el hospedaje. Después añade solo lo que necesitas.'}</p></section><div class="journey-overview"><section aria-label="Selecciones del viaje">${s.omit?'<p class="journey-notice">Has indicado que no necesitas vuelo.</p>':''}${s.items.map(i=>`<article class="journey-item"><div><small>${esc(i.label)}</small><h2>${esc(i.title)}</h2><p>${esc(i.detail)}</p><a href="${i.url}">Cambiar ${esc(i.label.toLowerCase())}</a>${["traslados","seguros","guias"].includes(i.key)?` <button class="journey-remove" data-remove-service="${i.key}">Quitar</button>`:""}</div><strong>${money(i.total)}</strong></article>`).join('')||'<p class="journey-notice">Aún no has seleccionado servicios.</p>'}${!s.paid?'<details class="journey-extras"><summary>Añadir servicios opcionales</summary><p>Transporte, seguro, experiencias y tienda se añaden solo si los necesitas.</p>'+steps.slice(2,6).map(x=>`<a href="${x[2]}">${x[1]} ↗</a>`).join('')+'</details>':''}</section><aside class="journey-checkout"><p class="eyebrow">${s.paid?'PAGO SIMULADO COMPLETADO':'RESUMEN FINAL'}</p><h2>${money(s.total)}</h2><p>Total de las opciones seleccionadas, en HNL.</p>${s.issues.length?`<h3>Falta completar</h3><ul>${s.issues.map(i=>`<li><a href="${i.url}">${esc(i.label)} →</a></li>`).join('')}</ul>`:s.paid?'':`<p>Vuelo y hospedaje definidos. No necesitas volver a seleccionarlos.</p><label class="journey-consent"><input id="demo-consent" type="checkbox"> Entiendo que es una demostración: no se cobra ni se reserva.</label><button id="complete-demo" class="button button-primary" type="button">Completar pago de demostración →</button>`}<p class="journey-note">No hay pasarela de pago conectada. Los precios y servicios son de ejemplo. No se solicitan datos bancarios; envío e impuestos reales no se calculan.</p><p id="journey-status" role="status"></p></aside></div>${s.paid?`<section class="journey-ticket" aria-labelledby="ticket-title"><div><p class="eyebrow">RUMBO ↗ · RECUERDO DE TU VIAJE</p><h2 id="ticket-title">${esc(s.d.name)}</h2><p>${esc(s.t.date)} → ${esc(s.end)} · ${esc(s.t.travelers)} viajeros</p><p>Referencia: ${esc(s.receipt.code)}</p><strong>Pago simulado completado · ${money(s.total)}</strong></div><div><button id="download-ticket" class="button button-primary">Descargar mi ticket ↓</button><p>DEMOSTRACIÓN · No válido para viajar.<br>No es un boleto, reserva ni comprobante bancario.</p></div></section>`:''}`;
+    root.innerHTML=`<section class="journey-heading"><p class="eyebrow">MI VIAJE · TODO EN UN SOLO LUGAR</p><h1>${s.paid?'Tu viaje de demostración está completo.':s.issues.length?'Tu viaje va tomando forma.':'Tu viaje está listo para pagar.'}</h1><p>${s.d?`${esc(s.d.name)} · ${esc(s.t.date)} al ${esc(s.end)} · ${esc(s.t.travelers)} viajeros`:'Empieza por el vuelo y el hospedaje. Después añade solo lo que necesitas.'}</p></section><div class="journey-toolbar"><p role="status">${esc(notice)}</p><div>${undoState?'<button type="button" class="journey-undo">Deshacer eliminación</button>':''}${s.items.length||s.d?'<button type="button" class="journey-clear">Vaciar mi viaje</button>':''}</div></div><div class="journey-overview"><section aria-label="Selecciones del viaje">${s.omit?'<p class="journey-notice">Has indicado que no necesitas vuelo.</p>':''}${s.items.map(i=>`<article class="journey-item"><div><small>${esc(i.label)}</small><h2>${esc(i.title)}</h2><p>${esc(i.detail)}</p><a href="${i.url}">Cambiar ${esc(i.label.toLowerCase())}</a><button type="button" class="journey-remove" data-remove-item="${i.key}" ${i.cartIndex!==undefined?`data-cart-index="${i.cartIndex}"`:''} aria-label="Eliminar ${esc(i.title)}">Eliminar</button></div><strong>${money(i.total)}</strong></article>`).join('')||'<div class="journey-empty"><span aria-hidden="true">↗</span><h2>Tu próxima aventura empieza aquí</h2><p>Aún no tienes selecciones. Explora los destinos y añade lo que necesitas a tu ritmo.</p><a class="button button-primary" href="viajes.html?pantalla=destinos">Explorar destinos</a></div>'}${!s.paid?'<details class="journey-extras"><summary>Añadir servicios opcionales</summary><p>Transporte, seguro, experiencias y tienda se añaden solo si los necesitas.</p>'+steps.slice(2,6).map(x=>`<a href="${x[2]}">${x[1]} ↗</a>`).join('')+'</details>':''}</section><aside class="journey-checkout"><p class="eyebrow">${s.paid?'PAGO SIMULADO COMPLETADO':'RESUMEN FINAL'}</p><h2>${money(s.total)}</h2><p>Total de las opciones seleccionadas, en HNL.</p>${s.issues.length?`<h3>Falta completar</h3><ul>${s.issues.map(i=>`<li><a href="${i.url}">${esc(i.label)} →</a></li>`).join('')}</ul>`:s.paid?'':`<p>Vuelo y hospedaje definidos. No necesitas volver a seleccionarlos.</p><label class="journey-consent"><input id="demo-consent" type="checkbox"> Entiendo que es una demostración: no se cobra ni se reserva.</label><button id="complete-demo" class="button button-primary" type="button">Completar pago de demostración →</button>`}<p class="journey-note">No hay pasarela de pago conectada. Los precios y servicios son de ejemplo. No se solicitan datos bancarios; envío e impuestos reales no se calculan.</p><p id="journey-status" role="status"></p></aside></div>${s.paid?`<section class="journey-ticket" aria-labelledby="ticket-title"><div><p class="eyebrow">RUMBO ↗ · RECUERDO DE TU VIAJE</p><h2 id="ticket-title">${esc(s.d.name)}</h2><p>${esc(s.t.date)} → ${esc(s.end)} · ${esc(s.t.travelers)} viajeros</p><p>Referencia: ${esc(s.receipt.code)}</p><strong>Pago simulado completado · ${money(s.total)}</strong></div><div><button id="download-ticket" class="button button-primary">Descargar mi ticket ↓</button><p>DEMOSTRACIÓN · No válido para viajar.<br>No es un boleto, reserva ni comprobante bancario.</p></div></section>`:''}`;
     root.querySelector('#complete-demo')?.addEventListener('click',()=>{
       const now=snapshot(),message=root.querySelector('#journey-status');
       if(!root.querySelector('#demo-consent').checked){message.textContent='Marca la casilla para confirmar que deseas completar la demostración.';root.querySelector('#demo-consent').focus();return;}
@@ -52,7 +90,13 @@
       const text=['RUMBO · TICKET DE DEMOSTRACIÓN','NO VÁLIDO PARA VIAJAR. SIN RESERVA NI COBRO REAL.',now.receipt.code,now.d.name,`${now.t.date} al ${now.end} · ${now.t.travelers} viajeros`,...now.items.map(i=>`${i.label}: ${i.title}\n${i.detail}\n${money(i.total)}`),`TOTAL SIMULADO: ${money(now.total)}`].join('\n\n');
       const url=URL.createObjectURL(new Blob(['\uFEFF'+text],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='ticket-rumbo-demo.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);
     });
-    root.querySelectorAll('[data-remove-service]').forEach(button=>button.addEventListener('click',()=>{const saved=read('rumbo.services.v1',[]);if(write('rumbo.services.v1',Array.isArray(saved)?saved.filter(s=>s.section!==button.dataset.removeService):[])){renderSummary(root);root.querySelector('h1').tabIndex=-1;root.querySelector('h1').focus();}}));
+    const refresh=(ok,message)=>{
+      renderSummary(root,ok?message:'No se pudo guardar el cambio. Revisa el almacenamiento del navegador e inténtalo de nuevo.');
+      const status=root.querySelector('.journey-toolbar p');status.tabIndex=-1;status.focus();
+    };
+    root.querySelectorAll('[data-remove-item]').forEach(button=>button.addEventListener('click',()=>refresh(removeItem(button.dataset.removeItem,Number(button.dataset.cartIndex)),'Selección eliminada. El total se ha actualizado.')));
+    root.querySelector('.journey-clear')?.addEventListener('click',()=>refresh(clearTrip(),'Tu viaje está vacío. Puedes deshacer esta acción.'));
+    root.querySelector('.journey-undo')?.addEventListener('click',()=>refresh(undoRemoval(),'Selecciones restauradas.'));
     mountSteps();
   }
   function current(){return document.body.dataset.page||new URLSearchParams(location.search).get('seccion')||(location.pathname.endsWith('tienda.html')?'tienda':'');}
@@ -63,6 +107,6 @@
     nav.innerHTML='<p>ARMA TU VIAJE <span>Elige un paso para continuar o cambiar tu selección.</span></p><ol>'+steps.map(([id,label,url],i)=>`<li><a href="${url}" ${id===active?'aria-current="step"':''}><span>${i+1}</span>${label}</a></li>`).join('')+'</ol>';main.prepend(nav);
     if(['traslados','seguros','guias','tienda'].includes(active)&&!document.querySelector('.journey-next')){const next=steps[index+1],footer=document.createElement('div');footer.className='journey-next';footer.innerHTML=`<a href="${steps[index-1][2]}">← ${steps[index-1][1]}</a><div><p>${active==='tienda'?'Los productos del carrito se incluyen en Mi viaje.':'Este paso es opcional. Guarda tu elección antes de continuar.'}</p><a class="button button-primary" href="${next[2]}">Continuar a ${next[1].toLowerCase()} →</a></div>`;main.append(footer);}
   }
-  window.RumboJourney={snapshot,renderSummary,mountSteps,skipFlight};
+  window.RumboJourney={snapshot,renderSummary,mountSteps,skipFlight,removeItem,clearTrip,undoRemoval};
 })();
 

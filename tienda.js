@@ -451,7 +451,8 @@ PRODUCTS.push(
     name: "Organizador de maleta",
     category: "Equipaje",
     price: 90,
-    image: "imagenes/organizador-maleta.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Organizador para mantener la ropa ordenada dentro de la maleta."
   },
 
@@ -460,7 +461,8 @@ PRODUCTS.push(
     name: "Bolsa para zapatos",
     category: "Equipaje",
     price: 70,
-    image: "imagenes/bolsa-zapatos.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Bolsa para guardar los zapatos separados del resto del equipaje."
   },
 
@@ -469,7 +471,8 @@ PRODUCTS.push(
     name: "Cubos organizadores de ropa",
     category: "Equipaje",
     price: 120,
-    image: "imagenes/cubos-ropa.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Cubos para organizar y separar la ropa dentro de la maleta."
   },
 
@@ -478,7 +481,8 @@ PRODUCTS.push(
     name: "Funda para maleta",
     category: "Equipaje",
     price: 160,
-    image: "imagenes/funda-maleta.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Funda para proteger la maleta durante el viaje."
   },
 
@@ -496,7 +500,8 @@ PRODUCTS.push(
     name: "Neceser de viaje",
     category: "Equipaje",
     price: 140,
-    image: "imagenes/neceser-viaje.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Neceser para llevar artículos personales."
   },
 
@@ -505,7 +510,8 @@ PRODUCTS.push(
     name: "Bolsa para ropa sucia",
     category: "Equipaje",
     price: 75,
-    image: "imagenes/bolsa-ropa-sucia.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Bolsa para separar la ropa usada durante el viaje."
   },
 
@@ -514,7 +520,8 @@ PRODUCTS.push(
     name: "Bolsa plegable de viaje",
     category: "Equipaje",
     price: 150,
-    image: "imagenes/bolsa-plegable.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Bolsa ligera que puede doblarse y guardarse fácilmente."
   },
 
@@ -523,7 +530,8 @@ PRODUCTS.push(
     name: "Mochila de viaje",
     category: "Equipaje",
     price: 280,
-    image: "imagenes/mochila-viaje.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Mochila práctica para llevar objetos personales."
   },
 
@@ -532,7 +540,8 @@ PRODUCTS.push(
     name: "Riñonera de viaje",
     category: "Equipaje",
     price: 110,
-    image: "imagenes/rinonera-viaje.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Riñonera para llevar objetos pequeños durante el viaje."
   },
 
@@ -550,7 +559,8 @@ PRODUCTS.push(
     name: "Organizador de documentos",
     category: "Equipaje",
     price: 140,
-    image: "imagenes/organizador-documentos.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Organizador para documentos, tarjetas y pasaporte."
   },
 
@@ -559,7 +569,8 @@ PRODUCTS.push(
     name: "Etiquetas para equipaje",
     category: "Equipaje",
     price: 60,
-    image: "imagenes/etiquetas-equipaje.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Etiquetas para identificar fácilmente las maletas."
   },
 
@@ -568,7 +579,8 @@ PRODUCTS.push(
     name: "Bolsa para accesorios de viaje",
     category: "Equipaje",
     price: 100,
-    image: "imagenes/bolsa-accesorios.jpg",
+    image: "imagenes/maleta.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Equipaje",
     description: "Bolsa pequeña para organizar accesorios."
   },
 
@@ -582,7 +594,8 @@ PRODUCTS.push(
     name: "Cargador portátil",
     category: "Tecnología",
     price: 220,
-    image: "imagenes/cargador-portatil.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Batería portátil para cargar dispositivos durante el viaje."
   },
 
@@ -591,7 +604,8 @@ PRODUCTS.push(
     name: "Cargador de celular",
     category: "Tecnología",
     price: 150,
-    image: "imagenes/cargador-celular.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Cargador compacto para llevar durante los viajes."
   },
 
@@ -600,7 +614,8 @@ PRODUCTS.push(
     name: "Cable USB-C",
     category: "Tecnología",
     price: 75,
-    image: "imagenes/cable-usbc.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Cable para cargar y conectar dispositivos compatibles."
   },
 
@@ -609,7 +624,8 @@ PRODUCTS.push(
     name: "Adaptador universal de viaje",
     category: "Tecnología",
     price: 250,
-    image: "imagenes/adaptador-universal.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Adaptador para conectar dispositivos en diferentes tipos de enchufe."
   },
 
@@ -618,7 +634,8 @@ PRODUCTS.push(
     name: "Audífonos Bluetooth",
     category: "Tecnología",
     price: 250,
-    image: "imagenes/audifonos-bluetooth.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Audífonos inalámbricos para escuchar música durante el viaje."
   },
 
@@ -627,7 +644,8 @@ PRODUCTS.push(
     name: "Audífonos con cable",
     category: "Tecnología",
     price: 100,
-    image: "imagenes/audifonos-cable.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Audífonos económicos para escuchar música."
   },
 
@@ -645,7 +663,8 @@ PRODUCTS.push(
     name: "Memoria USB",
     category: "Tecnología",
     price: 120,
-    image: "imagenes/memoria-usb.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Memoria pequeña para guardar archivos importantes."
   },
 
@@ -654,7 +673,8 @@ PRODUCTS.push(
     name: "Lector de tarjetas",
     category: "Tecnología",
     price: 100,
-    image: "imagenes/lector-tarjetas.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Lector compacto para transferir archivos."
   },
 
@@ -663,7 +683,8 @@ PRODUCTS.push(
     name: "Hub USB",
     category: "Tecnología",
     price: 180,
-    image: "imagenes/hub-usb.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Dispositivo para conectar varios accesorios USB."
   },
 
@@ -672,7 +693,8 @@ PRODUCTS.push(
     name: "Luz de lectura USB",
     category: "Tecnología",
     price: 80,
-    image: "imagenes/luz-lectura-usb.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Luz pequeña para leer durante el viaje."
   },
 
@@ -681,7 +703,8 @@ PRODUCTS.push(
     name: "Reloj despertador de viaje",
     category: "Tecnología",
     price: 180,
-    image: "imagenes/reloj-viaje.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Reloj compacto para llevar durante los viajes."
   },
 
@@ -690,7 +713,8 @@ PRODUCTS.push(
     name: "Batería portátil compacta",
     category: "Tecnología",
     price: 280,
-    image: "imagenes/bateria-portatil.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Batería portátil para mantener cargados los dispositivos."
   },
 
@@ -699,7 +723,8 @@ PRODUCTS.push(
     name: "Cable multifunción",
     category: "Tecnología",
     price: 120,
-    image: "imagenes/cable-multifuncion.jpg",
+    image: "imagenes/cargador.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Tecnología",
     description: "Cable con diferentes conexiones para viajes."
   },
 
@@ -713,7 +738,8 @@ PRODUCTS.push(
     name: "Almohada cervical",
     category: "Confort",
     price: 200,
-    image: "imagenes/almohada-cervical.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Almohada para apoyar cómodamente el cuello."
   },
 
@@ -722,7 +748,8 @@ PRODUCTS.push(
     name: "Almohada inflable",
     category: "Confort",
     price: 120,
-    image: "imagenes/almohada-inflable.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Almohada ligera que puede inflarse para viajar."
   },
 
@@ -731,7 +758,8 @@ PRODUCTS.push(
     name: "Antifaz para dormir",
     category: "Confort",
     price: 60,
-    image: "imagenes/antifaz-dormir.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Antifaz para descansar durante el viaje."
   },
 
@@ -749,7 +777,8 @@ PRODUCTS.push(
     name: "Manta de viaje",
     category: "Confort",
     price: 220,
-    image: "imagenes/manta-viaje.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Manta cómoda para utilizar durante el viaje."
   },
 
@@ -758,7 +787,8 @@ PRODUCTS.push(
     name: "Calcetines de viaje",
     category: "Confort",
     price: 70,
-    image: "imagenes/calcetines-viaje.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Calcetines cómodos para viajar."
   },
 
@@ -767,7 +797,8 @@ PRODUCTS.push(
     name: "Pantuflas de viaje",
     category: "Confort",
     price: 120,
-    image: "imagenes/pantuflas-viaje.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Pantuflas ligeras para descansar."
   },
 
@@ -776,7 +807,8 @@ PRODUCTS.push(
     name: "Botella reutilizable",
     category: "Confort",
     price: 130,
-    image: "imagenes/botella-reutilizable.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Botella reutilizable para llevar agua."
   },
 
@@ -785,7 +817,8 @@ PRODUCTS.push(
     name: "Botella térmica",
     category: "Confort",
     price: 220,
-    image: "imagenes/botella-termica.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Botella para mantener bebidas durante el viaje."
   },
 
@@ -794,7 +827,8 @@ PRODUCTS.push(
     name: "Vaso térmico",
     category: "Confort",
     price: 180,
-    image: "imagenes/vaso-termico.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Vaso reutilizable para bebidas."
   },
 
@@ -803,7 +837,8 @@ PRODUCTS.push(
     name: "Toalla de microfibra",
     category: "Confort",
     price: 140,
-    image: "imagenes/toalla-microfibra.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Toalla ligera y fácil de transportar."
   },
 
@@ -812,7 +847,8 @@ PRODUCTS.push(
     name: "Cojín de asiento",
     category: "Confort",
     price: 150,
-    image: "imagenes/cojin-asiento.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Cojín para viajar con mayor comodidad."
   },
 
@@ -821,7 +857,8 @@ PRODUCTS.push(
     name: "Botella deportiva",
     category: "Confort",
     price: 130,
-    image: "imagenes/botella-deportiva.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Botella práctica para llevar agua durante el viaje."
   },
 
@@ -830,7 +867,8 @@ PRODUCTS.push(
     name: "Bolsa para snacks",
     category: "Confort",
     price: 70,
-    image: "imagenes/bolsa-snacks.jpg",
+    image: "imagenes/almohada-viaje.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Confort",
     description: "Bolsa pequeña para llevar snacks durante el viaje."
   },
 
@@ -844,7 +882,8 @@ PRODUCTS.push(
     name: "Cartera de viaje",
     category: "Seguridad",
     price: 130,
-    image: "imagenes/cartera-viaje.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Cartera para llevar dinero y tarjetas."
   },
 
@@ -853,7 +892,8 @@ PRODUCTS.push(
     name: "Tarjetero",
     category: "Seguridad",
     price: 70,
-    image: "imagenes/tarjetero.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Tarjetero compacto para organizar tarjetas."
   },
 
@@ -862,7 +902,8 @@ PRODUCTS.push(
     name: "Candado con llave",
     category: "Seguridad",
     price: 65,
-    image: "imagenes/candado-llave.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Candado para asegurar el equipaje."
   },
 
@@ -871,7 +912,8 @@ PRODUCTS.push(
     name: "Candado de combinación",
     category: "Seguridad",
     price: 85,
-    image: "imagenes/candado-combinacion.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Candado con combinación para maletas."
   },
 
@@ -880,7 +922,8 @@ PRODUCTS.push(
     name: "Correa de seguridad para maleta",
     category: "Seguridad",
     price: 80,
-    image: "imagenes/correa-seguridad.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Correa ajustable para asegurar el equipaje."
   },
 
@@ -889,7 +932,8 @@ PRODUCTS.push(
     name: "Funda para documentos",
     category: "Seguridad",
     price: 90,
-    image: "imagenes/funda-documentos.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Funda para proteger documentos importantes."
   },
 
@@ -898,7 +942,8 @@ PRODUCTS.push(
     name: "Porta tarjetas de viaje",
     category: "Seguridad",
     price: 75,
-    image: "imagenes/porta-tarjetas.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Porta tarjetas compacto para viajar."
   },
 
@@ -907,7 +952,8 @@ PRODUCTS.push(
     name: "Bolsa para pasaporte",
     category: "Seguridad",
     price: 100,
-    image: "imagenes/bolsa-pasaporte.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Bolsa para proteger y llevar el pasaporte."
   },
 
@@ -916,7 +962,8 @@ PRODUCTS.push(
     name: "Etiqueta identificadora",
     category: "Seguridad",
     price: 45,
-    image: "imagenes/etiqueta-identificadora.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Etiqueta para identificar el equipaje."
   },
 
@@ -925,7 +972,8 @@ PRODUCTS.push(
     name: "Funda protectora para equipaje",
     category: "Seguridad",
     price: 160,
-    image: "imagenes/funda-equipaje.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Funda para proteger el equipaje durante el viaje."
   },
 
@@ -934,7 +982,8 @@ PRODUCTS.push(
     name: "Linterna pequeña",
     category: "Seguridad",
     price: 75,
-    image: "imagenes/linterna-pequena.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Linterna compacta para llevar durante el viaje."
   },
 
@@ -943,7 +992,8 @@ PRODUCTS.push(
     name: "Luz de seguridad",
     category: "Seguridad",
     price: 90,
-    image: "imagenes/luz-seguridad.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Luz pequeña para mejorar la visibilidad."
   },
 
@@ -952,7 +1002,8 @@ PRODUCTS.push(
     name: "Organizador de documentos",
     category: "Seguridad",
     price: 140,
-    image: "imagenes/organizador-documentos-viaje.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Organizador para documentos, tarjetas y reservas."
   },
 
@@ -961,7 +1012,8 @@ PRODUCTS.push(
     name: "Bolsa oculta de viaje",
     category: "Seguridad",
     price: 130,
-    image: "imagenes/bolsa-oculta.jpg",
+    image: "imagenes/porta-documentos.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Seguridad",
     description: "Bolsa discreta para llevar objetos personales."
   },
 
@@ -975,7 +1027,8 @@ PRODUCTS.push(
     name: "Cepillo dental de viaje",
     category: "Cuidado",
     price: 55,
-    image: "imagenes/cepillo-dental-viaje.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Cepillo dental práctico para llevar durante el viaje."
   },
 
@@ -984,7 +1037,8 @@ PRODUCTS.push(
     name: "Estuche para cepillo dental",
     category: "Cuidado",
     price: 55,
-    image: "imagenes/estuche-cepillo.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Estuche para proteger el cepillo dental."
   },
 
@@ -993,7 +1047,8 @@ PRODUCTS.push(
     name: "Peine de viaje",
     category: "Cuidado",
     price: 45,
-    image: "imagenes/peine-viaje.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Peine compacto para llevar fácilmente."
   },
 
@@ -1002,7 +1057,8 @@ PRODUCTS.push(
     name: "Cepillo para cabello",
     category: "Cuidado",
     price: 70,
-    image: "imagenes/cepillo-cabello.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Cepillo compacto para el cabello."
   },
 
@@ -1011,7 +1067,8 @@ PRODUCTS.push(
     name: "Espejo pequeño",
     category: "Cuidado",
     price: 50,
-    image: "imagenes/espejo-pequeno.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Espejo pequeño para llevar en el bolso."
   },
 
@@ -1029,7 +1086,8 @@ PRODUCTS.push(
     name: "Estuche de cuidado personal",
     category: "Cuidado",
     price: 150,
-    image: "imagenes/estuche-cuidado.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Estuche para organizar artículos de cuidado personal."
   },
 
@@ -1038,7 +1096,8 @@ PRODUCTS.push(
     name: "Toallitas húmedas",
     category: "Cuidado",
     price: 45,
-    image: "imagenes/toallitas-humedas.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Toallitas prácticas para llevar durante el viaje."
   },
 
@@ -1056,7 +1115,8 @@ PRODUCTS.push(
     name: "Gel antibacterial",
     category: "Cuidado",
     price: 60,
-    image: "imagenes/gel-antibacterial.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Gel práctico para mantener las manos limpias durante el viaje."
   },
 
@@ -1065,7 +1125,8 @@ PRODUCTS.push(
     name: "Kit de cuidado personal",
     category: "Cuidado",
     price: 160,
-    image: "imagenes/kit-cuidado-personal.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Kit compacto con artículos básicos de cuidado personal."
   },
 
@@ -1074,7 +1135,8 @@ PRODUCTS.push(
     name: "Estuche para jabón",
     category: "Cuidado",
     price: 50,
-    image: "imagenes/estuche-jabon.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Estuche para transportar jabón durante el viaje."
   },
 
@@ -1083,7 +1145,8 @@ PRODUCTS.push(
     name: "Kit de viaje familiar",
     category: "Cuidado",
     price: 220,
-    image: "imagenes/kit-viaje-familiar.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Kit práctico para llevar artículos personales de la familia."
   },
 
@@ -1092,7 +1155,8 @@ PRODUCTS.push(
     name: "Kit de cuidado infantil",
     category: "Cuidado",
     price: 180,
-    image: "imagenes/kit-cuidado-infantil.jpg",
+    image: "imagenes/kit-higiene.jpg",
+    imageAlt: "Imagen ilustrativa de la categoría Cuidado",
     description: "Kit compacto para llevar artículos de cuidado infantil durante el viaje."
   }
 
@@ -2263,7 +2327,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
                   <img
                     class="product-image"
                     src="${product.image}?v=catalogo-limpio-3"
-                    alt="${escapeHTML(product.name)}, fotografía de referencia"
+                    alt="${escapeHTML(product.imageAlt || product.name)}, fotografía de referencia"
                     width="600"
                     height="600"
                     loading="lazy"
@@ -2847,7 +2911,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
                   <img
                     class="cart-item-image"
                     src="${product.image}?v=catalogo-limpio-3"
-                    alt="${escapeHTML(product.name)}"
+                    alt="${escapeHTML(product.imageAlt || product.name)}"
                     width="76"
                     height="91"
                   >
@@ -3088,7 +3152,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
         <img
           class="detail-image"
           src="${product.image}?v=catalogo-limpio-3"
-          alt="${escapeHTML(product.name)}, fotografía de referencia"
+          alt="${escapeHTML(product.imageAlt || product.name)}, fotografía de referencia"
         >
 
 

@@ -25,7 +25,10 @@
 
   // Una cabecera consistente: los accesos principales llevan a las secciones del inicio.
   const mainNav=document.querySelector('.main-nav');
-  if(mainNav)mainNav.innerHTML='<a href="index.html#servicios">Armar mi viaje</a><a href="index.html#destinos">Destinos</a><a href="index.html#antes-de-viajar">Antes de viajar</a>';
+  if(mainNav){
+    const page=location.pathname.split('/').pop()||'index.html';
+    mainNav.innerHTML=[['index.html','Inicio'],['viajes.html?pantalla=destinos','Destinos'],['servicios.html','Servicios'],['tienda.html','Tienda']].map(([url,label])=>`<a href="${url}" ${url.split('?')[0]===page?'aria-current="page"':''}>${label}</a>`).join('');
+  }
   const header=document.querySelector('.header-inner');
   if(header&&!header.querySelector('a[href="servicios.html?seccion=mi-viaje"]')){const trip=document.createElement('a');trip.className='button button-outline';trip.href='servicios.html?seccion=mi-viaje';trip.textContent='Mi viaje ↗';header.append(trip);}
   if(header){
@@ -37,6 +40,13 @@
       accounts.append(link);
     });
     header.append(accounts);
+    const trip=header.querySelector('a[href="servicios.html?seccion=mi-viaje"]');
+    trip.className='header-trip';
+    if(new URLSearchParams(location.search).get('seccion')==='mi-viaje')trip.setAttribute('aria-current','page');
+    const actions=header.querySelector('.header-actions')||document.createElement('div');
+    actions.className='header-actions';
+    actions.prepend(trip);actions.append(accounts);header.append(actions);
+    header.querySelector('.logo').href='index.html';
   }
   if(document.getElementById('servicios')){
     const grid=document.querySelector('.booking-grid');
@@ -44,7 +54,8 @@
     const names=['Vuelo','Hospedaje','Transporte','Seguro','Experiencias','Tienda'];
     const cards=[...grid.children];
     order.forEach((key,i)=>{const card=cards.find(c=>c.querySelector('[data-module="'+key+'"]')||c.classList.contains(({transfers:'none',insurance:'none',experiences:'none',shop:'shop-card'})[key]||'none')||c.querySelector('a[href="'+({transfers:'servicios.html?seccion=traslados',insurance:'servicios.html?seccion=seguros',experiences:'servicios.html?seccion=guias'})[key]+'"]'));
-      if(!card)return;grid.append(card);const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1)+' / '+names[i]+(i>1?' · opcional':'');card.prepend(label);
+      if(!card)return;grid.append(card);
+const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1)+' / '+names[i]+(i>1?' · opcional':'');card.prepend(label);
       const link=card.querySelector('a,button');if(link){card.tabIndex=0;card.setAttribute('role','link');card.setAttribute('aria-label','Organizar '+names[i]);card.addEventListener('click',e=>{if(!e.target.closest('a,button'))link.click();});card.addEventListener('keydown',e=>{if(e.target===card&&e.key==='Enter'){e.preventDefault();link.click();}});}
     });
   }

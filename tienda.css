@@ -2146,7 +2146,7 @@ img {
     .product-image-container img {
         object-fit: contain !important;
     }
-} 
+}
 /* En pantallas pequeñas borar */
 @media (max-width: 700px) {
     .product-image-container {
@@ -2158,4 +2158,19 @@ img {
     .product-image-container img {
         object-fit: contain !important;
     }
-} 
+}
+/* Variantes ilustrativas: misma base, color y escala seleccionados. */
+.detail-visual{min-width:0;align-self:start}
+.variant-stage{border:1px solid #dce5e4;border-radius:16px;overflow:hidden;background:radial-gradient(ellipse at center,#fff,#edf3f2)}
+.variant-stage .detail-image{display:block;width:100%;height:420px;background:transparent;border-radius:0}
+.variant-caption{margin:16px 0 6px;font-size:15px;font-weight:700;color:#065f68;text-align:center}
+.variant-note{font-size:12px;line-height:1.6;color:#52636c;text-align:center;margin:10px 8px}
+.variant-original{display:block;margin:14px auto 0;padding:10px 14px;min-height:44px;border:1px solid #bfd5d2;border-radius:9px;background:#fff;color:#065f68;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer}
+.variant-original:hover{background:#e8f3f3}
+svg.cart-item-image{width:76px;height:91px;background:#eef3f3;flex-shrink:0}
+@media(max-width:700px){.variant-stage .detail-image{height:280px}}
+
+/* El paisaje queda fijo; únicamente cambia la maleta. */
+.variant-stage .variant-image{height:auto;aspect-ratio:1000/667}
+
+.product-image-note{font-size:10px;color:#52636c;line-height:1.4;margin:0 0 8px;font-weight:400}

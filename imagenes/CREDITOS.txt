@@ -211,3 +211,11 @@ Autor: Umberto NURS
 Fuente: https://commons.wikimedia.org/wiki/File:Kit_pronto_soccorso_moto_(aperto).JPG
 Licencia: CC BY-SA 4.0
 https://creativecommons.org/licenses/by-sa/4.0
+
+ACTUALIZACIÓN DEL CATÁLOGO — 2026-09-29
+Se revisaron las 100 fichas. La asignación está en catalogo-imagenes.json.
+Se incorporaron 52 ilustraciones de producto generadas con la herramienta integrada ImageGen. Archivos públicos: imagenes/producto-ID.jpg. Versiones PNG de alta resolución conservadas junto a los JPEG. Los prompts por archivo se encuentran en imagenes/GENERACION-CATALOGO.json.
+Las imágenes generadas no representan marcas ni modelos reales verificados. Las fichas las identifican como «Imagen ilustrativa · IA».
+El catálogo utiliza 74 imágenes distintas. Las referencias compartidas corresponden al mismo tipo de artículo. No se eliminaron productos ni se modificaron sus identificadores, precios o variantes.
+Se mantienen la foto original y la vista interactiva de la maleta.
+Verificación: 34 pruebas aprobadas y revisión visual de las 52 imágenes nuevas y de su integración en la tienda.

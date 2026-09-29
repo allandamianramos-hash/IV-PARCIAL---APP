@@ -3191,3 +3191,14 @@ window.RumboProducts = PRODUCTS;
   renderCart();
 
 })();
+
+// ==========================================================
+  // INICIAR TIENDA esto va doble, lo borras
+  // ==========================================================
+
+  loadState();
+
+  renderProducts();
+
+  renderCart();
+

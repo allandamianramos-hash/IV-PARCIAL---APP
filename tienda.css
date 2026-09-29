@@ -2146,4 +2146,16 @@ img {
     .product-image-container img {
         object-fit: contain !important;
     }
-}
+} 
+/* En pantallas pequeñas borar */
+@media (max-width: 700px) {
+    .product-image-container {
+        height: 180px;
+    }
+
+    .product-image,
+    .product-img,
+    .product-image-container img {
+        object-fit: contain !important;
+    }
+} 

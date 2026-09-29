@@ -435,6 +435,1049 @@ const PRODUCT_OPTIONS = {
 
 };
 
+/* =========================================================
+   PRODUCTOS 31 AL 100
+   Los 30 productos originales NO se modifican
+   ========================================================= */
+
+PRODUCTS.push(
+
+  // =========================
+  // EQUIPAJE
+  // =========================
+
+  {
+    id: 31,
+    name: "Organizador de maleta",
+    category: "Equipaje",
+    price: 90,
+    image: "imagenes/organizador-maleta.jpg",
+    description: "Organizador para mantener la ropa ordenada dentro de la maleta."
+  },
+
+  {
+    id: 32,
+    name: "Bolsa para zapatos",
+    category: "Equipaje",
+    price: 70,
+    image: "imagenes/bolsa-zapatos.jpg",
+    description: "Bolsa para guardar los zapatos separados del resto del equipaje."
+  },
+
+  {
+    id: 33,
+    name: "Cubos organizadores de ropa",
+    category: "Equipaje",
+    price: 120,
+    image: "imagenes/cubos-ropa.jpg",
+    description: "Cubos para organizar y separar la ropa dentro de la maleta."
+  },
+
+  {
+    id: 34,
+    name: "Funda para maleta",
+    category: "Equipaje",
+    price: 160,
+    image: "imagenes/funda-maleta.jpg",
+    description: "Funda para proteger la maleta durante el viaje."
+  },
+
+  {
+    id: 35,
+    name: "Correa para maleta",
+    category: "Equipaje",
+    price: 85,
+    image: "imagenes/correa-maleta.jpg",
+    description: "Correa ajustable para asegurar el equipaje."
+  },
+
+  {
+    id: 36,
+    name: "Neceser de viaje",
+    category: "Equipaje",
+    price: 140,
+    image: "imagenes/neceser-viaje.jpg",
+    description: "Neceser para llevar artículos personales."
+  },
+
+  {
+    id: 37,
+    name: "Bolsa para ropa sucia",
+    category: "Equipaje",
+    price: 75,
+    image: "imagenes/bolsa-ropa-sucia.jpg",
+    description: "Bolsa para separar la ropa usada durante el viaje."
+  },
+
+  {
+    id: 38,
+    name: "Bolsa plegable de viaje",
+    category: "Equipaje",
+    price: 150,
+    image: "imagenes/bolsa-plegable.jpg",
+    description: "Bolsa ligera que puede doblarse y guardarse fácilmente."
+  },
+
+  {
+    id: 39,
+    name: "Mochila de viaje",
+    category: "Equipaje",
+    price: 280,
+    image: "imagenes/mochila-viaje.jpg",
+    description: "Mochila práctica para llevar objetos personales."
+  },
+
+  {
+    id: 40,
+    name: "Riñonera de viaje",
+    category: "Equipaje",
+    price: 110,
+    image: "imagenes/rinonera-viaje.jpg",
+    description: "Riñonera para llevar objetos pequeños durante el viaje."
+  },
+
+  {
+    id: 41,
+    name: "Porta pasaporte",
+    category: "Equipaje",
+    price: 90,
+    image: "imagenes/porta-pasaporte.jpg",
+    description: "Estuche para proteger y organizar el pasaporte."
+  },
+
+  {
+    id: 42,
+    name: "Organizador de documentos",
+    category: "Equipaje",
+    price: 140,
+    image: "imagenes/organizador-documentos.jpg",
+    description: "Organizador para documentos, tarjetas y pasaporte."
+  },
+
+  {
+    id: 43,
+    name: "Etiquetas para equipaje",
+    category: "Equipaje",
+    price: 60,
+    image: "imagenes/etiquetas-equipaje.jpg",
+    description: "Etiquetas para identificar fácilmente las maletas."
+  },
+
+  {
+    id: 44,
+    name: "Bolsa para accesorios de viaje",
+    category: "Equipaje",
+    price: 100,
+    image: "imagenes/bolsa-accesorios.jpg",
+    description: "Bolsa pequeña para organizar accesorios."
+  },
+
+
+  // =========================
+  // TECNOLOGÍA
+  // =========================
+
+  {
+    id: 45,
+    name: "Cargador portátil",
+    category: "Tecnología",
+    price: 220,
+    image: "imagenes/cargador-portatil.jpg",
+    description: "Batería portátil para cargar dispositivos durante el viaje."
+  },
+
+  {
+    id: 46,
+    name: "Cargador de celular",
+    category: "Tecnología",
+    price: 150,
+    image: "imagenes/cargador-celular.jpg",
+    description: "Cargador compacto para llevar durante los viajes."
+  },
+
+  {
+    id: 47,
+    name: "Cable USB-C",
+    category: "Tecnología",
+    price: 75,
+    image: "imagenes/cable-usbc.jpg",
+    description: "Cable para cargar y conectar dispositivos compatibles."
+  },
+
+  {
+    id: 48,
+    name: "Adaptador universal de viaje",
+    category: "Tecnología",
+    price: 250,
+    image: "imagenes/adaptador-universal.jpg",
+    description: "Adaptador para conectar dispositivos en diferentes tipos de enchufe."
+  },
+
+  {
+    id: 49,
+    name: "Audífonos Bluetooth",
+    category: "Tecnología",
+    price: 250,
+    image: "imagenes/audifonos-bluetooth.jpg",
+    description: "Audífonos inalámbricos para escuchar música durante el viaje."
+  },
+
+  {
+    id: 50,
+    name: "Audífonos con cable",
+    category: "Tecnología",
+    price: 100,
+    image: "imagenes/audifonos-cable.jpg",
+    description: "Audífonos económicos para escuchar música."
+  },
+
+  {
+    id: 51,
+    name: "Soporte para celular",
+    category: "Tecnología",
+    price: 90,
+    image: "imagenes/soporte-celular.jpg",
+    description: "Soporte compacto para colocar el teléfono."
+  },
+
+  {
+    id: 52,
+    name: "Memoria USB",
+    category: "Tecnología",
+    price: 120,
+    image: "imagenes/memoria-usb.jpg",
+    description: "Memoria pequeña para guardar archivos importantes."
+  },
+
+  {
+    id: 53,
+    name: "Lector de tarjetas",
+    category: "Tecnología",
+    price: 100,
+    image: "imagenes/lector-tarjetas.jpg",
+    description: "Lector compacto para transferir archivos."
+  },
+
+  {
+    id: 54,
+    name: "Hub USB",
+    category: "Tecnología",
+    price: 180,
+    image: "imagenes/hub-usb.jpg",
+    description: "Dispositivo para conectar varios accesorios USB."
+  },
+
+  {
+    id: 55,
+    name: "Luz de lectura USB",
+    category: "Tecnología",
+    price: 80,
+    image: "imagenes/luz-lectura-usb.jpg",
+    description: "Luz pequeña para leer durante el viaje."
+  },
+
+  {
+    id: 56,
+    name: "Reloj despertador de viaje",
+    category: "Tecnología",
+    price: 180,
+    image: "imagenes/reloj-viaje.jpg",
+    description: "Reloj compacto para llevar durante los viajes."
+  },
+
+  {
+    id: 57,
+    name: "Batería portátil compacta",
+    category: "Tecnología",
+    price: 280,
+    image: "imagenes/bateria-portatil.jpg",
+    description: "Batería portátil para mantener cargados los dispositivos."
+  },
+
+  {
+    id: 58,
+    name: "Cable multifunción",
+    category: "Tecnología",
+    price: 120,
+    image: "imagenes/cable-multifuncion.jpg",
+    description: "Cable con diferentes conexiones para viajes."
+  },
+
+
+  // =========================
+  // CONFORT
+  // =========================
+
+  {
+    id: 59,
+    name: "Almohada cervical",
+    category: "Confort",
+    price: 200,
+    image: "imagenes/almohada-cervical.jpg",
+    description: "Almohada para apoyar cómodamente el cuello."
+  },
+
+  {
+    id: 60,
+    name: "Almohada inflable",
+    category: "Confort",
+    price: 120,
+    image: "imagenes/almohada-inflable.jpg",
+    description: "Almohada ligera que puede inflarse para viajar."
+  },
+
+  {
+    id: 61,
+    name: "Antifaz para dormir",
+    category: "Confort",
+    price: 60,
+    image: "imagenes/antifaz-dormir.jpg",
+    description: "Antifaz para descansar durante el viaje."
+  },
+
+  {
+    id: 62,
+    name: "Tapones para los oídos",
+    category: "Confort",
+    price: 50,
+    image: "imagenes/tapones-oidos.jpg",
+    description: "Tapones pequeños para ayudar a descansar durante el viaje."
+  },
+
+  {
+    id: 63,
+    name: "Manta de viaje",
+    category: "Confort",
+    price: 220,
+    image: "imagenes/manta-viaje.jpg",
+    description: "Manta cómoda para utilizar durante el viaje."
+  },
+
+  {
+    id: 64,
+    name: "Calcetines de viaje",
+    category: "Confort",
+    price: 70,
+    image: "imagenes/calcetines-viaje.jpg",
+    description: "Calcetines cómodos para viajar."
+  },
+
+  {
+    id: 65,
+    name: "Pantuflas de viaje",
+    category: "Confort",
+    price: 120,
+    image: "imagenes/pantuflas-viaje.jpg",
+    description: "Pantuflas ligeras para descansar."
+  },
+
+  {
+    id: 66,
+    name: "Botella reutilizable",
+    category: "Confort",
+    price: 130,
+    image: "imagenes/botella-reutilizable.jpg",
+    description: "Botella reutilizable para llevar agua."
+  },
+
+  {
+    id: 67,
+    name: "Botella térmica",
+    category: "Confort",
+    price: 220,
+    image: "imagenes/botella-termica.jpg",
+    description: "Botella para mantener bebidas durante el viaje."
+  },
+
+  {
+    id: 68,
+    name: "Vaso térmico",
+    category: "Confort",
+    price: 180,
+    image: "imagenes/vaso-termico.jpg",
+    description: "Vaso reutilizable para bebidas."
+  },
+
+  {
+    id: 69,
+    name: "Toalla de microfibra",
+    category: "Confort",
+    price: 140,
+    image: "imagenes/toalla-microfibra.jpg",
+    description: "Toalla ligera y fácil de transportar."
+  },
+
+  {
+    id: 70,
+    name: "Cojín de asiento",
+    category: "Confort",
+    price: 150,
+    image: "imagenes/cojin-asiento.jpg",
+    description: "Cojín para viajar con mayor comodidad."
+  },
+
+  {
+    id: 71,
+    name: "Botella deportiva",
+    category: "Confort",
+    price: 130,
+    image: "imagenes/botella-deportiva.jpg",
+    description: "Botella práctica para llevar agua durante el viaje."
+  },
+
+  {
+    id: 72,
+    name: "Bolsa para snacks",
+    category: "Confort",
+    price: 70,
+    image: "imagenes/bolsa-snacks.jpg",
+    description: "Bolsa pequeña para llevar snacks durante el viaje."
+  },
+
+
+  // =========================
+  // SEGURIDAD
+  // =========================
+
+  {
+    id: 73,
+    name: "Cartera de viaje",
+    category: "Seguridad",
+    price: 130,
+    image: "imagenes/cartera-viaje.jpg",
+    description: "Cartera para llevar dinero y tarjetas."
+  },
+
+  {
+    id: 74,
+    name: "Tarjetero",
+    category: "Seguridad",
+    price: 70,
+    image: "imagenes/tarjetero.jpg",
+    description: "Tarjetero compacto para organizar tarjetas."
+  },
+
+  {
+    id: 75,
+    name: "Candado con llave",
+    category: "Seguridad",
+    price: 65,
+    image: "imagenes/candado-llave.jpg",
+    description: "Candado para asegurar el equipaje."
+  },
+
+  {
+    id: 76,
+    name: "Candado de combinación",
+    category: "Seguridad",
+    price: 85,
+    image: "imagenes/candado-combinacion.jpg",
+    description: "Candado con combinación para maletas."
+  },
+
+  {
+    id: 77,
+    name: "Correa de seguridad para maleta",
+    category: "Seguridad",
+    price: 80,
+    image: "imagenes/correa-seguridad.jpg",
+    description: "Correa ajustable para asegurar el equipaje."
+  },
+
+  {
+    id: 78,
+    name: "Funda para documentos",
+    category: "Seguridad",
+    price: 90,
+    image: "imagenes/funda-documentos.jpg",
+    description: "Funda para proteger documentos importantes."
+  },
+
+  {
+    id: 79,
+    name: "Porta tarjetas de viaje",
+    category: "Seguridad",
+    price: 75,
+    image: "imagenes/porta-tarjetas.jpg",
+    description: "Porta tarjetas compacto para viajar."
+  },
+
+  {
+    id: 80,
+    name: "Bolsa para pasaporte",
+    category: "Seguridad",
+    price: 100,
+    image: "imagenes/bolsa-pasaporte.jpg",
+    description: "Bolsa para proteger y llevar el pasaporte."
+  },
+
+  {
+    id: 81,
+    name: "Etiqueta identificadora",
+    category: "Seguridad",
+    price: 45,
+    image: "imagenes/etiqueta-identificadora.jpg",
+    description: "Etiqueta para identificar el equipaje."
+  },
+
+  {
+    id: 82,
+    name: "Funda protectora para equipaje",
+    category: "Seguridad",
+    price: 160,
+    image: "imagenes/funda-equipaje.jpg",
+    description: "Funda para proteger el equipaje durante el viaje."
+  },
+
+  {
+    id: 83,
+    name: "Linterna pequeña",
+    category: "Seguridad",
+    price: 75,
+    image: "imagenes/linterna-pequena.jpg",
+    description: "Linterna compacta para llevar durante el viaje."
+  },
+
+  {
+    id: 84,
+    name: "Luz de seguridad",
+    category: "Seguridad",
+    price: 90,
+    image: "imagenes/luz-seguridad.jpg",
+    description: "Luz pequeña para mejorar la visibilidad."
+  },
+
+  {
+    id: 85,
+    name: "Organizador de documentos",
+    category: "Seguridad",
+    price: 140,
+    image: "imagenes/organizador-documentos-viaje.jpg",
+    description: "Organizador para documentos, tarjetas y reservas."
+  },
+
+  {
+    id: 86,
+    name: "Bolsa oculta de viaje",
+    category: "Seguridad",
+    price: 130,
+    image: "imagenes/bolsa-oculta.jpg",
+    description: "Bolsa discreta para llevar objetos personales."
+  },
+
+
+  // =========================
+  // CUIDADO
+  // =========================
+
+  {
+    id: 87,
+    name: "Cepillo dental de viaje",
+    category: "Cuidado",
+    price: 55,
+    image: "imagenes/cepillo-dental-viaje.jpg",
+    description: "Cepillo dental práctico para llevar durante el viaje."
+  },
+
+  {
+    id: 88,
+    name: "Estuche para cepillo dental",
+    category: "Cuidado",
+    price: 55,
+    image: "imagenes/estuche-cepillo.jpg",
+    description: "Estuche para proteger el cepillo dental."
+  },
+
+  {
+    id: 89,
+    name: "Peine de viaje",
+    category: "Cuidado",
+    price: 45,
+    image: "imagenes/peine-viaje.jpg",
+    description: "Peine compacto para llevar fácilmente."
+  },
+
+  {
+    id: 90,
+    name: "Cepillo para cabello",
+    category: "Cuidado",
+    price: 70,
+    image: "imagenes/cepillo-cabello.jpg",
+    description: "Cepillo compacto para el cabello."
+  },
+
+  {
+    id: 91,
+    name: "Espejo pequeño",
+    category: "Cuidado",
+    price: 50,
+    image: "imagenes/espejo-pequeno.jpg",
+    description: "Espejo pequeño para llevar en el bolso."
+  },
+
+  {
+    id: 92,
+    name: "Botellas para líquidos",
+    category: "Cuidado",
+    price: 80,
+    image: "imagenes/botellas-liquidos.jpg",
+    description: "Botellas pequeñas para llevar líquidos de cuidado personal."
+  },
+
+  {
+    id: 93,
+    name: "Estuche de cuidado personal",
+    category: "Cuidado",
+    price: 150,
+    image: "imagenes/estuche-cuidado.jpg",
+    description: "Estuche para organizar artículos de cuidado personal."
+  },
+
+  {
+    id: 94,
+    name: "Toallitas húmedas",
+    category: "Cuidado",
+    price: 45,
+    image: "imagenes/toallitas-humedas.jpg",
+    description: "Toallitas prácticas para llevar durante el viaje."
+  },
+
+  {
+    id: 95,
+    name: "Protector solar",
+    category: "Cuidado",
+    price: 130,
+    image: "imagenes/protector-solar.jpg",
+    description: "Protector solar para llevar durante viajes y actividades al aire libre."
+  },
+
+  {
+    id: 96,
+    name: "Gel antibacterial",
+    category: "Cuidado",
+    price: 60,
+    image: "imagenes/gel-antibacterial.jpg",
+    description: "Gel práctico para mantener las manos limpias durante el viaje."
+  },
+
+  {
+    id: 97,
+    name: "Kit de cuidado personal",
+    category: "Cuidado",
+    price: 160,
+    image: "imagenes/kit-cuidado-personal.jpg",
+    description: "Kit compacto con artículos básicos de cuidado personal."
+  },
+
+  {
+    id: 98,
+    name: "Estuche para jabón",
+    category: "Cuidado",
+    price: 50,
+    image: "imagenes/estuche-jabon.jpg",
+    description: "Estuche para transportar jabón durante el viaje."
+  },
+
+  {
+    id: 99,
+    name: "Kit de viaje familiar",
+    category: "Cuidado",
+    price: 220,
+    image: "imagenes/kit-viaje-familiar.jpg",
+    description: "Kit práctico para llevar artículos personales de la familia."
+  },
+
+  {
+    id: 100,
+    name: "Kit de cuidado infantil",
+    category: "Cuidado",
+    price: 180,
+    image: "imagenes/kit-cuidado-infantil.jpg",
+    description: "Kit compacto para llevar artículos de cuidado infantil durante el viaje."
+  }
+
+);
+
+
+/* =========================================================
+   OPCIONES PARA LOS PRODUCTOS 31 AL 100
+   ========================================================= */
+
+Object.assign(PRODUCT_OPTIONS, {
+
+  // EQUIPAJE
+
+  31: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande']
+  },
+
+  32: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  33: {
+    Color: ['Negro', 'Azul', 'Rojo'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande'],
+    Cantidad: ['3 piezas', '6 piezas']
+  },
+
+  34: {
+    Color: ['Negro', 'Azul', 'Rojo'],
+    Tamaño: ['Mediana', 'Grande']
+  },
+
+  35: {
+    Color: ['Negro', 'Azul', 'Rojo'],
+    Tamaño: ['Estándar']
+  },
+
+  36: {
+    Color: ['Negro', 'Azul', 'Beige', 'Rosa'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande']
+  },
+
+  37: {
+    Color: ['Negro', 'Gris', 'Azul'],
+    Tamaño: ['Pequeña', 'Mediana']
+  },
+
+  38: {
+    Color: ['Negro', 'Azul', 'Rojo'],
+    Tamaño: ['Pequeña', 'Grande']
+  },
+
+  39: {
+    Color: ['Negro', 'Azul', 'Rojo', 'Verde'],
+    Tamaño: ['Pequeña', 'Mediana', 'Grande']
+  },
+
+  40: {
+    Color: ['Negro', 'Azul', 'Rojo', 'Rosa'],
+    Tamaño: ['Pequeña', 'Mediana']
+  },
+
+  41: {
+    Color: ['Negro', 'Café', 'Azul'],
+    Tamaño: ['Estándar']
+  },
+
+  42: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande']
+  },
+
+  43: {
+    Color: ['Negro', 'Azul', 'Rojo', 'Verde'],
+    Cantidad: ['1 unidad', '2 unidades', '4 unidades']
+  },
+
+  44: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Pequeña', 'Mediana']
+  },
+
+
+  // TECNOLOGÍA
+
+  45: {
+    Color: ['Negro', 'Blanco', 'Azul'],
+    Capacidad: ['5,000 mAh', '10,000 mAh', '20,000 mAh']
+  },
+
+  46: {
+    Color: ['Negro', 'Blanco'],
+    Tipo: ['USB-C', 'USB-A']
+  },
+
+  47: {
+    Color: ['Negro', 'Blanco'],
+    Largo: ['1 metro', '2 metros']
+  },
+
+  48: {
+    Color: ['Negro', 'Blanco'],
+    Tipo: ['Universal']
+  },
+
+  49: {
+    Color: ['Negro', 'Blanco', 'Azul'],
+    Tipo: ['Inalámbricos']
+  },
+
+  50: {
+    Color: ['Negro', 'Blanco', 'Azul'],
+    Tipo: ['Con micrófono', 'Sin micrófono']
+  },
+
+  51: {
+    Color: ['Negro', 'Gris', 'Blanco'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  52: {
+    Color: ['Negro', 'Azul'],
+    Capacidad: ['32 GB', '64 GB', '128 GB']
+  },
+
+  53: {
+    Color: ['Negro', 'Blanco'],
+    Tipo: ['USB-A', 'USB-C']
+  },
+
+  54: {
+    Color: ['Negro', 'Gris'],
+    Puertos: ['3 puertos', '4 puertos']
+  },
+
+  55: {
+    Color: ['Negro', 'Blanco'],
+    Tipo: ['Flexible', 'Estándar']
+  },
+
+  56: {
+    Color: ['Negro', 'Blanco'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  57: {
+    Color: ['Negro', 'Azul'],
+    Capacidad: ['10,000 mAh', '20,000 mAh']
+  },
+
+  58: {
+    Color: ['Negro', 'Blanco'],
+    Tipo: ['USB-C', 'Multiconector']
+  },
+
+
+  // CONFORT
+
+  59: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Niño', 'Adulto']
+  },
+
+  60: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Pequeña', 'Mediana']
+  },
+
+  61: {
+    Color: ['Negro', 'Azul', 'Rosa'],
+    Tamaño: ['Niño', 'Adulto']
+  },
+
+  62: {
+    Color: ['Blanco', 'Azul', 'Rosa'],
+    Tipo: ['Pequeños', 'Medianos']
+  },
+
+  63: {
+    Color: ['Gris', 'Azul', 'Beige'],
+    Tamaño: ['Individual', 'Grande']
+  },
+
+  64: {
+    Color: ['Negro', 'Blanco', 'Gris'],
+    Talla: ['Pequeña', 'Mediana', 'Grande']
+  },
+
+  65: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Talla: ['Pequeña', 'Mediana', 'Grande']
+  },
+
+  66: {
+    Color: ['Negro', 'Azul', 'Blanco'],
+    Capacidad: ['500 ml', '750 ml', '1 litro']
+  },
+
+  67: {
+    Color: ['Negro', 'Azul', 'Blanco'],
+    Capacidad: ['500 ml', '750 ml', '1 litro']
+  },
+
+  68: {
+    Color: ['Negro', 'Azul', 'Blanco'],
+    Capacidad: ['350 ml', '500 ml']
+  },
+
+  69: {
+    Color: ['Blanco', 'Azul', 'Gris'],
+    Tamaño: ['Mediana', 'Grande']
+  },
+
+  70: {
+    Color: ['Negro', 'Gris', 'Azul'],
+    Tamaño: ['Pequeño', 'Grande']
+  },
+
+  71: {
+    Color: ['Negro', 'Azul', 'Rojo', 'Verde'],
+    Capacidad: ['500 ml', '750 ml', '1 litro']
+  },
+
+  72: {
+    Color: ['Transparente', 'Azul', 'Rosa'],
+    Tamaño: ['Pequeña', 'Mediana'],
+    Cantidad: ['1 unidad', '2 unidades']
+  },
+
+
+  // SEGURIDAD
+
+  73: {
+    Color: ['Negro', 'Café', 'Azul'],
+    Tamaño: ['Pequeña', 'Mediana']
+  },
+
+  74: {
+    Color: ['Negro', 'Café', 'Azul'],
+    Capacidad: ['4 tarjetas', '8 tarjetas']
+  },
+
+  75: {
+    Color: ['Negro', 'Plateado', 'Dorado'],
+    Tipo: ['Pequeño', 'Mediano']
+  },
+
+  76: {
+    Color: ['Negro', 'Plateado', 'Dorado'],
+    Tipo: ['3 dígitos', '4 dígitos']
+  },
+
+  77: {
+    Color: ['Negro', 'Azul', 'Rojo'],
+    Largo: ['1 metro', '2 metros']
+  },
+
+  78: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Pequeña', 'Mediana']
+  },
+
+  79: {
+    Color: ['Negro', 'Café', 'Azul'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  80: {
+    Color: ['Negro', 'Café', 'Azul'],
+    Tamaño: ['Pequeña', 'Mediana']
+  },
+
+  81: {
+    Color: ['Negro', 'Azul', 'Rojo', 'Verde'],
+    Tipo: ['Básica', 'Grande']
+  },
+
+  82: {
+    Color: ['Negro', 'Azul', 'Rojo'],
+    Tamaño: ['Mediana', 'Grande']
+  },
+
+  83: {
+    Color: ['Negro', 'Gris'],
+    Potencia: ['100 lm', '200 lm']
+  },
+
+  84: {
+    Color: ['Rojo', 'Azul', 'Verde'],
+    Tipo: ['LED', 'Reflectante']
+  },
+
+  85: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande']
+  },
+
+  86: {
+    Color: ['Negro', 'Azul', 'Gris'],
+    Tamaño: ['Pequeña', 'Mediana']
+  },
+
+
+  // CUIDADO
+
+  87: {
+    Color: ['Azul', 'Rosa', 'Verde'],
+    Edad: ['Niño', 'Adulto'],
+    Tipo: ['Suave', 'Medio']
+  },
+
+  88: {
+    Color: ['Azul', 'Rosa', 'Transparente'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  89: {
+    Color: ['Negro', 'Azul', 'Rosa'],
+    Edad: ['Niño', 'Adulto'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  90: {
+    Color: ['Negro', 'Azul', 'Rosa'],
+    Edad: ['Niño', 'Adulto']
+  },
+
+  91: {
+    Color: ['Plateado', 'Rosa', 'Azul'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  92: {
+    Color: ['Transparente', 'Azul', 'Rosa'],
+    Capacidad: ['30 ml', '60 ml', '100 ml'],
+    Cantidad: ['2 unidades', '4 unidades']
+  },
+
+  93: {
+    Color: ['Negro', 'Beige', 'Azul', 'Rosa'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  94: {
+    Tipo: ['Sin aroma', 'Aroma suave'],
+    Cantidad: ['10 unidades', '20 unidades']
+  },
+
+  95: {
+    Edad: ['Niño', 'Adulto'],
+    FPS: ['FPS 30', 'FPS 50'],
+    Presentación: ['100 ml', '200 ml']
+  },
+
+  96: {
+    Aroma: ['Neutro', 'Aloe'],
+    Presentación: ['60 ml', '120 ml']
+  },
+
+  97: {
+    Tipo: ['Básico', 'Completo'],
+    Edad: ['Niño', 'Adulto']
+  },
+
+  98: {
+    Color: ['Azul', 'Rosa', 'Transparente'],
+    Tamaño: ['Pequeño', 'Mediano']
+  },
+
+  99: {
+    Tipo: ['Básico', 'Completo'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande']
+  },
+
+  100: {
+    Color: ['Azul', 'Rosa', 'Verde'],
+    Edad: ['Niño', 'Adulto'],
+    Tipo: ['Básico', 'Completo']
+  }
+
+});
+
 // ============================================================
 // PRECIOS SEGÚN LA OPCIÓN
 // ============================================================
@@ -1459,32 +2502,21 @@ window.RumboProducts = PRODUCTS;
   }
 
 
-  function notify(
-    message,
-    actionLabel = "Ver carrito",
-    action = openCart
-  ) {
+  function notify(message, actionLabel = 'Ver carrito', action = openCart) {
+  toastTrigger = document.activeElement;
 
-    toastTrigger =
-      document.activeElement;
+  $('#toast-message').textContent = message;
 
-    $("#toast-message").textContent =
-      message;
+  $('#toast-action').textContent = actionLabel;
 
-    $("#toast-action").textContent =
-      actionLabel;
+  $('#toast-action').hidden = !action;
 
-    $("#toast-action").hidden =
-      !action;
+  toastAction = action;
 
-    toastAction = action;
+  $('#toast').hidden = false;
 
-    $("#toast").hidden = false;
-
-    scheduleToastHide();
-  }
-
-
+  scheduleToastHide();
+}
   // ==========================================================
   // ANIMACIÓN AL AGREGAR
   // ==========================================================
@@ -2864,23 +3896,15 @@ window.RumboProducts = PRODUCTS;
   // TOAST
   // ==========================================================
 
-  $("#toast-action")
-    .addEventListener(
-      "click",
-      () => {
+  $('#toast-action').addEventListener('click', function () {
+  if (typeof toastAction === 'function') {
+    toastAction();
+  } else {
+    openCart();
+  }
 
-        const action =
-          toastAction;
-
-        hideToast();
-
-        if (action) {
-          action();
-        }
-
-      }
-    );
-
+  hideToast();
+});
 
   $("#toast-close")
     .addEventListener(

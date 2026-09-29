@@ -133,6 +133,12 @@
     terminos:['Una primera versión para explorar.','Condiciones de uso de la demostración.',[['Alcance','Los precios, hoteles, vuelos, vehículos, actividades y planes son ejemplos para probar el sitio. No son ofertas comerciales ni garantizan disponibilidad.'],['Guardar no es contratar','Las selecciones, listas y pases descargables son recuerdos de tu planificación. No son boletos, comprobantes de pago, reservas ni pólizas.'],['Imágenes y contenidos','Las fotografías de referencia tienen sus créditos en el catálogo de destinos y la tienda. No implican relación comercial con marcas o proveedores.']]]
   };
   function helpPage(id){const [title,intro,items]=help[id];root.innerHTML=crumb('Información')+hero(title,intro,'CONOCE RUMBO','?','UN POCO DE AYUDA')+`<section class="help-card">${items.map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${q}</summary><p>${a}</p></details>`).join('')}<div class="service-footer-links"><a class="button button-primary" href="index.html#contacto">Contactar al equipo ↗</a><a class="button button-outline" href="index.html#servicios">Explorar servicios</a></div></section>`;}
+  function accountAccess(){
+    const registration=section==='registro';
+    const title=registration?'Registrarse':'Iniciar sesión';
+    document.title=title+' | Rumbo';
+    root.innerHTML=crumb(title)+hero(title,registration?'Tu próximo viaje también tendrá su propio espacio.':'Un espacio para tus viajes y preferencias.','TU CUENTA EN RUMBO','◎','VIAJA A TU MANERA')+`<section class="help-card service-profile"><h2>Las cuentas estarán disponibles próximamente</h2><p>El registro y el inicio de sesión todavía no están conectados a un servicio de autenticación. Por ahora, no se crean cuentas ni se inician sesiones.</p><p>Puedes seguir organizando tu viaje y usar un perfil de demostración. Sus datos se guardan únicamente en este navegador y no se sincronizan entre dispositivos.</p><div class="service-footer-links"><a class="button button-primary" href="servicios.html?seccion=perfil">Usar perfil de demostración</a><a class="button button-outline" href="servicios.html?seccion=mi-viaje">Continuar a mi viaje ↗</a></div><p><a class="text-link" href="servicios.html?seccion=${registration?'iniciar-sesion':'registro'}">${registration?'Ir a Iniciar sesión':'Ir a Registrarse'} ↗</a></p></section>`;
+  }
   function account(){
     const profile=read('rumbo.profile.v1',{});
     root.innerHTML=crumb('Mi perfil')+hero('Tu viaje empieza contigo.','Crea un perfil de demostración con un alias y tu estilo de viaje. Se guarda solo en este navegador.','TU ESPACIO EN RUMBO','◎','A TU MANERA')+`<section class="help-card service-profile"><h2>Mi perfil local</h2><p>No necesitas una cuenta ni contraseña para probar Rumbo.</p><form id="profile-form" class="service-form">${input('alias','¿Cómo quieres que te llamemos?','text',escape(typeof profile?.alias==='string'?profile.alias:''),'maxlength="40" autocomplete="off" placeholder="Tu alias"')}${select('preference','Tu estilo de viaje',[['playa','Playa y descanso'],['naturaleza','Naturaleza'],['cultura','Cultura e historia']])}<div class="service-form-foot"><button class="button button-primary">Guardar perfil</button><button type="button" class="button button-outline" id="delete-profile">Eliminar perfil</button></div></form><p id="service-status" class="service-status" role="status"></p><a class="text-link" href="servicios.html?seccion=mi-viaje">Ir a mi viaje ↗</a></section>`;
@@ -144,6 +150,7 @@
   if(Object.hasOwn(configs,section)) servicePage();
   else if(section==='mi-viaje')savedPage();
   else if(section==='perfil')account();
+  else if(section==='iniciar-sesion'||section==='registro')accountAccess();
   else if(Object.hasOwn(help,section))helpPage(section);
   else if(section==='servicios')location.replace('index.html#servicios');
   else {document.title='Página no encontrada | Rumbo';root.innerHTML=hero('Ese camino aún no existe.','Vuelve a nuestros servicios y elige por dónde continuar.','RUMBO')+'<a class="button button-primary" href="index.html#servicios">Ver servicios ↗</a>';}

@@ -1,16 +1,13 @@
 /* Enlaces compartidos. Cada sección conserva su propio módulo de datos. */
 (() => {
   'use strict';
-  const routes={login:'perfil',register:'perfil',experiences:'guias',transfers:'traslados',insurance:'seguros',faq:'ayuda',support:'ayuda',changes:'cambios',about:'acerca',team:'equipo',privacy:'privacidad',terms:'terminos'};
+  const routes={login:'iniciar-sesion',register:'registro',experiences:'guias',transfers:'traslados',insurance:'seguros',faq:'ayuda',support:'ayuda',changes:'cambios',about:'acerca',team:'equipo',privacy:'privacidad',terms:'terminos'};
   document.querySelectorAll('[data-module]').forEach(button=>{
     const key=button.dataset.module;
     const href=key==='cart'?'tienda.html?carrito=1':key==='shop'?'tienda.html':routes[key]?`servicios.html?seccion=${routes[key]}`:null;
     if(!href)return;
     const link=document.createElement('a');link.className=button.className;link.innerHTML=button.innerHTML;link.href=href;
     if(button.hasAttribute('aria-label'))link.setAttribute('aria-label',button.getAttribute('aria-label'));
-    if(key==='login')link.innerHTML='<span>Mi perfil</span>';
-    if(key==='register')link.textContent='Mi viaje';
-    if(key==='register')link.href='servicios.html?seccion=mi-viaje';
     button.replaceWith(link);
   });
   if(document.querySelector('.rv-page')){
@@ -31,7 +28,16 @@
   if(mainNav)mainNav.innerHTML='<a href="index.html#servicios">Armar mi viaje</a><a href="index.html#destinos">Destinos</a><a href="index.html#antes-de-viajar">Antes de viajar</a>';
   const header=document.querySelector('.header-inner');
   if(header&&!header.querySelector('a[href="servicios.html?seccion=mi-viaje"]')){const trip=document.createElement('a');trip.className='button button-outline';trip.href='servicios.html?seccion=mi-viaje';trip.textContent='Mi viaje ↗';header.append(trip);}
-  document.querySelector('.login-button')?.remove();
+  if(header){
+    const accounts=document.createElement('div');accounts.className='account-actions';
+    [['login-button','Iniciar sesión','iniciar-sesion'],['register-button','Registrarse','registro']].forEach(([className,label,route])=>{
+      const link=header.querySelector('.'+className)||document.createElement('a');
+      link.className=className+' account-link';link.textContent=label;link.href='servicios.html?seccion='+route;
+      if(new URLSearchParams(location.search).get('seccion')===route)link.setAttribute('aria-current','page');
+      accounts.append(link);
+    });
+    header.append(accounts);
+  }
   if(document.getElementById('servicios')){
     const grid=document.querySelector('.booking-grid');
     const order=['flights','stays','transfers','insurance','experiences','shop'];

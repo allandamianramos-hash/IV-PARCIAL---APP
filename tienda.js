@@ -254,157 +254,186 @@ const PRODUCTS = [
 
 const PRODUCT_OPTIONS = {
 
+  // =========================
+  // EQUIPAJE
+  // =========================
+
   1: {
-    Color: ["Negro", "Azul", "Rojo"],
-    Tamaño: ["Mediana", "Grande"]
+    Color: ['Negro', 'Azul', 'Rojo', 'Gris'],
+    Tamaño: ['Pequeña', 'Mediana', 'Grande']
   },
 
   2: {
-    Color: ["Negro", "Azul", "Rojo"],
-    Tamaño: ["20 pulgadas", "24 pulgadas", "28 pulgadas"]
+    Color: ['Negro', 'Azul', 'Rojo', 'Verde'],
+    Tamaño: ['20 pulgadas', '24 pulgadas', '28 pulgadas']
   },
 
   3: {
-    Color: ["Negro", "Café", "Beige"],
-    Tamaño: ["Pequeño", "Mediano"]
+    Color: ['Negro', 'Café', 'Beige', 'Azul'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande']
   },
 
   4: {
-    Color: ["Negro", "Azul", "Verde"],
-    Tamaño: ["Único"]
+    Color: ['Negro', 'Azul', 'Rojo', 'Rosa'],
+    Tamaño: ['Pequeña', 'Mediana']
   },
 
   5: {
-    Color: ["Negro", "Azul", "Rojo", "Verde"],
-    Tamaño: ["Estándar"]
+    Color: ['Negro', 'Azul', 'Rojo', 'Verde'],
+    Tipo: ['Simple', 'Con ventana']
   },
 
   6: {
-    Color: ["Negro", "Plateado", "Dorado"],
-    Tipo: ["3 dígitos", "4 dígitos"]
+    Color: ['Negro', 'Plateado', 'Dorado'],
+    Tipo: ['3 dígitos', '4 dígitos']
   },
 
+
+  // =========================
+  // TECNOLOGÍA
+  // =========================
+
   7: {
-    Color: ["Negro", "Blanco"],
-    Capacidad: ["10,000 mAh", "20,000 mAh"]
+    Color: ['Negro', 'Blanco', 'Azul'],
+    Capacidad: ['10,000 mAh', '20,000 mAh']
   },
 
   8: {
-    Color: ["Negro", "Blanco"],
-    Tipo: ["USB-C", "USB-A"]
+    Color: ['Negro', 'Blanco'],
+    Tipo: ['USB-C', 'USB-A']
   },
 
   9: {
-    Color: ["Negro", "Blanco"],
-    Largo: ["1 metro", "2 metros"]
+    Color: ['Negro', 'Blanco'],
+    Largo: ['1 metro', '2 metros']
   },
 
   10: {
-    Color: ["Negro", "Blanco"],
-    Tipo: ["Universal"]
+    Color: ['Negro', 'Blanco'],
+    Tipo: ['Universal']
   },
 
   11: {
-    Color: ["Negro", "Blanco"],
-    Tipo: ["Inalámbricos", "Alámbricos"]
+    Color: ['Negro', 'Blanco', 'Azul'],
+    Tipo: ['Inalámbricos', 'Alámbricos']
   },
 
   12: {
-    Color: ["Negro", "Gris"],
-    Uso: ["Escritorio", "Auto"]
+    Color: ['Negro', 'Gris', 'Azul'],
+    Uso: ['Escritorio', 'Auto']
   },
 
+
+  // =========================
+  // CONFORT
+  // =========================
+
   13: {
-    Color: ["Gris", "Azul", "Negro"],
-    Tamaño: ["Estándar"]
+    Color: ['Gris', 'Azul', 'Negro'],
+    Tamaño: ['Pequeña', 'Mediana', 'Grande']
   },
 
   14: {
-    Color: ["Transparente", "Azul", "Negro"],
-    Capacidad: ["500 ml", "750 ml"]
+    Color: ['Transparente', 'Azul', 'Negro', 'Rosa'],
+    Capacidad: ['500 ml', '750 ml', '1 litro']
   },
 
   15: {
-    Color: ["Negro", "Azul", "Rosa"],
-    Tamaño: ["Único"]
+    Color: ['Negro', 'Azul', 'Rosa', 'Gris'],
+    Tamaño: ['Niño', 'Adulto']
   },
 
   16: {
-    Color: ["Amarillo", "Azul"],
-    Cantidad: ["2 pares", "4 pares"]
+    Color: ['Amarillo', 'Azul', 'Rosa'],
+    Tamaño: ['Niño', 'Adulto'],
+    Cantidad: ['2 pares', '4 pares']
   },
 
   17: {
-    Color: ["Negro", "Azul", "Rojo"],
-    Tamaño: ["Compacto"]
+    Color: ['Negro', 'Azul', 'Rojo'],
+    Tamaño: ['Pequeño', 'Mediano']
   },
 
   18: {
-    Color: ["Blanco", "Gris", "Azul"],
-    Tamaño: ["Mediana", "Grande"]
+    Color: ['Blanco', 'Gris', 'Azul'],
+    Tamaño: ['Pequeña', 'Mediana', 'Grande']
   },
 
+
+  // =========================
+  // SEGURIDAD
+  // =========================
+
   19: {
-    Color: ["Negro", "Café", "Azul"],
-    Tamaño: ["Estándar"]
+    Color: ['Negro', 'Café', 'Azul'],
+    Tamaño: ['Pequeño', 'Mediano']
   },
 
   20: {
-    Color: ["Negro", "Café", "Azul"],
-    Tamaño: ["Estándar"]
+    Color: ['Negro', 'Café', 'Azul'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande']
   },
 
   21: {
-    Color: ["Negro", "Café", "Azul"],
-    Tamaño: ["Estándar"]
+    Color: ['Negro', 'Café', 'Azul'],
+    Tipo: ['Básica', 'Con compartimentos']
   },
 
   22: {
-    Color: ["Negro", "Azul", "Transparente"],
-    Tamaño: ["Pequeña", "Mediana", "Grande"]
+    Color: ['Negro', 'Azul', 'Transparente'],
+    Tamaño: ['Pequeña', 'Mediana', 'Grande']
   },
 
   23: {
-    Color: ["Negro", "Azul", "Rojo"],
-    Tamaño: ["Estándar"]
+    Color: ['Negro', 'Azul', 'Rojo'],
+    Tamaño: ['Estándar']
   },
 
   24: {
-    Color: ["Negro", "Gris"],
-    Potencia: ["100 lm", "300 lm"]
+    Color: ['Negro', 'Gris'],
+    Potencia: ['100 lm', '300 lm']
   },
 
+
+  // =========================
+  // CUIDADO
+  // =========================
+
   25: {
-    Color: ["Negro", "Beige", "Azul"],
-    Tamaño: ["Pequeño", "Mediano"]
+    Color: ['Negro', 'Beige', 'Azul', 'Rosa'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande']
   },
 
   26: {
-    Color: ["Transparente", "Azul", "Rosa"],
-    Capacidad: ["30 ml", "60 ml"]
+    Color: ['Transparente', 'Azul', 'Rosa'],
+    Capacidad: ['30 ml', '60 ml', '100 ml'],
+    Cantidad: ['2 unidades', '4 unidades']
   },
 
   27: {
-    Color: ["Natural", "Blanco", "Negro"],
-    Tamaño: ["Adulto"]
+    Color: ['Natural', 'Blanco', 'Azul', 'Rosa'],
+    Edad: ['Niño', 'Adulto'],
+    Tipo: ['Suave', 'Medio']
   },
 
   28: {
-    Color: ["Negro", "Beige", "Azul"],
-    Tamaño: ["Mediano", "Grande"]
+    Tipo: ['Básico', 'Completo'],
+    Tamaño: ['Pequeño', 'Mediano', 'Grande'],
+    Edad: ['Niño', 'Adulto']
   },
 
   29: {
-    Tipo: ["FPS 30", "FPS 50"],
-    Presentación: ["100 ml", "200 ml"]
+    Edad: ['Niño', 'Adulto'],
+    FPS: ['FPS 30', 'FPS 50'],
+    Presentación: ['100 ml', '200 ml']
   },
 
   30: {
-    Color: ["Rojo", "Azul", "Verde"],
-    Tamaño: ["Compacto", "Mediano"]
+    Tipo: ['Básico', 'Familiar'],
+    Tamaño: ['Compacto', 'Mediano', 'Grande']
   }
-};
 
+};
 
 // ============================================================
 // PRECIOS SEGÚN LA OPCIÓN
@@ -1697,8 +1726,11 @@ window.RumboProducts = PRODUCTS;
       });
 
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8ecfd051398b5414b5cbaf69050ed80c6087bb1b
     saveCart();
 
     renderCart();
@@ -3177,7 +3209,22 @@ window.RumboProducts = PRODUCTS;
 
   renderCart();
 
+<<<<<<< HEAD
   // El carrito también se abre desde el acceso de la página principal.
   if (new URLSearchParams(location.search).get('carrito') === '1') openCart();
 
 })();
+=======
+})();
+
+// ==========================================================
+  // INICIAR TIENDA esto va doble, lo borras
+  // ==========================================================
+
+  loadState();
+
+  renderProducts();
+
+  renderCart();
+
+>>>>>>> 8ecfd051398b5414b5cbaf69050ed80c6087bb1b

@@ -3379,7 +3379,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
       "dialog-open"
     );
 
-    $("#close-detail").focus();
+    $("#close-detail").focus({ preventScroll: true });
   }
 
 

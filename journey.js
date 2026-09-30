@@ -5,7 +5,7 @@
   const write=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const money=n=>'L '+Number(n).toLocaleString('es-HN',{minimumFractionDigits:2,maximumFractionDigits:2});
-  const steps=[['vuelos','Vuelo','viajes.html?pantalla=vuelos'],['hoteles','Hospedaje','viajes.html?pantalla=hoteles'],['traslados','Transporte','servicios.html?seccion=traslados'],['seguros','Seguro','servicios.html?seccion=seguros'],['guias','Experiencias','servicios.html?seccion=guias'],['tienda','Tienda','servicios.html#tienda'],['mi-viaje','Resumen del viaje','servicios.html?seccion=mi-viaje']];
+  const steps=[['vuelos','Vuelo','viajes.html?pantalla=vuelos'],['hoteles','Hospedaje','viajes.html?pantalla=hoteles'],['traslados','Transporte','servicios.html?seccion=traslados'],['seguros','Seguro','servicios.html?seccion=seguros'],['guias','Experiencias','servicios.html?seccion=guias'],['tienda','Tienda','tienda.html#catalogo'],['mi-viaje','Resumen del viaje','servicios.html?seccion=mi-viaje']];
   const tripKey='rumbo.integrante2.viaje.v1', receiptKey='rumbo.checkout.v1';
   const day=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
   const dateValid=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)&&!isNaN(Date.parse(d))&&new Date(d).toISOString().slice(0,10)===d;

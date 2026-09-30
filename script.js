@@ -49,11 +49,11 @@
       ],
       cart: [
         "Carrito",
-        "No hay compras ni pagos disponibles en esta demostración."
+        "Encuentra equipaje y accesorios desde Servicios."
       ],
       flights: [
         "Buscar vuelos",
-        "Se integrará la consulta de vuelos, equipaje y tarifas. No hay disponibilidad real."
+        "Consulta vuelos, equipaje y tarifas desde Servicios."
       ],
       stays: [
         "Consultar hospedaje",
@@ -163,7 +163,7 @@
             <p>${trip.description}</p>
             <div class="card-bottom">
               <div class="price">
-                <small>Presupuesto orientativo / persona</small>
+                <small>Presupuesto / persona</small>
                 <strong>${money(trip.price)} <span>HNL</span></strong>
               </div>
               <button
@@ -179,7 +179,7 @@
         card.querySelector("button").addEventListener("click", () => {
           showModule(
             trip.name,
-            `${trip.duration}. Base ficticia: ${money(trip.price)} HNL por persona. ` +
+            `${trip.duration}. Presupuesto: ${money(trip.price)} HNL por persona. ` +
             "Los servicios incluidos, las fechas y la disponibilidad no están definidos. " +
             "No es una oferta contratable."
           );
@@ -288,12 +288,15 @@
     const restart = $("#chat-restart");
     const options = $("#chat-options");
     let localState = {};
+    let conversation = [];
     const openButtons = [launcher, ...document.querySelectorAll("[data-open-planner], [data-open-help]")];
     let opener = launcher;
     let busy = false;
     const avatars = [...document.querySelectorAll(".rumbito-avatar")];
-    avatars.forEach(avatar => {
-      avatar.innerHTML = '<img src="imagenes/rumbito.png" width="256" height="256" alt="" draggable="false">';
+    avatars.forEach((avatar, index) => {
+      const skin = 'rumbito-lid-' + index;
+      avatar.innerHTML = `<span class="rumbito-face"><img src="imagenes/rumbito-pin.png" width="256" height="256" alt="" draggable="false"><svg class="rumbito-blink" viewBox="0 0 1280 1280" aria-hidden="true"><defs><radialGradient id="${skin}"><stop stop-color="#f8f4f0"/><stop offset="1" stop-color="#f2ede9"/></radialGradient></defs><g><ellipse cx="508" cy="494" rx="55" ry="69" fill="url(#${skin})"/><path d="M478 494 Q504 519 533 484"/><ellipse cx="790" cy="443" rx="53" ry="73" fill="url(#${skin})"/><path d="M761 442 Q790 466 819 433"/></g></svg></span>`;
+      avatar.style.setProperty('--blink-delay', (-index * 1.7) + 's');
       const surface = avatar.closest('button') || avatar;
       surface.addEventListener('pointermove', event => {
         if (reducedMotion.matches || event.pointerType === 'touch') return;
@@ -305,6 +308,15 @@
         avatar.style.setProperty('--gaze-x', '0px');
         avatar.style.setProperty('--gaze-y', '0px');
       });
+    });
+    function greet() {
+      if (reducedMotion.matches) return;
+      const avatar = panel.querySelector('.rumbito-avatar');
+      avatar.classList.remove('is-greeting');
+      requestAnimationFrame(() => requestAnimationFrame(() => avatar.classList.add('is-greeting')));
+    }
+    panel.querySelector('.rumbito-avatar').addEventListener('animationend', event => {
+      if (event.animationName === 'rumbito-greet') event.currentTarget.classList.remove('is-greeting');
     });
     let closeAnimation;
     function updateComposer() {
@@ -318,6 +330,7 @@
       panel.classList.remove("is-closing");
       opener = button;
       panel.hidden = false;
+      greet();
       launcher.classList.add("chat-is-open");
       openButtons.forEach(item => item.setAttribute("aria-expanded", "true"));
       input.focus();
@@ -347,6 +360,7 @@
 
     function resetChat() {
       localState = {};
+      conversation = [];
       plan = emptyPlan();
       clearPass();
       messages.replaceChildren();
@@ -406,7 +420,7 @@
       busy = true;
       input.disabled = send.disabled = restart.disabled = true;
       options.querySelectorAll("button").forEach(button => button.disabled = true);
-      panel.classList.remove("is-composing");
+      panel.classList.remove("is-composing", "is-replied");
       panel.classList.add("is-thinking");
       form.setAttribute("aria-busy", "true");
       addMessage(text, true);
@@ -414,23 +428,27 @@
       const pending = addMessage("Rumbito está pensando…");
       pending.classList.add("is-typing");
       try {
-        await new Promise(resolve => setTimeout(resolve, reducedMotion.matches ? 0 : 380));
-        const context = {
-          catalog,
-          trips: window.RumboViajesDatos?.destinations || [],
-          flights: window.RumboViajesDatos?.flights,
-          contacts: Array.from(document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]'), a => a.textContent.trim())
-        };
-        const result = window.RumboChat.respond(text, plan, context, localState);
+        const result = await window.RumboChatClient.request(
+          { message: text, history: conversation, plan, state: localState },
+          { fallback: () => {
+            const state = structuredClone(localState);
+            const context = { catalog, trips: window.RumboViajesDatos?.destinations || [], flights: window.RumboViajesDatos?.flights,
+              contacts: Array.from(document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]'), a => a.textContent.trim()) };
+            return { ...window.RumboChat.respond(text, plan, context, state), state };
+          } }
+        );
         if (typeof result.reply !== "string" || !result.reply.trim()) throw new Error("No se recibió una respuesta. Vuelve a intentarlo.");
+        localState = result.state || {};
+        conversation = [...conversation, { role: "user", content: text }, { role: "assistant", content: result.reply.slice(0, 2000) }].slice(-12);
         pending.textContent = result.reply;
+        panel.classList.add("is-replied");
         appendActions(pending, result.actions);
         renderOptions(result.options);
         const labels = { company: "Tu compañía de viaje", people: "El equipo de esta aventura", style: "Tu forma de viajar", budget: "Un presupuesto a tu medida" };
-        setText("#chat-step-label", labels[result.step] || "Sigamos dando forma a tu aventura.");
+        setText("#chat-step-label", result.connectionNotice || labels[result.step] || "Sigamos dando forma a tu aventura.");
         applyPlan(result.plan);
       } catch (error) {
-        pending.textContent = "Se me escapó ese detalle. Intenta otra vez o empecemos con un destino, por ejemplo Roatán.";
+        pending.textContent = error.name === "TimeoutError" || error.name === "TypeError" || error.name === "SyntaxError" ? "No pude conectar con mi servicio de respuestas. Comprueba la conexión e inténtalo otra vez." : error.message;
         input.value = text;
       } finally {
         busy = false;

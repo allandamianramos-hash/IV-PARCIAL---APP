@@ -11,23 +11,18 @@
     button.replaceWith(link);
   });
   if(document.querySelector('.rv-page')){
-    const nav=document.querySelector('.main-nav');
-    nav.querySelectorAll('[data-nav="vuelos"], [data-nav="hoteles"]').forEach(a=>a.remove());
-    const shop=nav.querySelector('[href="tienda.html"]');shop.textContent='Tienda';
-    const link=document.createElement('a');link.href='servicios.html';link.textContent='Servicios';nav.insertBefore(link,shop);
-    if(['vuelos','hoteles'].includes(document.body.dataset.page))link.setAttribute('aria-current','page');
     const trip=document.querySelector('.rv-my-trip');trip.removeAttribute('data-context');trip.removeAttribute('data-path');trip.href='servicios.html?seccion=mi-viaje';
   }
   document.querySelectorAll('[data-module="flights"], [data-module="stays"]').forEach(button=>button.removeAttribute('aria-haspopup'));
   if(!document.getElementById('chat-launcher')){
-    const link=document.createElement('a');link.className='global-rumbito';link.href='index.html#hablar-rumbito';link.innerHTML='<img src="imagenes/rumbito.png" width="44" height="44" alt=""> Pregúntale a Rumbito';document.body.append(link);
+    const link=document.createElement('a');link.className='global-rumbito';link.href='index.html#hablar-rumbito';link.innerHTML='<img src="imagenes/rumbito-pin.png" width="44" height="44" alt=""> Pregúntale a Rumbito';document.body.append(link);
   }
 
   // Una cabecera consistente: los accesos principales llevan a las secciones del inicio.
   const mainNav=document.querySelector('.main-nav');
   if(mainNav){
     const page=location.pathname.split('/').pop()||'index.html';
-    mainNav.innerHTML=[['index.html','Inicio'],['viajes.html?pantalla=destinos','Destinos'],['servicios.html','Servicios'],['tienda.html','Tienda']].map(([url,label])=>`<a href="${url}" ${url.split('?')[0]===page?'aria-current="page"':''}>${label}</a>`).join('');
+    mainNav.innerHTML=[['index.html','Inicio'],['viajes.html?pantalla=destinos','Destinos'],['servicios.html','Servicios']].map(([url,label])=>`<a href="${url}" ${(url.split('?')[0]===page || (url==='servicios.html' && (page==='tienda.html' || ['vuelos','hoteles'].includes(document.body.dataset.page))))?'aria-current="page"':''}>${label}</a>`).join('');
   }
   const header=document.querySelector('.header-inner');
   if(header&&!header.querySelector('a[href="servicios.html?seccion=mi-viaje"]')){const trip=document.createElement('a');trip.className='button button-outline';trip.href='servicios.html?seccion=mi-viaje';trip.textContent='Mi viaje ↗';header.append(trip);}

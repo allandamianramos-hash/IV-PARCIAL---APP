@@ -49,7 +49,7 @@
       description: 'Copán Ruinas invita a conocer la historia maya y disfrutar de un pueblo con espacios para pasear, comer y descansar. Puedes combinar visitas culturales con recorridos por sus alrededores.',
       highlights: ['Conocer el sitio arqueológico', 'Caminar por el pueblo', 'Explorar los alrededores'],
       tip: 'Reserva tiempo para el traslado terrestre desde la ciudad de llegada.',
-      arrival: 'San Pedro Sula', transfer: 'El vuelo de ejemplo llega a San Pedro Sula. El traslado terrestre a Copán Ruinas no está incluido.',
+      arrival: 'San Pedro Sula', transfer: 'El vuelo llega a San Pedro Sula. El traslado terrestre a Copán Ruinas no está incluido.',
       nights: 2, economy: 2100, duration: 40,
       hotels: [
         { id: 'patio', name: 'Hotel Patio Maya', stars: 3, area: 'Zona del pueblo', rate: 850, image: 'hotel-habitacion.jpg', amenities: ['Wi-Fi', 'Desayuno'] },
@@ -80,7 +80,7 @@
       description: 'Las Dolomitas ofrecen una experiencia centrada en la montaña. Elige una base para alojarte y organiza recorridos acordes con tus preferencias y el tiempo disponible.',
       highlights: ['Contemplar paisajes de montaña', 'Explorar senderos', 'Conocer pueblos de la zona'],
       tip: 'Elige recorridos adecuados a tu experiencia y revisa las condiciones antes de salir.',
-      arrival: 'Venecia', transfer: 'El vuelo de ejemplo llega a Venecia. El traslado a las Dolomitas se organiza por separado y no está incluido.',
+      arrival: 'Venecia', transfer: 'El vuelo llega a Venecia. El traslado a las Dolomitas se organiza por separado y no está incluido.',
       nights: 5, economy: 22500, duration: 1050,
       hotels: [
         { id: 'alpino', name: 'Refugio Alpino', stars: 3, area: 'Pueblo de montaña', rate: 2200, image: 'hotel-habitacion.jpg', amenities: ['Wi-Fi', 'Desayuno'] },
@@ -96,7 +96,7 @@
       description: 'Kioto es un destino para conocer espacios tradicionales, jardines y barrios con identidad propia. Combina tus visitas con momentos para caminar y descubrir la ciudad.',
       highlights: ['Visitar templos y jardines', 'Pasear por calles tradicionales', 'Descubrir la gastronomía'],
       tip: 'Agrupa las visitas cercanas para aprovechar mejor cada día.',
-      arrival: 'Osaka', transfer: 'El vuelo de ejemplo llega a Osaka. El traslado a Kioto no está incluido.',
+      arrival: 'Osaka', transfer: 'El vuelo llega a Osaka. El traslado a Kioto no está incluido.',
       nights: 9, economy: 33000, duration: 1530,
       hotels: [
         { id: 'sakura', name: 'Casa Sakura', stars: 3, area: 'Zona urbana', rate: 1900, image: 'hotel-habitacion.jpg', amenities: ['Wi-Fi'] },
@@ -439,12 +439,12 @@
       $('#flight-results-meta').textContent = `${options.length} opciones · ${formatDate(state.date)} · ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}`;
       $('#flight-transfer').textContent = destination.transfer;
       $('#flight-transfer').hidden = !destination.transfer;
-      $('#flight-form-notice').textContent = 'Vuelos de ida · todos los pasajeros usan la misma tarifa de ejemplo.';
+      $('#flight-form-notice').textContent = 'Vuelos de ida · ajusta fechas y pasajeros.';
       $('#flight-list').innerHTML = options.length ? options.map((flight, index) => {
         const end = arrival(flight);
         const selected = state.flightId === flight.id;
         return `<article class="rv-flight-card" data-selected="${selected}" aria-label="Vuelo ${flight.code}">
-          <div class="rv-flight-top"><div class="rv-flight-name"><span class="rv-plane-icon" aria-hidden="true">✈</span><div><strong>Rumbo Air · ejemplo</strong><small>${flight.code}</small></div></div><span class="rv-badge">${index === 0 ? 'Primera opción' : 'Otra forma de llegar'}</span></div>
+          <div class="rv-flight-top"><div class="rv-flight-name"><span class="rv-plane-icon" aria-hidden="true">✈</span><div><strong>Rumbo Air</strong><small>${flight.code}</small></div></div><span class="rv-badge">${index === 0 ? 'Primera opción' : 'Otra forma de llegar'}</span></div>
           <div class="rv-flight-timing"><div class="rv-time"><strong>${flight.departure}</strong><small>${state.origin}</small></div><div class="rv-flight-line"><span>${duration(flight.minutes)}</span><div aria-hidden="true"></div><span>${flight.stops}</span></div><div class="rv-time"><strong>${end.time}${end.days ? `<sup> +${end.days} d</sup>` : ''}</strong><small>${destination.arrival}</small></div></div>
           <div class="rv-flight-bottom"><p>${state.cabin === 'economica' ? 'Económica<br>Equipaje de mano' : 'Ejecutiva<br>Mano + una maleta'}<br>${end.days ? `Llegada: ${formatDate(addDays(state.date, end.days))}` : 'Llegada el mismo día'}</p><div class="rv-price"><strong>${money(flightRate(flight))}</strong><small>Por persona · solo ida</small><small>${money(flightRate(flight) * state.travelers)} por ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</small></div><button class="rv-select-button" type="button" data-select-flight="${flight.id}" aria-pressed="${selected}" aria-label="${selected ? 'Vuelo seleccionado' : 'Seleccionar vuelo'} ${flight.code} de las ${flight.departure}">${selected ? 'Seleccionado ✓' : 'Elegir vuelo'}</button></div></article>`;
       }).join('') : `<div class="rv-empty"><h3>Ya sales de la ciudad de conexión.</h3><p>Desde ${state.origin}, este viaje continúa por tierra hacia ${destination.name}. El traslado no está incluido.</p><a class="button button-primary" href="${escapeHTML(link('hoteles', { flightId: '' }))}">Elegir hotel ↗</a></div>`;
@@ -517,8 +517,8 @@
         const nightly = rate(hotel, type);
         const selected = hotel.id === state.hotelId && type === state.roomType;
         const enoughSpace = rooms[type].capacity * state.rooms >= state.travelers;
-        return `<article class="rv-hotel-card" data-selected="${selected}"><img class="rv-hotel-photo" src="imagenes-viajes/${hotel.image}" alt="Alojamiento de inspiración; no corresponde a un hotel real del catálogo" width="700" height="700" loading="lazy">
-          <div class="rv-hotel-content"><p class="rv-stars" aria-label="${hotel.stars} estrellas de ejemplo">${'★'.repeat(hotel.stars)}</p><h3>${hotel.name}</h3><p class="rv-hotel-location">${destination.name} · ${hotel.area}</p><ul class="rv-amenities" aria-label="Servicios de ejemplo">${hotel.amenities.map(item => `<li>${item}</li>`).join('')}</ul>
+        return `<article class="rv-hotel-card" data-selected="${selected}"><img class="rv-hotel-photo" src="imagenes-viajes/${hotel.image}" alt="Alojamiento en el destino" width="700" height="700" loading="lazy">
+          <div class="rv-hotel-content"><p class="rv-stars" aria-label="${hotel.stars} estrellas">${'★'.repeat(hotel.stars)}</p><h3>${hotel.name}</h3><p class="rv-hotel-location">${destination.name} · ${hotel.area}</p><ul class="rv-amenities" aria-label="Servicios">${hotel.amenities.map(item => `<li>${item}</li>`).join('')}</ul>
           <div class="rv-field rv-room-choice"><label for="room-${hotel.id}">Tipo de habitación en ${hotel.name}</label><select id="room-${hotel.id}" data-room-hotel="${hotel.id}">${Object.entries(rooms).map(([key, room]) => `<option value="${key}" ${key === type ? 'selected' : ''}>${room.name} · hasta ${room.capacity} personas / hab.</option>`).join('')}</select></div>
           <div class="rv-hotel-price-row"><div class="rv-price"><strong>${money(nightly)}</strong><small>Por noche / habitación</small></div><button class="rv-select-button" type="button" data-select-hotel="${hotel.id}" aria-pressed="${selected}" aria-label="${selected ? 'Hotel seleccionado' : 'Seleccionar'} ${hotel.name}" ${!enoughSpace || dirty ? 'disabled' : ''}>${selected ? 'Seleccionado ✓' : 'Elegir hotel'}</button></div><p class="rv-hotel-total">${state.nights} ${state.nights === 1 ? 'noche' : 'noches'} × ${state.rooms} ${state.rooms === 1 ? 'habitación' : 'habitaciones'} · <strong>${money(nightly * state.nights * state.rooms)}</strong></p>
           ${enoughSpace ? '' : `<p class="rv-capacity-error">Para ${state.travelers} personas necesitas al menos ${Math.ceil(state.travelers / rooms[type].capacity)} habitaciones de este tipo, o elegir otra capacidad.</p>`}</div></article>`;

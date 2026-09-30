@@ -21,7 +21,7 @@ test("recoge varias preferencias en lenguaje natural", () => {
   const send = conversation();
   const result = send("viajo con familia, somos dos, queremos playa y tenemos 20 mil");
   assert.equal(result.plan.people, 2); assert.equal(result.plan.budget, 20000);
-  assert.equal(result.plan.destination, "roatan"); assert.match(result.reply, /ticket aparece solo/);
+  assert.equal(result.plan.destination, "roatan"); assert.match(result.reply, /resumen al finalizar tu plan/);
 });
 test("normaliza presupuestos habituales", () => {
   for (const text of ["20 mil", "20,000", "20.000", "20000"]) {
@@ -81,6 +81,6 @@ test("editar presupuesto conserva el resto y reinicia la pregunta", () => {
 });
 test("preguntas ajenas no inventan respuestas ni reservas", () => {
   assert.match(conversation()("escribe codigo python").reply, /puedo comparar/);
-  assert.match(conversation()("quiero reservar").reply, /no contratarla/);
+  assert.match(conversation()("quiero reservar").reply, /reunir tus selecciones en Mi viaje/);
 });
 

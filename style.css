@@ -421,7 +421,13 @@ button:disabled:hover { transform: none; }
 
 /* Rumbito Integrado: el mismo copiloto en bienvenida, lanzador y conversación. */
 .rumbito-avatar { position: relative; isolation: isolate; }
-.rumbito-avatar img { display: block; width: 100%; height: 100%; object-fit: contain; transform: translate(var(--gaze-x), var(--gaze-y)); transition: transform 220ms ease-out; filter: drop-shadow(0 5px 5px #075e6918); }
+.rumbito-avatar img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 5px 5px #075e6918); }
+.rumbito-face { position: relative; display: block; width: 100%; height: 100%; transform: translate(var(--gaze-x), var(--gaze-y)); transition: transform 220ms ease-out; }
+.rumbito-blink { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.rumbito-blink g { opacity: 0; animation: rumbito-blink 7.5s linear var(--blink-delay,0s) infinite; }
+.rumbito-blink path { fill: none; stroke: #183044; stroke-width: 12; stroke-linecap: round; }
+@keyframes rumbito-blink { 0%,42%,44%,100% { opacity: 0; } 42.4%,43.6% { opacity: 1; } }
+.chat-header .rumbito-avatar.is-greeting { animation: rumbito-greet 800ms ease-in-out; }
 .rumbito-hero { width: 132px; height: 112px; flex-basis: 132px; }
 .hero-adviser { background: linear-gradient(125deg, #fffef8, #eff8f6); border-color: #d0e0d9; gap: 16px; box-shadow: 0 8px 24px #16444b08; transition: border-color 200ms, box-shadow 200ms, transform 200ms; }
 .hero-adviser:hover { background: linear-gradient(125deg, #fffef8, #e8f5f1); border-color: #8ebbb5; box-shadow: 0 12px 28px #16444b12; transform: translateY(-2px); }
@@ -470,7 +476,7 @@ button:disabled:hover { transform: none; }
   .chat-panel { border-radius: 22px; }
 }
 @media(prefers-reduced-motion:reduce) {
-  .rumbito-avatar img { transform: none; }
+  .rumbito-face { transform: none; }
 }
 
 @media(min-width:651px) and (max-width:1100px) {
@@ -478,3 +484,24 @@ button:disabled:hover { transform: none; }
   .hero-adviser .rumbito-hero { width: 82px; height: 88px; flex-basis: 82px; }
   .hero-adviser strong { font-size: 20px; }
 }
+
+/* Rumbito ubicación: silueta vertical, gestos cortos y movimiento tranquilo. */
+.hero-adviser .rumbito-hero { width: 106px; height: 122px; flex-basis: 106px; animation: rumbito-hover 5s ease-in-out infinite; }
+.chat-launcher .rumbito-avatar { width: 52px; height: 58px; flex-basis: 52px; animation: rumbito-hover 5s ease-in-out infinite; }
+.chat-header .rumbito-avatar { width: 62px; height: 70px; flex-basis: 62px; }
+.rumbito-avatar { transform-origin: 50% 80%; }
+.rumbito-avatar img { filter: drop-shadow(0 4px 4px #16444b16); }
+.hero-adviser:is(:hover,:focus-visible) .rumbito-hero,
+.chat-launcher:is(:hover,:focus-visible) .rumbito-avatar { animation: rumbito-greet 800ms ease-in-out; }
+.is-composing .chat-header .rumbito-avatar { animation: rumbito-attentive 2.5s ease-in-out infinite; }
+.is-thinking .chat-header .rumbito-avatar { animation: rumbito-hover 1.8s ease-in-out infinite; }
+.is-replied:not(.is-thinking):not(.is-composing) .chat-header .rumbito-avatar { animation: rumbito-greet 700ms ease-in-out; }
+@keyframes rumbito-hover { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes rumbito-greet { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-7deg) translateY(-2px); } 55% { transform: rotate(5deg) translateY(-3px); } 80% { transform: rotate(-2deg); } }
+@keyframes rumbito-attentive { 0%,100% { transform: rotate(0); } 50% { transform: rotate(-4deg); } }
+@media(max-width:1100px) { .hero-adviser .rumbito-hero { width: 82px; height: 96px; flex-basis: 82px; } }
+@media(max-width:650px) {
+  .hero-adviser .rumbito-hero { width: 74px; height: 88px; flex-basis: 74px; }
+  .chat-header .rumbito-avatar { width: 54px; height: 62px; flex-basis: 54px; }
+}
+@media(prefers-reduced-motion:reduce) { .rumbito-avatar, .rumbito-blink g { animation: none !important; } .rumbito-face { transition: none; transform: none; } }

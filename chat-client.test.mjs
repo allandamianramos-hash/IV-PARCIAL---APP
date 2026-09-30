@@ -33,3 +33,11 @@ test('los límites y rechazos de acceso no se ocultan con el respaldo', async ()
     await assert.rejects(request(payload, { fallback: () => { throw Error('Unexpected fallback'); }, fetchImpl: async () => Response.json({ error: 'Solicitud rechazada' }, { status }) }), /Solicitud rechazada/);
   }
 });
+
+test('el modo local conserva la causa concreta enviada por el servidor y se recupera', async () => {
+  const result = await request(payload, { fallback, fetchImpl: async () => Response.json({ code: 'AI_AUTH_FAILED', error: 'El proveedor rechazó la llave de IA.' }, { status: 503 }) });
+  assert.equal(result.source, 'local');
+  assert.match(result.connectionNotice, /rechazó la llave/);
+  const online = await request(payload, { fallback, fetchImpl: async () => Response.json({ reply: 'Conexión recuperada', source: 'lightning' }) });
+  assert.equal(online.source, 'lightning');
+});

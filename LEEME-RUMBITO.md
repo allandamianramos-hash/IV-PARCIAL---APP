@@ -18,6 +18,14 @@ Prueba: “Viajo con familia, somos dos, queremos playa y tenemos 20 mil”, “
 
 ## Configuración y despliegue
 
+Si ves «Modo local», comprueba primero la dirección del navegador. Debe ser `http://localhost:3000` cuando trabajas en este equipo. Abrir el HTML directamente, usar Live Server en otro puerto o publicar solo archivos estáticos no ejecuta `server.mjs`. La llave de `.env` se lee únicamente al iniciar ese servidor; no viaja con los archivos a GitHub ni a otro equipo.
+
+`INICIAR-RUMBO.cmd` (o `npm run open`) abre la página correcta en Windows cuando inicia el servidor. Mantén abierta su ventana. Si el puerto ya está ocupado por Rumbo, utiliza la dirección que indica la consola. Los errores ahora distinguen llave rechazada, permisos, créditos, cuota, modelo y tiempo de espera; no hace falta cambiar la llave si el problema es una vista sin servidor.
+
+### Usar Live Server en VS Code
+
+El proyecto incluye `.vscode/settings.json` para que Live Server envíe `/api` al servidor de Rumbo en `127.0.0.1:3000`. Después de cambiar esta configuración, detén Live Server pulsando «Port: 5500» y vuelve a iniciarlo con «Go Live». Mantén Rumbo iniciado con `npm start` en otra terminal; Live Server muestra los archivos y Rumbo atiende las consultas de IA. Si cambias el puerto de Rumbo en `.env`, actualiza también `proxyUri` en la configuración del proyecto. El token permanece en `.env`, únicamente en el servidor.
+
 - LIGHTNING_API_KEY: secreto del servidor, nunca del navegador.
 - RUMBITO_MODEL: openai/gpt-5-mini, modelo validado con esta integración.
 - APP_ORIGIN: origen HTTPS exacto del sitio en producción. Sin configurarlo, se aceptan orígenes locales.

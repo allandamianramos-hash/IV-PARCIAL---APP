@@ -15,6 +15,11 @@ export function createApp(chatOptions) {
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
     res.setHeader("Cache-Control", "no-store");
     try {
+      if (req.url === '/api/health' && ['GET', 'HEAD'].includes(req.method)) {
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(req.method === 'HEAD' ? undefined : JSON.stringify({ app: 'rumbo-viajes', status: 'ok' }));
+        return;
+      }
       if (new URL(req.url, 'http://localhost').pathname === '/api/chat') return await chat(req, res);
       if (!["GET", "HEAD"].includes(req.method)) { res.writeHead(405); res.end(); return; }
       let path;

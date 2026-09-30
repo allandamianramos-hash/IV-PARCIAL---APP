@@ -4,7 +4,13 @@ Rumbito conversa con GPT-5 mini a través de Lightning AI. El servidor mantiene 
 
 ## Abrir
 
-Requiere Node 22 o posterior. Copia .env.example a .env si aún no tienes configuración y coloca tu llave de Lightning en LIGHTNING_API_KEY. Ejecuta npm start o INICIAR-RUMBO.cmd y visita http://localhost:3000. No hay dependencias que instalar. Reinicia el servidor después de cambiar .env.
+Requiere Node 22 o posterior. Copia .env.example a .env si aún no tienes configuración y coloca tu llave de Lightning en LIGHTNING_API_KEY. Visita http://localhost:3000. No hay dependencias que instalar.
+
+En Windows, abre `ACTIVAR-RUMBO-AUTOMATICO.cmd` una sola vez: instala un acceso directo de inicio de sesión para tu usuario y deja el servidor en segundo plano. Al entrar de nuevo a Windows, Rumbito arranca automáticamente; si el proceso del servidor termina, el supervisor lo vuelve a iniciar. Cerrar el navegador o la ventana del lanzador no detiene el servidor. `INICIAR-RUMBO.cmd` abre la página y asegura que el supervisor esté activo, sin crear supervisores duplicados. `npm start` sigue siendo una alternativa manual para desarrollo.
+
+La comprobación `/api/health` solo confirma que el servidor local está disponible; no consulta al proveedor ni consume créditos. Internet, una llave válida y créditos del proveedor siguen siendo necesarios. La recuperación del servidor puede tardar unos segundos. Si otro programa ocupa el puerto, no se lo cierra automáticamente: revisa `rumbo-errors.log`.
+
+El inicio automático apunta a esta carpeta: si la mueves, ejecuta de nuevo `ACTIVAR-RUMBO-AUTOMATICO.cmd`. Para desactivarlo, abre `shell:startup` desde Ejecutar y elimina únicamente `Rumbo - servidor automatico.lnk`; se dejará de iniciar en la siguiente sesión. Reinicia el servidor después de cambiar `.env`; si cambias `PORT`, reinicia también el supervisor o cierra y vuelve a iniciar la sesión de Windows.
 
 La IA requiere este servidor. Al abrir index.html directamente, usar una vista estática o perder conexión, Rumbito responde con el catálogo local y muestra «Modo local». Vuelve a intentar la IA en cada mensaje enviado por HTTP; el respaldo no oculta rechazos ni límites de uso. La configuración local ya está preparada en esta copia. Nunca publiques .env: está excluido de Git y el servidor no lo sirve.
 
@@ -20,11 +26,11 @@ Prueba: “Viajo con familia, somos dos, queremos playa y tenemos 20 mil”, “
 
 Si ves «Modo local», comprueba primero la dirección del navegador. Debe ser `http://localhost:3000` cuando trabajas en este equipo. Abrir el HTML directamente, usar Live Server en otro puerto o publicar solo archivos estáticos no ejecuta `server.mjs`. La llave de `.env` se lee únicamente al iniciar ese servidor; no viaja con los archivos a GitHub ni a otro equipo.
 
-`INICIAR-RUMBO.cmd` (o `npm run open`) abre la página correcta en Windows cuando inicia el servidor. Mantén abierta su ventana. Si el puerto ya está ocupado por Rumbo, utiliza la dirección que indica la consola. Los errores ahora distinguen llave rechazada, permisos, créditos, cuota, modelo y tiempo de espera; no hace falta cambiar la llave si el problema es una vista sin servidor.
+`INICIAR-RUMBO.cmd` abre la página correcta en Windows y deja el servidor en segundo plano. No necesitas mantener abierta una terminal. `npm run open` conserva el arranque manual en primer plano para desarrollo. Los errores distinguen llave rechazada, permisos, créditos, cuota, modelo y tiempo de espera; no hace falta cambiar la llave si el problema es una vista sin servidor.
 
 ### Usar Live Server en VS Code
 
-El proyecto incluye `.vscode/settings.json` para que Live Server envíe `/api` al servidor de Rumbo en `127.0.0.1:3000`. Después de cambiar esta configuración, detén Live Server pulsando «Port: 5500» y vuelve a iniciarlo con «Go Live». Mantén Rumbo iniciado con `npm start` en otra terminal; Live Server muestra los archivos y Rumbo atiende las consultas de IA. Si cambias el puerto de Rumbo en `.env`, actualiza también `proxyUri` en la configuración del proyecto. El token permanece en `.env`, únicamente en el servidor.
+El proyecto incluye `.vscode/settings.json` para que Live Server envíe `/api` al servidor de Rumbo en `127.0.0.1:3000`. Después de cambiar esta configuración, detén Live Server pulsando «Port: 5500» y vuelve a iniciarlo con «Go Live». Con el inicio automático activado, no hace falta abrir otra terminal; Live Server muestra los archivos y Rumbo atiende las consultas de IA. Si cambias el puerto de Rumbo en `.env`, actualiza también `proxyUri` en la configuración del proyecto. El token permanece en `.env`, únicamente en el servidor.
 
 - LIGHTNING_API_KEY: secreto del servidor, nunca del navegador.
 - RUMBITO_MODEL: openai/gpt-5-mini, modelo validado con esta integración.

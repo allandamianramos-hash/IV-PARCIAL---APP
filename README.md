@@ -6,6 +6,8 @@ Sitio de viajes en HTML, CSS y JavaScript. Los catálogos y precios son de demos
 
 Desde esta carpeta, ejecutar `npm start` o abrir `INICIAR-RUMBO.cmd`. Visitar `http://localhost:3000`. No requiere instalar paquetes; utiliza Node 22 o posterior. El chat requiere LIGHTNING_API_KEY en el archivo local .env; consulta LEEME-RUMBITO.md.
 
+Para dejar Rumbito disponible entre sesiones de Windows, ejecutar una vez `ACTIVAR-RUMBO-AUTOMATICO.cmd`. Inicia el servidor en segundo plano al entrar a Windows y lo recupera si su proceso se detiene. `INICIAR-RUMBO.cmd` también funciona sin mantener abierta una terminal. El acceso automático depende de que esta carpeta permanezca en su ubicación; si la mueves, vuelve a activarlo.
+
 Editar los archivos de esta misma carpeta y recargar el navegador. El servidor sirve los cambios directamente y desactiva la caché. Si se abre otra copia del proyecto o un sitio publicado, no se verán necesariamente los cambios locales. Un cambio de un compañero debe estar guardado en un commit y subido a la rama compartida para poder descargarlo.
 
 ## Dónde está cada parte

@@ -26,7 +26,7 @@
     /* CATÁLOGO FICTICIO EN HNL */
     const catalog = window.RumboViajesDatos.destinations.map((trip,index) => ({
       id:trip.id, name:trip.name, country:trip.country, style:trip.type,
-      price:trip.inspirationBudget, duration:`${trip.nights+1} días / ${trip.nights} noches`,
+      price:trip.inspirationBudget, originalPrice:trip.originalInspirationBudget, promotion:trip.promotion, duration:`${trip.nights+1} días / ${trip.nights} noches`,
       code:`RMB-${String(index+1).padStart(2,'0')}`, image:trip.image, alt:trip.alt, description:trip.intro
     }));
 
@@ -164,7 +164,7 @@
             <div class="card-bottom">
               <div class="price">
                 <small>Presupuesto / persona</small>
-                <strong>${money(trip.price)} <span>HNL</span></strong>
+                ${trip.originalPrice ? `<del class="promo-original">${money(trip.originalPrice)}</del>` : ''}<strong>${money(trip.price)} <span>HNL</span></strong>${trip.promotion ? `<span class="promo-badge">−${trip.promotion.percent}% en el vuelo</span>` : ''}
               </div>
               <button
                 class="circle-link"

@@ -18,7 +18,7 @@
     const hotel=d?.hotels.find(h=>h.id===t.hotelId);
     const omit=!flight&&read('rumbo.no-flight.v1','')===`${t.destinationId}|${t.date}|${t.origin}`;
     if(!d||!validPeople||!validDates)issues.push({label:'Define destino, fechas y viajeros',url:steps[0][2]});
-    if(flight&&validPeople&&['economica','ejecutiva'].includes(t.cabin))items.push({key:'vuelos',label:'Vuelo de ida',title:`${t.origin} → ${d.arrival}`,detail:`${t.date} · ${flight.departure} · ${t.travelers} viajeros · ${t.cabin}`,total:(t.cabin==='ejecutiva'?flight.executive:flight.economy)*t.travelers,url:steps[0][2]});
+    if(flight&&validPeople&&['economica','ejecutiva'].includes(t.cabin))items.push({key:'vuelos',label:'Vuelo de ida',title:`${t.origin} → ${d.arrival}`,detail:`${t.date} · ${flight.departure} · ${t.travelers} viajeros · ${t.cabin}${flight.discountPercent ? ` · ${flight.discountPercent}% de descuento aplicado · ahorro ${money(((t.cabin==='ejecutiva'?flight.baseExecutive:flight.baseEconomy)-(t.cabin==='ejecutiva'?flight.executive:flight.economy))*t.travelers)}` : ''}`,total:(t.cabin==='ejecutiva'?flight.executive:flight.economy)*t.travelers,url:steps[0][2]});
     else if(!omit)issues.push({label:'Elige un vuelo o indica que no lo necesitas',url:steps[0][2]});
     if(hotel&&room&&validPeople&&integer(t.rooms,1,6)&&integer(t.nights,1,30)&&room.capacity*t.rooms>=t.travelers)items.push({key:'hoteles',label:'Hospedaje',title:hotel.name,detail:`${t.checkIn} · ${t.nights} noches · ${t.rooms} habitaciones · ${room.name}`,total:Math.round(hotel.rate*room.factor)*t.nights*t.rooms,url:steps[1][2]});
     else issues.push({label:'Elige tu hospedaje',url:steps[1][2]});

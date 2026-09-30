@@ -742,6 +742,15 @@
 
   const origins = ['Tegucigalpa', 'San Pedro Sula'];
 
+  // Una sola fuente de descuentos para anuncios, vuelos y resumen final.
+  const promotions = {
+    cancun: { percent: 25, name: 'Escapadas seleccionadas' },
+    madrid: { percent: 25, name: 'Escapadas seleccionadas' },
+    dolomitas: { percent: 20, name: 'Tu próximo rumbo: Italia' }
+  };
+  const discounted = (amount, percent) => Math.round(amount * (100 - percent)) / 100;
+  destinations.forEach(d => { d.promotion = promotions[d.id] || null; });
+
   function flights(destination, origin) {
     if (destination.arrival === origin) return [];
     const extra = origin === 'San Pedro Sula' ? 200 : 0;
@@ -752,15 +761,22 @@
       airline: airlines[providers[index % providers.length]],
       departure,
       minutes: destination.duration + (index === 1 ? 20 : 0),
-      economy: destination.economy + extra + index * 350,
-      executive: Math.round((destination.economy + extra + index * 350) * 1.65),
+      baseEconomy: destination.economy + extra + index * 350,
+      baseExecutive: Math.round((destination.economy + extra + index * 350) * 1.65),
+      economy: discounted(destination.economy + extra + index * 350, destination.promotion?.percent || 0),
+      executive: discounted(Math.round((destination.economy + extra + index * 350) * 1.65), destination.promotion?.percent || 0),
+      discountPercent: destination.promotion?.percent || 0,
       stops: destination.region === 'honduras' ? 'Sin escalas' : 'Con conexiones'
     }));
   }
 
   const inspirationBudgets = { roatan:8500, 'la-ceiba':6500, copan:4500, bali:32000, dolomitas:19000, kioto:43000 };
   destinations.forEach(d => { d.inspirationBudget = inspirationBudgets[d.id] || d.economy + Math.min(...d.hotels.map(h=>h.rate))*d.nights; });
-  window.RumboViajesDatos = { destinations, rooms, origins, flights };
+  destinations.filter(d => d.promotion).forEach(d => {
+    d.originalInspirationBudget = d.economy + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
+    d.inspirationBudget = discounted(d.economy, d.promotion.percent) + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
+  });
+  window.RumboViajesDatos = { destinations, rooms, origins, flights, promotions };
 })();
 
 
@@ -798,7 +814,7 @@
   const STORAGE_KEY = 'rumbo.integrante2.viaje.v1';
   const normalize = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const money = value => `L. ${Number(value).toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+  const money = value => `L. ${Number(value).toLocaleString('en-US', { maximumFractionDigits: 2 })}`;
   const integer = (value, min, max, fallback) => Number.isInteger(Number(value)) && Number(value) >= min && Number(value) <= max ? Number(value) : fallback;
   const destinationById = id => destinations.find(item => item.id === id);
 
@@ -952,7 +968,7 @@
       $('#destination-list').innerHTML = results.map(item => {
         const href = escapeHTML(link('detalle-destino', contextFor(item)));
         return `<article class="rv-destination-card"><a href="${href}" class="rv-card-photo" tabindex="-1" aria-hidden="true"><img src="${item.image}" alt="" width="1100" height="760" loading="lazy"><span class="rv-card-tag">${item.tag}</span></a>
-          <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p>${item.intro}</p><div class="rv-card-footer"><div><small>Idea de presupuesto / persona</small><strong>${money(item.inspirationBudget)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino ↗</a></div></div></article>`;
+          <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p>${item.intro}</p>${item.promotion ? `<p class="promo-note"><span class="promo-badge">−${item.promotion.percent}% en vuelos</span> Descuento automático</p>` : ''}<div class="rv-card-footer"><div><small>Idea de presupuesto / persona</small>${item.originalInspirationBudget ? `<del class="promo-original">${money(item.originalInspirationBudget)}</del>` : ''}<strong>${money(item.inspirationBudget)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino ↗</a></div></div></article>`;
       }).join('');
       const query = new URLSearchParams(new FormData(form));
       query.set('orden', order);
@@ -985,7 +1001,7 @@
     $('#destination-detail').innerHTML = `<nav class="rv-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><a href="viajes.html?pantalla=destinos">Destinos</a><span aria-hidden="true">/</span><span aria-current="page">${destination.name}</span></nav>
       <section class="rv-detail-hero" aria-labelledby="page-title"><img src="${destination.image}" alt="${destination.alt}" width="1100" height="760"><div class="rv-detail-title"><p class="rv-card-country">${destination.country} · ${destination.tag}</p><h1 id="page-title">${destination.name}</h1><p>${destination.intro}</p></div></section>
       <div class="rv-detail-body"><section class="rv-detail-copy"><p class="eyebrow">UN POCO DE INSPIRACIÓN</p><h2>Lo que te espera.</h2><p>${destination.description}</p><ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div><p><a class="rv-link-button" href="servicios.html?seccion=guias&destino=${destination.id}">Explorar recorridos con guía en ${destination.name} ↗</a></p>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Fotografía de inspiración. Las actividades se presentan como ideas y no están incluidas en los precios de vuelo u hotel.</p></section>
-      <aside class="rv-plan-panel" aria-labelledby="detail-plan-title"><p class="eyebrow">DA EL PRIMER PASO</p><h2 id="detail-plan-title">Tu escapada a ${destination.name}</h2><p class="rv-detail-price">Vuelo desde <strong>${money(destination.economy)}</strong></p><p class="rv-caption" style="margin: -8px 0 22px">Por persona · económica · solo ida desde Tegucigalpa.</p>
+      <aside class="rv-plan-panel" aria-labelledby="detail-plan-title"><p class="eyebrow">DA EL PRIMER PASO</p><h2 id="detail-plan-title">Tu escapada a ${destination.name}</h2>${destination.promotion ? `<p class="promo-badge">−${destination.promotion.percent}% en vuelos · descuento aplicado</p>` : ''}<p class="rv-detail-price">Vuelo desde ${destination.promotion ? `<del class="promo-original">${money(destination.economy)}</del>` : ''}<strong>${money(flights(destination, 'Tegucigalpa')[0]?.economy ?? destination.economy)}</strong></p>${destination.promotion ? '<p class="promo-note">Aplica a vuelos de ida, en ambas clases y orígenes del catálogo. Sin cupón. Hotel y otros servicios por separado. Oferta de demostración de Rumbo; no se transfiere a la aerolínea.</p>' : ''}<p class="rv-caption" style="margin: -8px 0 22px">Por persona · económica · solo ida desde Tegucigalpa.</p>
       <form id="detail-form"><div class="rv-field"><label for="detail-date">Fecha de salida</label><input id="detail-date" type="date" value="${state.date}" min="${today()}" required></div><div class="rv-field-pair"><div class="rv-field"><label for="detail-travelers">Viajeros</label><input id="detail-travelers" type="number" value="${state.travelers}" min="1" max="12" step="1" required></div><div class="rv-field"><label for="detail-nights">Noches de hotel</label><input id="detail-nights" type="number" value="${state.nights}" min="1" max="30" step="1" required></div></div><button class="button button-primary" type="submit" name="next" value="vuelos">Elegir vuelo <span aria-hidden="true">↗</span></button><button class="rv-link-button" type="submit" name="next" value="hoteles">Solo necesito hotel →</button></form></aside></div>`;
     $('#detail-form').addEventListener('submit', event => {
       event.preventDefault();
@@ -1001,7 +1017,7 @@
     const hotel = currentHotel();
     const flightTotal = flight ? flightRate(flight) * state.travelers : 0;
     const hotelTotal = hotel ? rate(hotel) * state.nights * state.rooms : 0;
-    const flightHTML = flight ? `<p><strong>${state.origin} → ${currentDestination().arrival}</strong></p><p>${flight.airline.name} · ${flight.code} · simulación</p><p>${formatDate(state.date)} · ${flight.departure} · ${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</p><p>${money(flightRate(flight))} × ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</p><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar aerolínea ↗</a><div class="rv-summary-line"><span>Vuelo de ida</span><strong>${money(flightTotal)}</strong></div>` : '<p>Sin vuelo seleccionado.</p>';
+    const flightHTML = flight ? `<p><strong>${state.origin} → ${currentDestination().arrival}</strong></p><p>${flight.airline.name} · ${flight.code} · simulación</p><p>${formatDate(state.date)} · ${flight.departure} · ${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</p>${flight.discountPercent ? `<p class="promo-note">Descuento ${flight.discountPercent}% aplicado · ahorras ${money(((state.cabin === 'ejecutiva' ? flight.baseExecutive : flight.baseEconomy) - flightRate(flight)) * state.travelers)}</p>` : ''}<p>${money(flightRate(flight))} × ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</p><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar aerolínea ↗</a><div class="rv-summary-line"><span>Vuelo de ida</span><strong>${money(flightTotal)}</strong></div>` : '<p>Sin vuelo seleccionado.</p>';
     const hotelHTML = hotel ? `<p><strong>${hotel.name} · ${rooms[state.roomType].name}</strong></p><p>${formatDate(state.checkIn)} → ${formatDate(addDays(state.checkIn, state.nights))}</p><p>${state.travelers} ${state.travelers === 1 ? 'huésped' : 'huéspedes'} · ${state.rooms} ${state.rooms === 1 ? 'habitación' : 'habitaciones'}</p><p>${money(rate(hotel))} × ${state.nights} noches × ${state.rooms} hab.</p><div class="rv-summary-line"><span>Hospedaje</span><strong>${money(hotelTotal)}</strong></div>` : '<p>Sin hotel seleccionado.</p>';
     return { flight, hotel, total: flightTotal + hotelTotal, flightHTML, hotelHTML };
   }
@@ -1070,7 +1086,7 @@
       $('#flight-results-meta').textContent = `${options.length} opciones · ${formatDate(state.date)} · ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}`;
       $('#flight-transfer').textContent = destination.transfer;
       $('#flight-transfer').hidden = !destination.transfer;
-      $('#flight-form-notice').textContent = 'Vuelos de ida · ajusta fechas y pasajeros.';
+      $('#flight-form-notice').textContent = destination.promotion ? `${destination.promotion.percent}% de descuento automático en los vuelos de ${destination.name}. Hotel y servicios por separado; promoción de demostración de Rumbo.` : 'Vuelos de ida · ajusta fechas y pasajeros.';
       $('#flight-list').innerHTML = options.length ? options.map((flight, index) => {
         const end = arrival(flight);
         const selected = state.flightId === flight.id;
@@ -1079,7 +1095,7 @@
           <div class="rv-ticket-details"><span><small>Fecha de salida</small><strong>${formatDate(state.date)}</strong></span><span><small>Pasajeros</small><strong>${state.travelers}</strong></span><span><small>Clase</small><strong>${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</strong></span></div>
           <div class="rv-flight-timing"><div class="rv-time"><strong>${flight.departure}</strong><small>${state.origin}</small></div><div class="rv-flight-line"><span>${duration(flight.minutes)}</span><div aria-hidden="true"></div><span>${flight.stops}</span></div><div class="rv-time"><strong>${end.time}${end.days ? `<sup> +${end.days} d</sup>` : ''}</strong><small>${destination.arrival}</small></div></div>
           <div class="rv-airline-booking"><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar en ${flight.airline.name} ↗<span class="sr-only"> (abre una pestaña nueva)</span></a><p>Horario, ruta, equipaje y precio simulados. Consulta rutas y disponibilidad en el sitio oficial; tus selecciones no se transfieren y este boleto no permite abordar.</p></div>
-          <div class="rv-flight-bottom"><p>${state.cabin === 'economica' ? 'Económica<br>Equipaje de mano' : 'Ejecutiva<br>Mano + una maleta'}<br>${end.days ? `Llegada: ${formatDate(addDays(state.date, end.days))}` : 'Llegada el mismo día'}</p><div class="rv-price"><strong>${money(flightRate(flight))}</strong><small>Por persona · solo ida</small><small>${money(flightRate(flight) * state.travelers)} por ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</small></div><button class="rv-select-button" type="button" data-select-flight="${flight.id}" aria-pressed="${selected}" aria-label="${selected ? 'Vuelo seleccionado' : 'Seleccionar vuelo'} ${flight.code} de las ${flight.departure}">${selected ? 'Seleccionado ✓' : 'Elegir vuelo'}</button></div></article>`;
+          <div class="rv-flight-bottom"><p>${state.cabin === 'economica' ? 'Económica<br>Equipaje de mano' : 'Ejecutiva<br>Mano + una maleta'}<br>${end.days ? `Llegada: ${formatDate(addDays(state.date, end.days))}` : 'Llegada el mismo día'}</p><div class="rv-price">${flight.discountPercent ? `<span class="promo-badge">−${flight.discountPercent}% aplicado</span><del class="promo-original">${money(state.cabin === 'ejecutiva' ? flight.baseExecutive : flight.baseEconomy)}</del>` : ''}<strong>${money(flightRate(flight))}</strong><small>Por persona · solo ida</small><small>${money(flightRate(flight) * state.travelers)} por ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</small></div><button class="rv-select-button" type="button" data-select-flight="${flight.id}" aria-pressed="${selected}" aria-label="${selected ? 'Vuelo seleccionado' : 'Seleccionar vuelo'} ${flight.code} de las ${flight.departure}">${selected ? 'Seleccionado ✓' : 'Elegir vuelo'}</button></div></article>`;
       }).join('') : `<div class="rv-empty"><h3>Ya sales de la ciudad de conexión.</h3><p>Desde ${state.origin}, este viaje continúa por tierra hacia ${destination.name}. El traslado no está incluido.</p><a class="button button-primary" href="${escapeHTML(link('hoteles', { flightId: '' }))}">Elegir hotel ↗</a></div>`;
       renderSummary('vuelos', render);
       updateNavigation();

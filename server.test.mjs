@@ -6,7 +6,7 @@ test("sirve el sitio y bloquea secretos y módulos privados", async () => {
   await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
   try {
     const url = `http://127.0.0.1:${server.address().port}`;
-    for (const path of ["/", "/chat-engine.js", "/tienda.js", "/servicios.html?seccion=traslados", "/servicios.js", "/servicios.css", "/common.js", "/common.css", "/imagenes-viajes/cultura.jpg", "/viajes.html?pantalla=hoteles"]) assert.equal((await fetch(url + path)).status, 200);
+    for (const path of ["/", "/chat-engine.js", "/promociones.js", "/promociones.css", "/imagenes/promo-ofertas.jpg", "/imagenes/promo-europa.jpg", "/imagenes/promo-temporada.jpg", "/imagenes/promo-destinos.jpg", "/tienda.js", "/servicios.html?seccion=traslados", "/servicios.js", "/servicios.css", "/common.js", "/common.css", "/imagenes-viajes/cultura.jpg", "/viajes.html?pantalla=hoteles"]) assert.equal((await fetch(url + path)).status, 200);
     for (const path of ["/.env", "/.env.example", "/server.mjs", "/chat-api.mjs", "/.git/config", "/package.json"]) assert.equal((await fetch(url + path)).status, 404);
     assert.equal((await fetch(url + "/api/chat")).status, 405);
     const health = await fetch(url + '/api/health');

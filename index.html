@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <script src="tienda.js" defer></script>
@@ -21,6 +21,8 @@
   <script src="journey.js" defer></script><script src="common.js" defer></script>
   <script src="chat-ui.js" defer></script>
   <link rel="stylesheet" href="chat.css">
+  <link rel="stylesheet" href="promociones.css">
+  <script src="promociones.js" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -93,55 +95,64 @@
 
   <main id="contenido">
     <!-- PORTADA -->
-    <section class="hero container" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 id="hero-title">
-          Tu próxima historia comienza con un
-          <span>nuevo rumbo.</span>
-        </h1>
+    <section class="campaign container" data-promo-carousel aria-roledescription="carrusel" aria-label="Promociones de Rumbo">
+<h1 class="campaign-accessible-title">Encuentra tu próximo rumbo: viajes y promociones</h1>
+      <article class="campaign-slide campaign-coast" data-promo-slide data-title="Escapadas seleccionadas" aria-roledescription="diapositiva" aria-label="1 de 4: Escapadas seleccionadas" >
+        <div class="campaign-copy"><p class="campaign-kicker">TU PLAYA TE ESTÁ ESPERANDO</p><h2>Vuela a <span>Cancún</span><br>por menos.</h2><p class="campaign-description">Unos días de mar te vendrían bien.</p>
+          <p class="campaign-price" data-promo-price="cancun"></p>
+          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=detalle-destino&amp;destino=cancun">Quiero ir a Cancún <span aria-hidden="true">↗</span></a></div>
+          <a class="campaign-secondary" href="viajes.html?pantalla=detalle-destino&amp;destino=madrid">¿Prefieres ciudad? Madrid también tiene −25 % <span aria-hidden="true">→</span></a>
 
-        <p class="hero-description">
-          Explora destinos, compara presupuestos y organiza los servicios
-          que necesitas para tu próximo viaje.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#destinos">
-            Explorar destinos <span aria-hidden="true">↗</span>
-          </a>
-          <a class="text-link" href="#servicios">Ver servicios →</a>
         </div>
+        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/destino-cancun.jpg" alt="Vista aérea de la costa de Cancún" width="960" height="640" fetchpriority="high"><figcaption>Cancún, México</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/hotel-bali-terraza.jpg" alt="Piscina junto al mar en Cancún" width="960" height="640" loading="lazy"><figcaption>Un ratito frente al mar</figcaption></figure>
+          <div class="campaign-offer"><span class="campaign-tag-hole" aria-hidden="true"></span><strong>−25%</strong><span>EN VUELOS</span></div>
+          <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
+        </div>
+        <p class="campaign-terms">25 % en vuelos de ida a Cancún y Madrid, económica y ejecutiva. Hotel y servicios aparte. Tarifas de demostración.</p>
+      </article>
+      <article class="campaign-slide campaign-alpine" data-promo-slide data-title="Europa a tu manera" aria-roledescription="diapositiva" aria-label="2 de 4: Europa a tu manera" hidden>
+        <div class="campaign-copy"><p class="campaign-kicker">PRÓXIMA PARADA: ITALIA</p><h2>Cambia de aire.<br>Vuela a <span>Italia.</span></h2><p class="campaign-description">Las Dolomitas, a tu ritmo. Montañas, paseos y tiempo para ti.</p>
+          <p class="campaign-price" data-promo-price="dolomitas"></p>
+          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=detalle-destino&amp;destino=dolomitas">Descubrir Italia <span aria-hidden="true">↗</span></a></div>
+          <a class="campaign-secondary" href="viajes.html?pantalla=destinos">Ver todos los destinos <span aria-hidden="true">→</span></a>
 
-        <button class="hero-adviser" type="button" data-open-planner>
-          <span class="rumbito-avatar rumbito-hero" aria-hidden="true"></span>
-          <span>
-            <small class="rumbito-eyebrow">TU COMPAÑERO DE VIAJE</small>
-            <strong>¡Hola! Soy Rumbito.</strong>
-            <small>Tu copiloto, tu curiosidad. Encontremos tu próximo rumbo.</small>
-            <span class="rumbito-invite">Planeemos tu próxima aventura ↗</span>
-          </span>
-          <span aria-hidden="true">↗</span>
-        </button>
-      </div>
+        </div>
+        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/dolomitas.jpg" alt="Paisaje de montaña de inspiración" width="960" height="640" loading="lazy"><figcaption>Aire de montaña</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/hotel-valle.jpg" alt="Habitación de inspiración para una estancia de montaña" width="960" height="640" loading="lazy"><figcaption>Y tiempo para descansar</figcaption></figure>
+          <div class="campaign-offer"><span class="campaign-tag-hole" aria-hidden="true"></span><strong>−20%</strong><span>EN VUELOS</span></div>
+          <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
+        </div>
+        <p class="campaign-terms">20 % en vuelos de ida a Venecia, económica y ejecutiva. Traslado a Dolomitas y hotel aparte. Tarifas de demostración.</p>
+      </article>
+      <article class="campaign-slide campaign-escape" data-promo-slide data-title="Tu viaje de fin de año" aria-roledescription="diapositiva" aria-label="3 de 4: Tu viaje de fin de año" hidden>
+        <div class="campaign-copy"><p class="campaign-kicker">ESTE FIN DE AÑO, REGÁLATE UN VIAJE</p><h2>Termina el año<br>en <span>otro lugar.</span></h2><p class="campaign-description">Elige las fechas. Nosotros te ayudamos a darle forma al viaje.</p>
 
-      <div class="hero-visual">
-        <img
-          class="hero-image"
-          src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
-          alt="Lago rodeado de montañas y un pueblo junto a la orilla"
-          width="1200"
-          height="1400"
-          fetchpriority="high"
-        >
-        <button class="photo-link surprise-button" id="surprise-destination" type="button">
-          <span>
-            <strong>Sorpréndeme</strong>
-            <small>Descubre un destino al azar</small>
-          </span>
-          <span class="surprise-arrow" aria-hidden="true">↗</span>
-        </button>
-      </div>
+          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=vuelos">Planear mi viaje <span aria-hidden="true">↗</span></a></div>
+          <a class="campaign-secondary" href="servicios.html">Explorar servicios para mi viaje <span aria-hidden="true">→</span></a>
+
+        </div>
+        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/bali.jpg" alt="Templo junto al agua en Bali" width="960" height="640" loading="lazy"><figcaption>Bali, Indonesia</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/kioto.jpg" alt="Calle tradicional de Kioto" width="960" height="640" loading="lazy"><figcaption>Kioto, Japón</figcaption></figure>
+
+          <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
+        </div>
+        <p class="campaign-terms">Elige fechas, vuelo, hospedaje y experiencias. Revisa los servicios y el total de tu plan antes de finalizar.</p>
+      </article>
+      <article class="campaign-slide campaign-explore" data-promo-slide data-title="¿A dónde viajarías?" aria-roledescription="diapositiva" aria-label="4 de 4: ¿A dónde viajarías?" hidden>
+        <div class="campaign-copy"><p class="campaign-kicker">EMPIEZA POR LO QUE TE GUSTA</p><h2>¿Playa, montaña<br>o <span>ciudad?</span></h2><p class="campaign-description">Tú eliges el paisaje. Rumbito te ayuda a encontrar tu próximo rumbo.</p>
+
+          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=destinos">Explorar destinos <span aria-hidden="true">↗</span></a></div>
+
+          <div class="campaign-choices" aria-label="Explorar por estilo"><a href="viajes.html?pantalla=destinos&amp;tipo=playa">Playa ↗</a><a href="viajes.html?pantalla=destinos&amp;tipo=naturaleza">Montaña ↗</a><a href="viajes.html?pantalla=destinos&amp;tipo=cultura">Ciudad ↗</a></div>
+        </div>
+        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/playa.jpg" alt="Playa tropical como inspiración de viaje" width="960" height="640" loading="lazy"><figcaption>Un poco de mar</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/dolomitas.jpg" alt="Paisaje de montaña como inspiración" width="960" height="640" loading="lazy"><figcaption>Aire libre</figcaption></figure><figure class="campaign-photo photo-3"><img src="imagenes-viajes/destino-madrid.jpg" alt="Vista de Madrid" width="960" height="640" loading="lazy"><figcaption>Calles por descubrir</figcaption></figure>
+
+          <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
+        </div>
+        <p class="campaign-terms">Explora los destinos del catálogo. Compara alternativas según tu presupuesto y organiza un viaje a tu medida.</p>
+      </article>
+      <div class="campaign-controls"><button type="button" class="campaign-pause" data-promo-pause>Ⅱ Pausar</button><div class="campaign-dots" role="group" aria-label="Elegir promoción"><button type="button" data-promo-dot aria-label="Ver promoción 1: Escapadas seleccionadas" aria-current="true"></button><button type="button" data-promo-dot aria-label="Ver promoción 2: Europa a tu manera" aria-current="false"></button><button type="button" data-promo-dot aria-label="Ver promoción 3: Tu viaje de fin de año" aria-current="false"></button><button type="button" data-promo-dot aria-label="Ver promoción 4: ¿A dónde viajarías?" aria-current="false"></button></div><a class="campaign-credits" href="viajes.html?pantalla=destinos#creditos-imagenes">Fotografías</a><span class="campaign-count" data-promo-count>01 / 04</span><button type="button" data-promo-prev aria-label="Promoción anterior">←</button><button type="button" data-promo-next aria-label="Promoción siguiente">→</button></div>
+      <span class="sr-only" data-promo-status aria-live="polite" aria-atomic="true"></span>
     </section>
+    <div class="campaign-assist container"><button class="hero-adviser" type="button" data-open-planner><span class="rumbito-avatar rumbito-hero" aria-hidden="true"></span><span><small class="rumbito-eyebrow">TU COMPAÑERO DE VIAJE</small><strong>¿No sabes por dónde empezar?</strong><span class="rumbito-invite">Rumbito te ayuda a encontrar tu próximo rumbo ↗</span></span></button><button class="campaign-surprise" id="surprise-destination" type="button">Sorpréndeme ↗</button></div>
 
     <!-- BUSCADOR -->
     <section class="container search-section" id="buscador" aria-labelledby="search-title">

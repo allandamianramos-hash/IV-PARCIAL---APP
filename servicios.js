@@ -21,10 +21,17 @@
   const pageNames = {'mi-viaje':'Mi viaje',perfil:'Mi perfil',ayuda:'Centro de ayuda',acerca:'Acerca de Rumbo',equipo:'Nuestro equipo',cambios:'Cambios',privacidad:'Privacidad',terminos:'Condiciones de uso'};
   document.title = `${pageNames[section] || configs[section]?.name || 'Servicios'} | Rumbo`;
   const crumb = name => `<nav class="service-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span>/</span><a href="index.html#servicios">Servicios</a><span>/</span><span aria-current="page">${name}</span></nav>`;
-  const servicePhotos={traslados:['imagenes-viajes/dolomitas.jpg','Paisaje de montaña como inspiración para el trayecto'],seguros:['imagenes-viajes/playa.jpg','Playa tranquila como inspiración para tu viaje'],guias:['imagenes-viajes/cultura.jpg','Destino cultural para explorar con un guía']};
+  const servicePhotos={
+    vuelos:['imagenes-viajes/servicio-vuelo.jpg','Ala de avión sobre un paisaje de montañas'],
+    hoteles:['imagenes-viajes/hotel-piscina.jpg','Piscina y terrazas de un hotel'],
+    traslados:['imagenes-viajes/servicio-traslado.jpg','Taxi recorriendo una calle de la ciudad'],
+    seguros:['imagenes-viajes/servicio-seguro.jpg','Pasaporte abierto preparado para un viaje'],
+    guias:['imagenes-viajes/servicio-guia.jpg','Viajero caminando por un sendero natural'],
+    tienda:['imagenes/bolso-mano.jpg','Bolso de viaje de cuero']
+  };
   const hero = (title, intro, eyebrow, icon='↗', stamp='TU PRÓXIMO RUMBO') => {
-    const [src,alt]=servicePhotos[section]||['imagenes-viajes/naturaleza.jpg','Paisaje de inspiración para tu próximo viaje'];
-    return `<section class="service-hero"><div><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><p>${intro}</p><span class="service-hero-label">${stamp}</span></div><figure class="service-photo"><img src="${src}" alt="${alt}" width="720" height="540"></figure></section>`;
+    const [src,alt]=servicePhotos[section]||['imagenes-viajes/naturaleza.jpg','Sendero entre árboles para explorar nuevos lugares'];
+    return `<section class="service-hero"><div><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><p>${intro}</p><span class="service-hero-label">${stamp}</span>${section==='servicios'?'<a class="button button-primary service-explore" href="#opciones-servicios">Elegir un servicio <span aria-hidden="true">↘</span></a>':''}</div><figure class="service-photo"><img src="${src}" alt="${alt}" width="720" height="540"></figure></section>`;
   };
   const tabs = () => `<nav class="service-tabs" aria-label="Servicios de viaje"><a href="viajes.html?pantalla=vuelos">Vuelos</a><a href="viajes.html?pantalla=hoteles">Hoteles</a>${Object.entries(configs).map(([id,c]) => `<a href="servicios.html?seccion=${id}" ${section===id?'aria-current="page"':''}>${c.name}</a>`).join('')}</nav>`;
   const input = (id,label,type,value,extra='') => `<div class="service-field"><label for="${id}">${label}</label><input id="${id}" name="${id}" type="${type}" value="${value}" ${extra} required></div>`;
@@ -120,9 +127,9 @@
   }
 
   function hub(){
-    root.innerHTML=hero('Cada detalle, en su lugar.','Ya tienes la idea. Ahora elige qué necesitas para hacerla tuya. Puedes empezar por cualquier servicio.','ORGANIZA TU VIAJE')+`<div class="service-grid">${[
+    root.innerHTML=hero('Cada detalle, en su lugar.','Ya tienes la idea. Ahora elige qué necesitas para hacerla tuya. Puedes empezar por cualquier servicio.','ORGANIZA TU VIAJE')+`<div class="service-grid" id="opciones-servicios">${[
       ['✈','Vuelos','Compara horarios, clases y precios para llegar a tu destino.','viajes.html?pantalla=vuelos','Buscar vuelos'],['⌂','Hoteles','Elige dónde descansar y calcula tu estancia completa.','viajes.html?pantalla=hoteles','Buscar hoteles'],['↔','Traslados','Conecta el aeropuerto y tu hospedaje con espacio para todos.','servicios.html?seccion=traslados','Organizar traslado'],['◇','Seguro de viaje','Explora planes y compara sus diferencias.','servicios.html?seccion=seguros','Comparar planes'],['◎','Guías locales','Descubre historias, paisajes y costumbres en compañía.','servicios.html?seccion=guias','Explorar recorridos'],['▣','Tienda de viaje','Prepara tu equipaje con los esenciales que van contigo.','tienda.html','Explorar tienda']
-    ].map(([icon,title,desc,url,label])=>`<article class="service-tile" ${url==='tienda.html'?'id="tienda"':''}><img class="service-tile-photo" src="${url.includes("traslados")?servicePhotos.traslados[0]:url.includes("seguros")?servicePhotos.seguros[0]:url.includes("guias")?servicePhotos.guias[0]:url.includes("hoteles")?'imagenes-viajes/hotel-piscina.jpg':url.includes("tienda")?'imagenes/bolso-mano.jpg':'imagenes-viajes/playa.jpg'}" alt="${title}" loading="lazy" width="560" height="320"><h2>${title}</h2><p>${desc}</p><a class="text-link" href="${url}">${label} ↗</a></article>`).join('')}</div><div class="service-footer-links"><a class="button button-outline" href="viajes.html?pantalla=destinos">Todavía estoy buscando un destino</a><a class="button button-primary" href="servicios.html?seccion=mi-viaje">Ver mis elecciones ↗</a></div>`;
+    ].map(([icon,title,desc,url,label])=>`<article class="service-tile" ${url==='tienda.html'?'id="tienda"':''}><img class="service-tile-photo" src="${servicePhotos[url.includes("traslados")?"traslados":url.includes("seguros")?"seguros":url.includes("guias")?"guias":url.includes("hoteles")?"hoteles":url.includes("tienda")?"tienda":"vuelos"][0]}" alt="${title}" loading="lazy" width="560" height="320"><h2>${title}</h2><p>${desc}</p><a class="text-link" href="${url}">${label} ↗</a></article>`).join('')}</div><div class="service-footer-links"><a class="button button-outline" href="viajes.html?pantalla=destinos">Todavía estoy buscando un destino</a><a class="button button-primary" href="servicios.html?seccion=mi-viaje">Ver mis elecciones ↗</a></div>`;
   }
 
   function savedPage(){ window.RumboJourney.renderSummary(root); }

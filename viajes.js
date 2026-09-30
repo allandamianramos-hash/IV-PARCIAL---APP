@@ -326,7 +326,8 @@
       }).join('');
       const query = new URLSearchParams(new FormData(form));
       query.set('orden', order);
-      const anchor = location.hash === '#creditos-imagenes' ? '#creditos-imagenes' : '#catalogo';
+      const anchor = ['#creditos-imagenes', '#catalogo'].includes(location.hash) ? location.hash : '';
+      // Entrar a Destinos conserva el comienzo de la página; solo un ancla explícita salta al catálogo.
       try { history.replaceState(null, '', `viajes.html?pantalla=destinos&${query}${anchor}`); } catch (_) { /* Navegación local. */ }
     }
     function reset() { form.reset(); $('#orden-destinos').value = 'recommended'; render(); }

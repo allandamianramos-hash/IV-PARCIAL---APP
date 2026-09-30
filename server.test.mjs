@@ -9,6 +9,11 @@ test("sirve el sitio y bloquea secretos y módulos privados", async () => {
     for (const path of ["/", "/chat-engine.js", "/tienda.js", "/servicios.html?seccion=traslados", "/servicios.js", "/servicios.css", "/common.js", "/common.css", "/imagenes-viajes/cultura.jpg", "/viajes.html?pantalla=hoteles"]) assert.equal((await fetch(url + path)).status, 200);
     for (const path of ["/.env", "/.env.example", "/server.mjs", "/chat-api.mjs", "/.git/config", "/package.json"]) assert.equal((await fetch(url + path)).status, 404);
     assert.equal((await fetch(url + "/api/chat")).status, 405);
+    const health = await fetch(url + '/api/health');
+    assert.equal(health.status, 200);
+    assert.deepEqual(await health.json(), { app: 'rumbo-viajes', status: 'ok' });
+    assert.equal((await fetch(url + '/api/health', { method: 'HEAD' })).status, 200);
+    for (const path of ['/rumbo-background.ps1', '/ACTIVAR-RUMBO-AUTOMATICO.cmd']) assert.equal((await fetch(url + path)).status, 404);
   } finally { await new Promise(resolve => server.close(resolve)); }
 });
 
@@ -74,4 +79,17 @@ test('límite de uso evita nuevas llamadas y el timeout libera el servidor', asy
     const first = await post(input); assert.equal(first.status, 503); assert.ok(!(await first.text()).includes('test-secret'));
     assert.equal((await post(input)).status, 429); assert.equal(calls, 1);
   });
+});
+
+test('distingue llave, permisos, créditos, cuota y modelo sin divulgar el error privado', async () => {
+  for (const [status, code] of [[401, 'AI_AUTH_FAILED'], [403, 'AI_ACCESS_DENIED'], [402, 'AI_CREDITS_REQUIRED'], [429, 'AI_RATE_LIMITED'], [400, 'AI_REQUEST_REJECTED'], [404, 'AI_MODEL_UNAVAILABLE'], [500, 'AI_UNAVAILABLE']]) {
+    await withServer({ apiKey: 'test-secret', fetchImpl: async () => Response.json({ error: 'test-secret private account details' }, { status }) }, async post => {
+      const response = await post(input);
+      assert.equal(response.status, 503);
+      const result = await response.json();
+      assert.equal(result.code, code);
+      assert.ok(!JSON.stringify(result).includes('test-secret'));
+      assert.ok(!JSON.stringify(result).includes('private account'));
+    });
+  }
 });

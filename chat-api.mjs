@@ -28,7 +28,7 @@ export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, mode
     const allowed = process.env.APP_ORIGIN;
     const local = /^https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?$/;
     if (req.headers['sec-fetch-site'] === 'cross-site' || (origin && (allowed ? origin !== allowed : !local.test(origin)))) return json(res, 403, { error: 'Origen no permitido.' });
-    if (!apiKey) return json(res, 503, { error: 'Rumbito necesita configurar su conexión en el servidor.' });
+    if (!apiKey) return json(res, 503, { code: 'AI_NOT_CONFIGURED', error: 'Falta configurar la llave de IA en el servidor que está ejecutando esta página.' });
     if (!/^application\/json(?:;|$)/i.test(req.headers['content-type'] || '')) return json(res, 415, { error: 'Se requiere JSON.' });
     let body;
     try {
@@ -67,14 +67,27 @@ export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, mode
         headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({ model, reasoning_effort: 'minimal', max_completion_tokens: 2400, messages: [{ role: 'system', content: system }, { role: 'system', content: `Guía interna para esta respuesta: ${guide.reply}` }, ...body.history.map(({ role, content }) => ({ role, content })), { role: 'user', content: body.message }] })
       });
-      if (!upstream.ok) return json(res, 503, { error: 'No pude conectar con mi servicio de respuestas. Intenta de nuevo en un momento.' });
+      if (!upstream.ok) {
+        const failures = {
+          401: ['AI_AUTH_FAILED', 'El proveedor rechazó la llave de IA. Revisa la llave configurada en el servidor.'],
+          403: ['AI_ACCESS_DENIED', 'La cuenta de IA no tiene permiso para utilizar el modelo configurado.'],
+          402: ['AI_CREDITS_REQUIRED', 'La cuenta del proveedor necesita créditos para responder.'],
+          429: ['AI_RATE_LIMITED', 'El proveedor alcanzó un límite de uso o cuota. Revisa la cuenta e inténtalo más tarde.'],
+          400: ['AI_REQUEST_REJECTED', 'El proveedor rechazó la configuración de la solicitud de IA.'],
+          404: ['AI_MODEL_UNAVAILABLE', 'El proveedor no encuentra el modelo de IA configurado.']
+        };
+        const [code, error] = failures[upstream.status] || ['AI_UNAVAILABLE', 'El servicio de IA no está disponible temporalmente. Intenta de nuevo.'];
+        console.warn('Rumbito:', code, 'HTTP', upstream.status);
+        return json(res, 503, { code, error });
+      }
       const data = await upstream.json();
       const reply = data.choices?.[0]?.message?.content;
-      if (typeof reply !== 'string' || !reply.trim() || data.choices?.[0]?.finish_reason !== 'stop') return json(res, 502, { error: 'La respuesta no llegó completa. Intenta de nuevo.' });
+      if (typeof reply !== 'string' || !reply.trim() || data.choices?.[0]?.finish_reason !== 'stop') return json(res, 502, { code: 'AI_INVALID_RESPONSE', error: 'La respuesta no llegó completa. Intenta de nuevo.' });
       return json(res, 200, { ...guide, reply: reply.slice(0, 6000), state, source: 'lightning' });
     } catch (error) {
       console.warn('Rumbito: proveedor no disponible', error.name, error.cause?.code || '');
-      return json(res, 503, { error: 'No pude conectar con el proveedor de IA. Intenta de nuevo en un momento.' });
+      const timedOut = error.name === 'TimeoutError' || error.name === 'AbortError';
+      return json(res, 503, { code: timedOut ? 'AI_TIMEOUT' : 'AI_CONNECTION_FAILED', error: timedOut ? 'La IA tardó demasiado en responder. Intenta de nuevo.' : 'El servidor no pudo conectar con el proveedor de IA. Revisa su conexión a Internet.' });
     }
     finally { active--; }
   };

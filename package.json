@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server.mjs",
+    "open": "node server.mjs --open",
     "test": "node --test server.test.mjs chat.test.mjs project.test.mjs journey.test.mjs variantes.test.mjs catalogo-imagenes.test.mjs chat-client.test.mjs"
   },
   "engines": {

@@ -1,4 +1,4 @@
 @echo off
 cd /d "%~dp0"
-node server.mjs
-pause
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0rumbo-background.ps1" -Open
+if errorlevel 1 pause

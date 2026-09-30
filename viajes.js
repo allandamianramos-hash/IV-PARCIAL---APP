@@ -106,6 +106,634 @@
     }
   ];
 
+  // Nombres ficticios propios para cada alojamiento de demostración.
+  const hotelNames = {
+    roatan: ['Hotel Paradise', 'Brisa del Caribe', 'Coral Boutique', 'Apartamentos Marea Clara', 'Villa Caracola'],
+    'la-ceiba': ['Hotel Río Verde', 'Las Palmas Lodge', 'Bahía Serena', 'Apartamentos Sendero del Río', 'Hotel Ceiba Dorada'],
+    copan: ['Hotel Patio Maya', 'Jardín de Copán', 'La Loma Boutique', 'Apartamentos Casa del Glifo', 'Posada Piedra de Jade'],
+    bali: ['Jardín de Loto', 'Verde Retreat', 'Océano Resort', 'Apartamentos Arrozal de Seda', 'Villa Flor de Frangipani'],
+    dolomitas: ['Refugio Alpino', 'Valle Sereno', 'Cumbres Boutique', 'Apartamentos Nido de Abeto', 'Chalet Roca del Alba'],
+    kioto: ['Casa Sakura', 'Jardín de Bambú', 'Luna de Kioto', 'Apartamentos Patio de Arce', 'Posada Farol de Papel'],
+    utila: ['Posada Concha Azul', 'Hotel Jardín del Manglar', 'Boutique Faro de Nácar', 'Apartamentos Brisa del Arrecife', 'Villa Cayo Escondido'],
+    tela: ['Hotel Arena de Ámbar', 'Lodge Sendero de Palmas', 'Boutique Bahía del Sol', 'Apartamentos Patio de Cocos', 'Villa Orquídea Costera'],
+    yojoa: ['Posada Orilla del Junco', 'Lodge Bosque de Niebla', 'Boutique Mirador del Agua', 'Apartamentos Casa del Colibrí', 'Hotel Reflejos del Lago'],
+    antigua: ['Posada Patio de Canela', 'Hotel Jardín de los Arcos', 'Boutique Casona del Volcán', 'Apartamentos Balcón de Barro', 'Casa Buganvilia Colonial'],
+    panama: ['Hotel Istmo de Luz', 'Hotel Patio del Canal', 'Boutique Azotea del Pacífico', 'Apartamentos Ventana del Casco', 'Hotel Bahía de Cristal'],
+    cancun: ['Posada Duna Turquesa', 'Hotel Jardín de las Conchas', 'Boutique Mar de Ópalo', 'Apartamentos Viento de Arena', 'Villa Laguna del Amanecer'],
+    miami: ['Hotel Ocean Mosaic', 'Hotel Palm Avenue', 'Boutique Biscayne Glow', 'Apartamentos Coral Courtyard', 'Hotel Sunset Terrace'],
+    madrid: ['Posada Patio del Laurel', 'Hotel Jardín de la Villa', 'Boutique Cúpula de Cobre', 'Apartamentos Balcón de las Letras', 'Hotel Azotea del Olmo']
+  };
+
+  // Nuevas propuestas de demostración; créditos fotográficos en el catálogo.
+  const additions = [
+    ['utila','Utila','Honduras','playa','Utila',3,3500,65,1400,'Una isla para disfrutar del mar y organizar una escapada tranquila.'],
+    ['tela','Tela','Honduras','playa','San Pedro Sula',3,2100,40,1150,'Playas, sabores caribeños y paseos por la costa hondureña.'],
+    ['yojoa','Lago de Yojoa','Honduras','naturaleza','San Pedro Sula',2,2100,40,950,'Días entre paisajes verdes, senderos y descanso cerca del lago.'],
+    ['antigua','Antigua Guatemala','Guatemala','cultura','Ciudad de Guatemala',4,4800,110,1350,'Calles coloniales, plazas y cafés para descubrir caminando.'],
+    ['panama','Ciudad de Panamá','Panamá','cultura','Ciudad de Panamá',4,6500,160,1850,'Una escapada entre el Casco Antiguo y la ciudad contemporánea.'],
+    ['cancun','Cancún','México','playa','Cancún',5,7200,210,2300,'Descanso junto al Caribe y tiempo para explorar la costa.'],
+    ['miami','Miami','Estados Unidos','playa','Miami',4,8200,180,2900,'Playas, barrios con personalidad y paseos por la ciudad.'],
+    ['madrid','Madrid','España','cultura','Madrid',6,19500,840,2400,'Museos, parques y plazas para disfrutar de una estancia urbana.']
+  ];
+  additions.forEach(([id,name,country,type,arrival,nights,economy,duration,base,intro]) => {
+    const nature = type === 'naturaleza';
+    destinations.push({
+      id,name,country,region:country==='Honduras'?'honduras':'internacional',type,
+      tag:type==='playa'?'Playa y descanso':nature?'Naturaleza y aventura':'Cultura y ciudad',
+      image:`imagenes-viajes/destino-${id}.jpg`,
+      alt:`Vista de ${name}; fotografía de Wikimedia Commons`,
+      intro,description:intro+' Combina tus visitas con tiempo libre y elige el alojamiento que mejor se adapte a tu presupuesto.',
+      highlights:type==='playa'?['Paseos por la costa','Gastronomía local','Tiempo de descanso']:nature?['Contemplar paisajes','Recorridos al aire libre','Descanso en la naturaleza']:['Recorrer el centro','Conocer espacios culturales','Probar sabores locales'],
+      tip:'Confirma traslados, horarios y disponibilidad con los proveedores antes de reservar.',
+      arrival,transfer:arrival!==name?`Llegada aérea propuesta: ${arrival}. El traslado a ${name} se organiza por separado y no está incluido.`:'',
+      nights,economy,duration,
+      hotels:[
+        {id:`${id}-esencial`,name:hotelNames[id][0],stars:3,area:'Zona urbana',rate:base,image:'hotel-habitacion.jpg',amenities:['Wi-Fi','Aire acondicionado']},
+        {id:`${id}-jardin`,name:hotelNames[id][1],stars:4,area:'Zona tranquila',rate:Math.round(base*1.3),image:'hotel-piscina.jpg',amenities:['Piscina','Wi-Fi','Desayuno']},
+        {id:`${id}-boutique`,name:hotelNames[id][2],stars:5,area:'Zona de descanso',rate:Math.round(base*1.8),image:type==='playa'?'hotel-playa.jpg':'hotel-habitacion.jpg',amenities:['Wi-Fi','Desayuno','Estacionamiento']}
+      ]
+    });
+  });
+  destinations.forEach(d => {
+    const base = Math.min(...d.hotels.map(h=>h.rate));
+    d.hotels.push(
+      {id:`${d.id}-apartamentos`,name:hotelNames[d.id][3],stars:3,area:'Zona residencial',rate:Math.round(base*.85),image:'hotel-habitacion.jpg',amenities:['Wi-Fi','Cocina','Estacionamiento']},
+      {id:`${d.id}-terraza`,name:hotelNames[d.id][4],stars:4,area:'Zona tranquila',rate:Math.round(base*1.45),image:'hotel-piscina.jpg',amenities:['Piscina','Wi-Fi','Desayuno']}
+    );
+  });
+
+  const hotelPhotos = {
+  "paradise": {
+    "image": "hotel-paradise.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "WiNG",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:The_Four_Seasons_Hotel_%26_Resort_Macau_Swimming_Pool_2009.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "brisa": {
+    "image": "hotel-brisa.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Basile Morin",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Canopy_bed_of_Amantaka_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "coral": {
+    "image": "hotel-coral.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Sharon Hahn Darlin",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Dalyan,_Turkey_March_2022_-_Nish_Caria_Butik_Hotel_%26_Restaurant_-_Pool.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "roatan-apartamentos": {
+    "image": "hotel-roatan-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Marina Kuperman Villatoro",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Premier-hotel-bedroom_Huehuetenango_Guatemala.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "roatan-terraza": {
+    "image": "hotel-roatan-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Ian Cunliffe",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Talland_Bay_Hotel_and_swimming_pool_-_geograph.org.uk_-_1190750.jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "rio": {
+    "image": "hotel-rio-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Cerulean_Tower_Tokyu_Hotel_Sky_View_Floor_Deluxe_Single_bedroom_20160923-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "palmas": {
+    "image": "hotel-palmas-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Hiroshima_Moderate_Double_bedroom_20190928-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "bahia": {
+    "image": "hotel-bahia.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Anass Sedrati",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Pool_-_Nicon_Hotel.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "la-ceiba-apartamentos": {
+    "image": "hotel-la-ceiba-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Anthony O'Neil",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom,_Bear_Hotel_(geograph_4847914).jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "la-ceiba-terraza": {
+    "image": "hotel-la-ceiba-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Gary J. Wood from Toronto, ON, Canada",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Omni_Interlocken_Resort,_pool.jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "patio": {
+    "image": "hotel-patio.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Curt Smith from Bellevue, WA, USA",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom,_H%C3%B4tel_d%27Abbaye,_Paris_May_2017.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "jardin": {
+    "image": "hotel-jardin.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Sharon Hahn Darlin",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Uxmal,_Yucatan,_Mexico_-_Swimming_pool,_Uxmal_Resort_Maya_2021.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "loma": {
+    "image": "hotel-loma.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "jjmusgrove",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Antigua_Guatemala_-_Fine_Hotel_Bedroom.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "copan-apartamentos": {
+    "image": "hotel-copan-apartamentos-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Trusty_Kanazawa_Korinbo_Superior_Single_bedroom_20131206-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "copan-terraza": {
+    "image": "hotel-copan-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Andy Gnias",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Roosevelt_from_the_hotel_pool.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "loto": {
+    "image": "hotel-loto.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "掬茶",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Single_bedroom_of_Hotel_Hokke_Club_Hakodate.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "ubud": {
+    "image": "hotel-ubud-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Cross_Hotel_Kyoto_Superior_King_bedroom_20210724-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "oceano": {
+    "image": "hotel-oceano.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Thomas from Switzerland",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_pool_(6323259177).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "bali-apartamentos": {
+    "image": "hotel-bali-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "掬茶",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Single_bedroom_of_APA_Hotel_Hachinohe_Chuo.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "bali-terraza": {
+    "image": "hotel-bali-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Monica Wong from New York City, NY, United States",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Infinity_Pool_at_the_Cancun_Caribe_Park_Royal_Grand_Hotel_%26_Resort.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "alpino": {
+    "image": "hotel-alpino.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Sharon Hahn Darlin",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Bancroft_Hotel,_Berkeley,_California_-_Bedroom.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "valle": {
+    "image": "hotel-valle.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Bob Harvey",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_bedroom_-_geograph.org.uk_-_5280127.jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "cumbres": {
+    "image": "hotel-cumbres-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_La_Raison_Osaka_Standard_Twin_bedroom_20161216-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "dolomitas-apartamentos": {
+    "image": "hotel-dolomitas-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Edit_Yokohama_Single_bedroom_20190714-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "dolomitas-terraza": {
+    "image": "hotel-dolomitas-terraza-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Richmond_Hotel_Premier_Kyoto_Ekimae_Corner_Twin_bedroom_20220205-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "sakura": {
+    "image": "hotel-sakura.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Monterey_Kobe_Deluxe_Single_bedroom_20111122-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "bambu": {
+    "image": "hotel-bambu.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "jjmusgrove",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Lake_Bedroom_Guatemala_2018.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "luna": {
+    "image": "hotel-luna.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Thomas from Switzerland",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_pool_with_view_over_the_valley_(6323256471).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "kioto-apartamentos": {
+    "image": "hotel-kioto-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Lotte_City_Hotel_Kinshicho_Elite_Single_bedroom_20140927-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "kioto-terraza": {
+    "image": "hotel-kioto-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de un hotel con piscina",
+    "photoAuthor": "Jim Killock",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Thermal_Pool.jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "utila-esencial": {
+    "image": "hotel-utila-esencial.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Sunroute_Ariake_Standard_Single_bedroom_20110603-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "utila-jardin": {
+    "image": "hotel-utila-jardin.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hakodate_Kokusai_Hotel_Premium_Twin_bedroom_20201017-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "utila-boutique": {
+    "image": "hotel-utila-boutique.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Richmond_Hotel_Premier_Tokyo_Oshiage_Single_bedroom_20160220-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "utila-apartamentos": {
+    "image": "hotel-utila-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Kobe_Portopia_Hotel_Oval_Club_single_bedroom_20130621-002.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "utila-terraza": {
+    "image": "hotel-utila-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Richmond_Hotel_Premier_Musashi-Kosugi_single_bedroom_20100618-001.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "tela-esencial": {
+    "image": "hotel-tela-esencial.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Kyoto_Brighton_Hotel_Superior_Double_bedroom_20200823-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "tela-jardin": {
+    "image": "hotel-tela-jardin-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Millennium_Mitsui_Garden_Hotel_Tokyo_Superior_Double_bedroom_20170318-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "tela-boutique": {
+    "image": "hotel-tela-boutique.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Celestine_Hotel_Superior_Double_bedroom_20160501-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "tela-apartamentos": {
+    "image": "hotel-tela-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Kyoto_Century_Hotel_Kyo-Premium_bedroom_20210717-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "tela-terraza": {
+    "image": "hotel-tela-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Niwa_Tokyo_standard_bedroom_20131027-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "yojoa-esencial": {
+    "image": "hotel-yojoa-esencial.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Tokyu_Bizfort_Kobe_Motomachi_single_bedroom_20120427-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "yojoa-jardin": {
+    "image": "hotel-yojoa-jardin.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Kanazawa_Moderate_Double_bedroom_20200103-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "yojoa-boutique": {
+    "image": "hotel-yojoa-boutique.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:ANA_Hotel_Okayama_Upper_Floor_Single_bedroom_20150809-002.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "yojoa-apartamentos": {
+    "image": "hotel-yojoa-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Monterey_Amalie_Deluxe_Twin_bedroom_20130531-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "yojoa-terraza": {
+    "image": "hotel-yojoa-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Piena_Kobe_Royal_Twin_bedroom_20141124-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "antigua-esencial": {
+    "image": "hotel-antigua-esencial.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Monterey_Kyoto_Standard_Twin_bedroom_20130201-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "antigua-jardin": {
+    "image": "hotel-antigua-jardin.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Sendai_Standard_Single_B_bedroom_20100809-001.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "antigua-boutique": {
+    "image": "hotel-antigua-boutique.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Nishitetsu_Hotel_Croom_Hakata_Premium_Business_bedroom_20190413-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "antigua-apartamentos": {
+    "image": "hotel-antigua-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Associa_Takayama_Resort_Standard_Twin_bedroom_20170723-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "antigua-terraza": {
+    "image": "hotel-antigua-terraza-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Ginza_Premier_Moderate_bedroom_20151223-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "panama-esencial": {
+    "image": "hotel-panama-esencial.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Nick Anderson",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Waldorf_London_hotel_room.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "panama-jardin": {
+    "image": "hotel-panama-jardin-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:The_Gate_Hotel_Kaminarimon_Modest_Semi_Double_bedroom_20140928-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "panama-boutique": {
+    "image": "hotel-panama-boutique.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Mack Male from Edmonton, AB, Canada",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:The_hotel_room_(2342689366).jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "panama-apartamentos": {
+    "image": "hotel-panama-apartamentos-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Mitsui_Garden_Hotel_Osaka_Premier_Superior_bedroom_20140316-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "panama-terraza": {
+    "image": "hotel-panama-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Palickap",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Yerevan,_Silachi_Hotel,_room_2.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "cancun-esencial": {
+    "image": "hotel-cancun-esencial.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Huzaifakumo",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Gombe_International_Hotel_Room_2.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "cancun-jardin": {
+    "image": "hotel-cancun-jardin.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Kurt Kaiser",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_in_hotel_room.jpg",
+    "photoLicense": "CC0",
+    "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "cancun-boutique": {
+    "image": "hotel-cancun-boutique.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "OhanaUnitedTalk page",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Kuujjuarapik_Co-op_hotel_room_2.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "cancun-apartamentos": {
+    "image": "hotel-cancun-apartamentos-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Good_Nature_Hotel_Kyoto_Garden_View_Terrace_Double_bedroom_20200704-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "cancun-terraza": {
+    "image": "hotel-cancun-terraza-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Cross_Hotel_Osaka_Comfort_Floor_twin_bedroom_20120217-001.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "miami-esencial": {
+    "image": "hotel-miami-esencial-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "J o",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Richmond_Hotels_single_bedroom_20110806-001.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "miami-jardin": {
+    "image": "hotel-miami-jardin.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Casey And Sonja",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Congress_Plaza_Hotel_(Room)_(4347277667).jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "miami-boutique": {
+    "image": "hotel-miami-boutique.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Douglas Muth from Philadelphia, PA, USA",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:My_Hotel_Room_(51750469535).jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "miami-apartamentos": {
+    "image": "hotel-miami-apartamentos.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Andy Mitchell from Glasgow, UK",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Royal_Marine_Hotel_room_(3280716439).jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "miami-terraza": {
+    "image": "hotel-miami-terraza.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Fredericknoronha",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Chandigarh,_India_starred_hotel_room_01.jpg",
+    "photoLicense": "CC BY 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "madrid-esencial": {
+    "image": "hotel-madrid-esencial-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Bai Timan Lam SAREOYSEE",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:MC_%E6%BE%B3%E9%96%80_Hotel_Okura_Macau_%E5%A4%A7%E5%80%89%E9%85%92%E5%BA%97_bedroom_%E6%88%BF%E9%96%93_May_2018_LGM_01.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "madrid-jardin": {
+    "image": "hotel-madrid-jardin-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Tess Mattew",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:2025.07.13_Interior_bedroom_Hotel_Hlybokae_01.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "madrid-boutique": {
+    "image": "hotel-madrid-boutique.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "Sharon Hahn Darlin",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:My_hotel_room_in_Heihe_for_179_yuan_%3D_US_$29!_(8809150032).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "madrid-apartamentos": {
+    "image": "hotel-madrid-apartamentos-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "JIP",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_Hotel_Korpilampi.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "madrid-terraza": {
+    "image": "hotel-madrid-terraza-ref.jpg",
+    "imageAlt": "Fotografía de referencia de una habitación de hotel",
+    "photoAuthor": "JIP",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_ProfilHotels_Riddargatan.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  }
+};
+  destinations.forEach(d => d.hotels.forEach(h => Object.assign(h, hotelPhotos[h.id])));
+
+  const airlines = {
+    cm:{name:'CM Airlines',url:'https://www.cmairlines.com/es'},
+    avianca:{name:'avianca',url:'https://www.avianca.com/es/'},
+    copa:{name:'Copa Airlines',url:'https://www.copaair.com/es/vuelos'},
+    american:{name:'American Airlines',url:'https://www.aa.com/es-us/vuelos'},
+    iberia:{name:'Iberia',url:'https://www.iberia.com/es/'}
+  };
+
   const rooms = {
     estandar: { name: 'Estándar', capacity: 2, factor: 1 },
     familiar: { name: 'Familiar', capacity: 4, factor: 1.6 },
@@ -117,9 +745,11 @@
   function flights(destination, origin) {
     if (destination.arrival === origin) return [];
     const extra = origin === 'San Pedro Sula' ? 200 : 0;
-    return ['08:30', '12:15', '16:45'].map((departure, index) => ({
+    const providers = destination.region==='honduras'?['cm']:['bali','kioto'].includes(destination.id)?['american']:['madrid','dolomitas'].includes(destination.id)?['iberia','avianca','american']:['avianca','copa','american'];
+    return ['08:30', '12:15', '16:45', '06:00', '14:20', '19:10'].map((departure, index) => ({
       id: `${destination.id}-${origins.indexOf(origin)}-${index}`,
-      code: `RMB ${210 + destinations.indexOf(destination) * 10 + index}`,
+      code: `DEMO ${210 + destinations.indexOf(destination) * 10 + index}`,
+      airline: airlines[providers[index % providers.length]],
       departure,
       minutes: destination.duration + (index === 1 ? 20 : 0),
       economy: destination.economy + extra + index * 350,
@@ -129,7 +759,7 @@
   }
 
   const inspirationBudgets = { roatan:8500, 'la-ceiba':6500, copan:4500, bali:32000, dolomitas:19000, kioto:43000 };
-  destinations.forEach(d => { d.inspirationBudget = inspirationBudgets[d.id]; });
+  destinations.forEach(d => { d.inspirationBudget = inspirationBudgets[d.id] || d.economy + Math.min(...d.hotels.map(h=>h.rate))*d.nights; });
   window.RumboViajesDatos = { destinations, rooms, origins, flights };
 })();
 
@@ -371,7 +1001,7 @@
     const hotel = currentHotel();
     const flightTotal = flight ? flightRate(flight) * state.travelers : 0;
     const hotelTotal = hotel ? rate(hotel) * state.nights * state.rooms : 0;
-    const flightHTML = flight ? `<p><strong>${state.origin} → ${currentDestination().arrival}</strong></p><p>${formatDate(state.date)} · ${flight.departure} · ${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</p><p>${money(flightRate(flight))} × ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</p><div class="rv-summary-line"><span>Vuelo de ida</span><strong>${money(flightTotal)}</strong></div>` : '<p>Sin vuelo seleccionado.</p>';
+    const flightHTML = flight ? `<p><strong>${state.origin} → ${currentDestination().arrival}</strong></p><p>${flight.airline.name} · ${flight.code} · simulación</p><p>${formatDate(state.date)} · ${flight.departure} · ${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</p><p>${money(flightRate(flight))} × ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</p><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar aerolínea ↗</a><div class="rv-summary-line"><span>Vuelo de ida</span><strong>${money(flightTotal)}</strong></div>` : '<p>Sin vuelo seleccionado.</p>';
     const hotelHTML = hotel ? `<p><strong>${hotel.name} · ${rooms[state.roomType].name}</strong></p><p>${formatDate(state.checkIn)} → ${formatDate(addDays(state.checkIn, state.nights))}</p><p>${state.travelers} ${state.travelers === 1 ? 'huésped' : 'huéspedes'} · ${state.rooms} ${state.rooms === 1 ? 'habitación' : 'habitaciones'}</p><p>${money(rate(hotel))} × ${state.nights} noches × ${state.rooms} hab.</p><div class="rv-summary-line"><span>Hospedaje</span><strong>${money(hotelTotal)}</strong></div>` : '<p>Sin hotel seleccionado.</p>';
     return { flight, hotel, total: flightTotal + hotelTotal, flightHTML, hotelHTML };
   }
@@ -445,8 +1075,10 @@
         const end = arrival(flight);
         const selected = state.flightId === flight.id;
         return `<article class="rv-flight-card" data-selected="${selected}" aria-label="Vuelo ${flight.code}">
-          <div class="rv-flight-top"><div class="rv-flight-name"><span class="rv-plane-icon" aria-hidden="true">✈</span><div><strong>Rumbo Air</strong><small>${flight.code}</small></div></div><span class="rv-badge">${index === 0 ? 'Primera opción' : 'Otra forma de llegar'}</span></div>
+          <div class="rv-flight-top"><div class="rv-flight-name"><span class="rv-plane-icon" aria-hidden="true">✈</span><div><strong>${flight.airline.name}</strong><small>Referencia ${flight.code} · no es número de vuelo</small></div></div><span class="rv-badge">Boleto de muestra</span></div>
+          <div class="rv-ticket-details"><span><small>Fecha de salida</small><strong>${formatDate(state.date)}</strong></span><span><small>Pasajeros</small><strong>${state.travelers}</strong></span><span><small>Clase</small><strong>${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</strong></span></div>
           <div class="rv-flight-timing"><div class="rv-time"><strong>${flight.departure}</strong><small>${state.origin}</small></div><div class="rv-flight-line"><span>${duration(flight.minutes)}</span><div aria-hidden="true"></div><span>${flight.stops}</span></div><div class="rv-time"><strong>${end.time}${end.days ? `<sup> +${end.days} d</sup>` : ''}</strong><small>${destination.arrival}</small></div></div>
+          <div class="rv-airline-booking"><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar en ${flight.airline.name} ↗<span class="sr-only"> (abre una pestaña nueva)</span></a><p>Horario, ruta, equipaje y precio simulados. Consulta rutas y disponibilidad en el sitio oficial; tus selecciones no se transfieren y este boleto no permite abordar.</p></div>
           <div class="rv-flight-bottom"><p>${state.cabin === 'economica' ? 'Económica<br>Equipaje de mano' : 'Ejecutiva<br>Mano + una maleta'}<br>${end.days ? `Llegada: ${formatDate(addDays(state.date, end.days))}` : 'Llegada el mismo día'}</p><div class="rv-price"><strong>${money(flightRate(flight))}</strong><small>Por persona · solo ida</small><small>${money(flightRate(flight) * state.travelers)} por ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</small></div><button class="rv-select-button" type="button" data-select-flight="${flight.id}" aria-pressed="${selected}" aria-label="${selected ? 'Vuelo seleccionado' : 'Seleccionar vuelo'} ${flight.code} de las ${flight.departure}">${selected ? 'Seleccionado ✓' : 'Elegir vuelo'}</button></div></article>`;
       }).join('') : `<div class="rv-empty"><h3>Ya sales de la ciudad de conexión.</h3><p>Desde ${state.origin}, este viaje continúa por tierra hacia ${destination.name}. El traslado no está incluido.</p><a class="button button-primary" href="${escapeHTML(link('hoteles', { flightId: '' }))}">Elegir hotel ↗</a></div>`;
       renderSummary('vuelos', render);
@@ -518,8 +1150,9 @@
         const nightly = rate(hotel, type);
         const selected = hotel.id === state.hotelId && type === state.roomType;
         const enoughSpace = rooms[type].capacity * state.rooms >= state.travelers;
-        return `<article class="rv-hotel-card" data-selected="${selected}"><img class="rv-hotel-photo" src="imagenes-viajes/${hotel.image}" alt="Alojamiento en el destino" width="700" height="700" loading="lazy">
-          <div class="rv-hotel-content"><p class="rv-stars" aria-label="${hotel.stars} estrellas">${'★'.repeat(hotel.stars)}</p><h3>${hotel.name}</h3><p class="rv-hotel-location">${destination.name} · ${hotel.area}</p><ul class="rv-amenities" aria-label="Servicios">${hotel.amenities.map(item => `<li>${item}</li>`).join('')}</ul>
+        return `<article class="rv-hotel-card" data-selected="${selected}"><img class="rv-hotel-photo" src="imagenes-viajes/${hotel.image}" alt="${escapeHTML(hotel.imageAlt || 'Fotografía de referencia de un alojamiento')}" width="700" height="700" loading="lazy">
+          <div class="rv-hotel-content"><p class="rv-stars" aria-label="${hotel.stars} estrellas de demostración">${'★'.repeat(hotel.stars)}</p><h3>${hotel.name}</h3><p class="rv-hotel-location">${destination.name} · ${hotel.area}</p><p class="rv-demo-caption">Hospedaje de demostración · fotografía de referencia</p><ul class="rv-amenities" aria-label="Servicios">${hotel.amenities.map(item => `<li>${item}</li>`).join('')}</ul>
+          ${hotel.photoSource ? `<details class="rv-photo-credit"><summary>Créditos de esta fotografía</summary><p>Fotografía de referencia; no corresponde al hospedaje ficticio ni garantiza su ubicación o instalaciones.</p><p>${escapeHTML(hotel.photoAuthor)} · <a href="${escapeHTML(hotel.photoSource)}" target="_blank" rel="noopener noreferrer">Ver original ↗</a> · ${hotel.photoLicenseUrl ? `<a href="${escapeHTML(hotel.photoLicenseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(hotel.photoLicense)}</a>` : escapeHTML(hotel.photoLicense)}. Miniatura con encuadre adaptado mediante CSS.</p></details>` : ''}
           <div class="rv-field rv-room-choice"><label for="room-${hotel.id}">Tipo de habitación en ${hotel.name}</label><select id="room-${hotel.id}" data-room-hotel="${hotel.id}">${Object.entries(rooms).map(([key, room]) => `<option value="${key}" ${key === type ? 'selected' : ''}>${room.name} · hasta ${room.capacity} personas / hab.</option>`).join('')}</select></div>
           <div class="rv-hotel-price-row"><div class="rv-price"><strong>${money(nightly)}</strong><small>Por noche / habitación</small></div><button class="rv-select-button" type="button" data-select-hotel="${hotel.id}" aria-pressed="${selected}" aria-label="${selected ? 'Hotel seleccionado' : 'Seleccionar'} ${hotel.name}" ${!enoughSpace || dirty ? 'disabled' : ''}>${selected ? 'Seleccionado ✓' : 'Elegir hotel'}</button></div><p class="rv-hotel-total">${state.nights} ${state.nights === 1 ? 'noche' : 'noches'} × ${state.rooms} ${state.rooms === 1 ? 'habitación' : 'habitaciones'} · <strong>${money(nightly * state.nights * state.rooms)}</strong></p>
           ${enoughSpace ? '' : `<p class="rv-capacity-error">Para ${state.travelers} personas necesitas al menos ${Math.ceil(state.travelers / rooms[type].capacity)} habitaciones de este tipo, o elegir otra capacidad.</p>`}</div></article>`;

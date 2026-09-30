@@ -439,6 +439,21 @@ h1, h2, h3 { text-wrap: balance; }
 }
 
 
+/* Boleto de muestra: separa el itinerario de la consulta al proveedor. */
+.rv-ticket-details { display:flex; flex-wrap:wrap; gap:18px 32px; padding:14px 0; margin-bottom:20px; border-block:1px dashed var(--border); }
+.rv-ticket-details span { display:grid; gap:4px; }
+.rv-ticket-details small { color:var(--muted); font-size:11px; }
+.rv-ticket-details strong { font-size:13px; }
+.rv-airline-booking { padding:14px 16px; margin-bottom:18px; border-radius:10px; background:var(--primary-soft,#e8f3f3); }
+.rv-airline-booking a { color:var(--primary-dark); font-weight:600; font-size:14px; display:inline-block; padding-block:5px; }
+.rv-airline-booking p,.rv-demo-caption { font-size:12px; line-height:1.6; color:var(--muted); margin:6px 0 0; }
+.rv-flight-name { min-width:0; }
+.rv-photo-credit { margin:12px 0; font-size:11px; line-height:1.6; color:var(--muted); }
+.rv-photo-credit summary { cursor:pointer; color:var(--primary-dark); }
+.rv-photo-credit p { margin:6px 0; overflow-wrap:anywhere; }
+.rv-flight-name small { overflow-wrap:anywhere; }
+@media(max-width:600px) { .rv-flight-top { flex-wrap:wrap; } }
+
 /* Créditos dentro del catálogo: evita una página auxiliar independiente. */
 .rv-credits { margin-top: 30px; padding: 18px 22px; border: 1px solid var(--border); border-radius: 12px; background: white; color: var(--muted); }
 .rv-credits summary { color: var(--primary-dark); font-size: 12px; font-weight: 600; cursor: pointer; }

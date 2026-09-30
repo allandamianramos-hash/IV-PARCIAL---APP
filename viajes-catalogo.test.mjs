@@ -1,0 +1,64 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile, access } from 'node:fs/promises';
+import vm from 'node:vm';
+import { createHash } from 'node:crypto';
+
+const source = await readFile(new URL('viajes.js', import.meta.url), 'utf8');
+const context = { window: {} };
+vm.runInNewContext(source.slice(0, source.indexOf('/* Abre una')), context);
+const { destinations, origins, flights } = context.window.RumboViajesDatos;
+
+test('cada hospedaje tiene una fotografía distinta con autor y licencia', async () => {
+  const photos=JSON.parse(await readFile(new URL('imagenes-viajes/CREDITOS-HOTELES.json',import.meta.url),'utf8'));
+  const hashes=new Set(),sources=new Set();
+  const hotels=destinations.flatMap(d=>d.hotels);
+  assert.equal(photos.length,hotels.length);
+  for(const hotel of hotels){
+    const credit=photos.find(p=>p.id===hotel.id);
+    assert.equal(hotel.image,credit.file);
+    assert.ok(hotel.photoAuthor && hotel.photoLicense && hotel.imageAlt);
+    assert.equal(new URL(hotel.photoSource).hostname,'commons.wikimedia.org');
+    const data=await readFile(new URL(`imagenes-viajes/${hotel.image}`,import.meta.url));
+    assert.equal(data.readUInt16BE(0),0xffd8,'Debe ser un JPEG válido');
+    const hash=createHash('sha256').update(data).digest('hex');
+    assert.ok(!hashes.has(hash),`Imagen repetida: ${hotel.id}`);
+    assert.ok(!sources.has(hotel.photoSource),`Fuente repetida: ${hotel.id}`);
+    hashes.add(hash);sources.add(hotel.photoSource);
+  }
+});
+
+test('los 14 destinos tienen presupuestos, cinco hoteles e imágenes locales', async () => {
+  assert.equal(destinations.length, 14);
+  assert.equal(new Set(destinations.map(d=>d.id)).size, 14);
+  const hotelIds = new Set();
+  for (const d of destinations) {
+    assert.ok(d.inspirationBudget > 0);
+    assert.equal(d.hotels.length, 5);
+    await access(new URL(d.image, import.meta.url));
+    for (const h of d.hotels) {
+      assert.ok(!hotelIds.has(h.id)); hotelIds.add(h.id);
+      assert.ok(h.rate > 0);
+      await access(new URL(`imagenes-viajes/${h.image}`, import.meta.url));
+    }
+  }
+  assert.equal(hotelIds.size, 70);
+});
+
+test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => {
+  const hosts = new Set(['www.cmairlines.com','www.avianca.com','www.copaair.com','www.aa.com','www.iberia.com']);
+  for (const d of destinations) for (const origin of origins) {
+    const options = flights(d, origin);
+    assert.equal(options.length, d.arrival===origin?0:6);
+    assert.equal(new Set(options.map(f=>f.id)).size, options.length);
+    for (const f of options) {
+      const url = new URL(f.airline.url);
+      assert.equal(url.protocol,'https:'); assert.ok(hosts.has(url.hostname));
+      assert.match(f.code,/^DEMO /);
+      assert.ok(f.economy > 0 && f.executive > f.economy);
+    }
+  }
+  const existing = flights(destinations[0], origins[0])[0];
+  assert.equal(existing.id,'roatan-0-0');
+  assert.equal(existing.economy,3200);
+});

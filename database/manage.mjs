@@ -2,7 +2,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { loadEnvFile } from 'node:process';
 import vm from 'node:vm';
-import { getDb, closeDb } from '../db.mjs';
+import { getDb, closeDb } from '../backend/node/db.mjs';
 try { loadEnvFile(new URL('../.env', import.meta.url)); } catch (e) { if(e.code!=='ENOENT') throw e; }
 const command = process.argv[2] || 'check';
 try {
@@ -29,7 +29,7 @@ try {
     // Trusted repository source only; never evaluate uploaded SQL or user input.
     const scope={window:{},URLSearchParams,document:{body:{classList:{contains:()=>false},dataset:{}},readyState:'loading',addEventListener(){},querySelector:()=>null}};
     vm.createContext(scope);
-    for(const file of ['viajes.js','tienda.js']) vm.runInContext(await readFile(new URL('../'+file,import.meta.url),'utf8'),scope,{timeout:3000});
+    for(const file of ['viajes.js','tienda.js']) vm.runInContext(await readFile(new URL('../public/'+file,import.meta.url),'utf8'),scope,{timeout:3000});
     const {destinations,rooms,origins,promotions}=scope.window.RumboViajesDatos;
     const options=vm.runInContext('PRODUCT_OPTIONS',scope),adjustments=vm.runInContext('OPTION_PRICE_ADJUSTMENTS',scope);
     const tx=new sql.Transaction(pool);await tx.begin();

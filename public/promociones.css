@@ -1,0 +1,5 @@
+/* Precios promocionales compartidos. El HERO completo vive en index.html. */
+.promo-badge { display: inline-block; border-radius: 20px; padding: 5px 10px; background: #e2edcd; color: #235428; font-size: 12px; font-weight: 700; }
+.promo-original { font-size: 14px; color: #64756d; margin-right: 8px; font-weight: 400; }
+.rv-price .promo-badge, .rv-price .promo-original { display: block; width: fit-content; margin-bottom: 5px; }
+.promo-note { color: #236353; font-size: 13px; line-height: 1.6; }

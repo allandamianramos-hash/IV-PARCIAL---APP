@@ -1,0 +1,5 @@
+Options -Indexes
+RewriteEngine On
+# Route ALL requests, including existing .env/.sql/.php files, through the allowlist.
+RewriteRule ^router\.php$ - [END]
+RewriteRule ^ router.php [END,QSA]

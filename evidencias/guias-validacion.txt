@@ -1,0 +1,161 @@
+
+> rumbo-viajes@1.0.0 test
+> node --test server.test.mjs chat.test.mjs project.test.mjs journey.test.mjs variantes.test.mjs catalogo-imagenes.test.mjs chat-client.test.mjs viajes-catalogo.test.mjs promociones.test.mjs database.test.mjs guias.test.mjs
+
+✔ las cien fichas conservan sus identificadores y usan la asignación visual revisada (5.7456ms)
+✔ todos los archivos del catálogo son imágenes JPEG válidas y locales (535.7603ms)
+✔ los productos que antes compartían fotos ajenas tienen imágenes diferentes (0.6614ms)
+✔ file y vistas estáticas responden en modo local sin exigir API (342.2896ms)
+✔ caídas, timeouts y JSON inválido permiten continuar y recuperar IA después (40.1125ms)
+✔ los límites y rechazos de acceso no se ocultan con el respaldo (10.8809ms)
+✔ el modo local conserva la causa concreta enviada por el servidor y se recupera (3.1252ms)
+✔ conecta los nuevos servicios desde el chat (19.1355ms)
+✔ recoge varias preferencias en lenguaje natural (874.8765ms)
+✔ normaliza presupuestos habituales (4.8853ms)
+✔ importe por persona espera el numero y se recalcula (1.5557ms)
+✔ conversacion guiada completa (3.2368ms)
+✔ rechaza presupuesto insuficiente y cuenta fuera del rango (0.8157ms)
+✔ no convierte moneda extranjera arbitrariamente (0.2859ms)
+✔ hoteles conserva destino y permite cambiar a itinerario (1.6231ms)
+✔ consultar hoteles no regenera el pase (1.1027ms)
+✔ destino pedido no se sustituye por otro mas barato (3.4558ms)
+✔ destino fuera del pase se explica (0.5856ms)
+✔ productos especificos y contactos salen del catalogo (0.6454ms)
+✔ editar presupuesto conserva el resto y reinicia la pregunta (0.9937ms)
+✔ preguntas ajenas no inventan respuestas ni reservas (0.4482ms)
+✔ recupera un cambio pendiente después de una caída y recarga (180.9877ms)
+✔ el servidor restaura datos sin caché local y conserva eliminaciones (3.5447ms)
+✔ un visitante nuevo no hereda caché ni cambios del visitante anterior (1.648ms)
+✔ un conflicto conserva el borrador local y no sobrescribe el servidor (1.7716ms)
+✔ solo permite selecciones conocidas y limita los datos de visitante (7.6893ms)
+✔ los datos incrustados no pueden cerrar el script HTML (20.4122ms)
+✔ todos los destinos muestran sus propias actividades e imagen (812.0195ms)
+✔ el enlace de destino prevalece sobre una elección guardada (3.1479ms)
+✔ los filtros vacíos permiten recuperar todas las experiencias (5.4579ms)
+✔ guardar calcula el grupo, conserva otros servicios y restaura la selección (85.6341ms)
+✔ cada recorrido tiene una foto local distinta, licencia y paradas específicas (427.1853ms)
+✔ cambiar personas recalcula la selección y cambiar ciudad restablece las categorías (7.9346ms)
+✔ cambiar preferencias invalida la selección y no permite guardar valores inválidos (10.5219ms)
+✔ viaje completo reúne vuelo y hotel sin pedir seleccionarlos otra vez (18.9265ms)
+✔ Mi viaje recalcula el descuento al pasar de tres a dos viajeros (793.119ms)
+✔ el resumen incluye variantes y cantidades de la tienda (4.6568ms)
+✔ el ticket requiere cierre explícito y se invalida al modificar el viaje (6.0147ms)
+✔ se detectan servicios de otras fechas o viajeros (4.0164ms)
+✔ eliminar vuelo y hospedaje conserva la otra selección y actualiza el total (6.1716ms)
+✔ eliminar un producto conserva las otras variantes (5.863ms)
+✔ vaciar el viaje elimina todas las selecciones y permite deshacer (5.2934ms)
+✔ cada servicio puede eliminarse sin afectar a los otros (4.8389ms)
+✔ una eliminación invalida el pago incluso si luego se restaura la selección (5.7551ms)
+✔ todos los scripts compilan antes de iniciar el sitio (3376.7721ms)
+✔ no quedan conflictos de Git en los archivos de la aplicación (67.0193ms)
+✔ cada página tiene un documento, recursos existentes y scripts sin duplicar (68.2215ms)
+✔ el catálogo compartido funciona fuera de la tienda y sus imágenes existen (45.4123ms)
+✖ ofertas anunciadas coinciden con los importes de vuelo y no se acumulan (18.2951ms)
+✖ Mi viaje aplica una sola vez el descuento a cada pasajero y conserva el hotel (274.4458ms)
+✖ las cuatro campañas configuradas conservan precios y recursos reales (46.126ms)
+✔ sirve el sitio y bloquea secretos y módulos privados (596.5532ms)
+✖ destinos, hoteles, vuelos y servicios generan enlaces también en el servidor (85.2481ms)
+✔ GPT usa el catálogo, conserva el plan y recibe la llave solo en el servidor (15.669ms)
+✔ rechaza datos inválidos y orígenes ajenos sin gastar solicitudes (22.1615ms)
+Rumbito: AI_AUTH_FAILED HTTP 401
+✔ errores del proveedor y respuestas truncadas no filtran secretos (30.7448ms)
+Rumbito: proveedor no disponible TimeoutError 
+✔ límite de uso evita nuevas llamadas y el timeout libera el servidor (15.1159ms)
+Rumbito: AI_AUTH_FAILED HTTP 401
+Rumbito: AI_ACCESS_DENIED HTTP 403
+Rumbito: AI_CREDITS_REQUIRED HTTP 402
+Rumbito: AI_RATE_LIMITED HTTP 429
+Rumbito: AI_REQUEST_REJECTED HTTP 400
+Rumbito: AI_MODEL_UNAVAILABLE HTTP 404
+Rumbito: AI_UNAVAILABLE HTTP 500
+✔ distingue llave, permisos, créditos, cuota y modelo sin divulgar el error privado (60.9938ms)
+✔ las doce variantes conservan el mismo modelo y escalan sin deformarlo (8.9332ms)
+✔ el tamaño crece progresivamente y los filtros de cada miniatura son únicos (0.5937ms)
+✔ opciones desconocidas no inyectan contenido y los demás productos conservan su foto (0.3584ms)
+✔ el descuento de grupo empieza en tres pasajeros y se acumula sobre la tarifa rebajada (3.2419ms)
+✔ todos los anuncios con precio apuntan a destinos con tarifas finitas (11.8724ms)
+✔ solo quedan los destinos aprobados y cada uno tiene un aeropuerto identificado (0.8449ms)
+✔ cada hospedaje tiene una fotografía distinta con autor y licencia (491.4168ms)
+✔ los 14 destinos tienen presupuestos, cinco hoteles e imágenes locales (19.6122ms)
+✔ cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS (3.9688ms)
+ℹ tests 67
+ℹ suites 0
+ℹ pass 63
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4081.0797
+
+✖ failing tests:
+
+test at promociones.test.mjs:15:1
+✖ ofertas anunciadas coinciden con los importes de vuelo y no se acumulan (18.2951ms)
+  TypeError: Cannot read properties of undefined (reading 'discountPercent')
+      at TestContext.<anonymous> (file:///C:/Users/yeiso/OneDrive/Escaneos/Escritorio/SITIO%20WEB%20DE%20VIAJES/IV-PARCIAL---APP/promociones.test.mjs:20:20)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at promociones.test.mjs:34:1
+✖ Mi viaje aplica una sola vez el descuento a cada pasajero y conserva el hotel (274.4458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 41681.25
+  - 43875
+  
+      at TestContext.<anonymous> (file:///C:/Users/yeiso/OneDrive/Escaneos/Escritorio/SITIO%20WEB%20DE%20VIAJES/IV-PARCIAL---APP/promociones.test.mjs:42:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 41681.25,
+    expected: 43875,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at promociones.test.mjs:49:1
+✖ las cuatro campañas configuradas conservan precios y recursos reales (46.126ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + {
+  +   label: 'ADICIONAL EN VUELOS',
+  +   text: '−5%'
+  + }
+  - null
+  
+      at TestContext.<anonymous> (file:///C:/Users/yeiso/OneDrive/Escaneos/Escritorio/SITIO%20WEB%20DE%20VIAJES/IV-PARCIAL---APP/promociones.test.mjs:58:32)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { text: '−5%', label: 'ADICIONAL EN VUELOS' },
+    expected: null,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at server.test.mjs:28:1
+✖ destinos, hoteles, vuelos y servicios generan enlaces también en el servidor (85.2481ms)
+  AssertionError [ERR_ASSERTION]: Vuelos a Kioto
+      at file:///C:/Users/yeiso/OneDrive/Escaneos/Escritorio/SITIO%20WEB%20DE%20VIAJES/IV-PARCIAL---APP/server.test.mjs:34:14
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async withServer (file:///C:/Users/yeiso/OneDrive/Escaneos/Escritorio/SITIO%20WEB%20DE%20VIAJES/IV-PARCIAL---APP/server.test.mjs:25:9)
+      at async TestContext.<anonymous> (file:///C:/Users/yeiso/OneDrive/Escaneos/Escritorio/SITIO%20WEB%20DE%20VIAJES/IV-PARCIAL---APP/server.test.mjs:29:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

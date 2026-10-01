@@ -1,0 +1,241 @@
+.global-rumbito{position:static;width:fit-content;margin:24px auto;display:flex;gap:10px;align-items:center;padding:12px 18px;border:1px solid #bfd5d2;border-radius:100px;background:#fff;color:#065f68;font:600 13px 'DM Sans','Segoe UI',sans-serif;box-shadow:0 6px 24px #18304418}.global-rumbito span{color:#9a6c2a;font-size:23px}.global-rumbito:hover{background:#e8f3f3}.header-inner{gap:20px}.main-nav a[aria-current=page]{color:#065f68;font-weight:700}.header-actions a{display:inline-flex;align-items:center;justify-content:center}.footer-column>a{display:block}.site-header .main-nav{flex-wrap:wrap;row-gap:10px}
+@media(max-width:760px){.site-header .header-inner{flex-wrap:wrap;justify-content:space-between}.site-header .main-nav{order:3;width:100%;justify-content:center;gap:18px;padding-bottom:8px}.site-header .header-actions{gap:10px}.global-rumbito{padding:8px 14px}.site-header .main-nav a{font-size:13px}}
+
+/* Un recorrido común, con la misma jerarquía en todas las páginas. */
+.journey-progress{max-width:1180px;margin:24px auto 32px;padding:20px;border:1px solid #dce5e4;border-radius:18px;background:#fff;color:#183044;font:500 13px/1.5 'DM Sans','Segoe UI',sans-serif}
+.journey-progress>p{margin:0 0 14px;font-size:11px;letter-spacing:1.2px;color:#065f68}.journey-progress>p>span{letter-spacing:0;margin-left:14px;color:#52636c;font-weight:400}
+.journey-progress ol{list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;padding:0;margin:0}.journey-progress a{display:flex;align-items:center;gap:8px;padding:11px 7px;border-radius:10px;text-decoration:none;color:inherit}.journey-progress a>span{display:grid;place-items:center;width:24px;height:24px;flex-shrink:0;background:#e8f3f3;border-radius:50%;font-size:11px}.journey-progress a:hover{background:#f0f6f5}.journey-progress a[aria-current]{background:#087f8c;color:#fff}.journey-progress a[aria-current]>span{background:#fff;color:#065f68}
+.journey-next{max-width:1180px;margin:32px auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px;border:1px solid #c4d9d6;border-radius:18px;background:#e8f3f3}.journey-next>div{text-align:right}.journey-next p{font-size:13px;margin:0 0 12px;color:#52636c}.journey-next>a{color:#065f68;text-decoration:underline;white-space:nowrap}
+.journey-heading{margin:30px 0}.journey-heading h1{font-size:clamp(30px,4vw,48px);line-height:1.14;max-width:800px;margin:12px 0 20px;letter-spacing:-1.4px}.journey-heading>p:last-child{color:#52636c}
+.journey-overview{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(270px,1fr);gap:28px;align-items:start}.journey-item{display:flex;justify-content:space-between;gap:20px;background:#fff;border:1px solid #dce5e4;border-radius:16px;padding:24px;margin-bottom:14px}.journey-item small{color:#065f68;text-transform:uppercase;letter-spacing:1px}.journey-item h2{font-size:22px;margin:8px 0}.journey-item p{font-size:14px;color:#52636c;margin-bottom:12px}.journey-item strong{white-space:nowrap}.journey-item a{font-size:13px;color:#065f68;text-decoration:underline}.journey-checkout{background:#e8f3f3;border-radius:20px;padding:28px;position:sticky;top:115px}.journey-checkout h2{font-size:34px;margin:10px 0}.journey-checkout h3{margin-top:22px}.journey-checkout ul{padding-left:20px}.journey-checkout li{margin:12px 0}.journey-checkout a{text-decoration:underline;color:#065f68}.journey-checkout .button{width:100%;margin-top:16px;white-space:normal}.journey-note{font-size:12px!important;color:#52636c;line-height:1.6;margin-top:16px!important}.journey-consent{display:flex;gap:10px;font-size:13px;line-height:1.6;margin-top:24px;align-items:start}.journey-consent input{margin-top:5px;width:18px;height:18px;flex-shrink:0;accent-color:#087f8c}
+.journey-ticket{margin:32px 0;display:flex;justify-content:space-between;gap:28px;padding:34px;border:2px dashed #087f8c;border-radius:20px;background:#fbf2e3}.journey-ticket h2{font-size:32px}.journey-ticket p{margin:12px 0}.journey-ticket>div:last-child{border-left:1px dashed #9eacaa;padding-left:28px;align-self:center}.journey-ticket>div:last-child p{font-size:12px}.journey-extras{border:1px solid #dce5e4;border-radius:16px;padding:20px;margin-top:20px}.journey-extras summary{cursor:pointer;font-weight:600}.journey-extras p{margin:12px 0}.journey-extras a{display:inline-block;margin:8px 16px 0 0;color:#065f68}.journey-notice{padding:22px;background:#fbf2e3;border-radius:14px;margin-bottom:18px}.journey-card-number{font-size:11px;font-weight:700;letter-spacing:1px;color:#065f68;margin-bottom:14px}.booking-card[role=link]{cursor:pointer}.booking-card[role=link]:focus-visible{outline:3px solid #087f8c;outline-offset:4px}
+.departure-guide{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;background:#e8f3f3;border:1px solid #d0e1df;border-radius:26px;padding:44px;margin-top:30px;margin-bottom:64px}.departure-guide h2{font-size:clamp(28px,3vw,40px);line-height:1.15;margin:12px 0 20px}.departure-guide p{color:#52636c;line-height:1.8}.departure-tips details{background:#fff;border:1px solid #dce5e4;border-radius:14px;padding:20px;margin-bottom:12px}.departure-tips summary{cursor:pointer;font-weight:600;line-height:1.5}.departure-tips p{font-size:14px;margin:15px 0}.departure-tips a{font-size:13px;color:#065f68;text-decoration:underline}.departure-tips button{border:0;background:none;padding:0;cursor:pointer}
+@media(max-width:1000px){.journey-progress ol{grid-template-columns:repeat(4,minmax(0,1fr))}.journey-overview{grid-template-columns:1fr}.journey-checkout{position:static}.departure-guide{gap:28px;padding:28px}}
+@media(max-width:600px){.journey-progress{margin:16px;padding:14px}.journey-progress ol{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-progress>p>span{display:block;margin:6px 0 0}.journey-next{margin:24px 16px;padding:20px;flex-direction:column;align-items:stretch}.journey-next>div{text-align:left}.journey-next .button{width:100%}.journey-item{padding:18px;flex-direction:column;gap:12px}.journey-ticket{padding:22px;flex-direction:column}.journey-ticket>div:last-child{border-left:0;border-top:1px dashed #9eacaa;padding:20px 0 0;align-self:stretch}.departure-guide{grid-template-columns:1fr;padding:24px;gap:24px}.journey-checkout{padding:22px}.site-header .header-inner{column-gap:10px}.site-header .main-nav{gap:10px}.header-inner>.button{font-size:12px;padding:10px}}
+.journey-remove{border:0;background:transparent;color:#52636c;text-decoration:underline;margin-left:14px;cursor:pointer;font:inherit;font-size:13px}
+.departure-checklist{background:#fff;border:1px solid #dce5e4;border-radius:18px;padding:24px}.departure-checklist>p:first-child{font-weight:700;color:#065f68}.departure-checklist progress{width:100%;height:8px;accent-color:#087f8c;margin:12px 0 18px}.departure-checklist label{display:flex;gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid #e1e9e7;cursor:pointer}.departure-checklist input{width:20px;height:20px;flex-shrink:0;margin-top:3px;accent-color:#087f8c}.departure-checklist strong,.departure-checklist small{display:block}.departure-checklist small{color:#52636c;margin-top:5px;line-height:1.6}.departure-checklist label:has(:checked){color:#065f68}.departure-checklist button{border:0;background:none;cursor:pointer}.departure-checklist .demo-note{font-size:11px;margin-top:16px}
+.site-header .account-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.site-header .account-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border:1px solid #bfd5d2;border-radius:100px;background:#fff;color:#065f68;font:600 13px/1.3 'DM Sans','Segoe UI',sans-serif;text-decoration:none;white-space:nowrap;transition:background .18s,color .18s}
+.site-header .account-link.register-button{background:#065f68;border-color:#065f68;color:#fff}
+.site-header .account-link:hover{background:#e8f3f3;color:#065f68}
+.site-header .account-link:focus-visible{outline:3px solid #9a6c2a;outline-offset:3px}
+@media(max-width:1200px){.site-header .header-inner{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.site-header .main-nav{order:3;width:100%;justify-content:center}.site-header .account-actions{margin-left:auto}}
+@media(max-width:600px){.site-header .account-actions{order:2;width:100%;margin:0;justify-content:center}.site-header .account-link{flex:1;max-width:180px}.site-header .header-inner{row-gap:12px}.site-header .main-nav{padding-bottom:0}}
+
+/* Cabecera compartida: marca y cuenta arriba, navegación y herramientas debajo. */
+.site-header{background:#fff;border-bottom:1px solid #dce5e4;position:relative;z-index:20}
+.site-header .header-inner{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 28px;align-items:center;padding-block:18px;min-height:0;flex-wrap:initial}
+.site-header .logo{grid-column:1;grid-row:1;font-size:34px;line-height:1.1;color:#183044}
+.site-header .main-nav{grid-column:1/-1;grid-row:2;display:flex;order:initial;width:100%;gap:8px;padding:0;border:0;border-radius:0;background:transparent;justify-content:flex-start;flex-wrap:wrap}
+.site-header .main-nav a{font:500 14px/1.4 'DM Sans','Segoe UI',sans-serif;padding:10px 16px;border-radius:9px;white-space:nowrap;color:#52636c;text-decoration:none}
+.site-header .main-nav a:hover,.site-header .main-nav a[aria-current=page]{background:#e8f3f3;color:#065f68}
+.site-header .header-actions{grid-column:2;grid-row:1;display:flex;justify-content:flex-end;align-items:center;gap:12px;width:auto;flex-wrap:wrap}
+.site-header .account-actions{width:auto;order:initial;margin:0;gap:8px;border-left:1px solid #dce5e4;padding-left:12px}
+.site-header .account-link{border-radius:10px;max-width:none;flex:initial}
+.site-header .account-link.login-button{border-color:transparent;background:transparent}
+.site-header .account-link.register-button{background:#fff;color:#065f68;border-color:#bfd5d2}
+.site-header .header-trip{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border:1px solid #087f8c;border-radius:10px;background:#087f8c;color:#fff;font:700 14px/1.4 'DM Sans','Segoe UI',sans-serif;white-space:nowrap;text-decoration:none}
+.site-header .header-trip:hover{background:#065f68;border-color:#065f68}
+.site-header .cart-button,.site-header .icon-button{min-height:44px;border-radius:10px}
+.site-header .cart-button{background:#f0f6f5;color:#065f68;border:1px solid #dce5e4}
+.site-header a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #087f8c;outline-offset:3px}
+.journey-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 20px;min-height:44px}
+.journey-toolbar p{color:#065f68;font-size:14px;flex:1;margin:0}.journey-toolbar>div{display:flex;gap:12px;flex-wrap:wrap}
+.journey-remove,.journey-clear,.journey-undo{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border:1px solid #eccfcb;background:#fff8f6;border-radius:8px;color:#983d31;font:600 13px/1.4 'DM Sans','Segoe UI',sans-serif;text-decoration:none;cursor:pointer}
+.journey-remove:hover,.journey-clear:hover{background:#fae7e3}.journey-undo{border-color:#bfd5d2;background:#e8f3f3;color:#065f68}.journey-item a{display:inline-block;padding-block:12px}.journey-item>div{min-width:0;overflow-wrap:anywhere}
+.journey-empty{padding:40px 28px;text-align:center;background:#fff;border:1px dashed #bfd5d2;border-radius:18px}.journey-empty>span{display:inline-grid;place-items:center;width:64px;height:64px;background:#e8f3f3;color:#065f68;border-radius:50%;font-size:32px}.journey-empty h2{font-size:26px;margin:20px 0 12px}.journey-empty p{color:#52636c;max-width:440px;margin:0 auto 24px}
+.booking-reference{display:block;width:100%;height:150px;object-fit:cover;border-radius:12px;margin-bottom:18px}.booking-card{overflow:hidden}
+.service-photo{margin:0;position:relative;align-self:stretch;min-height:260px;border-radius:18px;overflow:hidden}.service-photo img{display:block;width:100%;height:100%;min-height:260px;object-fit:cover;position:absolute;inset:0}.service-photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:28px 18px 16px;background:linear-gradient(transparent,#102f36cc);color:#fff;font-size:11px}
+.service-hero-label{display:inline-block;color:#065f68;font-size:11px;font-weight:700;letter-spacing:1.4px;margin-top:24px}
+.service-stage{display:flex;align-items:center;gap:14px;margin:30px 0 18px}.service-stage>span{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#e8f3f3;color:#065f68;font-weight:700;flex-shrink:0}.service-stage h2{font-size:21px;margin:0}.service-stage p{font-size:13px;color:#52636c;margin:4px 0 0}
+.service-tile-photo{width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:20px}.service-summary{background:#e8f3f3;border-color:#bfd5d2;top:24px}.service-option ul{line-height:1.9}.service-option[data-selected=true]{background:#f4faf8;border-color:#087f8c;box-shadow:0 0 0 1px #087f8c}.service-option[data-selected=true] [data-choose]{background:#087f8c;color:white;border-color:#087f8c}
+@media(min-width:1250px){.site-header .header-inner{grid-template-columns:auto minmax(0,1fr) auto;gap:20px}.site-header .main-nav{grid-column:2;grid-row:1;justify-content:center;gap:2px}.site-header .header-actions{grid-column:3}.site-header .main-nav a{padding-inline:12px}}
+@media(max-width:650px){.site-header .header-inner{gap:14px;padding-block:16px}.site-header .logo{grid-column:1;grid-row:1}.site-header .header-actions{grid-column:1/-1;grid-row:2;justify-content:flex-start;gap:8px}.site-header .main-nav{grid-row:3;gap:4px;justify-content:space-between}.site-header .main-nav a{padding:9px 10px;font-size:13px}.site-header .account-actions{padding-left:8px;gap:2px}.site-header .account-link{padding:10px;font-size:12px}.site-header .header-trip{padding:10px 12px;font-size:13px}.service-photo{min-height:200px}.service-photo img{min-height:200px}.service-hero{gap:24px}.journey-progress>p>span{display:block;margin:5px 0 0}.journey-toolbar{align-items:stretch}.journey-toolbar p{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Accesos de cuenta y viaje: misma jerarquía en todas las secciones. */
+.site-header .header-actions { gap: 16px; }
+.site-header .account-actions { gap: 8px; padding-left: 16px; }
+.site-header .account-link, .site-header .header-trip { min-height: 46px; gap: 9px; padding: 11px 16px; border-radius: 13px; font-size: 13px; font-weight: 600; transition: background 180ms, border-color 180ms, box-shadow 180ms, transform 180ms; }
+.header-action-icon { display: block; width: 18px; height: 18px; flex: 0 0 18px; }
+.site-header .header-trip { color: #075e69; background: #edf6f3; border-color: #d2e4de; }
+.site-header .header-trip:hover, .site-header .header-trip[aria-current=page] { color: #064c55; background: #dceee7; border-color: #9bbfb5; }
+.site-header .account-link.login-button { border-color: #d9e3df; background: #fff; color: #264b51; }
+.site-header .account-link.login-button:hover, .site-header .account-link.login-button[aria-current=page] { background: #f0f7f4; border-color: #a5c9bf; }
+.site-header .account-link.register-button { background: #075e69; border-color: #075e69; color: #fff; box-shadow: 0 4px 12px #075e691a; }
+.site-header .account-link.register-button:hover, .site-header .account-link.register-button[aria-current=page] { background: #044c55; border-color: #044c55; box-shadow: 0 6px 16px #075e692b; }
+.site-header .account-link:hover, .site-header .header-trip:hover { transform: translateY(-1px); }
+.site-header .account-link:active, .site-header .header-trip:active { transform: translateY(0); }
+.global-rumbito img { display: block; object-fit: contain; }
+@media(max-width:650px) {
+  .site-header .header-actions { width: 100%; gap: 8px; flex-wrap: nowrap; }
+  .site-header .account-actions { flex: 1; min-width: 0; border-left: 0; padding-left: 0; gap: 6px; }
+  .site-header .account-link, .site-header .header-trip { padding: 10px; min-height: 44px; gap: 6px; font-size: 12px; border-radius: 11px; }
+  .site-header .account-link { flex: 1; }
+  .site-header .account-link .header-action-icon { display: none; }
+  .site-header .header-trip .header-action-icon { width: 16px; height: 16px; flex-basis: 16px; }
+}
+
+/* Marca, navegación y tarjetas mantienen una misma respuesta visual. */
+:root { --rumbo-brand: #087d72; }
+.logo,.site-header .logo,.site-footer .logo,.rv-footer .logo,.services-footer .logo { color: var(--rumbo-brand); font-family: 'Segoe UI',Arial,sans-serif; font-weight: 800; letter-spacing: -2px; line-height: 1.1; white-space: nowrap; display: inline-flex; align-items: baseline; gap: 0; }
+.site-header .logo { font-size: 34px; }
+.logo span { color: inherit; margin-left: 3px; }
+.site-header .main-nav a { position: relative; transition: color 180ms,background 180ms,transform 180ms; }
+.site-header .main-nav a::after { content: ''; position: absolute; left: 16px; right: 16px; bottom: 5px; height: 2px; border-radius: 2px; background: var(--rumbo-brand); transform: scaleX(0); transform-origin: left; transition: transform 200ms ease; }
+.site-header .main-nav a:hover,.site-header .main-nav a:focus-visible { transform: translateY(-2px); }
+.site-header .main-nav a:hover::after,.site-header .main-nav a:focus-visible::after { transform: scaleX(1); }
+.site-header .main-nav a:active { transform: translateY(0) scale(.98); }
+.button > span[aria-hidden],.booking-action > span[aria-hidden] { display: inline-block; transition: transform 180ms; }
+.button:hover > span[aria-hidden],.booking-action:hover > span[aria-hidden] { transform: translate(3px,-2px); }
+.service-tile,.booking-card { transition: transform 220ms,border-color 220ms,box-shadow 220ms; }
+.service-tile:hover,.service-tile:focus-within,.booking-card:hover,.booking-card:focus-within { transform: translateY(-4px); border-color: #95bfb2; box-shadow: 0 10px 28px #16444b10; }
+.service-tile-photo { height: 185px; object-fit: cover; transition: transform 350ms ease; }
+.service-tile:hover .service-tile-photo { transform: scale(1.025); }
+.service-explore { margin-top: 20px; }
+.service-hero .service-hero-label { display: block; }
+.services-main:has(#opciones-servicios) .service-hero { padding: 28px; }
+.services-main:has(#opciones-servicios) .service-photo,.services-main:has(#opciones-servicios) .service-photo img { min-height: 230px; }
+#opciones-servicios { scroll-margin-top: 24px; }
+html { scroll-behavior: smooth; }
+body { padding-bottom: 90px; }
+main { animation: rumbo-page-enter 240ms ease-out; }
+@keyframes rumbo-page-enter { from { opacity: .7; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+@view-transition { navigation: auto; }
+::view-transition-old(root),::view-transition-new(root) { animation-duration: 180ms; }
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  main { animation: none; }
+  .site-header .main-nav a,.site-header .main-nav a::after,.button > span[aria-hidden],.booking-action > span[aria-hidden],.service-tile,.booking-card,.service-tile-photo { transition: none; }
+  .service-tile:hover,.booking-card:hover,.site-header .main-nav a:hover { transform: none; }
+  ::view-transition-old(root),::view-transition-new(root) { animation: none; }
+}
+<<<<<<< HEAD:common.css
+=======
+/* Ambientes del inicio: arena para planificar, salvia para conocer Rumbo. */
+#servicios.section { padding:clamp(28px,4vw,56px); background:#f6f3ed; border:1px solid #ebe5da; border-radius:32px; margin-block:64px; }
+#destinos.destinations-section { background:#edf5f6; padding-block:64px; }
+#quienes-somos.about-rumbo { background:#eef3ed; border:1px solid #dfe8de; border-radius:32px; padding:clamp(26px,4vw,58px); margin-block:72px 32px; overflow:hidden; }
+#quienes-somos .about-rumbo-photo { position:relative; padding:22px 14px 40px; isolation:isolate; }
+#quienes-somos .about-rumbo-photo::before { content:''; position:absolute; inset:6px 0 65px 32px; border-radius:170px 170px 28px 28px; background:#d8e4d7; transform:rotate(5deg); z-index:-1; }
+#quienes-somos .about-photo-frame { position:relative; overflow:hidden; border-radius:160px 160px 24px 24px; box-shadow:0 24px 45px -22px #244e4859; transform:rotate(-2deg); transition:transform .6s ease; }
+#quienes-somos .about-photo-frame img { display:block; width:100%; height:540px; border-radius:0; object-fit:cover; object-position:50% 35%; transition:transform 1s ease; }
+#quienes-somos .about-photo-frame::after { content:''; position:absolute; inset:50% 0 0; background:linear-gradient(transparent,#153e4559); pointer-events:none; }
+#quienes-somos .about-photo-location { position:absolute; bottom:82px; left:24px; z-index:1; color:white; font-size:13px; letter-spacing:.04em; }
+#quienes-somos .about-photo-location span { margin-left:12px; }
+#quienes-somos .about-photo-route { position:absolute; width:60%; left:-5px; bottom:35px; color:#c7a263; z-index:2; pointer-events:none; }
+#quienes-somos .about-photo-note { position:absolute; right:0; bottom:0; z-index:3; max-width:90%; display:flex; align-items:center; justify-content:flex-start; gap:14px; padding:18px 22px; background:#fffcf5; border:1px solid #e7e4d7; border-radius:18px; box-shadow:0 12px 24px #254e4810; }
+#quienes-somos .about-photo-note>span { font-size:28px; color:#28727a; }
+#quienes-somos .about-photo-note strong { display:block; font-size:14px; color:#254e48; }
+#quienes-somos .about-photo-note div span { display:block; font-size:12px; margin-top:3px; }
+#quienes-somos .about-rumbo-link { padding:12px 0; }
+#nuestro-equipo { padding:48px 0 64px; scroll-margin-top:110px; }
+.team-intro { max-width:640px; margin-bottom:30px; }
+.team-intro h2 { color:#254e48; font-size:clamp(28px,3vw,40px); letter-spacing:-1px; margin:12px 0; }
+.team-intro>p:last-child { color:#596b64; line-height:1.8; }
+.team-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:20px; }
+.team-person { padding:28px 22px; border:1px solid #e1e8e3; border-radius:22px; background:linear-gradient(145deg,#fff,#f3f6f2); transition:transform .25s,box-shadow .25s; }
+.team-avatar { display:grid; place-items:center; width:64px; height:64px; border-radius:22px; background:#dfecea; color:#28626a; font-size:22px; letter-spacing:1px; margin-bottom:28px; }
+.team-person:nth-child(2) .team-avatar { background:#f0e7d7; color:#846632; }
+.team-person:nth-child(3) .team-avatar { background:#eae5f0; color:#726083; }
+.team-person:nth-child(4) .team-avatar { background:#e4eadb; color:#5b7148; }
+.team-person h3 { font-size:18px; color:#263e38; margin-bottom:8px; }
+.team-person p { font-size:13px; color:#63776d; margin:0; }
+.team-actions { display:flex; flex-wrap:wrap; align-items:center; gap:24px; margin-top:28px; }
+#guias.section { background:#f5f1e9; border:1px solid #ebe4d8; border-radius:30px; padding:clamp(26px,4vw,52px); margin-block:40px 64px; }
+.legal-attributions { line-height:1.8; overflow-wrap:anywhere; }
+.legal-attributions h3 { margin-top:28px; }
+.legal-attributions li { margin-block:12px; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+ #quienes-somos .about-rumbo-photo:hover .about-photo-frame { transform:rotate(0deg) translateY(-4px); }
+ #quienes-somos .about-rumbo-photo:hover img { transform:scale(1.035); }
+ .team-person:hover { transform:translateY(-5px); box-shadow:0 16px 30px #254e4810; }
+}
+@media(prefers-reduced-motion:no-preference) { #quienes-somos .about-photo-route path { animation:about-route 4s ease-out both; } }
+@keyframes about-route { from { stroke-dashoffset:100; opacity:0; } to { stroke-dashoffset:0; opacity:1; } }
+@media(max-width:1000px) { .team-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(max-width:760px) {
+ #servicios.section,#quienes-somos.about-rumbo,#guias.section { border-radius:24px; padding:24px 18px; margin-block:32px; }
+ #quienes-somos .about-photo-frame img { height:390px; aspect-ratio:auto; }
+ #quienes-somos .about-photo-note { padding:14px; }
+ .team-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+ .team-person { padding:22px 16px; }
+ .team-person h3 { font-size:16px; }
+ #nuestro-equipo { padding-block:24px 40px; }
+}
+@media(prefers-reduced-motion:reduce) { #quienes-somos *, .team-person { animation:none!important; transition:none!important; } }
+/* Lectura y superficies editoriales. El equipo conserva su diseño original. */
+body :is(p,dd,li,label,input,select,textarea,button,small,figcaption,a):not(#nuestro-equipo *):not(.logo):not(.back-top) {
+  font-family:'Source Sans 3','Segoe UI',Arial,sans-serif;
+}
+body :is(p,dd):not(#nuestro-equipo *):not(.eyebrow):not(.campaign-kicker):not(.journey-card-number) { letter-spacing:normal; }
+body :is(.booking-card p,.destination-card p,.service-tile p,.rv-destination-card p,.product-card p,.about-rumbo-copy>p,.about-rumbo-values dd) { line-height:1.65; }
+body .about-rumbo-copy>p:not(.eyebrow):not(.about-rumbo-lead),body .about-rumbo-values dd { color:#455851; font-weight:400; }
+/* Cada transición usa el mismo trazo, con proporciones distintas. */
+body #servicios.section { position:relative; isolation:isolate; background:linear-gradient(120deg,#f8f5ee 0%,#fafbf9 74%); border:0; border-top:1px solid #d6d9cb; border-radius:0 0 28px 28px; padding-top:48px; margin-top:78px; }
+body #servicios.section::before { content:''; position:absolute; top:-4px; left:0; width:72px; height:7px; border-radius:8px; background:#b9cbbb; }
+body #servicios .section-heading { margin-bottom:30px; }
+body #servicios .booking-card { box-shadow:0 5px 18px #364e4605; border-color:#dbe2dd; }
+body #servicios .booking-card:first-child { background:#eaf0ed; }
+body #servicios .booking-card:nth-child(2) { background:#f1ede5; }
+body #servicios .shop-card { background:#f5eee4; }
+body #destinos.destinations-section { position:relative; padding-top:80px; padding-bottom:62px; background:linear-gradient(180deg,#eef3f4,#f5f8f7); border:0; }
+body #destinos.destinations-section::before { content:''; position:absolute; top:0; left:0; width:100%; height:38px; pointer-events:none; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 38' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V5C1100 40 1020 35 720 14S260 5 0 30Z' fill='%23fafbf9'/%3E%3Cpath d='M0 34C360 2 460 7 720 19S1150 38 1440 10' fill='none' stroke='%23d9e3df'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
+body #quienes-somos.about-rumbo { position:relative; isolation:isolate; background:linear-gradient(115deg,#eee1cf 0%,#f6f0e5 55%,#f8f7f2 100%); border:0; border-radius:4px 36px 4px 36px; padding:clamp(28px,4vw,56px); margin-top:80px; }
+body #quienes-somos.about-rumbo::after { content:''; position:absolute; top:-130px; right:-90px; width:380px; height:270px; border:1px solid #ded9ca; border-radius:50%; box-shadow:0 20px 0 -19px #ded9ca,0 40px 0 -39px #ded9ca; transform:rotate(-22deg); z-index:-1; pointer-events:none; }
+body #quienes-somos .about-rumbo-photo { padding-bottom:16px; }
+body #quienes-somos .about-rumbo-photo::before { background:#e2dfd0; inset:8px 0 40px 32px; }
+body #quienes-somos .about-photo-frame { transform:rotate(-1deg); border-radius:130px 130px 18px 18px; box-shadow:0 20px 35px -24px #3b433d66; }
+body #quienes-somos .about-photo-location { bottom:26px; }
+body #quienes-somos .about-photo-route { display:none; }
+body #quienes-somos .about-rumbo-values>div { border-color:#e1dfd5; }
+body #quienes-somos .about-rumbo-link { border-bottom:1px solid #8ca29a; padding:6px 0; margin-top:8px; }
+body #guias.section { position:relative; background:#f4f2ec; border:0; border-radius:24px 4px 24px 4px; padding:clamp(28px,4vw,52px); }
+body #guias.section::before { content:none; }
+body #guias.section { background:linear-gradient(125deg,#e3eeea,#f2f5ef); border-top:1px solid #c6d8d0; }
+body #guias .guides-image { border-radius:70px 14px 14px 14px; }
+body #quienes-somos .about-rumbo-copy :is(p,dd) { color:#344c43; }
+body #quienes-somos .about-rumbo-copy .eyebrow { color:#2d6256; font-weight:700; letter-spacing:.12em; }
+body #quienes-somos .about-rumbo-copy h2,body #quienes-somos .about-rumbo-values dt { color:#174d43; }
+body #quienes-somos .about-rumbo-values>div { padding-left:16px; border-left:2px solid #9cb6a5; margin-top:12px; }
+body #destinos.destinations-section { background:linear-gradient(180deg,#e3eef0,#f0f5f3); }
+body #servicios .booking-card:first-child { background:#dfece6; }
+body #servicios .booking-card:nth-child(2) { background:#f0e6d7; }
+body #servicios .journey-card-number { color:#345d54; }
+body #guias :is(p,summary),body #antes-de-viajar p { color:#344f48; }
+body #antes-de-viajar.departure-guide { background:linear-gradient(120deg,#eaf0ed,#f1f5f2); border-color:#d7e1d8; border-radius:24px 24px 8px 8px; border-bottom:4px solid #bcccbf; }
+body .service-hero { background:linear-gradient(120deg,#e9efea,#f4f3ec); border:1px solid #dce4dc; }
+body .service-tile { border-color:#dce3de; box-shadow:0 6px 20px #24443d05; }
+body .service-tile:nth-child(3n+2) { background:#faf5ed; }
+body .service-tile:nth-child(3n+3) { background:#f0f5f5; }
+body .rv-trip-summary { background:#f3f0e8; border-color:#e1ded2; }
+body .rv-destination-filters,body .rv-hotel-filters { background:#f3f5ef; border-color:#dce2d6; }
+body .journey-checkout { background:#edf2ec; }
+body .store-hero { background:linear-gradient(120deg,#f2eee5,#edf2ef); border-radius:24px; padding:clamp(24px,4vw,48px); }
+body .product-card { border-color:#e1e3db; }
+@media(max-width:760px) {
+ body #servicios.section { margin-top:48px; padding:30px 18px; }
+ body #destinos.destinations-section { padding-top:62px; }
+ body #quienes-somos.about-rumbo { margin-top:42px; padding:24px 18px; border-radius:4px 24px 4px 24px; }
+ body #quienes-somos.about-rumbo::after { width:230px; right:-120px; }
+ body #guias.section { padding:26px 18px; }
+}
+
+.database-status{position:fixed;bottom:12px;left:12px;z-index:90;max-width:min(440px,calc(100vw - 24px));padding:8px 12px;background:#fff;color:#243c32;border:1px solid #d8e2dc;border-radius:10px;box-shadow:0 3px 15px #0001;font:12px/1.4 sans-serif;display:flex;gap:8px;align-items:center}.database-status button{border:0;background:#edf3ef;color:#243c32;border-radius:6px;padding:5px 8px;cursor:pointer}.database-status button[hidden]{display:none}
+
+/* Una familia legible para títulos, contenido y controles; se conserva la marca. */
+:root { --rumbo-font: 'Source Sans 3', 'Segoe UI', Arial, sans-serif; }
+body, body :is(h1,h2,h3,h4,p,dd,dt,li,label,input,select,textarea,button,small,figcaption,a,summary,span,strong):not(.logo):not(.logo *) { font-family:var(--rumbo-font); }
+body :is(h1,h2,h3,h4):not(.logo) { font-weight:600; letter-spacing:-.02em; }
+body .eyebrow { letter-spacing:.04em; }
+body .guide-hero h1 { letter-spacing:-.035em; }
+
+/* En móvil, el asistente no tapa los controles de selección de guías. */
+@media(max-width:560px) {
+ body:has(.guides-page) .chat-launcher { width:54px; min-height:54px; height:54px; padding:5px; border-radius:50%; justify-content:center; gap:0; }
+ body:has(.guides-page) .chat-launcher .rumbito-avatar { width:42px; height:44px; flex-basis:42px; }
+ body:has(.guides-page) .chat-launcher>span:last-of-type:not(.rumbito-avatar) { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+ body:has(.guides-page) .chat-launcher::after { display:none; }
+ body:has(.guides-page) .database-status { max-width:calc(100vw - 94px); padding:7px 9px; font-size:11px; }
+}
+>>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/common.css

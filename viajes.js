@@ -15,10 +15,10 @@
       id: 'roatan', name: 'Roatán', country: 'Honduras', region: 'honduras',
       type: 'playa', tag: 'Playa y descanso', image: 'imagenes-viajes/playa.jpg',
       alt: 'Playa tropical de aguas claras, fotografía de inspiración',
-      intro: 'Días de mar, arena y una pausa que se siente diferente.',
+      intro: 'Playas de West Bay y West End, manglares y recorridos por la isla.',
       description: 'Roatán es una opción para disfrutar del Caribe hondureño. Combina tiempo en la playa con paseos por la isla y actividades en el mar, según tus gustos.',
       highlights: ['Disfrutar de la playa', 'Explorar la isla', 'Conocer la gastronomía local'],
-      tip: 'Deja tiempo libre entre actividades para disfrutar del mar a tu ritmo.',
+      tip: 'Confirma el traslado entre las zonas de la isla y el punto de encuentro del recorrido.',
       arrival: 'Roatán', transfer: '', nights: 3, economy: 3200, duration: 55,
       hotels: [
         { id: 'paradise', name: 'Hotel Paradise', stars: 4, area: 'Zona de playa', rate: 1500, image: 'hotel-playa.jpg', amenities: ['Piscina', 'Wi-Fi', 'Desayuno'] },
@@ -61,7 +61,7 @@
       id: 'bali', name: 'Bali', country: 'Indonesia', region: 'internacional',
       type: 'playa', tag: 'Playa y calma', image: 'imagenes-viajes/bali.jpg',
       alt: 'Templo junto al agua en Bali',
-      intro: 'Entre templos, arrozales y tardes que terminan frente al mar.',
+      intro: 'Templos de Tanah Lot y Uluwatu, arrozales de Ubud y costa de Sanur.',
       description: 'Bali combina paisajes de playa con espacios culturales y zonas de vegetación. Organiza el viaje por áreas para dedicar más tiempo a las experiencias que te interesan.',
       highlights: ['Conocer templos', 'Recorrer paisajes de arrozales', 'Descansar cerca del mar'],
       tip: 'Distribuye las actividades por zonas y contempla tiempo para desplazarte.',
@@ -130,10 +130,10 @@
     ['tela','Tela','Honduras','playa','San Pedro Sula',3,2100,40,1150,'Playas, sabores caribeños y paseos por la costa hondureña.'],
     ['yojoa','Lago de Yojoa','Honduras','naturaleza','San Pedro Sula',2,2100,40,950,'Días entre paisajes verdes, senderos y descanso cerca del lago.'],
     ['antigua','Antigua Guatemala','Guatemala','cultura','Ciudad de Guatemala',4,4800,110,1350,'Calles coloniales, plazas y cafés para descubrir caminando.'],
-    ['panama','Ciudad de Panamá','Panamá','cultura','Ciudad de Panamá',4,6500,160,1850,'Una escapada entre el Casco Antiguo y la ciudad contemporánea.'],
-    ['cancun','Cancún','México','playa','Cancún',5,7200,210,2300,'Descanso junto al Caribe y tiempo para explorar la costa.'],
-    ['miami','Miami','Estados Unidos','playa','Miami',4,8200,180,2900,'Playas, barrios con personalidad y paseos por la ciudad.'],
-    ['madrid','Madrid','España','cultura','Madrid',6,19500,840,2400,'Museos, parques y plazas para disfrutar de una estancia urbana.']
+    ['panama','Ciudad de Panamá','Panamá','cultura','Ciudad de Panamá',4,6500,160,1850,'Casco Antiguo, Cerro Ancón y Parque Natural Metropolitano.'],
+    ['cancun','Cancún','México','playa','Cancún',5,7200,210,2300,'Playa Delfines, laguna Nichupté y sitio arqueológico El Rey.'],
+    ['miami','Miami','Estados Unidos','playa','Miami',4,8200,180,2900,'South Beach, Little Havana y jardines de Vizcaya.'],
+    ['madrid','Madrid','España','cultura','Madrid',6,19500,840,2400,'Parque de El Retiro, Plaza Mayor y mercados del centro.']
   ];
   additions.forEach(([id,name,country,type,arrival,nights,economy,duration,base,intro]) => {
     const nature = type === 'naturaleza';
@@ -142,7 +142,7 @@
       tag:type==='playa'?'Playa y descanso':nature?'Naturaleza y aventura':'Cultura y ciudad',
       image:`imagenes-viajes/destino-${id}.jpg`,
       alt:`Vista de ${name}; fotografía de Wikimedia Commons`,
-      intro,description:intro+' Combina tus visitas con tiempo libre y elige el alojamiento que mejor se adapte a tu presupuesto.',
+      intro,description:intro+' Consulta las opciones de vuelo, hospedaje y recorridos con guía disponibles en el catálogo.',
       highlights:type==='playa'?['Paseos por la costa','Gastronomía local','Tiempo de descanso']:nature?['Contemplar paisajes','Recorridos al aire libre','Descanso en la naturaleza']:['Recorrer el centro','Conocer espacios culturales','Probar sabores locales'],
       tip:'Confirma traslados, horarios y disponibilidad con los proveedores antes de reservar.',
       arrival,transfer:arrival!==name?`Llegada aérea propuesta: ${arrival}. El traslado a ${name} se organiza por separado y no está incluido.`:'',
@@ -731,8 +731,8 @@
   const airportReplacements = {
     'la-ceiba': ['san-jose','San José','Museos, mercados y parques en el Valle Central de Costa Rica.', ['Conocer museos','Pasear por los parques','Probar la gastronomía local']],
       copan: ['paris','París','Museos, cafés y paseos junto al Sena en la capital francesa.', ['Visitar la Torre Eiffel','Explorar el Louvre','Pasear por Montmartre']],
-      yojoa: ['roma','Roma','Historia, plazas y sabores italianos en la Ciudad Eterna.', ['Conocer el Coliseo','Visitar la Fontana di Trevi','Pasear por Trastevere']],
-      utila: ['nueva-york','Nueva York','Rascacielos, parques y barrios llenos de vida.', ['Pasear por Central Park','Visitar sus museos','Conocer Times Square']],
+      yojoa: ['roma','Roma','Coliseo, plazas de Trastevere y jardines de Villa Borghese.', ['Conocer el Coliseo','Visitar la Fontana di Trevi','Pasear por Trastevere']],
+      utila: ['nueva-york','Nueva York','Central Park, el puente de Brooklyn y los barrios de Manhattan.', ['Pasear por Central Park','Visitar sus museos','Conocer Times Square']],
       tela: ['barcelona','Barcelona','Arquitectura, gastronomía y paseos junto al Mediterráneo.', ['Conocer la Sagrada Familia','Recorrer el Barrio Gótico','Pasear por la Barceloneta']],
     antigua: ['ciudad-guatemala','Ciudad de Guatemala','Museos, mercados y barrios para una escapada urbana.', ['Visitar museos','Recorrer mercados','Descubrir la ciudad']],
     dolomitas: ['venecia','Venecia','Canales, puentes y plazas para descubrir a pie.', ['Pasear junto a los canales','Conocer sus plazas','Explorar sus barrios']],
@@ -805,7 +805,7 @@
   const promotions = {
     cancun: { percent: 25, name: 'Escapadas seleccionadas' },
     madrid: { percent: 25, name: 'Escapadas seleccionadas' },
-      venecia: { percent: 20, name: 'Tu próximo rumbo: Italia' },
+      venecia: { percent: 20, name: 'Resumen del viaje: Italia' },
       paris: { percent: 10, name: 'Escapadas a París' },
       barcelona: { percent: 10, name: 'Escapadas a Barcelona' }
   };
@@ -1074,8 +1074,8 @@
     document.title = `${destination.name} | Rumbo`;
     $('#destination-detail').innerHTML = `<nav class="rv-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><a href="viajes.html?pantalla=destinos">Destinos</a><span aria-hidden="true">/</span><span aria-current="page">${destination.name}</span></nav>
       <section class="rv-detail-hero" aria-labelledby="page-title"><img src="${destination.image}" alt="${destination.alt}" width="1100" height="760"><div class="rv-detail-title"><p class="rv-card-country">${destination.country} · ${destination.tag}</p><h1 id="page-title">${destination.name}</h1><p>${destination.intro}</p></div></section>
-      <div class="rv-detail-body"><section class="rv-detail-copy"><p class="eyebrow">UN POCO DE INSPIRACIÓN</p><h2>Lo que te espera.</h2><p>${destination.description}</p><ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div><p><a class="rv-link-button" href="servicios.html?seccion=guias&destino=${destination.id}">Explorar recorridos con guía en ${destination.name} ↗</a></p>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Fotografía de inspiración. Las actividades se presentan como ideas y no están incluidas en los precios de vuelo u hotel.</p></section>
-      <aside class="rv-plan-panel" aria-labelledby="detail-plan-title"><p class="eyebrow">DA EL PRIMER PASO</p><h2 id="detail-plan-title">Tu escapada a ${destination.name}</h2>${destination.promotion ? `<p class="promo-badge">−${destination.promotion.percent}% en vuelos · descuento aplicado</p>` : ''}<p class="rv-detail-price">Vuelo desde ${destination.promotion ? `<del class="promo-original">${money(destination.economy)}</del>` : ''}<strong>${money(flights(destination, 'Tegucigalpa')[0]?.economy ?? destination.economy)}</strong></p>${destination.promotion ? '<p class="promo-note">Aplica a vuelos de ida, en ambas clases y orígenes del catálogo. Sin cupón. Hotel y otros servicios por separado. Oferta de demostración de Rumbo; no se transfiere a la aerolínea.</p>' : ''}<p class="rv-caption" style="margin: -8px 0 22px">Por persona · económica · solo ida desde Tegucigalpa.</p>
+      <div class="rv-detail-body"><section class="rv-detail-copy"><h2>Actividades y lugares de interés</h2><p>${destination.description}</p><ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div><p><a class="rv-link-button" href="servicios.html?seccion=guias&destino=${destination.id}">Explorar recorridos con guía en ${destination.name} ↗</a></p>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Fotografía de inspiración. Las actividades se presentan como ideas y no están incluidas en los precios de vuelo u hotel.</p></section>
+      <aside class="rv-plan-panel" aria-labelledby="detail-plan-title"><h2 id="detail-plan-title">Planificar ${destination.name}</h2>${destination.promotion ? `<p class="promo-badge">−${destination.promotion.percent}% en vuelos · descuento aplicado</p>` : ''}<p class="rv-detail-price">Vuelo desde ${destination.promotion ? `<del class="promo-original">${money(destination.economy)}</del>` : ''}<strong>${money(flights(destination, 'Tegucigalpa')[0]?.economy ?? destination.economy)}</strong></p>${destination.promotion ? '<p class="promo-note">Aplica a vuelos de ida, en ambas clases y orígenes del catálogo. Sin cupón. Hotel y otros servicios por separado. Oferta de demostración de Rumbo; no se transfiere a la aerolínea.</p>' : ''}<p class="rv-caption" style="margin: -8px 0 22px">Por persona · económica · solo ida desde Tegucigalpa.</p>
       <form id="detail-form"><div class="rv-field"><label for="detail-date">Fecha de salida</label><input id="detail-date" type="date" value="${state.date}" min="${today()}" required></div><div class="rv-field-pair"><div class="rv-field"><label for="detail-travelers">Viajeros</label><input id="detail-travelers" type="number" value="${state.travelers}" min="1" max="12" step="1" required></div><div class="rv-field"><label for="detail-nights">Noches de hotel</label><input id="detail-nights" type="number" value="${state.nights}" min="1" max="30" step="1" required></div></div><button class="button button-primary" type="submit" name="next" value="vuelos">Elegir vuelo <span aria-hidden="true">↗</span></button><button class="rv-link-button" type="submit" name="next" value="hoteles">Solo necesito hotel →</button></form></aside></div>`;
     $('#detail-form').addEventListener('submit', event => {
       event.preventDefault();
@@ -1099,7 +1099,7 @@
     const element = $('#resumen-viaje');
     const destination = currentDestination();
     const parts = summaryParts();
-    element.innerHTML = `<p class="eyebrow">A TU MEDIDA</p><h2>Tu próximo rumbo</h2><div class="rv-summary-destination"><img src="${destination.image}" alt="" width="59" height="62"><div><strong>${destination.name}</strong><small>${destination.country}</small></div></div>
+    element.innerHTML = `<h2>Resumen del viaje</h2><div class="rv-summary-destination"><img src="${destination.image}" alt="" width="59" height="62"><div><strong>${destination.name}</strong><small>${destination.country}</small></div></div>
       <div class="rv-summary-part"><h3>01 / Vuelo ${mode === 'hoteles' ? `<a href="${escapeHTML(link('vuelos'))}">${parts.flight ? 'Cambiar' : 'Elegir'}</a>` : ''}</h3>${parts.flightHTML}</div>
       <div class="rv-summary-part"><h3>02 / Hotel</h3>${parts.hotelHTML}</div>
       <div class="rv-summary-total"><span>Subtotal elegido</span><strong id="summary-total" data-amount="${parts.total}" aria-live="polite">${money(parts.total)}</strong></div>

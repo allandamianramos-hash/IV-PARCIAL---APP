@@ -1,10 +1,10 @@
 # Rumbo
 
-Sitio de viajes en HTML, CSS y JavaScript. Los catálogos y precios son de demostración; todavía no hay base de datos ni pagos.
+Sitio de viajes en HTML, CSS y JavaScript. Los catálogos y selecciones están conectados a SQL Server. Los precios y planes siguen siendo de demostración; no hay pagos ni reservas reales. Consulta BASE-DE-DATOS.md para la configuración y las migraciones.
 
 ## Abrir la copia correcta
 
-Desde esta carpeta, ejecutar `npm start` o abrir `INICIAR-RUMBO.cmd`. Visitar `http://localhost:3000`. No requiere instalar paquetes; utiliza Node 22 o posterior. El chat requiere LIGHTNING_API_KEY en el archivo local .env; consulta LEEME-RUMBITO.md.
+Desde esta carpeta, ejecutar `npm start` o abrir `INICIAR-RUMBO.cmd`. Visitar `http://localhost:3000`. Ejecutar `npm install` al preparar otra copia; utiliza Node 22 o posterior. El chat requiere LIGHTNING_API_KEY en el archivo local .env; consulta LEEME-RUMBITO.md.
 
 Para dejar Rumbito disponible entre sesiones de Windows, ejecutar una vez `ACTIVAR-RUMBO-AUTOMATICO.cmd`. Inicia el servidor en segundo plano al entrar a Windows y lo recupera si su proceso se detiene. `INICIAR-RUMBO.cmd` también funciona sin mantener abierta una terminal. El acceso automático depende de que esta carpeta permanezca en su ubicación; si la mueves, vuelve a activarlo.
 
@@ -48,6 +48,6 @@ La sección «Arma tu viaje» del inicio es el punto de entrada. Las cabeceras l
 
 `journey.js` reúne las selecciones en «Mi viaje», calcula variantes del carrito y comprueba fechas y viajeros. El botón final completa exclusivamente un pago de demostración; no cobra, no solicita datos bancarios y no genera reservas. El ticket solo aparece tras esa confirmación y deja de ser vigente si se modifica el viaje. Para cobrar de verdad hacen falta servidor de pedidos, proveedores y pasarela de pago.
 
-La sección final del inicio es una lista personal de preparativos, guardada en el navegador. Las guías conservan las explicaciones y Rumbito mantiene la orientación.
+La sección final del inicio es una lista personal de preparativos, guardada localmente y sincronizada con SQL Server cuando hay conexión. Las guías conservan las explicaciones y Rumbito mantiene la orientación.
 
 Pruebas: `npm test`. El recorrido completo, el pago de demostración, la invalidación del ticket, las variantes, el chat y la vista móvil fueron comprobados. En el catálogo actual ampliado a 100 productos faltan 64 archivos de fotografía; la comprobación de recursos informa ese problema. No se sustituyeron por imágenes de otros productos.

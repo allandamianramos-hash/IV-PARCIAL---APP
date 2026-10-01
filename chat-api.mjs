@@ -1,11 +1,16 @@
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
+import { dbEnabled } from './db.mjs';
+import { loadCatalog } from './database-api.mjs';
 
 // Load the same trusted catalogues used by the pages, without running their UI.
 const sandbox = { URLSearchParams, window: {}, document: { body: { classList: { contains: () => false }, dataset: {} }, readyState: 'loading', addEventListener() {}, querySelector: () => null } };
+const catalogSources = [];
 vm.createContext(sandbox);
 for (const file of ['viajes.js', 'tienda.js', 'chat-engine.js']) {
-  vm.runInContext(await readFile(new URL(file, import.meta.url), 'utf8'), sandbox, { filename: file, timeout: 3000 });
+  const source = await readFile(new URL(file, import.meta.url), 'utf8');
+  catalogSources.push({ file, source });
+  vm.runInContext(source, sandbox, { filename: file, timeout: 3000 });
 }
 const { destinations, flights } = sandbox.window.RumboViajesDatos;
 const context = {
@@ -52,20 +57,29 @@ export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, mode
     }
     visitor.count++; visitors.set(ip, visitor); active++; calls++;
     try {
+      let activeSandbox = sandbox, activeContext = context, activeSystem = system;
+      if (dbEnabled()) {
+        activeSandbox = { URLSearchParams, window: { RumboDatabase: { connected: true, catalog: await loadCatalog() } }, document: sandbox.document };
+        vm.createContext(activeSandbox);
+        for (const { file, source } of catalogSources) vm.runInContext(source, activeSandbox, { filename: file, timeout: 3000 });
+        const { destinations: trips, flights: currentFlights } = activeSandbox.window.RumboViajesDatos;
+        activeContext = { ...context, trips, flights: currentFlights, products: activeSandbox.window.RumboProducts, catalog: trips.map(t => ({ ...t, style: t.type, price: t.inspirationBudget })) };
+        activeSystem = system.slice(0, system.indexOf('Catálogo: ')) + 'Catálogo: ' + JSON.stringify({ destinations: trips.map(d => ({ id: d.id, name: d.name, description: d.description, tip: d.tip, budgetHNL: d.inspirationBudget, flightPromotion: d.promotion, flightFromHNL: currentFlights(d, 'Tegucigalpa')[0]?.economy })), products: activeContext.products.map(({ name, price }) => ({ name, priceHNL: price })) });
+      }
       const p = plain(body.plan) ? body.plan : {};
       const plan = { company: short(p.company), people: Number.isInteger(p.people) && p.people >= 1 && p.people <= 12 ? p.people : 0, style: ['playa', 'naturaleza', 'cultura', 'all'].includes(p.style) ? p.style : '', budget: Number.isFinite(p.budget) && p.budget > 0 && p.budget <= 1e9 ? p.budget : 0 };
       const raw = plain(body.state) ? body.state : {};
       const state = {};
-      for (const key of ['destination', 'wanted']) if (destinations.some(d => d.id === raw[key])) state[key] = raw[key];
+      for (const key of ['destination', 'wanted']) if (activeContext.trips.some(d => d.id === raw[key])) state[key] = raw[key];
       if (['company', 'people', 'style', 'budget'].includes(raw.step)) state.step = raw.step;
       if (['hotels', 'flights'].includes(raw.topic)) state.topic = raw.topic;
       state.active = raw.active === true;
       if (Number.isFinite(raw.perPerson) && raw.perPerson > 0 && raw.perPerson <= 1e9) state.perPerson = raw.perPerson;
-      const guide = sandbox.window.RumboChat.respond(body.message, plan, context, state);
+      const guide = activeSandbox.window.RumboChat.respond(body.message, plan, activeContext, state);
       const upstream = await fetchImpl('https://lightning.ai/api/v1/chat/completions', {
         method: 'POST', redirect: 'error', signal: AbortSignal.timeout(timeoutMs),
         headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model, reasoning_effort: 'minimal', max_completion_tokens: 2400, messages: [{ role: 'system', content: system }, { role: 'system', content: `Guía interna para esta respuesta: ${guide.reply}` }, ...body.history.map(({ role, content }) => ({ role, content })), { role: 'user', content: body.message }] })
+        body: JSON.stringify({ model, reasoning_effort: 'minimal', max_completion_tokens: 2400, messages: [{ role: 'system', content: activeSystem }, { role: 'system', content: `Guía interna para esta respuesta: ${guide.reply}` }, ...body.history.map(({ role, content }) => ({ role, content })), { role: 'user', content: body.message }] })
       });
       if (!upstream.ok) {
         const failures = {

@@ -2103,6 +2103,14 @@ function variantMarkup(product, options = {}, className = 'detail-image') {
 }
 window.RumboVariantPreview={model:variantModel,markup:variantMarkup};
 
+if (window.RumboDatabase?.connected) {
+  const catalog = window.RumboDatabase.catalog;
+  PRODUCTS.splice(0, PRODUCTS.length, ...catalog.products);
+  for (const key of Object.keys(PRODUCT_OPTIONS)) delete PRODUCT_OPTIONS[key];
+  Object.assign(PRODUCT_OPTIONS, catalog.productOptions);
+  for (const key of Object.keys(OPTION_PRICE_ADJUSTMENTS)) delete OPTION_PRICE_ADJUSTMENTS[key];
+  Object.assign(OPTION_PRICE_ADJUSTMENTS, catalog.priceAdjustments);
+}
 window.RumboProducts = PRODUCTS;
 window.RumboProductPrice = (product, options = {}) => product.price + Object.entries(options || {}).reduce((sum, [key,value]) => sum + (Number(OPTION_PRICE_ADJUSTMENTS[product.id]?.[key]?.[value]) || 0), 0);
 
@@ -2240,7 +2248,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
     try {
 
       return JSON.parse(
-        localStorage.getItem(key) || "[]"
+        (window.RumboStorage || localStorage).getItem(key) || "[]"
       );
 
     } catch {
@@ -2255,7 +2263,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
 
     try {
 
-      localStorage.setItem(
+      (window.RumboStorage || localStorage).setItem(
         key,
         JSON.stringify(value)
       );

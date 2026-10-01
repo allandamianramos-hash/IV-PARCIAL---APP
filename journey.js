@@ -1,8 +1,8 @@
 /* Recorrido compartido: una selección, un resumen y un cierre de demostración. */
 (() => {
   'use strict';
-  const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
-  const write=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{return false;}};
+  const read=(key,fallback)=>{try{return JSON.parse((window.RumboStorage || localStorage).getItem(key))??fallback;}catch{return fallback;}};
+  const write=(key,value)=>{try{(window.RumboStorage || localStorage).setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const money=n=>'L '+Number(n).toLocaleString('es-HN',{minimumFractionDigits:2,maximumFractionDigits:2});
   const steps=[['vuelos','Vuelo','viajes.html?pantalla=vuelos'],['hoteles','Hospedaje','viajes.html?pantalla=hoteles'],['traslados','Transporte','servicios.html?seccion=traslados'],['seguros','Seguro','servicios.html?seccion=seguros'],['guias','Experiencias','servicios.html?seccion=guias'],['tienda','Tienda','tienda.html#catalogo'],['mi-viaje','Resumen del viaje','servicios.html?seccion=mi-viaje']];
@@ -42,11 +42,11 @@
   function commitSelections(updates){
     const before=Object.fromEntries(selectionKeys.map(key=>[key,read(key,null)]));
     try{
-      for(const [key,value] of Object.entries(updates))localStorage.setItem(key,JSON.stringify(value));
-      localStorage.setItem(receiptKey,'null');
+      for(const [key,value] of Object.entries(updates))(window.RumboStorage || localStorage).setItem(key,JSON.stringify(value));
+      (window.RumboStorage || localStorage).setItem(receiptKey,'null');
       undoState=before;return true;
     }catch{
-      for(const [key,value] of Object.entries(before)){try{localStorage.setItem(key,JSON.stringify(value));}catch{}}
+      for(const [key,value] of Object.entries(before)){try{(window.RumboStorage || localStorage).setItem(key,JSON.stringify(value));}catch{}}
       return false;
     }
   }

@@ -5,9 +5,17 @@
   "scripts": {
     "start": "node server.mjs",
     "open": "node server.mjs --open",
-    "test": "node --test server.test.mjs chat.test.mjs project.test.mjs journey.test.mjs variantes.test.mjs catalogo-imagenes.test.mjs chat-client.test.mjs viajes-catalogo.test.mjs promociones.test.mjs"
+    "test": "node --test server.test.mjs chat.test.mjs project.test.mjs journey.test.mjs variantes.test.mjs catalogo-imagenes.test.mjs chat-client.test.mjs viajes-catalogo.test.mjs promociones.test.mjs database.test.mjs",
+    "db:check": "node database/manage.mjs check",
+    "db:migrate": "node database/manage.mjs migrate",
+    "db:seed": "node database/manage.mjs seed",
+    "db:test": "node --test database/integration.test.mjs"
   },
   "engines": {
     "node": ">=22"
+  },
+  "dependencies": {
+    "msnodesqlv8": "^5.5.0",
+    "mssql": "^12.7.2"
   }
 }

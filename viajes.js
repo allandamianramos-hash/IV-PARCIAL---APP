@@ -809,6 +809,15 @@
       paris: { percent: 10, name: 'Escapadas a París' },
       barcelona: { percent: 10, name: 'Escapadas a Barcelona' }
   };
+  if (window.RumboDatabase?.connected) {
+    const catalog = window.RumboDatabase.catalog;
+    destinations.splice(0, destinations.length, ...catalog.destinations);
+    for (const key of Object.keys(rooms)) delete rooms[key];
+    Object.assign(rooms, catalog.rooms);
+    origins.splice(0, origins.length, ...catalog.origins);
+    for (const key of Object.keys(promotions)) delete promotions[key];
+    Object.assign(promotions, catalog.promotions);
+  }
   const discounted = (amount, percent) => Math.round(amount * (100 - percent)) / 100;
   destinations.forEach(d => { d.promotion = promotions[d.id] || null; });
 
@@ -836,7 +845,7 @@
   }
 
   const inspirationBudgets = { roatan:8500, 'la-ceiba':6500, copan:4500, bali:32000, dolomitas:19000, kioto:43000 };
-  destinations.forEach(d => { d.inspirationBudget = inspirationBudgets[d.id] || d.economy + Math.min(...d.hotels.map(h=>h.rate))*d.nights; });
+  destinations.forEach(d => { d.inspirationBudget = (!window.RumboDatabase?.connected && inspirationBudgets[d.id]) || d.economy + Math.min(...d.hotels.map(h=>h.rate))*d.nights; });
   destinations.filter(d => d.promotion).forEach(d => {
     d.originalInspirationBudget = d.economy + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
     d.inspirationBudget = discounted(d.economy, d.promotion.percent) + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
@@ -907,7 +916,7 @@
 
   // Se guarda una selección independiente; no se utiliza el carrito de la tienda.
   let stored = {};
-  try { stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; } catch (_) { stored = {}; }
+  try { stored = JSON.parse((window.RumboStorage || localStorage).getItem(STORAGE_KEY) || '{}') || {}; } catch (_) { stored = {}; }
   const fields = { destinationId: 'destino', origin: 'origen', date: 'salida', checkIn: 'entrada', travelers: 'viajeros', nights: 'noches', cabin: 'clase', rooms: 'habitaciones', flightId: 'vuelo', hotelId: 'hotel', roomType: 'tipoHabitacion' };
   let state = {
     destinationId: 'roatan', origin: 'Tegucigalpa', date: addDays(today(), 14), checkIn: '',
@@ -963,7 +972,7 @@
       flightId: '', hotelId: '', roomType: 'estandar', checkIn: state.date
     };
   }
-  // Llevar los datos en la URL permite pasar de página incluso si se bloquea localStorage.
+  // Llevar los datos en la URL permite pasar de página incluso si se bloquea (window.RumboStorage || localStorage).
   function link(path, overrides = {}) {
     const [file, hash] = path.split('#');
     const values = { ...state, ...overrides };
@@ -980,7 +989,7 @@
   let storageAvailable = true;
   function persist(updateURL = true) {
     cleanState();
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) { storageAvailable = false; }
+    try { (window.RumboStorage || localStorage).setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) { storageAvailable = false; }
     updateNavigation();
     if (updateURL && page !== 'destinos') {
       try { history.replaceState(null, '', link(`${page}${location.hash}`)); } catch (_) { /* file:// puede limitar History. */ }
@@ -1298,7 +1307,7 @@
   window.addEventListener('pageshow', event => {
     if (!event.persisted) return;
     try {
-      const latest = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      const latest = JSON.parse((window.RumboStorage || localStorage).getItem(STORAGE_KEY) || '{}');
       if (latest.destinationId !== state.destinationId) return;
       for (const key of Object.keys(fields)) if (latest[key] !== undefined) state[key] = latest[key];
       persist(); refreshPage();

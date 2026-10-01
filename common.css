@@ -131,7 +131,7 @@ main { animation: rumbo-page-enter 240ms ease-out; }
 .team-intro { max-width:640px; margin-bottom:30px; }
 .team-intro h2 { color:#254e48; font-size:clamp(28px,3vw,40px); letter-spacing:-1px; margin:12px 0; }
 .team-intro>p:last-child { color:#596b64; line-height:1.8; }
-.team-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
+.team-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:20px; }
 .team-person { padding:28px 22px; border:1px solid #e1e8e3; border-radius:22px; background:linear-gradient(145deg,#fff,#f3f6f2); transition:transform .25s,box-shadow .25s; }
 .team-avatar { display:grid; place-items:center; width:64px; height:64px; border-radius:22px; background:#dfecea; color:#28626a; font-size:22px; letter-spacing:1px; margin-bottom:28px; }
 .team-person:nth-child(2) .team-avatar { background:#f0e7d7; color:#846632; }
@@ -151,6 +151,7 @@ main { animation: rumbo-page-enter 240ms ease-out; }
 }
 @media(prefers-reduced-motion:no-preference) { #quienes-somos .about-photo-route path { animation:about-route 4s ease-out both; } }
 @keyframes about-route { from { stroke-dashoffset:100; opacity:0; } to { stroke-dashoffset:0; opacity:1; } }
+@media(max-width:1000px) { .team-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media(max-width:760px) {
  #servicios.section,#quienes-somos.about-rumbo,#guias.section { border-radius:24px; padding:24px 18px; margin-block:32px; }
  #quienes-somos .about-photo-frame img { height:390px; aspect-ratio:auto; }

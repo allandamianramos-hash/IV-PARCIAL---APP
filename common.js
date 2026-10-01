@@ -67,7 +67,7 @@
   if(checks.length){
     let saved=[];try{saved=JSON.parse((window.RumboStorage || localStorage).getItem('rumbo.departureChecklist.v1')||'[]');}catch{}
     checks.forEach(c=>c.checked=Array.isArray(saved)&&saved.includes(c.dataset.departure));
-    const show=()=>{const count=checks.filter(c=>c.checked).length;document.querySelector('#departure-progress').textContent=count===4?'Todo listo. ¡Disfruta el camino!':count+' de 4 preparativos listos';document.querySelector('#departure-meter').value=count;document.querySelector('#departure-reset').hidden=count===0;};
+    const show=()=>{const count=checks.filter(c=>c.checked).length;document.querySelector('#departure-progress').textContent=count===4?'4 de 4 preparativos completados':count+' de 4 preparativos listos';document.querySelector('#departure-meter').value=count;document.querySelector('#departure-reset').hidden=count===0;};
     const save=()=>{show();try{(window.RumboStorage || localStorage).setItem('rumbo.departureChecklist.v1',JSON.stringify(checks.filter(c=>c.checked).map(c=>c.dataset.departure)));}catch{document.querySelector('#departure-progress').textContent+=' · No se pudo guardar en este navegador.';}};
     checks.forEach(c=>c.addEventListener('change',save));document.querySelector('#departure-reset').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);save();checks[0].focus();});show();
   }

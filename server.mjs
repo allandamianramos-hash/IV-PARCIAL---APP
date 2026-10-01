@@ -12,6 +12,7 @@ const publicFiles = new Set(["index.html", "script.js", "chat-engine.js", "chat-
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
 publicFiles.add('database-client.js');
 for (const file of ['registro.html','iniciar-sesion.html','auth-client.js','auth.css']) publicFiles.add(file);
+publicFiles.add('guias-catalogo.js');
 export function createApp(chatOptions) {
   const chat = createChatHandler(chatOptions);
   return createServer(async (req, res) => {

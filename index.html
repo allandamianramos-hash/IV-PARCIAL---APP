@@ -422,9 +422,9 @@ const RUMBO_HERO_CONFIG = {
       "className": "campaign-coast",
       "environment": "sea",
       "title": "Escapadas seleccionadas",
-      "kicker": "TU PLAYA TE ESTÁ ESPERANDO",
+      "kicker": "VUELOS A CANCÚN",
       "headline": "Vuela a <span>Cancún</span><br>por menos.",
-      "description": "Unos días de mar te vendrían bien.",
+      "description": "Compara fechas, horarios y equipaje para tu vuelo a Cancún.",
       "price": {
         "original": 7200,
         "current": 5400,
@@ -450,7 +450,7 @@ const RUMBO_HERO_CONFIG = {
         {
           "src": "imagenes-viajes/hotel-bali-terraza.jpg",
           "alt": "Piscina junto al mar en Cancún",
-          "caption": "Un ratito frente al mar"
+          "caption": "Fotografía de referencia del hospedaje"
         }
       ],
       "tag": {
@@ -463,8 +463,8 @@ const RUMBO_HERO_CONFIG = {
       "id": "venecia",
       "className": "campaign-alpine",
       "environment": "mountains",
-      "title": "Europa a tu manera",
-      "kicker": "PRÓXIMA PARADA: ITALIA",
+      "title": "Vuelos a Europa",
+      "kicker": "VUELOS A VENECIA",
       "headline": "Descubre <span>Venecia.</span><br>Vuela con −20 %.",
       "description": "Canales, plazas y paseos por la ciudad. Elige tus fechas y compara vuelos.",
       "price": {
@@ -506,7 +506,7 @@ const RUMBO_HERO_CONFIG = {
       "className": "campaign-escape",
       "environment": "sunset",
       "title": "Descuento para grupos",
-      "kicker": "PARA VIAJAR EN COMPAÑÍA",
+      "kicker": "DESCUENTO PARA GRUPOS",
       "headline": "Tres o más viajeros.<br><span>5 % adicional.</span>",
       "description": "El descuento se aplica automáticamente al elegir de 3 a 12 pasajeros.",
       "price": null,
@@ -543,9 +543,9 @@ const RUMBO_HERO_CONFIG = {
       "className": "campaign-explore",
       "environment": "map",
       "title": "¿A dónde viajarías?",
-      "kicker": "EMPIEZA POR LO QUE TE GUSTA",
+      "kicker": "BUSCAR POR TIPO DE DESTINO",
       "headline": "¿Playa, montaña<br>o <span>ciudad?</span>",
-      "description": "Tú eliges el paisaje. Rumbito te ayuda a encontrar tu próximo rumbo.",
+      "description": "Filtra el catálogo por playa, naturaleza o ciudad y compara las opciones disponibles.",
       "price": null,
       "expires": null,
       "cta": {
@@ -997,22 +997,22 @@ document.addEventListener('DOMContentLoaded', () => {
   <main id="contenido">
     <!-- PORTADA -->
     <section class="campaign container" data-promo-carousel aria-roledescription="carrusel" aria-label="Promociones de Rumbo">
-<h1 class="campaign-accessible-title">Encuentra tu próximo rumbo: viajes y promociones</h1>
+<h1 class="campaign-accessible-title">Rumbo: destinos, vuelos y promociones</h1>
       <article class="campaign-slide campaign-coast" data-promo-slide data-title="Escapadas seleccionadas" aria-roledescription="diapositiva" aria-label="1 de 4: Escapadas seleccionadas" >
-        <div class="campaign-copy"><p class="campaign-kicker">TU PLAYA TE ESTÁ ESPERANDO</p><h2>Vuela a <span>Cancún</span><br>por menos.</h2><p class="campaign-description">Unos días de mar te vendrían bien.</p>
+        <div class="campaign-copy"><p class="campaign-kicker">VUELOS A CANCÚN</p><h2>Vuela a <span>Cancún</span><br>por menos.</h2><p class="campaign-description">Compara fechas, horarios y equipaje para tu vuelo a Cancún.</p>
           <p class="campaign-price" data-promo-price="cancun"></p>
           <div class="campaign-links"><a class="button" href="viajes.html?pantalla=detalle-destino&amp;destino=cancun">Quiero ir a Cancún <span aria-hidden="true">↗</span></a></div>
           <a class="campaign-secondary" href="viajes.html?pantalla=detalle-destino&amp;destino=madrid">¿Prefieres ciudad? Madrid también tiene −25 % <span aria-hidden="true">→</span></a>
 
         </div>
-        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/destino-cancun.jpg" alt="Vista aérea de la costa de Cancún" width="960" height="640" fetchpriority="high"><figcaption>Cancún, México</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/hotel-bali-terraza.jpg" alt="Piscina junto al mar en Cancún" width="960" height="640" loading="lazy"><figcaption>Un ratito frente al mar</figcaption></figure>
+        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/destino-cancun.jpg" alt="Vista aérea de la costa de Cancún" width="960" height="640" fetchpriority="high"><figcaption>Cancún, México</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/hotel-bali-terraza.jpg" alt="Piscina junto al mar en Cancún" width="960" height="640" loading="lazy"><figcaption>Fotografía de referencia del hospedaje</figcaption></figure>
           <div class="campaign-offer"><span class="campaign-tag-hole" aria-hidden="true"></span><strong>−25%</strong><span>EN VUELOS</span></div>
           <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
         </div>
         <p class="campaign-terms">25 % en vuelos de ida a Cancún y Madrid, económica y ejecutiva. Hotel y servicios aparte. Tarifas de demostración.</p>
       </article>
-      <article class="campaign-slide campaign-alpine" data-promo-slide data-title="Europa a tu manera" aria-roledescription="diapositiva" aria-label="2 de 4: Europa a tu manera" hidden>
-        <div class="campaign-copy"><p class="campaign-kicker">PRÓXIMA PARADA: ITALIA</p><h2>Cambia de aire.<br>Vuela a <span>Italia.</span></h2><p class="campaign-description">Las Dolomitas, a tu ritmo. Montañas, paseos y tiempo para ti.</p>
+      <article class="campaign-slide campaign-alpine" data-promo-slide data-title="Vuelos a Europa" aria-roledescription="diapositiva" aria-label="2 de 4: Vuelos a Europa" hidden>
+        <div class="campaign-copy"><p class="campaign-kicker">VUELOS A VENECIA</p><h2>Vuelos a <span>Venecia</span></h2><p class="campaign-description">Consulta vuelos y hospedajes en Venecia.</p>
           <p class="campaign-price" data-promo-price="venecia"></p>
           <div class="campaign-links"><a class="button" href="viajes.html?pantalla=detalle-destino&amp;destino=venecia">Descubrir Italia <span aria-hidden="true">↗</span></a></div>
           <a class="campaign-secondary" href="viajes.html?pantalla=destinos">Ver todos los destinos <span aria-hidden="true">→</span></a>
@@ -1025,7 +1025,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="campaign-terms">20 % en vuelos de ida a Venecia, económica y ejecutiva. Traslado a Dolomitas y hotel aparte. Tarifas de demostración.</p>
       </article>
       <article class="campaign-slide campaign-escape" data-promo-slide data-title="Tu viaje de fin de año" aria-roledescription="diapositiva" aria-label="3 de 4: Tu viaje de fin de año" hidden>
-        <div class="campaign-copy"><p class="campaign-kicker">ESTE FIN DE AÑO, REGÁLATE UN VIAJE</p><h2>Termina el año<br>en <span>otro lugar.</span></h2><p class="campaign-description">Elige las fechas. Nosotros te ayudamos a darle forma al viaje.</p>
+        <div class="campaign-copy"><p class="campaign-kicker">PLANIFICACIÓN DE VIAJES</p><h2>Compara destinos<br>y <span>fechas.</span></h2><p class="campaign-description">Selecciona origen, destino y número de pasajeros para consultar las opciones.</p>
 
           <div class="campaign-links"><a class="button" href="viajes.html?pantalla=vuelos">Planear mi viaje <span aria-hidden="true">↗</span></a></div>
           <a class="campaign-secondary" href="servicios.html">Explorar servicios para mi viaje <span aria-hidden="true">→</span></a>
@@ -1038,7 +1038,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="campaign-terms">Elige fechas, vuelo, hospedaje y experiencias. Revisa los servicios y el total de tu plan antes de finalizar.</p>
       </article>
       <article class="campaign-slide campaign-explore" data-promo-slide data-title="¿A dónde viajarías?" aria-roledescription="diapositiva" aria-label="4 de 4: ¿A dónde viajarías?" hidden>
-        <div class="campaign-copy"><p class="campaign-kicker">EMPIEZA POR LO QUE TE GUSTA</p><h2>¿Playa, montaña<br>o <span>ciudad?</span></h2><p class="campaign-description">Tú eliges el paisaje. Rumbito te ayuda a encontrar tu próximo rumbo.</p>
+        <div class="campaign-copy"><p class="campaign-kicker">BUSCAR POR TIPO DE DESTINO</p><h2>¿Playa, montaña<br>o <span>ciudad?</span></h2><p class="campaign-description">Filtra el catálogo por playa, naturaleza o ciudad y compara las opciones disponibles.</p>
 
           <div class="campaign-links"><a class="button" href="viajes.html?pantalla=destinos">Explorar destinos <span aria-hidden="true">↗</span></a></div>
 
@@ -1050,10 +1050,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <p class="campaign-terms">Explora los destinos del catálogo. Compara alternativas según tu presupuesto y organiza un viaje a tu medida.</p>
       </article>
-      <div class="campaign-controls"><button type="button" class="campaign-pause" data-promo-pause aria-label="Pausar promociones y animaciones">Ⅱ Pausar</button><div class="campaign-dots" role="group" aria-label="Elegir promoción"><button type="button" data-promo-dot aria-label="Ver promoción 1: Escapadas seleccionadas" aria-current="true"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 2: Europa a tu manera" aria-current="false"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 3: Tu viaje de fin de año" aria-current="false"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 4: ¿A dónde viajarías?" aria-current="false"><span aria-hidden="true"></span></button></div><span class="campaign-count" data-promo-count>01 / 04</span><button type="button" data-promo-prev aria-label="Promoción anterior">←</button><button type="button" data-promo-next aria-label="Promoción siguiente">→</button></div>
+      <div class="campaign-controls"><button type="button" class="campaign-pause" data-promo-pause aria-label="Pausar promociones y animaciones">Ⅱ Pausar</button><div class="campaign-dots" role="group" aria-label="Elegir promoción"><button type="button" data-promo-dot aria-label="Ver promoción 1: Escapadas seleccionadas" aria-current="true"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 2: Vuelos a Europa" aria-current="false"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 3: Tu viaje de fin de año" aria-current="false"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 4: ¿A dónde viajarías?" aria-current="false"><span aria-hidden="true"></span></button></div><span class="campaign-count" data-promo-count>01 / 04</span><button type="button" data-promo-prev aria-label="Promoción anterior">←</button><button type="button" data-promo-next aria-label="Promoción siguiente">→</button></div>
       <span class="sr-only" data-promo-status aria-live="polite" aria-atomic="true"></span>
     </section>
-    <div class="campaign-assist container"><button class="hero-adviser" type="button" data-open-planner><span class="rumbito-avatar rumbito-hero" aria-hidden="true"></span><span><strong>¿No sabes por dónde empezar?</strong><span class="rumbito-invite">Rumbito te ayuda a encontrar tu próximo rumbo ↗</span></span></button><button class="campaign-surprise" id="surprise-destination" type="button">Sorpréndeme ↗</button></div>
+    <div class="campaign-assist container"><button class="hero-adviser" type="button" data-open-planner><span class="rumbito-avatar rumbito-hero" aria-hidden="true"></span><span><strong>¿No sabes por dónde empezar?</strong><span class="rumbito-invite">Consulta destinos y presupuestos con Rumbito ↗</span></span></button><button class="campaign-surprise" id="surprise-destination" type="button">Sorpréndeme ↗</button></div>
 
     <!-- BUSCADOR -->
     <section class="container search-section" id="buscador" aria-labelledby="search-title">
@@ -1100,7 +1100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="section-heading">
         <div>
           
-          <h2 id="services-title">Arma tu viaje, paso a paso.</h2>
+          <h2 id="services-title">Servicios de viaje</h2>
         </div>
       </div>
 
@@ -1253,7 +1253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </section>
 
     <section class="container home-team" id="nuestro-equipo" aria-labelledby="team-title">
-      <div class="team-intro"><p class="eyebrow">LAS PERSONAS DETRÁS DE RUMBO</p><h2 id="team-title">Nuestro equipo.</h2><p>Cuatro ideas, un mismo rumbo. Somos un equipo de estudiantes que construye una forma más sencilla de descubrir y organizar tu próximo viaje.</p></div>
+      <div class="team-intro"><p class="eyebrow">LAS PERSONAS DETRÁS DE RUMBO</p><h2 id="team-title">Nuestro equipo.</h2><p>Somos Allan Ramos, Omar Tabora, Dianny Moreira y Dilan Banegas. Desarrollamos Rumbo como un proyecto académico de planificación de viajes.</p></div>
       <div class="team-grid">
         <article class="team-person"><span class="team-avatar" aria-hidden="true">AR</span><h3>Allan Ramos</h3><p>Equipo Rumbo</p></article>
         <article class="team-person"><span class="team-avatar" aria-hidden="true">OT</span><h3>Omar Tabora</h3><p>Equipo Rumbo</p></article>
@@ -1320,7 +1320,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </section>
 
     <section class="container departure-guide" id="antes-de-viajar" aria-labelledby="departure-title">
-      <div><h2 id="departure-title">Sal con la tranquilidad<br>de tenerlo listo.</h2><p>Una lista personal para esos detalles que suelen quedarse para el último momento. Marca lo que ya preparaste y vuelve cuando quieras.</p><a class="text-link" id="suggested-start" href="#guias">Consultar las guías de viaje →</a></div>
+      <div><h2 id="departure-title">Lista de preparativos</h2><p>Una lista personal para esos detalles que suelen quedarse para el último momento. Marca lo que ya preparaste y vuelve cuando quieras.</p><a class="text-link" id="suggested-start" href="#guias">Consultar las guías de viaje →</a></div>
       <div class="departure-checklist"><p id="departure-progress" role="status">0 de 4 preparativos listos</p><progress id="departure-meter" max="4" value="0" aria-label="Preparativos completados"></progress>
         <label><input type="checkbox" data-departure="documentos"><span><strong>Mis documentos están preparados</strong><small>Revisé su vigencia y guardé copias seguras.</small></span></label>
         <label><input type="checkbox" data-departure="offline"><span><strong>Tengo la información sin conexión</strong><small>Guardé direcciones y datos de mis reservas.</small></span></label>
@@ -1333,14 +1333,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contacto">
-    <div class="container footer-journey"><p>Tu próxima salida empieza aquí.</p><a href="viajes.html?pantalla=destinos">Encuentra tu destino <span aria-hidden="true">↗</span></a></div>
+    <div class="container footer-journey"><p>Consulta destinos, vuelos y hospedajes.</p><a href="viajes.html?pantalla=destinos">Encuentra tu destino <span aria-hidden="true">↗</span></a></div>
     <svg class="footer-route" viewBox="0 0 300 85" fill="none" aria-hidden="true"><path d="M4 68C58 12 111 80 156 42S205 11 196 35 249 75 296 9" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 7"/></svg>
     <div class="container footer-top">
       <div>
         <a class="logo" href="#inicio" aria-label="Rumbo, volver al inicio">
           rumbo<span aria-hidden="true">↗</span>
         </a>
-        <p>Desde Honduras, hacia tu próximo destino.</p>
+        <p>Planificación de viajes desde Honduras.</p>
       </div>
       <div class="footer-social-block">
         <p>Sigamos en contacto</p>
@@ -1417,7 +1417,7 @@ document.addEventListener('DOMContentLoaded', () => {
     aria-controls="help-chat"
   >
     <span class="rumbito-avatar" aria-hidden="true"></span>
-    <span><strong>Rumbito</strong><small>Tu copiloto de viaje</small></span>
+    <span><strong>Rumbito</strong><small>Asistente de viajes</small></span>
   </button>
 
   <section
@@ -1432,7 +1432,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="rumbito-avatar" aria-hidden="true"></span>
       <div>
         <h2 id="chat-title">Rumbito</h2>
-        <p>Tu copiloto para descubrir el mundo</p>
+        <p>Consulta destinos y servicios</p>
       </div>
       <button class="close-button" id="close-chat" type="button" aria-label="Cerrar chat">
         <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
@@ -1440,7 +1440,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
     <div class="chat-progress">
-      <span id="chat-step-label">Un gran viaje empieza con una buena idea.</span>
+      <span id="chat-step-label">Indica un destino o consulta las opciones disponibles.</span>
     </div>
 
     <div

@@ -6,9 +6,9 @@
   const number = value => words[value] || Number(value);
   const defaults = ["Planificar mi viaje", "Recomiéndame un destino", "Ver hoteles", "Qué llevar"];
   const questions = {
-    company: ["Primero, el equipo de esta aventura: ¿viajas solo, en pareja, con familia o con amigos?", ["Viajo solo", "En pareja", "Con familia", "Con amigos"]],
+    company: ["¿Viajas solo, en pareja, con familia o con amigos?", ["Viajo solo", "En pareja", "Con familia", "Con amigos"]],
     people: ["¿Cuántos viajeros se apuntan? Cuenta a todos, incluidos los niños (de 1 a 12).", ["Somos dos", "Somos tres", "Somos cuatro"]],
-    style: ["Ahora sí, imaginemos el escenario: ¿mar y descanso, naturaleza y aventura, o cultura y ciudad?", ["Playa", "Naturaleza", "Cultura", "Sin preferencia"]],
+    style: ["¿Prefieres playa, naturaleza o cultura?", ["Playa", "Naturaleza", "Cultura", "Sin preferencia"]],
     budget: ["¿Con cuánto contamos en total para el grupo? Dímelo en lempiras; por ejemplo, «20 mil» o «10000 por persona».", ["15000 en total", "25000 en total", "50000 en total"]]
   };
   function amount(value) {
@@ -28,7 +28,7 @@
     const trip = trips.find(t => t.id === state.destination);
     const answer = (reply, options = defaults, actions = [], changed = false) => ({ reply, options, actions, plan: changed ? plan : null, step: state.step || "" });
     const link = (label, view = "destinos", destination = trip?.id) => ({ label, href: `viajes.html?${new URLSearchParams({ pantalla: view, ...(destination ? { destino: destination } : {}) })}` });
-    if (/^(hola|buenas|buenos dias|buenas tardes|hey)[!. ]*$/.test(q)) return answer("¡Hola! Soy Rumbito, tu compañero de aventuras. ¿Vamos tras una playa tranquila, una escapada cultural o un poco de montaña? Cuéntame tu idea y buscamos una opción para ti.");
+    if (/^(hola|buenas|buenos dias|buenas tardes|hey)[!. ]*$/.test(q)) return answer("Hola, soy Rumbito. Puedo ayudarte a comparar destinos y organizar un presupuesto. Indica a dónde quieres viajar o qué tipo de viaje buscas.");
     if (/^(gracias|muchas gracias|genial|perfecto|ok)[!. ]*$/.test(q)) return answer("¡Con gusto! Me quedo por aquí para afinar los detalles. Un buen viaje también deja espacio para improvisar.", state.step ? questions[state.step][1] : defaults);
     if (/quien eres|eres una ia|como funcionas|eres chatgpt/.test(q)) return answer("Soy Rumbito, el asistente virtual de Rumbo. Trabajo con la información y las opciones de esta página para ayudarte a elegir, comparar y preparar tu pase. No consulto Internet ni hago reservas.");
     if (/cancelar|salir del pase|dejemos el pase/.test(q)) { state.active = false; state.step = ""; return answer("Dejamos el pase en pausa. Tus datos siguen aquí mientras la página esté abierta. ¿Vemos algún destino?"); }
@@ -104,7 +104,7 @@
       if (/otro destino|cualquier destino|alternativas/.test(q)) state.wanted = null;
       state.step = ["company", "people", "style", "budget"].find(field => !plan[field]) || "";
       if (state.step) {
-        const intro = mentioned.length ? `${mentioned[0].name} suena a una buena aventura. ` : budget || count || style ? "¡Voy tomando nota! " : "";
+        const intro = mentioned.length ? `Destino indicado: ${mentioned[0].name}. ` : budget || count || style ? "¡Voy tomando nota! " : "";
         return answer(intro + questions[state.step][0], questions[state.step][1], [], true);
       }
       const affordable = context.catalog.filter(t => t.price * plan.people <= plan.budget).sort((a, b) => a.price - b.price);
@@ -123,7 +123,7 @@
       }
       state.active = false; state.topic = ""; state.destination = choices[0].id;
       plan.destination = choices[0].id;
-      return answer(`¡Ya tenemos rumbo! ${choices[0].name} encaja en tu presupuesto.\n${choices.map(t => `• ${t.name}: ${money(t.price)} por persona × ${plan.people} = ${money(t.price * plan.people)} de base para el grupo.`).join("\n")}\n${!matching.length || (state.wanted && plan.style !== "all" && choices[0].style !== plan.style) ? "Ten en cuenta que esta opción es de otro estilo al que indicaste. " : ""}Ya tienes una idea para empezar. Elige tus servicios y consúltalos juntos en Mi viaje. Podrás descargar el resumen al finalizar tu plan.`, ["Ver hoteles", "Ver vuelos", `Itinerario de ${choices[0].name}`, "Qué llevar"], [{ label: "Elegir mis servicios", href: "#servicios" }], true);
+      return answer(`${choices[0].name} encaja en tu presupuesto.\n${choices.map(t => `• ${t.name}: ${money(t.price)} por persona × ${plan.people} = ${money(t.price * plan.people)} de base para el grupo.`).join("\n")}\n${!matching.length || (state.wanted && plan.style !== "all" && choices[0].style !== plan.style) ? "Ten en cuenta que esta opción es de otro estilo al que indicaste. " : ""}Ya tienes una idea para empezar. Elige tus servicios y consúltalos juntos en Mi viaje. Podrás descargar el resumen al finalizar tu plan.`, ["Ver hoteles", "Ver vuelos", `Itinerario de ${choices[0].name}`, "Qué llevar"], [{ label: "Elegir mis servicios", href: "#servicios" }], true);
     }
     if (trip && mentioned.length) return answer(`${trip.name}: ${trip.description}\n${trip.tip || ""}\n¿Te imaginas ahí? Podemos explorar dónde dormir, qué hacer o preparar un plan.`, [`Hoteles en ${trip.name}`, `Itinerario de ${trip.name}`, `Quiero un pase para ${trip.name}`], [link("Explorar destino")]);
     if (/destino|opciones|donde|barato|economico/.test(q)) return answer("Tenemos seis rumbos para imaginar:\n" + trips.map(t => `• ${t.name}: ${t.tag || t.style}.`).join("\n") + "\nEn el orientador de destinos, Copán Ruinas tiene la base más baja: L 4,500 por persona. ¿Lo comparamos con tus gustos y presupuesto?", ["Planificar mi viaje", "Comparar destinos", "Hoteles en La Ceiba"]);

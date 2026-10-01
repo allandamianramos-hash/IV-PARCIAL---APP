@@ -219,3 +219,19 @@ body .product-card { border-color:#e1e3db; }
 }
 
 .database-status{position:fixed;bottom:12px;left:12px;z-index:90;max-width:min(440px,calc(100vw - 24px));padding:8px 12px;background:#fff;color:#243c32;border:1px solid #d8e2dc;border-radius:10px;box-shadow:0 3px 15px #0001;font:12px/1.4 sans-serif;display:flex;gap:8px;align-items:center}.database-status button{border:0;background:#edf3ef;color:#243c32;border-radius:6px;padding:5px 8px;cursor:pointer}.database-status button[hidden]{display:none}
+
+/* Una familia legible para títulos, contenido y controles; se conserva la marca. */
+:root { --rumbo-font: 'Source Sans 3', 'Segoe UI', Arial, sans-serif; }
+body, body :is(h1,h2,h3,h4,p,dd,dt,li,label,input,select,textarea,button,small,figcaption,a,summary,span,strong):not(.logo):not(.logo *) { font-family:var(--rumbo-font); }
+body :is(h1,h2,h3,h4):not(.logo) { font-weight:600; letter-spacing:-.02em; }
+body .eyebrow { letter-spacing:.04em; }
+body .guide-hero h1 { letter-spacing:-.035em; }
+
+/* En móvil, el asistente no tapa los controles de selección de guías. */
+@media(max-width:560px) {
+ body:has(.guides-page) .chat-launcher { width:54px; min-height:54px; height:54px; padding:5px; border-radius:50%; justify-content:center; gap:0; }
+ body:has(.guides-page) .chat-launcher .rumbito-avatar { width:42px; height:44px; flex-basis:42px; }
+ body:has(.guides-page) .chat-launcher>span:last-of-type:not(.rumbito-avatar) { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+ body:has(.guides-page) .chat-launcher::after { display:none; }
+ body:has(.guides-page) .database-status { max-width:calc(100vw - 94px); padding:7px 9px; font-size:11px; }
+}

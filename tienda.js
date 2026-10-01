@@ -3194,12 +3194,11 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
             ${icon("bag")}
 
             <h3>
-              Tu próxima aventura<br>
-              todavía tiene espacio.
+              Tu carrito está vacío.
             </h3>
 
             <p>
-              Agrega tus esenciales y los encontrarás aquí.
+              Añade productos del catálogo para calcular el total.
             </p>
 
           </div>

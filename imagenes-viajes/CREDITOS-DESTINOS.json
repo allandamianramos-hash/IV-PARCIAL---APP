@@ -86,5 +86,115 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "description": "<div class=\"description\">\n500px provided description: Panama-Stadt mit ca. 1,5 Millionen Einwohnern ist die Hauptstadt und der Regierungssitz des mittelamerikanischen Staates Panama. [#city ,#architecture ,#panama ,#aerial ,#photo ,#sight ,#travelling ,#holiday ,#skyscrapper ,#architektur ,#papers ,#pa ,#stadt ,#urlaub ,#reisen ,#sehensw?rdigkeit ,#luftbild ,#panamacity ,#panam? ,#aerialphotography ,#luftbildaufnahme ,#allgemein ,#panamapapers ,#panamastadt ,#panamap]</div>"
+  },
+  {
+    "id": "venecia",
+    "title": "Venice",
+    "file": "imagenes-viajes/destino-venecia.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Venezia_aerial_view.jpg/3840px-Venezia_aerial_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Venice",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Kallerna\" title=\"User:Kallerna\">kallerna</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Aerial view of <a href=\"//commons.wikimedia.org/wiki/Venice\" class=\"mw-redirect\" title=\"Venice\">Venice</a>, <a href=\"//commons.wikimedia.org/wiki/Stazione_di_Venezia_Santa_Lucia\" title=\"Stazione di Venezia Santa Lucia\">railway station Santa Lucia</a> and port, Canale della Giudecca, <a href=\"//commons.wikimedia.org/wiki/Giudecca_a_Venezia\" title=\"Giudecca a Venezia\">island Giudecca</a>"
+  },
+  {
+    "id": "san-pedro-sula",
+    "title": "San Pedro Sula",
+    "file": "imagenes-viajes/destino-san-pedro-sula.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/d/df/Collage_of_San_Pedro_Sula_Honduras.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "page": "https://en.wikipedia.org/wiki/San_Pedro_Sula",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:JVC3ETA\" title=\"User:JVC3ETA\">JVC3ETA</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Collage of San Pedro Sula. Done with free collage maker piZap.com using free images from Wikimedia Commons."
+  },
+  {
+    "id": "ciudad-guatemala",
+    "title": "Guatemala City",
+    "file": "imagenes-viajes/destino-ciudad-guatemala.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Ciudad_de_Guatemala%2C_CA.jpg/3840px-Ciudad_de_Guatemala%2C_CA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Guatemala_City",
+    "author": "Rene Hernandez",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "description": "Zona 14, Ciudad de Guatemala"
+  },
+  {
+    "id": "osaka",
+    "title": "Osaka",
+    "file": "imagenes-viajes/destino-osaka.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Osaka_Castle_03bs3200.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "page": "https://en.wikipedia.org/wiki/Osaka",
+    "author": "<a href=\"https://ja.wikipedia.org/wiki/user:663highland\" class=\"extiw\" title=\"ja:user:663highland\">663highland</a>",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "description": "<b><a href=\"https://en.wikipedia.org/wiki/Osaka_Castle\" class=\"extiw\" title=\"en:Osaka Castle\">Osaka Castle</a></b> in Chuo-ku, <a href=\"//commons.wikimedia.org/wiki/Osaka\" class=\"mw-redirect\" title=\"Osaka\">Osaka</a>, Osaka prefecture, <a href=\"//commons.wikimedia.org/wiki/Japan\" class=\"mw-redirect\" title=\"Japan\">Japan</a>"
+  },
+  {
+    "id": "comayagua",
+    "title": "Comayagua",
+    "file": "imagenes-viajes/destino-comayagua.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Ciudad_de_Comayagua_collague.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "page": "https://en.wikipedia.org/wiki/Comayagua",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Luis_Alfredo_Romero\" title=\"User:Luis Alfredo Romero\">Luis Alfredo Romero</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Ciudad de Comayagua en Honduras, ex capital del pais"
+  },
+  {
+    "id": "san-jose",
+    "title": "San José, Costa Rica",
+    "file": "imagenes-viajes/destino-san-jose.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Ciudad_de_San_Jos%C3%A9.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "page": "https://en.wikipedia.org/wiki/San_Jos%C3%A9%2C_Costa_Rica",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Aleat88\" class=\"mw-redirect\" title=\"User:Aleat88\">Alejandro Álvarez Taborda (Aleat88)</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Foto-montaje de la ciudad de San José"
+  },
+  {
+    "id": "paris",
+    "title": "Paris",
+    "file": "imagenes-viajes/destino-paris.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/3840px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Paris",
+    "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/10288162@N07\">Yann Caradec</a> from Paris, France",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "description": "La Tour Eiffel vue de la Tour Saint-Jacques, Paris."
+  },
+  {
+    "id": "nueva-york",
+    "title": "New York City",
+    "file": "imagenes-viajes/destino-nueva-york.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/04/Lights_of_Rockefeller_Center_during_sunset.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "page": "https://en.wikipedia.org/wiki/New_York_City",
+    "author": "Pedro Lastra",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "description": "Lights of Rockefeller Center during sunset"
+  },
+  {
+    "id": "barcelona",
+    "title": "Barcelona",
+    "file": "imagenes-viajes/destino-barcelona.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Evening_light_over_Barcelona.jpg/3840px-Evening_light_over_Barcelona.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Barcelona",
+    "author": "M McBey",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "description": "With part of the Port of Barcelona in the foreground and Montserrat Mountain at top left"
+  },
+  {
+    "id": "roma",
+    "title": "Rome",
+    "file": "imagenes-viajes/destino-roma.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "page": "https://en.wikipedia.org/wiki/Rome",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Diliff\" title=\"User:Diliff\">Diliff</a>",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "description": "<p>A 5x5 segment panorama taken by myself with a Canon 5D and 24-105mm f/4L IS lens. Stitched with rectilinear projection to keep lines straight. \n</p>\nThis view is about 100 degrees horizontally, close to the upper practical limit of rectilinear projection."
   }
 ]

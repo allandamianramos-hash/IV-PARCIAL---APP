@@ -9,6 +9,15 @@ const context = { window: {} };
 vm.runInNewContext(source.slice(0, source.indexOf('/* Abre una')), context);
 const { destinations, origins, flights } = context.window.RumboViajesDatos;
 
+test('solo quedan los destinos aprobados y cada uno tiene un aeropuerto identificado', () => {
+  for(const id of ['la-ceiba','copan','yojoa','antigua','dolomitas','kioto']) assert.ok(!destinations.some(d=>d.id===id));
+  for(const d of destinations){assert.match(d.airport.code,/^[A-Z]{3}$/);assert.ok(d.airport.name);}
+  const sanJose=destinations.find(d=>d.id==='san-jose');
+  assert.equal(sanJose.country,'Costa Rica');assert.equal(sanJose.airport.code,'SJO');
+  assert.equal(sanJose.region,'internacional');
+  assert.ok(destinations.filter(d=>d.region==='internacional').length>destinations.filter(d=>d.region==='honduras').length);
+});
+
 test('cada hospedaje tiene una fotografía distinta con autor y licencia', async () => {
   const photos=JSON.parse(await readFile(new URL('imagenes-viajes/CREDITOS-HOTELES.json',import.meta.url),'utf8'));
   const hashes=new Set(),sources=new Set();

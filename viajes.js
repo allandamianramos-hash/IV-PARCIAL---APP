@@ -726,6 +726,64 @@
 };
   destinations.forEach(d => d.hotels.forEach(h => Object.assign(h, hotelPhotos[h.id])));
 
+  // El catálogo activo solo ofrece destinos con aeropuerto identificado.
+  // Cambiar el identificador evita convertir una selección anterior en otra ciudad.
+  const airportReplacements = {
+    'la-ceiba': ['san-jose','San José','Museos, mercados y parques en el Valle Central de Costa Rica.', ['Conocer museos','Pasear por los parques','Probar la gastronomía local']],
+      copan: ['paris','París','Museos, cafés y paseos junto al Sena en la capital francesa.', ['Visitar la Torre Eiffel','Explorar el Louvre','Pasear por Montmartre']],
+      yojoa: ['roma','Roma','Historia, plazas y sabores italianos en la Ciudad Eterna.', ['Conocer el Coliseo','Visitar la Fontana di Trevi','Pasear por Trastevere']],
+      utila: ['nueva-york','Nueva York','Rascacielos, parques y barrios llenos de vida.', ['Pasear por Central Park','Visitar sus museos','Conocer Times Square']],
+      tela: ['barcelona','Barcelona','Arquitectura, gastronomía y paseos junto al Mediterráneo.', ['Conocer la Sagrada Familia','Recorrer el Barrio Gótico','Pasear por la Barceloneta']],
+    antigua: ['ciudad-guatemala','Ciudad de Guatemala','Museos, mercados y barrios para una escapada urbana.', ['Visitar museos','Recorrer mercados','Descubrir la ciudad']],
+    dolomitas: ['venecia','Venecia','Canales, puentes y plazas para descubrir a pie.', ['Pasear junto a los canales','Conocer sus plazas','Explorar sus barrios']],
+    kioto: ['osaka','Osaka','Gastronomía, barrios animados y cultura urbana japonesa.', ['Probar sabores locales','Explorar los barrios','Visitar espacios culturales']]
+  };
+  destinations.forEach(d => {
+    const replacement = airportReplacements[d.id];
+    if (!replacement) return;
+    const [id,name,intro,highlights] = replacement;
+    Object.assign(d,{id,name,arrival:name,intro,description:intro,type:'cultura',tag:'Cultura y ciudad',highlights,
+      image:`imagenes-viajes/destino-${id}.jpg`,alt:`Vista de ${name}; fotografía de Wikimedia Commons`,
+      transfer:'',tip:'Organiza el traslado entre el aeropuerto y tu hospedaje por separado.'});
+    if(id==='san-jose'){
+      Object.assign(d,{country:'Costa Rica',region:'internacional',economy:6200,duration:180});
+      const names=['Hotel Patio del Café','Lodge Jardín de la Sabana','Boutique Valle del Sol','Apartamentos Paseo del Cedro','Hotel Cúpula Esmeralda'];
+      d.hotels.forEach((h,i)=>{h.name=names[i];h.area=i===1?'Zona de parques':'Zona urbana';});
+    }
+      const popularCities = {
+        paris: ['Francia',24000,900,6,['Maison Lumière','Hotel Jardín del Sena','Boutique Atelier Azul','Suites de la Ópera','Posada del Bulevar']],
+        roma: ['Italia',23000,960,5,['Hotel Patio del Tíber','Casa del Olivo','Boutique Terra Dorada','Suites del Mosaico','Posada Via Serena']],
+        'nueva-york': ['Estados Unidos',13000,480,5,['Hotel Hudson Garden','Skyline Loft','Boutique Maple House','Suites del Puente','Hotel Avenue Central']],
+        barcelona: ['España',21500,840,5,['Hotel Patio del Eixample','Casa del Mosaico','Boutique Brisa Catalana','Suites del Paseo','Hotel Jardín Condal']]
+      };
+      if(popularCities[id]){
+        const [country,economy,duration,nights,names]=popularCities[id];
+        Object.assign(d,{country,region:'internacional',economy,duration,nights});
+        d.hotels.forEach((h,i)=>Object.assign(h,{name:names[i],area:i===0?'Zona céntrica':'Zona urbana',rate:1800+i*450}));
+      }
+    d.hotels.forEach(h => {
+      h.name=h.name.replace('Jardín de Copán','Jardín del Valle').replace('Luna de Kioto','Luna de Naniwa')
+        .replace('Refugio Alpino','Posada del Canal').replace('Cumbres Boutique','Palacio de la Laguna')
+        .replace('Chalet Roca del Alba','Casa del Puente').replace('Hotel Reflejos del Lago','Hotel Reflejos de la Plaza')
+        .replace('Posada Orilla del Junco','Posada del Campanario');
+      if(h.area.includes('montaña'))h.area='Zona urbana';
+    });
+  });
+  const airports = {
+    roatan: ['RTB','Juan Manuel Gálvez'], 'san-jose':['SJO','Juan Santamaría (Alajuela, sirve a San José)'],
+      paris:['CDG','París-Charles de Gaulle'], roma:['FCO','Leonardo da Vinci–Fiumicino'],
+      'nueva-york':['JFK','John F. Kennedy'], barcelona:['BCN','Josep Tarradellas Barcelona-El Prat'], bali:['DPS','I Gusti Ngurah Rai'],
+    venecia:['VCE','Marco Polo'], osaka:['KIX','Kansai'],
+    'ciudad-guatemala':['GUA','La Aurora'],panama:['PTY','Tocumen'],
+    cancun:['CUN','Internacional de Cancún'],miami:['MIA','Internacional de Miami'],madrid:['MAD','Adolfo Suárez Madrid-Barajas']
+  };
+  destinations.forEach(d => {
+    const [code,name]=airports[d.id];
+    d.airport={code,name};
+    if(d.id==='tela'){d.arrival='Tela';d.transfer='';}
+    if(d.id==='bali')d.arrival='Denpasar, Bali';
+  });
+
   const airlines = {
     cm:{name:'CM Airlines',url:'https://www.cmairlines.com/es'},
     avianca:{name:'avianca',url:'https://www.avianca.com/es/'},
@@ -754,7 +812,7 @@
   function flights(destination, origin) {
     if (destination.arrival === origin) return [];
     const extra = origin === 'San Pedro Sula' ? 200 : 0;
-    const providers = destination.region==='honduras'?['cm']:['bali','kioto'].includes(destination.id)?['american']:['madrid','dolomitas'].includes(destination.id)?['iberia','avianca','american']:['avianca','copa','american'];
+    const providers = destination.region==='honduras'?['cm']:['bali','osaka'].includes(destination.id)?['american']:['madrid','venecia'].includes(destination.id)?['iberia','avianca','american']:['avianca','copa','american'];
     return ['08:30', '12:15', '16:45', '06:00', '14:20', '19:10'].map((departure, index) => ({
       id: `${destination.id}-${origins.indexOf(origin)}-${index}`,
       code: `DEMO ${210 + destinations.indexOf(destination) * 10 + index}`,
@@ -935,7 +993,7 @@
     element.textContent = message; element.hidden = false;
     clearTimeout(toastTimer); toastTimer = setTimeout(() => { element.hidden = true; }, 3500);
   }
-  function destinationOptions() { return destinations.map(item => `<option value="${item.id}">${item.name}</option>`).join(''); }
+  function destinationOptions() { return destinations.map(item => `<option value="${item.id}">${item.name} · ${item.airport.code}</option>`).join(''); }
   function notFound() {
     $('#contenido').innerHTML = '<section class="rv-empty" style="margin-top:32px"><h1>Ese destino no está en el catálogo.</h1><p>Elige una de las opciones disponibles para continuar.</p><a class="button button-primary" href="viajes.html?pantalla=destinos">Explorar destinos ↗</a></section>';
   }
@@ -968,7 +1026,7 @@
       $('#destination-list').innerHTML = results.map(item => {
         const href = escapeHTML(link('detalle-destino', contextFor(item)));
         return `<article class="rv-destination-card"><a href="${href}" class="rv-card-photo" tabindex="-1" aria-hidden="true"><img src="${item.image}" alt="" width="1100" height="760" loading="lazy"><span class="rv-card-tag">${item.tag}</span></a>
-          <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p>${item.intro}</p>${item.promotion ? `<p class="promo-note"><span class="promo-badge">−${item.promotion.percent}% en vuelos</span> Descuento automático</p>` : ''}<div class="rv-card-footer"><div><small>Idea de presupuesto / persona</small>${item.originalInspirationBudget ? `<del class="promo-original">${money(item.originalInspirationBudget)}</del>` : ''}<strong>${money(item.inspirationBudget)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino ↗</a></div></div></article>`;
+          <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p>${item.intro}</p><p class="rv-demo-caption">Aeropuerto: ${item.airport.name} (${item.airport.code})</p>${item.promotion ? `<p class="promo-note"><span class="promo-badge">−${item.promotion.percent}% en vuelos</span> Descuento automático</p>` : ''}<div class="rv-card-footer"><div><small>Idea de presupuesto / persona</small>${item.originalInspirationBudget ? `<del class="promo-original">${money(item.originalInspirationBudget)}</del>` : ''}<strong>${money(item.inspirationBudget)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino ↗</a></div></div></article>`;
       }).join('');
       const query = new URLSearchParams(new FormData(form));
       query.set('orden', order);
@@ -1084,8 +1142,8 @@
       if ($('#flight-sort').value === 'time') options.sort((a, b) => a.departure.localeCompare(b.departure));
       $('#flight-result-title').textContent = `${state.origin} → ${destination.arrival}`;
       $('#flight-results-meta').textContent = `${options.length} opciones · ${formatDate(state.date)} · ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}`;
-      $('#flight-transfer').textContent = destination.transfer;
-      $('#flight-transfer').hidden = !destination.transfer;
+      $('#flight-transfer').textContent = `Aeropuerto de llegada: ${destination.airport.name} (${destination.airport.code}). La existencia del aeropuerto no garantiza vuelos directos ni disponibilidad para estas fechas. ${destination.transfer}`;
+      $('#flight-transfer').hidden = false;
       $('#flight-form-notice').textContent = destination.promotion ? `${destination.promotion.percent}% de descuento automático en los vuelos de ${destination.name}. Hotel y servicios por separado; promoción de demostración de Rumbo.` : 'Vuelos de ida · ajusta fechas y pasajeros.';
       $('#flight-list').innerHTML = options.length ? options.map((flight, index) => {
         const end = arrival(flight);

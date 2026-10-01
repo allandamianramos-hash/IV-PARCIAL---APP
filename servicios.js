@@ -43,7 +43,7 @@
     const c=configs[section];
     document.title=`${c.name} | Rumbo`;
     let fields='';
-    if(section==='traslados') fields=select('route','Ruta', [['roatan','Aeropuerto de Roatán → West Bay'],['copan','San Pedro Sula → Copán Ruinas'],['ceiba','Aeropuerto de La Ceiba → Centro']])+input('date','Fecha del traslado','date',today(),`min="${today()}"`)+input('time','Hora de recogida','time','10:00')+input('people','Pasajeros','number',2,'min="1" max="12" step="1"')+input('bags','Maletas grandes','number',2,'min="0" max="12" step="1"')+select('direction','Sentido',[['out','Ida'],['back','Ruta inversa']]);
+    if(section==='traslados') fields=select('route','Ruta', [['roatan','Aeropuerto de Roatán → West Bay'],['sps','Aeropuerto Ramón Villeda Morales → San Pedro Sula'],['sjo','Aeropuerto Juan Santamaría → San José']])+input('date','Fecha del traslado','date',today(),`min="${today()}"`)+input('time','Hora de recogida','time','10:00')+input('people','Pasajeros','number',2,'min="1" max="12" step="1"')+input('bags','Maletas grandes','number',2,'min="0" max="12" step="1"')+select('direction','Sentido',[['out','Ida'],['back','Ruta inversa']]);
     if(section==='seguros') fields=select('zone','Zona del viaje',[['nacional','Honduras'],['internacional','Internacional']])+input('date','Inicio del viaje','date',today(),`min="${today()}"`)+input('end','Fin del viaje','date',today(),`min="${today()}"`)+input('people','Viajeros','number',1,'min="1" max="12" step="1"');
     if(section==='guias') fields=select('destination','Destino',catalog.map(d=>[d.id,d.name]))+input('date','Fecha del recorrido','date',today(),`min="${today()}"`)+input('people','Personas','number',2,'min="1" max="12" step="1"')+select('language','Idioma',[['all','Cualquier idioma'],['es','Español'],['en','Inglés']])+select('style','Experiencia',[['all','Todas'],['cultura','Cultura e historia'],['naturaleza','Naturaleza'],['playa','Costa y descanso']]);
     root.innerHTML=crumb(c.name)+hero(c.title,c.intro,'LOS DETALLES HACEN EL VIAJE',c.icon,c.stamp)+tabs()+`<div class="service-stage"><span>01</span><div><h2>Personaliza tu búsqueda</h2><p>Primero los detalles; después compara y elige.</p></div></div><form id="service-search" class="service-form">${fields}<div class="service-form-foot"><p id="form-notice">Ajusta los detalles y compara las opciones.</p><button class="button button-primary">Ver opciones ↗</button></div></form><div class="service-stage"><span>02</span><div><h2>Compara y elige tu opción</h2><p>Revisa qué incluye cada alternativa y guarda tu favorita en Mi viaje.</p></div></div><div class="service-layout"><section aria-labelledby="results-title"><h2 id="results-title">Opciones para tu viaje</h2><p id="results-count" role="status"></p><div id="service-results" class="service-results"></div></section><aside class="service-summary" aria-label="Resumen"><p class="eyebrow">TU ELECCIÓN</p><h2>Un detalle más, listo.</h2><div id="summary-content"><p>Elige una opción para revisar el importe y guardarla.</p></div><button id="save-service" class="button button-primary" disabled>Guardar y continuar →</button><p id="service-status" class="service-status" role="status" aria-live="polite"></p></aside></div>`;
@@ -59,7 +59,7 @@
         if(!$('#date').checkValidity())$('#date').value=today();
         if(Number.isInteger(trip.travelers) && trip.travelers>=1 && trip.travelers<=12)$('#people').value=trip.travelers;
         if(section==='guias')$('#destination').value=destination.id;
-        if(section==='traslados')$('#route').value=({roatan:'roatan',copan:'copan','la-ceiba':'ceiba'})[destination.id] || 'roatan';
+        if(section==='traslados')$('#route').value=({roatan:'roatan','san-pedro-sula':'sps','san-jose':'sjo'})[destination.id] || 'roatan';
         if(section==='seguros'){
           $('#zone').value=destination.region==='honduras'?'nacional':'internacional';
           const end=new Date($('#date').value+'T12:00:00Z');end.setUTCDate(end.getUTCDate()+Math.min(30,Math.max(1,Number(trip.nights)||1)));$('#end').value=end.toISOString().slice(0,10);
@@ -86,7 +86,7 @@
       const values=Object.fromEntries(new FormData(form)); const people=Number(values.people);
       detail=`${values.date} · ${people} ${people===1?'persona':'personas'}`;
       if(section==='traslados'){
-        const base={roatan:750,copan:2800,ceiba:450}[values.route];
+        const base={roatan:750,sps:800,sjo:950}[values.route];
         detail=`${$('#route').selectedOptions[0].textContent}${values.direction==='back'?' (ruta inversa)':''} · ${detail} · ${values.time} · ${values.bags} maletas`;
         options=[{id:'compacto',title:'Un viaje para ti',tag:'Auto privado',capacity:3,bags:2,factor:1,desc:'Un vehículo solo para tu grupo. Ideal para viajar ligero.'},{id:'familiar',title:'Espacio para compartir',tag:'Miniván privada',capacity:6,bags:6,factor:1.65,desc:'Más espacio para las maletas y para las personas que te acompañan.'},{id:'grupo',title:'Todos en el mismo rumbo',tag:'Van para grupos',capacity:12,bags:12,factor:2.6,desc:'La salida empieza juntos, con espacio para todo el grupo.'}].filter(o=>o.capacity>=people && o.bags>=Number(values.bags)).map(o=>({...o,total:Math.round(base*o.factor),unit:'Total por vehículo · un trayecto',items:[`Hasta ${o.capacity} pasajeros y ${o.bags} maletas`,'Recogida y destino según la ruta elegida','Paradas adicionales no incluidas']}));
       } else if(section==='seguros') {
@@ -102,10 +102,10 @@
       $('#service-results').innerHTML=options.length?options.map(o=>`<article class="service-option" data-option="${o.id}"><span class="service-badge">${o.tag}</span><h3>${o.title}</h3><p>${o.desc}</p><ul>${o.items.map(i=>`<li>${i}</li>`).join('')}</ul><div class="service-option-bottom"><div><strong>${money(o.total)}</strong><small>${o.unit}</small></div><button class="button button-outline" type="button" data-choose="${o.id}" aria-pressed="false" aria-label="Elegir ${o.title}">Elegir opción</button></div></article>`).join(''):'<div class="service-empty"><h3>No hay opciones con estos filtros.</h3><p>Prueba otro idioma o tipo de experiencia.</p><button class="button button-outline" type="button" id="reset-service">Limpiar filtros</button></div>';
       $('#reset-service')?.addEventListener('click',()=>{ $('#language').value='all'; $('#style').value='all'; render(); });
       const target=read('rumbo.integrante2.viaje.v1',{})?.destinationId;
-      if(section==='traslados' && target && !['roatan','copan','la-ceiba'].includes(target)){
+      if(section==='traslados' && target && !['roatan','san-pedro-sula','san-jose'].includes(target)){
         options=[];
         $('#results-count').textContent='No hay rutas para el destino elegido.';
-        $('#service-results').innerHTML='<div class="service-empty"><h3>Puedes continuar sin traslado.</h3><p>Las rutas disponibles actualmente son Roatán, La Ceiba y Copán. No añadiremos un transporte que no corresponda a tu destino.</p></div>';
+        $('#service-results').innerHTML='<div class="service-empty"><h3>Puedes continuar sin traslado.</h3><p>Las rutas disponibles actualmente son Roatán, San Pedro Sula y San José. No añadiremos un transporte que no corresponda a tu destino.</p></div>';
       }
     }
     form.addEventListener('input',()=>{clearSelection(); form.dataset.dirty='true'; $('#form-notice').textContent='Pulsa Ver opciones para aplicar tus cambios.'; root.querySelectorAll('[data-choose]').forEach(b=>b.disabled=true); if(section==='seguros') { $('#end').min=$('#date').value; $('#end').setCustomValidity(''); }});

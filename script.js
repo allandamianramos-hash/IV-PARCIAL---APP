@@ -49,11 +49,11 @@
       ],
       cart: [
         "Carrito",
-        "No hay compras ni pagos disponibles en esta demostración."
+        "Encuentra equipaje y accesorios desde Servicios."
       ],
       flights: [
         "Buscar vuelos",
-        "Se integrará la consulta de vuelos, equipaje y tarifas. No hay disponibilidad real."
+        "Consulta vuelos, equipaje y tarifas desde Servicios."
       ],
       stays: [
         "Consultar hospedaje",
@@ -163,7 +163,7 @@
             <p>${trip.description}</p>
             <div class="card-bottom">
               <div class="price">
-                <small>Presupuesto orientativo / persona</small>
+                <small>Presupuesto / persona</small>
                 <strong>${money(trip.price)} <span>HNL</span></strong>
               </div>
               <button
@@ -179,7 +179,7 @@
         card.querySelector("button").addEventListener("click", () => {
           showModule(
             trip.name,
-            `${trip.duration}. Base ficticia: ${money(trip.price)} HNL por persona. ` +
+            `${trip.duration}. Presupuesto: ${money(trip.price)} HNL por persona. ` +
             "Los servicios incluidos, las fechas y la disponibilidad no están definidos. " +
             "No es una oferta contratable."
           );
@@ -269,202 +269,7 @@
     window.addEventListener("hashchange", () => openGuide(location.hash));
     openGuide(location.hash);
 
-    /* El orientador inspira; el ticket se emite al cerrar Mi viaje. */
-    const emptyPlan=()=>({company:'',people:0,style:'',budget:0});
-    let plan=emptyPlan();
-    function clearPass() {}
-    function preparePass(destinations) {
-      const link=document.querySelector('#suggested-start');
-      if(link&&destinations[0]){link.href='viajes.html?pantalla=vuelos&destino='+encodeURIComponent(destinations[0].id);link.textContent='Organizar un viaje a '+destinations[0].name+' →';}
-    }
 
-    /* RUMBITO */
-    const panel = $("#help-chat");
-    const launcher = $("#chat-launcher");
-    const messages = $("#chat-messages");
-    const input = $("#chat-input");
-    const form = $("#chat-form");
-    const send = form.querySelector('button[type="submit"]');
-    const restart = $("#chat-restart");
-    const options = $("#chat-options");
-    let localState = {};
-    const openButtons = [launcher, ...document.querySelectorAll("[data-open-planner], [data-open-help]")];
-    let opener = launcher;
-    let busy = false;
-    const avatars = [...document.querySelectorAll(".rumbito-avatar")];
-    avatars.forEach(avatar => {
-      avatar.innerHTML = '<img src="imagenes/rumbito.png" width="256" height="256" alt="" draggable="false">';
-      const surface = avatar.closest('button') || avatar;
-      surface.addEventListener('pointermove', event => {
-        if (reducedMotion.matches || event.pointerType === 'touch') return;
-        const rect = surface.getBoundingClientRect();
-        avatar.style.setProperty('--gaze-x', ((event.clientX - rect.left) / rect.width * 6 - 3) + 'px');
-        avatar.style.setProperty('--gaze-y', ((event.clientY - rect.top) / rect.height * 6 - 3) + 'px');
-      }, { passive: true });
-      surface.addEventListener('pointerleave', () => {
-        avatar.style.setProperty('--gaze-x', '0px');
-        avatar.style.setProperty('--gaze-y', '0px');
-      });
-    });
-    let closeAnimation;
-    function updateComposer() {
-      send.disabled = busy || !input.value.trim();
-      panel.classList.toggle('is-composing', !busy && !!input.value.trim());
-    }
-    input.addEventListener('input', updateComposer);
-
-    function openChat(button) {
-      clearTimeout(closeAnimation);
-      panel.classList.remove("is-closing");
-      opener = button;
-      panel.hidden = false;
-      launcher.classList.add("chat-is-open");
-      openButtons.forEach(item => item.setAttribute("aria-expanded", "true"));
-      input.focus();
-      messages.scrollTop = messages.scrollHeight;
-    }
-
-    function closeChat() {
-      panel.classList.add("is-closing");
-      closeAnimation = setTimeout(() => {
-        panel.hidden = true;
-        panel.classList.remove("is-closing");
-      }, reducedMotion.matches ? 0 : 180);
-      launcher.classList.remove("chat-is-open");
-      openButtons.forEach(item => item.setAttribute("aria-expanded", "false"));
-      opener.focus();
-    }
-
-    function addMessage(text, user = false) {
-      const message = document.createElement("p");
-      message.className = user ? "chat-message user" : "chat-message";
-      message.textContent = text;
-      messages.appendChild(message);
-      while (messages.children.length > 60) messages.firstElementChild.remove();
-      messages.scrollTop = messages.scrollHeight;
-      return message;
-    }
-
-    function resetChat() {
-      localState = {};
-      plan = emptyPlan();
-      clearPass();
-      messages.replaceChildren();
-      input.value = "";
-      updateComposer();
-      addMessage("¡Hola! Soy Rumbito, tu compañero de aventuras. Tú pones las ganas y yo te ayudo a encontrar el rumbo. ¿Playa, montaña o una ciudad por descubrir?");
-      renderOptions(window.RumboChat.defaults);
-      setText("#chat-step-label", "Un gran viaje empieza con una buena idea.");
-    }
-
-    function renderOptions(items = []) {
-      options.replaceChildren();
-      items.slice(0, 6).forEach(text => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.textContent = text;
-        button.addEventListener("click", () => void sendMessage(text));
-        options.appendChild(button);
-      });
-    }
-
-    function appendActions(message, actions = []) {
-      actions.forEach(action => {
-        const url = new URL(action.href, location.href);
-        if (!["viajes.html", "tienda.html", "index.html", "servicios.html"].some(file => url.pathname.endsWith("/" + file)) && !action.href.startsWith("#")) return;
-        const link = document.createElement("a");
-        link.href = action.href === "#mi-pase" ? "#servicios" : action.href;
-        link.textContent = `${action.label} ↗`;
-        if (action.href.startsWith("#")) link.addEventListener("click", () => closeChat());
-        message.appendChild(link);
-      });
-    }
-
-    function applyPlan(next) {
-      if (!next) return;
-      plan = {
-        company: typeof next.company === "string" ? next.company.slice(0, 80) : "",
-        people: Number.isInteger(next.people) && next.people >= 1 && next.people <= 12 ? next.people : 0,
-        style: Object.hasOwn(styles, next.style) ? next.style : "",
-        budget: Number.isFinite(next.budget) && next.budget > 0 ? next.budget : 0
-      };
-      clearPass();
-      if (plan.company && plan.people && plan.style && plan.budget) {
-        const affordable = catalog.filter(trip => trip.price * plan.people <= plan.budget);
-        const matching = affordable.filter(trip => plan.style === "all" || trip.style === plan.style);
-        const selected = next.destination ? affordable.filter(trip => trip.id === next.destination) : matching.length ? matching : affordable;
-        const preferred = selected.find(trip => trip.id === next.destination);
-        if (preferred) selected.sort((a, b) => Number(b === preferred) - Number(a === preferred));
-        preparePass(selected, matching.length > 0);
-      }
-    }
-
-    async function sendMessage(value) {
-      const text = value.trim();
-      if (!text || busy) return;
-      if (text.length > 2000) return;
-      busy = true;
-      input.disabled = send.disabled = restart.disabled = true;
-      options.querySelectorAll("button").forEach(button => button.disabled = true);
-      panel.classList.remove("is-composing");
-      panel.classList.add("is-thinking");
-      form.setAttribute("aria-busy", "true");
-      addMessage(text, true);
-      input.value = "";
-      const pending = addMessage("Rumbito está pensando…");
-      pending.classList.add("is-typing");
-      try {
-        await new Promise(resolve => setTimeout(resolve, reducedMotion.matches ? 0 : 380));
-        const context = {
-          catalog,
-          trips: window.RumboViajesDatos?.destinations || [],
-          flights: window.RumboViajesDatos?.flights,
-          contacts: Array.from(document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]'), a => a.textContent.trim())
-        };
-        const result = window.RumboChat.respond(text, plan, context, localState);
-        if (typeof result.reply !== "string" || !result.reply.trim()) throw new Error("No se recibió una respuesta. Vuelve a intentarlo.");
-        pending.textContent = result.reply;
-        appendActions(pending, result.actions);
-        renderOptions(result.options);
-        const labels = { company: "Tu compañía de viaje", people: "El equipo de esta aventura", style: "Tu forma de viajar", budget: "Un presupuesto a tu medida" };
-        setText("#chat-step-label", labels[result.step] || "Sigamos dando forma a tu aventura.");
-        applyPlan(result.plan);
-      } catch (error) {
-        pending.textContent = "Se me escapó ese detalle. Intenta otra vez o empecemos con un destino, por ejemplo Roatán.";
-        input.value = text;
-      } finally {
-        busy = false;
-        input.disabled = restart.disabled = false;
-        updateComposer();
-        options.querySelectorAll("button").forEach(button => button.disabled = false);
-        panel.classList.remove("is-thinking");
-        pending.classList.remove("is-typing");
-        form.setAttribute("aria-busy", "false");
-        messages.scrollTop = messages.scrollHeight;
-        if (!panel.hidden) input.focus();
-      }
-    }
-
-    openButtons.forEach(button => {
-      button.setAttribute("aria-controls", "help-chat");
-      button.setAttribute("aria-expanded", "false");
-      button.addEventListener("click", () => {
-        if (button === launcher && !panel.hidden && !panel.classList.contains("is-closing")) closeChat();
-        else openChat(button);
-      });
-    });
-    $("#close-chat").addEventListener("click", closeChat);
-    restart.addEventListener("click", () => { resetChat(); input.focus(); });
-    form.addEventListener("submit", event => {
-      event.preventDefault();
-      void sendMessage(input.value);
-    });
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && !panel.hidden && !$("#module-dialog").open) closeChat();
-    });
-    resetChat();
-    if (location.hash === "#hablar-rumbito") openChat(launcher);
-    window.addEventListener("hashchange", () => { if (location.hash === "#hablar-rumbito") openChat(launcher); });
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init, { once: true });

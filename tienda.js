@@ -11,7 +11,7 @@ const PRODUCTS = [
     category: "Equipaje",
     price: 450,
     image: "imagenes/mochila.jpg",
-    imageAlt: "Mochila de viaje, fotografía de referencia",
+    imageAlt: "Mochila de viaje",
     imageKind: "photo",
     description: "Mochila práctica para llevar tus cosas durante el viaje."
   },
@@ -21,7 +21,7 @@ const PRODUCTS = [
     category: "Equipaje",
     price: 650,
     image: "imagenes/maleta.jpg",
-    imageAlt: "Maleta de viaje, fotografía de referencia",
+    imageAlt: "Maleta de viaje",
     imageKind: "photo",
     description: "Maleta para organizar y transportar tu equipaje."
   },
@@ -31,7 +31,7 @@ const PRODUCTS = [
     category: "Equipaje",
     price: 250,
     image: "imagenes/bolso-mano.jpg",
-    imageAlt: "Bolso de mano, fotografía de referencia",
+    imageAlt: "Bolso de mano",
     imageKind: "photo",
     description: "Bolso cómodo para llevar objetos personales."
   },
@@ -41,7 +41,7 @@ const PRODUCTS = [
     category: "Equipaje",
     price: 120,
     image: "imagenes/rinonera.jpg",
-    imageAlt: "Riñonera, fotografía de referencia",
+    imageAlt: "Riñonera",
     imageKind: "photo",
     description: "Riñonera compacta para llevar objetos pequeños."
   },
@@ -51,7 +51,7 @@ const PRODUCTS = [
     category: "Equipaje",
     price: 50,
     image: "imagenes/producto-43.jpg",
-    imageAlt: "Etiqueta para maleta, imagen ilustrativa generada con IA",
+    imageAlt: "Etiqueta para maleta",
     imageKind: "generated",
     description: "Etiqueta para identificar fácilmente tu equipaje."
   },
@@ -61,7 +61,7 @@ const PRODUCTS = [
     category: "Equipaje",
     price: 80,
     image: "imagenes/producto-76.jpg",
-    imageAlt: "Candado para maleta, imagen ilustrativa generada con IA",
+    imageAlt: "Candado para maleta",
     imageKind: "generated",
     description: "Candado compacto para asegurar tu equipaje."
   },
@@ -71,7 +71,7 @@ const PRODUCTS = [
     category: "Tecnología",
     price: 350,
     image: "imagenes/power-bank.jpg",
-    imageAlt: "Power Bank, fotografía de referencia",
+    imageAlt: "Power Bank",
     imageKind: "photo",
     description: "Batería portátil para mantener cargado tu celular."
   },
@@ -81,7 +81,7 @@ const PRODUCTS = [
     category: "Tecnología",
     price: 150,
     image: "imagenes/cargador.jpg",
-    imageAlt: "Cargador de celular, fotografía de referencia",
+    imageAlt: "Cargador de celular",
     imageKind: "photo",
     description: "Cargador práctico para usar durante tus viajes."
   },
@@ -91,7 +91,7 @@ const PRODUCTS = [
     category: "Tecnología",
     price: 70,
     image: "imagenes/producto-47.jpg",
-    imageAlt: "Cable USB, imagen ilustrativa generada con IA",
+    imageAlt: "Cable USB",
     imageKind: "generated",
     description: "Cable USB para cargar y conectar dispositivos."
   },
@@ -101,7 +101,7 @@ const PRODUCTS = [
     category: "Tecnología",
     price: 220,
     image: "imagenes/adaptador.jpg",
-    imageAlt: "Adaptador universal, fotografía de referencia",
+    imageAlt: "Adaptador universal",
     imageKind: "photo",
     description: "Adaptador para conectar dispositivos en diferentes lugares."
   },
@@ -111,7 +111,7 @@ const PRODUCTS = [
     category: "Tecnología",
     price: 180,
     image: "imagenes/audifonos.jpg",
-    imageAlt: "Audífonos, fotografía de referencia",
+    imageAlt: "Audífonos",
     imageKind: "photo",
     description: "Audífonos para escuchar música durante el viaje."
   },
@@ -121,7 +121,7 @@ const PRODUCTS = [
     category: "Tecnología",
     price: 100,
     image: "imagenes/soporte-celular.jpg",
-    imageAlt: "Soporte para celular, fotografía de referencia",
+    imageAlt: "Soporte para celular",
     imageKind: "photo",
     description: "Soporte pequeño y práctico para tu celular."
   },
@@ -131,7 +131,7 @@ const PRODUCTS = [
     category: "Confort",
     price: 180,
     image: "imagenes/almohada-viaje.jpg",
-    imageAlt: "Almohada de viaje, fotografía de referencia",
+    imageAlt: "Almohada de viaje",
     imageKind: "photo",
     description: "Almohada cómoda para descansar durante el viaje."
   },
@@ -141,7 +141,7 @@ const PRODUCTS = [
     category: "Confort",
     price: 120,
     image: "imagenes/botella.jpg",
-    imageAlt: "Botella reutilizable, fotografía de referencia",
+    imageAlt: "Botella reutilizable",
     imageKind: "photo",
     description: "Botella reutilizable para llevar agua."
   },
@@ -151,7 +151,7 @@ const PRODUCTS = [
     category: "Confort",
     price: 60,
     image: "imagenes/producto-61.jpg",
-    imageAlt: "Antifaz para dormir, imagen ilustrativa generada con IA",
+    imageAlt: "Antifaz para dormir",
     imageKind: "generated",
     description: "Antifaz para descansar con mayor comodidad."
   },
@@ -161,7 +161,7 @@ const PRODUCTS = [
     category: "Confort",
     price: 45,
     image: "imagenes/tapones-oidos.jpg",
-    imageAlt: "Tapones para oídos, fotografía de referencia",
+    imageAlt: "Tapones para oídos",
     imageKind: "photo",
     description: "Tapones pequeños para descansar durante el viaje."
   },
@@ -171,7 +171,7 @@ const PRODUCTS = [
     category: "Confort",
     price: 150,
     image: "imagenes/paraguas.jpg",
-    imageAlt: "Paraguas compacto, fotografía de referencia",
+    imageAlt: "Paraguas compacto",
     imageKind: "photo",
     description: "Paraguas compacto para llevar fácilmente."
   },
@@ -181,7 +181,7 @@ const PRODUCTS = [
     category: "Confort",
     price: 130,
     image: "imagenes/toalla-viaje.jpg",
-    imageAlt: "Toalla de viaje, fotografía de referencia",
+    imageAlt: "Toalla de viaje",
     imageKind: "photo",
     description: "Toalla práctica y fácil de transportar."
   },
@@ -191,7 +191,7 @@ const PRODUCTS = [
     category: "Seguridad",
     price: 100,
     image: "imagenes/producto-41.jpg",
-    imageAlt: "Porta pasaporte, imagen ilustrativa generada con IA",
+    imageAlt: "Porta pasaporte",
     imageKind: "generated",
     description: "Funda para mantener protegido tu pasaporte."
   },
@@ -201,7 +201,7 @@ const PRODUCTS = [
     category: "Seguridad",
     price: 120,
     image: "imagenes/porta-documentos.jpg",
-    imageAlt: "Porta documentos, fotografía de referencia",
+    imageAlt: "Porta documentos",
     imageKind: "photo",
     description: "Organizador para documentos importantes."
   },
@@ -211,7 +211,7 @@ const PRODUCTS = [
     category: "Seguridad",
     price: 110,
     image: "imagenes/billetera.jpg",
-    imageAlt: "Billetera de viaje, fotografía de referencia",
+    imageAlt: "Billetera de viaje",
     imageKind: "photo",
     description: "Billetera práctica para guardar dinero y tarjetas."
   },
@@ -221,7 +221,7 @@ const PRODUCTS = [
     category: "Seguridad",
     price: 100,
     image: "imagenes/producto-22.jpg",
-    imageAlt: "Bolsa impermeable, imagen ilustrativa generada con IA",
+    imageAlt: "Bolsa impermeable",
     imageKind: "generated",
     description: "Bolsa para proteger objetos de la humedad."
   },
@@ -231,7 +231,7 @@ const PRODUCTS = [
     category: "Seguridad",
     price: 90,
     image: "imagenes/producto-35.jpg",
-    imageAlt: "Correa para maleta, imagen ilustrativa generada con IA",
+    imageAlt: "Correa para maleta",
     imageKind: "generated",
     description: "Correa para sujetar y reconocer tu maleta."
   },
@@ -241,7 +241,7 @@ const PRODUCTS = [
     category: "Seguridad",
     price: 100,
     image: "imagenes/linterna.jpg",
-    imageAlt: "Linterna, fotografía de referencia",
+    imageAlt: "Linterna",
     imageKind: "photo",
     description: "Linterna pequeña para llevar durante el viaje."
   },
@@ -251,7 +251,7 @@ const PRODUCTS = [
     category: "Cuidado",
     price: 130,
     image: "imagenes/neceser.jpg",
-    imageAlt: "Neceser de viaje, fotografía de referencia",
+    imageAlt: "Neceser de viaje",
     imageKind: "photo",
     description: "Neceser para organizar artículos personales."
   },
@@ -261,7 +261,7 @@ const PRODUCTS = [
     category: "Cuidado",
     price: 80,
     image: "imagenes/producto-92.jpg",
-    imageAlt: "Botellas para líquidos, imagen ilustrativa generada con IA",
+    imageAlt: "Botellas para líquidos",
     imageKind: "generated",
     description: "Botellas pequeñas para llevar líquidos."
   },
@@ -271,7 +271,7 @@ const PRODUCTS = [
     category: "Cuidado",
     price: 55,
     image: "imagenes/cepillo-dientes.jpg",
-    imageAlt: "Cepillo de dientes de viaje, fotografía de referencia",
+    imageAlt: "Cepillo de dientes de viaje",
     imageKind: "photo",
     description: "Cepillo compacto para llevar en el equipaje."
   },
@@ -281,7 +281,7 @@ const PRODUCTS = [
     category: "Cuidado",
     price: 150,
     image: "imagenes/kit-higiene.jpg",
-    imageAlt: "Kit de higiene, fotografía de referencia",
+    imageAlt: "Kit de higiene",
     imageKind: "photo",
     description: "Kit práctico para artículos de higiene personal."
   },
@@ -291,7 +291,7 @@ const PRODUCTS = [
     category: "Cuidado",
     price: 180,
     image: "imagenes/protector-solar.jpg",
-    imageAlt: "Protector solar, fotografía de referencia",
+    imageAlt: "Protector solar",
     imageKind: "photo",
     description: "Protector solar para incluir en tu equipaje."
   },
@@ -301,7 +301,7 @@ const PRODUCTS = [
     category: "Cuidado",
     price: 200,
     image: "imagenes/botiquin.jpg",
-    imageAlt: "Botiquín básico, fotografía de referencia",
+    imageAlt: "Botiquín básico",
     imageKind: "photo",
     description: "Botiquín básico para llevar artículos de primeros auxilios."
   }
@@ -512,7 +512,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 90,
     image: "imagenes/producto-31.jpg",
-    imageAlt: "Organizador de maleta, imagen ilustrativa generada con IA",
+    imageAlt: "Organizador de maleta",
     imageKind: "generated",
     description: "Organizador para mantener la ropa ordenada dentro de la maleta."
   },
@@ -523,7 +523,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 70,
     image: "imagenes/producto-32.jpg",
-    imageAlt: "Bolsa para zapatos, imagen ilustrativa generada con IA",
+    imageAlt: "Bolsa para zapatos",
     imageKind: "generated",
     description: "Bolsa para guardar los zapatos separados del resto del equipaje."
   },
@@ -534,7 +534,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 120,
     image: "imagenes/producto-33.jpg",
-    imageAlt: "Cubos organizadores de ropa, imagen ilustrativa generada con IA",
+    imageAlt: "Cubos organizadores de ropa",
     imageKind: "generated",
     description: "Cubos para organizar y separar la ropa dentro de la maleta."
   },
@@ -545,7 +545,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 160,
     image: "imagenes/producto-34.jpg",
-    imageAlt: "Funda para maleta, imagen ilustrativa generada con IA",
+    imageAlt: "Funda para maleta",
     imageKind: "generated",
     description: "Funda para proteger la maleta durante el viaje."
   },
@@ -556,7 +556,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 85,
     image: "imagenes/producto-35.jpg",
-    imageAlt: "Correa para maleta, imagen ilustrativa generada con IA",
+    imageAlt: "Correa para maleta",
     imageKind: "generated",
     description: "Correa ajustable para asegurar el equipaje."
   },
@@ -567,7 +567,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 140,
     image: "imagenes/producto-36.jpg",
-    imageAlt: "Neceser de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Neceser de viaje",
     imageKind: "generated",
     description: "Neceser para llevar artículos personales."
   },
@@ -578,7 +578,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 75,
     image: "imagenes/producto-37.jpg",
-    imageAlt: "Bolsa para ropa sucia, imagen ilustrativa generada con IA",
+    imageAlt: "Bolsa para ropa sucia",
     imageKind: "generated",
     description: "Bolsa para separar la ropa usada durante el viaje."
   },
@@ -589,7 +589,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 150,
     image: "imagenes/producto-38.jpg",
-    imageAlt: "Bolsa plegable de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Bolsa plegable de viaje",
     imageKind: "generated",
     description: "Bolsa ligera que puede doblarse y guardarse fácilmente."
   },
@@ -600,7 +600,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 280,
     image: "imagenes/producto-39.jpg",
-    imageAlt: "Mochila de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Mochila de viaje",
     imageKind: "generated",
     description: "Mochila práctica para llevar objetos personales."
   },
@@ -611,7 +611,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 110,
     image: "imagenes/producto-40.jpg",
-    imageAlt: "Riñonera de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Riñonera de viaje",
     imageKind: "generated",
     description: "Riñonera para llevar objetos pequeños durante el viaje."
   },
@@ -622,7 +622,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 90,
     image: "imagenes/producto-41.jpg",
-    imageAlt: "Porta pasaporte, imagen ilustrativa generada con IA",
+    imageAlt: "Porta pasaporte",
     imageKind: "generated",
     description: "Estuche para proteger y organizar el pasaporte."
   },
@@ -633,7 +633,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 140,
     image: "imagenes/producto-42.jpg",
-    imageAlt: "Organizador de documentos, imagen ilustrativa generada con IA",
+    imageAlt: "Organizador de documentos",
     imageKind: "generated",
     description: "Organizador para documentos, tarjetas y pasaporte."
   },
@@ -644,7 +644,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 60,
     image: "imagenes/producto-43.jpg",
-    imageAlt: "Etiquetas para equipaje, imagen ilustrativa generada con IA",
+    imageAlt: "Etiquetas para equipaje",
     imageKind: "generated",
     description: "Etiquetas para identificar fácilmente las maletas."
   },
@@ -655,7 +655,7 @@ PRODUCTS.push(
     category: "Equipaje",
     price: 100,
     image: "imagenes/producto-44.jpg",
-    imageAlt: "Bolsa para accesorios de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Bolsa para accesorios de viaje",
     imageKind: "generated",
     description: "Bolsa pequeña para organizar accesorios."
   },
@@ -671,7 +671,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 220,
     image: "imagenes/power-bank.jpg",
-    imageAlt: "Cargador portátil, fotografía de referencia",
+    imageAlt: "Cargador portátil",
     imageKind: "photo",
     description: "Batería portátil para cargar dispositivos durante el viaje."
   },
@@ -682,7 +682,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 150,
     image: "imagenes/cargador.jpg",
-    imageAlt: "Cargador de celular, fotografía de referencia",
+    imageAlt: "Cargador de celular",
     imageKind: "photo",
     description: "Cargador compacto para llevar durante los viajes."
   },
@@ -693,7 +693,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 75,
     image: "imagenes/producto-47.jpg",
-    imageAlt: "Cable USB-C, imagen ilustrativa generada con IA",
+    imageAlt: "Cable USB-C",
     imageKind: "generated",
     description: "Cable para cargar y conectar dispositivos compatibles."
   },
@@ -704,7 +704,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 250,
     image: "imagenes/adaptador.jpg",
-    imageAlt: "Adaptador universal de viaje, fotografía de referencia",
+    imageAlt: "Adaptador universal de viaje",
     imageKind: "photo",
     description: "Adaptador para conectar dispositivos en diferentes tipos de enchufe."
   },
@@ -715,7 +715,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 250,
     image: "imagenes/audifonos.jpg",
-    imageAlt: "Audífonos Bluetooth, fotografía de referencia",
+    imageAlt: "Audífonos Bluetooth",
     imageKind: "photo",
     description: "Audífonos inalámbricos para escuchar música durante el viaje."
   },
@@ -726,7 +726,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 100,
     image: "imagenes/producto-50.jpg",
-    imageAlt: "Audífonos con cable, imagen ilustrativa generada con IA",
+    imageAlt: "Audífonos con cable",
     imageKind: "generated",
     description: "Audífonos económicos para escuchar música."
   },
@@ -737,7 +737,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 90,
     image: "imagenes/soporte-celular.jpg",
-    imageAlt: "Soporte para celular, fotografía de referencia",
+    imageAlt: "Soporte para celular",
     imageKind: "photo",
     description: "Soporte compacto para colocar el teléfono."
   },
@@ -748,7 +748,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 120,
     image: "imagenes/producto-52.jpg",
-    imageAlt: "Memoria USB, imagen ilustrativa generada con IA",
+    imageAlt: "Memoria USB",
     imageKind: "generated",
     description: "Memoria pequeña para guardar archivos importantes."
   },
@@ -759,7 +759,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 100,
     image: "imagenes/producto-53.jpg",
-    imageAlt: "Lector de tarjetas, imagen ilustrativa generada con IA",
+    imageAlt: "Lector de tarjetas",
     imageKind: "generated",
     description: "Lector compacto para transferir archivos."
   },
@@ -770,7 +770,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 180,
     image: "imagenes/producto-54.jpg",
-    imageAlt: "Hub USB, imagen ilustrativa generada con IA",
+    imageAlt: "Hub USB",
     imageKind: "generated",
     description: "Dispositivo para conectar varios accesorios USB."
   },
@@ -781,7 +781,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 80,
     image: "imagenes/producto-55.jpg",
-    imageAlt: "Luz de lectura USB, imagen ilustrativa generada con IA",
+    imageAlt: "Luz de lectura USB",
     imageKind: "generated",
     description: "Luz pequeña para leer durante el viaje."
   },
@@ -792,7 +792,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 180,
     image: "imagenes/producto-56.jpg",
-    imageAlt: "Reloj despertador de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Reloj despertador de viaje",
     imageKind: "generated",
     description: "Reloj compacto para llevar durante los viajes."
   },
@@ -803,7 +803,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 280,
     image: "imagenes/power-bank.jpg",
-    imageAlt: "Batería portátil compacta, fotografía de referencia",
+    imageAlt: "Batería portátil compacta",
     imageKind: "photo",
     description: "Batería portátil para mantener cargados los dispositivos."
   },
@@ -814,7 +814,7 @@ PRODUCTS.push(
     category: "Tecnología",
     price: 120,
     image: "imagenes/producto-58.jpg",
-    imageAlt: "Cable multifunción, imagen ilustrativa generada con IA",
+    imageAlt: "Cable multifunción",
     imageKind: "generated",
     description: "Cable con diferentes conexiones para viajes."
   },
@@ -830,7 +830,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 200,
     image: "imagenes/almohada-viaje.jpg",
-    imageAlt: "Almohada cervical, fotografía de referencia",
+    imageAlt: "Almohada cervical",
     imageKind: "photo",
     description: "Almohada para apoyar cómodamente el cuello."
   },
@@ -841,7 +841,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 120,
     image: "imagenes/producto-60.jpg",
-    imageAlt: "Almohada inflable, imagen ilustrativa generada con IA",
+    imageAlt: "Almohada inflable",
     imageKind: "generated",
     description: "Almohada ligera que puede inflarse para viajar."
   },
@@ -852,7 +852,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 60,
     image: "imagenes/producto-61.jpg",
-    imageAlt: "Antifaz para dormir, imagen ilustrativa generada con IA",
+    imageAlt: "Antifaz para dormir",
     imageKind: "generated",
     description: "Antifaz para descansar durante el viaje."
   },
@@ -863,7 +863,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 50,
     image: "imagenes/tapones-oidos.jpg",
-    imageAlt: "Tapones para los oídos, fotografía de referencia",
+    imageAlt: "Tapones para los oídos",
     imageKind: "photo",
     description: "Tapones pequeños para ayudar a descansar durante el viaje."
   },
@@ -874,7 +874,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 220,
     image: "imagenes/producto-63.jpg",
-    imageAlt: "Manta de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Manta de viaje",
     imageKind: "generated",
     description: "Manta cómoda para utilizar durante el viaje."
   },
@@ -885,7 +885,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 70,
     image: "imagenes/producto-64.jpg",
-    imageAlt: "Calcetines de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Calcetines de viaje",
     imageKind: "generated",
     description: "Calcetines cómodos para viajar."
   },
@@ -896,7 +896,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 120,
     image: "imagenes/producto-65.jpg",
-    imageAlt: "Pantuflas de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Pantuflas de viaje",
     imageKind: "generated",
     description: "Pantuflas ligeras para descansar."
   },
@@ -907,7 +907,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 130,
     image: "imagenes/botella.jpg",
-    imageAlt: "Botella reutilizable, fotografía de referencia",
+    imageAlt: "Botella reutilizable",
     imageKind: "photo",
     description: "Botella reutilizable para llevar agua."
   },
@@ -918,7 +918,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 220,
     image: "imagenes/producto-67.jpg",
-    imageAlt: "Botella térmica, imagen ilustrativa generada con IA",
+    imageAlt: "Botella térmica",
     imageKind: "generated",
     description: "Botella para mantener bebidas durante el viaje."
   },
@@ -929,7 +929,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 180,
     image: "imagenes/producto-68.jpg",
-    imageAlt: "Vaso térmico, imagen ilustrativa generada con IA",
+    imageAlt: "Vaso térmico",
     imageKind: "generated",
     description: "Vaso reutilizable para bebidas."
   },
@@ -940,7 +940,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 140,
     image: "imagenes/producto-69.jpg",
-    imageAlt: "Toalla de microfibra, imagen ilustrativa generada con IA",
+    imageAlt: "Toalla de microfibra",
     imageKind: "generated",
     description: "Toalla ligera y fácil de transportar."
   },
@@ -951,7 +951,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 150,
     image: "imagenes/producto-70.jpg",
-    imageAlt: "Cojín de asiento, imagen ilustrativa generada con IA",
+    imageAlt: "Cojín de asiento",
     imageKind: "generated",
     description: "Cojín para viajar con mayor comodidad."
   },
@@ -962,7 +962,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 130,
     image: "imagenes/botella.jpg",
-    imageAlt: "Botella deportiva, fotografía de referencia",
+    imageAlt: "Botella deportiva",
     imageKind: "photo",
     description: "Botella práctica para llevar agua durante el viaje."
   },
@@ -973,7 +973,7 @@ PRODUCTS.push(
     category: "Confort",
     price: 70,
     image: "imagenes/producto-72.jpg",
-    imageAlt: "Bolsa para snacks, imagen ilustrativa generada con IA",
+    imageAlt: "Bolsa para snacks",
     imageKind: "generated",
     description: "Bolsa pequeña para llevar snacks durante el viaje."
   },
@@ -989,7 +989,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 130,
     image: "imagenes/billetera.jpg",
-    imageAlt: "Cartera de viaje, fotografía de referencia",
+    imageAlt: "Cartera de viaje",
     imageKind: "photo",
     description: "Cartera para llevar dinero y tarjetas."
   },
@@ -1000,7 +1000,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 70,
     image: "imagenes/producto-74.jpg",
-    imageAlt: "Tarjetero, imagen ilustrativa generada con IA",
+    imageAlt: "Tarjetero",
     imageKind: "generated",
     description: "Tarjetero compacto para organizar tarjetas."
   },
@@ -1011,7 +1011,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 65,
     image: "imagenes/producto-75.jpg",
-    imageAlt: "Candado con llave, imagen ilustrativa generada con IA",
+    imageAlt: "Candado con llave",
     imageKind: "generated",
     description: "Candado para asegurar el equipaje."
   },
@@ -1022,7 +1022,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 85,
     image: "imagenes/producto-76.jpg",
-    imageAlt: "Candado de combinación, imagen ilustrativa generada con IA",
+    imageAlt: "Candado de combinación",
     imageKind: "generated",
     description: "Candado con combinación para maletas."
   },
@@ -1033,7 +1033,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 80,
     image: "imagenes/producto-35.jpg",
-    imageAlt: "Correa de seguridad para maleta, imagen ilustrativa generada con IA",
+    imageAlt: "Correa de seguridad para maleta",
     imageKind: "generated",
     description: "Correa ajustable para asegurar el equipaje."
   },
@@ -1044,7 +1044,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 90,
     image: "imagenes/producto-78.jpg",
-    imageAlt: "Funda para documentos, imagen ilustrativa generada con IA",
+    imageAlt: "Funda para documentos",
     imageKind: "generated",
     description: "Funda para proteger documentos importantes."
   },
@@ -1055,7 +1055,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 75,
     image: "imagenes/producto-79.jpg",
-    imageAlt: "Porta tarjetas de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Porta tarjetas de viaje",
     imageKind: "generated",
     description: "Porta tarjetas compacto para viajar."
   },
@@ -1066,7 +1066,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 100,
     image: "imagenes/producto-80.jpg",
-    imageAlt: "Bolsa para pasaporte, imagen ilustrativa generada con IA",
+    imageAlt: "Bolsa para pasaporte",
     imageKind: "generated",
     description: "Bolsa para proteger y llevar el pasaporte."
   },
@@ -1077,7 +1077,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 45,
     image: "imagenes/producto-43.jpg",
-    imageAlt: "Etiqueta identificadora, imagen ilustrativa generada con IA",
+    imageAlt: "Etiqueta identificadora",
     imageKind: "generated",
     description: "Etiqueta para identificar el equipaje."
   },
@@ -1088,7 +1088,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 160,
     image: "imagenes/producto-82.jpg",
-    imageAlt: "Funda protectora para equipaje, imagen ilustrativa generada con IA",
+    imageAlt: "Funda protectora para equipaje",
     imageKind: "generated",
     description: "Funda para proteger el equipaje durante el viaje."
   },
@@ -1099,7 +1099,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 75,
     image: "imagenes/linterna.jpg",
-    imageAlt: "Linterna pequeña, fotografía de referencia",
+    imageAlt: "Linterna pequeña",
     imageKind: "photo",
     description: "Linterna compacta para llevar durante el viaje."
   },
@@ -1110,7 +1110,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 90,
     image: "imagenes/producto-84.jpg",
-    imageAlt: "Luz de seguridad, imagen ilustrativa generada con IA",
+    imageAlt: "Luz de seguridad",
     imageKind: "generated",
     description: "Luz pequeña para mejorar la visibilidad."
   },
@@ -1121,7 +1121,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 140,
     image: "imagenes/producto-42.jpg",
-    imageAlt: "Organizador de documentos, imagen ilustrativa generada con IA",
+    imageAlt: "Organizador de documentos",
     imageKind: "generated",
     description: "Organizador para documentos, tarjetas y reservas."
   },
@@ -1132,7 +1132,7 @@ PRODUCTS.push(
     category: "Seguridad",
     price: 130,
     image: "imagenes/producto-86.jpg",
-    imageAlt: "Bolsa oculta de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Bolsa oculta de viaje",
     imageKind: "generated",
     description: "Bolsa discreta para llevar objetos personales."
   },
@@ -1148,7 +1148,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 55,
     image: "imagenes/cepillo-dientes.jpg",
-    imageAlt: "Cepillo dental de viaje, fotografía de referencia",
+    imageAlt: "Cepillo dental de viaje",
     imageKind: "photo",
     description: "Cepillo dental práctico para llevar durante el viaje."
   },
@@ -1159,7 +1159,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 55,
     image: "imagenes/producto-88.jpg",
-    imageAlt: "Estuche para cepillo dental, imagen ilustrativa generada con IA",
+    imageAlt: "Estuche para cepillo dental",
     imageKind: "generated",
     description: "Estuche para proteger el cepillo dental."
   },
@@ -1170,7 +1170,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 45,
     image: "imagenes/producto-89.jpg",
-    imageAlt: "Peine de viaje, imagen ilustrativa generada con IA",
+    imageAlt: "Peine de viaje",
     imageKind: "generated",
     description: "Peine compacto para llevar fácilmente."
   },
@@ -1181,7 +1181,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 70,
     image: "imagenes/producto-90.jpg",
-    imageAlt: "Cepillo para cabello, imagen ilustrativa generada con IA",
+    imageAlt: "Cepillo para cabello",
     imageKind: "generated",
     description: "Cepillo compacto para el cabello."
   },
@@ -1192,7 +1192,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 50,
     image: "imagenes/producto-91.jpg",
-    imageAlt: "Espejo pequeño, imagen ilustrativa generada con IA",
+    imageAlt: "Espejo pequeño",
     imageKind: "generated",
     description: "Espejo pequeño para llevar en el bolso."
   },
@@ -1203,7 +1203,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 80,
     image: "imagenes/producto-92.jpg",
-    imageAlt: "Botellas para líquidos, imagen ilustrativa generada con IA",
+    imageAlt: "Botellas para líquidos",
     imageKind: "generated",
     description: "Botellas pequeñas para llevar líquidos de cuidado personal."
   },
@@ -1214,7 +1214,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 150,
     image: "imagenes/producto-36.jpg",
-    imageAlt: "Estuche de cuidado personal, imagen ilustrativa generada con IA",
+    imageAlt: "Estuche de cuidado personal",
     imageKind: "generated",
     description: "Estuche para organizar artículos de cuidado personal."
   },
@@ -1225,7 +1225,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 45,
     image: "imagenes/producto-94.jpg",
-    imageAlt: "Toallitas húmedas, imagen ilustrativa generada con IA",
+    imageAlt: "Toallitas húmedas",
     imageKind: "generated",
     description: "Toallitas prácticas para llevar durante el viaje."
   },
@@ -1236,7 +1236,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 130,
     image: "imagenes/protector-solar.jpg",
-    imageAlt: "Protector solar, fotografía de referencia",
+    imageAlt: "Protector solar",
     imageKind: "photo",
     description: "Protector solar para llevar durante viajes y actividades al aire libre."
   },
@@ -1247,7 +1247,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 60,
     image: "imagenes/producto-96.jpg",
-    imageAlt: "Gel antibacterial, imagen ilustrativa generada con IA",
+    imageAlt: "Gel antibacterial",
     imageKind: "generated",
     description: "Gel práctico para mantener las manos limpias durante el viaje."
   },
@@ -1258,7 +1258,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 160,
     image: "imagenes/kit-higiene.jpg",
-    imageAlt: "Kit de cuidado personal, fotografía de referencia",
+    imageAlt: "Kit de cuidado personal",
     imageKind: "photo",
     description: "Kit compacto con artículos básicos de cuidado personal."
   },
@@ -1269,7 +1269,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 50,
     image: "imagenes/producto-98.jpg",
-    imageAlt: "Estuche para jabón, imagen ilustrativa generada con IA",
+    imageAlt: "Estuche para jabón",
     imageKind: "generated",
     description: "Estuche para transportar jabón durante el viaje."
   },
@@ -1280,7 +1280,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 220,
     image: "imagenes/producto-99.jpg",
-    imageAlt: "Kit de viaje familiar, imagen ilustrativa generada con IA",
+    imageAlt: "Kit de viaje familiar",
     imageKind: "generated",
     description: "Kit práctico para llevar artículos personales de la familia."
   },
@@ -1291,7 +1291,7 @@ PRODUCTS.push(
     category: "Cuidado",
     price: 180,
     image: "imagenes/producto-100.jpg",
-    imageAlt: "Kit de cuidado infantil, imagen ilustrativa generada con IA",
+    imageAlt: "Kit de cuidado infantil",
     imageKind: "generated",
     description: "Kit compacto para llevar artículos de cuidado infantil durante el viaje."
   }
@@ -2099,7 +2099,7 @@ function variantMarkup(product, options = {}, className = 'detail-image') {
   const v=variantModel(product,options);if(!v)return '';
   const id='variant-color-'+(++variantSerial);
   const channels=v.channels.map((value,i)=>`<feFunc${'RGB'[i]} type="table" tableValues="0 .055 .12 ${value*.72} ${value} ${Math.min(1,value+.22)}"/>`).join('');
-  return `<svg class="${className} variant-image" viewBox="0 0 1000 667" role="img" aria-label="Maleta de viaje, ${v.color}, ${v.size}. Vista ilustrativa" xmlns="http://www.w3.org/2000/svg"><defs><filter id="${id}" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer>${channels}<feFuncA type="identity"/></feComponentTransfer></filter></defs><image href="imagenes/maleta-fondo-jardin.png" width="1000" height="667" preserveAspectRatio="xMidYMid slice"/><g transform="translate(710 625) scale(${v.scale}) translate(-710 -625)"><ellipse cx="714" cy="613" rx="135" ry="14" fill="#182017" opacity=".23"/><image href="${v.image}" x="510" y="57" width="400" height="580" filter="url(#${id})"/></g></svg>`;
+  return `<svg class="${className} variant-image" viewBox="0 0 1000 667" role="img" aria-label="Maleta de viaje, ${v.color}, ${v.size}." xmlns="http://www.w3.org/2000/svg"><defs><filter id="${id}" color-interpolation-filters="sRGB"><feColorMatrix type="saturate" values="0"/><feComponentTransfer>${channels}<feFuncA type="identity"/></feComponentTransfer></filter></defs><image href="imagenes/maleta-fondo-jardin.png" width="1000" height="667" preserveAspectRatio="xMidYMid slice"/><g transform="translate(710 625) scale(${v.scale}) translate(-710 -625)"><ellipse cx="714" cy="613" rx="135" ry="14" fill="#182017" opacity=".23"/><image href="${v.image}" x="510" y="57" width="400" height="580" filter="url(#${id})"/></g></svg>`;
 }
 window.RumboVariantPreview={model:variantModel,markup:variantMarkup};
 
@@ -2510,7 +2510,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
               </div>
 
 
-              <div class="product-info"><p class="product-image-note">${product.imageKind==='generated'?'Imagen ilustrativa · IA':'Fotografía de referencia'}</p>
+              <div class="product-info">
 
                 <p class="product-category">
                   ${escapeHTML(product.category)}
@@ -3269,7 +3269,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
     const options=Object.fromEntries([...$('#product-detail').querySelectorAll('[data-option-name]')].map(s=>[s.dataset.optionName,s.value]));
     if(button.getAttribute('aria-pressed')==='true'){updateVariantPreview(product,options);return;}
     visual.querySelector('.variant-stage').innerHTML=`<img class="detail-image" src="${product.image}" alt="Fotografía original de ${escapeHTML(product.name)}">`;
-    visual.querySelector('.variant-caption').textContent='Fotografía original · color de referencia';
+    visual.querySelector('.variant-caption').textContent='Fotografía original';
     button.setAttribute('aria-pressed','true');button.textContent='Volver a mi variante';
   });
 
@@ -3317,7 +3317,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
 
         <div class="detail-visual" data-visual-product="${product.id}">
           <div class="variant-stage">${variantMarkup(product,defaultOptions)||`<img class="detail-image" src="${product.image}" alt="${escapeHTML(product.imageAlt || product.name)}">`}</div>
-          ${variantModel(product,defaultOptions)?`<p class="variant-caption" role="status">${escapeHTML(defaultOptions.Color)} · ${escapeHTML(defaultOptions.Tamaño)}</p><p class="variant-note">Simulación ilustrativa del color y tamaño. Las proporciones son orientativas.</p><button type="button" class="variant-original" aria-pressed="false">Ver fotografía original</button>`:'<p class="variant-note">Imagen de referencia. Este producto aún no tiene vista interactiva de variantes.</p>'}
+          ${variantModel(product,defaultOptions)?`<p class="variant-caption" role="status">${escapeHTML(defaultOptions.Color)} · ${escapeHTML(defaultOptions.Tamaño)}</p><button type="button" class="variant-original" aria-pressed="false">Ver fotografía original</button>`:''}
         </div>
 
 
@@ -3364,11 +3364,6 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
             ${icon("bag")}
           </button>
 
-
-          <p class="reference-note">
-            ${product.imageKind==='generated'?'Imagen ilustrativa generada con IA para representar este tipo de artículo.':'Fotografía de referencia.'} Precio de demostración; marca, modelo y disponibilidad sin confirmar.
-          </p>
-
         </div>
 
       </div>
@@ -3384,7 +3379,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
       "dialog-open"
     );
 
-    $("#close-detail").focus();
+    $("#close-detail").focus({ preventScroll: true });
   }
 
 
@@ -4159,7 +4154,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
 
         const lines = [
           "RUMBO · MI LISTA DE VIAJE",
-          "Catálogo de demostración. No es un pedido ni un comprobante de pago.",
+
           "",
           ...cart.map(item => {
 
@@ -4207,7 +4202,7 @@ window.RumboProductPrice = (product, options = {}) => product.price + Object.ent
           "",
           `Subtotal de productos: ${money(total())} HNL`,
           "Envío e impuestos adicionales: no calculados.",
-          "Precios, características y disponibilidad sin confirmar."
+          "Revisa tu selección en Mi viaje."
         ];
 
 

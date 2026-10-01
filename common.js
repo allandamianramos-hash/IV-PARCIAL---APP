@@ -11,23 +11,16 @@
     button.replaceWith(link);
   });
   if(document.querySelector('.rv-page')){
-    const nav=document.querySelector('.main-nav');
-    nav.querySelectorAll('[data-nav="vuelos"], [data-nav="hoteles"]').forEach(a=>a.remove());
-    const shop=nav.querySelector('[href="tienda.html"]');shop.textContent='Tienda';
-    const link=document.createElement('a');link.href='servicios.html';link.textContent='Servicios';nav.insertBefore(link,shop);
-    if(['vuelos','hoteles'].includes(document.body.dataset.page))link.setAttribute('aria-current','page');
     const trip=document.querySelector('.rv-my-trip');trip.removeAttribute('data-context');trip.removeAttribute('data-path');trip.href='servicios.html?seccion=mi-viaje';
   }
   document.querySelectorAll('[data-module="flights"], [data-module="stays"]').forEach(button=>button.removeAttribute('aria-haspopup'));
-  if(!document.getElementById('chat-launcher')){
-    const link=document.createElement('a');link.className='global-rumbito';link.href='index.html#hablar-rumbito';link.innerHTML='<img src="imagenes/rumbito.png" width="44" height="44" alt=""> Pregúntale a Rumbito';document.body.append(link);
-  }
 
   // Una cabecera consistente: los accesos principales llevan a las secciones del inicio.
   const mainNav=document.querySelector('.main-nav');
   if(mainNav){
     const page=location.pathname.split('/').pop()||'index.html';
-    mainNav.innerHTML=[['index.html','Inicio'],['viajes.html?pantalla=destinos','Destinos'],['servicios.html','Servicios'],['tienda.html','Tienda']].map(([url,label])=>`<a href="${url}" ${url.split('?')[0]===page?'aria-current="page"':''}>${label}</a>`).join('');
+    const inServices=['servicios.html','tienda.html'].includes(page)||['vuelos','hoteles'].includes(document.body.dataset.page);
+    mainNav.innerHTML=[['index.html','Inicio'],['viajes.html?pantalla=destinos','Destinos'],['servicios.html','Servicios']].map(([url,label])=>`<a href="${url}" ${(url==='servicios.html'?inServices:url.split('?')[0]===page&&!inServices)?'aria-current="page"':''}>${label}</a>`).join('');
   }
   const header=document.querySelector('.header-inner');
   if(header&&!header.querySelector('a[href="servicios.html?seccion=mi-viaje"]')){const trip=document.createElement('a');trip.className='button button-outline';trip.href='servicios.html?seccion=mi-viaje';trip.textContent='Mi viaje ↗';header.append(trip);}
@@ -64,7 +57,8 @@
     const cards=[...grid.children];
     order.forEach((key,i)=>{const card=cards.find(c=>c.querySelector('[data-module="'+key+'"]')||c.classList.contains(({transfers:'none',insurance:'none',experiences:'none',shop:'shop-card'})[key]||'none')||c.querySelector('a[href="'+({transfers:'servicios.html?seccion=traslados',insurance:'servicios.html?seccion=seguros',experiences:'servicios.html?seccion=guias'})[key]+'"]'));
       if(!card)return;grid.append(card);
-const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1)+' / '+names[i]+(i>1?' · opcional':'');card.prepend(label);
+      // En Inicio, estas tarjetas conservan el diseño con iconos.
+      const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1)+' / '+names[i]+(i>1?' · opcional':'');card.prepend(label);
       const link=card.querySelector('a,button');if(link){card.tabIndex=0;card.setAttribute('role','link');card.setAttribute('aria-label','Organizar '+names[i]);card.addEventListener('click',e=>{if(!e.target.closest('a,button'))link.click();});card.addEventListener('keydown',e=>{if(e.target===card&&e.key==='Enter'){e.preventDefault();link.click();}});}
     });
   }

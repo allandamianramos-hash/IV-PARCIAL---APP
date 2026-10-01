@@ -4,13 +4,15 @@ Sitio de viajes en HTML, CSS y JavaScript. Los catálogos y precios son de demos
 
 ## Abrir la copia correcta
 
-Desde esta carpeta, ejecutar `npm start` o abrir `INICIAR-RUMBO.cmd`. Visitar `http://localhost:3000`. No requiere instalar paquetes; utiliza Node 22 o posterior.
+Desde esta carpeta, ejecutar `npm start` o abrir `INICIAR-RUMBO.cmd`. Visitar `http://localhost:3000`. No requiere instalar paquetes; utiliza Node 22 o posterior. El chat requiere LIGHTNING_API_KEY en el archivo local .env; consulta LEEME-RUMBITO.md.
+
+Para dejar Rumbito disponible entre sesiones de Windows, ejecutar una vez `ACTIVAR-RUMBO-AUTOMATICO.cmd`. Inicia el servidor en segundo plano al entrar a Windows y lo recupera si su proceso se detiene. `INICIAR-RUMBO.cmd` también funciona sin mantener abierta una terminal. El acceso automático depende de que esta carpeta permanezca en su ubicación; si la mueves, vuelve a activarlo.
 
 Editar los archivos de esta misma carpeta y recargar el navegador. El servidor sirve los cambios directamente y desactiva la caché. Si se abre otra copia del proyecto o un sitio publicado, no se verán necesariamente los cambios locales. Un cambio de un compañero debe estar guardado en un commit y subido a la rama compartida para poder descargarlo.
 
 ## Dónde está cada parte
 
-- **Inicio y Rumbito:** `index.html`, `style.css` y `script.js`. `chat-engine.js` contiene las respuestas del asistente; `LEEME-RUMBITO.md` explica su funcionamiento.
+- **Inicio y Rumbito:** `index.html`, `style.css` y `script.js`. `chat-api.mjs` conecta GPT mediante Lightning AI y `chat-engine.js` conserva el planificador; `LEEME-RUMBITO.md` explica su funcionamiento.
 - **Destinos, vuelos y hoteles:** `viajes.html`, `viajes.css` y `viajes.js`. Una sola página usa `pantalla=destinos`, `detalle-destino`, `vuelos` o `hoteles`. El catálogo de `viajes.js` también alimenta el inicio.
 - **Tienda:** `tienda.html`, `tienda.css` y `tienda.js`. Incluye variantes, ajustes de precio, favoritos y carrito. `tienda.js` también proporciona los productos al asistente.
 - **Otros servicios:** `servicios.html`, `servicios.css` y `servicios.js`. El parámetro `seccion` abre traslados, seguros, guías, Mi viaje, perfil y ayuda.

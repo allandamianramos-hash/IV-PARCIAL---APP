@@ -75,3 +75,38 @@
   .site-header .account-link .header-action-icon { display: none; }
   .site-header .header-trip .header-action-icon { width: 16px; height: 16px; flex-basis: 16px; }
 }
+
+/* Marca, navegación y tarjetas mantienen una misma respuesta visual. */
+:root { --rumbo-brand: #087d72; }
+.logo,.site-header .logo,.site-footer .logo,.rv-footer .logo,.services-footer .logo { color: var(--rumbo-brand); font-family: 'Segoe UI',Arial,sans-serif; font-weight: 800; letter-spacing: -2px; line-height: 1.1; white-space: nowrap; display: inline-flex; align-items: baseline; gap: 0; }
+.site-header .logo { font-size: 34px; }
+.logo span { color: inherit; margin-left: 3px; }
+.site-header .main-nav a { position: relative; transition: color 180ms,background 180ms,transform 180ms; }
+.site-header .main-nav a::after { content: ''; position: absolute; left: 16px; right: 16px; bottom: 5px; height: 2px; border-radius: 2px; background: var(--rumbo-brand); transform: scaleX(0); transform-origin: left; transition: transform 200ms ease; }
+.site-header .main-nav a:hover,.site-header .main-nav a:focus-visible { transform: translateY(-2px); }
+.site-header .main-nav a:hover::after,.site-header .main-nav a:focus-visible::after { transform: scaleX(1); }
+.site-header .main-nav a:active { transform: translateY(0) scale(.98); }
+.button > span[aria-hidden],.booking-action > span[aria-hidden] { display: inline-block; transition: transform 180ms; }
+.button:hover > span[aria-hidden],.booking-action:hover > span[aria-hidden] { transform: translate(3px,-2px); }
+.service-tile,.booking-card { transition: transform 220ms,border-color 220ms,box-shadow 220ms; }
+.service-tile:hover,.service-tile:focus-within,.booking-card:hover,.booking-card:focus-within { transform: translateY(-4px); border-color: #95bfb2; box-shadow: 0 10px 28px #16444b10; }
+.service-tile-photo { height: 185px; object-fit: cover; transition: transform 350ms ease; }
+.service-tile:hover .service-tile-photo { transform: scale(1.025); }
+.service-explore { margin-top: 20px; }
+.service-hero .service-hero-label { display: block; }
+.services-main:has(#opciones-servicios) .service-hero { padding: 28px; }
+.services-main:has(#opciones-servicios) .service-photo,.services-main:has(#opciones-servicios) .service-photo img { min-height: 230px; }
+#opciones-servicios { scroll-margin-top: 24px; }
+html { scroll-behavior: smooth; }
+body { padding-bottom: 90px; }
+main { animation: rumbo-page-enter 240ms ease-out; }
+@keyframes rumbo-page-enter { from { opacity: .7; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+@view-transition { navigation: auto; }
+::view-transition-old(root),::view-transition-new(root) { animation-duration: 180ms; }
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  main { animation: none; }
+  .site-header .main-nav a,.site-header .main-nav a::after,.button > span[aria-hidden],.booking-action > span[aria-hidden],.service-tile,.booking-card,.service-tile-photo { transition: none; }
+  .service-tile:hover,.booking-card:hover,.site-header .main-nav a:hover { transform: none; }
+  ::view-transition-old(root),::view-transition-new(root) { animation: none; }
+}

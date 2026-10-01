@@ -1688,7 +1688,10 @@ img {
 ===================================================== */
 
 .product-dialog {
-    position: relative;
+    /* Keep the modal in the viewport without scrolling the catalog. */
+    position: fixed;
+    inset: 0;
+    margin: auto;
 
     width: min(
         calc(100% - 30px),
@@ -1698,6 +1701,7 @@ img {
     max-height: 90vh;
 
     overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 

@@ -1227,7 +1227,6 @@
         const enoughSpace = rooms[type].capacity * state.rooms >= state.travelers;
         return `<article class="rv-hotel-card" data-selected="${selected}"><img class="rv-hotel-photo" src="imagenes-viajes/${hotel.image}" alt="${escapeHTML(hotel.imageAlt || 'Fotografía de referencia de un alojamiento')}" width="700" height="700" loading="lazy">
           <div class="rv-hotel-content"><p class="rv-stars" aria-label="${hotel.stars} estrellas de demostración">${'★'.repeat(hotel.stars)}</p><h3>${hotel.name}</h3><p class="rv-hotel-location">${destination.name} · ${hotel.area}</p><p class="rv-demo-caption">Hospedaje de demostración · fotografía de referencia</p><ul class="rv-amenities" aria-label="Servicios">${hotel.amenities.map(item => `<li>${item}</li>`).join('')}</ul>
-          ${hotel.photoSource ? `<details class="rv-photo-credit"><summary>Créditos de esta fotografía</summary><p>Fotografía de referencia; no corresponde al hospedaje ficticio ni garantiza su ubicación o instalaciones.</p><p>${escapeHTML(hotel.photoAuthor)} · <a href="${escapeHTML(hotel.photoSource)}" target="_blank" rel="noopener noreferrer">Ver original ↗</a> · ${hotel.photoLicenseUrl ? `<a href="${escapeHTML(hotel.photoLicenseUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(hotel.photoLicense)}</a>` : escapeHTML(hotel.photoLicense)}. Miniatura con encuadre adaptado mediante CSS.</p></details>` : ''}
           <div class="rv-field rv-room-choice"><label for="room-${hotel.id}">Tipo de habitación en ${hotel.name}</label><select id="room-${hotel.id}" data-room-hotel="${hotel.id}">${Object.entries(rooms).map(([key, room]) => `<option value="${key}" ${key === type ? 'selected' : ''}>${room.name} · hasta ${room.capacity} personas / hab.</option>`).join('')}</select></div>
           <div class="rv-hotel-price-row"><div class="rv-price"><strong>${money(nightly)}</strong><small>Por noche / habitación</small></div><button class="rv-select-button" type="button" data-select-hotel="${hotel.id}" aria-pressed="${selected}" aria-label="${selected ? 'Hotel seleccionado' : 'Seleccionar'} ${hotel.name}" ${!enoughSpace || dirty ? 'disabled' : ''}>${selected ? 'Seleccionado ✓' : 'Elegir hotel'}</button></div><p class="rv-hotel-total">${state.nights} ${state.nights === 1 ? 'noche' : 'noches'} × ${state.rooms} ${state.rooms === 1 ? 'habitación' : 'habitaciones'} · <strong>${money(nightly * state.nights * state.rooms)}</strong></p>
           ${enoughSpace ? '' : `<p class="rv-capacity-error">Para ${state.travelers} personas necesitas al menos ${Math.ceil(state.travelers / rooms[type].capacity)} habitaciones de este tipo, o elegir otra capacidad.</p>`}</div></article>`;
@@ -1402,5 +1401,3 @@
     connectHome();
   }
 })();
-
-

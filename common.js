@@ -4,7 +4,7 @@
   const routes={login:'iniciar-sesion',register:'registro',experiences:'guias',transfers:'traslados',insurance:'seguros',faq:'ayuda',support:'ayuda',changes:'cambios',about:'acerca',team:'equipo',privacy:'privacidad',terms:'terminos'};
   document.querySelectorAll('[data-module]').forEach(button=>{
     const key=button.dataset.module;
-    const href=key==='cart'?'tienda.html?carrito=1':key==='shop'?'tienda.html':routes[key]?`servicios.html?seccion=${routes[key]}`:null;
+    const href=key==='team'?'index.html#nuestro-equipo':key==='about'?'index.html#quienes-somos':key==='cart'?'tienda.html?carrito=1':key==='shop'?'tienda.html':routes[key]?`servicios.html?seccion=${routes[key]}`:null;
     if(!href)return;
     const link=document.createElement('a');link.className=button.className;link.innerHTML=button.innerHTML;link.href=href;
     if(button.hasAttribute('aria-label'))link.setAttribute('aria-label',button.getAttribute('aria-label'));

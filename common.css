@@ -110,3 +110,54 @@ main { animation: rumbo-page-enter 240ms ease-out; }
   .service-tile:hover,.booking-card:hover,.site-header .main-nav a:hover { transform: none; }
   ::view-transition-old(root),::view-transition-new(root) { animation: none; }
 }
+/* Ambientes del inicio: arena para planificar, salvia para conocer Rumbo. */
+#servicios.section { padding:clamp(28px,4vw,56px); background:#f6f3ed; border:1px solid #ebe5da; border-radius:32px; margin-block:64px; }
+#destinos.destinations-section { background:#edf5f6; padding-block:64px; }
+#quienes-somos.about-rumbo { background:#eef3ed; border:1px solid #dfe8de; border-radius:32px; padding:clamp(26px,4vw,58px); margin-block:72px 32px; overflow:hidden; }
+#quienes-somos .about-rumbo-photo { position:relative; padding:22px 14px 40px; isolation:isolate; }
+#quienes-somos .about-rumbo-photo::before { content:''; position:absolute; inset:6px 0 65px 32px; border-radius:170px 170px 28px 28px; background:#d8e4d7; transform:rotate(5deg); z-index:-1; }
+#quienes-somos .about-photo-frame { position:relative; overflow:hidden; border-radius:160px 160px 24px 24px; box-shadow:0 24px 45px -22px #244e4859; transform:rotate(-2deg); transition:transform .6s ease; }
+#quienes-somos .about-photo-frame img { display:block; width:100%; height:540px; border-radius:0; object-fit:cover; object-position:50% 35%; transition:transform 1s ease; }
+#quienes-somos .about-photo-frame::after { content:''; position:absolute; inset:50% 0 0; background:linear-gradient(transparent,#153e4559); pointer-events:none; }
+#quienes-somos .about-photo-location { position:absolute; bottom:82px; left:24px; z-index:1; color:white; font-size:13px; letter-spacing:.04em; }
+#quienes-somos .about-photo-location span { margin-left:12px; }
+#quienes-somos .about-photo-route { position:absolute; width:60%; left:-5px; bottom:35px; color:#c7a263; z-index:2; pointer-events:none; }
+#quienes-somos .about-photo-note { position:absolute; right:0; bottom:0; z-index:3; max-width:90%; display:flex; align-items:center; justify-content:flex-start; gap:14px; padding:18px 22px; background:#fffcf5; border:1px solid #e7e4d7; border-radius:18px; box-shadow:0 12px 24px #254e4810; }
+#quienes-somos .about-photo-note>span { font-size:28px; color:#28727a; }
+#quienes-somos .about-photo-note strong { display:block; font-size:14px; color:#254e48; }
+#quienes-somos .about-photo-note div span { display:block; font-size:12px; margin-top:3px; }
+#quienes-somos .about-rumbo-link { padding:12px 0; }
+#nuestro-equipo { padding:48px 0 64px; scroll-margin-top:110px; }
+.team-intro { max-width:640px; margin-bottom:30px; }
+.team-intro h2 { color:#254e48; font-size:clamp(28px,3vw,40px); letter-spacing:-1px; margin:12px 0; }
+.team-intro>p:last-child { color:#596b64; line-height:1.8; }
+.team-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
+.team-person { padding:28px 22px; border:1px solid #e1e8e3; border-radius:22px; background:linear-gradient(145deg,#fff,#f3f6f2); transition:transform .25s,box-shadow .25s; }
+.team-avatar { display:grid; place-items:center; width:64px; height:64px; border-radius:22px; background:#dfecea; color:#28626a; font-size:22px; letter-spacing:1px; margin-bottom:28px; }
+.team-person:nth-child(2) .team-avatar { background:#f0e7d7; color:#846632; }
+.team-person:nth-child(3) .team-avatar { background:#eae5f0; color:#726083; }
+.team-person:nth-child(4) .team-avatar { background:#e4eadb; color:#5b7148; }
+.team-person h3 { font-size:18px; color:#263e38; margin-bottom:8px; }
+.team-person p { font-size:13px; color:#63776d; margin:0; }
+.team-actions { display:flex; flex-wrap:wrap; align-items:center; gap:24px; margin-top:28px; }
+#guias.section { background:#f5f1e9; border:1px solid #ebe4d8; border-radius:30px; padding:clamp(26px,4vw,52px); margin-block:40px 64px; }
+.legal-attributions { line-height:1.8; overflow-wrap:anywhere; }
+.legal-attributions h3 { margin-top:28px; }
+.legal-attributions li { margin-block:12px; }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+ #quienes-somos .about-rumbo-photo:hover .about-photo-frame { transform:rotate(0deg) translateY(-4px); }
+ #quienes-somos .about-rumbo-photo:hover img { transform:scale(1.035); }
+ .team-person:hover { transform:translateY(-5px); box-shadow:0 16px 30px #254e4810; }
+}
+@media(prefers-reduced-motion:no-preference) { #quienes-somos .about-photo-route path { animation:about-route 4s ease-out both; } }
+@keyframes about-route { from { stroke-dashoffset:100; opacity:0; } to { stroke-dashoffset:0; opacity:1; } }
+@media(max-width:760px) {
+ #servicios.section,#quienes-somos.about-rumbo,#guias.section { border-radius:24px; padding:24px 18px; margin-block:32px; }
+ #quienes-somos .about-photo-frame img { height:390px; aspect-ratio:auto; }
+ #quienes-somos .about-photo-note { padding:14px; }
+ .team-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+ .team-person { padding:22px 16px; }
+ .team-person h3 { font-size:16px; }
+ #nuestro-equipo { padding-block:24px 40px; }
+}
+@media(prefers-reduced-motion:reduce) { #quienes-somos *, .team-person { animation:none!important; transition:none!important; } }

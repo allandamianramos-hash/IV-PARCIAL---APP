@@ -20,7 +20,7 @@
   const section = params.get('seccion') || 'servicios';
   const pageNames = {'mi-viaje':'Mi viaje',perfil:'Mi perfil',ayuda:'Centro de ayuda',acerca:'Acerca de Rumbo',equipo:'Nuestro equipo',cambios:'Cambios',privacidad:'Privacidad',terminos:'Condiciones de uso'};
   document.title = `${pageNames[section] || configs[section]?.name || 'Servicios'} | Rumbo`;
-  const crumb = name => `<nav class="service-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span>/</span><a href="index.html#servicios">Servicios</a><span>/</span><span aria-current="page">${name}</span></nav>`;
+  const crumb = name => `<nav class="service-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span>/</span><a href="servicios.html">Servicios</a><span>/</span><span aria-current="page">${name}</span></nav>`;
   const servicePhotos={
     vuelos:['imagenes-viajes/servicio-vuelo.jpg','Ala de avión sobre un paisaje de montañas'],
     hoteles:['imagenes-viajes/hotel-piscina.jpg','Piscina y terrazas de un hotel'],
@@ -143,7 +143,7 @@
     privacidad:['Tus datos, con claridad.','Información sobre tus datos en Rumbo.',[['Qué se guarda aquí','El navegador puede conservar preferencias del viaje, servicios elegidos, productos del carrito, favoritos y el alias del perfil local. No se solicitan contraseñas ni documentos en el perfil.'],['Cómo borrar lo guardado','Puedes quitar servicios desde Mi viaje, vaciar productos desde el carrito o borrar los datos del sitio en tu navegador. El perfil local tiene un botón para eliminarlo.'],['Recursos externos','Algunas fotografías y las tipografías se cargan desde servicios externos. El navegador se conecta a esos proveedores para mostrarlos.'],['Conversaciones con Rumbito','Los mensajes y el historial reciente del chat se envían a nuestro proveedor de IA para generar respuestas. La aplicación no guarda conversaciones en disco; los proveedores pueden aplicar sus propias políticas de tratamiento de datos. No compartas datos sensibles en el chat.'],['Próximas etapas','Antes de introducir cuentas, pagos o datos personales, será necesario definir y publicar la política correspondiente a esos servicios.']]],
     terminos:['Tu viaje empieza aquí.','Condiciones de uso de Rumbo.',[['Organizar tu viaje','Reúne destinos, fechas, servicios y productos en un solo plan.'],['Tu resumen','Guarda tus selecciones y descarga el resumen desde Mi viaje.'],['Imágenes y contenidos','Las fotografías de referencia tienen sus créditos en el catálogo de destinos y la tienda. No implican relación comercial con marcas o proveedores.']]]
   };
-  function helpPage(id){const [title,intro,items]=help[id];root.innerHTML=crumb('Información')+hero(title,intro,'CONOCE RUMBO','?','UN POCO DE AYUDA')+`<section class="help-card">${items.map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${q}</summary><p>${a}</p></details>`).join('')}<div class="service-footer-links"><a class="button button-primary" href="index.html#contacto">Contactar al equipo ↗</a><a class="button button-outline" href="index.html#servicios">Explorar servicios</a></div></section>`;}
+  function helpPage(id){const [title,intro,items]=help[id];root.innerHTML=crumb('Información')+hero(title,intro,'CONOCE RUMBO','?','UN POCO DE AYUDA')+`<section class="help-card">${items.map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${q}</summary><p>${a}</p></details>`).join('')}<div class="service-footer-links"><a class="button button-primary" href="index.html#contacto">Contactar al equipo ↗</a><a class="button button-outline" href="servicios.html">Explorar servicios</a></div></section>`;}
   function accountAccess(){
     const registration=section==='registro';
     const title=registration?'Registrarse':'Iniciar sesión';
@@ -162,10 +162,11 @@
   else if(section==='mi-viaje')savedPage();
   else if(section==='perfil')account();
   else if(section==='iniciar-sesion'||section==='registro')accountAccess();
+  else if(section==='equipo')location.replace('index.html#nuestro-equipo');
+  else if(section==='legal'){document.title='Información legal | Rumbo';root.innerHTML=crumb('Información legal')+hero('Información legal.','Fuentes y licencias de los recursos visuales de Rumbo.','RUMBO')+document.querySelector('#legal-content').innerHTML;}
   else if(Object.hasOwn(help,section))helpPage(section);
   else if(section==='servicios')hub();
-  else {document.title='Página no encontrada | Rumbo';root.innerHTML=hero('Ese camino aún no existe.','Vuelve a nuestros servicios y elige por dónde continuar.','RUMBO')+'<a class="button button-primary" href="index.html#servicios">Ver servicios ↗</a>';}
+  else {document.title='Página no encontrada | Rumbo';root.innerHTML=hero('Ese camino aún no existe.','Vuelve a nuestros servicios y elige por dónde continuar.','RUMBO')+'<a class="button button-primary" href="servicios.html">Ver servicios ↗</a>';}
   window.addEventListener('pageshow',event=>{if(event.persisted && section==='mi-viaje')savedPage();});
   window.addEventListener('storage',event=>{if(section==='mi-viaje' && [KEY,'rumbo.integrante2.viaje.v1','rumbo.store.cart.v2','rumbo.checkout.v1',null].includes(event.key))savedPage();});
 })();
-

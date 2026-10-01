@@ -145,13 +145,13 @@
   {
     "id": "san-jose",
     "title": "San José, Costa Rica",
-    "file": "imagenes-viajes/destino-san-jose.jpg",
-    "source": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Ciudad_de_San_Jos%C3%A9.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "page": "https://en.wikipedia.org/wiki/San_Jos%C3%A9%2C_Costa_Rica",
-    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Aleat88\" class=\"mw-redirect\" title=\"User:Aleat88\">Alejandro Álvarez Taborda (Aleat88)</a>",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Foto-montaje de la ciudad de San José"
+    "file": "imagenes-viajes/destino-san-jose-teatro.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:National_Theater_of_Costa_Rica.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:National_Theater_of_Costa_Rica.jpg",
+    "author": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Tillor87&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Tillor87 (page does not exist)\">Tillor87</a>",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "description": "Fachada del Teatro Nacional en San José, Costa Rica"
   },
   {
     "id": "paris",

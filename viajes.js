@@ -746,7 +746,8 @@
       image:`imagenes-viajes/destino-${id}.jpg`,alt:`Vista de ${name}; fotografía de Wikimedia Commons`,
       transfer:'',tip:'Organiza el traslado entre el aeropuerto y tu hospedaje por separado.'});
     if(id==='san-jose'){
-      Object.assign(d,{country:'Costa Rica',region:'internacional',economy:6200,duration:180});
+        Object.assign(d,{country:'Costa Rica',region:'internacional',economy:6200,duration:180,
+          image:'imagenes-viajes/destino-san-jose-teatro.jpg',alt:'Fachada del Teatro Nacional en San José, Costa Rica'});
       const names=['Hotel Patio del Café','Lodge Jardín de la Sabana','Boutique Valle del Sol','Apartamentos Paseo del Cedro','Hotel Cúpula Esmeralda'];
       d.hotels.forEach((h,i)=>{h.name=names[i];h.area=i===1?'Zona de parques':'Zona urbana';});
     }

@@ -28,8 +28,8 @@
     const accounts=document.createElement('div');accounts.className='account-actions';
     [['login-button','Iniciar sesión','iniciar-sesion'],['register-button','Registrarse','registro']].forEach(([className,label,route])=>{
       const link=header.querySelector('.'+className)||document.createElement('a');
-      link.className=className+' account-link';link.textContent=label;link.href='servicios.html?seccion='+route;
-      if(new URLSearchParams(location.search).get('seccion')===route)link.setAttribute('aria-current','page');
+      link.className=className+' account-link';link.textContent=label;link.href=route+'.html';
+      if(location.pathname.endsWith('/'+route+'.html'))link.setAttribute('aria-current','page');
       accounts.append(link);
     });
     header.append(accounts);

@@ -53,7 +53,7 @@
     busy=true;show();
     const changes=JSON.parse(JSON.stringify(pending));
     try{
-      const response=await fetch('/api/state',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({changes}),signal:AbortSignal.timeout(10000),keepalive:true});
+      const response=await fetch('/api/state',{method:'PUT',headers:{'Content-Type':'application/json','X-Rumbo-Visitor':boot.visitor},body:JSON.stringify({changes}),signal:AbortSignal.timeout(10000),keepalive:true});
       if(!response.ok){conflict=response.status===409;throw Error(conflict?'Hay cambios más recientes. Carga la versión guardada para revisarlos.':'No se guardó en el servidor. Tus cambios siguen en este navegador.');}
       const result=await response.json();
       pending=readPending();

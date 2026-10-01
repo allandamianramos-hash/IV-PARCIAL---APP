@@ -1,5 +1,6 @@
 import { randomBytes, createHash } from 'node:crypto';
 import { getDb, dbEnabled } from './db.mjs';
+import { sessionUser, publicUser, appendCookie } from './auth-api.mjs';
 
 export const stateKeys = ['rumbo.store.cart.v2','rumbo.store.favorites.v2','rumbo.integrante2.viaje.v1','rumbo.services.v1','rumbo.profile.v1','rumbo.checkout.v1','rumbo.no-flight.v1','rumbo.departureChecklist.v1'];
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
@@ -31,13 +32,15 @@ const json=(res,status,data)=>{res.writeHead(status,{'Content-Type':'application
 const tokenHash=token=>createHash('sha256').update(token).digest('hex');
 export function readToken(req){return /(?:^|;\s*)rumbo_visitor=([a-f0-9]{64})(?:;|$)/.exec(req.headers.cookie||'')?.[1];}
 async function visitor(req,res,create=false) {
+  const user=await sessionUser(req);
+  if(user)return user.VisitorId;
   const {pool,sql}=await getDb();
   let token=readToken(req);
-  if(token){const r=await pool.request().input('hash',sql.Char(64),tokenHash(token)).query('SELECT Id FROM dbo.RumboVisitors WHERE TokenHash=@hash');if(r.recordset.length)return r.recordset[0].Id;}
+  if(token){const r=await pool.request().input('hash',sql.Char(64),tokenHash(token)).query('SELECT Id FROM dbo.RumboVisitors v WHERE TokenHash=@hash AND NOT EXISTS(SELECT 1 FROM dbo.RumboUsers u WHERE u.VisitorId=v.Id)');if(r.recordset.length)return r.recordset[0].Id;}
   if(!create)return null;
   token=randomBytes(32).toString('hex');
   const r=await pool.request().input('hash',sql.Char(64),tokenHash(token)).query('INSERT dbo.RumboVisitors(TokenHash) OUTPUT INSERTED.Id VALUES(@hash)');
-  res.setHeader('Set-Cookie',`rumbo_visitor=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000${process.env.APP_ORIGIN?.startsWith('https://')?'; Secure':''}`);
+  appendCookie(res,`rumbo_visitor=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000${process.env.APP_ORIGIN?.startsWith('https://')?'; Secure':''}`);
   return r.recordset[0].Id;
 }
 export async function loadCatalog(){
@@ -57,7 +60,7 @@ export async function bootstrap(req,res){
   if(!dbEnabled())return {connected:false,reason:'disabled'};
   try{
     const catalog=await loadCatalog(),id=await visitor(req,res,true);
-    return {connected:true,visitor:id,catalog,state:await readState(id)};
+    return {connected:true,visitor:id,user:publicUser(await sessionUser(req)),catalog,state:await readState(id)};
   }catch{return {connected:false,reason:'unavailable'};}
 }
 export const safeJson=value=>JSON.stringify(value).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026');
@@ -83,6 +86,7 @@ export async function databaseApi(req,res){
     let body;try{body=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{json(res,400,{error:'JSON inválido.'});return true;}
     if(!object(body)||!object(body.changes)||!Object.keys(body.changes).length||Object.keys(body.changes).length>stateKeys.length||!Object.entries(body.changes).every(([k,v])=>object(v)&&integer(v.revision,0,2147483646)&&validState(k,v.value))){json(res,400,{error:'Selección inválida.'});return true;}
     const id=await visitor(req,res);if(!id){json(res,401,{error:'La sesión de visitante ha cambiado. Recarga la página.'});return true;}
+    if(req.headers['x-rumbo-visitor']!==id){json(res,409,{error:'La cuenta ha cambiado. Recarga la página antes de guardar.'});return true;}
     const {pool,sql}=await getDb(),tx=new sql.Transaction(pool);await tx.begin();
     try{
       // Serialize per visitor; revision checks prevent silent lost updates in other tabs.

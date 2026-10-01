@@ -1,0 +1,15 @@
+.auth-main{max-width:1080px;margin:56px auto 80px;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.auth-intro{padding:42px 36px;border-radius:90px 24px 24px 24px;background:linear-gradient(140deg,#dceae4,#f5ecdb);color:#204f44}
+.auth-intro h1{font-size:clamp(30px,3vw,44px);line-height:1.15;letter-spacing:-1px;margin:20px 0}
+.auth-intro p{line-height:1.8;color:#3d5b50}.auth-brand{margin-top:28px;padding:12px;background:#fff;border:1px solid #dae5df;border-radius:20px;box-shadow:0 10px 28px #244e4806}.auth-brand img{display:block;width:100%;height:auto;object-fit:contain;border-radius:12px}
+.auth-card{background:#fff;border:1px solid #dce5df;border-radius:24px;padding:36px;box-shadow:0 16px 48px #244e4808}
+.auth-card h2{font-size:27px;margin-bottom:24px;color:#244e48}.auth-field{display:grid;gap:8px;margin-bottom:20px}.auth-field label{font-weight:600;color:#334f45}
+.auth-field input{width:100%;padding:13px 14px;min-height:48px;border:1px solid #acbfb5;border-radius:10px;background:#fff;font:inherit;color:#243e35}
+.auth-field input:focus-visible{outline:3px solid #a4cebf;outline-offset:2px}.auth-field small{color:#52665c;line-height:1.5}
+.auth-password{position:relative}.auth-password input{padding-right:82px}.auth-password button{position:absolute;right:8px;top:5px;min-height:38px;padding:6px;border:0;background:transparent;color:#225e52;font:inherit;cursor:pointer}
+.auth-card [type=submit]{width:100%;margin:8px 0 12px}.auth-card button:disabled{opacity:.6;cursor:wait}.auth-switch{text-align:center;margin-top:22px}.auth-switch a{text-decoration:underline;color:#1c6357}
+#auth-feedback{min-height:24px;color:#7e3434;font-size:15px;line-height:1.5}.auth-session-note{font-size:14px;color:#4c6559;line-height:1.6}
+.site-header .auth-user-name{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#225246;font-weight:600}
+.site-header .auth-logout{border:1px solid #bdd0c5;background:#f1f6f2;border-radius:10px;cursor:pointer;font:inherit;white-space:nowrap}
+.auth-header-status{font-size:12px;color:#7e3434;max-width:220px}.auth-header-status:empty{display:none}
+@media(max-width:760px){.auth-main{grid-template-columns:1fr;gap:24px;margin:28px auto 48px;padding:0 18px}.auth-intro{padding:28px;border-radius:42px 18px 18px 18px}.auth-brand{max-width:280px;margin:20px auto 0;padding:4px}.auth-card{padding:24px}.site-header .auth-user-name{max-width:160px}}

@@ -6,10 +6,12 @@ import { createChatHandler } from './chat-api.mjs';
 import { loadEnvFile } from 'node:process';
 import { spawn } from 'node:child_process';
 import { bootstrap, databaseApi, safeJson } from './database-api.mjs';
+import { authApi } from './auth-api.mjs';
 const root = fileURLToPath(new URL(".", import.meta.url));
 const publicFiles = new Set(["index.html", "script.js", "chat-engine.js", "chat-client.js", "chat-ui.js", "chat.css", "style.css", "viajes.html", "viajes.js", "viajes.css", "tienda.html", "tienda.js", "tienda.css", "logo-rumbo.jpg", "servicios.html", "servicios.js", "servicios.css", "common.js", "common.css", "journey.js", "promociones.css"]);
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
 publicFiles.add('database-client.js');
+for (const file of ['registro.html','iniciar-sesion.html','auth-client.js','auth.css']) publicFiles.add(file);
 export function createApp(chatOptions) {
   const chat = createChatHandler(chatOptions);
   return createServer(async (req, res) => {
@@ -21,6 +23,7 @@ export function createApp(chatOptions) {
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
     res.setHeader("Cache-Control", "no-store");
     try {
+      if (await authApi(req, res)) return;
       if (await databaseApi(req, res)) return;
       if (req.url === '/api/health' && ['GET', 'HEAD'].includes(req.method)) {
         res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -38,7 +41,7 @@ export function createApp(chatOptions) {
       let data = await readFile(resolve(root, path));
       if (extname(path) === '.html' && req.method === 'GET') {
         const initial = await bootstrap(req, res);
-        data = data.toString('utf8').replace('<head>', `<head><script id="rumbo-bootstrap" type="application/json">${safeJson(initial)}</script>`);
+        data = data.toString('utf8').replace('<head>', `<head><script id="rumbo-bootstrap" type="application/json">${safeJson(initial)}</script><script src="auth-client.js" defer></script><link rel="stylesheet" href="auth.css">`);
       }
       res.writeHead(200, { "Content-Type": mime[extname(path)] || "application/octet-stream" });
       res.end(req.method === "HEAD" ? undefined : data);

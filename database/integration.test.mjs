@@ -2,9 +2,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { loadEnvFile } from 'node:process';
 import { createApp } from '../server.mjs';
-import { closeDb, getDb } from '../db.mjs';
-loadEnvFile(new URL('../.env',import.meta.url));
-test('SQL Server: catálogo, aislamiento, guardado, conflictos y eliminaciones',async()=>{
+import { closeDb, getDb, dbEnabled } from '../db.mjs';
+try{loadEnvFile(new URL('../.env',import.meta.url));}catch(e){if(e.code!=='ENOENT')throw e;}
+test('SQL Server: catálogo, aislamiento, guardado, conflictos y eliminaciones',{skip:!dbEnabled()},async()=>{
   let aiInput;
   const server=createApp({apiKey:'test-only',fetchImpl:async(url,request)=>{aiInput=JSON.parse(request.body);return Response.json({choices:[{message:{content:'Puedes explorar Roatán.'},finish_reason:'stop'}]});}});await new Promise(r=>server.listen(0,'127.0.0.1',r));
   const origin=`http://127.0.0.1:${server.address().port}`,visitors=[];
@@ -25,7 +25,7 @@ test('SQL Server: catálogo, aislamiento, guardado, conflictos y eliminaciones',
       'rumbo.no-flight.v1':'roatan|2026-12-01|Tegucigalpa',
       'rumbo.departureChecklist.v1':['documentos']
     };
-    const put=(changes,cookie=a.cookie,headers={})=>fetch(origin+'/api/state',{method:'PUT',headers:{Origin:origin,Cookie:cookie,'Content-Type':'application/json',...headers},body:JSON.stringify({changes})});
+    const put=(changes,cookie=a.cookie,headers={})=>fetch(origin+'/api/state',{method:'PUT',headers:{Origin:origin,Cookie:cookie,'X-Rumbo-Visitor':a.boot.visitor,'Content-Type':'application/json',...headers},body:JSON.stringify({changes})});
     const changes=Object.fromEntries(Object.entries(values).map(([k,value])=>[k,{value,revision:0}]));
     assert.equal((await put(changes,a.cookie,{Origin:'https://evil.example'})).status,403);
     assert.equal((await put(changes,'')).status,401);

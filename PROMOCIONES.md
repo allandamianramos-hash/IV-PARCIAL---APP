@@ -1,6 +1,6 @@
 # Publicidad de Rumbo
 
-Las cuatro campañas sustituyen la imagen de portada. El carrusel cambia cada 5 segundos; tiene flechas, indicadores, pausa, teclado y gesto horizontal. Se detiene mientras el cursor o el foco están dentro, mientras la pestaña no es visible y, por defecto, cuando el usuario prefiere movimiento reducido. Las imágenes siguientes se precargan. Los textos y botones son HTML accesible, no texto incrustado en una imagen.
+Las cuatro campañas sustituyen la imagen de portada. El carrusel cambia cada 5 segundos; tiene flechas, indicadores, pausa, teclado y gesto horizontal. Se detiene mientras el foco está dentro, mientras la pestaña no es visible y, por defecto, cuando el usuario prefiere movimiento reducido. Las imágenes siguientes se precargan. Los textos y botones son HTML accesible, no texto incrustado en una imagen.
 
 ## Campañas y precios
 
@@ -44,3 +44,14 @@ Las versiones web se codificaron como JPEG calidad 88, sin cambiar dimensiones n
 ## Validación
 
 `npm test` incluye comprobaciones de porcentajes, vuelos de ambos orígenes, ambas clases, ausencia de descuentos acumulados, varios pasajeros y conservación del precio del hotel. Las pruebas de integridad comprueban recursos, sintaxis y navegación existente.
+## Fondo vivo y controles
+
+El HERO completo (CSS y JavaScript incluidos) está en `index.html`, identificado por `rumbo-hero-styles` y `rumbo-hero-script`. `RUMBO_HERO_CONFIG.slides` define las cuatro campañas: textos, fotos, etiqueta, ambiente, precios, dato útil y fecha opcional. Los precios configurados sirven de respaldo; dentro del sitio prevalece el catálogo compartido para que la oferta y el viaje siempre coincidan. `promociones.css` solo contiene estilos de descuentos usados por otras páginas.
+
+Las capas SVG `.campaign-scenery` son independientes y decorativas. Cancún: mar y sol. Italia: tres montañas, neblina y sol bajo, sin mar. Fin de año: atardecer, luna creciente y cinco estrellas fijas. Estilos: mapa, playa, montaña y ciudad; sus enlaces resaltan el paisaje y foto correspondientes con puntero o foco de teclado.
+
+La barra conserva Pausar, cuatro indicadores de progreso, Fotografías, contador y flechas. Pausar detiene también fondo, avión y progreso; el foco en enlaces, salir de la vista y ocultar la pestaña detienen la rotación. Las preferencias de movimiento reducido eliminan animaciones y arrancan en pausa. El parallax solo se activa con puntero preciso en escritorio. En móvil, hay menos capas, fotos compactas apiladas y Rumbito se recoge a su avatar mientras el HERO está visible para no tapar controles ni condiciones; su función sigue igual.
+
+`slideMs` controla los cinco segundos de cada slide y `previewMs` los 1.4 segundos del pase de abordar antes de abrir el destino. Escape cancela la vista previa; abrir en nueva pestaña conserva el comportamiento habitual. Con movimiento reducido el botón navega directamente. `price.detail` vacío oculta el sello; `expires` nulo oculta urgencia. Una fecha configurada futura usa formato AAAA-MM-DD y no altera por sí sola la vigencia de descuentos del catálogo.
+
+Las formas se desplazan mediante transformaciones y opacidad. La máscara pequeña de la ruta usa `stroke-dashoffset` para dibujar la línea. No se añadieron bibliotecas. Se precarga la primera foto de cada campaña. Contraste del texto sobre crema: mínimo 4.71:1 en los colores comprobados; botón blanco sobre teal: 9.25:1.

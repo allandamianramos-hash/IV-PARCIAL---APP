@@ -6,7 +6,7 @@ import { createChatHandler } from './chat-api.mjs';
 import { loadEnvFile } from 'node:process';
 import { spawn } from 'node:child_process';
 const root = fileURLToPath(new URL(".", import.meta.url));
-const publicFiles = new Set(["index.html", "script.js", "chat-engine.js", "chat-client.js", "chat-ui.js", "chat.css", "style.css", "viajes.html", "viajes.js", "viajes.css", "tienda.html", "tienda.js", "tienda.css", "logo-rumbo.jpg", "servicios.html", "servicios.js", "servicios.css", "common.js", "common.css", "journey.js", "promociones.js", "promociones.css"]);
+const publicFiles = new Set(["index.html", "script.js", "chat-engine.js", "chat-client.js", "chat-ui.js", "chat.css", "style.css", "viajes.html", "viajes.js", "viajes.css", "tienda.html", "tienda.js", "tienda.css", "logo-rumbo.jpg", "servicios.html", "servicios.js", "servicios.css", "common.js", "common.css", "journey.js", "promociones.css"]);
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
 export function createApp(chatOptions) {
   const chat = createChatHandler(chatOptions);

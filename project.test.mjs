@@ -25,7 +25,12 @@ test('no quedan conflictos de Git en los archivos de la aplicación', async () =
 
 test('cada página tiene un documento, recursos existentes y scripts sin duplicar', async () => {
   for (const file of files.filter(name => name.endsWith('.html'))) {
-    const html = await readFile(resolve(root, file), 'utf8');
+    const rawHtml = await readFile(resolve(root, file), 'utf8');
+    for (const [, attributes, source] of rawHtml.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+      if (!/\bsrc\s*=|type=["'](?:application\/ld\+json|application\/json)["']/i.test(attributes)) new vm.Script(source, { filename: file });
+    }
+    // Las plantillas dentro de JS no son nodos ni recursos HTML del documento.
+    const html = rawHtml.replace(/(<script\b[^>]*>)[\s\S]*?<\/script>/gi, '$1</script>').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '');
     for (const tag of ['html', 'head', 'body']) {
       assert.equal([...html.matchAll(new RegExp(`<${tag}(?:\\s|>)`, 'gi'))].length, 1, `${file}: <${tag}> duplicado`);
       assert.equal([...html.matchAll(new RegExp(`</${tag}>`, 'gi'))].length, 1, `${file}: cierre de ${tag}`);

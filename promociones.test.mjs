@@ -45,3 +45,20 @@ test('Mi viaje aplica una sola vez el descuento a cada pasajero y conserva el ho
     assert.equal(s.total, expected * 3 + hotel.rate * 12);
   }
 });
+
+test('las cuatro campañas configuradas conservan precios y recursos reales', async () => {
+  const html = await readFile(new URL('index.html', import.meta.url), 'utf8');
+  const script = html.match(/<script id="rumbo-hero-script">([\s\S]*?)<\/script>/)[1];
+  const config = vm.runInNewContext(script.slice(0, script.indexOf("document.addEventListener('DOMContentLoaded'")) + '\nRUMBO_HERO_CONFIG');
+  const { catalog } = setup();
+  assert.equal(config.slides.length, 4);
+  for (const slide of config.slides) {
+    assert.ok(slide.photos.length >= 2);
+    for (const photo of slide.photos) assert.ok((await readFile(new URL(photo.src, import.meta.url))).length > 1000);
+    if (!slide.price) { assert.equal(slide.tag, null); continue; }
+    const flight = catalog.flights(catalog.destinations.find(d => d.id === slide.id), 'Tegucigalpa')[0];
+    assert.equal(slide.price.original, flight.baseEconomy);
+    assert.equal(slide.price.current, flight.economy);
+    assert.equal(slide.expires, null);
+  }
+});

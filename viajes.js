@@ -805,13 +805,19 @@
   const promotions = {
     cancun: { percent: 25, name: 'Escapadas seleccionadas' },
     madrid: { percent: 25, name: 'Escapadas seleccionadas' },
-    dolomitas: { percent: 20, name: 'Tu próximo rumbo: Italia' }
+      venecia: { percent: 20, name: 'Tu próximo rumbo: Italia' },
+      paris: { percent: 10, name: 'Escapadas a París' },
+      barcelona: { percent: 10, name: 'Escapadas a Barcelona' }
   };
   const discounted = (amount, percent) => Math.round(amount * (100 - percent)) / 100;
   destinations.forEach(d => { d.promotion = promotions[d.id] || null; });
 
-  function flights(destination, origin) {
+  function flights(destination, origin, travelers = 1) {
+    if (!destination || !Number.isFinite(destination.economy) || !origins.includes(origin)) return [];
     if (destination.arrival === origin) return [];
+    const groupDiscount = Number.isInteger(travelers) && travelers >= 3 && travelers <= 12 ? 5 : 0;
+    const destinationDiscount = destination.promotion?.percent || 0;
+    const discountPercent = Math.round((100-(100-destinationDiscount)*(100-groupDiscount)/100)*100)/100;
     const extra = origin === 'San Pedro Sula' ? 200 : 0;
     const providers = destination.region==='honduras'?['cm']:['bali','osaka'].includes(destination.id)?['american']:['madrid','venecia'].includes(destination.id)?['iberia','avianca','american']:['avianca','copa','american'];
     return ['08:30', '12:15', '16:45', '06:00', '14:20', '19:10'].map((departure, index) => ({
@@ -822,9 +828,9 @@
       minutes: destination.duration + (index === 1 ? 20 : 0),
       baseEconomy: destination.economy + extra + index * 350,
       baseExecutive: Math.round((destination.economy + extra + index * 350) * 1.65),
-      economy: discounted(destination.economy + extra + index * 350, destination.promotion?.percent || 0),
-      executive: discounted(Math.round((destination.economy + extra + index * 350) * 1.65), destination.promotion?.percent || 0),
-      discountPercent: destination.promotion?.percent || 0,
+      economy: discounted(destination.economy + extra + index * 350, discountPercent),
+      executive: discounted(Math.round((destination.economy + extra + index * 350) * 1.65), discountPercent),
+      discountPercent, groupDiscount,
       stops: destination.region === 'honduras' ? 'Sin escalas' : 'Con conexiones'
     }));
   }
@@ -924,7 +930,7 @@
   }
 
   function currentDestination() { return destinationById(state.destinationId); }
-  function currentFlight() { return flights(currentDestination(), state.origin).find(flight => flight.id === state.flightId); }
+  function currentFlight() { return flights(currentDestination(), state.origin, state.travelers).find(flight => flight.id === state.flightId); }
   function currentHotel() { return currentDestination().hotels.find(hotel => hotel.id === state.hotelId); }
   function rate(hotel, roomType = state.roomType) { return Math.round(hotel.rate * rooms[roomType].factor); }
   function flightRate(flight) { return state.cabin === 'ejecutiva' ? flight.executive : flight.economy; }
@@ -1076,7 +1082,7 @@
     const hotel = currentHotel();
     const flightTotal = flight ? flightRate(flight) * state.travelers : 0;
     const hotelTotal = hotel ? rate(hotel) * state.nights * state.rooms : 0;
-    const flightHTML = flight ? `<p><strong>${state.origin} → ${currentDestination().arrival}</strong></p><p>${flight.airline.name} · ${flight.code} · simulación</p><p>${formatDate(state.date)} · ${flight.departure} · ${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</p>${flight.discountPercent ? `<p class="promo-note">Descuento ${flight.discountPercent}% aplicado · ahorras ${money(((state.cabin === 'ejecutiva' ? flight.baseExecutive : flight.baseEconomy) - flightRate(flight)) * state.travelers)}</p>` : ''}<p>${money(flightRate(flight))} × ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</p><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar aerolínea ↗</a><div class="rv-summary-line"><span>Vuelo de ida</span><strong>${money(flightTotal)}</strong></div>` : '<p>Sin vuelo seleccionado.</p>';
+    const flightHTML = flight ? `<p><strong>${state.origin} → ${currentDestination().arrival}</strong></p><p>${flight.airline.name} · ${flight.code} · simulación</p><p>${formatDate(state.date)} · ${flight.departure} · ${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</p>${flight.discountPercent ? `<p class="promo-note">Descuento ${flight.discountPercent}% aplicado${flight.groupDiscount ? ' (incluye grupo)' : ''} · ahorras ${money(((state.cabin === 'ejecutiva' ? flight.baseExecutive : flight.baseEconomy) - flightRate(flight)) * state.travelers)}</p>` : ''}<p>${money(flightRate(flight))} × ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</p><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar aerolínea ↗</a><div class="rv-summary-line"><span>Vuelo de ida</span><strong>${money(flightTotal)}</strong></div>` : '<p>Sin vuelo seleccionado.</p>';
     const hotelHTML = hotel ? `<p><strong>${hotel.name} · ${rooms[state.roomType].name}</strong></p><p>${formatDate(state.checkIn)} → ${formatDate(addDays(state.checkIn, state.nights))}</p><p>${state.travelers} ${state.travelers === 1 ? 'huésped' : 'huéspedes'} · ${state.rooms} ${state.rooms === 1 ? 'habitación' : 'habitaciones'}</p><p>${money(rate(hotel))} × ${state.nights} noches × ${state.rooms} hab.</p><div class="rv-summary-line"><span>Hospedaje</span><strong>${money(hotelTotal)}</strong></div>` : '<p>Sin hotel seleccionado.</p>';
     return { flight, hotel, total: flightTotal + hotelTotal, flightHTML, hotelHTML };
   }
@@ -1138,14 +1144,14 @@
     }
     function render() {
       const destination = currentDestination();
-      const options = flights(destination, state.origin);
+      const options = flights(destination, state.origin, state.travelers);
       if ($('#flight-sort').value === 'price-low') options.sort((a, b) => flightRate(a) - flightRate(b));
       if ($('#flight-sort').value === 'time') options.sort((a, b) => a.departure.localeCompare(b.departure));
       $('#flight-result-title').textContent = `${state.origin} → ${destination.arrival}`;
       $('#flight-results-meta').textContent = `${options.length} opciones · ${formatDate(state.date)} · ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}`;
       $('#flight-transfer').textContent = `Aeropuerto de llegada: ${destination.airport.name} (${destination.airport.code}). La existencia del aeropuerto no garantiza vuelos directos ni disponibilidad para estas fechas. ${destination.transfer}`;
       $('#flight-transfer').hidden = false;
-      $('#flight-form-notice').textContent = destination.promotion ? `${destination.promotion.percent}% de descuento automático en los vuelos de ${destination.name}. Hotel y servicios por separado; promoción de demostración de Rumbo.` : 'Vuelos de ida · ajusta fechas y pasajeros.';
+      $('#flight-form-notice').textContent = [destination.promotion ? `${destination.promotion.percent}% por destino.` : '', state.travelers >= 3 ? '5% adicional por grupo aplicado sobre la tarifa rebajada.' : 'Desde 3 pasajeros: 5% adicional en vuelos.', 'Válido para 3 a 12 pasajeros, ambas clases. Hotel y servicios aparte. Tarifas de demostración.'].filter(Boolean).join(' ');
       $('#flight-list').innerHTML = options.length ? options.map((flight, index) => {
         const end = arrival(flight);
         const selected = state.flightId === flight.id;

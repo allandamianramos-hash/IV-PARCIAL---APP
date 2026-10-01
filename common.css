@@ -178,7 +178,7 @@ body #servicios .booking-card:nth-child(2) { background:#f1ede5; }
 body #servicios .shop-card { background:#f5eee4; }
 body #destinos.destinations-section { position:relative; padding-top:80px; padding-bottom:62px; background:linear-gradient(180deg,#eef3f4,#f5f8f7); border:0; }
 body #destinos.destinations-section::before { content:''; position:absolute; top:0; left:0; width:100%; height:38px; pointer-events:none; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 38' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V5C1100 40 1020 35 720 14S260 5 0 30Z' fill='%23fafbf9'/%3E%3Cpath d='M0 34C360 2 460 7 720 19S1150 38 1440 10' fill='none' stroke='%23d9e3df'/%3E%3C/svg%3E") center/100% 100% no-repeat; }
-body #quienes-somos.about-rumbo { position:relative; isolation:isolate; background:linear-gradient(115deg,#f3ede4 0%,#faf7f1 55%,#fafbf9 100%); border:0; border-radius:4px 36px 4px 36px; padding:clamp(28px,4vw,56px); margin-top:80px; }
+body #quienes-somos.about-rumbo { position:relative; isolation:isolate; background:linear-gradient(115deg,#eee1cf 0%,#f6f0e5 55%,#f8f7f2 100%); border:0; border-radius:4px 36px 4px 36px; padding:clamp(28px,4vw,56px); margin-top:80px; }
 body #quienes-somos.about-rumbo::after { content:''; position:absolute; top:-130px; right:-90px; width:380px; height:270px; border:1px solid #ded9ca; border-radius:50%; box-shadow:0 20px 0 -19px #ded9ca,0 40px 0 -39px #ded9ca; transform:rotate(-22deg); z-index:-1; pointer-events:none; }
 body #quienes-somos .about-rumbo-photo { padding-bottom:16px; }
 body #quienes-somos .about-rumbo-photo::before { background:#e2dfd0; inset:8px 0 40px 32px; }
@@ -188,7 +188,18 @@ body #quienes-somos .about-photo-route { display:none; }
 body #quienes-somos .about-rumbo-values>div { border-color:#e1dfd5; }
 body #quienes-somos .about-rumbo-link { border-bottom:1px solid #8ca29a; padding:6px 0; margin-top:8px; }
 body #guias.section { position:relative; background:#f4f2ec; border:0; border-radius:24px 4px 24px 4px; padding:clamp(28px,4vw,52px); }
-body #guias.section::before { content:''; position:absolute; top:-28px; left:50%; width:1px; height:55px; background:#b6bba9; }
+body #guias.section::before { content:none; }
+body #guias.section { background:linear-gradient(125deg,#e3eeea,#f2f5ef); border-top:1px solid #c6d8d0; }
+body #guias .guides-image { border-radius:70px 14px 14px 14px; }
+body #quienes-somos .about-rumbo-copy :is(p,dd) { color:#344c43; }
+body #quienes-somos .about-rumbo-copy .eyebrow { color:#2d6256; font-weight:700; letter-spacing:.12em; }
+body #quienes-somos .about-rumbo-copy h2,body #quienes-somos .about-rumbo-values dt { color:#174d43; }
+body #quienes-somos .about-rumbo-values>div { padding-left:16px; border-left:2px solid #9cb6a5; margin-top:12px; }
+body #destinos.destinations-section { background:linear-gradient(180deg,#e3eef0,#f0f5f3); }
+body #servicios .booking-card:first-child { background:#dfece6; }
+body #servicios .booking-card:nth-child(2) { background:#f0e6d7; }
+body #servicios .journey-card-number { color:#345d54; }
+body #guias :is(p,summary),body #antes-de-viajar p { color:#344f48; }
 body #antes-de-viajar.departure-guide { background:linear-gradient(120deg,#eaf0ed,#f1f5f2); border-color:#d7e1d8; border-radius:24px 24px 8px 8px; border-bottom:4px solid #bcccbf; }
 body .service-hero { background:linear-gradient(120deg,#e9efea,#f4f3ec); border:1px solid #dce4dc; }
 body .service-tile { border-color:#dce3de; box-shadow:0 6px 20px #24443d05; }

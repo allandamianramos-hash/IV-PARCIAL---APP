@@ -459,13 +459,13 @@ const RUMBO_HERO_CONFIG = {
       "terms": "25 % en vuelos de ida a Cancún y Madrid, económica y ejecutiva. Hotel y servicios aparte. Tarifas de demostración."
     },
     {
-      "id": "dolomitas",
+      "id": "venecia",
       "className": "campaign-alpine",
       "environment": "mountains",
       "title": "Europa a tu manera",
       "kicker": "PRÓXIMA PARADA: ITALIA",
-      "headline": "Cambia de aire.<br>Vuela a <span>Italia.</span>",
-      "description": "Las Dolomitas, a tu ritmo. Montañas, paseos y tiempo para ti.",
+      "headline": "Descubre <span>Venecia.</span><br>Vuela con −20 %.",
+      "description": "Canales, plazas y paseos por la ciudad. Elige tus fechas y compara vuelos.",
       "price": {
         "original": 22500,
         "current": 18000,
@@ -474,8 +474,8 @@ const RUMBO_HERO_CONFIG = {
       },
       "expires": null,
       "cta": {
-        "text": "Descubrir Italia",
-        "href": "viajes.html?pantalla=detalle-destino&destino=dolomitas"
+        "text": "Ver vuelos a Venecia",
+        "href": "viajes.html?pantalla=vuelos&destino=venecia"
       },
       "secondary": {
         "text": "Ver todos los destinos",
@@ -484,39 +484,39 @@ const RUMBO_HERO_CONFIG = {
       "choices": [],
       "photos": [
         {
-          "src": "imagenes-viajes/dolomitas.jpg",
-          "alt": "Paisaje de montaña de inspiración",
-          "caption": "Aire de montaña"
+          "src": "imagenes-viajes/destino-venecia.jpg",
+          "alt": "Vista aérea de Venecia y sus canales",
+          "caption": "Venecia, Italia"
         },
         {
           "src": "imagenes-viajes/hotel-valle.jpg",
           "alt": "Habitación de inspiración para una estancia de montaña",
-          "caption": "Y tiempo para descansar"
+          "caption": "Hospedajes para tu estancia"
         }
       ],
       "tag": {
         "text": "−20%",
         "label": "EN VUELOS"
       },
-      "terms": "20 % en vuelos de ida a Venecia, económica y ejecutiva. Traslado a Dolomitas y hotel aparte. Tarifas de demostración."
+      "terms": "20 % en vuelos de ida a Venecia. Ambas clases y orígenes del catálogo. Hotel y servicios aparte. Tarifas de demostración."
     },
     {
-      "id": "fin-de-ano",
+      "id": "viaje-en-grupo",
       "className": "campaign-escape",
       "environment": "sunset",
-      "title": "Tu viaje de fin de año",
-      "kicker": "ESTE FIN DE AÑO, REGÁLATE UN VIAJE",
-      "headline": "Termina el año<br>en <span>otro lugar.</span>",
-      "description": "Elige las fechas. Nosotros te ayudamos a darle forma al viaje.",
+      "title": "Descuento para grupos",
+      "kicker": "PARA VIAJAR EN COMPAÑÍA",
+      "headline": "Tres o más viajeros.<br><span>5 % adicional.</span>",
+      "description": "El descuento se aplica automáticamente al elegir de 3 a 12 pasajeros.",
       "price": null,
       "expires": null,
       "cta": {
-        "text": "Planear mi viaje",
-        "href": "viajes.html?pantalla=vuelos"
+        "text": "Buscar para 3 personas",
+        "href": "viajes.html?pantalla=vuelos&destino=roatan&viajeros=3"
       },
       "secondary": {
-        "text": "Explorar servicios para mi viaje",
-        "href": "servicios.html"
+        "text": "París y Barcelona: 10 % en vuelos",
+        "href": "viajes.html?pantalla=detalle-destino&destino=paris"
       },
       "choices": [],
       "photos": [
@@ -526,13 +526,16 @@ const RUMBO_HERO_CONFIG = {
           "caption": "Bali, Indonesia"
         },
         {
-          "src": "imagenes-viajes/kioto.jpg",
-          "alt": "Calle tradicional de Kioto",
-          "caption": "Kioto, Japón"
+          "src": "imagenes-viajes/destino-osaka.jpg",
+          "alt": "Vista de Osaka",
+          "caption": "Osaka, Japón"
         }
       ],
-      "tag": null,
-      "terms": "Elige fechas, vuelo, hospedaje y experiencias. Revisa los servicios y el total de tu plan antes de finalizar."
+      "tag": {
+        "text": "−5%",
+        "label": "ADICIONAL EN VUELOS"
+      },
+      "terms": "5 % sobre el precio del vuelo ya rebajado, para 3 a 12 pasajeros. Todas las rutas, ambas clases. No aplica a hoteles ni servicios. Tarifas de demostración."
     },
     {
       "id": "estilos",
@@ -603,10 +606,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const slides = [...root.querySelectorAll('[data-promo-slide]')];
+  root.querySelectorAll('[data-promo-dot]').forEach((dot,i)=>dot.setAttribute('aria-label',`Ver promoción ${i+1}: ${RUMBO_HERO_CONFIG.slides[i].title}`));
   const pause = root.querySelector('[data-promo-pause]');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const pointer = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 761px)');
-  const money = n => 'L ' + n.toLocaleString('es-HN', { maximumFractionDigits: 2 });
+  const money = n => Number.isFinite(n) ? 'L ' + n.toLocaleString('es-HN', { maximumFractionDigits: 2 }) : 'Consultar tarifa';
   const priceData = new Map(), planes = [], counted = new Set();
   let current = 0, elapsed = 0, paused = motion.matches, focused = false, visible = true;
   let frame = 0, last = 0, preview = false, previewTimer, resetPreview, exitTimer;
@@ -662,9 +666,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!price) return;
     const id = price.dataset.promoPrice;
     const campaign = RUMBO_HERO_CONFIG.slides[i];
-    const d = window.RumboViajesDatos?.destinations.find(d => d.id === id) || {id,name:campaign.title};
+    const d = window.RumboViajesDatos?.destinations.find(d => d.id === id);
     // En el sitio, el catálogo manda; fuera de él, se usan los precios configurados.
-    const f = window.RumboViajesDatos?.flights(d, 'Tegucigalpa')[0] || {baseEconomy:campaign.price.original,economy:campaign.price.current};
+    const f = d ? window.RumboViajesDatos.flights(d, 'Tegucigalpa')[0] : null;
+    if (!f || !Number.isFinite(f.economy) || !Number.isFinite(f.baseEconomy)) { price.textContent = 'Consulta las tarifas disponibles'; return; }
     const config = { ...RUMBO_HERO_CONFIG.slides[i].price, expires: RUMBO_HERO_CONFIG.slides[i].expires };
     price.innerHTML = `<span class="campaign-price-line"><del>${money(f.baseEconomy)}</del> <strong aria-label="${money(f.economy)}"><span aria-hidden="true">${money(f.economy)}</span></strong></span><small>por persona · ida desde Tegucigalpa</small>`;
     if (config.detail) { const detail = document.createElement('small'); detail.className = 'campaign-flight-detail'; detail.textContent = config.detail; price.append(detail); }
@@ -1007,8 +1012,8 @@ document.addEventListener('DOMContentLoaded', () => {
       </article>
       <article class="campaign-slide campaign-alpine" data-promo-slide data-title="Europa a tu manera" aria-roledescription="diapositiva" aria-label="2 de 4: Europa a tu manera" hidden>
         <div class="campaign-copy"><p class="campaign-kicker">PRÓXIMA PARADA: ITALIA</p><h2>Cambia de aire.<br>Vuela a <span>Italia.</span></h2><p class="campaign-description">Las Dolomitas, a tu ritmo. Montañas, paseos y tiempo para ti.</p>
-          <p class="campaign-price" data-promo-price="dolomitas"></p>
-          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=detalle-destino&amp;destino=dolomitas">Descubrir Italia <span aria-hidden="true">↗</span></a></div>
+          <p class="campaign-price" data-promo-price="venecia"></p>
+          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=detalle-destino&amp;destino=venecia">Descubrir Italia <span aria-hidden="true">↗</span></a></div>
           <a class="campaign-secondary" href="viajes.html?pantalla=destinos">Ver todos los destinos <span aria-hidden="true">→</span></a>
 
         </div>
@@ -1243,7 +1248,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <div><dt>Presupuesto visible</dt><dd>Consulta precios, descuentos y el total de tus elecciones en Mi viaje.</dd></div>
           <div><dt>Orientación para elegir</dt><dd>Consulta con Rumbito las opciones de destinos y servicios disponibles.</dd></div>
         </dl>
-        <a class="text-link about-rumbo-link" href="#nuestro-equipo">Conoce al equipo</a>
       </div>
     </section>
 

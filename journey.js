@@ -14,7 +14,7 @@
     const t=read(tripKey,{})||{}, catalog=window.RumboViajesDatos, items=[],issues=[];
     const d=catalog?.destinations.find(d=>d.id===t.destinationId), room=catalog?.rooms[t.roomType];
     const validPeople=integer(t.travelers,1,12), validDates=dateValid(t.date)&&t.date>=day()&&dateValid(t.checkIn)&&t.checkIn>=t.date;
-    const flight=d&&catalog.origins.includes(t.origin)?catalog.flights(d,t.origin).find(f=>f.id===t.flightId):null;
+    const flight=d&&catalog.origins.includes(t.origin)?catalog.flights(d,t.origin,t.travelers).find(f=>f.id===t.flightId):null;
     const hotel=d?.hotels.find(h=>h.id===t.hotelId);
     const omit=!flight&&read('rumbo.no-flight.v1','')===`${t.destinationId}|${t.date}|${t.origin}`;
     if(!d||!validPeople||!validDates)issues.push({label:'Define destino, fechas y viajeros',url:steps[0][2]});

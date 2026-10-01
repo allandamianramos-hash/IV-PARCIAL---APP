@@ -1,0 +1,27 @@
+import fs from 'node:fs/promises';
+let html=await fs.readFile('index.html','utf8');
+const match=html.match(/const RUMBO_HERO_CONFIG = ([\s\S]*?);\r?\ndocument.addEventListener/);
+const config=JSON.parse(match[1]);
+const italy=config.slides[1];
+Object.assign(italy,{id:'venecia',headline:'Descubre <span>Venecia.</span><br>Vuela con −20 %.',description:'Canales, plazas y paseos por la ciudad. Elige tus fechas y compara vuelos.',terms:'20 % en vuelos de ida a Venecia. Ambas clases y orígenes del catálogo. Hotel y servicios aparte. Tarifas de demostración.'});
+italy.cta={text:'Ver vuelos a Venecia',href:'viajes.html?pantalla=vuelos&destino=venecia'};
+italy.photos[0]={src:'imagenes-viajes/destino-venecia.jpg',alt:'Vista aérea de Venecia y sus canales',caption:'Venecia, Italia'};
+italy.photos[1].caption='Hospedajes para tu estancia';
+const group=config.slides[2];
+Object.assign(group,{id:'viaje-en-grupo',title:'Descuento para grupos',kicker:'PARA VIAJAR EN COMPAÑÍA',headline:'Tres o más viajeros.<br><span>5 % adicional.</span>',description:'El descuento se aplica automáticamente al elegir de 3 a 12 pasajeros.',tag:{text:'−5%',label:'ADICIONAL EN VUELOS'},terms:'5 % sobre el precio del vuelo ya rebajado, para 3 a 12 pasajeros. Todas las rutas, ambas clases. No aplica a hoteles ni servicios. Tarifas de demostración.'});
+group.cta={text:'Buscar para 3 personas',href:'viajes.html?pantalla=vuelos&destino=roatan&viajeros=3'};
+group.secondary={text:'París y Barcelona: 10 % en vuelos',href:'viajes.html?pantalla=detalle-destino&destino=paris'};
+group.photos[1]={src:'imagenes-viajes/destino-osaka.jpg',alt:'Vista de Osaka',caption:'Osaka, Japón'};
+html=html.replace(match[1],JSON.stringify(config,null,2));
+html=html.replace("const money = n => 'L ' + n.toLocaleString('es-HN', { maximumFractionDigits: 2 });","const money = n => Number.isFinite(n) ? 'L ' + n.toLocaleString('es-HN', { maximumFractionDigits: 2 }) : 'Consultar tarifa';");
+html=html.replace("const d = window.RumboViajesDatos?.destinations.find(d => d.id === id) || {id,name:campaign.title};","const d = window.RumboViajesDatos?.destinations.find(d => d.id === id);");
+html=html.replace("const f = window.RumboViajesDatos?.flights(d, 'Tegucigalpa')[0] || {baseEconomy:campaign.price.original,economy:campaign.price.current};","const f = d ? window.RumboViajesDatos.flights(d, 'Tegucigalpa')[0] : null;\n    if (!f || !Number.isFinite(f.economy) || !Number.isFinite(f.baseEconomy)) { price.textContent = 'Consulta las tarifas disponibles'; return; }");
+html=html.replace(/\s*<a class="text-link about-rumbo-link"[^>]*>Conoce al equipo<\/a>/,'');
+// Alinear también el contenido inicial con la campaña que se renderiza.
+html=html.replaceAll('destino=dolomitas','destino=venecia').replaceAll('data-promo-price="dolomitas"','data-promo-price="venecia"');
+await fs.writeFile('index.html',html);
+let travel=await fs.readFile('viajes.js','utf8');
+const notice="      $('#flight-form-notice').textContent = ";
+travel=travel.split('\n').map(line=>line.startsWith(notice)?notice+"[destination.promotion ? `${destination.promotion.percent}% por destino.` : '', state.travelers >= 3 ? '5% adicional por grupo aplicado sobre la tarifa rebajada.' : 'Desde 3 pasajeros: 5% adicional en vuelos.', 'Válido para 3 a 12 pasajeros, ambas clases. Hotel y servicios aparte. Tarifas de demostración.'].filter(Boolean).join(' ');":line).join('\n');
+travel=travel.replace('Descuento ${flight.discountPercent}% aplicado','Descuento ${flight.discountPercent}% aplicado${flight.groupDiscount ? \' (incluye grupo)\' : \'\'}');
+await fs.writeFile('viajes.js',travel);

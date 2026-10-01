@@ -9,6 +9,31 @@ const context = { window: {} };
 vm.runInNewContext(source.slice(0, source.indexOf('/* Abre una')), context);
 const { destinations, origins, flights } = context.window.RumboViajesDatos;
 
+test('el descuento de grupo empieza en tres pasajeros y se acumula sobre la tarifa rebajada', () => {
+  const cancun=destinations.find(d=>d.id==='cancun');
+  for(const origin of origins){
+    const solo=flights(cancun,origin,2)[0], group=flights(cancun,origin,3)[0];
+    assert.equal(group.discountPercent,28.75);
+    for(const cabin of ['economy','executive']) assert.equal(group[cabin],Math.round(solo[cabin]*95)/100);
+    assert.equal(flights(cancun,origin,12)[0].economy,group.economy);
+    for(const invalid of [0,13,2.5,NaN])assert.equal(flights(cancun,origin,invalid)[0].groupDiscount,0);
+    assert.equal(flights(cancun,origin,2)[0].economy,solo.economy);
+  }
+  assert.equal(flights(destinations[0],origins[0],3)[0].economy,3040);
+  assert.equal(flights(undefined,origins[0]).length,0);
+  assert.equal(flights({id:'retirado'},origins[0]).length,0);
+});
+
+test('todos los anuncios con precio apuntan a destinos con tarifas finitas', async()=>{
+  const html=await readFile(new URL('index.html',import.meta.url),'utf8');
+  const config=JSON.parse(html.match(/const RUMBO_HERO_CONFIG = ([\s\S]*?);\r?\ndocument.addEventListener/)[1]);
+  for(const slide of config.slides.filter(s=>s.price)){
+    const d=destinations.find(d=>d.id===slide.id);assert.ok(d,slide.id);
+    const f=flights(d,origins[0])[0];assert.ok(Number.isFinite(f.economy));
+    assert.equal(Number(slide.tag.text.replace(/[^\d.]/g,'')),d.promotion.percent);
+  }
+});
+
 test('solo quedan los destinos aprobados y cada uno tiene un aeropuerto identificado', () => {
   for(const id of ['la-ceiba','copan','yojoa','antigua','dolomitas','kioto']) assert.ok(!destinations.some(d=>d.id===id));
   for(const d of destinations){assert.match(d.airport.code,/^[A-Z]{3}$/);assert.ok(d.airport.name);}

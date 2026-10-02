@@ -42,6 +42,10 @@ const RUMBO_HERO_CONFIG = {
         {
           "src": "imagenes-viajes/hd-venecia-canal.jpg",
           "alt": "El Gran Canal de Venecia visto desde el puente de Rialto"
+        },
+        {
+          "src": "imagenes-viajes/guia-venecia-ruta-8.jpg",
+          "alt": "Detalle de los arcos junto a los canales de Venecia"
         }
       ],
       "expires": null,
@@ -64,6 +68,10 @@ const RUMBO_HERO_CONFIG = {
         {
           "src": "imagenes-viajes/hero-cancun-delfines.jpg",
           "alt": "La arena blanca y el mar turquesa de Playa Delfines en Cancún"
+        },
+        {
+          "src": "imagenes-viajes/guia-cancun-ruta-10.jpg",
+          "alt": "Un pequeño muelle junto al mar de Cancún"
         }
       ],
       "expires": null,
@@ -86,6 +94,10 @@ const RUMBO_HERO_CONFIG = {
         {
           "src": "imagenes-viajes/hero-madrid-palacio.jpg",
           "alt": "La fachada del Palacio Real de Madrid desde la plaza de la Armería"
+        },
+        {
+          "src": "imagenes-viajes/guia-madrid-mercado.jpg",
+          "alt": "Detalle de la fachada de hierro y cristal del Mercado de San Miguel"
         }
       ],
       "expires": null,
@@ -108,6 +120,10 @@ const RUMBO_HERO_CONFIG = {
         {
           "src": "imagenes-viajes/hero-paris-eiffel.jpg",
           "alt": "La torre Eiffel vista de cerca desde Trocadéro"
+        },
+        {
+          "src": "imagenes-viajes/guia-paris-ruta-7.jpg",
+          "alt": "Los arcos y la estructura de hierro de la Torre Eiffel vistos desde abajo"
         }
       ],
       "expires": null,
@@ -133,20 +149,16 @@ document.addEventListener('DOMContentLoaded',()=>{
  let timer=null,paused=false;
  const toggle=root.querySelector('[data-promo-pause]');
  function schedule(){clearInterval(timer);if(!paused&&!document.hidden)timer=setInterval(()=>show(current+1,false),4000);}
- let transitionId=0;
+ function animatePhotos(slide,direction=1){
+  if(reduced.matches)return;
+  slide.querySelector('.rumbo-cover-image').animate([{opacity:0,transform:'translateX('+direction*80+'px)'},{opacity:1,transform:'translateX(0)'}],{duration:780,easing:'cubic-bezier(.22,.61,.36,1)'});
+  slide.querySelector('.rumbo-cover-detail').animate([{opacity:0,transform:'translateX('+direction*44+'px) rotate(-1.5deg)'},{opacity:1,transform:'translateX(0) rotate(-1.5deg)'}],{duration:620,delay:170,fill:'backwards',easing:'cubic-bezier(.22,.61,.36,1)'});
+ }
  function show(index,manual=true){
   const old=current;current=(index+slides.length)%slides.length;
   if(thumbs[current]===document.activeElement)root.querySelector('[data-promo-next]').focus({preventScroll:true});
-  const version=++transitionId;
-  slides.forEach((slide,i)=>{slide.getAnimations().forEach(a=>a.cancel());slide.hidden=i!==current;slide.inert=i!==current;slide.style.zIndex='';thumbs[i].hidden=i===current;});
-  if(old!==current){
-   const outgoing=slides[old],incoming=slides[current],direction=index<old?-1:1;
-   outgoing.hidden=false;outgoing.inert=true;incoming.style.zIndex='1';
-   const options={duration:reduced.matches?180:1100,easing:'cubic-bezier(.22,.61,.36,1)'};
-   const enter=incoming.animate(reduced.matches?[{opacity:0},{opacity:1}]:[{transform:'translateX('+direction*100+'%)'},{transform:'translateX(0)'}],options);
-   outgoing.animate(reduced.matches?[{opacity:1},{opacity:0}]:[{transform:'translateX(0)'},{transform:'translateX('+direction*-100+'%)'}],options);
-   enter.finished.then(()=>{if(version===transitionId){outgoing.hidden=true;incoming.style.zIndex='';}}).catch(()=>{});
-  }
+  slides.forEach((slide,i)=>{slide.getAnimations({subtree:true}).forEach(a=>a.cancel());slide.hidden=i!==current;slide.inert=i!==current;thumbs[i].hidden=i===current;});
+  if(old!==current)animatePhotos(slides[current],index<old?-1:1);
   root.querySelector('[data-promo-count]').textContent=String(current+1).padStart(2,'0')+' / 04';
   if(manual)root.querySelector('[data-promo-status]').textContent=RUMBO_HERO_CONFIG.slides[current].title+', '+(current+1)+' de 4';
   schedule();
@@ -155,10 +167,10 @@ document.addEventListener('DOMContentLoaded',()=>{
  root.querySelector('[data-promo-next]').addEventListener('click',()=>show(current+1));
  thumbs.forEach((button,i)=>button.addEventListener('click',()=>show(i)));
  toggle.addEventListener('click',()=>{paused=!paused;toggle.textContent=paused?'▷':'Ⅱ';toggle.setAttribute('aria-label',paused?'Reanudar carrusel':'Pausar carrusel');toggle.setAttribute('aria-pressed',String(paused));schedule();});
- document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',()=>{slides.forEach(slide=>slide.getAnimations().forEach(a=>a.cancel()));});
+ document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',()=>{slides.forEach(slide=>slide.getAnimations({subtree:true}).forEach(a=>a.cancel()));});
  function syncToggle(){toggle.textContent=paused?'▷':'Ⅱ';toggle.setAttribute('aria-label',paused?'Reanudar carrusel':'Pausar carrusel');toggle.setAttribute('aria-pressed',String(paused));}syncToggle();
  const firstImage=slides[0].querySelector('img');
- const entrance=()=>{if(!reduced.matches)slides[0].animate([{opacity:.2,transform:'translateX(20px)'},{opacity:1,transform:'translateX(0)'}],{duration:1100,easing:'ease-out'});schedule();};
+ const entrance=()=>{if(current===0)animatePhotos(slides[0]);schedule();};
  schedule();if(firstImage.complete)entrance();else {firstImage.addEventListener('load',entrance,{once:true});firstImage.addEventListener('error',schedule,{once:true});}
 
 });
@@ -427,10 +439,10 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
   <main id="contenido">
     <!-- PORTADA -->
     <section class="rumbo-cover container" data-promo-carousel aria-roledescription="carrusel" aria-label="Vuelos desde Tegucigalpa">
-<article class="rumbo-cover-slide" data-promo-slide data-title="Venecia" aria-roledescription="diapositiva" aria-label="1 de 4: Venecia" ><img class="rumbo-cover-image" src="imagenes-viajes/hd-venecia-canal.jpg" alt="El Gran Canal de Venecia visto desde el puente de Rialto" width="960" height="640" fetchpriority="high"><div class="rumbo-cover-copy"><h2>venecia,<br>sin prisa.</h2><p class="rumbo-cover-description">Canales, plazas y tiempo para caminar a tu ritmo.</p><p class="rumbo-cover-price" data-promo-price="venecia">Desde L 18,000 por persona · −20 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=venecia">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
-<article class="rumbo-cover-slide" data-promo-slide data-title="Cancún" aria-roledescription="diapositiva" aria-label="2 de 4: Cancún" hidden><img class="rumbo-cover-image" src="imagenes-viajes/hero-cancun-delfines.jpg" alt="La arena blanca y el mar turquesa de Playa Delfines en Cancún" width="960" height="640" loading="lazy"><div class="rumbo-cover-copy"><h2>cancún,<br>frente al mar.</h2><p class="rumbo-cover-description">Unos días de playa para salir de la rutina.</p><p class="rumbo-cover-price" data-promo-price="cancun">Desde L 5,400 por persona · −25 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=cancun">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
-<article class="rumbo-cover-slide" data-promo-slide data-title="Madrid" aria-roledescription="diapositiva" aria-label="3 de 4: Madrid" hidden><img class="rumbo-cover-image" src="imagenes-viajes/hero-madrid-palacio.jpg" alt="La fachada del Palacio Real de Madrid desde la plaza de la Armería" width="960" height="640" loading="lazy"><div class="rumbo-cover-copy"><h2>madrid,<br>a pie.</h2><p class="rumbo-cover-description">Parques, mercados y una mesa para comer sin apuro.</p><p class="rumbo-cover-price" data-promo-price="madrid">Desde L 14,625 por persona · −25 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=madrid">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
-<article class="rumbo-cover-slide" data-promo-slide data-title="París" aria-roledescription="diapositiva" aria-label="4 de 4: París" hidden><img class="rumbo-cover-image" src="imagenes-viajes/hero-paris-eiffel.jpg" alt="La torre Eiffel vista de cerca desde Trocadéro" width="960" height="640" loading="lazy"><div class="rumbo-cover-copy"><h2>parís,<br>junto al sena.</h2><p class="rumbo-cover-description">Caminá por la orilla y elegí dónde pasar la tarde.</p><p class="rumbo-cover-price" data-promo-price="paris">Desde L 21,600 por persona · −10 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=paris">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="Venecia" aria-roledescription="diapositiva" aria-label="1 de 4: Venecia" ><div class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hd-venecia-canal.jpg" alt="El Gran Canal de Venecia visto desde el puente de Rialto" width="960" height="640" fetchpriority="high"><img class="rumbo-cover-detail" src="imagenes-viajes/guia-venecia-ruta-8.jpg" alt="Detalle de los arcos junto a los canales de Venecia" width="400" height="320" loading="eager"></div><div class="rumbo-cover-copy"><h2>venecia,<br>sin prisa.</h2><p class="rumbo-cover-description">Canales, plazas y tiempo para caminar a tu ritmo.</p><p class="rumbo-cover-price" data-promo-price="venecia">Desde L 18,000 por persona · −20 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=venecia">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="Cancún" aria-roledescription="diapositiva" aria-label="2 de 4: Cancún" hidden><div class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-cancun-delfines.jpg" alt="La arena blanca y el mar turquesa de Playa Delfines en Cancún" width="960" height="640" loading="lazy"><img class="rumbo-cover-detail" src="imagenes-viajes/guia-cancun-ruta-10.jpg" alt="Un pequeño muelle junto al mar de Cancún" width="400" height="320" loading="lazy"></div><div class="rumbo-cover-copy"><h2>cancún,<br>frente al mar.</h2><p class="rumbo-cover-description">Unos días de playa para salir de la rutina.</p><p class="rumbo-cover-price" data-promo-price="cancun">Desde L 5,400 por persona · −25 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=cancun">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="Madrid" aria-roledescription="diapositiva" aria-label="3 de 4: Madrid" hidden><div class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-madrid-palacio.jpg" alt="La fachada del Palacio Real de Madrid desde la plaza de la Armería" width="960" height="640" loading="lazy"><img class="rumbo-cover-detail" src="imagenes-viajes/guia-madrid-mercado.jpg" alt="Detalle de la fachada de hierro y cristal del Mercado de San Miguel" width="400" height="320" loading="lazy"></div><div class="rumbo-cover-copy"><h2>madrid,<br>a pie.</h2><p class="rumbo-cover-description">Parques, mercados y una mesa para comer sin apuro.</p><p class="rumbo-cover-price" data-promo-price="madrid">Desde L 14,625 por persona · −25 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=madrid">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="París" aria-roledescription="diapositiva" aria-label="4 de 4: París" hidden><div class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-paris-eiffel.jpg" alt="La torre Eiffel vista de cerca desde Trocadéro" width="960" height="640" loading="lazy"><img class="rumbo-cover-detail" src="imagenes-viajes/guia-paris-ruta-7.jpg" alt="Los arcos y la estructura de hierro de la Torre Eiffel vistos desde abajo" width="400" height="320" loading="lazy"></div><div class="rumbo-cover-copy"><h2>parís,<br>junto al sena.</h2><p class="rumbo-cover-description">Caminá por la orilla y elegí dónde pasar la tarde.</p><p class="rumbo-cover-price" data-promo-price="paris">Desde L 21,600 por persona · −10 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=paris">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
 <div class="rumbo-cover-controls"><div class="rumbo-cover-thumbnails" role="group" aria-label="Otros destinos"><button type="button" data-promo-dot aria-label="Ver Venecia" hidden><img src="imagenes-viajes/hd-venecia-canal.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver Cancún" ><img src="imagenes-viajes/hero-cancun-delfines.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver Madrid" ><img src="imagenes-viajes/hero-madrid-palacio.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver París" ><img src="imagenes-viajes/hero-paris-eiffel.jpg" alt="" width="44" height="32"></button></div><div class="rumbo-cover-step"><button type="button" data-promo-pause aria-label="Pausar carrusel" aria-pressed="false">Ⅱ</button><span class="rumbo-cover-count" data-promo-count>01 / 04</span><button type="button" data-promo-prev aria-label="Destino anterior">←</button><button type="button" data-promo-next aria-label="Destino siguiente">→</button></div></div><p class="rumbo-cover-terms">Tarifas de demostración · Solo ida desde Tegucigalpa. Hospedaje aparte.</p><span class="sr-only" data-promo-status aria-live="polite" aria-atomic="true"></span></section>
 
 

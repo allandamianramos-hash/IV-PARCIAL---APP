@@ -53,7 +53,8 @@ test('las cuatro campañas configuradas conservan precios y recursos reales', as
   const { catalog } = setup();
   assert.equal(config.slides.length, 4);
   for (const slide of config.slides) {
-    assert.equal(slide.photos.length, 1);
+    assert.equal(slide.photos.length, 2);
+    assert.notEqual(slide.photos[0].src, slide.photos[1].src);
     assert.match(slide.cta.href, /^viajes\.html\?pantalla=vuelos&destino=/);
     for (const photo of slide.photos) assert.ok((await readFile(new URL(photo.src, new URL('../public/', import.meta.url)))).length > 1000);
     if (!slide.price) {

@@ -53,5 +53,38 @@
     "license": "CC BY-SA 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
     "description": "<p>Madrid Retiro Park\n<a href=\"https://en.wikipedia.org/wiki/es:Parque_del_Retiro\" class=\"extiw\" title=\"w:es:Parque del Retiro\">es.wikipedia.org/wiki/Parque_del_Retiro</a>\n</p><p>This photograph can be used for  publications, including this copyright statement:  “©PromoMadrid, author Max Alexander”.\n</p>\nEsta fotografía puede usarse en publicaciones,  incluyendo la declaración “©PromoMadrid, autor Max Alexander”."
+  },
+  {
+    "id": "portada-cancun",
+    "file": "imagenes-viajes/portada-cancun-paisaje.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sunrise_In_Canc%C3%BAn_I_(219464941).jpeg/1280px-Sunrise_In_Canc%C3%BAn_I_(219464941).jpeg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Sunrise_In_Canc%C3%BAn_I_(219464941).jpeg",
+    "author": "Eric Johnson",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "description": "Amanecer sobre el mar y la playa de Cancún",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "portada-madrid",
+    "file": "imagenes-viajes/portada-madrid-paisaje.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Skyline_view_of_Madrid%2C_Spain_at_night_-_50317258357.jpg/1280px-Skyline_view_of_Madrid%2C_Spain_at_night_-_50317258357.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Skyline_view_of_Madrid%2C_Spain_at_night_-_50317258357.jpg",
+    "author": "Tim Adams",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "description": "La Gran Vía y el centro de Madrid iluminados de noche",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "portada-paris",
+    "file": "imagenes-viajes/portada-paris-paisaje.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Paris_sunset.JPG/1280px-Paris_sunset.JPG",
+    "commons": "https://commons.wikimedia.org/wiki/File:Paris_sunset.JPG",
+    "author": "Zinneke",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "description": "El Sena y la torre Eiffel al atardecer",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
   }
 ]

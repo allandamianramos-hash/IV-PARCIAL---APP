@@ -153,20 +153,22 @@ body.auth-page .auth-intro::before{display:none}
 body.auth-page .auth-brand{color:var(--verde);text-shadow:none}
 body.auth-page .auth-intro-copy{margin-top:360px}
 @media(max-width:700px){body.auth-page .auth-intro{min-height:360px}body.auth-page .auth-intro-copy{margin-top:150px}}
-/* Fotografía despejada: el contraste sigue únicamente la forma de las letras. */
-body main .rumbo-cover{display:grid}
-body main .rumbo-cover-slide{grid-area:1 / 1;width:100%;min-width:0}
+/* Portada editorial: fotografía y texto comparten el carrusel sin superponerse. */
+body main .rumbo-cover.container{display:grid;background:transparent;color:var(--tinta);border-radius:0;overflow:hidden}
+body main .rumbo-cover-slide{grid-area:1 / 1;width:100%;min-width:0;height:76svh;min-height:580px;max-height:820px}
 body main .rumbo-cover-slide::after{display:none;background:none}
-body main .rumbo-cover-copy{padding:0;background:none;border-radius:0;max-width:560px;bottom:88px}
-body main .rumbo-cover .rumbo-cover-copy :is(h2,p){color:#fff!important;text-shadow:0 1px 2px #17302b,0 2px 6px rgba(0,0,0,.8);font-weight:600}
-body main .rumbo-cover .rumbo-cover-copy h2{font-size:clamp(44px,5.2vw,76px);font-weight:650!important;margin-bottom:20px;-webkit-text-stroke:.4px rgba(23,48,43,.65);paint-order:stroke fill}
-body main .rumbo-cover .rumbo-cover-description{max-width:34ch}
-body main .rumbo-cover .rumbo-cover-cta{background:var(--verde);color:white;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+body main .rumbo-cover-image{left:43%;width:57%;height:calc(100% - 88px);border-radius:var(--radio-hero);object-position:center}
+body main .rumbo-cover-copy{left:0;bottom:calc(50% + 24px);transform:translateY(50%);width:calc(43% - 56px);max-width:none;padding:0;background:none;border-radius:0}
+body main .rumbo-cover .rumbo-cover-copy :is(h2,p){color:var(--tinta)!important;text-shadow:none!important;-webkit-text-stroke:0;font-weight:var(--peso-texto)}
+body main .rumbo-cover .rumbo-cover-copy h2{font-size:var(--texto-hero);font-weight:500!important;margin-bottom:24px}
+body main .rumbo-cover .rumbo-cover-description{max-width:40ch}
+body main .rumbo-cover .rumbo-cover-cta{background:var(--verde);color:white;box-shadow:none}
 body main .rumbo-cover .rumbo-cover-cta:hover{background:var(--tinta)}
-body main .rumbo-cover-controls{background:none;padding:0;border-radius:0}
-body main .rumbo-cover-step button{color:white;border-color:white;text-shadow:0 1px 3px #17302b;box-shadow:0 1px 3px rgba(0,0,0,.3)}
-body main .rumbo-cover-count{color:white;font-weight:600;text-shadow:0 1px 2px #17302b,0 2px 4px #17302b}
+body main .rumbo-cover-controls{bottom:16px;right:0;flex-direction:row;align-items:center;gap:24px;background:none;padding:0;border-radius:0}
+body main .rumbo-cover-step button{color:var(--tinta);border-color:var(--border);text-shadow:none;box-shadow:none}
+body main .rumbo-cover-count{color:var(--tinta);font-weight:400;text-shadow:none}
 body main .rumbo-cover-step button:hover{background:var(--verde);color:white}
-body main .rumbo-cover-terms{color:white;background:none;border-radius:0;padding:0;font-weight:600;text-shadow:0 1px 2px #17302b,0 2px 4px #17302b}
-@media(min-width:701px) and (max-width:1050px){body main .rumbo-cover-copy{max-width:calc(100% - 288px)}}
-@media(max-width:700px){body main .rumbo-cover-copy{left:24px;bottom:192px;width:calc(100% - 48px);max-width:none}body main .rumbo-cover-controls{bottom:64px;right:24px;gap:12px}body main .rumbo-cover-terms{left:24px;max-width:calc(100% - 48px);bottom:16px;font-size:11px}}
+body main .rumbo-cover-terms{left:0;bottom:22px;max-width:calc(43% - 56px);color:var(--tinta);background:none;padding:0;border-radius:0;font-weight:400;text-shadow:none}
+body main .rumbo-cover :focus-visible{outline-color:var(--verde)}
+@media(min-width:701px) and (max-width:1050px){body main .rumbo-cover-copy{width:calc(43% - 32px)}body main .rumbo-cover .rumbo-cover-copy h2{font-size:clamp(40px,5.2vw,64px)}body main .rumbo-cover-controls{gap:12px}body main .rumbo-cover-step button{width:40px;height:40px}}
+@media(max-width:700px){body main .rumbo-cover-slide{display:flex;flex-direction:column;height:auto;min-height:840px;max-height:none;padding-bottom:144px}body main .rumbo-cover-image{position:relative;left:auto;width:100%;height:330px;border-radius:24px}body main .rumbo-cover-copy{position:relative;left:auto;bottom:auto;transform:none;width:100%;padding:28px 0 0;max-width:none}body main .rumbo-cover .rumbo-cover-copy h2{font-size:var(--texto-hero)}body main .rumbo-cover-controls{bottom:72px;left:0;right:0;justify-content:space-between;gap:8px}body main .rumbo-cover-thumbnails{gap:4px}body main .rumbo-cover-thumbnails button{width:40px}body main .rumbo-cover-thumbnails img{width:36px}body main .rumbo-cover-step{gap:6px}body main .rumbo-cover-step button{width:36px;height:36px}body main .rumbo-cover-count{margin-right:0;font-size:11px}body main .rumbo-cover-terms{left:0;bottom:12px;max-width:100%;font-size:11px}}

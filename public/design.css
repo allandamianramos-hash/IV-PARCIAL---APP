@@ -153,3 +153,18 @@ body.auth-page .auth-intro::before{display:none}
 body.auth-page .auth-brand{color:var(--verde);text-shadow:none}
 body.auth-page .auth-intro-copy{margin-top:360px}
 @media(max-width:700px){body.auth-page .auth-intro{min-height:360px}body.auth-page .auth-intro-copy{margin-top:150px}}
+/* Foto sin velo: contraste limitado al contenido y controles. */
+body main .rumbo-cover{display:grid}
+body main .rumbo-cover-slide{grid-area:1 / 1;width:100%;min-width:0}
+body main .rumbo-cover-slide::after{display:none!important;background:none!important}
+body main .rumbo-cover-copy{padding:24px 28px;background:rgba(246,241,231,.97);border-radius:20px;max-width:480px;bottom:80px}
+body main .rumbo-cover .rumbo-cover-copy :is(h2,p){color:var(--tinta)!important;text-shadow:none!important}
+body main .rumbo-cover .rumbo-cover-copy h2{font-size:clamp(36px,4.4vw,64px);margin-bottom:16px}
+body main .rumbo-cover .rumbo-cover-cta{background:var(--verde);color:white}
+body main .rumbo-cover .rumbo-cover-cta:hover{background:var(--tinta)}
+body main .rumbo-cover-controls{background:rgba(246,241,231,.97);padding:12px;border-radius:20px}
+body main .rumbo-cover-step button{color:var(--tinta);border-color:rgba(23,48,43,.3)}
+body main .rumbo-cover-count{color:var(--tinta)}
+body main .rumbo-cover-step button:hover{background:var(--arena);color:var(--tinta)}
+body main .rumbo-cover-terms{color:var(--tinta);background:rgba(246,241,231,.97);border-radius:8px;padding:4px 8px}
+@media(max-width:700px){body main .rumbo-cover-copy{left:16px;bottom:192px;width:calc(100% - 32px);padding:20px;max-width:none}body main .rumbo-cover-controls{bottom:56px;right:16px;gap:4px}body main .rumbo-cover-terms{left:16px;max-width:calc(100% - 32px);bottom:12px;font-size:10px}}

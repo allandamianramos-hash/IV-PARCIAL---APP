@@ -1,5 +1,7 @@
 # Rumbo — PHP y SQL Server
 
+**Conexión gratuita del equipo:** usa [MANUAL-GRATIS-MISMA-BASE.html](docs/MANUAL-GRATIS-MISMA-BASE.html). Explica cómo conectar a todos a la base de Jimmy mediante Tailscale, sin contratar alojamiento. Incluye los pasos de Jimmy, los de sus compañeros y la comprobación final. La computadora de Jimmy debe permanecer encendida. El manual de Azure se conserva únicamente como alternativa.
+
 El sitio guarda cuentas, perfiles y selecciones en SQL Server mediante PHP/PDO_SQLSRV. En esta computadora utiliza `localhost`, `BD_VIAJES` y autenticación de Windows.
 
 ## Abrir el proyecto

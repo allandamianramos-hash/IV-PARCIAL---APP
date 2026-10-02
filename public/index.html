@@ -630,6 +630,9 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>`;
   slides.forEach((slide, i) => {
     slide.querySelector('.campaign-art').insertAdjacentHTML('afterbegin', paper);
+    // Agrupa visualmente el descuento con el precio, sin cambiar la promoción.
+    const offer = slide.querySelector('.campaign-offer');
+    if (offer) slide.querySelector('.campaign-description').insertAdjacentElement('afterend', offer);
     const sea = slide.querySelector('.paper-sea');
     sea.insertAdjacentHTML('afterbegin', `<defs><clipPath id="paper-shore-${i}"><path d="M0 390C21 355 13 294 59 256S74 182 143 134 220 139 254 65L700 0V350C610 330 560 378 456 359S319 331 244 364 100 374 0 390Z"/></clipPath></defs>`);
     sea.querySelectorAll('.wave').forEach(w => w.setAttribute('clip-path', `url(#paper-shore-${i})`));
@@ -924,6 +927,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design.css">
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

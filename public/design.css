@@ -82,7 +82,10 @@ body .auth-intro::before{background:linear-gradient(to top,rgba(10,20,18,.62),tr
 body .auth-heading h1{color:var(--tinta);font-size:clamp(32px,4vw,48px)}
 body .auth-brand{background:var(--fondo);border-radius:999px}
 body .auth-intro-copy :is(h2,p){color:var(--blanco-texto)}
-body .chat-launcher{background:var(--verde);color:white;box-shadow:none;border-radius:999px;animation:none}
+body .chat-launcher{background:#e8e3d9;color:#45534d;border-color:#cbc5b8;box-shadow:none;border-radius:999px;animation:none}
+body .chat-launcher:hover{background:#ddd7cb;color:#35443d;border-color:#bbb5a7}
+body .chat-launcher::after{background:#85917c;border-color:#f6f1e7}
+body .chat-launcher.chat-is-open::after{background:#66775f}
 body .chat-launcher small{display:none}
 @media(max-width:1000px){body #servicios .booking-card{grid-template-columns:40px 1fr 1.3fr}body #servicios .booking-card>:last-child{grid-column:2/-1;justify-self:start}body .search-field{padding:0 16px}body .search-form>.button{padding:16px;margin-left:16px}body .site-footer .footer-grid{gap:24px}body #destinations-track .destination-image{height:240px}body #destinations-track .destination-card:nth-child(3n+1) .destination-image{height:320px}}
 @media(max-width:700px){body .section{padding-top:48px;padding-bottom:48px}body .search-form{grid-template-columns:1fr;gap:16px;padding:24px}body .search-field{padding:0;border:0;border-bottom:1px solid var(--border)}body .search-form>.button{margin:0;width:100%}body #destinations-track{grid-template-columns:1fr 1fr;gap:32px 16px}body #destinations-track .destination-card:nth-child(3n+1){grid-column:1/-1}body #destinations-track .destination-image{height:200px}body #destinations-track h3{font-size:21px}body #destinations-track p{font-size:14px}body #servicios .booking-card{grid-template-columns:32px 1fr;gap:16px}body #servicios .booking-card>p:not(.journey-card-number){grid-column:2}body #guias{padding:32px 24px}body .site-footer .footer-grid{grid-template-columns:1fr;gap:40px}body .footer-bottom{flex-wrap:wrap;gap:16px}body .carousel-toolbar{gap:16px}body .section-heading{align-items:start;gap:24px}}
@@ -115,8 +118,6 @@ body .site-header .header-actions .account-actions .login-button:hover{backgroun
 body.auth-page .auth-brand{background:var(--fondo)!important;padding:8px 16px;border-radius:999px;position:relative;z-index:1}
 /* Contraste de portada, fotografías de equipaje y navegación de cuenta. */
 
-body main .rumbo-cover-copy{z-index:2}
-body main .rumbo-cover-copy :is(h2,p){color:#fff!important;text-shadow:0 1px 2px rgba(10,20,18,.3)}
 body.auth-login .auth-intro{background-image:url('imagenes-viajes/acceso-equipaje.jpg');background-position:65% center}
 body.auth-register .auth-intro{background-image:url('imagenes-viajes/registro-mochila.jpg');background-position:center 45%}
 body.auth-page .auth-intro::before{background:linear-gradient(to top,rgba(23,48,43,.92),transparent 62%)}
@@ -153,26 +154,3 @@ body.auth-page .auth-intro::before{display:none}
 body.auth-page .auth-brand{color:var(--verde);text-shadow:none}
 body.auth-page .auth-intro-copy{margin-top:360px}
 @media(max-width:700px){body.auth-page .auth-intro{min-height:360px}body.auth-page .auth-intro-copy{margin-top:150px}}
-/* Dos fotografías por destino, con el texto sobre el fondo crema. */
-body main .rumbo-cover.container{display:grid;background:var(--fondo);color:var(--tinta);border-radius:0;overflow:hidden;padding-top:12px}
-body main .rumbo-cover-slide{grid-area:1 / 1;display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:48px;width:100%;min-width:0;height:76svh;min-height:590px;max-height:780px}
-body main .rumbo-cover-slide::after{display:none;background:none}
-body main .rumbo-cover-photos{grid-column:2;grid-row:1;position:relative;min-width:0;margin:0 12px 16px 0}
-body main .rumbo-cover-image{position:absolute;inset:0 0 auto auto;width:94%;height:calc(100% - 44px);border-radius:var(--radio-hero);object-position:center;object-fit:cover}
-body main .rumbo-cover-slide[data-title="París"] .rumbo-cover-image{object-position:center top}
-body main .rumbo-cover-detail{position:absolute;z-index:1;left:0;bottom:0;width:42%;max-width:270px;height:auto;aspect-ratio:4/3;object-fit:cover;border:12px solid var(--fondo);border-radius:4px;transform:rotate(-1.5deg);background:var(--fondo)}
-body main .rumbo-cover-copy{position:relative;grid-column:1;grid-row:1;align-self:center;left:auto;bottom:auto;transform:none;width:100%;max-width:none;padding:0 0 80px;background:none;border-radius:0}
-body main .rumbo-cover .rumbo-cover-copy :is(h2,p){color:var(--tinta)!important;text-shadow:none!important;-webkit-text-stroke:0;font-weight:var(--peso-texto)}
-body main .rumbo-cover .rumbo-cover-copy h2{font-size:var(--texto-hero);font-weight:500!important;margin-bottom:24px}
-body main .rumbo-cover .rumbo-cover-description{max-width:40ch}
-body main .rumbo-cover .rumbo-cover-cta{background:var(--verde);color:white;box-shadow:none}
-body main .rumbo-cover .rumbo-cover-cta:hover{background:var(--tinta)}
-body main .rumbo-cover-controls{left:0;right:auto;top:auto;bottom:68px;flex-direction:row;align-items:center;gap:0;background:none;padding:0;border-radius:0}
-body main .rumbo-cover-thumbnails{display:none}
-body main .rumbo-cover-step button{color:var(--tinta);border-color:var(--border);text-shadow:none;box-shadow:none}
-body main .rumbo-cover-count{color:var(--tinta);font-weight:400;text-shadow:none}
-body main .rumbo-cover-step button:hover{background:var(--verde);color:white}
-body main .rumbo-cover-terms{position:relative;grid-column:1;left:auto;bottom:auto;max-width:100%;margin:16px 0 0;color:var(--tinta);background:none;padding:0;border-radius:0;font-weight:400;text-shadow:none}
-body main .rumbo-cover :focus-visible{outline-color:var(--verde)}
-@media(min-width:701px) and (max-width:1050px){body main .rumbo-cover-slide{gap:24px;grid-template-columns:minmax(0,46fr) minmax(0,54fr)}body main .rumbo-cover .rumbo-cover-copy h2{font-size:clamp(40px,5.2vw,64px)}body main .rumbo-cover-detail{width:50%;border-width:10px}}
-@media(max-width:700px){body main .rumbo-cover-slide{grid-template-columns:1fr;grid-template-rows:auto 370px;align-content:start;gap:32px;height:auto;min-height:0;max-height:none}body main .rumbo-cover-copy{grid-column:1;grid-row:1;padding:12px 0 0}body main .rumbo-cover-photos{grid-column:1;grid-row:2;margin:0 6px 0 0}body main .rumbo-cover-image{width:94%;height:calc(100% - 28px);border-radius:24px}body main .rumbo-cover-detail{width:46%;border-width:8px}body main .rumbo-cover-controls{position:relative;grid-row:2;left:auto;bottom:auto;margin-top:28px}body main .rumbo-cover-step{gap:12px}body main .rumbo-cover-step button{width:40px;height:40px}body main .rumbo-cover-terms{grid-row:3;margin-top:20px;font-size:11px}}

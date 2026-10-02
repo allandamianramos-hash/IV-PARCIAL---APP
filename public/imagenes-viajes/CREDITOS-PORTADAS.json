@@ -119,5 +119,27 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
     "description": "La arena blanca y el mar turquesa de Playa Delfines en Cancún",
     "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "hero-osaka-sakura",
+    "file": "imagenes-viajes/hero-osaka-sakura.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg/3840px-Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg",
+    "author": "Luka Peternel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "Castillo de Osaka enmarcado por cerezos en flor",
+    "modifications": "Miniatura de 3840 px publicada por Wikimedia; encuadre CSS adaptable."
+  },
+  {
+    "id": "hero-paris-hd",
+    "file": "imagenes-viajes/hero-paris-hd.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/26/Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg",
+    "author": "Guilhem Vellut",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "description": "La torre Eiffel vista de cerca desde Trocadéro",
+    "modifications": "Archivo original de alta resolución; encuadre CSS adaptable."
   }
 ]

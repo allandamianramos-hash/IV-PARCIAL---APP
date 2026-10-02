@@ -24,7 +24,7 @@
   <script src="journey.js" defer></script><script src="common.js" defer></script>
   <script src="chat-ui.js" defer></script>
   <link rel="stylesheet" href="chat.css">
-  
+
   <script id="rumbo-hero-script">
 const RUMBO_HERO_CONFIG = {
   "slides": [
@@ -81,29 +81,29 @@ const RUMBO_HERO_CONFIG = {
       }
     },
     {
-      "id": "madrid",
-      "title": "Madrid",
-      "headline": "madrid,<br>a pie.",
-      "description": "Parques, mercados y una mesa para comer sin apuro.",
+      "id": "osaka",
+      "title": "Osaka",
+      "headline": "Japón",
+      "description": "Templos, jardines y calles que invitan a perderse. Tu próximo viaje empieza en Osaka.",
       "price": {
-        "original": 19500,
-        "current": 14625
+        "original": 33000,
+        "current": 33000
       },
-      "discount": 25,
+      "discount": 0,
+      "expires": null,
       "photos": [
         {
-          "src": "imagenes-viajes/hero-madrid-palacio.jpg",
-          "alt": "La fachada del Palacio Real de Madrid desde la plaza de la Armería"
+          "src": "imagenes-viajes/hero-osaka-sakura.jpg",
+          "alt": "El castillo de Osaka enmarcado por cerezos en flor"
         },
         {
-          "src": "imagenes-viajes/guia-madrid-mercado.jpg",
-          "alt": "Detalle de la fachada de hierro y cristal del Mercado de San Miguel"
+          "src": "imagenes-viajes/guia-osaka-castillo.jpg",
+          "alt": "El castillo de Osaka, Japón"
         }
       ],
-      "expires": null,
       "cta": {
-        "text": "Ver vuelos",
-        "href": "viajes.html?pantalla=vuelos&destino=madrid"
+        "text": "Explorar Osaka",
+        "href": "viajes.html?pantalla=vuelos&destino=osaka"
       }
     },
     {
@@ -118,7 +118,7 @@ const RUMBO_HERO_CONFIG = {
       "discount": 10,
       "photos": [
         {
-          "src": "imagenes-viajes/hero-paris-eiffel.jpg",
+          "src": "imagenes-viajes/hero-paris-hd.jpg",
           "alt": "La torre Eiffel vista de cerca desde Trocadéro"
         },
         {
@@ -136,43 +136,42 @@ const RUMBO_HERO_CONFIG = {
 };
 document.addEventListener('DOMContentLoaded',()=>{
  const root=document.querySelector('[data-promo-carousel]');if(!root)return;
- const slides=[...root.querySelectorAll('[data-promo-slide]')],thumbs=[...root.querySelectorAll('[data-promo-dot]')];let current=0;
+ const slides=[...root.querySelectorAll('[data-promo-slide]')],tabs=[...root.querySelectorAll('[data-promo-dot]')];
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const toggle=root.querySelector('[data-promo-pause]');
+ let current=0,timer=null,paused=reduced.matches,focused=false;
  const money=n=>'L '+n.toLocaleString('es-HN',{maximumFractionDigits:2});
  slides.forEach((slide,i)=>{
   const d=window.RumboViajesDatos?.destinations.find(d=>d.id===RUMBO_HERO_CONFIG.slides[i].id);
-  const flight=d?window.RumboViajesDatos.flights(d,'Tegucigalpa',1)[0]:null;
-  const price=slide.querySelector('[data-promo-price]');
-  if(!flight||!Number.isFinite(flight.economy)){price.textContent='Consulta las tarifas disponibles';return;}
-  price.textContent='Desde '+money(flight.economy)+' por persona'+(flight.discountPercent?' · −'+flight.discountPercent+' % en vuelos':'');
+  const f=d?window.RumboViajesDatos.flights(d,'Tegucigalpa',1)[0]:null;
+  const price=slide.querySelector('[data-promo-price]'),offer=slide.querySelector('[data-promo-offer]');
+  if(!f||!Number.isFinite(f.economy)){price.textContent='Consultá las tarifas disponibles';offer.textContent='Descubrí el destino';return;}
+  price.textContent='Desde '+money(f.economy)+' / persona';
+  if(f.discountPercent){offer.innerHTML='<strong>−'+f.discountPercent+'<span>%</span></strong><span>de descuento<br>en tu vuelo</span>';}
+  else{offer.innerHTML='<span class="rumbo-cover-invitation">Un destino para<br><strong>salir de lo habitual.</strong></span>';}
  });
- const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- let timer=null,paused=false;
- const toggle=root.querySelector('[data-promo-pause]');
- function schedule(){clearInterval(timer);if(!paused&&!document.hidden)timer=setInterval(()=>show(current+1,false),4000);}
- function animatePhotos(slide,direction=1){
-  if(reduced.matches)return;
-  slide.querySelector('.rumbo-cover-image').animate([{opacity:0,transform:'translateX('+direction*80+'px)'},{opacity:1,transform:'translateX(0)'}],{duration:780,easing:'cubic-bezier(.22,.61,.36,1)'});
-  slide.querySelector('.rumbo-cover-detail').animate([{opacity:0,transform:'translateX('+direction*44+'px) rotate(-1.5deg)'},{opacity:1,transform:'translateX(0) rotate(-1.5deg)'}],{duration:620,delay:170,fill:'backwards',easing:'cubic-bezier(.22,.61,.36,1)'});
- }
+ function schedule(){clearTimeout(timer);if(!paused&&!focused&&!document.hidden)timer=setTimeout(()=>show(current+1,false),8000);}
+ function syncPause(){root.dataset.paused=String(paused||document.hidden);toggle.textContent=paused?'▷':'Ⅱ';toggle.setAttribute('aria-label',paused?'Reanudar carrusel':'Pausar carrusel');toggle.setAttribute('aria-pressed',String(paused));schedule();}
  function show(index,manual=true){
-  const old=current;current=(index+slides.length)%slides.length;
-  if(thumbs[current]===document.activeElement)root.querySelector('[data-promo-next]').focus({preventScroll:true});
-  slides.forEach((slide,i)=>{slide.getAnimations({subtree:true}).forEach(a=>a.cancel());slide.hidden=i!==current;slide.inert=i!==current;thumbs[i].hidden=i===current;});
-  if(old!==current)animatePhotos(slides[current],index<old?-1:1);
-  root.querySelector('[data-promo-count]').textContent=String(current+1).padStart(2,'0')+' / 04';
-  if(manual)root.querySelector('[data-promo-status]').textContent=RUMBO_HERO_CONFIG.slides[current].title+', '+(current+1)+' de 4';
+  current=(index+slides.length)%slides.length;
+  slides.forEach((slide,i)=>{slide.hidden=i!==current;slide.inert=i!==current;tabs[i].setAttribute('aria-current',String(i===current));});
+  root.dataset.destination=RUMBO_HERO_CONFIG.slides[current].id;
+  root.querySelector('[data-promo-count]').textContent=String(current+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
+  if(manual)root.querySelector('[data-promo-status]').textContent=RUMBO_HERO_CONFIG.slides[current].title+', '+(current+1)+' de '+slides.length;
+  const next=slides[(current+1)%slides.length];
+  next.querySelectorAll("img").forEach(img=>{img.loading="eager";});
   schedule();
  }
  root.querySelector('[data-promo-prev]').addEventListener('click',()=>show(current-1));
  root.querySelector('[data-promo-next]').addEventListener('click',()=>show(current+1));
- thumbs.forEach((button,i)=>button.addEventListener('click',()=>show(i)));
- toggle.addEventListener('click',()=>{paused=!paused;toggle.textContent=paused?'▷':'Ⅱ';toggle.setAttribute('aria-label',paused?'Reanudar carrusel':'Pausar carrusel');toggle.setAttribute('aria-pressed',String(paused));schedule();});
- document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',()=>{slides.forEach(slide=>slide.getAnimations({subtree:true}).forEach(a=>a.cancel()));});
- function syncToggle(){toggle.textContent=paused?'▷':'Ⅱ';toggle.setAttribute('aria-label',paused?'Reanudar carrusel':'Pausar carrusel');toggle.setAttribute('aria-pressed',String(paused));}syncToggle();
- const firstImage=slides[0].querySelector('img');
- const entrance=()=>{if(current===0)animatePhotos(slides[0]);schedule();};
- schedule();if(firstImage.complete)entrance();else {firstImage.addEventListener('load',entrance,{once:true});firstImage.addEventListener('error',schedule,{once:true});}
-
+ tabs.forEach((button,i)=>button.addEventListener('click',()=>show(i)));
+ toggle.addEventListener('click',()=>{paused=!paused;syncPause();});
+ root.addEventListener('focusin',()=>{focused=true;syncPause();});
+ root.addEventListener('focusout',e=>{if(!root.contains(e.relatedTarget)){focused=false;syncPause();}});
+ root.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();show(current+(e.key==='ArrowRight'?1:-1));}});
+ document.addEventListener('visibilitychange',syncPause);
+ reduced.addEventListener('change',()=>{paused=reduced.matches;syncPause();});
+ show(0,false);syncPause();
 });
 </script>
 <style id="rumbo-about-footer-styles">
@@ -330,24 +329,89 @@ document.addEventListener('DOMContentLoaded', () => {
  --radio-tarjeta:20px;--radio-hero:28px;--radio-boton:999px;--radio-miniatura:8px;
 }
 body:has(.rumbo-cover){background:var(--fondo)}
-.rumbo-cover.container{position:relative;isolation:isolate;width:calc(100% - 48px);max-width:1600px;margin:0 auto 32px;overflow:hidden;border-radius:var(--radio-hero);background:var(--tinta);color:var(--blanco-texto);font-family:var(--fuente)}
-.rumbo-cover-slide{position:relative;height:86vh;height:86svh;min-height:560px;max-height:960px}
-.rumbo-cover-slide[hidden],.rumbo-cover button[hidden]{display:none!important}
-.rumbo-cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.rumbo-cover-slide:after{display:none}
-.rumbo-cover-copy{position:absolute;z-index:1;left:48px;bottom:88px;max-width:520px;width:calc(100% - 96px)}
-body main .rumbo-cover .rumbo-cover-copy h2{font-family:var(--fuente)!important;font-weight:500!important;font:var(--peso-titular) var(--texto-hero)/1.02 var(--fuente);letter-spacing:-.025em;color:var(--blanco-texto);margin:0 0 24px}
-.rumbo-cover-description{font:var(--peso-texto) var(--texto-base)/1.5 var(--fuente);max-width:40ch;margin:0 0 16px;color:var(--blanco-texto)}
-.rumbo-cover-price{font:var(--peso-texto) var(--texto-pequeno)/1.5 var(--fuente);margin:0 0 24px;color:var(--blanco-texto)}
-.rumbo-cover-cta{display:inline-flex;align-items:center;gap:24px;min-height:48px;padding:16px 24px;border-radius:var(--radio-boton);background:var(--blanco-texto);color:var(--tinta);font:500 14px/1.2 var(--fuente);text-decoration:none;box-shadow:none}
-.rumbo-cover-cta:hover{background:var(--arena)}
-.rumbo-cover-controls{position:absolute;right:40px;bottom:88px;z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:16px}
-.rumbo-cover-thumbnails{display:flex;gap:8px}.rumbo-cover-thumbnails button{display:grid;place-items:center;width:48px;height:48px;border:0;padding:0;background:transparent;cursor:pointer;border-radius:8px}.rumbo-cover-thumbnails img{display:block;width:44px;height:32px;object-fit:cover;border-radius:var(--radio-miniatura)}
-.rumbo-cover-step{display:flex;align-items:center;gap:8px}.rumbo-cover-count{font:400 12px/1.5 var(--fuente);font-variant-numeric:tabular-nums;letter-spacing:.12em;margin-right:8px;color:var(--blanco-texto)}
-.rumbo-cover-step button{width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.5);border-radius:999px;color:var(--blanco-texto);background:transparent;font:400 22px/1 var(--fuente);cursor:pointer}.rumbo-cover-step button:hover{background:var(--blanco-texto);color:var(--tinta)}
-.rumbo-cover-terms{position:absolute;z-index:2;left:48px;bottom:16px;max-width:calc(100% - 96px);margin:0;color:var(--blanco-texto);font:400 var(--texto-legal)/1.5 var(--fuente)}
-.rumbo-cover :focus-visible{outline:2px solid var(--blanco-texto);outline-offset:4px}.rumbo-cover *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-body main .rumbo-cover,body main .rumbo-cover *{font-family:var(--fuente)!important}body:has(.rumbo-cover) .site-header a:not(.logo),body:has(.rumbo-cover) .site-header a:not(.logo) *{font-family:var(--fuente)!important}
+.rumbo-cover.container{--campaign-bg:#eee6d8;--campaign-accent:#80513a;position:relative;isolation:isolate;width:calc(100% - 48px);max-width:1600px;margin:0 auto 20px;padding:0;overflow:hidden;border-radius:24px;background:var(--campaign-bg);color:var(--tinta);font-family:var(--fuente)}
+.rumbo-cover[data-destination=cancun]{--campaign-bg:#e1efeb;--campaign-accent:#186964}
+.rumbo-cover[data-destination=osaka]{--campaign-bg:#f3e6e4;--campaign-accent:#a94053}
+.rumbo-cover[data-destination=paris]{--campaign-bg:#e4e9ee;--campaign-accent:#465f83}
+.rumbo-cover-slide{position:relative;display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);min-height:590px;height:clamp(590px,70vw,680px)}
+.rumbo-cover-slide[hidden]{display:none!important}
+.rumbo-cover-copy{position:relative;z-index:2;padding:48px 22px 40px clamp(28px,3.5vw,56px);align-self:center;max-width:620px}
+.rumbo-cover-kicker{font-size:clamp(17px,1.8vw,23px);margin:0 0 2px;color:var(--campaign-accent);letter-spacing:-.04em}
+body main .rumbo-cover .rumbo-cover-copy h2{font-family:'Montserrat',var(--fuente)!important;font-weight:800!important;font-size:clamp(58px,7.7vw,116px);line-height:1.03;letter-spacing:-.065em;color:var(--campaign-accent);margin:0 0 20px}
+.rumbo-cover-description{font-size:15px;line-height:1.6;max-width:34ch;margin:0 28px 22px 0;color:var(--tinta)}
+.rumbo-cover-offer{display:flex;align-items:center;gap:18px;color:var(--campaign-accent);margin:0 0 5px;min-height:84px}
+.rumbo-cover-offer>strong{font-size:clamp(54px,5.3vw,78px);font-weight:500;line-height:1;letter-spacing:-.075em}
+.rumbo-cover-offer>strong>span{font-size:.53em;letter-spacing:-.06em;margin-left:3px}
+.rumbo-cover-offer>span{font-size:13px;line-height:1.4}
+.rumbo-cover-offer .rumbo-cover-invitation{font-size:22px;line-height:1.35;letter-spacing:-.04em}
+.rumbo-cover-invitation strong{font-weight:500}
+.rumbo-cover-price{font-size:12px;margin:4px 0 22px;color:var(--tinta)}
+body .rumbo-cover .rumbo-cover-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;min-height:48px;padding:13px 22px;border-radius:999px;background:var(--verde);color:white;font-size:13px;text-decoration:none;box-shadow:none}
+.rumbo-cover-cta span{font-size:21px;line-height:1}
+body .rumbo-cover .rumbo-cover-cta:hover{background:var(--tinta)}
+.rumbo-cover-art{--photo-pan-x:-1.5%;--photo-pan-y:.6%;position:relative;align-self:stretch;min-width:0;margin:0}
+
+.rumbo-cover-photos{position:absolute;inset:0;margin:0;border-radius:0 0 0 64px;overflow:hidden;isolation:isolate;background:var(--campaign-bg)}
+.rumbo-cover-image{display:block;width:100%;height:100%;object-fit:cover;object-position:52% center;transform:scale(1.045)}
+.rumbo-cover-photos figcaption{position:absolute;right:22px;top:22px;margin:0;padding:8px 13px;border-radius:4px;background:var(--campaign-bg);color:var(--tinta);font-size:10px;letter-spacing:.025em}
+.rumbo-cover-postcard{position:absolute;z-index:1;left:24px;bottom:26px;width:clamp(135px,12vw,180px);margin:0;padding:7px 7px 0;background:#fffdf8;border-radius:3px;box-shadow:0 9px 22px #17302b16;transform:rotate(-5deg);transform-origin:center;will-change:transform}
+.rumbo-cover-postcard img{display:block;width:100%;height:auto;aspect-ratio:1.48;object-fit:cover;border-radius:1px}
+.rumbo-cover-postcard figcaption{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 5px 11px;color:var(--campaign-accent);font-size:10px;letter-spacing:.015em}
+.rumbo-cover-postcard figcaption span{font-size:14px}
+
+[data-destination=cancun] .rumbo-cover-art{--photo-pan-x:1.6%;--photo-pan-y:0%}
+[data-destination=osaka] .rumbo-cover-art{--photo-pan-x:-.7%;--photo-pan-y:1.2%}
+[data-destination=paris] .rumbo-cover-art{--photo-pan-x:.6%;--photo-pan-y:-1.2%}
+[data-destination=osaka] .rumbo-cover-image{object-position:50% 60%}
+[data-destination=paris] .rumbo-cover-image{object-position:50% 44%}
+.rumbo-cover-bottom{position:relative;display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 clamp(28px,4.5vw,76px);padding:20px 0 12px;border-top:1px solid color-mix(in srgb,var(--campaign-accent) 24%,transparent)}
+.rumbo-cover-thumbnails{display:flex;gap:clamp(12px,2.5vw,36px)}
+.rumbo-cover-thumbnails button{display:flex;gap:8px;align-items:center;padding:10px 0;background:transparent;border:0;border-bottom:2px solid transparent;color:var(--tinta);font-size:12px;cursor:pointer;opacity:.66}
+.rumbo-cover-thumbnails button[aria-current=true]{border-bottom-color:var(--campaign-accent);color:var(--campaign-accent);opacity:1}
+.rumbo-cover-tab-number{font-size:9px;opacity:.7}
+.rumbo-cover-step{display:flex;gap:8px;align-items:center}.rumbo-cover-count{font-size:11px;letter-spacing:.12em;margin-right:12px;white-space:nowrap}
+.rumbo-cover-step button{display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid color-mix(in srgb,var(--campaign-accent) 30%,transparent);border-radius:50%;background:transparent;color:var(--tinta);font-size:20px;cursor:pointer}
+.rumbo-cover-step button:hover{background:var(--campaign-accent);color:white}
+.rumbo-cover-terms{padding:0 clamp(28px,4.5vw,76px) 20px;margin:0;font-size:10px;color:var(--tinta);opacity:.75}
+.rumbo-cover :focus-visible{outline:2px solid var(--campaign-accent);outline-offset:5px}
+@media(prefers-reduced-motion:no-preference){
+body .rumbo-cover-slide:not([hidden]) .rumbo-cover-copy{animation:campaign-enter .65s ease both!important}
+body .rumbo-cover-slide:not([hidden]) .rumbo-cover-art{animation:campaign-reveal 1.1s cubic-bezier(.22,.61,.36,1) both!important}
+body .rumbo-cover-slide:not([hidden]) .rumbo-cover-image{animation:campaign-photo 14s ease-in-out infinite alternate!important}
+body .rumbo-cover-slide:not([hidden]) .rumbo-cover-postcard{animation:campaign-postcard 6s ease-in-out infinite alternate!important}
+body .rumbo-cover[data-paused=true] .rumbo-cover-art,body .rumbo-cover[data-paused=true] .rumbo-cover-art *{animation-play-state:paused!important}
+}
+@keyframes campaign-enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes campaign-reveal{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes campaign-photo{from{transform:scale(1.045) translate(0,0)}to{transform:scale(1.105) translate(var(--photo-pan-x),var(--photo-pan-y))}}
+@keyframes campaign-postcard{from{transform:translateY(0) rotate(-5deg)}to{transform:translateY(-7px) rotate(-3deg)}}
+@media(min-width:1500px){.rumbo-cover-slide{height:720px}}
+@media(max-width:1000px){.rumbo-cover-slide{min-height:580px;height:580px;grid-template-columns:minmax(0,42fr) minmax(0,58fr)}.rumbo-cover-copy{padding-left:28px;padding-right:18px}.rumbo-cover-art{margin:0}.rumbo-cover-description{font-size:14px}.rumbo-cover-bottom{margin-inline:32px}.rumbo-cover-thumbnails{gap:16px}}
+@media(max-width:700px){
+ .rumbo-cover.container{width:calc(100% - 24px);border-radius:20px}
+ .rumbo-cover-slide{display:flex;flex-direction:column;height:auto;min-height:0}
+ .rumbo-cover-copy{align-self:stretch;padding:30px 26px 0;max-width:none}
+ .rumbo-cover-kicker{font-size:18px}
+ body main .rumbo-cover .rumbo-cover-copy h2{font-size:clamp(58px,12vw,80px);margin-bottom:12px}
+ .rumbo-cover-description{max-width:36ch;margin-bottom:12px;margin-right:0;font-size:14px}
+ .rumbo-cover-offer{min-height:66px;gap:16px}
+ .rumbo-cover-offer>strong{font-size:58px}
+ .rumbo-cover-price{margin-bottom:16px}
+ .rumbo-cover-art{height:460px;flex:none;margin:28px 0 18px}
+ .rumbo-cover-photos{inset:0;border-radius:0 0 0 48px}
+ .rumbo-cover-photos figcaption{top:12px;right:12px;font-size:9px;max-width:80%}
+ .rumbo-cover-postcard{width:126px;left:18px;bottom:20px;padding:5px 5px 0}
+ .rumbo-cover-postcard figcaption{font-size:9px;padding:8px 3px}
+ .rumbo-cover-bottom{margin:0 26px;gap:8px;flex-wrap:wrap;padding-top:8px}
+ .rumbo-cover-thumbnails{justify-content:space-between;width:100%;gap:12px}
+ .rumbo-cover-step{margin-left:auto;margin-top:2px}
+ .rumbo-cover-terms{padding:0 26px 18px;font-size:9px}
+ .rumbo-cover-tab-number{display:none}
+ .rumbo-cover-offer .rumbo-cover-invitation{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){body .rumbo-cover *,body .rumbo-cover *::before,body .rumbo-cover *::after{animation:none!important;transition:none!important}}
+.hero-photo-credits{font-size:11px;padding-block:12px 24px;color:var(--fondo)}.hero-photo-credits summary{cursor:pointer;font-size:11px}.hero-photo-credits ul{padding-left:18px;max-width:850px}.hero-photo-credits li,.hero-photo-credits a{font-size:11px!important;line-height:1.7}
+
 /* Encabezado del inicio; las otras secciones se revisarán en la siguiente entrega. */
 body:has(.rumbo-cover) .site-header{background:var(--fondo);border:0;box-shadow:none}
 body:has(.rumbo-cover) .site-header .header-inner{width:calc(100% - 64px);max-width:1584px;display:flex;justify-content:space-between;gap:24px;padding:24px 0;min-height:88px}
@@ -361,9 +425,8 @@ body:has(.rumbo-cover) .site-header .account-link,body:has(.rumbo-cover) .site-h
 body:has(.rumbo-cover) .site-header .account-link.register-button{background:var(--verde);color:var(--blanco-texto)}
 body:has(.rumbo-cover) .site-header .header-trip svg{display:none}
 body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover) .site-header a{transition:color .15s,background-color .15s}
-@media(max-width:1050px){body:has(.rumbo-cover) .site-header .header-inner{flex-wrap:wrap;gap:16px}body:has(.rumbo-cover) .site-header .main-nav{order:3;margin:auto}.rumbo-cover-copy{left:32px;max-width:calc(100% - 288px)}.rumbo-cover-controls{right:24px}.rumbo-cover-terms{left:32px}}
-@media(max-width:700px){.rumbo-cover.container{width:calc(100% - 32px)}.rumbo-cover-slide{height:86svh;min-height:680px;max-height:none}.rumbo-cover-copy{left:24px;bottom:200px;width:calc(100% - 48px);max-width:520px}.rumbo-cover-controls{right:24px;bottom:64px;gap:8px}.rumbo-cover-copy h2{margin-bottom:16px}.rumbo-cover-description{font-size:17px}.rumbo-cover-price{font-size:12px}.rumbo-cover-terms{left:24px;bottom:16px;max-width:calc(100% - 48px)}body:has(.rumbo-cover) .site-header .header-inner{width:calc(100% - 32px);gap:8px;padding:16px 0}body:has(.rumbo-cover) .site-header .header-actions{gap:0;flex-wrap:wrap;justify-content:flex-end;flex:1}body:has(.rumbo-cover) .site-header .account-link,body:has(.rumbo-cover) .site-header .header-trip{font-size:12px;padding:8px}body:has(.rumbo-cover) .site-header .logo{font-size:28px}body:has(.rumbo-cover) .site-header .main-nav{justify-content:center}}
-@media(prefers-reduced-motion:reduce){.rumbo-cover *,body:has(.rumbo-cover) .site-header *{animation:none!important;transition:none!important}}
+@media(max-width:1050px){body:has(.rumbo-cover) .site-header .header-inner{flex-wrap:wrap;gap:16px}body:has(.rumbo-cover) .site-header .main-nav{order:3;margin:auto}}
+@media(max-width:700px){body:has(.rumbo-cover) .site-header .header-inner{width:calc(100% - 32px);gap:8px;padding:16px 0}body:has(.rumbo-cover) .site-header .header-actions{gap:0;flex-wrap:wrap;justify-content:flex-end;flex:1}body:has(.rumbo-cover) .site-header .account-link,body:has(.rumbo-cover) .site-header .header-trip{font-size:12px;padding:8px}body:has(.rumbo-cover) .site-header .logo{font-size:28px}body:has(.rumbo-cover) .site-header .main-nav{justify-content:center}}
 .campaign-assist{display:flex;align-items:center;gap:16px;margin-bottom:30px}.campaign-assist .hero-adviser{margin:0;padding:10px 20px;background:#edf4ef;border-color:#d5e4da}.campaign-assist .hero-adviser>span:nth-child(2){display:block}.campaign-assist .hero-adviser strong{font-size:19px}.campaign-assist .hero-adviser .rumbito-hero{width:65px;height:72px;flex-basis:65px}.campaign-surprise{flex-shrink:0;padding:14px 22px;border-radius:99px;border:1px solid #b6ccc1;color:#126052;background:#fff}
 </style>
 </head>
@@ -438,12 +501,66 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
 
   <main id="contenido">
     <!-- PORTADA -->
-    <section class="rumbo-cover container" data-promo-carousel aria-roledescription="carrusel" aria-label="Vuelos desde Tegucigalpa">
-<article class="rumbo-cover-slide" data-promo-slide data-title="Venecia" aria-roledescription="diapositiva" aria-label="1 de 4: Venecia" ><div class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hd-venecia-canal.jpg" alt="El Gran Canal de Venecia visto desde el puente de Rialto" width="960" height="640" fetchpriority="high"><img class="rumbo-cover-detail" src="imagenes-viajes/guia-venecia-ruta-8.jpg" alt="Detalle de los arcos junto a los canales de Venecia" width="400" height="320" loading="eager"></div><div class="rumbo-cover-copy"><h2>venecia,<br>sin prisa.</h2><p class="rumbo-cover-description">Canales, plazas y tiempo para caminar a tu ritmo.</p><p class="rumbo-cover-price" data-promo-price="venecia">Desde L 18,000 por persona · −20 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=venecia">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
-<article class="rumbo-cover-slide" data-promo-slide data-title="Cancún" aria-roledescription="diapositiva" aria-label="2 de 4: Cancún" hidden><div class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-cancun-delfines.jpg" alt="La arena blanca y el mar turquesa de Playa Delfines en Cancún" width="960" height="640" loading="lazy"><img class="rumbo-cover-detail" src="imagenes-viajes/guia-cancun-ruta-10.jpg" alt="Un pequeño muelle junto al mar de Cancún" width="400" height="320" loading="lazy"></div><div class="rumbo-cover-copy"><h2>cancún,<br>frente al mar.</h2><p class="rumbo-cover-description">Unos días de playa para salir de la rutina.</p><p class="rumbo-cover-price" data-promo-price="cancun">Desde L 5,400 por persona · −25 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=cancun">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
-<article class="rumbo-cover-slide" data-promo-slide data-title="Madrid" aria-roledescription="diapositiva" aria-label="3 de 4: Madrid" hidden><div class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-madrid-palacio.jpg" alt="La fachada del Palacio Real de Madrid desde la plaza de la Armería" width="960" height="640" loading="lazy"><img class="rumbo-cover-detail" src="imagenes-viajes/guia-madrid-mercado.jpg" alt="Detalle de la fachada de hierro y cristal del Mercado de San Miguel" width="400" height="320" loading="lazy"></div><div class="rumbo-cover-copy"><h2>madrid,<br>a pie.</h2><p class="rumbo-cover-description">Parques, mercados y una mesa para comer sin apuro.</p><p class="rumbo-cover-price" data-promo-price="madrid">Desde L 14,625 por persona · −25 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=madrid">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
-<article class="rumbo-cover-slide" data-promo-slide data-title="París" aria-roledescription="diapositiva" aria-label="4 de 4: París" hidden><div class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-paris-eiffel.jpg" alt="La torre Eiffel vista de cerca desde Trocadéro" width="960" height="640" loading="lazy"><img class="rumbo-cover-detail" src="imagenes-viajes/guia-paris-ruta-7.jpg" alt="Los arcos y la estructura de hierro de la Torre Eiffel vistos desde abajo" width="400" height="320" loading="lazy"></div><div class="rumbo-cover-copy"><h2>parís,<br>junto al sena.</h2><p class="rumbo-cover-description">Caminá por la orilla y elegí dónde pasar la tarde.</p><p class="rumbo-cover-price" data-promo-price="paris">Desde L 21,600 por persona · −10 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=paris">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
-<div class="rumbo-cover-controls"><div class="rumbo-cover-thumbnails" role="group" aria-label="Otros destinos"><button type="button" data-promo-dot aria-label="Ver Venecia" hidden><img src="imagenes-viajes/hd-venecia-canal.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver Cancún" ><img src="imagenes-viajes/hero-cancun-delfines.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver Madrid" ><img src="imagenes-viajes/hero-madrid-palacio.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver París" ><img src="imagenes-viajes/hero-paris-eiffel.jpg" alt="" width="44" height="32"></button></div><div class="rumbo-cover-step"><button type="button" data-promo-pause aria-label="Pausar carrusel" aria-pressed="false">Ⅱ</button><span class="rumbo-cover-count" data-promo-count>01 / 04</span><button type="button" data-promo-prev aria-label="Destino anterior">←</button><button type="button" data-promo-next aria-label="Destino siguiente">→</button></div></div><p class="rumbo-cover-terms">Tarifas de demostración · Solo ida desde Tegucigalpa. Hospedaje aparte.</p><span class="sr-only" data-promo-status aria-live="polite" aria-atomic="true"></span></section>
+    <section class="rumbo-cover container" data-promo-carousel data-destination="venecia" aria-roledescription="carrusel" aria-label="Destinos y descuentos en vuelos desde Tegucigalpa">
+<article class="rumbo-cover-slide" data-promo-slide data-title="Venecia" aria-roledescription="diapositiva" aria-label="1 de 4: Venecia" >
+ <div class="rumbo-cover-copy">
+  <p class="rumbo-cover-kicker">La vida, sin prisa.</p>
+  <h2>Italia</h2>
+  <p class="rumbo-cover-description">Perdete entre canales, pequeñas plazas y una mesa junto al agua.</p>
+  <div class="rumbo-cover-offer" data-promo-offer><strong>−20<span>%</span></strong><span>de descuento<br>en tu vuelo</span></div>
+  <p class="rumbo-cover-price" data-promo-price="venecia">Desde L 18,000 / persona</p>
+  <a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=venecia">Quiero ir a Venecia <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="rumbo-cover-art">
+  <figure class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hd-venecia-canal.jpg" alt="El Gran Canal de Venecia visto desde el puente de Rialto" width="1100" height="734" fetchpriority="high"><figcaption>Venecia · Gran Canal</figcaption></figure>
+  <figure class="rumbo-cover-postcard"><img src="imagenes-viajes/guia-venecia-ruta-8.jpg" alt="Los arcos del mercado de Rialto en Venecia" width="640" height="432" loading="eager"><figcaption>Rialto, a pie<span aria-hidden="true">↗</span></figcaption></figure>
+ </div>
+</article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="Cancún" aria-roledescription="diapositiva" aria-label="2 de 4: Cancún" hidden inert>
+ <div class="rumbo-cover-copy">
+  <p class="rumbo-cover-kicker">Nos vemos en el mar.</p>
+  <h2>México</h2>
+  <p class="rumbo-cover-description">Días de sol, arena blanca y el Caribe. Dale un respiro a tu rutina.</p>
+  <div class="rumbo-cover-offer" data-promo-offer><strong>−25<span>%</span></strong><span>de descuento<br>en tu vuelo</span></div>
+  <p class="rumbo-cover-price" data-promo-price="cancun">Desde L 5,400 / persona</p>
+  <a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=cancun">Quiero ir a Cancún <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="rumbo-cover-art">
+  <figure class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-cancun-delfines.jpg" alt="La arena blanca y el mar turquesa de Playa Delfines en Cancún" width="1100" height="734" loading="lazy"><figcaption>Cancún · Playa Delfines</figcaption></figure>
+  <figure class="rumbo-cover-postcard"><img src="imagenes-viajes/hd-cancun.jpg" alt="Vista aérea de las playas de Cancún" width="640" height="432" loading="lazy"><figcaption>El Caribe, desde arriba<span aria-hidden="true">↗</span></figcaption></figure>
+ </div>
+</article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="Osaka" aria-roledescription="diapositiva" aria-label="3 de 4: Osaka" hidden inert>
+ <div class="rumbo-cover-copy">
+  <p class="rumbo-cover-kicker">Un viaje diferente.</p>
+  <h2>Japón</h2>
+  <p class="rumbo-cover-description">Templos, jardines y calles que invitan a perderse. Tu próximo viaje empieza en Osaka.</p>
+  <div class="rumbo-cover-offer" data-promo-offer><span class="rumbo-cover-invitation">Un destino para<br><strong>salir de lo habitual.</strong></span></div>
+  <p class="rumbo-cover-price" data-promo-price="osaka">Desde L 33,000 / persona</p>
+  <a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=osaka">Explorar Osaka <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="rumbo-cover-art">
+  <figure class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-osaka-sakura.jpg" alt="El castillo de Osaka enmarcado por cerezos en flor" width="1100" height="734" loading="lazy"><figcaption>Osaka · Castillo de Osaka</figcaption></figure>
+  <figure class="rumbo-cover-postcard"><img src="imagenes-viajes/guia-osaka-dotonbori.jpg" alt="El canal y los letreros iluminados de Dōtonbori en Osaka" width="640" height="432" loading="lazy"><figcaption>Noches en Dōtonbori<span aria-hidden="true">↗</span></figcaption></figure>
+
+ </div>
+</article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="París" aria-roledescription="diapositiva" aria-label="4 de 4: París" hidden inert>
+ <div class="rumbo-cover-copy">
+  <p class="rumbo-cover-kicker">Siempre nos queda París.</p>
+  <h2>Francia</h2>
+  <p class="rumbo-cover-description">Cafés de esquina, paseos junto al Sena y tiempo para disfrutar.</p>
+  <div class="rumbo-cover-offer" data-promo-offer><strong>−10<span>%</span></strong><span>de descuento<br>en tu vuelo</span></div>
+  <p class="rumbo-cover-price" data-promo-price="paris">Desde L 21,600 / persona</p>
+  <a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=paris">Quiero ir a París <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="rumbo-cover-art">
+  <figure class="rumbo-cover-photos"><img class="rumbo-cover-image" src="imagenes-viajes/hero-paris-hd.jpg" alt="La torre Eiffel vista de cerca desde Trocadéro" width="1100" height="734" loading="lazy"><figcaption>París · Torre Eiffel</figcaption></figure>
+  <figure class="rumbo-cover-postcard"><img src="imagenes-viajes/guia-paris-ruta-7.jpg" alt="La estructura de la torre Eiffel vista desde abajo" width="640" height="432" loading="lazy"><figcaption>Otra mirada a París<span aria-hidden="true">↗</span></figcaption></figure>
+ </div>
+</article>
+<div class="rumbo-cover-bottom"><div class="rumbo-cover-thumbnails" role="group" aria-label="Elegir destino"><button type="button" data-promo-dot aria-label="Ver Venecia" aria-current="true"><span class="rumbo-cover-tab-number">01</span>Venecia</button><button type="button" data-promo-dot aria-label="Ver Cancún" aria-current="false"><span class="rumbo-cover-tab-number">02</span>Cancún</button><button type="button" data-promo-dot aria-label="Ver Osaka" aria-current="false"><span class="rumbo-cover-tab-number">03</span>Osaka</button><button type="button" data-promo-dot aria-label="Ver París" aria-current="false"><span class="rumbo-cover-tab-number">04</span>París</button></div><div class="rumbo-cover-step"><span class="rumbo-cover-count" data-promo-count>01 / 04</span><button type="button" data-promo-pause aria-label="Pausar carrusel" aria-pressed="false">Ⅱ</button><button type="button" data-promo-prev aria-label="Destino anterior">←</button><button type="button" data-promo-next aria-label="Destino siguiente">→</button></div></div>
+<p class="rumbo-cover-terms">Tarifas de demostración · Solo ida desde Tegucigalpa · Hospedaje aparte.</p><span class="sr-only" data-promo-status aria-live="polite" aria-atomic="true"></span></section>
 
 
     <!-- BUSCADOR -->
@@ -477,7 +594,7 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
         </div>
 
         <button class="button button-primary" type="submit">
-          
+
           Buscar
         </button>
       </form>
@@ -542,14 +659,14 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
     <section class="section container" id="servicios" aria-labelledby="services-title">
       <div class="section-heading">
         <div>
-          
+
           <h2 id="services-title">Servicios de viaje</h2>
         </div>
       </div>
 
       <div class="booking-grid">
         <article class="booking-card featured flight-card">
-          
+
           <h3>Vuelos</h3>
           <p>
             Compará rutas, equipaje y tarifas para tus fechas.
@@ -560,7 +677,7 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
         </article>
 
         <article class="booking-card featured stay-card">
-          
+
           <h3>Hospedaje</h3>
           <p>
             Elegí dónde quedarte según tu presupuesto y ubicación.
@@ -571,7 +688,7 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
         </article>
 
         <article class="booking-card">
-          
+
           <h3>Experiencias y guías locales</h3>
           <p>Actividades, recorridos y excursiones para conocer cada destino.</p>
           <button class="booking-action" type="button" data-module="experiences">
@@ -580,7 +697,7 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
         </article>
 
         <article class="booking-card">
-          
+
           <h3>Traslados</h3>
           <p>Organiza el transporte entre el aeropuerto, tu hospedaje y otras paradas.</p>
           <button class="booking-action" type="button" data-module="transfers">
@@ -589,7 +706,7 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
         </article>
 
         <article class="booking-card">
-          
+
           <h3>Seguro de viaje</h3>
           <p>Revisa coberturas, límites y exclusiones antes de contratar.</p>
           <button class="booking-action" type="button" data-module="insurance">
@@ -598,7 +715,7 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
         </article>
 
         <article class="booking-card shop-card" id="tienda" aria-labelledby="shop-title">
-          
+
           <h3 id="shop-title">Tienda de viaje</h3>
           <p>Maletas, mochilas, lentes, adaptadores y accesorios en un solo catálogo.</p>
           <a class="booking-action" href="tienda.html">
@@ -656,7 +773,7 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
         </div>
 
         <div class="guides-copy">
-          
+
           <h2 id="guides-title">Guías para preparar tu viaje</h2>
           <p class="section-description">
             Consulta recomendaciones de presupuesto, equipaje y documentación.
@@ -714,7 +831,10 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
   <footer class="site-footer" id="contacto"><div class="container footer-grid">
 <div class="footer-column"><a class="logo" href="#inicio" aria-label="Rumbo, volver al inicio">rumbo<span aria-hidden="true">↗</span></a><p>Planificá tu viaje desde Honduras.</p><a href="#destinos">Destinos</a><a href="#servicios">Servicios</a><a href="#guias">Guías de viaje</a><a href="#quienes-somos">Quiénes somos</a><a href="#nuestro-equipo">Nuestro equipo</a></div>
 <nav class="footer-column" aria-label="Ayuda e información"><h2>Te ayudamos</h2><button type="button" data-open-help>Consultar a Rumbito</button><button type="button" data-module="faq">Preguntas frecuentes</button><button type="button" data-module="changes">Cambios y cancelaciones</button><button type="button" data-module="support">Centro de ayuda</button><button type="button" data-module="privacy">Privacidad</button><button type="button" data-module="terms">Términos y condiciones</button></nav>
-<div class="footer-column"><h2>Hablemos</h2><details><summary>Teléfonos del equipo</summary><address><a href="tel:+50496767669">+504 9676-7669</a><a href="tel:+50494525271">+504 9452-5271</a><a href="tel:+50499584929">+504 9958-4929</a><a href="tel:+50495197994">+504 9519-7994</a><a href="tel:+50493366360">+504 9336-6360</a></address></details><details><summary>Correos del equipo</summary><address><a href="mailto:allanramos@franciscojavier.edu.hn">allanramos@franciscojavier.edu.hn</a><a href="mailto:omartabora@franciscojavier.edu.hn">omartabora@franciscojavier.edu.hn</a><a href="mailto:diannymoreira@franciscojavier.edu.hn">diannymoreira@franciscojavier.edu.hn</a><a href="mailto:dilanbanegas@franciscojavier.edu.hn">dilanbanegas@franciscojavier.edu.hn</a><a href="mailto:yeisoncarbajal@franciscojavier.edu.hn" aria-label="Correo de Yeison Carbajal: yeisoncarbajal@franciscojavier.edu.hn">yeisoncarbajal@franciscojavier.edu.hn</a></address></details><a href="#inicio">Volver arriba ↑</a></div></div><div class="container footer-bottom"><p>© <span id="year">2026</span> Rumbo · Honduras</p><a href="servicios.html?seccion=legal">Información legal</a></div></footer>
+<div class="footer-column"><h2>Hablemos</h2><details><summary>Teléfonos del equipo</summary><address><a href="tel:+50496767669">+504 9676-7669</a><a href="tel:+50494525271">+504 9452-5271</a><a href="tel:+50499584929">+504 9958-4929</a><a href="tel:+50495197994">+504 9519-7994</a><a href="tel:+50493366360">+504 9336-6360</a></address></details><details><summary>Correos del equipo</summary><address><a href="mailto:allanramos@franciscojavier.edu.hn">allanramos@franciscojavier.edu.hn</a><a href="mailto:omartabora@franciscojavier.edu.hn">omartabora@franciscojavier.edu.hn</a><a href="mailto:diannymoreira@franciscojavier.edu.hn">diannymoreira@franciscojavier.edu.hn</a><a href="mailto:dilanbanegas@franciscojavier.edu.hn">dilanbanegas@franciscojavier.edu.hn</a><a href="mailto:yeisoncarbajal@franciscojavier.edu.hn" aria-label="Correo de Yeison Carbajal: yeisoncarbajal@franciscojavier.edu.hn">yeisoncarbajal@franciscojavier.edu.hn</a></address></details><a href="#inicio">Volver arriba ↑</a></div></div><div class="container footer-bottom"><p>© <span id="year">2026</span> Rumbo · Honduras</p><a href="servicios.html?seccion=legal">Información legal</a></div><details class="container hero-photo-credits"><summary>Créditos de fotografía</summary><ul>
+<li>Osaka y cerezos: <a href="https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg">Luka Peternel</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</li>
+<li>Gran Canal: Didier Descouens · CC BY-SA 4.0. Rialto: Aspargos · CC BY 3.0. Playa Delfines: Capmo · CC BY-SA 4.0. Cancún aéreo: dronepicr · CC BY 2.0. Dōtonbori: Type specimen · CC BY-SA 3.0. Torre Eiffel: Guilhem Vellut · CC BY 2.0. Detalle de la torre: randreu · CC BY 3.0. Fuentes y licencias completas conservadas en los créditos de imágenes del proyecto. Fotografías encuadradas para esta presentación.</li>
+</ul></details></footer>
 
   <!-- CHAT -->
   <button

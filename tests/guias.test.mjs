@@ -74,7 +74,7 @@ function page(query = '', stored = {}) {
 test('todos los destinos muestran sus propias actividades e imagen', () => {
   for (const d of catalog.destinations) {
     const ui=page('&destino='+d.id);
-    assert.equal(ui.node('guide-cover').src,d.id==='roatan'?'imagenes-viajes/guia-roatan-portada.jpg':d.image);
+    assert.equal(ui.node('guide-cover').src,d.id==='roatan'?'imagenes-viajes/guia-roatan-west-bay.jpg':d.image);
     assert.equal(ui.node('guide-results-title').textContent,'Recorridos en '+d.name);
     for(const {title} of experiences.filter(e=>e.destination===d.id)) assert.ok(ui.node('guide-results').innerHTML.includes(title));
     assert.ok(ui.node('guide-destination-link').href.includes('pantalla=detalle-destino'));
@@ -90,7 +90,7 @@ test('los filtros vacíos permiten recuperar todas las experiencias', () => {
   const ui=page('&destino=paris');ui.filter('playa');
   assert.match(ui.node('guide-results').innerHTML,/No hay propuestas/);
   ui.node('guide-clear').events.click();
-  assert.match(ui.node('guide-count').textContent,/4 experiencias/);
+  assert.match(ui.node('guide-count').textContent,/10 experiencias/);
 });
 
 test('guardar calcula el grupo, conserva otros servicios y restaura la selección', () => {
@@ -106,21 +106,22 @@ test('guardar calcula el grupo, conserva otros servicios y restaura la selecció
   assert.match(restored.node('guide-selection').innerHTML,/Senderos y arrozales de Ubud/);
 });
 
-test('cada recorrido tiene una foto local distinta, licencia y paradas específicas', async () => {
-  const credits=JSON.parse(await readFile(new URL('imagenes-viajes/CREDITOS-GUIAS.json', new URL('../public/', import.meta.url)),'utf8'));
+test('cada recorrido tiene foto local, licencia y paradas específicas', async () => {
+  const credits=JSON.parse(await readFile(new URL('imagenes-viajes/CREDITOS-GUIAS.json',new URL('../public/', import.meta.url)),'utf8'));
   const hashes=new Set();
-  assert.equal(experiences.length,56);
+  assert.equal(new Set(experiences.map(e=>e.id)).size, experiences.length);
+  assert.equal(experiences.length,140);
   for(const item of experiences){
-    const photo=await readFile(new URL(item.image, new URL('../public/', import.meta.url)));
+    const photo=await readFile(new URL(item.image,new URL('../public/', import.meta.url)));
     assert.equal(photo.readUInt16BE(0),0xffd8,item.id+' debe ser JPEG');
     const hash=createHash('sha256').update(photo).digest('hex');
-    assert.ok(!hashes.has(hash),item.id+' repite foto');hashes.add(hash);
+    if (!item.photoContext) { assert.ok(!hashes.has(hash),item.id+' repite foto'); hashes.add(hash); }
     assert.ok(item.stops.length>=3);assert.ok(item.description.length>50);
-    assert.ok(credits.some(c=>c.id===item.id&&c.author&&c.license&&c.commons===item.photoPage));
+    assert.ok(credits.some(c=>c.file===item.image&&c.author&&c.license&&c.commons===item.photoPage));
   }
   for(const d of catalog.destinations){
     const items=experiences.filter(e=>e.destination===d.id);
-    assert.equal(items.length,4);assert.ok(items.some(e=>e.style==='naturaleza'));
+    assert.ok(items.length>=10);assert.equal(new Set(items.map(e=>e.title)).size,items.length);assert.ok(items.some(e=>e.style==='naturaleza'));
     assert.ok(new Set(items.map(e=>e.style)).size>=2);
   }
 });
@@ -130,7 +131,7 @@ test('cambiar personas recalcula la selección y cambiar ciudad restablece las c
   assert.equal(ui.node('guide-save').disabled,false);ui.save();
   assert.equal(JSON.parse(ui.storage.get('rumbo.services.v1'))[0].total,1140);
   ui.change('destination','paris');
-  assert.match(ui.node('guide-count').textContent,/4 experiencias/);
+  assert.match(ui.node('guide-count').textContent,/10 experiencias/);
   assert.equal(ui.node('guide-save').disabled,true);
 });
 

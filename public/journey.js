@@ -104,7 +104,10 @@
     const active=current(),index=steps.findIndex(s=>s[0]===active);if(index<0)return;
     document.querySelectorAll('.rv-steps,.service-tabs,.journey-progress').forEach(n=>n.remove());
     const main=document.querySelector('main'), nav=document.createElement('nav');nav.className='journey-progress';nav.setAttribute('aria-label','Organiza tu viaje por pasos');
-    nav.innerHTML='<p>ORGANIZAR VIAJE <span>Elige un paso para continuar o cambiar tu selección.</span></p><ol>'+steps.map(([id,label,url],i)=>`<li><a href="${url}" ${id===active?'aria-current="step"':''}><span>${i+1}</span>${label}</a></li>`).join('')+'</ol>';main.prepend(nav);
+    nav.innerHTML='<p>ORGANIZAR VIAJE <span>Elige un paso para continuar o cambiar tu selección.</span></p><ol>'+steps.map(([id,label,url],i)=>`<li><a href="${url}" ${id===active?'aria-current="step"':''}><span>${i+1}</span>${label}</a></li>`).join('')+'</ol>';
+    const guideHero = main.querySelector('.guide-hero');
+    if (guideHero) guideHero.after(nav);
+    else main.prepend(nav);
     if(['traslados','seguros','guias','tienda'].includes(active)&&!document.querySelector('.journey-next')){const next=steps[index+1],footer=document.createElement('div');footer.className='journey-next';footer.innerHTML=`<a href="${steps[index-1][2]}">← ${steps[index-1][1]}</a><div><p>${active==='tienda'?'Los productos del carrito se incluyen en Mi viaje.':'Este paso es opcional. Guarda tu elección antes de continuar.'}</p><a class="button button-primary" href="${next[2]}">Continuar a ${next[1].toLowerCase()} →</a></div>`;main.append(footer);}
   }
   window.RumboJourney={snapshot,renderSummary,mountSteps,skipFlight,removeItem,clearTrip,undoRemoval};

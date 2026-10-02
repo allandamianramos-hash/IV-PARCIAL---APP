@@ -1,4 +1,4 @@
-/* Recorridos orientativos. Créditos: imagenes-viajes/CREDITOS-GUIAS.json. */
+/* Recorridos agrupados por destino. Tarifas de demostración; créditos por archivo en imagenes-viajes/CREDITOS-GUIAS.json. */
 window.RumboGuias = [
   {
     "id": "roatan-west-bay",
@@ -73,6 +73,120 @@ window.RumboGuias = [
     "photoPage": "https://commons.wikimedia.org/wiki/File:Port_Roatan_Coxen_Hole_Roatan_Honduras_2026.jpg"
   },
   {
+    "id": "roatan-ruta-5",
+    "destination": "roatan",
+    "title": "Punta Gorda: raíces garífunas",
+    "style": "cultura",
+    "page": "Punta Gorda: raíces garífunas",
+    "description": "Conoce la comunidad de Punta Gorda, su costa y las tradiciones garífunas que forman parte de la historia de Roatán.",
+    "stops": [
+      "Pueblo de Punta Gorda",
+      "Paseo por la costa",
+      "Historia y tradiciones garífunas"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-roatan-coxen-hole.jpg",
+    "alt": "Coxen Hole: puerto y vida local",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Port_Roatan_Coxen_Hole_Roatan_Honduras_2026.jpg",
+    "photoContext": "Foto de referencia: Coxen Hole: puerto y vida local."
+  },
+  {
+    "id": "roatan-ruta-6",
+    "destination": "roatan",
+    "title": "Oak Ridge: casas sobre el agua",
+    "style": "cultura",
+    "page": "Oak Ridge: casas sobre el agua",
+    "description": "Camina por Oak Ridge para observar las casas junto a la bahía y el entorno de su puerto pesquero.",
+    "stops": [
+      "Centro de Oak Ridge",
+      "Casas junto a la bahía",
+      "Vistas del puerto pesquero"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-roatan-coxen-hole.jpg",
+    "alt": "Coxen Hole: puerto y vida local",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Port_Roatan_Coxen_Hole_Roatan_Honduras_2026.jpg",
+    "photoContext": "Foto de referencia: Coxen Hole: puerto y vida local."
+  },
+  {
+    "id": "roatan-ruta-7",
+    "destination": "roatan",
+    "title": "Sandy Bay: un paseo tranquilo",
+    "style": "playa",
+    "page": "Sandy Bay: un paseo tranquilo",
+    "description": "Dedica un paseo a Sandy Bay, con paradas en el pueblo y en la costa para disfrutar del paisaje de la bahía.",
+    "stops": [
+      "Pueblo de Sandy Bay",
+      "Franja costera",
+      "Paisaje de la bahía"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-roatan-west-bay.jpg",
+    "alt": "West Bay: paseo por la playa",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:West_Bay_Beach_-Roatan_-Honduras-23May2009.jpg",
+    "photoContext": "Foto de referencia: West Bay: paseo por la playa."
+  },
+  {
+    "id": "roatan-ruta-8",
+    "destination": "roatan",
+    "title": "French Harbour: vida junto al puerto",
+    "style": "cultura",
+    "page": "French Harbour: vida junto al puerto",
+    "description": "Explora las calles y comercios de French Harbour para conocer la vida cotidiana alrededor del puerto.",
+    "stops": [
+      "Calles de French Harbour",
+      "Entorno del puerto",
+      "Comercios de la comunidad"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-roatan-coxen-hole.jpg",
+    "alt": "Coxen Hole: puerto y vida local",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Port_Roatan_Coxen_Hole_Roatan_Honduras_2026.jpg",
+    "photoContext": "Foto de referencia: Coxen Hole: puerto y vida local."
+  },
+  {
+    "id": "roatan-ruta-9",
+    "destination": "roatan",
+    "title": "Sabores isleños en West End",
+    "style": "gastronomia",
+    "page": "Sabores isleños en West End",
+    "description": "Descubre las cocinas de West End y las recetas de la isla, con propuestas de pescado y dulces locales. Consumiciones aparte.",
+    "stops": [
+      "Cocinas de West End",
+      "Productos del mar",
+      "Dulces y recetas de la isla"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-roatan-coxen-hole.jpg",
+    "alt": "Coxen Hole: puerto y vida local",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Port_Roatan_Coxen_Hole_Roatan_Honduras_2026.jpg",
+    "photoContext": "Foto de referencia: Coxen Hole: puerto y vida local."
+  },
+  {
+    "id": "roatan-ruta-10",
+    "destination": "roatan",
+    "title": "Camp Bay: el otro extremo de la isla",
+    "style": "playa",
+    "page": "Camp Bay: el otro extremo de la isla",
+    "description": "Conoce el pueblo de Camp Bay y camina por su playa en el este de la isla. El traslado se organiza por separado.",
+    "stops": [
+      "Pueblo de Camp Bay",
+      "Caminata por la playa",
+      "Paisaje del este de Roatán"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-roatan-west-bay.jpg",
+    "alt": "West Bay: paseo por la playa",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:West_Bay_Beach_-Roatan_-Honduras-23May2009.jpg",
+    "photoContext": "Foto de referencia: West Bay: paseo por la playa."
+  },
+  {
     "id": "san-jose-sabana",
     "destination": "san-jose",
     "title": "Senderos del parque La Sabana",
@@ -143,6 +257,120 @@ window.RumboGuias = [
     "image": "imagenes-viajes/guia-san-jose-orosi.jpg",
     "alt": "Valle de Orosi: paisaje rural",
     "photoPage": "https://commons.wikimedia.org/wiki/File:DirkvdM_orosi.jpg"
+  },
+  {
+    "id": "san-jose-ruta-5",
+    "destination": "san-jose",
+    "title": "Barrio Amón: casas con historia",
+    "style": "cultura",
+    "page": "Barrio Amón: casas con historia",
+    "description": "La propuesta reúne tres paradas: Calles de Barrio Amón; Fachadas históricas; Entorno del parque Morazán. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calles de Barrio Amón",
+      "Fachadas históricas",
+      "Entorno del parque Morazán"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-san-jose-teatro.jpg",
+    "alt": "Teatro Nacional y centro histórico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Costa_Rica-Teatro_Nacional.JPG",
+    "photoContext": "Foto de referencia: Teatro Nacional y centro histórico."
+  },
+  {
+    "id": "san-jose-ruta-6",
+    "destination": "san-jose",
+    "title": "Museo Nacional y Plaza de la Democracia",
+    "style": "cultura",
+    "page": "Museo Nacional y Plaza de la Democracia",
+    "description": "La propuesta reúne tres paradas: Plaza de la Democracia; Antiguo cuartel Bellavista; Colecciones del Museo Nacional. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaza de la Democracia",
+      "Antiguo cuartel Bellavista",
+      "Colecciones del Museo Nacional"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-san-jose-teatro.jpg",
+    "alt": "Teatro Nacional y centro histórico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Costa_Rica-Teatro_Nacional.JPG",
+    "photoContext": "Foto de referencia: Teatro Nacional y centro histórico."
+  },
+  {
+    "id": "san-jose-ruta-7",
+    "destination": "san-jose",
+    "title": "Barrio Escalante: cafés y cocina local",
+    "style": "gastronomia",
+    "page": "Barrio Escalante: cafés y cocina local",
+    "description": "La propuesta reúne tres paradas: Calles de Escalante; Cafeterías del barrio; Cocinas y productos costarricenses. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calles de Escalante",
+      "Cafeterías del barrio",
+      "Cocinas y productos costarricenses"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-san-jose-mercado.jpg",
+    "alt": "Mercado Central de San José",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:San_Jose_Central_Market1.jpg",
+    "photoContext": "Foto de referencia: Mercado Central de San José."
+  },
+  {
+    "id": "san-jose-ruta-8",
+    "destination": "san-jose",
+    "title": "Jade y cultura precolombina",
+    "style": "cultura",
+    "page": "Jade y cultura precolombina",
+    "description": "La propuesta reúne tres paradas: Entorno del Museo del Jade; Salas de arqueología; Artesanía e historia del jade. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entorno del Museo del Jade",
+      "Salas de arqueología",
+      "Artesanía e historia del jade"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-san-jose-teatro.jpg",
+    "alt": "Teatro Nacional y centro histórico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Costa_Rica-Teatro_Nacional.JPG",
+    "photoContext": "Foto de referencia: Teatro Nacional y centro histórico."
+  },
+  {
+    "id": "san-jose-ruta-9",
+    "destination": "san-jose",
+    "title": "Parque Nacional y paseo de los monumentos",
+    "style": "naturaleza",
+    "page": "Parque Nacional y paseo de los monumentos",
+    "description": "La propuesta reúne tres paradas: Senderos del Parque Nacional; Monumento Nacional; Jardines y árboles urbanos. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Senderos del Parque Nacional",
+      "Monumento Nacional",
+      "Jardines y árboles urbanos"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-san-jose-sabana.jpg",
+    "alt": "Senderos del parque La Sabana",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:La_Sabana-Costa_Rica_2.JPG",
+    "photoContext": "Foto de referencia: Senderos del parque La Sabana."
+  },
+  {
+    "id": "san-jose-ruta-10",
+    "destination": "san-jose",
+    "title": "Avenida Central: la ciudad a pie",
+    "style": "cultura",
+    "page": "Avenida Central: la ciudad a pie",
+    "description": "La propuesta reúne tres paradas: Paseo peatonal de la Avenida Central; Plaza de la Cultura; Entorno de la Catedral Metropolitana. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Paseo peatonal de la Avenida Central",
+      "Plaza de la Cultura",
+      "Entorno de la Catedral Metropolitana"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-san-jose-teatro.jpg",
+    "alt": "Teatro Nacional y centro histórico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Costa_Rica-Teatro_Nacional.JPG",
+    "photoContext": "Foto de referencia: Teatro Nacional y centro histórico."
   },
   {
     "id": "paris-montmartre",
@@ -217,6 +445,120 @@ window.RumboGuias = [
     "photoPage": "https://commons.wikimedia.org/wiki/File:West_facade_of_the_Cour_Carr%C3%A9e%2C_Louvre_Palace%2C_Paris_5_October_2017.jpg"
   },
   {
+    "id": "paris-ruta-5",
+    "destination": "paris",
+    "title": "El Sena y la Île de la Cité",
+    "style": "cultura",
+    "page": "El Sena y la Île de la Cité",
+    "description": "La propuesta reúne tres paradas: Pont Neuf; Plaza exterior de Notre-Dame; Orillas del Sena. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Pont Neuf",
+      "Plaza exterior de Notre-Dame",
+      "Orillas del Sena"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-paris-montmartre.jpg",
+    "alt": "Montmartre a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_from_Notre-Dame_de_Paris%2C_24_June_2014_004.jpg",
+    "photoContext": "Foto de referencia: Montmartre a pie."
+  },
+  {
+    "id": "paris-ruta-6",
+    "destination": "paris",
+    "title": "Le Marais: patios y plazas",
+    "style": "cultura",
+    "page": "Le Marais: patios y plazas",
+    "description": "La propuesta reúne tres paradas: Place des Vosges; Calles de Le Marais; Patios del barrio. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Place des Vosges",
+      "Calles de Le Marais",
+      "Patios del barrio"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-paris-montmartre.jpg",
+    "alt": "Montmartre a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_from_Notre-Dame_de_Paris%2C_24_June_2014_004.jpg",
+    "photoContext": "Foto de referencia: Montmartre a pie."
+  },
+  {
+    "id": "paris-ruta-7",
+    "destination": "paris",
+    "title": "Torre Eiffel y Campo de Marte",
+    "style": "cultura",
+    "page": "Torre Eiffel y Campo de Marte",
+    "description": "La propuesta reúne tres paradas: Jardines del Trocadéro; Puente de Iéna; Campo de Marte. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Jardines del Trocadéro",
+      "Puente de Iéna",
+      "Campo de Marte"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-paris-montmartre.jpg",
+    "alt": "Montmartre a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_from_Notre-Dame_de_Paris%2C_24_June_2014_004.jpg",
+    "photoContext": "Foto de referencia: Montmartre a pie."
+  },
+  {
+    "id": "paris-ruta-8",
+    "destination": "paris",
+    "title": "Sabores de la rue Montorgueil",
+    "style": "gastronomia",
+    "page": "Sabores de la rue Montorgueil",
+    "description": "La propuesta reúne tres paradas: Calle Montorgueil; Panaderías y pastelerías; Comercios de productos franceses. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calle Montorgueil",
+      "Panaderías y pastelerías",
+      "Comercios de productos franceses"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-paris-montmartre.jpg",
+    "alt": "Montmartre a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_from_Notre-Dame_de_Paris%2C_24_June_2014_004.jpg",
+    "photoContext": "Foto de referencia: Montmartre a pie."
+  },
+  {
+    "id": "paris-ruta-9",
+    "destination": "paris",
+    "title": "Canal Saint-Martin: puentes y esclusas",
+    "style": "cultura",
+    "page": "Canal Saint-Martin: puentes y esclusas",
+    "description": "La propuesta reúne tres paradas: Orillas del canal; Pasarelas de hierro; Entorno de las esclusas. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Orillas del canal",
+      "Pasarelas de hierro",
+      "Entorno de las esclusas"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-paris-montmartre.jpg",
+    "alt": "Montmartre a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_from_Notre-Dame_de_Paris%2C_24_June_2014_004.jpg",
+    "photoContext": "Foto de referencia: Montmartre a pie."
+  },
+  {
+    "id": "paris-ruta-10",
+    "destination": "paris",
+    "title": "Buttes-Chaumont: caminos y miradores",
+    "style": "naturaleza",
+    "page": "Buttes-Chaumont: caminos y miradores",
+    "description": "La propuesta reúne tres paradas: Entrada del parque; Senderos alrededor del lago; Miradores del jardín. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entrada del parque",
+      "Senderos alrededor del lago",
+      "Miradores del jardín"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-paris-luxemburgo.jpg",
+    "alt": "Jardines de Luxemburgo",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:LuxembourgMontparnasse.JPG",
+    "photoContext": "Foto de referencia: Jardines de Luxemburgo."
+  },
+  {
     "id": "bali-ubud",
     "destination": "bali",
     "title": "Senderos y arrozales de Ubud",
@@ -287,6 +629,120 @@ window.RumboGuias = [
     "image": "imagenes-viajes/guia-bali-uluwatu.jpg",
     "alt": "Acantilados de Uluwatu",
     "photoPage": "https://commons.wikimedia.org/wiki/File:Pura_Luhur_Uluwatu_2017-08-17_(34).jpg"
+  },
+  {
+    "id": "bali-ruta-5",
+    "destination": "bali",
+    "title": "Tirta Empul: agua y tradición",
+    "style": "cultura",
+    "page": "Tirta Empul: agua y tradición",
+    "description": "La propuesta reúne tres paradas: Acceso al templo; Patios del recinto; Entorno de los manantiales. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Acceso al templo",
+      "Patios del recinto",
+      "Entorno de los manantiales"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-bali-tanah-lot.jpg",
+    "alt": "Tanah Lot y su entorno",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:TanahLot_2014.JPG",
+    "photoContext": "Foto de referencia: Tanah Lot y su entorno."
+  },
+  {
+    "id": "bali-ruta-6",
+    "destination": "bali",
+    "title": "Jatiluwih: paisajes de arroz",
+    "style": "naturaleza",
+    "page": "Jatiluwih: paisajes de arroz",
+    "description": "La propuesta reúne tres paradas: Acceso a los arrozales; Senderos habilitados; Miradores de las terrazas. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Acceso a los arrozales",
+      "Senderos habilitados",
+      "Miradores de las terrazas"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-bali-ubud.jpg",
+    "alt": "Senderos y arrozales de Ubud",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Rice_fields,_Bedulu_near_Ubud,_Bali,_Indonesia,_20220824_1039_0665.jpg",
+    "photoContext": "Foto de referencia: Senderos y arrozales de Ubud."
+  },
+  {
+    "id": "bali-ruta-7",
+    "destination": "bali",
+    "title": "Bosque de monos de Ubud",
+    "style": "naturaleza",
+    "page": "Bosque de monos de Ubud",
+    "description": "La propuesta reúne tres paradas: Entrada del santuario; Senderos del bosque; Entorno de los templos. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entrada del santuario",
+      "Senderos del bosque",
+      "Entorno de los templos"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-bali-ubud.jpg",
+    "alt": "Senderos y arrozales de Ubud",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Rice_fields,_Bedulu_near_Ubud,_Bali,_Indonesia,_20220824_1039_0665.jpg",
+    "photoContext": "Foto de referencia: Senderos y arrozales de Ubud."
+  },
+  {
+    "id": "bali-ruta-8",
+    "destination": "bali",
+    "title": "Mercado de Ubud: artesanía y sabores",
+    "style": "gastronomia",
+    "page": "Mercado de Ubud: artesanía y sabores",
+    "description": "La propuesta reúne tres paradas: Puestos del mercado; Ingredientes balineses; Cocinas del centro de Ubud. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Puestos del mercado",
+      "Ingredientes balineses",
+      "Cocinas del centro de Ubud"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-bali-tanah-lot.jpg",
+    "alt": "Tanah Lot y su entorno",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:TanahLot_2014.JPG",
+    "photoContext": "Foto de referencia: Tanah Lot y su entorno."
+  },
+  {
+    "id": "bali-ruta-9",
+    "destination": "bali",
+    "title": "Jimbaran: la bahía y su cocina",
+    "style": "gastronomia",
+    "page": "Jimbaran: la bahía y su cocina",
+    "description": "La propuesta reúne tres paradas: Paseo por la bahía; Restaurantes de pescado; Tradiciones de la cocina costera. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Paseo por la bahía",
+      "Restaurantes de pescado",
+      "Tradiciones de la cocina costera"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-bali-tanah-lot.jpg",
+    "alt": "Tanah Lot y su entorno",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:TanahLot_2014.JPG",
+    "photoContext": "Foto de referencia: Tanah Lot y su entorno."
+  },
+  {
+    "id": "bali-ruta-10",
+    "destination": "bali",
+    "title": "Nusa Dua: jardines junto al mar",
+    "style": "playa",
+    "page": "Nusa Dua: jardines junto al mar",
+    "description": "La propuesta reúne tres paradas: Jardines de Nusa Dua; Paseo costero; Playas de la zona. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Jardines de Nusa Dua",
+      "Paseo costero",
+      "Playas de la zona"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-bali-sanur.jpg",
+    "alt": "Paseo costero de Sanur",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Sanur_Beach.JPG",
+    "photoContext": "Foto de referencia: Paseo costero de Sanur."
   },
   {
     "id": "venecia-canal",
@@ -361,6 +817,120 @@ window.RumboGuias = [
     "photoPage": "https://commons.wikimedia.org/wiki/File:Burano_Venice_17.jpg"
   },
   {
+    "id": "venecia-ruta-5",
+    "destination": "venecia",
+    "title": "San Marcos: símbolos de Venecia",
+    "style": "cultura",
+    "page": "San Marcos: símbolos de Venecia",
+    "description": "La propuesta reúne tres paradas: Plaza de San Marcos; Exterior de la basílica; Entorno del Palacio Ducal. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaza de San Marcos",
+      "Exterior de la basílica",
+      "Entorno del Palacio Ducal"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-venecia-canal.jpg",
+    "alt": "Gran Canal y sus puentes",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg",
+    "photoContext": "Foto de referencia: Gran Canal y sus puentes."
+  },
+  {
+    "id": "venecia-ruta-6",
+    "destination": "venecia",
+    "title": "Murano: la isla del vidrio",
+    "style": "cultura",
+    "page": "Murano: la isla del vidrio",
+    "description": "La propuesta reúne tres paradas: Canales de Murano; Talleres de vidrio abiertos al público; Entorno de San Donato. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Canales de Murano",
+      "Talleres de vidrio abiertos al público",
+      "Entorno de San Donato"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-venecia-canal.jpg",
+    "alt": "Gran Canal y sus puentes",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg",
+    "photoContext": "Foto de referencia: Gran Canal y sus puentes."
+  },
+  {
+    "id": "venecia-ruta-7",
+    "destination": "venecia",
+    "title": "Cannaregio y el gueto histórico",
+    "style": "cultura",
+    "page": "Cannaregio y el gueto histórico",
+    "description": "La propuesta reúne tres paradas: Calles de Cannaregio; Campo del Ghetto Nuovo; Canales del barrio. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calles de Cannaregio",
+      "Campo del Ghetto Nuovo",
+      "Canales del barrio"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-venecia-canal.jpg",
+    "alt": "Gran Canal y sus puentes",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg",
+    "photoContext": "Foto de referencia: Gran Canal y sus puentes."
+  },
+  {
+    "id": "venecia-ruta-8",
+    "destination": "venecia",
+    "title": "Rialto: mercado y sabores venecianos",
+    "style": "gastronomia",
+    "page": "Rialto: mercado y sabores venecianos",
+    "description": "La propuesta reúne tres paradas: Mercado de Rialto; Comercios de productos locales; Bácaros del barrio. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Mercado de Rialto",
+      "Comercios de productos locales",
+      "Bácaros del barrio"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-venecia-canal.jpg",
+    "alt": "Gran Canal y sus puentes",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg",
+    "photoContext": "Foto de referencia: Gran Canal y sus puentes."
+  },
+  {
+    "id": "venecia-ruta-9",
+    "destination": "venecia",
+    "title": "Dorsoduro: arte entre canales",
+    "style": "cultura",
+    "page": "Dorsoduro: arte entre canales",
+    "description": "La propuesta reúne tres paradas: Entorno de la Accademia; Paseo de las Zattere; Punta della Dogana. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entorno de la Accademia",
+      "Paseo de las Zattere",
+      "Punta della Dogana"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-venecia-canal.jpg",
+    "alt": "Gran Canal y sus puentes",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg",
+    "photoContext": "Foto de referencia: Gran Canal y sus puentes."
+  },
+  {
+    "id": "venecia-ruta-10",
+    "destination": "venecia",
+    "title": "Torcello: una isla para caminar",
+    "style": "naturaleza",
+    "page": "Torcello: una isla para caminar",
+    "description": "La propuesta reúne tres paradas: Embarcadero de Torcello; Sendero junto al canal; Entorno de la basílica. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Embarcadero de Torcello",
+      "Sendero junto al canal",
+      "Entorno de la basílica"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-venecia-giardini.jpg",
+    "alt": "Giardini: jardines de Venecia",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Cannaregio%2C_30100_Venice%2C_Italy_-_panoramio_(206).jpg",
+    "photoContext": "Foto de referencia: Giardini: jardines de Venecia."
+  },
+  {
     "id": "osaka-castillo",
     "destination": "osaka",
     "title": "Parque del Castillo de Osaka",
@@ -431,6 +1001,120 @@ window.RumboGuias = [
     "image": "imagenes-viajes/guia-osaka-kuromon.jpg",
     "alt": "Mercado Kuromon Ichiba",
     "photoPage": "https://commons.wikimedia.org/wiki/File:Osaka_Kuromon_Ichiba_Market_2017-12_(1).jpg"
+  },
+  {
+    "id": "osaka-ruta-5",
+    "destination": "osaka",
+    "title": "Shinsekai: calles de otra época",
+    "style": "cultura",
+    "page": "Shinsekai: calles de otra época",
+    "description": "La propuesta reúne tres paradas: Calles de Shinsekai; Exterior de Tsūtenkaku; Pasaje Janjan Yokocho. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calles de Shinsekai",
+      "Exterior de Tsūtenkaku",
+      "Pasaje Janjan Yokocho"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-osaka-dotonbori.jpg",
+    "alt": "Dōtonbori: canales y comercios",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Osaka_Dotonbori_Ebisu_Bridge.jpg",
+    "photoContext": "Foto de referencia: Dōtonbori: canales y comercios."
+  },
+  {
+    "id": "osaka-ruta-6",
+    "destination": "osaka",
+    "title": "Sumiyoshi Taisha: puentes y santuarios",
+    "style": "cultura",
+    "page": "Sumiyoshi Taisha: puentes y santuarios",
+    "description": "La propuesta reúne tres paradas: Entrada de Sumiyoshi Taisha; Puente Sorihashi; Patios del santuario. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entrada de Sumiyoshi Taisha",
+      "Puente Sorihashi",
+      "Patios del santuario"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-osaka-dotonbori.jpg",
+    "alt": "Dōtonbori: canales y comercios",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Osaka_Dotonbori_Ebisu_Bridge.jpg",
+    "photoContext": "Foto de referencia: Dōtonbori: canales y comercios."
+  },
+  {
+    "id": "osaka-ruta-7",
+    "destination": "osaka",
+    "title": "Nakanoshima: jardines entre ríos",
+    "style": "naturaleza",
+    "page": "Nakanoshima: jardines entre ríos",
+    "description": "La propuesta reúne tres paradas: Paseo de Nakanoshima; Rosaleda; Exterior del salón público central. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Paseo de Nakanoshima",
+      "Rosaleda",
+      "Exterior del salón público central"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-osaka-castillo.jpg",
+    "alt": "Parque del Castillo de Osaka",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_01bs3200.jpg",
+    "photoContext": "Foto de referencia: Parque del Castillo de Osaka."
+  },
+  {
+    "id": "osaka-ruta-8",
+    "destination": "osaka",
+    "title": "Shitennō-ji: historia del templo",
+    "style": "cultura",
+    "page": "Shitennō-ji: historia del templo",
+    "description": "La propuesta reúne tres paradas: Acceso al templo; Patios de Shitennō-ji; Entorno de la pagoda. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Acceso al templo",
+      "Patios de Shitennō-ji",
+      "Entorno de la pagoda"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-osaka-dotonbori.jpg",
+    "alt": "Dōtonbori: canales y comercios",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Osaka_Dotonbori_Ebisu_Bridge.jpg",
+    "photoContext": "Foto de referencia: Dōtonbori: canales y comercios."
+  },
+  {
+    "id": "osaka-ruta-9",
+    "destination": "osaka",
+    "title": "Sabores de Tenjinbashisuji",
+    "style": "gastronomia",
+    "page": "Sabores de Tenjinbashisuji",
+    "description": "La propuesta reúne tres paradas: Galería comercial Tenjinbashisuji; Puestos de cocina local; Dulcerías del barrio. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Galería comercial Tenjinbashisuji",
+      "Puestos de cocina local",
+      "Dulcerías del barrio"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-osaka-kuromon.jpg",
+    "alt": "Mercado Kuromon Ichiba",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Osaka_Kuromon_Ichiba_Market_2017-12_(1).jpg",
+    "photoContext": "Foto de referencia: Mercado Kuromon Ichiba."
+  },
+  {
+    "id": "osaka-ruta-10",
+    "destination": "osaka",
+    "title": "Umeda: arquitectura y panorámicas",
+    "style": "cultura",
+    "page": "Umeda: arquitectura y panorámicas",
+    "description": "La propuesta reúne tres paradas: Entorno de Osaka Station; Plazas de Umeda; Exterior del Umeda Sky Building. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entorno de Osaka Station",
+      "Plazas de Umeda",
+      "Exterior del Umeda Sky Building"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-osaka-dotonbori.jpg",
+    "alt": "Dōtonbori: canales y comercios",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Osaka_Dotonbori_Ebisu_Bridge.jpg",
+    "photoContext": "Foto de referencia: Dōtonbori: canales y comercios."
   },
   {
     "id": "nueva-york-central",
@@ -505,6 +1189,120 @@ window.RumboGuias = [
     "photoPage": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg"
   },
   {
+    "id": "nueva-york-ruta-5",
+    "destination": "nueva-york",
+    "title": "Midtown: iconos de Manhattan",
+    "style": "cultura",
+    "page": "Midtown: iconos de Manhattan",
+    "description": "La propuesta reúne tres paradas: Times Square; Bryant Park; Grand Central Terminal. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Times Square",
+      "Bryant Park",
+      "Grand Central Terminal"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-nueva-york-brooklyn.jpg",
+    "alt": "Puente de Brooklyn a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg",
+    "photoContext": "Foto de referencia: Puente de Brooklyn a pie."
+  },
+  {
+    "id": "nueva-york-ruta-6",
+    "destination": "nueva-york",
+    "title": "DUMBO: calles frente al río",
+    "style": "cultura",
+    "page": "DUMBO: calles frente al río",
+    "description": "La propuesta reúne tres paradas: Washington Street; Orilla de Brooklyn Bridge Park; Jane’s Carousel, exterior. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Washington Street",
+      "Orilla de Brooklyn Bridge Park",
+      "Jane’s Carousel, exterior"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-nueva-york-brooklyn.jpg",
+    "alt": "Puente de Brooklyn a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg",
+    "photoContext": "Foto de referencia: Puente de Brooklyn a pie."
+  },
+  {
+    "id": "nueva-york-ruta-7",
+    "destination": "nueva-york",
+    "title": "Greenwich Village: plazas y música",
+    "style": "cultura",
+    "page": "Greenwich Village: plazas y música",
+    "description": "La propuesta reúne tres paradas: Washington Square Park; Calles del Village; Fachadas de locales musicales. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Washington Square Park",
+      "Calles del Village",
+      "Fachadas de locales musicales"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-nueva-york-brooklyn.jpg",
+    "alt": "Puente de Brooklyn a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg",
+    "photoContext": "Foto de referencia: Puente de Brooklyn a pie."
+  },
+  {
+    "id": "nueva-york-ruta-8",
+    "destination": "nueva-york",
+    "title": "Chinatown y Little Italy: sabores del barrio",
+    "style": "gastronomia",
+    "page": "Chinatown y Little Italy: sabores del barrio",
+    "description": "La propuesta reúne tres paradas: Calles de Chinatown; Comercios de productos asiáticos; Mulberry Street. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calles de Chinatown",
+      "Comercios de productos asiáticos",
+      "Mulberry Street"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-nueva-york-brooklyn.jpg",
+    "alt": "Puente de Brooklyn a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg",
+    "photoContext": "Foto de referencia: Puente de Brooklyn a pie."
+  },
+  {
+    "id": "nueva-york-ruta-9",
+    "destination": "nueva-york",
+    "title": "Battery Park y el sur de Manhattan",
+    "style": "naturaleza",
+    "page": "Battery Park y el sur de Manhattan",
+    "description": "La propuesta reúne tres paradas: Jardines de The Battery; Paseo frente al puerto; Bowling Green. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Jardines de The Battery",
+      "Paseo frente al puerto",
+      "Bowling Green"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-nueva-york-central.jpg",
+    "alt": "Central Park: lagos y senderos",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Global_Citizen_Festival_Central_Park_New_York_City_from_NYonAir_(15351915006).jpg",
+    "photoContext": "Foto de referencia: Central Park: lagos y senderos."
+  },
+  {
+    "id": "nueva-york-ruta-10",
+    "destination": "nueva-york",
+    "title": "Harlem: historia y arquitectura",
+    "style": "cultura",
+    "page": "Harlem: historia y arquitectura",
+    "description": "La propuesta reúne tres paradas: 125th Street; Exterior del Apollo Theater; Calles residenciales de Harlem. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "125th Street",
+      "Exterior del Apollo Theater",
+      "Calles residenciales de Harlem"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-nueva-york-brooklyn.jpg",
+    "alt": "Puente de Brooklyn a pie",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg",
+    "photoContext": "Foto de referencia: Puente de Brooklyn a pie."
+  },
+  {
     "id": "barcelona-barceloneta",
     "destination": "barcelona",
     "title": "La Barceloneta y el paseo marítimo",
@@ -575,6 +1373,120 @@ window.RumboGuias = [
     "image": "imagenes-viajes/guia-barcelona-boqueria.jpg",
     "alt": "Mercado de la Boqueria",
     "photoPage": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Mercat_de_Sant_Josep_(la_Boqueria)_-_Entrance.jpg"
+  },
+  {
+    "id": "barcelona-ruta-5",
+    "destination": "barcelona",
+    "title": "Modernismo en el paseo de Gràcia",
+    "style": "cultura",
+    "page": "Modernismo en el paseo de Gràcia",
+    "description": "La propuesta reúne tres paradas: Exterior de Casa Batlló; Manzana de la Discordia; Exterior de La Pedrera. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Exterior de Casa Batlló",
+      "Manzana de la Discordia",
+      "Exterior de La Pedrera"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-barcelona-gotico.jpg",
+    "alt": "Calles y plazas del Barrio Gótico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Carrer_del_Bisbe.jpg",
+    "photoContext": "Foto de referencia: Calles y plazas del Barrio Gótico."
+  },
+  {
+    "id": "barcelona-ruta-6",
+    "destination": "barcelona",
+    "title": "Sagrada Família: arquitectura en detalle",
+    "style": "cultura",
+    "page": "Sagrada Família: arquitectura en detalle",
+    "description": "La propuesta reúne tres paradas: Plaza de Gaudí; Exterior de la Sagrada Família; Plaza de la Sagrada Família. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaza de Gaudí",
+      "Exterior de la Sagrada Família",
+      "Plaza de la Sagrada Família"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-barcelona-gotico.jpg",
+    "alt": "Calles y plazas del Barrio Gótico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Carrer_del_Bisbe.jpg",
+    "photoContext": "Foto de referencia: Calles y plazas del Barrio Gótico."
+  },
+  {
+    "id": "barcelona-ruta-7",
+    "destination": "barcelona",
+    "title": "Montjuïc: jardines y panorámicas",
+    "style": "naturaleza",
+    "page": "Montjuïc: jardines y panorámicas",
+    "description": "La propuesta reúne tres paradas: Jardines de Montjuïc; Miradores de la montaña; Entorno del MNAC. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Jardines de Montjuïc",
+      "Miradores de la montaña",
+      "Entorno del MNAC"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-barcelona-ciutadella.jpg",
+    "alt": "Parque de la Ciutadella",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Ciutadella_Park_fountain.jpg",
+    "photoContext": "Foto de referencia: Parque de la Ciutadella."
+  },
+  {
+    "id": "barcelona-ruta-8",
+    "destination": "barcelona",
+    "title": "Park Güell: mosaicos y senderos",
+    "style": "naturaleza",
+    "page": "Park Güell: mosaicos y senderos",
+    "description": "La propuesta reúne tres paradas: Acceso al parque; Zona monumental; Senderos y miradores. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Acceso al parque",
+      "Zona monumental",
+      "Senderos y miradores"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-barcelona-ciutadella.jpg",
+    "alt": "Parque de la Ciutadella",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Ciutadella_Park_fountain.jpg",
+    "photoContext": "Foto de referencia: Parque de la Ciutadella."
+  },
+  {
+    "id": "barcelona-ruta-9",
+    "destination": "barcelona",
+    "title": "El Born: plazas y talleres",
+    "style": "cultura",
+    "page": "El Born: plazas y talleres",
+    "description": "La propuesta reúne tres paradas: Passeig del Born; Exterior de Santa Maria del Mar; Calles de talleres artesanos. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Passeig del Born",
+      "Exterior de Santa Maria del Mar",
+      "Calles de talleres artesanos"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-barcelona-gotico.jpg",
+    "alt": "Calles y plazas del Barrio Gótico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Carrer_del_Bisbe.jpg",
+    "photoContext": "Foto de referencia: Calles y plazas del Barrio Gótico."
+  },
+  {
+    "id": "barcelona-ruta-10",
+    "destination": "barcelona",
+    "title": "Gràcia: plazas y cocina de barrio",
+    "style": "gastronomia",
+    "page": "Gràcia: plazas y cocina de barrio",
+    "description": "La propuesta reúne tres paradas: Plaça de la Vila de Gràcia; Comercios del barrio; Plazas y pequeños restaurantes. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaça de la Vila de Gràcia",
+      "Comercios del barrio",
+      "Plazas y pequeños restaurantes"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-barcelona-boqueria.jpg",
+    "alt": "Mercado de la Boqueria",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Mercat_de_Sant_Josep_(la_Boqueria)_-_Entrance.jpg",
+    "photoContext": "Foto de referencia: Mercado de la Boqueria."
   },
   {
     "id": "roma-borghese",
@@ -649,6 +1561,120 @@ window.RumboGuias = [
     "photoPage": "https://commons.wikimedia.org/wiki/File:Santa_Maria_in_Trastevere_fountain.jpg"
   },
   {
+    "id": "roma-ruta-5",
+    "destination": "roma",
+    "title": "Fuentes y plazas del centro",
+    "style": "cultura",
+    "page": "Fuentes y plazas del centro",
+    "description": "La propuesta reúne tres paradas: Fontana di Trevi; Exterior del Panteón; Piazza Navona. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Fontana di Trevi",
+      "Exterior del Panteón",
+      "Piazza Navona"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-roma-coliseo.jpg",
+    "alt": "Coliseo y entorno del Foro",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
+    "photoContext": "Foto de referencia: Coliseo y entorno del Foro."
+  },
+  {
+    "id": "roma-ruta-6",
+    "destination": "roma",
+    "title": "El Vaticano desde sus plazas",
+    "style": "cultura",
+    "page": "El Vaticano desde sus plazas",
+    "description": "La propuesta reúne tres paradas: Via della Conciliazione; Plaza de San Pedro; Calles del Borgo. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Via della Conciliazione",
+      "Plaza de San Pedro",
+      "Calles del Borgo"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-roma-coliseo.jpg",
+    "alt": "Coliseo y entorno del Foro",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
+    "photoContext": "Foto de referencia: Coliseo y entorno del Foro."
+  },
+  {
+    "id": "roma-ruta-7",
+    "destination": "roma",
+    "title": "Testaccio: mercado y cocina romana",
+    "style": "gastronomia",
+    "page": "Testaccio: mercado y cocina romana",
+    "description": "La propuesta reúne tres paradas: Mercado de Testaccio; Tiendas de productos romanos; Entorno de Monte Testaccio. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Mercado de Testaccio",
+      "Tiendas de productos romanos",
+      "Entorno de Monte Testaccio"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-roma-trastevere.jpg",
+    "alt": "Trastevere: plazas y gastronomía",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Santa_Maria_in_Trastevere_fountain.jpg",
+    "photoContext": "Foto de referencia: Trastevere: plazas y gastronomía."
+  },
+  {
+    "id": "roma-ruta-8",
+    "destination": "roma",
+    "title": "Aventino: jardines sobre Roma",
+    "style": "naturaleza",
+    "page": "Aventino: jardines sobre Roma",
+    "description": "La propuesta reúne tres paradas: Jardín de los Naranjos; Entorno de Santa Sabina; Plaza de los Caballeros de Malta. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Jardín de los Naranjos",
+      "Entorno de Santa Sabina",
+      "Plaza de los Caballeros de Malta"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-roma-borghese.jpg",
+    "alt": "Jardines de Villa Borghese",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Ingresso_monumentale_di_Villa_Borghese_a_Roma_su_piazzale_Flaminio_2018-02.jpg",
+    "photoContext": "Foto de referencia: Jardines de Villa Borghese."
+  },
+  {
+    "id": "roma-ruta-9",
+    "destination": "roma",
+    "title": "El Tíber y sus puentes",
+    "style": "cultura",
+    "page": "El Tíber y sus puentes",
+    "description": "La propuesta reúne tres paradas: Ponte Sant’Angelo; Paseo junto al Tíber; Isla Tiberina. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Ponte Sant’Angelo",
+      "Paseo junto al Tíber",
+      "Isla Tiberina"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-roma-coliseo.jpg",
+    "alt": "Coliseo y entorno del Foro",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
+    "photoContext": "Foto de referencia: Coliseo y entorno del Foro."
+  },
+  {
+    "id": "roma-ruta-10",
+    "destination": "roma",
+    "title": "Campo de’ Fiori: ingredientes italianos",
+    "style": "gastronomia",
+    "page": "Campo de’ Fiori: ingredientes italianos",
+    "description": "La propuesta reúne tres paradas: Plaza Campo de’ Fiori; Comercios de alimentos; Calles de hornos y panaderías. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaza Campo de’ Fiori",
+      "Comercios de alimentos",
+      "Calles de hornos y panaderías"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-roma-trastevere.jpg",
+    "alt": "Trastevere: plazas y gastronomía",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Santa_Maria_in_Trastevere_fountain.jpg",
+    "photoContext": "Foto de referencia: Trastevere: plazas y gastronomía."
+  },
+  {
     "id": "ciudad-guatemala-aurora",
     "destination": "ciudad-guatemala",
     "title": "La Aurora: jardines y fauna",
@@ -719,6 +1745,120 @@ window.RumboGuias = [
     "image": "imagenes-viajes/guia-ciudad-guatemala-relieve.jpg",
     "alt": "Mapa en Relieve de Guatemala",
     "photoPage": "https://commons.wikimedia.org/wiki/File:Mapa_en_Relieve_de_Guatemala_-_51576507815.jpg"
+  },
+  {
+    "id": "ciudad-guatemala-ruta-5",
+    "destination": "ciudad-guatemala",
+    "title": "Sexta Avenida: arte y vida urbana",
+    "style": "cultura",
+    "page": "Sexta Avenida: arte y vida urbana",
+    "description": "La propuesta reúne tres paradas: Paseo de la Sexta; Fachadas del centro; Plazas del recorrido peatonal. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Paseo de la Sexta",
+      "Fachadas del centro",
+      "Plazas del recorrido peatonal"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-ciudad-guatemala-kaminaljuyu.jpg",
+    "alt": "Parque arqueológico Kaminaljuyú",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Kaminaljuyu_11.jpg",
+    "photoContext": "Foto de referencia: Parque arqueológico Kaminaljuyú."
+  },
+  {
+    "id": "ciudad-guatemala-ruta-6",
+    "destination": "ciudad-guatemala",
+    "title": "Mercado Central: sabores y artesanía",
+    "style": "gastronomia",
+    "page": "Mercado Central: sabores y artesanía",
+    "description": "La propuesta reúne tres paradas: Puestos de comida; Artesanía del mercado; Ingredientes de cocina guatemalteca. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Puestos de comida",
+      "Artesanía del mercado",
+      "Ingredientes de cocina guatemalteca"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-ciudad-guatemala-kaminaljuyu.jpg",
+    "alt": "Parque arqueológico Kaminaljuyú",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Kaminaljuyu_11.jpg",
+    "photoContext": "Foto de referencia: Parque arqueológico Kaminaljuyú."
+  },
+  {
+    "id": "ciudad-guatemala-ruta-7",
+    "destination": "ciudad-guatemala",
+    "title": "Centro Cívico: arquitectura y murales",
+    "style": "cultura",
+    "page": "Centro Cívico: arquitectura y murales",
+    "description": "La propuesta reúne tres paradas: Entorno de la Municipalidad; Murales del Centro Cívico; Plazas exteriores. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entorno de la Municipalidad",
+      "Murales del Centro Cívico",
+      "Plazas exteriores"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-ciudad-guatemala-kaminaljuyu.jpg",
+    "alt": "Parque arqueológico Kaminaljuyú",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Kaminaljuyu_11.jpg",
+    "photoContext": "Foto de referencia: Parque arqueológico Kaminaljuyú."
+  },
+  {
+    "id": "ciudad-guatemala-ruta-8",
+    "destination": "ciudad-guatemala",
+    "title": "Cerrito del Carmen: un paseo con vistas",
+    "style": "cultura",
+    "page": "Cerrito del Carmen: un paseo con vistas",
+    "description": "La propuesta reúne tres paradas: Senderos del cerro; Exterior de la iglesia; Miradores del entorno. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Senderos del cerro",
+      "Exterior de la iglesia",
+      "Miradores del entorno"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-ciudad-guatemala-kaminaljuyu.jpg",
+    "alt": "Parque arqueológico Kaminaljuyú",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Kaminaljuyu_11.jpg",
+    "photoContext": "Foto de referencia: Parque arqueológico Kaminaljuyú."
+  },
+  {
+    "id": "ciudad-guatemala-ruta-9",
+    "destination": "ciudad-guatemala",
+    "title": "Avenida Las Américas: plazas y monumentos",
+    "style": "cultura",
+    "page": "Avenida Las Américas: plazas y monumentos",
+    "description": "La propuesta reúne tres paradas: Paseo de Las Américas; Plazas conmemorativas; Monumentos del bulevar. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Paseo de Las Américas",
+      "Plazas conmemorativas",
+      "Monumentos del bulevar"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-ciudad-guatemala-kaminaljuyu.jpg",
+    "alt": "Parque arqueológico Kaminaljuyú",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Kaminaljuyu_11.jpg",
+    "photoContext": "Foto de referencia: Parque arqueológico Kaminaljuyú."
+  },
+  {
+    "id": "ciudad-guatemala-ruta-10",
+    "destination": "ciudad-guatemala",
+    "title": "Museo Popol Vuh: historias mayas",
+    "style": "cultura",
+    "page": "Museo Popol Vuh: historias mayas",
+    "description": "La propuesta reúne tres paradas: Entrada del museo; Colecciones prehispánicas; Arte colonial del museo. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entrada del museo",
+      "Colecciones prehispánicas",
+      "Arte colonial del museo"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-ciudad-guatemala-kaminaljuyu.jpg",
+    "alt": "Parque arqueológico Kaminaljuyú",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Kaminaljuyu_11.jpg",
+    "photoContext": "Foto de referencia: Parque arqueológico Kaminaljuyú."
   },
   {
     "id": "panama-metropolitano",
@@ -793,6 +1933,120 @@ window.RumboGuias = [
     "photoPage": "https://commons.wikimedia.org/wiki/File:Taboga_island.jpg"
   },
   {
+    "id": "panama-ruta-5",
+    "destination": "panama",
+    "title": "Calzada de Amador: paseo entre islas",
+    "style": "naturaleza",
+    "page": "Calzada de Amador: paseo entre islas",
+    "description": "La propuesta reúne tres paradas: Paseo de Amador; Entorno de isla Naos; Vistas de la bahía. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Paseo de Amador",
+      "Entorno de isla Naos",
+      "Vistas de la bahía"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-panama-metropolitano.jpg",
+    "alt": "Senderos del Parque Metropolitano",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Metropolitan_Natural_Park%2C_Panama_City.jpg",
+    "photoContext": "Foto de referencia: Senderos del Parque Metropolitano."
+  },
+  {
+    "id": "panama-ruta-6",
+    "destination": "panama",
+    "title": "Cinta Costera: la ciudad frente al mar",
+    "style": "naturaleza",
+    "page": "Cinta Costera: la ciudad frente al mar",
+    "description": "La propuesta reúne tres paradas: Jardines de la Cinta Costera; Paseo de la bahía; Miradores urbanos. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Jardines de la Cinta Costera",
+      "Paseo de la bahía",
+      "Miradores urbanos"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-panama-metropolitano.jpg",
+    "alt": "Senderos del Parque Metropolitano",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Metropolitan_Natural_Park%2C_Panama_City.jpg",
+    "photoContext": "Foto de referencia: Senderos del Parque Metropolitano."
+  },
+  {
+    "id": "panama-ruta-7",
+    "destination": "panama",
+    "title": "Miraflores: conocer el canal",
+    "style": "cultura",
+    "page": "Miraflores: conocer el canal",
+    "description": "La propuesta reúne tres paradas: Centro de visitantes; Exposiciones del canal; Zona de observación de las esclusas. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Centro de visitantes",
+      "Exposiciones del canal",
+      "Zona de observación de las esclusas"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-panama-casco.jpg",
+    "alt": "Casco Antiguo de Panamá",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Casco_Antiguo_(San_Felipe)_-_Pamama.jpg",
+    "photoContext": "Foto de referencia: Casco Antiguo de Panamá."
+  },
+  {
+    "id": "panama-ruta-8",
+    "destination": "panama",
+    "title": "Mercado de Mariscos: sabores del Pacífico",
+    "style": "gastronomia",
+    "page": "Mercado de Mariscos: sabores del Pacífico",
+    "description": "La propuesta reúne tres paradas: Entorno del mercado; Puestos de pescado; Cocinas y cevicherías. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entorno del mercado",
+      "Puestos de pescado",
+      "Cocinas y cevicherías"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-panama-casco.jpg",
+    "alt": "Casco Antiguo de Panamá",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Casco_Antiguo_(San_Felipe)_-_Pamama.jpg",
+    "photoContext": "Foto de referencia: Casco Antiguo de Panamá."
+  },
+  {
+    "id": "panama-ruta-9",
+    "destination": "panama",
+    "title": "Panamá Viejo: huellas de la primera ciudad",
+    "style": "cultura",
+    "page": "Panamá Viejo: huellas de la primera ciudad",
+    "description": "La propuesta reúne tres paradas: Centro de visitantes; Sendero arqueológico; Entorno de la antigua catedral. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Centro de visitantes",
+      "Sendero arqueológico",
+      "Entorno de la antigua catedral"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-panama-casco.jpg",
+    "alt": "Casco Antiguo de Panamá",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Casco_Antiguo_(San_Felipe)_-_Pamama.jpg",
+    "photoContext": "Foto de referencia: Casco Antiguo de Panamá."
+  },
+  {
+    "id": "panama-ruta-10",
+    "destination": "panama",
+    "title": "Biomuseo y jardines de la biodiversidad",
+    "style": "cultura",
+    "page": "Biomuseo y jardines de la biodiversidad",
+    "description": "La propuesta reúne tres paradas: Exterior del Biomuseo; Salas de biodiversidad; Jardines del recinto. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Exterior del Biomuseo",
+      "Salas de biodiversidad",
+      "Jardines del recinto"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-panama-casco.jpg",
+    "alt": "Casco Antiguo de Panamá",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Casco_Antiguo_(San_Felipe)_-_Pamama.jpg",
+    "photoContext": "Foto de referencia: Casco Antiguo de Panamá."
+  },
+  {
     "id": "cancun-delfines",
     "destination": "cancun",
     "title": "Playa Delfines y su mirador",
@@ -863,6 +2117,120 @@ window.RumboGuias = [
     "image": "imagenes-viajes/guia-cancun-rey.jpg",
     "alt": "Sitio arqueológico El Rey",
     "photoPage": "https://commons.wikimedia.org/wiki/File:El_Rey_archaeological_site.jpg"
+  },
+  {
+    "id": "cancun-ruta-5",
+    "destination": "cancun",
+    "title": "Museo Maya y San Miguelito",
+    "style": "cultura",
+    "page": "Museo Maya y San Miguelito",
+    "description": "La propuesta reúne tres paradas: Salas del Museo Maya; Sendero de San Miguelito; Restos arqueológicos del recinto. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Salas del Museo Maya",
+      "Sendero de San Miguelito",
+      "Restos arqueológicos del recinto"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-cancun-rey.jpg",
+    "alt": "Sitio arqueológico El Rey",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:El_Rey_archaeological_site.jpg",
+    "photoContext": "Foto de referencia: Sitio arqueológico El Rey."
+  },
+  {
+    "id": "cancun-ruta-6",
+    "destination": "cancun",
+    "title": "Parque de las Palapas: comida y vida local",
+    "style": "gastronomia",
+    "page": "Parque de las Palapas: comida y vida local",
+    "description": "La propuesta reúne tres paradas: Plaza del parque; Puestos de comida; Comercios del centro. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaza del parque",
+      "Puestos de comida",
+      "Comercios del centro"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-cancun-rey.jpg",
+    "alt": "Sitio arqueológico El Rey",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:El_Rey_archaeological_site.jpg",
+    "photoContext": "Foto de referencia: Sitio arqueológico El Rey."
+  },
+  {
+    "id": "cancun-ruta-7",
+    "destination": "cancun",
+    "title": "Mercado 28: artesanías y cocina mexicana",
+    "style": "gastronomia",
+    "page": "Mercado 28: artesanías y cocina mexicana",
+    "description": "La propuesta reúne tres paradas: Pasillos de artesanía; Comercios del mercado; Restaurantes de cocina mexicana. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Pasillos de artesanía",
+      "Comercios del mercado",
+      "Restaurantes de cocina mexicana"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-cancun-rey.jpg",
+    "alt": "Sitio arqueológico El Rey",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:El_Rey_archaeological_site.jpg",
+    "photoContext": "Foto de referencia: Sitio arqueológico El Rey."
+  },
+  {
+    "id": "cancun-ruta-8",
+    "destination": "cancun",
+    "title": "Puerto Juárez: paseo frente al Caribe",
+    "style": "playa",
+    "page": "Puerto Juárez: paseo frente al Caribe",
+    "description": "La propuesta reúne tres paradas: Entorno de Puerto Juárez; Paseo costero; Vistas de la bahía. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Entorno de Puerto Juárez",
+      "Paseo costero",
+      "Vistas de la bahía"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-cancun-delfines.jpg",
+    "alt": "Playa Delfines y su mirador",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Playa_Delfines,_Canc%C3%BAn_-_Panorama.jpg",
+    "photoContext": "Foto de referencia: Playa Delfines y su mirador."
+  },
+  {
+    "id": "cancun-ruta-9",
+    "destination": "cancun",
+    "title": "El Meco: historia entre árboles",
+    "style": "cultura",
+    "page": "El Meco: historia entre árboles",
+    "description": "La propuesta reúne tres paradas: Acceso al sitio arqueológico; Plaza principal; Entorno de las estructuras mayas. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Acceso al sitio arqueológico",
+      "Plaza principal",
+      "Entorno de las estructuras mayas"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-cancun-rey.jpg",
+    "alt": "Sitio arqueológico El Rey",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:El_Rey_archaeological_site.jpg",
+    "photoContext": "Foto de referencia: Sitio arqueológico El Rey."
+  },
+  {
+    "id": "cancun-ruta-10",
+    "destination": "cancun",
+    "title": "Playa Langosta: un día junto al mar",
+    "style": "playa",
+    "page": "Playa Langosta: un día junto al mar",
+    "description": "La propuesta reúne tres paradas: Acceso público a Playa Langosta; Caminata por la orilla; Zona de descanso de la playa. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Acceso público a Playa Langosta",
+      "Caminata por la orilla",
+      "Zona de descanso de la playa"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-cancun-delfines.jpg",
+    "alt": "Playa Delfines y su mirador",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Playa_Delfines,_Canc%C3%BAn_-_Panorama.jpg",
+    "photoContext": "Foto de referencia: Playa Delfines y su mirador."
   },
   {
     "id": "miami-south",
@@ -937,6 +2305,120 @@ window.RumboGuias = [
     "photoPage": "https://commons.wikimedia.org/wiki/File:Little_Havana_Dominos_Park.JPG"
   },
   {
+    "id": "miami-ruta-5",
+    "destination": "miami",
+    "title": "Wynwood: murales y arte urbano",
+    "style": "cultura",
+    "page": "Wynwood: murales y arte urbano",
+    "description": "La propuesta reúne tres paradas: Calles de Wynwood; Murales del barrio; Galerías abiertas al público. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calles de Wynwood",
+      "Murales del barrio",
+      "Galerías abiertas al público"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-miami-south.jpg",
+    "alt": "South Beach y Ocean Drive",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Ocean_drive_day_2009j.JPG",
+    "photoContext": "Foto de referencia: South Beach y Ocean Drive."
+  },
+  {
+    "id": "miami-ruta-6",
+    "destination": "miami",
+    "title": "Design District: arquitectura y arte",
+    "style": "cultura",
+    "page": "Design District: arquitectura y arte",
+    "description": "La propuesta reúne tres paradas: Plazas del Design District; Instalaciones de arte público; Fachadas y diseño urbano. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plazas del Design District",
+      "Instalaciones de arte público",
+      "Fachadas y diseño urbano"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-miami-south.jpg",
+    "alt": "South Beach y Ocean Drive",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Ocean_drive_day_2009j.JPG",
+    "photoContext": "Foto de referencia: South Beach y Ocean Drive."
+  },
+  {
+    "id": "miami-ruta-7",
+    "destination": "miami",
+    "title": "Coconut Grove: jardines y calles históricas",
+    "style": "naturaleza",
+    "page": "Coconut Grove: jardines y calles históricas",
+    "description": "La propuesta reúne tres paradas: Calles de Coconut Grove; Peacock Park; Entorno de la bahía. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calles de Coconut Grove",
+      "Peacock Park",
+      "Entorno de la bahía"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-miami-crandon.jpg",
+    "alt": "Crandon Park: costa y vegetación",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Crandon_Park_Modified.jpg",
+    "photoContext": "Foto de referencia: Crandon Park: costa y vegetación."
+  },
+  {
+    "id": "miami-ruta-8",
+    "destination": "miami",
+    "title": "Little Haiti: cultura y sabores",
+    "style": "gastronomia",
+    "page": "Little Haiti: cultura y sabores",
+    "description": "La propuesta reúne tres paradas: Comercios de Little Haiti; Cocinas del barrio; Entorno del complejo cultural. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Comercios de Little Haiti",
+      "Cocinas del barrio",
+      "Entorno del complejo cultural"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-miami-havana.jpg",
+    "alt": "Little Havana y Calle Ocho",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Little_Havana_Dominos_Park.JPG",
+    "photoContext": "Foto de referencia: Little Havana y Calle Ocho."
+  },
+  {
+    "id": "miami-ruta-9",
+    "destination": "miami",
+    "title": "Downtown y Bayfront Park",
+    "style": "cultura",
+    "page": "Downtown y Bayfront Park",
+    "description": "La propuesta reúne tres paradas: Calles de Downtown; Bayfront Park; Paseo de la bahía. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Calles de Downtown",
+      "Bayfront Park",
+      "Paseo de la bahía"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-miami-south.jpg",
+    "alt": "South Beach y Ocean Drive",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Ocean_drive_day_2009j.JPG",
+    "photoContext": "Foto de referencia: South Beach y Ocean Drive."
+  },
+  {
+    "id": "miami-ruta-10",
+    "destination": "miami",
+    "title": "South Pointe: paseo entre playa y puerto",
+    "style": "playa",
+    "page": "South Pointe: paseo entre playa y puerto",
+    "description": "La propuesta reúne tres paradas: Senderos de South Pointe Park; Paseo frente al canal; Entorno del muelle. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Senderos de South Pointe Park",
+      "Paseo frente al canal",
+      "Entorno del muelle"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-miami-south.jpg",
+    "alt": "South Beach y Ocean Drive",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Ocean_drive_day_2009j.JPG",
+    "photoContext": "Foto de referencia: South Beach y Ocean Drive."
+  },
+  {
     "id": "madrid-retiro",
     "destination": "madrid",
     "title": "El Retiro: jardines y estanque",
@@ -1007,5 +2489,119 @@ window.RumboGuias = [
     "image": "imagenes-viajes/guia-madrid-mercado.jpg",
     "alt": "Mercado de San Miguel",
     "photoPage": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Miguel_2025.jpg"
+  },
+  {
+    "id": "madrid-ruta-5",
+    "destination": "madrid",
+    "title": "El Madrid de los Austrias",
+    "style": "cultura",
+    "page": "El Madrid de los Austrias",
+    "description": "La propuesta reúne tres paradas: Plaza de la Villa; Exterior del Palacio Real; Plaza de Oriente. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaza de la Villa",
+      "Exterior del Palacio Real",
+      "Plaza de Oriente"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-madrid-mayor.jpg",
+    "alt": "Plaza Mayor y Madrid histórico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Madrid_Plaza_Mayor_(48733706273).jpg",
+    "photoContext": "Foto de referencia: Plaza Mayor y Madrid histórico."
+  },
+  {
+    "id": "madrid-ruta-6",
+    "destination": "madrid",
+    "title": "Barrio de las Letras: historias a pie",
+    "style": "cultura",
+    "page": "Barrio de las Letras: historias a pie",
+    "description": "La propuesta reúne tres paradas: Plaza de Santa Ana; Calle de las Huertas; Calles del Barrio de las Letras. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaza de Santa Ana",
+      "Calle de las Huertas",
+      "Calles del Barrio de las Letras"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-madrid-mayor.jpg",
+    "alt": "Plaza Mayor y Madrid histórico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Madrid_Plaza_Mayor_(48733706273).jpg",
+    "photoContext": "Foto de referencia: Plaza Mayor y Madrid histórico."
+  },
+  {
+    "id": "madrid-ruta-7",
+    "destination": "madrid",
+    "title": "La Latina: mercados y tapas",
+    "style": "gastronomia",
+    "page": "La Latina: mercados y tapas",
+    "description": "La propuesta reúne tres paradas: Plaza de la Cebada; Calles de La Latina; Tabernas del barrio. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Plaza de la Cebada",
+      "Calles de La Latina",
+      "Tabernas del barrio"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-madrid-mercado.jpg",
+    "alt": "Mercado de San Miguel",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Miguel_2025.jpg",
+    "photoContext": "Foto de referencia: Mercado de San Miguel."
+  },
+  {
+    "id": "madrid-ruta-8",
+    "destination": "madrid",
+    "title": "Gran Vía: arquitectura y vida urbana",
+    "style": "cultura",
+    "page": "Gran Vía: arquitectura y vida urbana",
+    "description": "La propuesta reúne tres paradas: Edificio Metrópolis, exterior; Plaza del Callao; Plaza de España. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Edificio Metrópolis, exterior",
+      "Plaza del Callao",
+      "Plaza de España"
+    ],
+    "hours": 2,
+    "price": 380,
+    "image": "imagenes-viajes/guia-madrid-mayor.jpg",
+    "alt": "Plaza Mayor y Madrid histórico",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Madrid_Plaza_Mayor_(48733706273).jpg",
+    "photoContext": "Foto de referencia: Plaza Mayor y Madrid histórico."
+  },
+  {
+    "id": "madrid-ruta-9",
+    "destination": "madrid",
+    "title": "Madrid Río: puentes y jardines",
+    "style": "naturaleza",
+    "page": "Madrid Río: puentes y jardines",
+    "description": "La propuesta reúne tres paradas: Puente de Segovia; Senderos de Madrid Río; Entorno del Puente de Toledo. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Puente de Segovia",
+      "Senderos de Madrid Río",
+      "Entorno del Puente de Toledo"
+    ],
+    "hours": 3,
+    "price": 550,
+    "image": "imagenes-viajes/guia-madrid-retiro.jpg",
+    "alt": "El Retiro: jardines y estanque",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:MADRID_051116_MXALX_041.jpg",
+    "photoContext": "Foto de referencia: El Retiro: jardines y estanque."
+  },
+  {
+    "id": "madrid-ruta-10",
+    "destination": "madrid",
+    "title": "Chamberí: mercados y plazas",
+    "style": "gastronomia",
+    "page": "Chamberí: mercados y plazas",
+    "description": "La propuesta reúne tres paradas: Mercado de Vallehermoso; Comercios de Chamberí; Plaza de Olavide. Revisa los detalles del paseo antes de elegir.",
+    "stops": [
+      "Mercado de Vallehermoso",
+      "Comercios de Chamberí",
+      "Plaza de Olavide"
+    ],
+    "hours": 2,
+    "price": 480,
+    "image": "imagenes-viajes/guia-madrid-mercado.jpg",
+    "alt": "Mercado de San Miguel",
+    "photoPage": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Miguel_2025.jpg",
+    "photoContext": "Foto de referencia: Mercado de San Miguel."
   }
 ];

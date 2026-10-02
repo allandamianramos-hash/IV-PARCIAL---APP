@@ -145,52 +145,17 @@
 
         // Solo se interpola el catálogo fijo, nunca mensajes del usuario.
         card.innerHTML = `
-          <div class="destination-image">
-            <img
-              src="${trip.image.startsWith('imagenes-') ? trip.image : `https://images.unsplash.com/${trip.image}?auto=format&fit=crop&w=800&q=85` }"
-              alt="${trip.alt}"
-              width="800"
-              height="900"
-              loading="lazy"
-            >
-            <span class="image-tag">${trip.country}</span>
-          </div>
-          <div class="destination-body">
-            <div class="card-title-row">
-              <h3>${trip.name}</h3>
-              <span>${trip.duration}</span>
-            </div>
-            <p>${trip.description}</p>
-            <div class="card-bottom">
-              <div class="price">
-                <small>Presupuesto / persona</small>
-                ${trip.originalPrice ? `<del class="promo-original">${money(trip.originalPrice)}</del>` : ''}<strong>${money(trip.price)} <span>HNL</span></strong>${trip.promotion ? `<span class="promo-badge">−${trip.promotion.percent}% en el vuelo</span>` : ''}
-              </div>
-              <button
-                class="circle-link"
-                type="button"
-                aria-label="Ver propuesta de ${trip.name}"
-                aria-haspopup="dialog"
-              >↗</button>
-            </div>
-          </div>
-        `;
-
-        card.querySelector("button").addEventListener("click", () => {
-          showModule(
-            trip.name,
-            `${trip.duration}. Presupuesto: ${money(trip.price)} HNL por persona. ` +
-            "Los servicios incluidos, las fechas y la disponibilidad no están definidos. " +
-            "No es una oferta contratable."
-          );
-        });
+          <a class="destination-link" href="viajes.html?pantalla=destinos&destino=${encodeURIComponent(trip.id)}">
+            <div class="destination-image"><img src="${trip.image.startsWith('imagenes-') ? trip.image : 'https://images.unsplash.com/'+trip.image+'?auto=format&fit=crop&w=800&q=85'}" alt="${trip.alt}" width="800" height="600" loading="lazy"></div>
+            <div class="destination-body"><h3>${trip.name}</h3><p>Desde ${money(trip.price)} por persona</p></div>
+          </a>`;
 
         track.appendChild(card);
       });
 
       setText(
         "#result-count",
-        `${items.length} ${items.length === 1 ? "destino" : "destinos"} para descubrir`
+        `${items.length} ${items.length === 1 ? "destino" : "destinos"} disponibles`
       );
 
       $("#empty-state").hidden = items.length > 0;

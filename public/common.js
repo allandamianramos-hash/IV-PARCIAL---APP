@@ -58,7 +58,7 @@
     order.forEach((key,i)=>{const card=cards.find(c=>c.querySelector('[data-module="'+key+'"]')||c.classList.contains(({transfers:'none',insurance:'none',experiences:'none',shop:'shop-card'})[key]||'none')||c.querySelector('a[href="'+({transfers:'servicios.html?seccion=traslados',insurance:'servicios.html?seccion=seguros',experiences:'servicios.html?seccion=guias'})[key]+'"]'));
       if(!card)return;grid.append(card);
       // En Inicio, estas tarjetas conservan el diseño con iconos.
-      const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1)+' / '+names[i]+(i>1?' · opcional':'');card.prepend(label);
+      const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1);card.prepend(label);
       const link=card.querySelector('a,button');if(link){card.tabIndex=0;card.setAttribute('role','link');card.setAttribute('aria-label','Organizar '+names[i]);card.addEventListener('click',e=>{if(!e.target.closest('a,button'))link.click();});card.addEventListener('keydown',e=>{if(e.target===card&&e.key==='Enter'){e.preventDefault();link.click();}});}
     });
   }

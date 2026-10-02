@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="preload" as="image" href="imagenes-viajes/destino-venecia.jpg" fetchpriority="high">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&amp;display=swap">
   <script src="database-client.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,10 +10,6 @@
   <meta name="description" content="Explora destinos, organiza tu presupuesto y descubre los servicios de viaje de Rumbo.">
   <title>Rumbo | Viajes y experiencias</title>
 
-  <link rel="preload" as="image" href="imagenes-viajes/destino-cancun.jpg" fetchpriority="high">
-  <link rel="preload" as="image" href="imagenes-viajes/dolomitas.jpg">
-  <link rel="preload" as="image" href="imagenes-viajes/bali.jpg">
-  <link rel="preload" as="image" href="imagenes-viajes/playa.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -26,763 +24,124 @@
   <script src="journey.js" defer></script><script src="common.js" defer></script>
   <script src="chat-ui.js" defer></script>
   <link rel="stylesheet" href="chat.css">
-  <style id="rumbo-hero-styles">
-/* Rumbo · álbum de viaje. Cambia los src de .campaign-photo para sustituir fotos. */
-.campaign { --teal:#1f4e52; --cream:#fdf6e3; --sand:#e8c98a; position:relative; isolation:isolate; overflow:hidden; margin-block:24px 30px; border:1px solid #e6decb; border-radius:24px; background:var(--cream); color:var(--teal); font-family:'Montserrat','Arial',sans-serif; font-weight:500; }
-.campaign::before { content:''; position:absolute; z-index:-1; inset:0; opacity:.13; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23574d34' opacity='.33' filter='url(%23n)' d='M0 0h160v160H0z'/%3E%3C/svg%3E"); }
-.campaign-accessible-title,.campaign [data-promo-status] { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
-.campaign-slide { position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr auto; min-height:650px; padding:38px 46px 20px; gap:0 22px; }
-.campaign-copy { align-self:center; position:relative; z-index:2; padding:20px 0 28px; }
-.campaign-kicker { margin:0 0 19px; color:#5f6b5d; font-size:10px; font-weight:600; letter-spacing:1.6px; line-height:1.6; }
-.campaign-copy h2 { max-width:510px; margin:0; font:800 clamp(36px,4.1vw,55px)/1.1 'Montserrat',Arial,sans-serif; letter-spacing:-2.1px; color:#233a36; text-wrap:initial; }
-.campaign-copy h2 span { color:#247a78; }
-.campaign-description { max-width:370px; margin:21px 0 25px; color:#52665e; font-size:14px; line-height:1.7; }
-.campaign-price { margin:0 0 23px; }
-.campaign-price-line { display:flex; align-items:baseline; flex-wrap:wrap; gap:12px; }
-.campaign-price del { color:#7c7d6d; font-size:15px; }
-.campaign-price strong { font-size:39px; font-weight:800; letter-spacing:-1.5px; line-height:1.25; }
-.campaign-price small { display:block; margin-top:5px; font-size:10px; line-height:1.6; color:#56675e; }
-.campaign-links { display:flex; align-items:center; gap:12px; }
-.campaign-links .button { min-height:55px; min-width:228px; padding:15px 24px; border:0; border-radius:11px; background:#1f4e52; color:white; font-family:inherit; font-size:13px; font-weight:800; box-shadow:0 5px 10px #1f4e5212; transition:background .18s,transform .18s; }
-.campaign-links .button:hover { background:#153e42; transform:translateY(-2px); }
-.campaign-links .button>span { margin-left:10px; font-size:22px; font-weight:500; }
-.campaign-secondary { display:inline-block; margin-top:17px; color:#396b63; font-size:11px; font-weight:600; line-height:1.7; text-decoration:underline; text-underline-offset:4px; }
-.campaign-choices { display:flex; flex-wrap:wrap; gap:18px; margin-top:20px; }
-.campaign-choices a { font-size:12px; font-weight:600; border-bottom:1px solid #729488; padding-bottom:3px; }
-.campaign-art { position:relative; align-self:center; height:500px; min-width:0; }
-.campaign-photo { --angle:3deg; position:absolute; margin:0; padding:9px 9px 0; background:#fffefa; border:1px solid #edece5; border-radius:3px; transform:rotate(var(--angle)); transform-origin:50% 70%; box-shadow:3px 12px 22px #334e4524; }
-.campaign-photo img { display:block; width:100%; height:calc(100% - 31px); object-fit:cover; border-radius:1px; }
-.campaign-photo figcaption { padding:8px 3px; font-size:9px; font-weight:500; color:#5e665b; line-height:1.5; }
-.campaign-photo.photo-1 { --angle:3deg; width:85%; height:310px; right:5px; top:14px; z-index:1; }
-.campaign-photo.photo-2 { --angle:-4deg; width:62%; height:220px; left:0; bottom:19px; z-index:2; box-shadow:-3px 9px 18px #3b51482b; }
-.campaign-offer { position:absolute; z-index:3; right:-8px; bottom:70px; width:255px; min-height:151px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px 12px 20px 27px; isolation:isolate; transform:rotate(4deg); color:#fdf6e3; }
-.campaign-offer::after { content:''; position:absolute; z-index:-1; inset:0; background:#1f4e52; clip-path:polygon(0 27px,27px 0,100% 0,100% 100%,27px 100%,0 calc(100% - 27px)); }
-.campaign-offer::before { content:''; position:absolute; z-index:-2; width:57px; height:146px; border:2px solid #b59b63; border-radius:50%; left:-19px; top:-70px; transform:rotate(-26deg); }
-.campaign-tag-hole { position:absolute; left:15px; top:calc(50% - 5px); width:10px; height:10px; border:2px solid #bdae89; border-radius:50%; background:var(--cream); }
-.campaign-offer strong { font-size:84px; font-weight:800; line-height:1; letter-spacing:-5px; }
-.campaign-offer>span:last-child { margin-top:9px; font-size:11px; letter-spacing:2px; font-weight:600; }
-.campaign-route { position:absolute; z-index:1; width:240px; height:120px; left:-95px; top:-10px; color:#8d9e8a; overflow:visible; pointer-events:none; }
-.campaign-plane { offset-path:path('M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33'); offset-distance:100%; offset-rotate:auto; color:#1f4e52; }
-.campaign-terms { grid-column:1/-1; margin:10px 0 0; padding-top:16px; border-top:1px solid #ddd8c6; color:#747a6c; font-size:9px; line-height:1.65; }
-.campaign-controls { display:flex; align-items:center; gap:13px; padding:9px 30px; border-top:1px solid #e2ddce; background:#f5eedb; }
-.campaign-controls button { min-width:40px; min-height:40px; border:1px solid #cbd1bd; border-radius:50%; background:transparent; color:#1f4e52; }
-.campaign-controls button:hover { background:#eae7d7; }
-.campaign-controls .campaign-pause { margin-right:auto; border:0; border-radius:0; padding-inline:0; font-family:inherit; font-size:10px; }
-.campaign-dots { display:flex; gap:5px; }
-.campaign-dots button { position:relative; min-width:31px; border:0; }
-.campaign-dots button::after { content:''; display:block; margin:auto; height:4px; width:7px; border-radius:3px; background:#abb7a4; transition:width .18s; }
-.campaign-dots button[aria-current='true']::after { width:26px; background:#1f4e52; }
-.campaign-count { color:#687565; font-size:10px; letter-spacing:1.5px; }
-.campaign-credits { font-size:9px; color:#627668; text-decoration:underline; text-underline-offset:3px; }
-.campaign :focus-visible { outline:3px solid #aa7530; outline-offset:4px; }
-/* Pequeñas variaciones de composición, sin cambiar el sistema visual. */
-.campaign-alpine .photo-1 { --angle:-3deg; right:26px; top:25px; height:305px; }
-.campaign-alpine .photo-2 { --angle:4deg; left:16px; bottom:8px; width:56%; height:235px; }
-.campaign-alpine .campaign-offer { transform:rotate(-4deg); right:-5px; bottom:96px; color:#1f4e52; }
-.campaign-alpine .campaign-offer::after { background:#e8c98a; }
-.campaign-alpine .campaign-route { top:-20px; left:-53px; }
-.campaign-escape .photo-1 { --angle:2deg; right:7px; top:0; width:65%; height:393px; }
-.campaign-escape .photo-2 { --angle:-5deg; left:0; bottom:9px; width:62%; height:258px; }
-.campaign-escape .campaign-art { height:480px; }
-.campaign-escape .campaign-route { top:20px; left:-84px; }
-.campaign-escape .campaign-copy h2,.campaign-explore .campaign-copy h2 { font-size:clamp(34px,3.9vw,51px); }
-.campaign-explore .photo-1 { --angle:4deg; width:72%; height:260px; top:4px; right:0; }
-.campaign-explore .photo-2 { --angle:-3deg; left:-5px; bottom:77px; width:53%; height:219px; }
-.campaign-explore .photo-3 { --angle:2deg; right:0; bottom:-4px; width:50%; height:190px; z-index:3; box-shadow:4px 8px 14px #3b514822; }
-.campaign-assist { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; }
-.campaign-assist .hero-adviser { margin: 0; padding: 10px 20px; background: #edf4ef; border-color: #d5e4da; }
-.campaign-assist .hero-adviser > span:nth-child(2) { display: block; }
-.campaign-assist .hero-adviser strong { font-size: 19px; }
-.campaign-assist .hero-adviser .rumbito-hero { width: 65px; height: 72px; flex-basis: 65px; }
-.campaign-surprise { flex-shrink: 0; padding: 14px 22px; border-radius: 99px; border: 1px solid #b6ccc1; color: #126052; background: #fff; }
-.promo-badge { display: inline-block; border-radius: 20px; padding: 5px 10px; background: #e2edcd; color: #235428; font-size: 12px; font-weight: 700; }
-.promo-original { font-size: 14px; color: #64756d; margin-right: 8px; font-weight: 400; }
-.rv-price .promo-badge, .rv-price .promo-original { display: block; width: fit-content; margin-bottom: 5px; }
-.promo-note { color: #236353; font-size: 13px; line-height: 1.6; }
-
-
-@media(max-width:1050px) {
- .campaign-slide { padding:28px 30px 20px; gap:0 15px; min-height:620px; }
- .campaign-copy h2 { font-size:43px; letter-spacing:-1.7px; }
- .campaign-art { height:470px; }
- .campaign-photo.photo-1 { height:275px; }
- .campaign-photo.photo-2 { height:200px; }
- .campaign-offer { width:220px; min-height:137px; right:-4px; bottom:64px; }
- .campaign-offer strong { font-size:72px; letter-spacing:-4px; }
- .campaign-description { font-size:13px; }
- .campaign-route { width:200px; left:-60px; }
- .campaign-escape .photo-1 { height:360px; }
- .campaign-escape .photo-2 { height:240px; }
- .campaign-explore .photo-3 { height:175px; }
-}
-@media(max-width:760px) {
- .campaign-slide { grid-template-columns:1fr; grid-template-rows:auto 340px auto; padding:30px 24px 18px; min-height:940px; gap:0; }
- .campaign-copy { align-self:start; padding:0 0 12px; }
- .campaign-kicker { font-size:9px; letter-spacing:1.2px; margin-bottom:15px; }
- .campaign-copy h2 { font-size:42px; max-width:470px; letter-spacing:-1.8px; }
- .campaign-description { margin:16px 0 19px; max-width:370px; }
- .campaign-price { margin-bottom:17px; }
- .campaign-price strong { font-size:34px; }
- .campaign-price small { font-size:9px; }
- .campaign-secondary { font-size:10px; margin-top:14px; }
- .campaign-links .button { min-height:51px; min-width:220px; }
- .campaign-art,.campaign-escape .campaign-art { width:min(440px,100%); height:315px; justify-self:center; align-self:center; margin-top:6px; }
- .campaign-photo.photo-1 { top:6px; right:4px; width:76%; height:203px; }
- .campaign-photo.photo-2 { left:1px; bottom:9px; width:57%; height:157px; }
- .campaign-photo { padding:7px 7px 0; }
- .campaign-photo img { height:calc(100% - 27px); }
- .campaign-photo figcaption { font-size:8px; padding:6px 1px; }
- .campaign-offer { width:190px; min-height:112px; right:-1px; bottom:25px; padding:13px 8px 13px 21px; }
- .campaign-offer strong { font-size:62px; letter-spacing:-4px; }
- .campaign-offer>span:last-child { font-size:9px; margin-top:7px; }
- .campaign-offer::before { width:42px; height:100px; top:-44px; left:-12px; }
- .campaign-tag-hole { left:12px; width:8px; height:8px; }
- .campaign-route { left:-7px; top:-22px; width:167px; height:84px; }
- .campaign-terms { margin-top:12px; padding-top:13px; font-size:8px; }
- .campaign-controls { padding:9px 18px; gap:7px; }
- .campaign-controls button { min-width:33px; }
- .campaign-dots { gap:0; }
- .campaign-dots button { min-width:25px; }
- .campaign-count,.campaign-credits { display:none; }
- .campaign-alpine .photo-1 { top:7px; right:13px; height:206px; }
- .campaign-alpine .photo-2 { width:53%; bottom:2px; height:164px; left:6px; }
- .campaign-alpine .campaign-offer { bottom:38px; right:-1px; }
- .campaign-alpine .campaign-route { top:-22px; left:0; }
- .campaign-escape .photo-1 { width:63%; height:271px; top:0; }
- .campaign-escape .photo-2 { width:58%; height:185px; bottom:0; }
- .campaign-escape .campaign-route { top:0; left:-4px; }
- .campaign-explore .photo-1 { width:71%; height:181px; }
- .campaign-explore .photo-2 { width:50%; height:163px; bottom:40px; }
- .campaign-explore .photo-3 { width:48%; height:141px; bottom:-2px; }
- .campaign-escape .campaign-copy h2,.campaign-explore .campaign-copy h2 { font-size:40px; }
- .campaign-assist { flex-direction:column; align-items:stretch; }
- .campaign-assist .rumbito-invite { font-size:11px; }
-}
-@media(max-width:380px) {
- .campaign-slide { padding:25px 19px 16px; }
- .campaign-copy h2,.campaign-escape .campaign-copy h2,.campaign-explore .campaign-copy h2 { font-size:36px; letter-spacing:-1.4px; }
- .campaign-offer { width:169px; min-height:104px; }
- .campaign-offer strong { font-size:56px; }
- .campaign-kicker { font-size:8px; }
-}
-@media(prefers-reduced-motion:no-preference) {
- .campaign-slide:not([hidden]) .campaign-photo { animation:rumbo-photo-enter .65s ease-out backwards; }
- .campaign-slide:not([hidden]) .photo-2 { animation-delay:.12s; }
- .campaign-slide:not([hidden]) .photo-3 { animation-delay:.22s; }
- .campaign-slide:not([hidden]) .campaign-plane { animation:rumbo-flight 1.8s ease-in-out .15s 1 backwards; }
-}
-@keyframes rumbo-photo-enter { from { opacity:0; transform:translateY(13px) rotate(calc(var(--angle) - 3deg)); } to { opacity:1; transform:translateY(0) rotate(var(--angle)); } }
-@keyframes rumbo-flight { from { offset-distance:0%; } to { offset-distance:100%; } }
-@media(prefers-reduced-motion:reduce) { .campaign *, .campaign *::after { animation:none!important; transition:none!important; } }
-/* En teléfono, la oferta visual aparece entre el titular y el precio. */
-@media(max-width:760px) {
- .campaign-slide { grid-template-rows:auto; min-height:0; }
- .campaign-copy { display:contents; }
- .campaign-kicker { order:1; }
- .campaign-copy h2,.campaign-escape .campaign-copy h2,.campaign-explore .campaign-copy h2 { order:2; font-size:34px; letter-spacing:-1.5px; }
- .campaign-art,.campaign-escape .campaign-art { order:3; height:255px; margin:30px 0 14px; }
- .campaign-photo.photo-1 { height:180px; }
- .campaign-photo.photo-2 { height:141px; }
- .campaign-description { order:4; margin:0 0 13px; font-size:12px; }
- .campaign-price { order:5; }
- .campaign-links { order:6; }
- .campaign-secondary,.campaign-choices { order:7; }
- .campaign-terms { order:8; margin-top:24px; }
- .campaign-escape .photo-1 { height:230px; }
- .campaign-escape .photo-2 { height:167px; }
- .campaign-explore .photo-1 { height:161px; }
- .campaign-explore .photo-2 { height:143px; }
- .campaign-explore .photo-3 { height:121px; }
- .campaign-controls { flex-wrap:wrap; }
- .campaign-credits { display:block; order:5; width:100%; text-align:right; }
-}
-
-/* Capas de papel independientes: quitar .campaign-scenery restaura el álbum. */
-.campaign { --pointer-x:0px; --pointer-y:0px; }
-.campaign-art { isolation:isolate; }
-.campaign-scenery { position:absolute; z-index:-1; inset:-74px -90px -32px -28px; pointer-events:none; }
-.campaign-scenery svg { display:block; }
-.paper-map { position:absolute; width:100%; height:65%; top:-15px; left:-60px; color:#1f4e52; opacity:.055; }
-.paper-sun { position:absolute; width:270px; right:4%; top:-26px; translate:calc(var(--pointer-x)*.4) calc(var(--pointer-y)*.4); }
-.sun-halo { fill:#f1ddb0; transform-origin:center; }
-.sun-disc { fill:#e8c98a; }
-.paper-cloud { position:absolute; fill:#fffdf3; width:190px; }
-.cloud-one { top:15px; left:12%; }
-.cloud-two { width:137px; top:104px; right:-35px; }
-.paper-sea { position:absolute; width:117%; height:71%; bottom:-18px; left:-2%; overflow:hidden; translate:calc(var(--pointer-x)*.3) calc(var(--pointer-y)*.3); }
-.wave-back { fill:#cce6dc; }
-.wave-mid { fill:#93ccbf; }
-.wave-front { fill:#63b1a7; }
-.paper-peaks { display:none!important; position:absolute; width:110%; height:79%; bottom:0; }
-.campaign-alpine .paper-sea { opacity:.35; height:44%; }
-.campaign-alpine .paper-peaks { display:block!important; }
-.campaign-alpine .paper-sun { top:12px; width:220px; right:6%; }
-.campaign-escape .paper-sun { top:96px; right:-18px; width:290px; }
-.campaign-escape .wave-back { fill:#eaddba; }
-.campaign-escape .wave-mid { fill:#c1d4bd; }
-.campaign-escape .wave-front { fill:#88b6a5; }
-.campaign-explore .paper-sun { top:122px; right:3%; width:320px; }
-.campaign-explore .wave-back { fill:#eee0bd; }
-.campaign-explore .wave-mid { fill:#ddc99b; }
-.campaign-explore .wave-front { fill:#bbcab4; }
-.campaign-photo { translate:var(--pointer-x) var(--pointer-y); }
-.campaign-photo.photo-2 { translate:calc(var(--pointer-x)*1.5) calc(var(--pointer-y)*1.5); }
-.campaign-offer { --tag-angle:4deg; transform-origin:15% -25%; translate:calc(var(--pointer-x)*1.8) calc(var(--pointer-y)*1.8); }
-.campaign-alpine .campaign-offer { --tag-angle:-4deg; }
-/* Desplazar una sombra fija evita recalcular desenfoques durante el movimiento. */
-.campaign-photo::before { content:''; position:absolute; inset:6px; z-index:-1; box-shadow:5px 12px 17px #24493b21; transform:translate(calc(var(--pointer-x)*-1.3),calc(var(--pointer-y)*-1.3)); }
-.campaign-price del { position:relative; text-decoration:none; color:#666c5d; }
-.campaign-price del::after { content:''; position:absolute; height:1px; background:currentColor; left:0; right:0; top:52%; transform-origin:left; }
-.campaign-terms { color:#586250; position:relative; z-index:2; background:#fdf6e3; padding-bottom:3px; }
-.campaign-flight-detail { width:fit-content; padding:4px 8px; border:1px solid #d8d4b9; border-radius:4px; color:#435e52!important; font-size:9px!important; margin-top:9px!important; }
-.campaign-links .button>span { transition:transform .2s; }
-.campaign-links .button:hover>span { transform:translateX(4px); }
-.campaign-controls { justify-content:flex-end; border:0; background:transparent; padding:0 29px 16px; gap:12px; }
-.campaign-controls .campaign-count { display:block; color:#52604b; }
-.campaign-progress { height:2px; width:56px; background:#d6d7c2; overflow:hidden; }
-.campaign-progress span { display:block; height:100%; background:#1f4e52; transform:scaleX(0); transform-origin:left; }
-.campaign > .campaign-pause { position:absolute; z-index:5; top:12px; right:15px; width:32px; height:32px; border:1px solid #d8d4bd; border-radius:50%; background:#fdf6e3; color:#1f4e52; font-size:14px; cursor:pointer; }
-.campaign-plane { offset-path:none; transform-origin:0 0; }
-.campaign-links .button.boarding-preview { display:flex; flex-direction:column; align-items:stretch; gap:6px; min-width:255px; padding:12px 20px; border-radius:0; clip-path:polygon(0 8px,8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px)); animation:none!important; }
-.campaign-links .button.boarding-preview>span { margin:0; transform:none; }
-.campaign-links .boarding-label { font-size:8px!important; letter-spacing:1px; }
-.campaign-links .boarding-route { display:flex; justify-content:space-between; gap:15px; font-size:14px!important; }
-@media(hover:hover) and (pointer:fine) and (min-width:761px) {
- .campaign-photo { cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='-16 -16 32 32'%3E%3Cpath d='M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z' fill='%231f4e52' stroke='%23fdf6e3' stroke-width='1.5'/%3E%3C/svg%3E") 16 16, default; }
-}
-@media(prefers-reduced-motion:no-preference) {
- .campaign-slide:not([hidden]) { animation:paper-arrive .65s ease-out both; }
- .campaign-slide:not([hidden]) h2 { animation:headline-arrive .7s ease-out both; }
- .campaign-slide:not([hidden]) .campaign-photo { animation:paper-float 7.7s ease-in-out infinite alternate; }
- .campaign-slide:not([hidden]) .photo-2 { animation-duration:9.1s; animation-delay:-3.2s; }
- .campaign-slide:not([hidden]) .photo-3 { animation-duration:10.3s; animation-delay:-5.6s; }
- .wave-back { animation:wave-drift 23.7s ease-in-out infinite alternate; }
- .wave-mid { animation:wave-drift 31.3s ease-in-out -14s infinite alternate-reverse; }
- .wave-front { animation:wave-drift 27.1s ease-in-out -9s infinite alternate; }
- .cloud-one { animation:cloud-drift 53s ease-in-out -13s infinite alternate; }
- .cloud-two { animation:cloud-drift 79s ease-in-out -29s infinite alternate-reverse; }
- .sun-halo { animation:sun-breathe 11.7s ease-in-out infinite alternate; }
- .campaign-offer { animation:tag-settle 2.3s ease-out both; }
- .campaign-offer:hover { animation:tag-hover 1.7s ease-out both; }
- .campaign-slide:not([hidden]) .campaign-plane { animation:none; }
- .flight-reveal { animation:trail-draw 9.3s linear infinite; }
- .campaign-slide:not([hidden]) .campaign-price del::after { animation:price-strike 1.05s ease-out both; }
- .campaign-links .button:not(.boarding-preview) { animation:cta-breathe 6.7s ease-in-out 2s infinite; }
- .campaign-links .button:hover { animation:none; }
- .campaign[data-playing='false'] *, .campaign[data-playing='false'] *::after { animation-play-state:paused!important; }
-}
-@keyframes paper-arrive { from { opacity:.2; } to { opacity:1; } }
-@keyframes headline-arrive { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-@keyframes paper-float { from { transform:translateY(-2px) rotate(var(--angle)); } to { transform:translateY(4px) rotate(calc(var(--angle) + .35deg)); } }
-@keyframes wave-drift { from { transform:translateX(-13px); } to { transform:translateX(16px); } }
-@keyframes cloud-drift { from { transform:translateX(-21px); } to { transform:translateX(28px); } }
-@keyframes sun-breathe { from { transform:scale(.985); opacity:.72; } to { transform:scale(1.025); opacity:.92; } }
-@keyframes tag-settle { 0% { transform:rotate(calc(var(--tag-angle) - 9deg)); } 26% { transform:rotate(calc(var(--tag-angle) + 6deg)); } 51% { transform:rotate(calc(var(--tag-angle) - 3deg)); } 75% { transform:rotate(calc(var(--tag-angle) + 1deg)); } 100% { transform:rotate(var(--tag-angle)); } }
-@keyframes tag-hover { 0%,100% { transform:rotate(var(--tag-angle)); } 25% { transform:rotate(calc(var(--tag-angle) + 5deg)); } 62% { transform:rotate(calc(var(--tag-angle) - 2deg)); } }
-@keyframes trail-draw { 0% { stroke-dashoffset:1; opacity:0; } 4% { opacity:1; } 95% { opacity:1; } 100% { stroke-dashoffset:0; opacity:0; } }
-@keyframes price-strike { from { transform:scaleX(0); } to { transform:scaleX(1); } }
-@keyframes cta-breathe { 0%,80%,100% { transform:scale(1); } 89% { transform:scale(1.018); } }
-@media(max-width:760px) {
- .campaign-scenery { inset:-29px -28px -8px -17px; }
- .paper-sun { width:159px; top:-28px; right:-5px; }
- .paper-map { left:-12px; }
- .paper-sea { height:76%; bottom:0; }
- .paper-cloud { width:105px; }
- .cloud-one { top:0; left:3%; }
- .cloud-two { width:83px; top:65px; right:-8px; }
- .campaign-alpine .paper-sun { width:145px; top:-27px; }
- .campaign-escape .paper-sun { width:170px; top:18px; }
- .campaign-explore .paper-sun { width:175px; top:14px; }
- .campaign-controls { flex-wrap:nowrap; padding:0 20px 16px; }
- .campaign-kicker { padding-right:16px; }
- .campaign-links .button.boarding-preview { min-width:245px; }
-}
-@media(prefers-reduced-motion:reduce) {
- .campaign *, .campaign *::before, .campaign *::after { animation:none!important; transition:none!important; }
- .campaign-photo,.campaign-offer,.paper-sun,.paper-sea { translate:none!important; }
- .flight-reveal { stroke-dashoffset:0; opacity:1; }
-}
-.paper-map { opacity:.028; }
-.campaign[data-playing='false'] .campaign-slide, .campaign[data-playing='false'] h2, .campaign[data-playing='false'] .campaign-price del::after { animation:none!important; }
-@media(max-width:760px) { .campaign-photo,.campaign-offer,.paper-sun,.paper-sea { translate:none; } }
-/* Los cuatro ambientes comparten materiales; cada uno conserva su paisaje. */
-.paper-night,.paper-landscapes { display:none!important; }
-.campaign-alpine .paper-peaks { height:92%; bottom:-6px; }
-.campaign-alpine .paper-sun { top:93px; right:26%; width:205px; }
-.campaign-alpine .paper-cloud { opacity:.7; }
-.campaign-escape .paper-night { display:block!important; position:absolute; inset:-25px 0 auto; width:100%; height:65%; fill:#bd9f60; }
-.campaign-escape .paper-moon { fill:#dfc88f; }
-.campaign-escape .wave-back { fill:#eddbb4; }
-.campaign-escape .wave-mid { fill:#dfc5aa; }
-.campaign-escape .wave-front { fill:#b6bc9e; }
-.campaign-escape .paper-sun { top:175px; right:-10px; }
-.campaign-escape .paper-cloud { opacity:.45; }
-.campaign-explore .paper-sea,.campaign-explore .paper-sun,.campaign-explore .paper-cloud { display:none; }
-.campaign-explore .paper-map { opacity:.09; top:-22px; height:85%; }
-.campaign-explore .paper-landscapes { display:block!important; position:absolute; left:-12%; bottom:32px; width:110%; height:70%; }
-.campaign-explore .campaign-scenery { right:-35px; }
-.landscape-beach,.landscape-mountain,.landscape-city { transition:transform .45s ease,opacity .45s; opacity:.78; }
-.campaign-explore[data-landscape='playa'] .landscape-beach,.campaign-explore[data-landscape='naturaleza'] .landscape-mountain,.campaign-explore[data-landscape='cultura'] .landscape-city { transform:translateY(-7px); opacity:1; }
-.campaign-explore[data-landscape='playa'] .photo-1,.campaign-explore[data-landscape='naturaleza'] .photo-2,.campaign-explore[data-landscape='cultura'] .photo-3 { --angle:0deg; }
-.campaign-explore .campaign-photo { transition:rotate .4s; }
-.campaign-explore[data-landscape='playa'] .photo-1,.campaign-explore[data-landscape='naturaleza'] .photo-2,.campaign-explore[data-landscape='cultura'] .photo-3 { rotate:-1deg; }
-.campaign-controls { justify-content:initial; padding:9px 30px; border-top:1px solid #e2ddce; background:#f5eedb; }
-.campaign-controls .campaign-pause { min-width:85px; text-align:left; }
-.campaign-controls .campaign-credits { display:block; order:initial; width:auto; }
-.campaign-dots button { width:31px; position:relative; }
-.campaign-dots button::after { position:absolute; width:25px!important; height:3px; top:19px; left:3px; background:#d1d6c3!important; }
-.campaign-dots button span { position:absolute; z-index:1; width:25px; height:3px; left:3px; top:19px; background:#1f4e52; transform:scaleX(0); transform-origin:left; }
-.campaign-dots button[aria-current='true']::after { background:#96aa96!important; }
-.campaign-slide.is-leaving { position:absolute; top:0; left:0; width:100%; pointer-events:none; z-index:3; animation:landscape-leave .48s ease-in both!important; }
-@media(prefers-reduced-motion:no-preference) {
- .campaign-slide:not([hidden]):not(.is-leaving) .campaign-scenery { animation:landscape-enter .7s ease-out both; }
- .campaign-slide:not([hidden]):not(.is-leaving) .campaign-photo { animation:rumbo-photo-enter .7s ease-out both,paper-float 7.7s ease-in-out .7s infinite alternate; }
- .campaign-slide:not([hidden]):not(.is-leaving) .photo-2 { animation:rumbo-photo-enter .85s ease-out both,paper-float 9.1s ease-in-out .85s infinite alternate-reverse; }
- .campaign-slide:not([hidden]):not(.is-leaving) .photo-3 { animation:rumbo-photo-enter .95s ease-out both,paper-float 10.3s ease-in-out .95s infinite alternate; }
- .mountain-back { animation:wave-drift 47.9s ease-in-out infinite alternate; }
- .mountain-middle { animation:wave-drift 61.3s ease-in-out -19s infinite alternate-reverse; }
- .mountain-mist { animation:cloud-drift 71s ease-in-out -23s infinite alternate; }
- .mountain-front { animation:wave-drift 39.7s ease-in-out -11s infinite alternate; }
- .paper-star { animation:star-breathe 7.1s ease-in-out infinite alternate; }
- .star-two { animation-duration:9.3s; animation-delay:-3s; }
- .star-three { animation-duration:11.7s; animation-delay:-5s; }
- .star-four { animation-duration:13.1s; animation-delay:-7s; }
- .star-five { animation-duration:8.9s; animation-delay:-2s; }
-}
-@keyframes landscape-enter { from { opacity:.3; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
-@keyframes landscape-leave { from { opacity:1; transform:translateY(0); } to { opacity:0; transform:translateY(12px); } }
-@keyframes star-breathe { from { opacity:.35; } to { opacity:.75; } }
-@media(max-width:760px) {
- .campaign-controls { padding:7px 12px; gap:5px; flex-wrap:wrap; }
- .campaign-controls .campaign-pause { min-width:73px; font-size:9px; }
- .campaign-controls .campaign-credits { font-size:8px; }
- .campaign-controls .campaign-count { font-size:9px; letter-spacing:0; }
- .campaign-dots button { min-width:21px; width:21px; }
- .campaign-dots button::after,.campaign-dots button span { width:17px!important; left:2px; }
- .campaign-controls [data-promo-prev],.campaign-controls [data-promo-next] { min-width:29px; min-height:33px; }
- .campaign-slide { padding:24px 20px 16px; }
- .campaign-kicker { font-size:8px; margin-bottom:10px; }
- .campaign-copy h2,.campaign-escape .campaign-copy h2,.campaign-explore .campaign-copy h2 { font-size:30px; }
- .campaign-art,.campaign-escape .campaign-art { height:177px; margin:17px 0 13px; }
- .campaign-photo.photo-1 { width:71%; height:143px; right:4px; top:0; }
- .campaign-photo.photo-2 { width:53%; height:114px; bottom:0; }
- .campaign-explore .photo-1 { width:66%; height:130px; }
- .campaign-explore .photo-2 { width:48%; height:106px; bottom:13px; }
- .campaign-explore .photo-3 { width:45%; height:97px; bottom:-3px; }
- .campaign-offer,.campaign-alpine .campaign-offer { width:151px; min-height:89px; bottom:6px; padding:11px 8px 11px 20px; }
- .campaign-offer strong { font-size:47px; letter-spacing:-3px; }
- .campaign-offer>span:last-child { font-size:8px; margin-top:4px; }
- .campaign-offer::before { height:73px; top:-36px; }
- .campaign-photo figcaption { font-size:7px; }
- .campaign-description { margin-bottom:9px; font-size:11px; }
- .campaign-price { margin-bottom:12px; }
- .campaign-price strong { font-size:30px; }
- .campaign-flight-detail { font-size:8px!important; margin-top:5px!important; padding:2px 5px; }
- .campaign-links .button { min-height:47px; padding:11px 19px; }
- .campaign-secondary { margin-top:10px; }
- .campaign-terms { margin-top:17px; }
- .paper-sun { width:135px; }
- .cloud-two,.wave-back,.mountain-middle,.star-three,.star-five { display:none; }
- .paper-map { opacity:.02; }
- .campaign-alpine .paper-sun { top:17px; right:24%; width:125px; }
- .campaign-escape .paper-sun { width:140px; top:53px; }
- .campaign-explore .paper-landscapes { bottom:10px; }
- .campaign-explore .paper-map { opacity:.07; }
- .campaign-explore .campaign-scenery { right:-17px; }
-}
-@media(max-width:380px) and (max-height:760px) {
- .campaign-art,.campaign-escape .campaign-art { height:143px; margin-block:13px 8px; }
- .campaign-photo.photo-1 { height:120px; }
- .campaign-photo.photo-2 { height:96px; }
- .campaign-copy h2,.campaign-escape .campaign-copy h2,.campaign-explore .campaign-copy h2 { font-size:27px; }
-}
-.campaign[data-playing='false'] .campaign-photo,.campaign[data-playing='false'] .campaign-scenery { animation:none!important; }
-@media(max-width:760px) {
- .campaign-scenery { top:0; clip-path:inset(0 -35px -8px -35px); }
-}
-
-.campaign[data-playing='false'] .campaign-offer { animation:none!important; transform:rotate(var(--tag-angle)); }
-.campaign-alpine .paper-sun { right:auto; left:-10px; top:141px; width:180px; }
-@media(max-width:760px) {
- .campaign-alpine .paper-sun { left:0; top:27px; width:118px; }
- .rumbo-hero-visible .chat-launcher { width:54px; min-height:58px; padding:0; gap:0; right:10px; bottom:12px; border-radius:50%; }
- .rumbo-hero-visible .chat-launcher::after { display:none; }
- .rumbo-hero-visible .chat-launcher>span:last-child { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
- .campaign-controls { padding-right:52px; }
-}
-  </style>
+  
   <script id="rumbo-hero-script">
-/* Configuración de las cuatro campañas: textos, fotos, precios y ambientes. */
 const RUMBO_HERO_CONFIG = {
-  "slideMs": 5000,
-  "previewMs": 1400,
   "slides": [
     {
-      "id": "cancun",
-      "className": "campaign-coast",
-      "environment": "sea",
-      "title": "Escapadas seleccionadas",
-      "kicker": "VUELOS A CANCÚN",
-      "headline": "Vuela a <span>Cancún</span><br>por menos.",
-      "description": "Compara fechas, horarios y equipaje para tu vuelo a Cancún.",
-      "price": {
-        "original": 7200,
-        "current": 5400,
-        "detail": null,
-        "route": "TGU → CUN"
-      },
-      "expires": null,
-      "cta": {
-        "text": "Quiero ir a Cancún",
-        "href": "viajes.html?pantalla=detalle-destino&destino=cancun"
-      },
-      "secondary": {
-        "text": "¿Prefieres ciudad? Madrid también tiene −25 %",
-        "href": "viajes.html?pantalla=detalle-destino&destino=madrid"
-      },
-      "choices": [],
-      "photos": [
-        {
-          "src": "imagenes-viajes/destino-cancun.jpg",
-          "alt": "Vista aérea de la costa de Cancún",
-          "caption": "Cancún, México"
-        },
-        {
-          "src": "imagenes-viajes/hotel-bali-terraza.jpg",
-          "alt": "Piscina junto al mar en Cancún",
-          "caption": "Fotografía de referencia del hospedaje"
-        }
-      ],
-      "tag": {
-        "text": "−25%",
-        "label": "EN VUELOS"
-      },
-      "terms": "25 % en vuelos de ida a Cancún y Madrid, económica y ejecutiva. Hotel y servicios aparte. Tarifas de demostración."
-    },
-    {
       "id": "venecia",
-      "className": "campaign-alpine",
-      "environment": "mountains",
-      "title": "Vuelos a Europa",
-      "kicker": "VUELOS A VENECIA",
-      "headline": "Descubre <span>Venecia.</span><br>Vuela con −20 %.",
-      "description": "Canales, plazas y paseos por la ciudad. Elige tus fechas y compara vuelos.",
+      "title": "Venecia",
+      "headline": "venecia,<br>sin prisa.",
+      "description": "Canales, plazas y tiempo para caminar a tu ritmo.",
       "price": {
         "original": 22500,
-        "current": 18000,
-        "detail": "Llegada a Venecia · económica",
-        "route": "TGU → VCE"
+        "current": 18000
       },
-      "expires": null,
-      "cta": {
-        "text": "Ver vuelos a Venecia",
-        "href": "viajes.html?pantalla=vuelos&destino=venecia"
-      },
-      "secondary": {
-        "text": "Ver todos los destinos",
-        "href": "viajes.html?pantalla=destinos"
-      },
-      "choices": [],
+      "discount": 20,
       "photos": [
         {
           "src": "imagenes-viajes/destino-venecia.jpg",
-          "alt": "Vista aérea de Venecia y sus canales",
-          "caption": "Venecia, Italia"
-        },
-        {
-          "src": "imagenes-viajes/hotel-valle.jpg",
-          "alt": "Habitación de inspiración para una estancia de montaña",
-          "caption": "Hospedajes para tu estancia"
+          "alt": "Vista aérea de Venecia y su laguna"
         }
       ],
-      "tag": {
-        "text": "−20%",
-        "label": "EN VUELOS"
-      },
-      "terms": "20 % en vuelos de ida a Venecia. Ambas clases y orígenes del catálogo. Hotel y servicios aparte. Tarifas de demostración."
-    },
-    {
-      "id": "viaje-en-grupo",
-      "className": "campaign-escape",
-      "environment": "sunset",
-      "title": "Descuento para grupos",
-      "kicker": "DESCUENTO PARA GRUPOS",
-      "headline": "Tres o más viajeros.<br><span>5 % adicional.</span>",
-      "description": "El descuento se aplica automáticamente al elegir de 3 a 12 pasajeros.",
-      "price": null,
       "expires": null,
       "cta": {
-        "text": "Buscar para 3 personas",
-        "href": "viajes.html?pantalla=vuelos&destino=roatan&viajeros=3"
-      },
-      "secondary": {
-        "text": "París y Barcelona: 10 % en vuelos",
-        "href": "viajes.html?pantalla=detalle-destino&destino=paris"
-      },
-      "choices": [],
-      "photos": [
-        {
-          "src": "imagenes-viajes/bali.jpg",
-          "alt": "Templo junto al agua en Bali",
-          "caption": "Bali, Indonesia"
-        },
-        {
-          "src": "imagenes-viajes/destino-osaka.jpg",
-          "alt": "Vista de Osaka",
-          "caption": "Osaka, Japón"
-        }
-      ],
-      "tag": {
-        "text": "−5%",
-        "label": "ADICIONAL EN VUELOS"
-      },
-      "terms": "5 % sobre el precio del vuelo ya rebajado, para 3 a 12 pasajeros. Todas las rutas, ambas clases. No aplica a hoteles ni servicios. Tarifas de demostración."
+        "text": "Ver vuelos",
+        "href": "viajes.html?pantalla=vuelos&destino=venecia"
+      }
     },
     {
-      "id": "estilos",
-      "className": "campaign-explore",
-      "environment": "map",
-      "title": "¿A dónde viajarías?",
-      "kicker": "BUSCAR POR TIPO DE DESTINO",
-      "headline": "¿Playa, montaña<br>o <span>ciudad?</span>",
-      "description": "Filtra el catálogo por playa, naturaleza o ciudad y compara las opciones disponibles.",
-      "price": null,
-      "expires": null,
-      "cta": {
-        "text": "Explorar destinos",
-        "href": "viajes.html?pantalla=destinos"
+      "id": "cancun",
+      "title": "Cancún",
+      "headline": "cancún,<br>frente al mar.",
+      "description": "Unos días de playa para salir de la rutina.",
+      "price": {
+        "original": 7200,
+        "current": 5400
       },
-      "secondary": null,
-      "choices": [
-        {
-          "text": "Playa",
-          "type": "playa"
-        },
-        {
-          "text": "Montaña",
-          "type": "naturaleza"
-        },
-        {
-          "text": "Ciudad",
-          "type": "cultura"
-        }
-      ],
+      "discount": 25,
       "photos": [
         {
-          "src": "imagenes-viajes/playa.jpg",
-          "alt": "Playa tropical como inspiración de viaje",
-          "caption": "Un poco de mar"
-        },
-        {
-          "src": "imagenes-viajes/dolomitas.jpg",
-          "alt": "Paisaje de montaña como inspiración",
-          "caption": "Aire libre"
-        },
-        {
-          "src": "imagenes-viajes/destino-madrid.jpg",
-          "alt": "Vista de Madrid",
-          "caption": "Calles por descubrir"
+          "src": "imagenes-viajes/destino-cancun.jpg",
+          "alt": "Costa de Cancún junto al mar Caribe"
         }
       ],
-      "tag": null,
-      "terms": "Explora los destinos del catálogo. Compara alternativas según tu presupuesto y organiza un viaje a tu medida."
+      "expires": null,
+      "cta": {
+        "text": "Ver vuelos",
+        "href": "viajes.html?pantalla=vuelos&destino=cancun"
+      }
+    },
+    {
+      "id": "madrid",
+      "title": "Madrid",
+      "headline": "madrid,<br>a pie.",
+      "description": "Parques, mercados y una mesa para comer sin apuro.",
+      "price": {
+        "original": 19500,
+        "current": 14625
+      },
+      "discount": 25,
+      "photos": [
+        {
+          "src": "imagenes-viajes/guia-madrid-retiro.jpg",
+          "alt": "Árboles y senderos del parque de El Retiro en Madrid"
+        }
+      ],
+      "expires": null,
+      "cta": {
+        "text": "Ver vuelos",
+        "href": "viajes.html?pantalla=vuelos&destino=madrid"
+      }
+    },
+    {
+      "id": "paris",
+      "title": "París",
+      "headline": "parís,<br>junto al sena.",
+      "description": "Caminá por la orilla y elegí dónde pasar la tarde.",
+      "price": {
+        "original": 24000,
+        "current": 21600
+      },
+      "discount": 10,
+      "photos": [
+        {
+          "src": "imagenes-viajes/destino-paris.jpg",
+          "alt": "El río Sena y la torre Eiffel en París"
+        }
+      ],
+      "expires": null,
+      "cta": {
+        "text": "Ver vuelos",
+        "href": "viajes.html?pantalla=vuelos&destino=paris"
+      }
     }
   ]
 };
-document.addEventListener('DOMContentLoaded', () => {
-  'use strict';
-  const root = document.querySelector('[data-promo-carousel]');
-  if (!root) return;
-
-  const esc = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-  const routeMarkup = '<svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>';
-  root.querySelectorAll('[data-promo-slide]').forEach(slide => slide.remove());
-  RUMBO_HERO_CONFIG.slides.forEach((s,i) => {
-    const article=document.createElement('article');
-    article.className='campaign-slide '+s.className;
-    article.dataset.promoSlide=''; article.dataset.title=s.title; article.dataset.environment=s.environment;
-    article.setAttribute('aria-roledescription','diapositiva'); article.setAttribute('aria-label',`${i+1} de 4: ${s.title}`); article.hidden=i!==0;
-    article.innerHTML=`<div class="campaign-copy"><p class="campaign-kicker">${esc(s.kicker)}</p><h2>${s.headline}</h2><p class="campaign-description">${esc(s.description)}</p>${s.price?`<p class="campaign-price" data-promo-price="${esc(s.id)}"></p>`:''}<div class="campaign-links"><a class="button" href="${esc(s.cta.href)}">${esc(s.cta.text)} <span aria-hidden="true">↗</span></a></div>${s.secondary?`<a class="campaign-secondary" href="${esc(s.secondary.href)}">${esc(s.secondary.text)} <span aria-hidden="true">→</span></a>`:''}${s.choices.length?`<div class="campaign-choices" aria-label="Explorar por estilo">${s.choices.map(c=>`<a data-landscape="${c.type}" href="viajes.html?pantalla=destinos&amp;tipo=${c.type}">${esc(c.text)} ↗</a>`).join('')}</div>`:''}</div><div class="campaign-art" aria-label="Inspiración para tu viaje">${s.photos.map((p,j)=>`<figure class="campaign-photo photo-${j+1}"><img src="${esc(p.src)}" alt="${esc(p.alt)}" width="960" height="640" loading="${j===0?'eager':'lazy'}" ${i===0&&j===0?'fetchpriority="high"':''}><figcaption>${esc(p.caption)}</figcaption></figure>`).join('')}${s.tag?`<div class="campaign-offer"><span class="campaign-tag-hole" aria-hidden="true"></span><strong>${esc(s.tag.text)}</strong><span>${esc(s.tag.label)}</span></div>`:''}${routeMarkup}</div><p class="campaign-terms">${esc(s.terms)}</p>`;
-    root.insertBefore(article,root.querySelector('.campaign-controls'));
-  });
-
-  const slides = [...root.querySelectorAll('[data-promo-slide]')];
-  root.querySelectorAll('[data-promo-dot]').forEach((dot,i)=>dot.setAttribute('aria-label',`Ver promoción ${i+1}: ${RUMBO_HERO_CONFIG.slides[i].title}`));
-  const pause = root.querySelector('[data-promo-pause]');
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const pointer = matchMedia('(hover: hover) and (pointer: fine) and (min-width: 761px)');
-  const money = n => Number.isFinite(n) ? 'L ' + n.toLocaleString('es-HN', { maximumFractionDigits: 2 }) : 'Consultar tarifa';
-  const priceData = new Map(), planes = [], counted = new Set();
-  let current = 0, elapsed = 0, paused = motion.matches, focused = false, visible = true;
-  let frame = 0, last = 0, preview = false, previewTimer, resetPreview, exitTimer;
-  const dots = [...root.querySelectorAll('[data-promo-dot]')];
-  let progress = dots[0].querySelector('span');
-  const svgNS = 'http://www.w3.org/2000/svg';
-  const paper = `<div class="campaign-scenery" aria-hidden="true">
-    <svg class="paper-map" viewBox="0 0 650 390" fill="none"><g fill="currentColor"><path d="M55 68 100 40 133 53 171 42 201 65 180 92 194 105 172 143 145 158 136 190 157 208 173 209 193 231 206 244 200 259 182 244 165 236 145 218 122 190 110 155 87 140 75 105Z"/><path d="M201 252 243 253 271 281 259 315 237 331 217 368 203 344 211 315 194 286Z"/><path d="M316 76 338 55 362 66 377 51 407 58 430 41 467 54 493 45 540 67 576 95 547 119 515 106 495 136 466 134 452 163 428 151 415 126 393 145 369 124 355 145 329 127Z"/><path d="M345 151 379 153 405 190 391 239 370 258 354 226 340 212 326 177Z"/><path d="M507 274 543 261 572 288 559 310 522 313Z"/></g><g stroke="currentColor" stroke-width="2" stroke-dasharray="3 7"><path d="M177 223 Q145 201 163 180"/><path d="M177 223 Q244 66 344 126"/></g><g fill="currentColor"><circle cx="177" cy="223" r="4"/><circle cx="163" cy="180" r="3"/><circle cx="344" cy="126" r="3"/></g></svg>
-    <div class="paper-sun"><svg viewBox="0 0 300 300"><path class="sun-halo" d="M148 10C224 7 295 62 289 151S224 294 144 288 4 228 11 145 74 9 148 10Z"/><path class="sun-disc" d="M149 46C207 39 257 89 252 150S211 259 145 250 44 215 47 146 90 48 149 46Z"/></svg></div>
-    <svg class="paper-cloud cloud-one" viewBox="0 0 220 75"><path d="M8 62C-2 44 18 27 43 34 40 11 63 0 83 13 106-7 139 9 143 30 163 16 190 27 189 44 211 40 223 56 210 64 159 72 56 65 8 62Z"/></svg>
-    <svg class="paper-cloud cloud-two" viewBox="0 0 190 70"><path d="M7 57C-1 39 19 25 35 32 43 4 81 2 94 24 119 14 146 19 151 39 178 29 195 47 183 59 133 67 46 61 7 57Z"/></svg>
-    <svg class="paper-sea" viewBox="0 0 700 390" preserveAspectRatio="none"><g class="wave wave-back"><path d="M-60 132C48 87 101 168 186 142S310 49 416 102 553 168 760 87V440H-60Z"/></g><g class="wave wave-mid"><path d="M-60 233C28 139 115 195 207 192S347 126 451 174 608 259 760 173V440H-60Z"/></g><g class="wave wave-front"><path d="M-60 307C72 228 112 280 236 267S389 202 497 256 646 287 760 241V440H-60Z"/></g></svg>
-    <svg class="paper-peaks" viewBox="0 0 700 400" preserveAspectRatio="none"><g class="mountain-back"><path fill="#416b68" d="M-30 400 31 301 71 324 148 153 169 174 235 67 284 162 309 135 382 261 451 154 486 184 552 91 578 160 730 328V420Z"/></g><g class="mountain-middle"><path fill="#9cb9a6" d="M-30 400 58 321 116 336 212 201 243 238 314 157 348 229 391 211 471 330 535 259 586 293 730 344V420Z"/></g><g class="mountain-mist"><path fill="#f8f1df" d="M-25 299C72 273 124 322 213 297S343 278 429 311 589 267 730 292L730 322C601 300 537 343 416 329S267 330 186 323 38 306-25 328Z"/></g><g class="mountain-front"><path fill="#e5d4ad" d="M-30 400 51 369 118 380 190 314 222 333 281 283 312 325 342 310 443 378 512 328 553 347 615 298 730 377V430Z"/></g></svg>
-    <svg class="paper-night" viewBox="0 0 650 390"><path class="paper-moon" d="M80 30C36 35 34 96 78 102 51 75 53 53 80 30Z"/><g class="paper-star star-one"><path d="m167 60 2 6 6 2-6 2-2 7-2-7-6-2 6-2Z"/></g><g class="paper-star star-two"><path d="m248 24 2 5 5 2-5 2-2 6-2-6-5-2 5-2Z"/></g><g class="paper-star star-three"><path d="m342 83 2 4 4 2-4 2-2 5-2-5-4-2 4-2Z"/></g><g class="paper-star star-four"><path d="m426 34 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/></g><g class="paper-star star-five"><path d="m565 86 2 5 5 2-5 2-2 6-2-6-5-2 5-2Z"/></g></svg>
-    <svg class="paper-landscapes" viewBox="0 0 700 320" preserveAspectRatio="none"><g class="landscape-beach"><path fill="#a9cec2" d="M0 280C50 228 80 282 132 241S217 246 294 229L313 305C237 287 193 323 121 309S44 322 0 310Z"/><path fill="#71aaa2" d="M0 298C57 258 92 304 164 276S231 288 304 265L307 306C205 320 109 309 0 319Z"/></g><g class="landscape-mountain"><path fill="#9bb4a1" d="m166 302 47-70 23 12 55-103 22 46 21-17 75 136Z"/><path fill="#dfd1ad" d="m213 310 67-89 31 36 29-46 81 95Z"/></g><g class="landscape-city" fill="#89a69b"><path d="m370 310 0-119 29-2 0-14 26 1 0 31 26-2 0-68 32-2 0 38 29-1 0 63 27-3 0 77Z"/><path fill="#cfcaaf" d="m391 310 0-50 35-2 0 12 26-1 0-47 28-2 0 29 30-1 0 62Z"/></g></svg>
-  </div>`;
-  slides.forEach((slide, i) => {
-    slide.querySelector('.campaign-art').insertAdjacentHTML('afterbegin', paper);
-    // Agrupa visualmente el descuento con el precio, sin cambiar la promoción.
-    const offer = slide.querySelector('.campaign-offer');
-    if (offer) slide.querySelector('.campaign-description').insertAdjacentElement('afterend', offer);
-    const sea = slide.querySelector('.paper-sea');
-    sea.insertAdjacentHTML('afterbegin', `<defs><clipPath id="paper-shore-${i}"><path d="M0 390C21 355 13 294 59 256S74 182 143 134 220 139 254 65L700 0V350C610 330 560 378 456 359S319 331 244 364 100 374 0 390Z"/></clipPath></defs>`);
-    sea.querySelectorAll('.wave').forEach(w => w.setAttribute('clip-path', `url(#paper-shore-${i})`));
-    if (slide.dataset.environment === 'mountains') sea.remove();
-    if (slide.dataset.environment === 'sunset' || slide.dataset.environment === 'map') {
-      const routes = slide.querySelector('.paper-map g[stroke]');
-      routes.insertAdjacentHTML('beforeend', '<path d="M177 223Q278 4 495 136"/><path d="M177 223Q298 63 522 230"/>');
-    }
-    const route = slide.querySelector('.campaign-route');
-    const path = route.querySelector('path');
-    const mask = document.createElementNS(svgNS, 'mask');
-    mask.id = `hero-trail-${i}`;
-    const draw = path.cloneNode();
-    draw.setAttribute('stroke', 'white'); draw.setAttribute('stroke-width', '5');
-    draw.setAttribute('pathLength', '1'); draw.setAttribute('stroke-dasharray', '1');
-    draw.classList.add('flight-reveal'); mask.append(draw); route.prepend(mask);
-    path.setAttribute('mask', `url(#${mask.id})`);
-    const length = path.getTotalLength();
-    const keyframes = Array.from({ length: 81 }, (_, k) => {
-      const distance = length * k / 80;
-      const p = path.getPointAtLength(distance), q = path.getPointAtLength(Math.min(length, distance + 1));
-      return { transform: `translate(${p.x}px,${p.y}px) rotate(${Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI}deg)`, opacity: k < 76 ? 1 : (80-k)/4, offset:k/80 };
-    });
-    const plane = route.querySelector('.campaign-plane').animate(keyframes, { duration:9300, iterations:Infinity });
-    planes.push(plane);
-    // La fecha opcional funciona en cualquiera de las cuatro campañas.
-    const expiryValue = RUMBO_HERO_CONFIG.slides[i].expires;
-    const dateIsValid = /^\d{4}-\d{2}-\d{2}$/.test(expiryValue || '') && Number.isFinite(Date.parse(expiryValue+'T12:00:00Z')) && new Date(expiryValue+'T12:00:00Z').toISOString().startsWith(expiryValue);
-    if (dateIsValid && new Date(expiryValue+'T23:59:59-06:00') >= new Date()) {
-      const expiry = document.createElement('span');
-      expiry.textContent = ' · Oferta válida hasta ' + new Date(expiryValue+'T12:00:00-06:00').toLocaleDateString('es-HN',{day:'numeric',month:'long',year:'numeric',timeZone:'America/Guatemala'});
-      slide.querySelector('.campaign-terms').append(expiry);
-    }
-    const price = slide.querySelector('[data-promo-price]');
-    if (!price) return;
-    const id = price.dataset.promoPrice;
-    const campaign = RUMBO_HERO_CONFIG.slides[i];
-    const d = window.RumboViajesDatos?.destinations.find(d => d.id === id);
-    // En el sitio, el catálogo manda; fuera de él, se usan los precios configurados.
-    const f = d ? window.RumboViajesDatos.flights(d, 'Tegucigalpa')[0] : null;
-    if (!f || !Number.isFinite(f.economy) || !Number.isFinite(f.baseEconomy)) { price.textContent = 'Consulta las tarifas disponibles'; return; }
-    const config = { ...RUMBO_HERO_CONFIG.slides[i].price, expires: RUMBO_HERO_CONFIG.slides[i].expires };
-    price.innerHTML = `<span class="campaign-price-line"><del>${money(f.baseEconomy)}</del> <strong aria-label="${money(f.economy)}"><span aria-hidden="true">${money(f.economy)}</span></strong></span><small>por persona · ida desde Tegucigalpa</small>`;
-    if (config.detail) { const detail = document.createElement('small'); detail.className = 'campaign-flight-detail'; detail.textContent = config.detail; price.append(detail); }
-    priceData.set(i, { node:price.querySelector('strong span'), from:f.baseEconomy, to:f.economy, time:0 });
-    const cta = slide.querySelector('.campaign-links .button');
-    cta.addEventListener('click', event => {
-      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0 || preview || motion.matches) return;
-      event.preventDefault(); preview = true; schedule();
-      const original = cta.innerHTML;
-      cta.classList.add('boarding-preview');
-      cta.innerHTML = `<span class="boarding-label">VISTA PREVIA · SOLO IDA</span><span class="boarding-route">${config.route || d.name} <b>${money(f.economy)}</b></span>`;
-      root.querySelector('[data-promo-status]').textContent = `Vista previa de tu vuelo a ${d.name}, ${money(f.economy)} por persona. Abriendo destino.`;
-      resetPreview = () => { clearTimeout(previewTimer); cta.innerHTML = original; cta.classList.remove('boarding-preview'); preview = false; };
-      previewTimer = setTimeout(() => { const target = cta.href; resetPreview(); location.assign(target); }, RUMBO_HERO_CONFIG.previewMs);
-    });
-  });
-  function playing() { return !paused && !focused && !document.hidden && visible && !preview; }
-  function schedule() {
-    const run = playing(); root.dataset.playing = String(run && !motion.matches);
-    pause.textContent = paused ? '▷ Reproducir' : 'Ⅱ Pausar';
-    pause.setAttribute('aria-label', paused ? 'Reproducir promociones y animaciones' : 'Pausar promociones y animaciones');
-    pause.setAttribute('aria-pressed', String(paused));
-    planes.forEach((plane, i) => { if (run && !motion.matches && i === current) plane.play(); else plane.pause(); });
-    if (motion.matches) planes.forEach(p => { p.currentTime = 7000; });
-    if (run && !frame) { last = 0; frame = requestAnimationFrame(tick); }
-    if (!run) { const price = priceData.get(current); if (price) { price.node.textContent = money(price.to); counted.add(current); } cancelAnimationFrame(frame); frame = 0; last = 0; root.style.setProperty('--pointer-x','0px'); root.style.setProperty('--pointer-y','0px'); }
-  }
-  function tick(now) {
-    frame = 0;
-    if (!playing()) return;
-    const delta = last ? Math.min(now-last,100) : 0; last = now; elapsed += delta;
-    progress.style.transform = motion.matches ? 'scaleX(1)' : `scaleX(${Math.min(elapsed/RUMBO_HERO_CONFIG.slideMs,1)})`;
-    const price = priceData.get(current);
-    if (price && !counted.has(current)) {
-      price.time += delta;
-      const p = Math.min(price.time/1050,1);
-      price.node.textContent = money(Math.round(price.from+(price.to-price.from)*(1-Math.pow(1-p,3))));
-      if (p === 1) counted.add(current);
-    }
-    if (elapsed >= RUMBO_HERO_CONFIG.slideMs) { show(current+1); return; }
-    frame = requestAnimationFrame(tick);
-  }
-  function show(index, manual = false) {
-    resetPreview?.();
-    cancelAnimationFrame(frame); frame = 0; last = 0; elapsed = 0;
-    clearTimeout(exitTimer);
-    const previous = current;
-    const flightPhase = planes[previous].currentTime || 0;
-    const animate = playing() && !motion.matches && !manual;
-    current = (index + slides.length) % slides.length;
-    counted.delete(current);
-    dots.forEach((dot,i)=>{ dot.setAttribute('aria-current',String(i===current)); dot.querySelector('span').style.transform='scaleX(0)'; });
-    progress=dots[current].querySelector('span');
-    slides.forEach((slide, i) => { slide.hidden = i !== current; slide.inert=false; slide.removeAttribute('aria-hidden'); slide.classList.remove('is-leaving'); });
-    if (animate && previous !== current) {
-      const outgoing=slides[previous]; outgoing.hidden=false; outgoing.inert=true; outgoing.setAttribute('aria-hidden','true'); outgoing.classList.add('is-leaving');
-      exitTimer=setTimeout(()=>{outgoing.hidden=true;outgoing.inert=false;outgoing.removeAttribute('aria-hidden');outgoing.classList.remove('is-leaving');},480);
-    }
-    planes[current].currentTime = flightPhase;
-    slides[current].querySelector('.flight-reveal').style.animationDelay = `-${flightPhase % 9300}ms`;
-    const price = priceData.get(current);
-    if (price) { price.time = 0; price.node.textContent = money(price.to); if (motion.matches) counted.add(current); }
-    slides[(current+1)%slides.length].querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
-    progress.style.transform = 'scaleX(0)';
-    root.querySelector('[data-promo-count]').textContent = `0${current+1} / 0${slides.length}`;
-    if (manual) root.querySelector('[data-promo-status]').textContent = `Promoción ${current+1} de ${slides.length}: ${slides[current].dataset.title}`;
-    schedule();
-  }
-  root.querySelector('[data-promo-prev]').addEventListener('click', () => show(current-1,true));
-  root.querySelector('[data-promo-next]').addEventListener('click', () => show(current+1,true));
-  dots.forEach((dot,i)=>dot.addEventListener('click',()=>show(i,true)));
-  pause.addEventListener('click', () => { paused = !paused; focused = false; schedule(); });
-  root.addEventListener('focusin', event => { if (event.target !== pause) { focused = true; schedule(); } });
-  root.addEventListener('focusout', event => { if (!root.contains(event.relatedTarget)) { focused = false; schedule(); } });
-  root.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && preview) { resetPreview?.(); schedule(); }
-    if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
-    event.preventDefault(); show(current+(event.key === 'ArrowRight'?1:-1),true);
-  });
-  const explore=slides[3];
-  explore.querySelectorAll('[data-landscape]').forEach(link=>{
-    const highlight=()=>{explore.dataset.landscape=link.dataset.landscape;};
-    const clear=()=>{delete explore.dataset.landscape;};
-    link.addEventListener('pointerenter',highlight);link.addEventListener('pointerleave',clear);
-    link.addEventListener('focus',highlight);link.addEventListener('blur',clear);
-  });
-  let startX = null;
-  root.addEventListener('touchstart', event => { startX = event.touches[0]?.clientX; },{passive:true});
-  root.addEventListener('touchend', event => {
-    const delta = (event.changedTouches[0]?.clientX ?? startX)-startX;
-    if (startX !== null && Math.abs(delta)>65) show(current+(delta<0?1:-1),true);
-    startX = null;
-  },{passive:true});
-  let pointerFrame = 0, px = 0, py = 0;
-  root.addEventListener('pointermove', event => {
-    if (!pointer.matches || motion.matches || !playing()) return;
-    const r = root.getBoundingClientRect(); px = ((event.clientX-r.left)/r.width-.5)*8; py = ((event.clientY-r.top)/r.height-.5)*6;
-    if (!pointerFrame) pointerFrame = requestAnimationFrame(() => { root.style.setProperty('--pointer-x',px+'px'); root.style.setProperty('--pointer-y',py+'px'); pointerFrame = 0; });
-  });
-  root.addEventListener('pointerleave', () => { root.style.setProperty('--pointer-x','0px'); root.style.setProperty('--pointer-y','0px'); });
-  document.addEventListener('visibilitychange', schedule);
-  motion.addEventListener('change', () => { paused = motion.matches; if(motion.matches) priceData.forEach((p,i)=>{p.node.textContent=money(p.to);counted.add(i);}); schedule(); });
-  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; document.documentElement.classList.toggle('rumbo-hero-visible',visible); schedule(); },{threshold:.08}).observe(root);
-  window.addEventListener('pagehide', () => { resetPreview?.(); cancelAnimationFrame(frame); frame=0; });
-  window.addEventListener('pageshow', schedule);
-  show(0);
+document.addEventListener('DOMContentLoaded',()=>{
+ const root=document.querySelector('[data-promo-carousel]');if(!root)return;
+ const slides=[...root.querySelectorAll('[data-promo-slide]')],thumbs=[...root.querySelectorAll('[data-promo-dot]')];let current=0;
+ const money=n=>'L '+n.toLocaleString('es-HN',{maximumFractionDigits:2});
+ slides.forEach((slide,i)=>{
+  const d=window.RumboViajesDatos?.destinations.find(d=>d.id===RUMBO_HERO_CONFIG.slides[i].id);
+  const flight=d?window.RumboViajesDatos.flights(d,'Tegucigalpa',1)[0]:null;
+  const price=slide.querySelector('[data-promo-price]');
+  if(!flight||!Number.isFinite(flight.economy)){price.textContent='Consulta las tarifas disponibles';return;}
+  price.textContent='Desde '+money(flight.economy)+' por persona'+(flight.discountPercent?' · −'+flight.discountPercent+' % en vuelos':'');
+ });
+ function show(index){
+  current=(index+slides.length)%slides.length;
+  // Mover el foco antes de ocultar la miniatura seleccionada.
+  if(thumbs[current]===document.activeElement)root.querySelector('[data-promo-next]').focus({preventScroll:true});
+  slides.forEach((slide,i)=>{slide.hidden=i!==current;thumbs[i].hidden=i===current;});
+  root.querySelector('[data-promo-count]').textContent=String(current+1).padStart(2,'0')+' / 04';
+  root.querySelector('[data-promo-status]').textContent=RUMBO_HERO_CONFIG.slides[current].title+', '+(current+1)+' de 4';
+ }
+ root.querySelector('[data-promo-prev]').addEventListener('click',()=>show(current-1));
+ root.querySelector('[data-promo-next]').addEventListener('click',()=>show(current+1));
+ thumbs.forEach((button,i)=>button.addEventListener('click',()=>show(i)));
 });
-
-  </script>
+</script>
 <style id="rumbo-about-footer-styles">
 /* Rumbo: presentación editorial y pie de página. */
 .about-rumbo { display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(32px,5vw,76px); align-items:center; margin-block:58px 42px; padding-block:36px; scroll-margin-top:105px; }
@@ -929,6 +288,51 @@ document.addEventListener('DOMContentLoaded', () => {
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="design.css">
+<style id="rumbo-hero-styles">
+:root{
+ --verde:#0B7D63;--fondo:#F6F1E7;--tinta:#17302B;--arena:#E9DCC3;--blanco-texto:#FFFFFF;
+ --fuente:'General Sans',system-ui,sans-serif;--peso-titular:500;--peso-texto:400;
+ --texto-legal:11px;--texto-etiqueta:12px;--texto-pequeno:14px;--texto-base:17px;--texto-seccion:22px;--texto-servicio:24px;--texto-titulo:clamp(32px,4vw,48px);--texto-hero:clamp(40px,5.2vw,76px);
+ --espacio-1:8px;--espacio-2:16px;--espacio-3:24px;--espacio-4:32px;--espacio-5:40px;--espacio-6:48px;--espacio-8:64px;--espacio-10:80px;--espacio-12:96px;
+ --radio-tarjeta:20px;--radio-hero:28px;--radio-boton:999px;--radio-miniatura:8px;
+}
+body:has(.rumbo-cover){background:var(--fondo)}
+.rumbo-cover.container{position:relative;isolation:isolate;width:calc(100% - 48px);max-width:1600px;margin:0 auto 32px;overflow:hidden;border-radius:var(--radio-hero);background:var(--tinta);color:var(--blanco-texto);font-family:var(--fuente)}
+.rumbo-cover-slide{position:relative;height:86vh;height:86svh;min-height:560px;max-height:960px}
+.rumbo-cover-slide[hidden],.rumbo-cover button[hidden]{display:none!important}
+.rumbo-cover-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.rumbo-cover-slide:after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,18,.62),transparent 55%);pointer-events:none}
+.rumbo-cover-copy{position:absolute;z-index:1;left:48px;bottom:88px;max-width:520px;width:calc(100% - 96px)}
+body main .rumbo-cover .rumbo-cover-copy h2{font-family:var(--fuente)!important;font-weight:500!important;font:var(--peso-titular) var(--texto-hero)/1.02 var(--fuente);letter-spacing:-.025em;color:var(--blanco-texto);margin:0 0 24px}
+.rumbo-cover-description{font:var(--peso-texto) var(--texto-base)/1.5 var(--fuente);max-width:40ch;margin:0 0 16px;color:var(--blanco-texto)}
+.rumbo-cover-price{font:var(--peso-texto) var(--texto-pequeno)/1.5 var(--fuente);margin:0 0 24px;color:var(--blanco-texto)}
+.rumbo-cover-cta{display:inline-flex;align-items:center;gap:24px;min-height:48px;padding:16px 24px;border-radius:var(--radio-boton);background:var(--blanco-texto);color:var(--tinta);font:500 14px/1.2 var(--fuente);text-decoration:none;box-shadow:none}
+.rumbo-cover-cta:hover{background:var(--arena)}
+.rumbo-cover-controls{position:absolute;right:40px;bottom:88px;z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:16px}
+.rumbo-cover-thumbnails{display:flex;gap:8px}.rumbo-cover-thumbnails button{display:grid;place-items:center;width:48px;height:48px;border:0;padding:0;background:transparent;cursor:pointer;border-radius:8px}.rumbo-cover-thumbnails img{display:block;width:44px;height:32px;object-fit:cover;border-radius:var(--radio-miniatura)}
+.rumbo-cover-step{display:flex;align-items:center;gap:8px}.rumbo-cover-count{font:400 12px/1.5 var(--fuente);font-variant-numeric:tabular-nums;letter-spacing:.12em;margin-right:8px;color:var(--blanco-texto)}
+.rumbo-cover-step button{width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.5);border-radius:999px;color:var(--blanco-texto);background:transparent;font:400 22px/1 var(--fuente);cursor:pointer}.rumbo-cover-step button:hover{background:var(--blanco-texto);color:var(--tinta)}
+.rumbo-cover-terms{position:absolute;z-index:2;left:48px;bottom:16px;max-width:calc(100% - 96px);margin:0;color:var(--blanco-texto);font:400 var(--texto-legal)/1.5 var(--fuente)}
+.rumbo-cover :focus-visible{outline:2px solid var(--blanco-texto);outline-offset:4px}.rumbo-cover *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body main .rumbo-cover,body main .rumbo-cover *{font-family:var(--fuente)!important}body:has(.rumbo-cover) .site-header a:not(.logo),body:has(.rumbo-cover) .site-header a:not(.logo) *{font-family:var(--fuente)!important}
+/* Encabezado del inicio; las otras secciones se revisarán en la siguiente entrega. */
+body:has(.rumbo-cover) .site-header{background:var(--fondo);border:0;box-shadow:none}
+body:has(.rumbo-cover) .site-header .header-inner{width:calc(100% - 64px);max-width:1584px;display:flex;justify-content:space-between;gap:24px;padding:24px 0;min-height:88px}
+body:has(.rumbo-cover) .site-header .logo,body:has(.rumbo-cover) .site-header .logo>span{color:var(--verde)}
+body:has(.rumbo-cover) .site-header .main-nav{width:auto;display:flex;gap:0;flex-wrap:nowrap;padding:8px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(12px)}
+body:has(.rumbo-cover) .site-header .main-nav a{font:400 14px/1.5 var(--fuente);color:var(--tinta);border-radius:999px;padding:8px 16px;background:transparent}
+body:has(.rumbo-cover) .site-header .main-nav a:hover{background:var(--arena)}
+body:has(.rumbo-cover) .site-header .header-actions{width:auto;gap:8px;flex-wrap:nowrap}
+body:has(.rumbo-cover) .site-header .account-actions{border:0;padding:0;gap:8px;width:auto}
+body:has(.rumbo-cover) .site-header .account-link,body:has(.rumbo-cover) .site-header .header-trip{font:400 13px/1.5 var(--fuente);border:0;min-height:40px;padding:8px 16px;border-radius:999px;background:transparent;color:var(--tinta);box-shadow:none;transform:none}
+body:has(.rumbo-cover) .site-header .account-link.register-button{background:var(--verde);color:var(--blanco-texto)}
+body:has(.rumbo-cover) .site-header .header-trip svg{display:none}
+body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover) .site-header a{transition:color .15s,background-color .15s}
+@media(max-width:1050px){body:has(.rumbo-cover) .site-header .header-inner{flex-wrap:wrap;gap:16px}body:has(.rumbo-cover) .site-header .main-nav{order:3;margin:auto}.rumbo-cover-copy{left:32px;max-width:calc(100% - 288px)}.rumbo-cover-controls{right:24px}.rumbo-cover-terms{left:32px}}
+@media(max-width:700px){.rumbo-cover.container{width:calc(100% - 32px)}.rumbo-cover-slide{height:86svh;min-height:680px;max-height:none}.rumbo-cover-copy{left:24px;bottom:200px;width:calc(100% - 48px);max-width:520px}.rumbo-cover-controls{right:24px;bottom:64px;gap:8px}.rumbo-cover-copy h2{margin-bottom:16px}.rumbo-cover-description{font-size:17px}.rumbo-cover-price{font-size:12px}.rumbo-cover-terms{left:24px;bottom:16px;max-width:calc(100% - 48px)}body:has(.rumbo-cover) .site-header .header-inner{width:calc(100% - 32px);gap:8px;padding:16px 0}body:has(.rumbo-cover) .site-header .header-actions{gap:0;flex-wrap:wrap;justify-content:flex-end;flex:1}body:has(.rumbo-cover) .site-header .account-link,body:has(.rumbo-cover) .site-header .header-trip{font-size:12px;padding:8px}body:has(.rumbo-cover) .site-header .logo{font-size:28px}body:has(.rumbo-cover) .site-header .main-nav{justify-content:center}}
+@media(prefers-reduced-motion:reduce){.rumbo-cover *,body:has(.rumbo-cover) .site-header *{animation:none!important;transition:none!important}}
+.campaign-assist{display:flex;align-items:center;gap:16px;margin-bottom:30px}.campaign-assist .hero-adviser{margin:0;padding:10px 20px;background:#edf4ef;border-color:#d5e4da}.campaign-assist .hero-adviser>span:nth-child(2){display:block}.campaign-assist .hero-adviser strong{font-size:19px}.campaign-assist .hero-adviser .rumbito-hero{width:65px;height:72px;flex-basis:65px}.campaign-surprise{flex-shrink:0;padding:14px 22px;border-radius:99px;border:1px solid #b6ccc1;color:#126052;background:#fff}
+</style>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1001,68 +405,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <main id="contenido">
     <!-- PORTADA -->
-    <section class="campaign container" data-promo-carousel aria-roledescription="carrusel" aria-label="Promociones de Rumbo">
-<h1 class="campaign-accessible-title">Rumbo: destinos, vuelos y promociones</h1>
-      <article class="campaign-slide campaign-coast" data-promo-slide data-title="Escapadas seleccionadas" aria-roledescription="diapositiva" aria-label="1 de 4: Escapadas seleccionadas" >
-        <div class="campaign-copy"><p class="campaign-kicker">VUELOS A CANCÚN</p><h2>Vuela a <span>Cancún</span><br>por menos.</h2><p class="campaign-description">Compara fechas, horarios y equipaje para tu vuelo a Cancún.</p>
-          <p class="campaign-price" data-promo-price="cancun"></p>
-          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=detalle-destino&amp;destino=cancun">Quiero ir a Cancún <span aria-hidden="true">↗</span></a></div>
-          <a class="campaign-secondary" href="viajes.html?pantalla=detalle-destino&amp;destino=madrid">¿Prefieres ciudad? Madrid también tiene −25 % <span aria-hidden="true">→</span></a>
+    <section class="rumbo-cover container" data-promo-carousel aria-roledescription="carrusel" aria-label="Vuelos desde Tegucigalpa">
+<article class="rumbo-cover-slide" data-promo-slide data-title="Venecia" aria-roledescription="diapositiva" aria-label="1 de 4: Venecia" ><img class="rumbo-cover-image" src="imagenes-viajes/destino-venecia.jpg" alt="Vista aérea de Venecia y su laguna" width="960" height="640" fetchpriority="high"><div class="rumbo-cover-copy"><h2>venecia,<br>sin prisa.</h2><p class="rumbo-cover-description">Canales, plazas y tiempo para caminar a tu ritmo.</p><p class="rumbo-cover-price" data-promo-price="venecia">Desde L 18,000 por persona · −20 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=venecia">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="Cancún" aria-roledescription="diapositiva" aria-label="2 de 4: Cancún" hidden><img class="rumbo-cover-image" src="imagenes-viajes/destino-cancun.jpg" alt="Costa de Cancún junto al mar Caribe" width="960" height="640" loading="lazy"><div class="rumbo-cover-copy"><h2>cancún,<br>frente al mar.</h2><p class="rumbo-cover-description">Unos días de playa para salir de la rutina.</p><p class="rumbo-cover-price" data-promo-price="cancun">Desde L 5,400 por persona · −25 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=cancun">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="Madrid" aria-roledescription="diapositiva" aria-label="3 de 4: Madrid" hidden><img class="rumbo-cover-image" src="imagenes-viajes/guia-madrid-retiro.jpg" alt="Árboles y senderos del parque de El Retiro en Madrid" width="960" height="640" loading="lazy"><div class="rumbo-cover-copy"><h2>madrid,<br>a pie.</h2><p class="rumbo-cover-description">Parques, mercados y una mesa para comer sin apuro.</p><p class="rumbo-cover-price" data-promo-price="madrid">Desde L 14,625 por persona · −25 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=madrid">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
+<article class="rumbo-cover-slide" data-promo-slide data-title="París" aria-roledescription="diapositiva" aria-label="4 de 4: París" hidden><img class="rumbo-cover-image" src="imagenes-viajes/destino-paris.jpg" alt="El río Sena y la torre Eiffel en París" width="960" height="640" loading="lazy"><div class="rumbo-cover-copy"><h2>parís,<br>junto al sena.</h2><p class="rumbo-cover-description">Caminá por la orilla y elegí dónde pasar la tarde.</p><p class="rumbo-cover-price" data-promo-price="paris">Desde L 21,600 por persona · −10 % en vuelos</p><a class="rumbo-cover-cta" href="viajes.html?pantalla=vuelos&amp;destino=paris">Ver vuelos <span aria-hidden="true">↗</span></a></div></article>
+<div class="rumbo-cover-controls"><div class="rumbo-cover-thumbnails" role="group" aria-label="Otros destinos"><button type="button" data-promo-dot aria-label="Ver Venecia" hidden><img src="imagenes-viajes/destino-venecia.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver Cancún" ><img src="imagenes-viajes/destino-cancun.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver Madrid" ><img src="imagenes-viajes/guia-madrid-retiro.jpg" alt="" width="44" height="32"></button><button type="button" data-promo-dot aria-label="Ver París" ><img src="imagenes-viajes/destino-paris.jpg" alt="" width="44" height="32"></button></div><div class="rumbo-cover-step"><span class="rumbo-cover-count" data-promo-count>01 / 04</span><button type="button" data-promo-prev aria-label="Destino anterior">←</button><button type="button" data-promo-next aria-label="Destino siguiente">→</button></div></div><p class="rumbo-cover-terms">Tarifas de demostración · Solo ida desde Tegucigalpa. Hospedaje aparte.</p><span class="sr-only" data-promo-status aria-live="polite" aria-atomic="true"></span></section>
 
-        </div>
-        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/destino-cancun.jpg" alt="Vista aérea de la costa de Cancún" width="960" height="640" fetchpriority="high"><figcaption>Cancún, México</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/hotel-bali-terraza.jpg" alt="Piscina junto al mar en Cancún" width="960" height="640" loading="lazy"><figcaption>Fotografía de referencia del hospedaje</figcaption></figure>
-          <div class="campaign-offer"><span class="campaign-tag-hole" aria-hidden="true"></span><strong>−25%</strong><span>EN VUELOS</span></div>
-          <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
-        </div>
-        <p class="campaign-terms">25 % en vuelos de ida a Cancún y Madrid, económica y ejecutiva. Hotel y servicios aparte. Tarifas de demostración.</p>
-      </article>
-      <article class="campaign-slide campaign-alpine" data-promo-slide data-title="Vuelos a Europa" aria-roledescription="diapositiva" aria-label="2 de 4: Vuelos a Europa" hidden>
-        <div class="campaign-copy"><p class="campaign-kicker">VUELOS A VENECIA</p><h2>Vuelos a <span>Venecia</span></h2><p class="campaign-description">Consulta vuelos y hospedajes en Venecia.</p>
-          <p class="campaign-price" data-promo-price="venecia"></p>
-          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=detalle-destino&amp;destino=venecia">Descubrir Italia <span aria-hidden="true">↗</span></a></div>
-          <a class="campaign-secondary" href="viajes.html?pantalla=destinos">Ver todos los destinos <span aria-hidden="true">→</span></a>
-
-        </div>
-        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/dolomitas.jpg" alt="Paisaje de montaña de inspiración" width="960" height="640" loading="lazy"><figcaption>Aire de montaña</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/hotel-valle.jpg" alt="Habitación de inspiración para una estancia de montaña" width="960" height="640" loading="lazy"><figcaption>Y tiempo para descansar</figcaption></figure>
-          <div class="campaign-offer"><span class="campaign-tag-hole" aria-hidden="true"></span><strong>−20%</strong><span>EN VUELOS</span></div>
-          <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
-        </div>
-        <p class="campaign-terms">20 % en vuelos de ida a Venecia, económica y ejecutiva. Traslado a Dolomitas y hotel aparte. Tarifas de demostración.</p>
-      </article>
-      <article class="campaign-slide campaign-escape" data-promo-slide data-title="Tu viaje de fin de año" aria-roledescription="diapositiva" aria-label="3 de 4: Tu viaje de fin de año" hidden>
-        <div class="campaign-copy"><p class="campaign-kicker">PLANIFICACIÓN DE VIAJES</p><h2>Compara destinos<br>y <span>fechas.</span></h2><p class="campaign-description">Selecciona origen, destino y número de pasajeros para consultar las opciones.</p>
-
-          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=vuelos">Planear mi viaje <span aria-hidden="true">↗</span></a></div>
-          <a class="campaign-secondary" href="servicios.html">Explorar servicios para mi viaje <span aria-hidden="true">→</span></a>
-
-        </div>
-        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/bali.jpg" alt="Templo junto al agua en Bali" width="960" height="640" loading="lazy"><figcaption>Bali, Indonesia</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/kioto.jpg" alt="Calle tradicional de Kioto" width="960" height="640" loading="lazy"><figcaption>Kioto, Japón</figcaption></figure>
-
-          <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
-        </div>
-        <p class="campaign-terms">Elige fechas, vuelo, hospedaje y experiencias. Revisa los servicios y el total de tu plan antes de finalizar.</p>
-      </article>
-      <article class="campaign-slide campaign-explore" data-promo-slide data-title="¿A dónde viajarías?" aria-roledescription="diapositiva" aria-label="4 de 4: ¿A dónde viajarías?" hidden>
-        <div class="campaign-copy"><p class="campaign-kicker">BUSCAR POR TIPO DE DESTINO</p><h2>¿Playa, montaña<br>o <span>ciudad?</span></h2><p class="campaign-description">Filtra el catálogo por playa, naturaleza o ciudad y compara las opciones disponibles.</p>
-
-          <div class="campaign-links"><a class="button" href="viajes.html?pantalla=destinos">Explorar destinos <span aria-hidden="true">↗</span></a></div>
-
-          <div class="campaign-choices" aria-label="Explorar por estilo"><a href="viajes.html?pantalla=destinos&amp;tipo=playa">Playa ↗</a><a href="viajes.html?pantalla=destinos&amp;tipo=naturaleza">Montaña ↗</a><a href="viajes.html?pantalla=destinos&amp;tipo=cultura">Ciudad ↗</a></div>
-        </div>
-        <div class="campaign-art" aria-label="Inspiración para tu viaje"><figure class="campaign-photo photo-1"><img src="imagenes-viajes/playa.jpg" alt="Playa tropical como inspiración de viaje" width="960" height="640" loading="lazy"><figcaption>Un poco de mar</figcaption></figure><figure class="campaign-photo photo-2"><img src="imagenes-viajes/dolomitas.jpg" alt="Paisaje de montaña como inspiración" width="960" height="640" loading="lazy"><figcaption>Aire libre</figcaption></figure><figure class="campaign-photo photo-3"><img src="imagenes-viajes/destino-madrid.jpg" alt="Vista de Madrid" width="960" height="640" loading="lazy"><figcaption>Calles por descubrir</figcaption></figure>
-
-          <svg class="campaign-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M12 126C62 134 108 94 83 69S26 110 92 110 177 37 261 33" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 7"/><g class="campaign-plane"><path d="M-14-2 -3-4 0-14 4-14 5-4 15-1 15 2 5 3 3 13 0 13-3 3-14 1Z" fill="currentColor"/></g></svg>
-        </div>
-        <p class="campaign-terms">Explora los destinos del catálogo. Compara alternativas según tu presupuesto y organiza un viaje a tu medida.</p>
-      </article>
-      <div class="campaign-controls"><button type="button" class="campaign-pause" data-promo-pause aria-label="Pausar promociones y animaciones">Ⅱ Pausar</button><div class="campaign-dots" role="group" aria-label="Elegir promoción"><button type="button" data-promo-dot aria-label="Ver promoción 1: Escapadas seleccionadas" aria-current="true"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 2: Vuelos a Europa" aria-current="false"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 3: Tu viaje de fin de año" aria-current="false"><span aria-hidden="true"></span></button><button type="button" data-promo-dot aria-label="Ver promoción 4: ¿A dónde viajarías?" aria-current="false"><span aria-hidden="true"></span></button></div><span class="campaign-count" data-promo-count>01 / 04</span><button type="button" data-promo-prev aria-label="Promoción anterior">←</button><button type="button" data-promo-next aria-label="Promoción siguiente">→</button></div>
-      <span class="sr-only" data-promo-status aria-live="polite" aria-atomic="true"></span>
-    </section>
-    <div class="campaign-assist container"><button class="hero-adviser" type="button" data-open-planner><span class="rumbito-avatar rumbito-hero" aria-hidden="true"></span><span><strong>¿No sabes por dónde empezar?</strong><span class="rumbito-invite">Consulta destinos y presupuestos con Rumbito ↗</span></span></button><button class="campaign-surprise" id="surprise-destination" type="button">Sorpréndeme ↗</button></div>
 
     <!-- BUSCADOR -->
     <section class="container search-section" id="buscador" aria-labelledby="search-title">
-      <h2 id="search-title">Encuentra una opción para tu viaje</h2>
+      <h2 id="search-title">Buscá tu próximo viaje</h2>
 
       <form class="search-form" id="travel-search" role="search" aria-labelledby="search-title">
         <div class="search-field">
@@ -1081,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="search-field">
-          <label for="budget">Presupuesto por persona · HNL</label>
+          <label for="budget">Presupuesto</label>
           <select id="budget">
             <option value="all">Cualquier presupuesto</option>
             <option value="20000">Hasta L 20,000</option>
@@ -1091,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <button class="button button-primary" type="submit">
-          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          
           Buscar
         </button>
       </form>
@@ -1100,96 +453,12 @@ document.addEventListener('DOMContentLoaded', () => {
       </noscript>
     </section>
 
-    <!-- SERVICIOS -->
-    <section class="section container" id="servicios" aria-labelledby="services-title">
-      <div class="section-heading">
-        <div>
-          
-          <h2 id="services-title">Servicios de viaje</h2>
-        </div>
-      </div>
-
-      <div class="booking-grid">
-        <article class="booking-card featured flight-card">
-          <span class="booking-icon">
-            <svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>
-          </span>
-          <h3>Vuelos</h3>
-          <p>
-            Busca por origen, destino, fechas y pasajeros.
-            Revisa escalas, equipaje y condiciones de cada tarifa.
-          </p>
-          <button class="button button-primary" type="button" data-module="flights">
-            Buscar vuelos <span aria-hidden="true">↗</span>
-          </button>
-        </article>
-
-        <article class="booking-card featured stay-card">
-          <span class="booking-icon">
-            <svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg>
-          </span>
-          <h3>Hospedaje</h3>
-          <p>
-            Explora alojamientos por ubicación, fechas y huéspedes.
-            Compara el coste de la estancia y las condiciones de cancelación.
-          </p>
-          <button class="button button-primary" type="button" data-module="stays">
-            Consultar hospedaje <span aria-hidden="true">↗</span>
-          </button>
-        </article>
-
-        <article class="booking-card">
-          <span class="booking-icon">
-            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
-          </span>
-          <h3>Experiencias y guías locales</h3>
-          <p>Actividades, recorridos y excursiones para conocer cada destino.</p>
-          <button class="booking-action" type="button" data-module="experiences">
-            Ver experiencias <span aria-hidden="true">↗</span>
-          </button>
-        </article>
-
-        <article class="booking-card">
-          <span class="booking-icon">
-            <svg class="icon" aria-hidden="true"><use href="#i-car"/></svg>
-          </span>
-          <h3>Traslados</h3>
-          <p>Organiza el transporte entre el aeropuerto, tu hospedaje y otras paradas.</p>
-          <button class="booking-action" type="button" data-module="transfers">
-            Consultar traslados <span aria-hidden="true">↗</span>
-          </button>
-        </article>
-
-        <article class="booking-card">
-          <span class="booking-icon">
-            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
-          </span>
-          <h3>Seguro de viaje</h3>
-          <p>Revisa coberturas, límites y exclusiones antes de contratar.</p>
-          <button class="booking-action" type="button" data-module="insurance">
-            Conocer opciones <span aria-hidden="true">↗</span>
-          </button>
-        </article>
-
-        <article class="booking-card shop-card" id="tienda" aria-labelledby="shop-title">
-          <span class="booking-icon">
-            <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
-          </span>
-          <h3 id="shop-title">Tienda de viaje</h3>
-          <p>Maletas, mochilas, lentes, adaptadores y accesorios en un solo catálogo.</p>
-          <a class="booking-action" href="tienda.html">
-            Explorar tienda <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-      </div>
-    </section>
-
     <!-- DESTINOS -->
     <section class="section destinations-section" id="destinos" aria-labelledby="destinations-title">
       <div class="container">
         <div class="section-heading">
           <div>
-            <h2 id="destinations-title">Destinos para explorar</h2>
+            <h2 id="destinations-title">Elegí dónde ir</h2>
             <p class="destination-intro">
               Opciones en Honduras y fuera de ella para empezar a comparar.
             </p>
@@ -1199,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="carousel-toolbar">
           <p class="results-line" id="result-count" role="status" aria-live="polite"></p>
-          <div class="carousel-controls" aria-label="Controles de destinos">
+          <button class="text-link" id="surprise-destination" type="button">Elegir al azar ↗</button><div class="carousel-controls" aria-label="Controles de destinos" hidden>
             <button
               class="carousel-arrow"
               id="destinations-prev"
@@ -1221,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
           class="destinations-track"
           id="destinations-track"
           role="region"
-          aria-label="Destinos, desplázate para ver más"
+          aria-label="Destinos disponibles"
           tabindex="0"
         ></div>
 
@@ -1267,6 +536,76 @@ document.addEventListener('DOMContentLoaded', () => {
         <article class="team-person" id="equipo-yeison"><span class="team-avatar" aria-hidden="true">YC</span><h3>Yeison Carbajal</h3><p>Equipo Rumbo</p></article>
       </div>
       <div class="team-actions"><a class="button button-primary" href="servicios.html">Explorar servicios <span aria-hidden="true">↗</span></a><a class="text-link" href="#contacto">Contactar al equipo <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section container" id="servicios" aria-labelledby="services-title">
+      <div class="section-heading">
+        <div>
+          
+          <h2 id="services-title">Servicios de viaje</h2>
+        </div>
+      </div>
+
+      <div class="booking-grid">
+        <article class="booking-card featured flight-card">
+          
+          <h3>Vuelos</h3>
+          <p>
+            Compará rutas, equipaje y tarifas para tus fechas.
+          </p>
+          <button class="button button-primary" type="button" data-module="flights">
+            Buscar vuelos <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="booking-card featured stay-card">
+          
+          <h3>Hospedaje</h3>
+          <p>
+            Elegí dónde quedarte según tu presupuesto y ubicación.
+          </p>
+          <button class="button button-primary" type="button" data-module="stays">
+            Consultar hospedaje <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="booking-card">
+          
+          <h3>Experiencias y guías locales</h3>
+          <p>Actividades, recorridos y excursiones para conocer cada destino.</p>
+          <button class="booking-action" type="button" data-module="experiences">
+            Ver experiencias <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="booking-card">
+          
+          <h3>Traslados</h3>
+          <p>Organiza el transporte entre el aeropuerto, tu hospedaje y otras paradas.</p>
+          <button class="booking-action" type="button" data-module="transfers">
+            Consultar traslados <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="booking-card">
+          
+          <h3>Seguro de viaje</h3>
+          <p>Revisa coberturas, límites y exclusiones antes de contratar.</p>
+          <button class="booking-action" type="button" data-module="insurance">
+            Conocer opciones <span aria-hidden="true">↗</span>
+          </button>
+        </article>
+
+        <article class="booking-card shop-card" id="tienda" aria-labelledby="shop-title">
+          
+          <h3 id="shop-title">Tienda de viaje</h3>
+          <p>Maletas, mochilas, lentes, adaptadores y accesorios en un solo catálogo.</p>
+          <a class="booking-action" href="tienda.html">
+            Explorar tienda <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      </div>
     </section>
 
     <!-- GUÍAS -->
@@ -1338,83 +677,10 @@ document.addEventListener('DOMContentLoaded', () => {
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer" id="contacto">
-    <div class="container footer-journey"><p>Consulta destinos, vuelos y hospedajes.</p><a href="viajes.html?pantalla=destinos">Encuentra tu destino <span aria-hidden="true">↗</span></a></div>
-    <svg class="footer-route" viewBox="0 0 300 85" fill="none" aria-hidden="true"><path d="M4 68C58 12 111 80 156 42S205 11 196 35 249 75 296 9" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 7"/></svg>
-    <div class="container footer-top">
-      <div>
-        <a class="logo" href="#inicio" aria-label="Rumbo, volver al inicio">
-          rumbo<span aria-hidden="true">↗</span>
-        </a>
-        <p>Planificación de viajes desde Honduras.</p>
-      </div>
-      <div class="footer-social-block">
-        <p>Sigamos en contacto</p>
-        <div class="footer-socials" role="group" aria-label="Redes sociales de Rumbo">
-          <button class="footer-social" type="button" data-social="facebook" aria-label="Facebook de Rumbo, próximamente" title="Facebook: próximamente" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.5.7-1.5 1.5v2h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></button>
-          <button class="footer-social" type="button" data-social="instagram" aria-label="Instagram de Rumbo, próximamente" title="Instagram: próximamente" disabled><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></button>
-          <button class="footer-social" type="button" data-social="x" aria-label="X de Rumbo, próximamente" title="X: próximamente" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h5.4l5.1 6.8L19.5 3H22l-7.3 8.6L22 21h-5.4l-5.7-7.5L4.5 21H2l7.7-9.3L3 3Zm3.1 1.6 11.3 14.8h1.5L7.7 4.6H6.1Z"/></svg></button>
-          <button class="footer-social" type="button" data-social="whatsapp" aria-label="WhatsApp de Rumbo, próximamente" title="WhatsApp: próximamente" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4.1Z"/><path d="M8 7.2c-.4 0-1.3.6-1.3 1.8 0 1.7 2.4 5.6 6.5 7 .9.3 2 .2 2.6-.5.4-.4.6-1.4.4-1.6l-2.1-1c-.3-.1-.4 0-.6.3l-.7.8c-.2.2-.4.1-.7 0-1.4-.6-2.5-1.7-3.1-2.8-.2-.3-.1-.5.1-.7.3-.3.7-.7.5-1.1l-.9-2c-.1-.3-.4-.2-.7-.2Z"/></svg></button>
-        </div>
-        <small class="footer-social-note" data-social-note>Nuestras redes, pronto aquí.</small>
-      </div>
-      <a class="back-top" href="#inicio">
-        Volver arriba <span aria-hidden="true">↑</span>
-      </a>
-    </div>
-
-    <div class="container footer-grid">
-      <nav class="footer-column" aria-label="Explorar Rumbo">
-        <h2>Explora</h2>
-        <a href="#destinos">Destinos</a>
-        <a href="#servicios">Reservas y servicios</a>
-        <a href="#guias">Guías de viaje</a>
-      </nav>
-
-      <div class="footer-column">
-        <h2>Ayuda</h2>
-        <button type="button" data-open-help>Orientador de viajes</button>
-        <button type="button" data-module="faq">Preguntas frecuentes</button>
-        <button type="button" data-module="changes">Cambios y cancelaciones</button>
-        <button type="button" data-module="support">Centro de ayuda</button>
-      </div>
-
-      <div class="footer-column">
-        <h2>Nosotros</h2>
-        <a href="#quienes-somos">Quiénes somos</a>
-        <button type="button" data-module="team">Nuestro equipo</button>
-        <button type="button" data-module="privacy">Privacidad</button>
-        <button type="button" data-module="terms">Términos y condiciones</button>
-      </div>
-
-      <div class="footer-column">
-        <h2>Teléfonos</h2>
-        <address>
-          <a href="tel:+50496767669">+504 9676-7669</a>
-          <a href="tel:+50494525271">+504 9452-5271</a>
-          <a href="tel:+50499584929">+504 9958-4929</a>
-          <a href="tel:+50495197994">+504 9519-7994</a>
-          <a href="tel:+50493366360">+504 9336-6360</a>
-        </address>
-      </div>
-
-      <div class="footer-column footer-emails">
-        <h2>Correo electrónico</h2>
-        <address>
-          <a href="mailto:allanramos@franciscojavier.edu.hn">allanramos@franciscojavier.edu.hn</a>
-          <a href="mailto:omartabora@franciscojavier.edu.hn">omartabora@franciscojavier.edu.hn</a>
-          <a href="mailto:diannymoreira@franciscojavier.edu.hn">diannymoreira@franciscojavier.edu.hn</a>
-          <a href="mailto:dilanbanegas@franciscojavier.edu.hn">dilanbanegas@franciscojavier.edu.hn</a>
-          <a href="mailto:yeisoncarbajal@franciscojavier.edu.hn" aria-label="Correo de Yeison Carbajal: yeisoncarbajal@franciscojavier.edu.hn">yeisoncarbajal@franciscojavier.edu.hn</a>
-        </address>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <p><a href="servicios.html?seccion=legal">Información legal</a> · © <span id="year">2026</span> Rumbo</p>
-      <p class="footer-origin">Hecho en Honduras. Pensado para viajar.</p>
-    </div>
-  </footer>
+  <footer class="site-footer" id="contacto"><div class="container footer-grid">
+<div class="footer-column"><a class="logo" href="#inicio" aria-label="Rumbo, volver al inicio">rumbo<span aria-hidden="true">↗</span></a><p>Planificá tu viaje desde Honduras.</p><a href="#destinos">Destinos</a><a href="#servicios">Servicios</a><a href="#guias">Guías de viaje</a><a href="#quienes-somos">Quiénes somos</a><a href="#nuestro-equipo">Nuestro equipo</a></div>
+<nav class="footer-column" aria-label="Ayuda e información"><h2>Te ayudamos</h2><button type="button" data-open-help>Consultar a Rumbito</button><button type="button" data-module="faq">Preguntas frecuentes</button><button type="button" data-module="changes">Cambios y cancelaciones</button><button type="button" data-module="support">Centro de ayuda</button><button type="button" data-module="privacy">Privacidad</button><button type="button" data-module="terms">Términos y condiciones</button></nav>
+<div class="footer-column"><h2>Hablemos</h2><details><summary>Teléfonos del equipo</summary><address><a href="tel:+50496767669">+504 9676-7669</a><a href="tel:+50494525271">+504 9452-5271</a><a href="tel:+50499584929">+504 9958-4929</a><a href="tel:+50495197994">+504 9519-7994</a><a href="tel:+50493366360">+504 9336-6360</a></address></details><details><summary>Correos del equipo</summary><address><a href="mailto:allanramos@franciscojavier.edu.hn">allanramos@franciscojavier.edu.hn</a><a href="mailto:omartabora@franciscojavier.edu.hn">omartabora@franciscojavier.edu.hn</a><a href="mailto:diannymoreira@franciscojavier.edu.hn">diannymoreira@franciscojavier.edu.hn</a><a href="mailto:dilanbanegas@franciscojavier.edu.hn">dilanbanegas@franciscojavier.edu.hn</a><a href="mailto:yeisoncarbajal@franciscojavier.edu.hn" aria-label="Correo de Yeison Carbajal: yeisoncarbajal@franciscojavier.edu.hn">yeisoncarbajal@franciscojavier.edu.hn</a></address></details><a href="#inicio">Volver arriba ↑</a></div></div><div class="container footer-bottom"><p>© <span id="year">2026</span> Rumbo · Honduras</p><a href="servicios.html?seccion=legal">Información legal</a></div></footer>
 
   <!-- CHAT -->
   <button

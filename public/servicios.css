@@ -81,7 +81,8 @@
 .guide-route li { counter-increment:stop; position:relative; padding:0 0 18px 32px; border-left:1px solid #b9ccc1; margin-left:9px; }
 .guide-route li:last-child { padding-bottom:0; border-left-color:transparent; }
 .guide-route li:before { content:counter(stop); position:absolute; top:0; left:-10px; width:20px; height:20px; display:grid; place-items:center; background:white; border:1px solid #a7beb1; border-radius:50%; color:var(--primary-dark); font-size:11px; }
-.guide-photo-credit { font-size:12px; color:var(--primary-dark); text-decoration:underline; text-underline-offset:3px; }
+.guide-photo-credit { font-size:12px; color:var(--primary-dark); overflow-wrap:anywhere; }
+.guide-photo-credit a { text-decoration:underline; text-underline-offset:3px; }
 .guide-card-bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid var(--guide-line); padding-top:16px; margin-top:auto; }
 .guide-card-bottom>div { width:100%; }
 .guide-card-bottom small { display:block; font-size:12px; color:var(--muted); }

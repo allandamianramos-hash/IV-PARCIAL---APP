@@ -76,7 +76,12 @@ test('todos los destinos muestran sus propias actividades e imagen', () => {
     const ui=page('&destino='+d.id);
     assert.equal(ui.node('guide-cover').src,d.id==='roatan'?'imagenes-viajes/guia-roatan-west-bay.jpg':d.image);
     assert.equal(ui.node('guide-results-title').textContent,'Recorridos en '+d.name);
-    for(const {title} of experiences.filter(e=>e.destination===d.id)) assert.ok(ui.node('guide-results').innerHTML.includes(title));
+    const html=ui.node('guide-results').innerHTML;
+    for(const {title,image} of experiences.filter(e=>e.destination===d.id)) {
+      assert.ok(html.includes(title));
+      assert.ok(html.includes(`src="${image}"`),title+' debe mostrar su propia fotografía');
+    }
+    assert.equal((html.match(/class="guide-photo-credit"/g)||[]).length,10);
     assert.ok(ui.node('guide-destination-link').href.includes('pantalla=detalle-destino'));
   }
 });
@@ -108,16 +113,23 @@ test('guardar calcula el grupo, conserva otros servicios y restaura la selecció
 
 test('cada recorrido tiene foto local, licencia y paradas específicas', async () => {
   const credits=JSON.parse(await readFile(new URL('imagenes-viajes/CREDITOS-GUIAS.json',new URL('../public/', import.meta.url)),'utf8'));
-  const hashes=new Set();
+  const hashes=new Set(), paths=new Set(), sources=new Set();
   assert.equal(new Set(experiences.map(e=>e.id)).size, experiences.length);
   assert.equal(experiences.length,140);
   for(const item of experiences){
     const photo=await readFile(new URL(item.image,new URL('../public/', import.meta.url)));
     assert.equal(photo.readUInt16BE(0),0xffd8,item.id+' debe ser JPEG');
     const hash=createHash('sha256').update(photo).digest('hex');
-    if (!item.photoContext) { assert.ok(!hashes.has(hash),item.id+' repite foto'); hashes.add(hash); }
+    assert.ok(!hashes.has(hash),item.id+' repite el contenido de otra foto');
+    hashes.add(hash);
+    assert.ok(!paths.has(item.image),item.id+' reutiliza un archivo de imagen');
+    paths.add(item.image);
+    const photoSource=decodeURIComponent(new URL(item.photoPage).pathname).replaceAll('_',' ').normalize('NFC');
+    assert.ok(!sources.has(photoSource),item.id+' reutiliza la misma fotografía de origen');
+    sources.add(photoSource);
     assert.ok(item.stops.length>=3);assert.ok(item.description.length>50);
     assert.ok(credits.some(c=>c.file===item.image&&c.author&&c.license&&c.commons===item.photoPage));
+    assert.ok(item.photoAuthor&&item.photoLicense&&item.photoLicenseUrl,item.id+' necesita atribución visible');
   }
   for(const d of catalog.destinations){
     const items=experiences.filter(e=>e.destination===d.id);

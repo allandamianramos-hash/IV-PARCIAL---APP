@@ -114,7 +114,7 @@ body .site-header .header-actions .account-actions .login-button{background:var(
 body .site-header .header-actions .account-actions .login-button:hover{background:var(--tinta)!important;color:var(--blanco-texto)!important}
 body.auth-page .auth-brand{background:var(--fondo)!important;padding:8px 16px;border-radius:999px;position:relative;z-index:1}
 /* Contraste de portada, fotografías de equipaje y navegación de cuenta. */
-body main .rumbo-cover-slide::after{background:linear-gradient(90deg,rgba(10,20,18,.64),rgba(10,20,18,.12) 65%),linear-gradient(to top,rgba(10,20,18,.64),transparent 65%)}
+
 body main .rumbo-cover-copy{z-index:2}
 body main .rumbo-cover-copy :is(h2,p){color:#fff!important;text-shadow:0 1px 2px rgba(10,20,18,.3)}
 body.auth-login .auth-intro{background-image:url('imagenes-viajes/acceso-equipaje.jpg');background-position:65% center}
@@ -153,18 +153,20 @@ body.auth-page .auth-intro::before{display:none}
 body.auth-page .auth-brand{color:var(--verde);text-shadow:none}
 body.auth-page .auth-intro-copy{margin-top:360px}
 @media(max-width:700px){body.auth-page .auth-intro{min-height:360px}body.auth-page .auth-intro-copy{margin-top:150px}}
-/* Foto sin velo: contraste limitado al contenido y controles. */
+/* Fotografía despejada: el contraste sigue únicamente la forma de las letras. */
 body main .rumbo-cover{display:grid}
 body main .rumbo-cover-slide{grid-area:1 / 1;width:100%;min-width:0}
-body main .rumbo-cover-slide::after{display:none!important;background:none!important}
-body main .rumbo-cover-copy{padding:24px 28px;background:rgba(246,241,231,.97);border-radius:20px;max-width:480px;bottom:80px}
-body main .rumbo-cover .rumbo-cover-copy :is(h2,p){color:var(--tinta)!important;text-shadow:none!important}
-body main .rumbo-cover .rumbo-cover-copy h2{font-size:clamp(36px,4.4vw,64px);margin-bottom:16px}
-body main .rumbo-cover .rumbo-cover-cta{background:var(--verde);color:white}
+body main .rumbo-cover-slide::after{display:none;background:none}
+body main .rumbo-cover-copy{padding:0;background:none;border-radius:0;max-width:560px;bottom:88px}
+body main .rumbo-cover .rumbo-cover-copy :is(h2,p){color:#fff!important;text-shadow:0 1px 2px #17302b,0 2px 6px rgba(0,0,0,.8);font-weight:600}
+body main .rumbo-cover .rumbo-cover-copy h2{font-size:clamp(44px,5.2vw,76px);font-weight:650!important;margin-bottom:20px;-webkit-text-stroke:.4px rgba(23,48,43,.65);paint-order:stroke fill}
+body main .rumbo-cover .rumbo-cover-description{max-width:34ch}
+body main .rumbo-cover .rumbo-cover-cta{background:var(--verde);color:white;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 body main .rumbo-cover .rumbo-cover-cta:hover{background:var(--tinta)}
-body main .rumbo-cover-controls{background:rgba(246,241,231,.97);padding:12px;border-radius:20px}
-body main .rumbo-cover-step button{color:var(--tinta);border-color:rgba(23,48,43,.3)}
-body main .rumbo-cover-count{color:var(--tinta)}
-body main .rumbo-cover-step button:hover{background:var(--arena);color:var(--tinta)}
-body main .rumbo-cover-terms{color:var(--tinta);background:rgba(246,241,231,.97);border-radius:8px;padding:4px 8px}
-@media(max-width:700px){body main .rumbo-cover-copy{left:16px;bottom:192px;width:calc(100% - 32px);padding:20px;max-width:none}body main .rumbo-cover-controls{bottom:56px;right:16px;gap:4px}body main .rumbo-cover-terms{left:16px;max-width:calc(100% - 32px);bottom:12px;font-size:10px}}
+body main .rumbo-cover-controls{background:none;padding:0;border-radius:0}
+body main .rumbo-cover-step button{color:white;border-color:white;text-shadow:0 1px 3px #17302b;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+body main .rumbo-cover-count{color:white;font-weight:600;text-shadow:0 1px 2px #17302b,0 2px 4px #17302b}
+body main .rumbo-cover-step button:hover{background:var(--verde);color:white}
+body main .rumbo-cover-terms{color:white;background:none;border-radius:0;padding:0;font-weight:600;text-shadow:0 1px 2px #17302b,0 2px 4px #17302b}
+@media(min-width:701px) and (max-width:1050px){body main .rumbo-cover-copy{max-width:calc(100% - 288px)}}
+@media(max-width:700px){body main .rumbo-cover-copy{left:24px;bottom:192px;width:calc(100% - 48px);max-width:none}body main .rumbo-cover-controls{bottom:64px;right:24px;gap:12px}body main .rumbo-cover-terms{left:24px;max-width:calc(100% - 48px);bottom:16px;font-size:11px}}

@@ -130,14 +130,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   price.textContent='Desde '+money(flight.economy)+' por persona'+(flight.discountPercent?' · −'+flight.discountPercent+' % en vuelos':'');
  });
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- let timer=null,paused=false,hovered=false,focused=false;
+ let timer=null,paused=false;
  const toggle=root.querySelector('[data-promo-pause]');
- function schedule(){clearInterval(timer);if(!paused&&!hovered&&!focused&&!document.hidden&&!reduced.matches)timer=setInterval(()=>show(current+1,false),4000);}
+ function schedule(){clearInterval(timer);if(!paused&&!document.hidden)timer=setInterval(()=>show(current+1,false),4000);}
  function show(index,manual=true){
   const old=current;current=(index+slides.length)%slides.length;
   if(thumbs[current]===document.activeElement)root.querySelector('[data-promo-next]').focus({preventScroll:true});
   slides.forEach((slide,i)=>{slide.getAnimations().forEach(a=>a.cancel());slide.hidden=i!==current;thumbs[i].hidden=i===current;});
-  if(old!==current&&!reduced.matches)slides[current].animate([{opacity:.35},{opacity:1}],{duration:600,easing:'ease-out'});
+  if(old!==current&&!reduced.matches)slides[current].animate([{opacity:.2,transform:'translateX(32px)'},{opacity:1,transform:'translateX(0)'}],{duration:600,easing:'ease-out'});
   root.querySelector('[data-promo-count]').textContent=String(current+1).padStart(2,'0')+' / 04';
   if(manual)root.querySelector('[data-promo-status]').textContent=RUMBO_HERO_CONFIG.slides[current].title+', '+(current+1)+' de 4';
   schedule();
@@ -146,12 +146,11 @@ document.addEventListener('DOMContentLoaded',()=>{
  root.querySelector('[data-promo-next]').addEventListener('click',()=>show(current+1));
  thumbs.forEach((button,i)=>button.addEventListener('click',()=>show(i)));
  toggle.addEventListener('click',()=>{paused=!paused;toggle.textContent=paused?'▷':'Ⅱ';toggle.setAttribute('aria-label',paused?'Reanudar carrusel':'Pausar carrusel');toggle.setAttribute('aria-pressed',String(paused));schedule();});
- root.addEventListener('mouseenter',()=>{hovered=true;schedule();});root.addEventListener('mouseleave',()=>{hovered=false;schedule();});
- root.addEventListener('focusin',()=>{focused=true;schedule();});root.addEventListener('focusout',e=>{focused=root.contains(e.relatedTarget);schedule();});
- document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',schedule);
+ document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',()=>{slides.forEach(slide=>slide.getAnimations().forEach(a=>a.cancel()));});
+ function syncToggle(){toggle.textContent=paused?'▷':'Ⅱ';toggle.setAttribute('aria-label',paused?'Reanudar carrusel':'Pausar carrusel');toggle.setAttribute('aria-pressed',String(paused));}syncToggle();
  const firstImage=slides[0].querySelector('img');
  const entrance=()=>{if(!reduced.matches)slides[0].animate([{opacity:.2,transform:'translateX(20px)'},{opacity:1,transform:'translateX(0)'}],{duration:1100,easing:'ease-out'});schedule();};
- if(firstImage.complete)entrance();else firstImage.addEventListener('load',entrance,{once:true});
+ schedule();if(firstImage.complete)entrance();else {firstImage.addEventListener('load',entrance,{once:true});firstImage.addEventListener('error',schedule,{once:true});}
 
 });
 </script>

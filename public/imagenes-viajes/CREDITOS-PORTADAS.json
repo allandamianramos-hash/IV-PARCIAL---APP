@@ -86,5 +86,38 @@
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
     "description": "El Sena y la torre Eiffel al atardecer",
     "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "hero-paris",
+    "file": "imagenes-viajes/hero-paris-eiffel.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg/1280px-Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg",
+    "author": "Guilhem Vellut",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "description": "La torre Eiffel vista de cerca desde Trocadéro",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "hero-madrid",
+    "file": "imagenes-viajes/hero-madrid-palacio.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Palacio_Real_de_Madrid._Fachada_principal.jpg/1280px-Palacio_Real_de_Madrid._Fachada_principal.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Madrid._Fachada_principal.jpg",
+    "author": "Jose Luis Filpo Cabana",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "description": "La fachada del Palacio Real de Madrid desde la plaza de la Armería",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "hero-cancun",
+    "file": "imagenes-viajes/hero-cancun-delfines.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/26/Playa_Delfines%2C_Canc%C3%BAn_-_Panorama.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Playa_Delfines%2C_Canc%C3%BAn_-_Panorama.jpg",
+    "author": "Capmo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "La arena blanca y el mar turquesa de Playa Delfines en Cancún",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
   }
 ]

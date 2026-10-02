@@ -98,3 +98,18 @@ body #guias.section{background:var(--arena);border:0;border-radius:20px}
 body #guias .guides-image{border-radius:20px}
 body #guias :is(p,summary),body #antes-de-viajar p{color:var(--tinta)}
 body #quienes-somos.about-rumbo{background:var(--fondo);border:0;box-shadow:none}
+/* Ajustes de portada y acceso solicitados: sin alterar las demás secciones. */
+body .rumbo-cover [data-promo-status]{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+body .site-header .account-actions .login-button{background:var(--arena);border:1px solid transparent;color:var(--tinta);padding:12px 20px;border-radius:999px}
+body .site-header .account-actions .register-button{background:var(--verde)!important;border:1px solid var(--verde);color:white!important;padding:12px 20px;border-radius:999px}
+body .site-header .account-actions .login-button:hover{background:var(--tinta);color:white}
+body .site-header .account-actions .register-button:hover{background:var(--tinta)!important;border-color:var(--tinta)}
+body .site-header a[href="tienda.html"],body #servicios .shop-card .booking-action{background:var(--arena)!important;color:var(--tinta)!important;border:1px solid transparent;border-radius:999px;padding:12px 20px}
+body .site-header a[href="tienda.html"]:hover,body #servicios .shop-card .booking-action:hover{background:var(--verde)!important;color:white!important}
+body.auth-login .auth-intro{background-image:url('imagenes-viajes/hd-madrid-retiro.jpg');background-position:55% center;background-size:cover}
+body.auth-register .auth-intro{background-image:url('imagenes-viajes/hd-venecia-canal.jpg');background-position:52% center;background-size:cover}
+body.auth-page .auth-intro::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(23,48,43,.85),rgba(23,48,43,.12) 70%);border-radius:inherit}
+@media(max-width:600px){body .site-header .account-actions :is(.login-button,.register-button){padding:10px 14px}body .rumbo-cover-step{gap:6px}body .rumbo-cover-step button{width:40px;height:40px}}
+body .site-header .header-actions .account-actions .login-button{background:var(--arena)!important;color:var(--tinta)!important;border-color:transparent!important}
+body .site-header .header-actions .account-actions .login-button:hover{background:var(--tinta)!important;color:var(--blanco-texto)!important}
+body.auth-page .auth-brand{background:var(--fondo)!important;padding:8px 16px;border-radius:999px;position:relative;z-index:1}

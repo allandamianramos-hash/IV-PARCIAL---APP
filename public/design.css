@@ -87,3 +87,14 @@ body .chat-launcher small{display:none}
 @media(max-width:1000px){body #servicios .booking-card{grid-template-columns:40px 1fr 1.3fr}body #servicios .booking-card>:last-child{grid-column:2/-1;justify-self:start}body .search-field{padding:0 16px}body .search-form>.button{padding:16px;margin-left:16px}body .site-footer .footer-grid{gap:24px}body #destinations-track .destination-image{height:240px}body #destinations-track .destination-card:nth-child(3n+1) .destination-image{height:320px}}
 @media(max-width:700px){body .section{padding-top:48px;padding-bottom:48px}body .search-form{grid-template-columns:1fr;gap:16px;padding:24px}body .search-field{padding:0;border:0;border-bottom:1px solid var(--border)}body .search-form>.button{margin:0;width:100%}body #destinations-track{grid-template-columns:1fr 1fr;gap:32px 16px}body #destinations-track .destination-card:nth-child(3n+1){grid-column:1/-1}body #destinations-track .destination-image{height:200px}body #destinations-track h3{font-size:21px}body #destinations-track p{font-size:14px}body #servicios .booking-card{grid-template-columns:32px 1fr;gap:16px}body #servicios .booking-card>p:not(.journey-card-number){grid-column:2}body #guias{padding:32px 24px}body .site-footer .footer-grid{grid-template-columns:1fr;gap:40px}body .footer-bottom{flex-wrap:wrap;gap:16px}body .carousel-toolbar{gap:16px}body .section-heading{align-items:start;gap:24px}}
 @media(prefers-reduced-motion:reduce){body *,body *::before,body *::after{transition:none!important;animation:none!important}}
+/* Neutraliza la composición anterior sin cambiar los módulos de datos. */
+:root{--ink:var(--tinta);--background:var(--fondo);--accent:var(--verde);--accent-soft:var(--arena);--hero:var(--arena)}
+body #destinations-track{grid-auto-flow:row;grid-auto-columns:auto}
+body #buscador.search-section{background:transparent;border:0;box-shadow:none;padding-inline:0}
+body #destinos.destinations-section,body #servicios.section{background:var(--fondo);border:0;border-radius:0}
+body #destinos.destinations-section::before,body #servicios.section::before{display:none}
+body #servicios .booking-card:nth-child(n){background:transparent}
+body #guias.section{background:var(--arena);border:0;border-radius:20px}
+body #guias .guides-image{border-radius:20px}
+body #guias :is(p,summary),body #antes-de-viajar p{color:var(--tinta)}
+body #quienes-somos.about-rumbo{background:var(--fondo);border:0;box-shadow:none}

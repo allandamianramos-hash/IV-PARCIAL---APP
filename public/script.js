@@ -145,7 +145,7 @@
 
         // Solo se interpola el catálogo fijo, nunca mensajes del usuario.
         card.innerHTML = `
-          <a class="destination-link" href="viajes.html?pantalla=destinos&destino=${encodeURIComponent(trip.id)}">
+          <a class="destination-link" href="viajes.html?pantalla=detalle-destino&destino=${encodeURIComponent(trip.id)}">
             <div class="destination-image"><img src="${trip.image.startsWith('imagenes-') ? trip.image : 'https://images.unsplash.com/'+trip.image+'?auto=format&fit=crop&w=800&q=85'}" alt="${trip.alt}" width="800" height="600" loading="lazy"></div>
             <div class="destination-body"><h3>${trip.name}</h3><p>Desde ${money(trip.price)} por persona</p></div>
           </a>`;
@@ -155,7 +155,7 @@
 
       setText(
         "#result-count",
-        `${items.length} ${items.length === 1 ? "destino" : "destinos"} disponibles`
+        `${items.length} ${items.length === 1 ? "destino disponible" : "destinos disponibles"}`
       );
 
       $("#empty-state").hidden = items.length > 0;

@@ -113,3 +113,36 @@ body.auth-page .auth-intro::before{content:'';position:absolute;inset:0;backgrou
 body .site-header .header-actions .account-actions .login-button{background:var(--arena)!important;color:var(--tinta)!important;border-color:transparent!important}
 body .site-header .header-actions .account-actions .login-button:hover{background:var(--tinta)!important;color:var(--blanco-texto)!important}
 body.auth-page .auth-brand{background:var(--fondo)!important;padding:8px 16px;border-radius:999px;position:relative;z-index:1}
+/* Contraste de portada, fotografías de equipaje y navegación de cuenta. */
+body main .rumbo-cover-slide::after{background:linear-gradient(90deg,rgba(10,20,18,.64),rgba(10,20,18,.12) 65%),linear-gradient(to top,rgba(10,20,18,.64),transparent 65%)}
+body main .rumbo-cover-copy{z-index:2}
+body main .rumbo-cover-copy :is(h2,p){color:#fff!important;text-shadow:0 1px 2px rgba(10,20,18,.3)}
+body.auth-login .auth-intro{background-image:url('imagenes-viajes/acceso-equipaje.jpg');background-position:65% center}
+body.auth-register .auth-intro{background-image:url('imagenes-viajes/registro-mochila.jpg');background-position:center 45%}
+body.auth-page .auth-intro::before{background:linear-gradient(to top,rgba(23,48,43,.92),transparent 62%)}
+body.auth-page .auth-brand{background:transparent!important;border:0!important;border-radius:0;padding:0;width:auto;mix-blend-mode:normal;font:800 40px/1 'Segoe UI',sans-serif!important;letter-spacing:-2px;color:white;text-shadow:0 1px 3px rgba(23,48,43,.5)}
+body.auth-register .auth-brand{color:var(--verde);text-shadow:none}
+body.auth-page .auth-brand span{font:inherit!important;margin-left:8px}
+body.auth-page .auth-intro-copy{position:relative;z-index:1;color:white;opacity:1}
+body.auth-page .auth-intro-copy :is(h2,p,span){color:white!important;opacity:1}
+body.auth-page .auth-intro-copy p{margin:24px 0 0;font-size:17px;max-width:32ch}
+body .site-header .header-actions{gap:12px;flex:0 1 auto}
+body .site-header .header-actions .account-actions{display:flex;align-items:center;gap:8px;min-width:0}
+body .site-header .header-actions :is(.header-trip,.login-button,.register-button,.auth-logout){border-radius:14px!important;padding:12px 20px!important;min-height:44px;font-weight:500!important;box-shadow:none}
+body .site-header .header-actions .header-trip{background:var(--arena)!important;color:var(--tinta)!important;border:1px solid var(--arena)!important}
+body .site-header .header-actions .account-actions .login-button{background:var(--fondo)!important;color:var(--verde)!important;border:1px solid var(--verde)!important}
+body .site-header .header-actions .account-actions .register-button{background:var(--verde)!important;color:white!important}
+body .site-header .header-actions :is(.header-trip,.login-button,.register-button,.auth-logout):hover{background:var(--tinta)!important;color:white!important;border-color:var(--tinta)!important}
+body .site-header .account-actions.is-authenticated{padding:6px 6px 6px 16px;background:var(--arena);border-radius:18px;flex-wrap:wrap}
+body .site-header .is-authenticated .auth-user-name{max-width:180px;color:var(--tinta);font-weight:500}
+body .site-header .is-authenticated .auth-logout{background:var(--verde);color:white;border:0;padding:10px 16px!important}
+body #destinos .destination-intro{display:block;max-width:52ch;font-size:17px;line-height:1.5;margin:16px 0 0;color:var(--tinta)}
+body #destinos .section-heading{margin-bottom:24px}
+body #destinations-track{align-items:end;row-gap:48px}
+body #destinations-track .destination-image{height:300px}
+body #destinations-track .destination-card:nth-child(3n+1) .destination-image{height:400px}
+body #destinations-track .destination-body{border-bottom:1px solid var(--border);padding:20px 0}
+body #destinations-track .destination-country{display:block;font-size:12px;margin-bottom:8px;line-height:1.5;color:var(--tinta)}
+body #destinations-track h3{display:flex;justify-content:space-between;gap:16px;align-items:center}
+body #destinations-track h3 span{font-size:20px;color:var(--verde)}
+@media(max-width:700px){body #destinations-track .destination-image{height:220px}body #destinations-track .destination-card:nth-child(3n+1) .destination-image{height:320px}body .site-header .header-actions :is(.header-trip,.login-button,.register-button,.auth-logout){padding:10px 12px!important}body .site-header .is-authenticated .auth-user-name{max-width:140px}body.auth-page .auth-brand{font-size:32px!important}}

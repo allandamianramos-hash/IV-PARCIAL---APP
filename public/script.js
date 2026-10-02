@@ -147,7 +147,7 @@
         card.innerHTML = `
           <a class="destination-link" href="viajes.html?pantalla=detalle-destino&destino=${encodeURIComponent(trip.id)}">
             <div class="destination-image"><img src="${trip.image.startsWith('imagenes-') ? trip.image : 'https://images.unsplash.com/'+trip.image+'?auto=format&fit=crop&w=800&q=85'}" alt="${trip.alt}" width="800" height="600" loading="lazy"></div>
-            <div class="destination-body"><h3>${trip.name}</h3><p>Desde ${money(trip.price)} por persona</p></div>
+            <div class="destination-body"><span class="destination-country">${trip.country} · ${trip.duration}</span><h3>${trip.name}<span aria-hidden="true">↗</span></h3><p>Desde ${money(trip.price)} por persona</p></div>
           </a>`;
 
         track.appendChild(card);

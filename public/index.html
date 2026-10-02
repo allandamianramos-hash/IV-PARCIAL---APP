@@ -148,7 +148,10 @@ document.addEventListener('DOMContentLoaded',()=>{
  toggle.addEventListener('click',()=>{paused=!paused;toggle.textContent=paused?'▷':'Ⅱ';toggle.setAttribute('aria-label',paused?'Reanudar carrusel':'Pausar carrusel');toggle.setAttribute('aria-pressed',String(paused));schedule();});
  root.addEventListener('mouseenter',()=>{hovered=true;schedule();});root.addEventListener('mouseleave',()=>{hovered=false;schedule();});
  root.addEventListener('focusin',()=>{focused=true;schedule();});root.addEventListener('focusout',e=>{focused=root.contains(e.relatedTarget);schedule();});
- document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',schedule);schedule();
+ document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',schedule);
+ const firstImage=slides[0].querySelector('img');
+ const entrance=()=>{if(!reduced.matches)slides[0].animate([{opacity:.2,transform:'translateX(20px)'},{opacity:1,transform:'translateX(0)'}],{duration:1100,easing:'ease-out'});schedule();};
+ if(firstImage.complete)entrance();else firstImage.addEventListener('load',entrance,{once:true});
 
 });
 </script>
@@ -468,9 +471,9 @@ body:has(.rumbo-cover) .site-header a:hover{transform:none}body:has(.rumbo-cover
       <div class="container">
         <div class="section-heading">
           <div>
-            <h2 id="destinations-title">Elegí dónde ir</h2>
+            <h2 id="destinations-title">Un destino para tu próximo viaje</h2>
             <p class="destination-intro">
-              Opciones en Honduras y fuera de ella para empezar a comparar.
+              Compará destinos y presupuestos por persona. Elegí una foto para ver rutas y hospedajes.
             </p>
           </div>
           <a class="button button-outline" href="viajes.html?pantalla=destinos#catalogo">Ver todos los destinos ↗</a>

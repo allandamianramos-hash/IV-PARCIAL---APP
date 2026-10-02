@@ -28,7 +28,7 @@
         try{await window.RumboStorage?.flush?.();await request('logout');changed();location.replace('index.html');}
         catch(e){status.textContent=e.name==='TimeoutError'?'La conexión tardó demasiado. Inténtalo de nuevo.':e.message;logout.disabled=false;}
       });
-      accounts.replaceChildren(name,logout,status);
+      accounts.classList.add('is-authenticated');accounts.replaceChildren(name,logout,status);
     }
     render();
     // Vista de demostración: nunca crea cookies ni autoriza operaciones del servidor.

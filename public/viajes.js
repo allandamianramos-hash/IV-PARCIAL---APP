@@ -1244,6 +1244,1769 @@
     ]
   }
 ];
+  // Destinos adicionales: alojamientos y tarifas de demostración.
+  additionalDestinations.push(...[
+  {
+    "id": "ciudad-mexico",
+    "name": "Ciudad de México",
+    "country": "México",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "MEX",
+      "name": "Benito Juárez"
+    },
+    "arrival": "Ciudad de México",
+    "transfer": "",
+    "nights": 5,
+    "economy": 8500,
+    "duration": 240,
+    "image": "imagenes-viajes/destino-ciudad-mexico.jpg",
+    "alt": "Vista de Ciudad de México, México",
+    "intro": "Chapultepec, Coyoacán y museos para recorrer por barrios.",
+    "description": "Chapultepec, Coyoacán y museos para recorrer por barrios.",
+    "highlights": [
+      "Recorrer Chapultepec",
+      "Visitar el Palacio de Bellas Artes",
+      "Caminar por Coyoacán"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "ciudad-mexico-opcion-1",
+        "name": "Patio del Cenzontle",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1500,
+        "image": "hotel-ciudad-mexico-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Eliedion",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Efteling_Loonsche_Land_Hotel_themed_room_water_-_bunk_beds.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "ciudad-mexico-opcion-2",
+        "name": "Casa Jacaranda",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 1725,
+        "image": "hotel-ciudad-mexico-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Michael Gray",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Room_Chicago_Hilton2.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "ciudad-mexico-opcion-3",
+        "name": "Suites del Ahuehuete",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 1950,
+        "image": "hotel-ciudad-mexico-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Shixart1985",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bogota",
+    "name": "Bogotá",
+    "country": "Colombia",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "BOG",
+      "name": "El Dorado"
+    },
+    "arrival": "Bogotá",
+    "transfer": "",
+    "nights": 4,
+    "economy": 7800,
+    "duration": 300,
+    "image": "imagenes-viajes/destino-bogota.jpg",
+    "alt": "Vista de Bogotá, Colombia",
+    "intro": "La Candelaria, el Museo del Oro y vistas desde Monserrate.",
+    "description": "La Candelaria, el Museo del Oro y vistas desde Monserrate.",
+    "highlights": [
+      "Visitar el Museo del Oro",
+      "Recorrer La Candelaria",
+      "Subir a Monserrate"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "bogota-opcion-1",
+        "name": "Casa del Arrayán",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1300,
+        "image": "hotel-bogota-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "阿道",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guest_Room_of_Mandarin_Oriental,_Taipei_01.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "bogota-opcion-2",
+        "name": "Hotel Patio Andino",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 1495,
+        "image": "hotel-bogota-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Aaveecloud",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Accommodation_Kouvola_traditional_room_upstairs_Rauhala_Inn.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "bogota-opcion-3",
+        "name": "Suites del Ceramista",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 1690,
+        "image": "hotel-bogota-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Fung Hong Yuenai",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_room_window_curtain_n_beds_night_August_2019_SSG_03.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cartagena",
+    "name": "Cartagena",
+    "country": "Colombia",
+    "type": "playa",
+    "region": "internacional",
+    "tag": "Playa y descanso",
+    "airport": {
+      "code": "CTG",
+      "name": "Rafael Núñez"
+    },
+    "arrival": "Cartagena",
+    "transfer": "",
+    "nights": 4,
+    "economy": 8200,
+    "duration": 330,
+    "image": "imagenes-viajes/destino-cartagena.jpg",
+    "alt": "Vista de Cartagena, Colombia",
+    "intro": "Murallas, plazas y tardes junto al Caribe colombiano.",
+    "description": "Murallas, plazas y tardes junto al Caribe colombiano.",
+    "highlights": [
+      "Caminar por las murallas",
+      "Visitar el castillo de San Felipe",
+      "Pasear por Getsemaní"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "cartagena-opcion-1",
+        "name": "Casa del Balcón Coral",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1700,
+        "image": "hotel-cartagena-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Jakehutai",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Grand_Hyatt_Taipei_bedroom_in_Grand_Premier_Room.JPG",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "cartagena-opcion-2",
+        "name": "Hotel Patio de Sal",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 1955,
+        "image": "hotel-cartagena-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Hermann Luyken",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:2014.11.15.151019_Bed_Imperial_Palace_Club_Shanghai.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "cartagena-opcion-3",
+        "name": "Suites del Alcatraz",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2210,
+        "image": "hotel-cartagena-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "YosemiteYamper",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Room_18120,_Luxor_Resort_%26_Casino.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lima",
+    "name": "Lima",
+    "country": "Perú",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "LIM",
+      "name": "Jorge Chávez"
+    },
+    "arrival": "Lima",
+    "transfer": "",
+    "nights": 5,
+    "economy": 11000,
+    "duration": 420,
+    "image": "imagenes-viajes/destino-lima.jpg",
+    "alt": "Vista de Lima, Perú",
+    "intro": "Malecón de Miraflores, Barranco y cocina peruana.",
+    "description": "Malecón de Miraflores, Barranco y cocina peruana.",
+    "highlights": [
+      "Recorrer el malecón de Miraflores",
+      "Caminar por Barranco",
+      "Conocer el centro histórico"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "lima-opcion-1",
+        "name": "Hotel Patio del Pacífico",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1600,
+        "image": "hotel-lima-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Wiki.webscapeoy",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Restored_Shashi_Kapoor_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "lima-opcion-2",
+        "name": "Casa de la Garúa",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 1840,
+        "image": "hotel-lima-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "G. Edward Johnson",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Days_Inn_motel_room_Needles_CA_2026-04-04_19-12-45_1.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "lima-opcion-3",
+        "name": "Suites del Acantilado",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2080,
+        "image": "hotel-lima-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Nightscream",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:6.13.08ABQMarriotPyramidRoomByLuigiNovi8.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "buenos-aires",
+    "name": "Buenos Aires",
+    "country": "Argentina",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "EZE",
+      "name": "Ministro Pistarini, Ezeiza"
+    },
+    "arrival": "Buenos Aires",
+    "transfer": "",
+    "nights": 6,
+    "economy": 16000,
+    "duration": 660,
+    "image": "imagenes-viajes/destino-buenos-aires.jpg",
+    "alt": "Vista de Buenos Aires, Argentina",
+    "intro": "Librerías, cafés y paseos por Palermo y San Telmo.",
+    "description": "Librerías, cafés y paseos por Palermo y San Telmo.",
+    "highlights": [
+      "Visitar librerías de Recoleta",
+      "Recorrer San Telmo",
+      "Caminar por los parques de Palermo"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "buenos-aires-opcion-1",
+        "name": "Casa del Jacarandá Porteño",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1900,
+        "image": "hotel-buenos-aires-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Dale Cruse - 10M views from San Francisco, CA, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Tropical_Noir_Chic_Boutique_Hotel_Room_in_Lisbon_(54940806211).jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "buenos-aires-opcion-2",
+        "name": "Hotel Patio del Tango",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2185,
+        "image": "hotel-buenos-aires-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Jonathan Schilling",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hyatt_Place_Chicago-South_room_interior.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "buenos-aires-opcion-3",
+        "name": "Suites Pasaje del Sur",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2470,
+        "image": "hotel-buenos-aires-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Infrogmation of New Orleans",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Ocean_Palm_Room.JPG",
+        "photoLicense": "CC BY 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "santiago",
+    "name": "Santiago",
+    "country": "Chile",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "SCL",
+      "name": "Arturo Merino Benítez"
+    },
+    "arrival": "Santiago",
+    "transfer": "",
+    "nights": 5,
+    "economy": 15000,
+    "duration": 600,
+    "image": "imagenes-viajes/destino-santiago.jpg",
+    "alt": "Vista de Santiago, Chile",
+    "intro": "Barrios históricos, parques y vistas desde el cerro San Cristóbal.",
+    "description": "Barrios históricos, parques y vistas desde el cerro San Cristóbal.",
+    "highlights": [
+      "Subir al cerro San Cristóbal",
+      "Visitar el Museo de la Memoria",
+      "Recorrer el barrio Lastarria"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "santiago-opcion-1",
+        "name": "Hotel Patio de los Andes",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1800,
+        "image": "hotel-santiago-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Rasse2",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Forest_Of_Hope_Guest_House.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "santiago-opcion-2",
+        "name": "Casa del Peumo",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2070,
+        "image": "hotel-santiago-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Tournasol7",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:La_Bastide_en_Gascogne_(11).jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "santiago-opcion-3",
+        "name": "Suites Cerro Claro",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2340,
+        "image": "hotel-santiago-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "SuperDalio",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Red_Roof_NextGen_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "medellin",
+    "name": "Medellín",
+    "country": "Colombia",
+    "type": "naturaleza",
+    "region": "internacional",
+    "tag": "Naturaleza y aventura",
+    "airport": {
+      "code": "MDE",
+      "name": "José María Córdova, Rionegro"
+    },
+    "arrival": "Medellín",
+    "transfer": "",
+    "nights": 4,
+    "economy": 8500,
+    "duration": 330,
+    "image": "imagenes-viajes/destino-medellin.jpg",
+    "alt": "Vista de Medellín, Colombia",
+    "intro": "Jardín Botánico, parques y recorridos por el valle de Aburrá.",
+    "description": "Jardín Botánico, parques y recorridos por el valle de Aburrá.",
+    "highlights": [
+      "Visitar el Jardín Botánico",
+      "Caminar por el Parque Arví",
+      "Conocer la Plaza Botero"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "medellin-opcion-1",
+        "name": "Casa del Guayacán",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1400,
+        "image": "hotel-medellin-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Rangan Datta Wiki",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bari_Kothi_4.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "medellin-opcion-2",
+        "name": "Hotel Valle Florido",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 1610,
+        "image": "hotel-medellin-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Missvain",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hyatt_Regency_Lake_Tahoe_Resort,_Spa_and_Casino_-_2021-10-17_-_Sarah_Stierch_02.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "medellin-opcion-3",
+        "name": "Suites Patio de Helechos",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 1820,
+        "image": "hotel-medellin-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Adioslepido",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Sober_Living_in_San_Diego.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "punta-cana",
+    "name": "Punta Cana",
+    "country": "República Dominicana",
+    "type": "playa",
+    "region": "internacional",
+    "tag": "Playa y descanso",
+    "airport": {
+      "code": "PUJ",
+      "name": "Internacional de Punta Cana"
+    },
+    "arrival": "Punta Cana",
+    "transfer": "",
+    "nights": 5,
+    "economy": 10500,
+    "duration": 360,
+    "image": "imagenes-viajes/destino-punta-cana.jpg",
+    "alt": "Vista de Punta Cana, República Dominicana",
+    "intro": "Arena clara, costa de Bávaro y días de descanso junto al mar.",
+    "description": "Arena clara, costa de Bávaro y días de descanso junto al mar.",
+    "highlights": [
+      "Descansar en la playa de Bávaro",
+      "Pasear por la costa",
+      "Probar la cocina dominicana"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "punta-cana-opcion-1",
+        "name": "Hotel Duna de Coco",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2400,
+        "image": "hotel-punta-cana-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Morocco_2023_33.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "punta-cana-opcion-2",
+        "name": "Casa Brisa de Bávaro",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2760,
+        "image": "hotel-punta-cana-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Infrogmation of New Orleans",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:PensacolaVictorianBnBPort.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "punta-cana-opcion-3",
+        "name": "Suites Mar de Almendra",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3120,
+        "image": "hotel-punta-cana-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Prayitno from Los Angeles, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hyatt_Fisherman%27s_Bedroom_2.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "san-salvador",
+    "name": "San Salvador",
+    "country": "El Salvador",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "SAL",
+      "name": "San Óscar Arnulfo Romero, San Luis Talpa"
+    },
+    "arrival": "San Salvador",
+    "transfer": "",
+    "nights": 3,
+    "economy": 4200,
+    "duration": 120,
+    "image": "imagenes-viajes/destino-san-salvador.jpg",
+    "alt": "Vista de San Salvador, El Salvador",
+    "intro": "Centro Histórico, museos y cafés en la capital salvadoreña.",
+    "description": "Centro Histórico, museos y cafés en la capital salvadoreña.",
+    "highlights": [
+      "Recorrer el Centro Histórico",
+      "Visitar el Museo de Arte",
+      "Caminar por el Parque Cuscatlán"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "san-salvador-opcion-1",
+        "name": "Casa del Maquilishuat",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1200,
+        "image": "hotel-san-salvador-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Prayitno / Thank you for (12 millions +) view from Los Angeles, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Westin_Bonaventure_(6770536767).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "san-salvador-opcion-2",
+        "name": "Hotel Patio Cuscatleco",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 1380,
+        "image": "hotel-san-salvador-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "hatch.m from Tokyo, Japan",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Mandarin_Oriental_Tokyo_%5E1_-_Flickr_-_hatch.m.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "san-salvador-opcion-3",
+        "name": "Suites Volcán de Jade",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 1560,
+        "image": "hotel-san-salvador-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Tess Mattew",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:2025.01.02_Bialystok_Hotel_Branicki_Interior_of_Bedroom_05.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "san-juan",
+    "name": "San Juan",
+    "country": "Puerto Rico",
+    "type": "playa",
+    "region": "internacional",
+    "tag": "Playa y descanso",
+    "airport": {
+      "code": "SJU",
+      "name": "Luis Muñoz Marín, Carolina"
+    },
+    "arrival": "San Juan",
+    "transfer": "",
+    "nights": 5,
+    "economy": 12000,
+    "duration": 390,
+    "image": "imagenes-viajes/destino-san-juan.jpg",
+    "alt": "Vista de San Juan, Puerto Rico",
+    "intro": "Calles del Viejo San Juan, fortalezas y costa de Condado.",
+    "description": "Calles del Viejo San Juan, fortalezas y costa de Condado.",
+    "highlights": [
+      "Recorrer el Viejo San Juan",
+      "Visitar el fuerte San Felipe del Morro",
+      "Pasear por Condado"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "san-juan-opcion-1",
+        "name": "Casa del Adoquín Azul",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2300,
+        "image": "hotel-san-juan-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "John Mason from Edinburgh, UK",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom,_Bowery_Hotel_New_York_(15642356845).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "san-juan-opcion-2",
+        "name": "Hotel Patio Borinquen",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2645,
+        "image": "hotel-san-juan-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Kenming Wang",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Forte_Hotel_Changhua_bedroom_on_13_April_2016.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "san-juan-opcion-3",
+        "name": "Suites Brisa del Morro",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2990,
+        "image": "hotel-san-juan-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Shixart1985",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Modern_bedroom_design_in_a_stylish_hotel_room_featuring_geometric_patterns_and_soft_linens.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "los-angeles",
+    "name": "Los Ángeles",
+    "country": "Estados Unidos",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "LAX",
+      "name": "Internacional de Los Ángeles"
+    },
+    "arrival": "Los Ángeles",
+    "transfer": "",
+    "nights": 5,
+    "economy": 13500,
+    "duration": 480,
+    "image": "imagenes-viajes/destino-los-angeles.jpg",
+    "alt": "Vista de Los Ángeles, Estados Unidos",
+    "intro": "Museos, Griffith Park y paseos por Santa Mónica.",
+    "description": "Museos, Griffith Park y paseos por Santa Mónica.",
+    "highlights": [
+      "Visitar el Getty Center",
+      "Caminar por Griffith Park",
+      "Pasear por Santa Mónica"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "los-angeles-opcion-1",
+        "name": "Hotel Laurel Avenue",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2800,
+        "image": "hotel-los-angeles-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Mastcraft",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Washington_Mayfair_Hotel,_Bedroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "los-angeles-opcion-2",
+        "name": "Casa Pacific Terrace",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 3220,
+        "image": "hotel-los-angeles-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JIP",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_interior_at_hotel_Radisson_Blu_Oulu.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "los-angeles-opcion-3",
+        "name": "Suites Silver Palm",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3640,
+        "image": "hotel-los-angeles-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "https://www.flickr.com/photos/toprural/",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_L%27Agora_Interior_1.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "las-vegas",
+    "name": "Las Vegas",
+    "country": "Estados Unidos",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "LAS",
+      "name": "Harry Reid"
+    },
+    "arrival": "Las Vegas",
+    "transfer": "",
+    "nights": 4,
+    "economy": 13000,
+    "duration": 510,
+    "image": "imagenes-viajes/destino-las-vegas.jpg",
+    "alt": "Vista de Las Vegas, Estados Unidos",
+    "intro": "Espectáculos, gastronomía y recorridos por el Strip.",
+    "description": "Espectáculos, gastronomía y recorridos por el Strip.",
+    "highlights": [
+      "Recorrer el Strip",
+      "Visitar el Museo del Neón",
+      "Ver un espectáculo"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "las-vegas-opcion-1",
+        "name": "Hotel Desert Willow",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2300,
+        "image": "hotel-las-vegas-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Nick-D",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_a_room_at_City_Lodge_OR_Tambo_Airport_hotel_February_2025.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "las-vegas-opcion-2",
+        "name": "Suites Copper Dune",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2645,
+        "image": "hotel-las-vegas-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "TaurusEmerald",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:The_William_Vale_Hotel_Bedroom_Brooklyn,_NYC.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "las-vegas-opcion-3",
+        "name": "Casa Mojave Court",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2990,
+        "image": "hotel-las-vegas-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JasonParis",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:New_Orleans,_LA_(Warehouse_District)_-_Loft_523_Hotel_interior,_Feb_2011_-_3.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vancouver",
+    "name": "Vancouver",
+    "country": "Canadá",
+    "type": "naturaleza",
+    "region": "internacional",
+    "tag": "Naturaleza y aventura",
+    "airport": {
+      "code": "YVR",
+      "name": "Internacional de Vancouver, Richmond"
+    },
+    "arrival": "Vancouver",
+    "transfer": "",
+    "nights": 6,
+    "economy": 18000,
+    "duration": 660,
+    "image": "imagenes-viajes/destino-vancouver.jpg",
+    "alt": "Vista de Vancouver, Canadá",
+    "intro": "Stanley Park, Granville Island y paseos entre bosque y costa.",
+    "description": "Stanley Park, Granville Island y paseos entre bosque y costa.",
+    "highlights": [
+      "Recorrer Stanley Park",
+      "Visitar Granville Island",
+      "Caminar por el Seawall"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "vancouver-opcion-1",
+        "name": "Hotel Cedar Harbour",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2800,
+        "image": "hotel-vancouver-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "William J Sisti from Morristown, NJ, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom_-_Hotel_Pulitzer_(8698641138).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "vancouver-opcion-2",
+        "name": "Casa Evergreen Cove",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 3220,
+        "image": "hotel-vancouver-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "TravelingOtter",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom,_Westin_Canal_Place_-_New_Orleans.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "vancouver-opcion-3",
+        "name": "Suites Pacific Fern",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3640,
+        "image": "hotel-vancouver-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "William J Sisti from Morristown, NJ, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom_Suite_-_Hotel_Pulitzer_(8697518713).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "amsterdam",
+    "name": "Ámsterdam",
+    "country": "Países Bajos",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "AMS",
+      "name": "Schiphol"
+    },
+    "arrival": "Ámsterdam",
+    "transfer": "",
+    "nights": 5,
+    "economy": 23000,
+    "duration": 990,
+    "image": "imagenes-viajes/destino-amsterdam.jpg",
+    "alt": "Vista de Ámsterdam, Países Bajos",
+    "intro": "Canales, museos y recorridos a pie por Jordaan.",
+    "description": "Canales, museos y recorridos a pie por Jordaan.",
+    "highlights": [
+      "Visitar el Rijksmuseum",
+      "Pasear por Jordaan",
+      "Recorrer sus canales"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "amsterdam-opcion-1",
+        "name": "Casa del Canal de Olmo",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2700,
+        "image": "hotel-amsterdam-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JIP",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_interior_at_apartment_hotel_Ona_Cala_P%C3%AD_Club,_Mallorca,_Spain.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "amsterdam-opcion-2",
+        "name": "Hotel Tulip Courtyard",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 3105,
+        "image": "hotel-amsterdam-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Prayitno / Thank you for (12 millions +) view",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:JW_Marriott_Hotel_New_Orleans_March_2012_Bedroom.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "amsterdam-opcion-3",
+        "name": "Suites Puente de Ámbar",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3510,
+        "image": "hotel-amsterdam-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Prayitno from Los Angeles, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hyatt_Fisherman%27s_Bedroom_1.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "berlin",
+    "name": "Berlín",
+    "country": "Alemania",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "BER",
+      "name": "Berlín Brandeburgo Willy Brandt"
+    },
+    "arrival": "Berlín",
+    "transfer": "",
+    "nights": 5,
+    "economy": 22500,
+    "duration": 1080,
+    "image": "imagenes-viajes/destino-berlin.jpg",
+    "alt": "Vista de Berlín, Alemania",
+    "intro": "Isla de los Museos, parques y barrios con historia.",
+    "description": "Isla de los Museos, parques y barrios con historia.",
+    "highlights": [
+      "Visitar la Isla de los Museos",
+      "Conocer la Puerta de Brandeburgo",
+      "Caminar por Tiergarten"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "berlin-opcion-1",
+        "name": "Hotel Linden Hof",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2200,
+        "image": "hotel-berlin-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Nenad Stojkovic",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom_hotel_interior_with_open_door_window._(51536308276).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "berlin-opcion-2",
+        "name": "Casa del Patio de Berlín",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2530,
+        "image": "hotel-berlin-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Fred Cherrygarden",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Central_-_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "berlin-opcion-3",
+        "name": "Suites Spree Garden",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2860,
+        "image": "hotel-berlin-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Tangerineduel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Grand_Island_Hotel_bedroom_2006.JPG",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "praga",
+    "name": "Praga",
+    "country": "Chequia",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "PRG",
+      "name": "Václav Havel"
+    },
+    "arrival": "Praga",
+    "transfer": "",
+    "nights": 5,
+    "economy": 23500,
+    "duration": 1110,
+    "image": "imagenes-viajes/destino-praga.jpg",
+    "alt": "Vista de Praga, Chequia",
+    "intro": "Puente de Carlos, plazas y miradores sobre el Moldava.",
+    "description": "Puente de Carlos, plazas y miradores sobre el Moldava.",
+    "highlights": [
+      "Cruzar el puente de Carlos",
+      "Recorrer la Ciudad Vieja",
+      "Visitar el castillo de Praga"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "praga-opcion-1",
+        "name": "Casa del Reloj de Ámbar",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1800,
+        "image": "hotel-praga-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "https://www.flickr.com/photos/toprural/",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_L%27Agora_Interior_2.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "praga-opcion-2",
+        "name": "Hotel Patio de Bohemia",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2070,
+        "image": "hotel-praga-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Fred Cherrygarden",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Central_-_Room_(II).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "praga-opcion-3",
+        "name": "Suites Puente del Moldava",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2340,
+        "image": "hotel-praga-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Basile Morin",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Canopy_bed_of_Khan_Pool_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "estambul",
+    "name": "Estambul",
+    "country": "Turquía",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "IST",
+      "name": "Aeropuerto de Estambul"
+    },
+    "arrival": "Estambul",
+    "transfer": "",
+    "nights": 6,
+    "economy": 24500,
+    "duration": 1200,
+    "image": "imagenes-viajes/destino-estambul.jpg",
+    "alt": "Vista de Estambul, Turquía",
+    "intro": "Bazares, mezquitas y recorridos en ferry por el Bósforo.",
+    "description": "Bazares, mezquitas y recorridos en ferry por el Bósforo.",
+    "highlights": [
+      "Recorrer el Gran Bazar",
+      "Pasear en ferry por el Bósforo",
+      "Visitar el palacio de Topkapi"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "estambul-opcion-1",
+        "name": "Hotel Patio del Bósforo",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1900,
+        "image": "hotel-estambul-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Bex Walton",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom_at_Town_Hall_Hotel,_London_2026-06-06.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "estambul-opcion-2",
+        "name": "Casa del Tulipán Turco",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2185,
+        "image": "hotel-estambul-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "TravelingOtter from Houston, Texas, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Junior_Suite_Bedroom_-_Westin_Ottawa_(40586472474).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "estambul-opcion-3",
+        "name": "Suites Cúpula de Jade",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2470,
+        "image": "hotel-estambul-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Marriott InternationalⓇ The Ritz-Carlton Hotel de la Paix, Geneva",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:The_Ritz-Carlton_Hotel_de_la_Paix,_Geneva_%E2%80%94_Grace_Kelly_Suite_Bedroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dubai",
+    "name": "Dubái",
+    "country": "Emiratos Árabes Unidos",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "DXB",
+      "name": "Internacional de Dubái"
+    },
+    "arrival": "Dubái",
+    "transfer": "",
+    "nights": 5,
+    "economy": 27000,
+    "duration": 1320,
+    "image": "imagenes-viajes/destino-dubai.jpg",
+    "alt": "Vista de Dubái, Emiratos Árabes Unidos",
+    "intro": "Arquitectura, mercados de Al Fahidi y paseos junto al Creek.",
+    "description": "Arquitectura, mercados de Al Fahidi y paseos junto al Creek.",
+    "highlights": [
+      "Recorrer Al Fahidi",
+      "Pasear junto al Dubai Creek",
+      "Visitar los mercados tradicionales"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "dubai-opcion-1",
+        "name": "Hotel Patio de las Dunas",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2600,
+        "image": "hotel-dubai-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Another Believer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Radisson_Blu_Hotel_Shanghai_New_World_(interior),_December_2015_-_05.JPG",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "dubai-opcion-2",
+        "name": "Casa del Dátil",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2990,
+        "image": "hotel-dubai-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Missvain",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Thatcher_Hotel_-_Feburary_2023_-_Sarah_Stierch_01.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "dubai-opcion-3",
+        "name": "Suites Creek Pearl",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3380,
+        "image": "hotel-dubai-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "TheTowerHotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Tower_Hotel_-_Executive_Twin.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tokio",
+    "name": "Tokio",
+    "country": "Japón",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "HND",
+      "name": "Tokio Haneda"
+    },
+    "arrival": "Tokio",
+    "transfer": "",
+    "nights": 7,
+    "economy": 34000,
+    "duration": 1560,
+    "image": "imagenes-viajes/destino-tokio.jpg",
+    "alt": "Vista de Tokio, Japón",
+    "intro": "Asakusa, jardines y barrios conectados por tren.",
+    "description": "Asakusa, jardines y barrios conectados por tren.",
+    "highlights": [
+      "Visitar Sensō-ji en Asakusa",
+      "Recorrer el parque de Ueno",
+      "Caminar por Shibuya"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "tokio-opcion-1",
+        "name": "Casa del Farol de Asakusa",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2500,
+        "image": "hotel-tokio-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Holly Cheng",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Disney_Aulani_1-bedroom_villa_(3).JPG",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "tokio-opcion-2",
+        "name": "Hotel Jardín del Ginkgo",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2875,
+        "image": "hotel-tokio-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JIP",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_in_Nice.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "tokio-opcion-3",
+        "name": "Suites Puente de Sumida",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3250,
+        "image": "hotel-tokio-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Random photos 1989",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Budapest,_Astoria_Hotel,_58.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "seul",
+    "name": "Seúl",
+    "country": "Corea del Sur",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "ICN",
+      "name": "Internacional de Incheon"
+    },
+    "arrival": "Seúl",
+    "transfer": "",
+    "nights": 7,
+    "economy": 33000,
+    "duration": 1530,
+    "image": "imagenes-viajes/destino-seul.jpg",
+    "alt": "Vista de Seúl, Corea del Sur",
+    "intro": "Palacios, mercados y paseos junto al río Han.",
+    "description": "Palacios, mercados y paseos junto al río Han.",
+    "highlights": [
+      "Visitar Gyeongbokgung",
+      "Recorrer Bukchon",
+      "Pasear junto al río Han"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "seul-opcion-1",
+        "name": "Casa del Patio Hanok",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2100,
+        "image": "hotel-seul-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Xandrium",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Thiranagama_Sri_Lanka_Riff_Hotel_5-star_resort_Suite_bedroom.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "seul-opcion-2",
+        "name": "Hotel Jardín del Han",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2415,
+        "image": "hotel-seul-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Jeff Kern",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Wyndham_New_Orleans_at_Canal_Place_hotel_room_2002_02.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "seul-opcion-3",
+        "name": "Suites Luna de Seúl",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2730,
+        "image": "hotel-seul-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Gamgee",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Zimmer_im_Hotel_Dorint_Camp_de_Mar.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "singapur",
+    "name": "Singapur",
+    "country": "Singapur",
+    "type": "naturaleza",
+    "region": "internacional",
+    "tag": "Naturaleza y aventura",
+    "airport": {
+      "code": "SIN",
+      "name": "Changi"
+    },
+    "arrival": "Singapur",
+    "transfer": "",
+    "nights": 6,
+    "economy": 35000,
+    "duration": 1680,
+    "image": "imagenes-viajes/destino-singapur.jpg",
+    "alt": "Vista de Singapur, Singapur",
+    "intro": "Jardines botánicos, barrios históricos y paseos por Marina Bay.",
+    "description": "Jardines botánicos, barrios históricos y paseos por Marina Bay.",
+    "highlights": [
+      "Visitar los Jardines Botánicos",
+      "Caminar por Marina Bay",
+      "Recorrer Kampong Glam"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "singapur-opcion-1",
+        "name": "Hotel Orchid Courtyard",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2800,
+        "image": "hotel-singapur-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "r",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Yanggakdo_International_Hotel_room_1.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "singapur-opcion-2",
+        "name": "Casa del Jardín del Estrecho",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 3220,
+        "image": "hotel-singapur-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Another Believer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo,_2019_-_328.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "singapur-opcion-3",
+        "name": "Suites Marina Fern",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3640,
+        "image": "hotel-singapur-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Another Believer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo,_2019_-_329.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sidney",
+    "name": "Sídney",
+    "country": "Australia",
+    "type": "playa",
+    "region": "internacional",
+    "tag": "Playa y descanso",
+    "airport": {
+      "code": "SYD",
+      "name": "Kingsford Smith"
+    },
+    "arrival": "Sídney",
+    "transfer": "",
+    "nights": 7,
+    "economy": 39000,
+    "duration": 1800,
+    "image": "imagenes-viajes/destino-sidney.jpg",
+    "alt": "Vista de Sídney, Australia",
+    "intro": "La bahía, la Ópera y senderos costeros cerca de Bondi.",
+    "description": "La bahía, la Ópera y senderos costeros cerca de Bondi.",
+    "highlights": [
+      "Conocer la Ópera de Sídney",
+      "Pasear por la bahía",
+      "Recorrer el sendero de Bondi a Coogee"
+    ],
+    "tip": "Agrupá tus visitas por zona y reservá tiempo para las conexiones y el traslado desde el aeropuerto.",
+    "hotels": [
+      {
+        "id": "sidney-opcion-1",
+        "name": "Hotel Harbour Wattle",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2900,
+        "image": "hotel-sidney-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Damienmcr",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_d%27Europe_-_Room_today.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "sidney-opcion-2",
+        "name": "Casa del Eucalipto",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 3335,
+        "image": "hotel-sidney-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Random photos 1989",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Budapest,_Astoria_Hotel,_54.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "sidney-opcion-3",
+        "name": "Suites Bondi Courtyard",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3770,
+        "image": "hotel-sidney-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "TheTowerHotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Tower_Hotel_-_Standard.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  }
+]);
   destinations.push(...additionalDestinations);
 
   const airlines = {

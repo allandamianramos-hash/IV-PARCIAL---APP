@@ -6,6 +6,8 @@ El sitio guarda cuentas, perfiles y selecciones mediante PHP/PDO_SQLSRV en `rumb
 
 ## Abrir el proyecto
 
+**Omar: conserva tu carpeta actual de GitHub.** Descarga los cambios con Pull e instala el paquete privado `ACCESO-OMAR-GITHUB.zip` sobre esa misma carpeta. No uses el antiguo ZIP completo como otra copia de trabajo. Lee [los pasos para Omar y el trabajo compartido](docs/OMAR-EMPEZAR.txt). El instalador conserva Git y el código; `.env`, `.rumbo-equipo.json` y `.runtime` quedan excluidos del repositorio. Una vez instalado, `INICIAR-RUMBO.cmd` o Ctrl+Shift+B abre su aplicación en `http://127.0.0.1:3010`. Allan conserva su arranque PHP habitual en 8000.
+
 1. Ejecuta **INICIAR-RUMBO.cmd**.
 2. Abre **http://localhost:8000**.
 3. Regístrate, guarda elecciones y vuelve a iniciar sesión para recuperarlas.

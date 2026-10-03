@@ -136,10 +136,11 @@
       next.disabled = limit <= 3 || track.scrollLeft >= limit - 3;
     }
 
-    function renderDestinations(items) {
+    function renderDestinations(items, featured = false) {
+      const visible = window.RumboViajesDatos.selectHomeDestinations(items, featured);
       track.replaceChildren();
 
-      items.forEach(trip => {
+      visible.forEach(trip => {
         const card = document.createElement("article");
         card.className = "destination-card";
 
@@ -155,7 +156,7 @@
 
       setText(
         "#result-count",
-        `${items.length} ${items.length === 1 ? "destino disponible" : "destinos disponibles"}`
+        featured ? `${visible.length} destacados de ${catalog.length} destinos` : `Mostrando ${visible.length} de ${items.length} ${items.length === 1 ? "destino" : "destinos"}`
       );
 
       $("#empty-state").hidden = items.length > 0;
@@ -174,7 +175,12 @@
         (budget === "all" || trip.price <= Number(budget))
       );
 
-      renderDestinations(filtered);
+      const featured = !query && style === 'all' && budget === 'all';
+      renderDestinations(filtered, featured);
+      const allLink = $('#all-destinations');
+      const params = new URLSearchParams({ pantalla: 'destinos', q: query, tipo: style, presupuesto: budget });
+      allLink.href = 'viajes.html?' + params + '#catalogo';
+      allLink.textContent = featured ? 'Ver todos los destinos ↗' : 'Ver todos los resultados ↗';
     }
 
     function moveCarousel(direction) {
@@ -217,7 +223,7 @@
       setText("#result-count", `Tu destino al azar: ${trip.name}`);
     });
 
-    renderDestinations(catalog);
+    renderDestinations(catalog, true);
 
     /* GUÍAS */
     function openGuide(hash) {

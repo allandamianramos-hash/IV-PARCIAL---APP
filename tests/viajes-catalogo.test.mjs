@@ -30,7 +30,7 @@ test('todos los anuncios con precio apuntan a destinos con tarifas finitas', asy
   for(const slide of config.slides.filter(s=>s.price)){
     const d=destinations.find(d=>d.id===slide.id);assert.ok(d,slide.id);
     const f=flights(d,origins[0])[0];assert.ok(Number.isFinite(f.economy));
-    assert.equal(Number(slide.tag.text.replace(/[^\d.]/g,'')),d.promotion.percent);
+    assert.equal(slide.discount,d.promotion?.percent || 0);
   }
 });
 
@@ -62,9 +62,9 @@ test('cada hospedaje tiene una fotografía distinta con autor y licencia', async
   }
 });
 
-test('los 14 destinos tienen presupuestos, cinco hoteles e imágenes locales', async () => {
-  assert.equal(destinations.length, 14);
-  assert.equal(new Set(destinations.map(d=>d.id)).size, 14);
+test('los 18 destinos tienen presupuestos, cinco hoteles e imágenes locales', async () => {
+  assert.equal(destinations.length, 18);
+  assert.equal(new Set(destinations.map(d=>d.id)).size, 18);
   const hotelIds = new Set();
   for (const d of destinations) {
     assert.ok(d.inspirationBudget > 0);
@@ -76,7 +76,7 @@ test('los 14 destinos tienen presupuestos, cinco hoteles e imágenes locales', a
       await access(new URL(`imagenes-viajes/${h.image}`, new URL('../public/', import.meta.url)));
     }
   }
-  assert.equal(hotelIds.size, 70);
+  assert.equal(hotelIds.size, 90);
 });
 
 test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => {
@@ -96,3 +96,23 @@ test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => 
   assert.equal(existing.id,'roatan-0-0');
   assert.equal(existing.economy,3200);
 });
+
+ test('el inicio muestra seis destacados y permite encontrar los demás al filtrar', () => {
+ const select=context.window.RumboViajesDatos.selectHomeDestinations;
+ const featured=select(destinations,true);
+ assert.equal(featured.length,6);
+ assert.equal(new Set(featured.map(d=>d.id)).size,6);
+ assert.ok(featured.some(d=>d.id==='lisboa'));
+ assert.equal(select(destinations).length,6);
+ assert.equal(select(destinations.filter(d=>d.id==='toronto'))[0].id,'toronto');
+ assert.equal(select([]).length,0);
+ });
+ test('el catálogo conectado incorpora las nuevas propuestas sin duplicar ni reemplazar datos SQL', () => {
+ const existing=JSON.parse(JSON.stringify(destinations.slice(0,14)));
+ const custom={...JSON.parse(JSON.stringify(destinations.find(d=>d.id==='londres'))),name:'Londres SQL',economy:12345};
+ const scope={window:{RumboDatabase:{connected:true,catalog:{destinations:[...existing,custom],rooms:{},origins:['Tegucigalpa'],promotions:{}}}}};
+ vm.runInNewContext(source.slice(0,source.indexOf('/* Abre una')),scope);
+ const actual=scope.window.RumboViajesDatos.destinations;
+ assert.equal(actual.length,18);assert.equal(actual.find(d=>d.id==='londres').economy,12345);
+ assert.equal(new Set(actual.map(d=>d.id)).size,18);
+ });

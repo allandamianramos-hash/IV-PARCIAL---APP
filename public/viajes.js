@@ -785,6 +785,467 @@
     if(d.id==='bali')d.arrival='Denpasar, Bali';
   });
 
+  // Ampliación del catálogo de demostración; tarifas y alojamientos ficticios.
+  const additionalDestinations = [
+  {
+    "id": "londres",
+    "name": "Londres",
+    "country": "Reino Unido",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "LHR",
+      "name": "Heathrow"
+    },
+    "arrival": "Londres",
+    "transfer": "",
+    "nights": 6,
+    "economy": 22500,
+    "duration": 1020,
+    "image": "imagenes-viajes/destino-londres.jpg",
+    "alt": "Vista de Londres",
+    "intro": "Museos, mercados y paseos por las orillas del Támesis.",
+    "description": "Museos, mercados y paseos por las orillas del Támesis.",
+    "highlights": [
+      "Visitar el British Museum",
+      "Caminar por South Bank",
+      "Recorrer el mercado de Borough"
+    ],
+    "tip": "Revisá los tiempos de conexión y organizá el traslado entre el aeropuerto y tu hospedaje.",
+    "hotels": [
+      {
+        "id": "londres-estancia-1",
+        "name": "Hotel Alder House",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2600,
+        "image": "hotel-londres-estancia-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Thomas Duesing",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Siena_-_hotel_room_-_2012-5.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "londres-estancia-2",
+        "name": "Posada del Támesis",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2990,
+        "image": "hotel-londres-estancia-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JIP",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_bed_with_lit_lamp_at_Hotel_Esplanade_in_October_2023.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "londres-estancia-3",
+        "name": "Suites Bloomsbury Lane",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3380,
+        "image": "hotel-londres-estancia-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Gary Bembridge from London, UK",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Lutetia_Paris_Room_419.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "londres-estancia-4",
+        "name": "Hotel Rowan Court",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 3770,
+        "image": "hotel-londres-estancia-4.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Usien",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_Hotel_Burgenland_in_Eisenstadt.JPG",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "londres-estancia-5",
+        "name": "Casa del Olmo Inglés",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 4160,
+        "image": "hotel-londres-estancia-5.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JIP",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_at_Hotel_Esplanade_in_Stockholm_in_the_evening.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lisboa",
+    "name": "Lisboa",
+    "country": "Portugal",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "LIS",
+      "name": "Humberto Delgado"
+    },
+    "arrival": "Lisboa",
+    "transfer": "",
+    "nights": 5,
+    "economy": 20500,
+    "duration": 990,
+    "image": "imagenes-viajes/destino-lisboa.jpg",
+    "alt": "Vista de Lisboa",
+    "intro": "Tranvías, miradores y barrios para recorrer junto al Tajo.",
+    "description": "Tranvías, miradores y barrios para recorrer junto al Tajo.",
+    "highlights": [
+      "Caminar por Alfama",
+      "Visitar la Torre de Belém",
+      "Probar pasteles de nata"
+    ],
+    "tip": "Revisá los tiempos de conexión y organizá el traslado entre el aeropuerto y tu hospedaje.",
+    "hotels": [
+      {
+        "id": "lisboa-estancia-1",
+        "name": "Hotel Patio del Azulejo",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 1900,
+        "image": "hotel-lisboa-estancia-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Tim36272",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Room_with_queen_size_bed.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "lisboa-estancia-2",
+        "name": "Casa da Amendoeira",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2185,
+        "image": "hotel-lisboa-estancia-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Derek Jensen (Tysto)",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel-room-renaissance-columbus-ohio.jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "lisboa-estancia-3",
+        "name": "Suites Brisa del Tajo",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2470,
+        "image": "hotel-lisboa-estancia-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JIP",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_at_Elite_Hotel_Ideon_Lund_in_October_2023.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "lisboa-estancia-4",
+        "name": "Posada Mirador del Tejo",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2755,
+        "image": "hotel-lisboa-estancia-4.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Kleon3",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Kruisherenhotel,_hotel_room_1.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "lisboa-estancia-5",
+        "name": "Hotel Jardim de Alfama",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3040,
+        "image": "hotel-lisboa-estancia-5.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Kleon3",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Kruisherenhotel,_hotel_room_2.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "toronto",
+    "name": "Toronto",
+    "country": "Canadá",
+    "type": "cultura",
+    "region": "internacional",
+    "tag": "Cultura y ciudad",
+    "airport": {
+      "code": "YYZ",
+      "name": "Toronto Pearson"
+    },
+    "arrival": "Toronto",
+    "transfer": "",
+    "nights": 5,
+    "economy": 14500,
+    "duration": 540,
+    "image": "imagenes-viajes/destino-toronto.jpg",
+    "alt": "Vista de Toronto",
+    "intro": "El lago Ontario, museos y mercados a tu ritmo.",
+    "description": "El lago Ontario, museos y mercados a tu ritmo.",
+    "highlights": [
+      "Subir a la CN Tower",
+      "Recorrer St. Lawrence Market",
+      "Pasear por la costa del lago"
+    ],
+    "tip": "Revisá los tiempos de conexión y organizá el traslado entre el aeropuerto y tu hospedaje.",
+    "hotels": [
+      {
+        "id": "toronto-estancia-1",
+        "name": "Hotel Harbour Maple",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2500,
+        "image": "hotel-toronto-estancia-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JesusisGreat7",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_with_traditional_wooden_decor_and_city_view.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "toronto-estancia-2",
+        "name": "Suites Birch Avenue",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2875,
+        "image": "hotel-toronto-estancia-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Larry D. Moore",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Room_Stanley_Hotel_Estes_Park_Colorado_2024.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "toronto-estancia-3",
+        "name": "Casa del Lago Ontario",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3250,
+        "image": "hotel-toronto-estancia-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JIP",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Omenahotelli_hotel_room_in_Tampere.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "toronto-estancia-4",
+        "name": "Hotel Willow Junction",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 3625,
+        "image": "hotel-toronto-estancia-4.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Stck w",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_Rental_Room_24,_Ikebukuro,_Tokyo,_Japan.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "toronto-estancia-5",
+        "name": "Posada Queen Garden",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 4000,
+        "image": "hotel-toronto-estancia-5.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Atakra",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:La_fonda_hotel_room.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rio-janeiro",
+    "name": "Río de Janeiro",
+    "country": "Brasil",
+    "type": "playa",
+    "region": "internacional",
+    "tag": "Playa y descanso",
+    "airport": {
+      "code": "GIG",
+      "name": "Galeão–Antônio Carlos Jobim"
+    },
+    "arrival": "Río de Janeiro",
+    "transfer": "",
+    "nights": 6,
+    "economy": 17500,
+    "duration": 780,
+    "image": "imagenes-viajes/destino-rio-janeiro.jpg",
+    "alt": "Vista de Río de Janeiro",
+    "intro": "Playas de Ipanema, jardines y vistas desde el Pan de Azúcar.",
+    "description": "Playas de Ipanema, jardines y vistas desde el Pan de Azúcar.",
+    "highlights": [
+      "Caminar por Ipanema",
+      "Visitar el Pan de Azúcar",
+      "Recorrer el Jardín Botánico"
+    ],
+    "tip": "Revisá los tiempos de conexión y organizá el traslado entre el aeropuerto y tu hospedaje.",
+    "hotels": [
+      {
+        "id": "rio-janeiro-estancia-1",
+        "name": "Hotel Jardim da Maré",
+        "stars": 3,
+        "area": "Zona urbana",
+        "rate": 2000,
+        "image": "hotel-rio-janeiro-estancia-1.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "JIP",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_at_Omenahotelli_Tampere.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "rio-janeiro-estancia-2",
+        "name": "Posada Brisa Carioca",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2300,
+        "image": "hotel-rio-janeiro-estancia-2.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "গীতাশ্ৰী গগৈ আপ্তে",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Two_beds_room_of_Hyatt_place_New_York_Chelsea.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "rio-janeiro-estancia-3",
+        "name": "Suites Pedra do Sol",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 2600,
+        "image": "hotel-rio-janeiro-estancia-3.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Deans Charbal",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Conrad_Indianapolis_hotel,_room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "rio-janeiro-estancia-4",
+        "name": "Casa del Almendro Tropical",
+        "stars": 4,
+        "area": "Zona residencial",
+        "rate": 2900,
+        "image": "hotel-rio-janeiro-estancia-4.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Aragon",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Aragon_Chambre_Henry_James.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "rio-janeiro-estancia-5",
+        "name": "Hotel Varanda de Ipanema",
+        "stars": 4,
+        "area": "Zona urbana",
+        "rate": 3200,
+        "image": "hotel-rio-janeiro-estancia-5.jpg",
+        "imageAlt": "Fotografía de referencia de una habitación; alojamiento de demostración",
+        "photoAuthor": "Shixart1985",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Cozy_hotel_room_with_modern_furnishings_and_natural_light_flowing_through_the_curtains.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      }
+    ]
+  }
+];
+  destinations.push(...additionalDestinations);
+
   const airlines = {
     cm:{name:'CM Airlines',url:'https://www.cmairlines.com/es'},
     avianca:{name:'avianca',url:'https://www.avianca.com/es/'},
@@ -812,6 +1273,9 @@
   if (window.RumboDatabase?.connected) {
     const catalog = window.RumboDatabase.catalog;
     destinations.splice(0, destinations.length, ...catalog.destinations);
+    // Mantiene las nuevas propuestas hasta que se actualice el catálogo SQL.
+    // Los registros existentes en SQL conservan prioridad.
+    destinations.push(...additionalDestinations.filter(item => !destinations.some(saved => saved.id === item.id)));
     for (const key of Object.keys(rooms)) delete rooms[key];
     Object.assign(rooms, catalog.rooms);
     origins.splice(0, origins.length, ...catalog.origins);
@@ -850,7 +1314,14 @@
     d.originalInspirationBudget = d.economy + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
     d.inspirationBudget = discounted(d.economy, d.promotion.percent) + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
   });
-  window.RumboViajesDatos = { destinations, rooms, origins, flights, promotions };
+  const homeDestinationIds = ['roatan', 'cancun', 'lisboa', 'madrid', 'londres', 'rio-janeiro'];
+  function selectHomeDestinations(items = destinations, featured = false) {
+    const ordered = featured
+      ? [...homeDestinationIds.map(id => items.find(item => item.id === id)).filter(Boolean), ...items.filter(item => !homeDestinationIds.includes(item.id))]
+      : items;
+    return ordered.slice(0, 6);
+  }
+  window.RumboViajesDatos = { destinations, rooms, origins, flights, promotions, selectHomeDestinations };
 })();
 
 
@@ -883,6 +1354,8 @@
   if (!['destinos', 'detalle-destino', 'vuelos', 'hoteles'].includes(page)) return;
   const { destinations, rooms, origins, flights } = window.RumboViajesDatos;
   const $ = selector => document.querySelector(selector);
+  const totalLabel = document.querySelector('[data-destination-total]');
+  if (totalLabel) totalLabel.textContent = `${destinations.length} destinos`;
   let refreshPage = () => {};
   const params = new URLSearchParams(location.search);
   const STORAGE_KEY = 'rumbo.integrante2.viaje.v1';

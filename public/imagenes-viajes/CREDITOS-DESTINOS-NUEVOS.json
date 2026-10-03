@@ -1,0 +1,46 @@
+[
+  {
+    "id": "londres",
+    "name": "Londres",
+    "file": "destino-londres.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/London_Skyline_from_Waterloo_Bridge%2C_London%2C_UK_-_Diliff.jpg/1920px-London_Skyline_from_Waterloo_Bridge%2C_London%2C_UK_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:London_Skyline_from_Waterloo_Bridge,_London,_UK_-_Diliff.jpg",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:London Skyline from Waterloo Bridge, London, UK - Diliff.jpg"
+  },
+  {
+    "id": "lisboa",
+    "name": "Lisboa",
+    "file": "destino-lisboa.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Torre_Bel%C3%A9m_April_2009-4a.jpg/1920px-Torre_Bel%C3%A9m_April_2009-4a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Torre_Bel%C3%A9m_April_2009-4a.jpg",
+    "author": "Alvesgaspar",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Torre Belém April 2009-4a.jpg"
+  },
+  {
+    "id": "toronto",
+    "name": "Toronto",
+    "file": "destino-toronto.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Toronto_-_ON_-_CN_Tower_bei_Nacht2.jpg/1920px-Toronto_-_ON_-_CN_Tower_bei_Nacht2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Toronto_-_ON_-_CN_Tower_bei_Nacht2.jpg",
+    "author": "Wladyslaw, Correction of perspective distortion: Niabot",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "title": "File:Toronto - ON - CN Tower bei Nacht2.jpg"
+  },
+  {
+    "id": "rio-janeiro",
+    "name": "Río de Janeiro",
+    "file": "destino-rio-janeiro.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Rio-panorama-Botafogo-Sugarloaf.jpg/1920px-Rio-panorama-Botafogo-Sugarloaf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Rio-panorama-Botafogo-Sugarloaf.jpg",
+    "author": "Acediscovery",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:Rio-panorama-Botafogo-Sugarloaf.jpg"
+  }
+]

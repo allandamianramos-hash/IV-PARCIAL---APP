@@ -79,5 +79,7 @@
       try{const response=await fetch('/api/auth/me');if(!response.ok)return;const data=await response.json();if((data.user?.id||null)!==(user?.id||null)){changed();location.reload();}}catch{}
     });
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  // Deferred scripts run while readyState is "interactive". Wait until common.js
+  // has built the header before replacing its guest links with the current user.
+  if(document.readyState!=='complete')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

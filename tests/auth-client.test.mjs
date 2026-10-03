@@ -7,7 +7,7 @@ const source=await readFile(new URL('../public/auth-client.js',import.meta.url),
 function page(readyState='interactive',signedIn=true){
   const events={},windowEvents={},redirects=[];
   let header=null;
-  const node=()=>({classList:{add(){}},setAttribute(){},addEventListener(type,fn){this[type]=fn;}});
+  const node=()=>({children:[],classList:{add(){}},setAttribute(){},append(...items){this.children.push(...items);},contains(){return false;},focus(){this.focused=true;},addEventListener(type,fn){this[type]=fn;}});
   const scope={
     document:{readyState,addEventListener:(type,fn)=>{events[type]=fn;},
       querySelector(selector){
@@ -28,14 +28,18 @@ test('la sesión espera al encabezado creado por los scripts defer',async()=>{
   const p=page();p.run();
   assert.equal(typeof p.events.DOMContentLoaded,'function');
   const header=p.buildHeader();p.events.DOMContentLoaded();
-  assert.deepEqual(header.children.map(n=>n.textContent),['Viajera de prueba','Cerrar sesión',undefined]);
-  await header.children[1].click();
+  const menu=header.children[0],panel=menu.children[1];
+  assert.equal(menu.className,'account-menu');
+  assert.equal(panel.children[0].children[0].textContent,'Hola, Viajera');
+  assert.deepEqual(panel.children[1].children.map(n=>n.href),['servicios.html?seccion=perfil','servicios.html?seccion=mi-viaje','tienda.html?carrito=1']);
+  menu.open=true;p.events.keydown({key:'Escape'});assert.equal(menu.open,false);assert.equal(menu.children[0].focused,true);
+  await panel.children[2].click();
   assert.deepEqual(p.redirects,['index.html']);
 });
 
 test('una página ya cargada muestra la cuenta y el visitante conserva los enlaces',()=>{
   const signed=page('complete'),header=signed.buildHeader();signed.run();
-  assert.equal(header.children[0].textContent,'Viajera de prueba');
+  assert.equal(header.children[0].className,'account-menu');
   const guest=page('interactive',false);guest.run();const links=guest.buildHeader();guest.events.DOMContentLoaded();
   assert.deepEqual(links.children,['Iniciar sesión','Registrarse']);
 });

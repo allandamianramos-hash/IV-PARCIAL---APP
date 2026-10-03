@@ -135,7 +135,7 @@
     const experiences = window.RumboGuias || [];
     root.innerHTML = crumb('Guías locales') + `
       <section class="guide-hero" aria-labelledby="guide-title">
-        <div class="guide-hero-copy"><p class="guide-hero-eyebrow">GUÍAS LOCALES · EXPERIENCIAS PARA RECORDAR</p><h1 id="guide-title">Los mejores viajes<br>se viven <em>de cerca.</em></h1><p>Piérdete entre calles con historia, descubre sabores nuevos y encuentra tu rincón favorito. Compara recorridos y prepara tu próxima experiencia.</p><a href="#guide-search" class="button button-primary">Encuentra tu experiencia <span aria-hidden="true">↗</span></a><dl class="guide-catalog-facts"><div><dt>Destinos</dt><dd>${catalog.length}</dd></div><div><dt>Recorridos</dt><dd>${experiences.length}</dd></div><div><dt>Formas de explorar</dt><dd>${Object.keys(styles).length}</dd></div></dl></div>
+        <div class="guide-hero-copy"><p class="guide-hero-eyebrow">GUÍAS LOCALES · EXPERIENCIAS PARA RECORDAR</p><h1 id="guide-title">Los mejores viajes<br>se viven <em>de cerca.</em></h1><p>Piérdete entre calles con historia, descubre sabores nuevos y encuentra tu rincón favorito. Compara recorridos y prepara tu próxima experiencia.</p><a href="#guide-search" class="button button-primary">Encuentra tu experiencia <span aria-hidden="true">↗</span></a><dl class="guide-catalog-facts"><div><dt>Destinos con recorridos</dt><dd>${new Set(experiences.map(o=>o.destination)).size}</dd></div><div><dt>Recorridos</dt><dd>${experiences.length}</dd></div><div><dt>Formas de explorar</dt><dd>${Object.keys(styles).length}</dd></div></dl></div>
         <figure class="guide-hero-photo"><img id="guide-cover" src="${initial.image}" alt="${escape(initial.alt)}" width="720" height="650" fetchpriority="high"></figure><div class="guide-hero-location"><strong id="guide-cover-name">${escape(initial.name)}</strong><span id="guide-cover-country">${escape(initial.country)}</span></div>
       </section>
       ${tabs()}
@@ -192,6 +192,7 @@
       root.querySelectorAll('[data-guide-filter]').forEach(b=>{
         const type=b.dataset.guideFilter;
         const count=cityOptions.filter(o=>type==='all'||o.style===type).length;
+        b.disabled=cityOptions.length===0;
         b.textContent=(type==='all'?'Todas':styles[type])+' · '+count;
         b.setAttribute('aria-pressed',String(type===activeFilter));
       });
@@ -202,6 +203,10 @@
       if (!valid || !options.some(o=>o.id===selected?.id)) selected=null;
       $('#guide-count').textContent = valid ? `${options.length} ${options.length===1?'experiencia':'experiencias'} · Precios por persona` : 'Revisa la fecha y el número de personas para continuar.';
       $('#guide-results').innerHTML = options.length ? options.map(o=>`<article class="guide-card" data-selected="${selected?.id===o.id}"><div class="guide-card-image"><img src="${o.image}" alt="${escape(o.alt)}" loading="lazy" width="960" height="640" style="object-position:${o.position||'50% 50%'}"><span>${styles[o.style]}</span>${o.photoContext?'<small class="guide-image-reference">Foto del destino</small>':''}</div><div class="guide-card-content"><p class="guide-card-meta">${escape(d.name)} <span aria-hidden="true">·</span> ${o.hours} horas estimadas</p><h3>${escape(o.title)}</h3><p>${escape(o.description)}</p><details><summary>Ver detalles del paseo</summary><div class="guide-route-details"><h4>Paradas propuestas</h4><ol class="guide-route">${o.stops.map(stop=>`<li>${escape(stop)}</li>`).join('')}</ol>${o.photoContext?`<p class="guide-photo-context">${escape(o.photoContext)}</p>`:''}<p><strong>Incluye:</strong> acompañamiento durante ${o.hours} horas estimadas.</p><p><strong>Por separado:</strong> entradas, comidas y traslados.</p><p>Punto de encuentro, accesibilidad, guía e idioma sujetos a confirmación.</p><p class="guide-photo-credit">Foto: ${escape(o.photoAuthor)} · <a href="${escape(o.photoLicenseUrl)}" target="_blank" rel="noopener noreferrer">${escape(o.photoLicense)}</a>. Adaptada para la web. <a href="${escape(o.photoPage)}" target="_blank" rel="noopener noreferrer">Ver original ↗</a></p></div></details><div class="guide-card-bottom"><div><small>Precio orientativo</small><strong>${money(o.price)} <span>/ persona</span></strong></div><button class="button button-outline" data-guide-choose="${o.id}" aria-label="Elegir: ${escape(o.title)}" aria-pressed="${selected?.id===o.id}" ${valid?'':'disabled'}>${selected?.id===o.id?'Seleccionada ✓':'Elegir experiencia'}</button></div></div></article>`).join('') : '<div class="service-empty"><h3>No hay recorridos en esta categoría.</h3><p>No hay propuestas de este tipo aquí. Explora las demás experiencias o elige otro destino.</p><button id="guide-clear" class="button button-outline">Ver todas las experiencias</button></div>';
+      if(!cityOptions.length){
+        $('#guide-category-note').textContent='Estamos preparando recorridos para este destino.';
+        $('#guide-results').innerHTML='<div class="service-empty"><h3>Aún no hay recorridos en '+escape(d.name)+'.</h3><p>Puedes seguir organizando tu vuelo y hospedaje, o elegir otro destino para explorar sus guías.</p><a class="button button-outline" href="viajes.html?pantalla=detalle-destino&destino='+encodeURIComponent(d.id)+'">Explorar el destino</a></div>';
+      }
       $('#guide-clear')?.addEventListener('click',()=>setFilter('all'));
       showSelection();
     }

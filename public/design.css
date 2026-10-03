@@ -134,7 +134,7 @@ body .site-header .header-actions .header-trip{background:var(--arena)!important
 body .site-header .header-actions .account-actions .login-button{background:var(--fondo)!important;color:var(--verde)!important;border:1px solid var(--verde)!important}
 body .site-header .header-actions .account-actions .register-button{background:var(--verde)!important;color:white!important}
 body .site-header .header-actions :is(.header-trip,.login-button,.register-button,.auth-logout):hover{background:var(--tinta)!important;color:white!important;border-color:var(--tinta)!important}
-body .site-header .account-actions.is-authenticated{padding:6px 6px 6px 16px;background:var(--arena);border-radius:18px;flex-wrap:wrap}
+body .site-header .account-actions.is-authenticated{padding:0;background:transparent;border:0;flex-wrap:nowrap}
 body .site-header .is-authenticated .auth-user-name{max-width:180px;color:var(--tinta);font-weight:500}
 body .site-header .is-authenticated .auth-logout{background:var(--verde);color:white;border:0;padding:10px 16px!important}
 body #destinos .destination-intro{display:block;max-width:52ch;font-size:17px;line-height:1.5;margin:16px 0 0;color:var(--tinta)}

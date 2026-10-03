@@ -20,7 +20,19 @@
       document.querySelectorAll('a[href="servicios.html?seccion=registro"]').forEach(a=>a.href='registro.html');
       document.querySelectorAll('a[href="servicios.html?seccion=iniciar-sesion"]').forEach(a=>a.href='iniciar-sesion.html');
       if(!accounts||!user)return;
-      const name=document.createElement('span');name.className='auth-user-name';name.textContent=user.name;name.title=user.name;
+      const menu=document.createElement('details');menu.className='account-menu';
+      const toggle=document.createElement('summary');toggle.className='account-toggle';toggle.setAttribute('aria-label','Mi cuenta');
+      toggle.innerHTML='<span class="account-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span><span>Mi cuenta</span><svg class="account-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>';
+      const panel=document.createElement('div');panel.className='account-panel';
+      const identity=document.createElement('div');identity.className='account-identity';
+      const greeting=document.createElement('strong');greeting.textContent='Hola, '+(user.name?.trim().split(/\s+/)[0]||'viajero');
+      const email=document.createElement('span');email.textContent=user.email||'';
+      identity.append(greeting,email);
+      const nav=document.createElement('nav');nav.setAttribute('aria-label','Opciones de mi cuenta');
+      const paths={profile:'<circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/>',trip:'<rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V4h6v3M8 11v6m8-6v6"/>',cart:'<path d="M3 3h2l3 12h10l3-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/>'};
+      for(const [label,href,icon]of [['Mi perfil','servicios.html?seccion=perfil','profile'],['Mi viaje','servicios.html?seccion=mi-viaje','trip'],['Mi carrito','tienda.html?carrito=1','cart']]){
+        const link=document.createElement('a');link.href=href;link.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">'+paths[icon]+'</svg><span>'+label+'</span>';nav.append(link);
+      }
       const logout=document.createElement('button');logout.type='button';logout.className='account-link auth-logout';logout.textContent='Cerrar sesión';
       const status=document.createElement('span');status.className='auth-header-status';status.setAttribute('role','status');
       logout.addEventListener('click',async()=>{
@@ -28,7 +40,10 @@
         try{await window.RumboStorage?.flush?.();await request('logout');changed();location.replace('index.html');}
         catch(e){status.textContent=e.name==='TimeoutError'?'La conexión tardó demasiado. Inténtalo de nuevo.':e.message;logout.disabled=false;}
       });
-      accounts.classList.add('is-authenticated');accounts.replaceChildren(name,logout,status);
+      panel.append(identity,nav,logout,status);menu.append(toggle,panel);
+      document.addEventListener('click',e=>{if(!menu.contains(e.target))menu.open=false;});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.open){menu.open=false;toggle.focus();}});
+      accounts.classList.add('is-authenticated');accounts.replaceChildren(menu);
     }
     render();
     // Vista de demostración: nunca crea cookies ni autoriza operaciones del servidor.

@@ -32,7 +32,9 @@ La raíz conserva los accesos `.cmd`, los puntos de entrada `router.php` y `serv
 
 ## Funcionamiento
 
-Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hotel, servicios, preparativos y resumen de compra de demostración. Hay 100 productos, 14 destinos y 70 hoteles.
+Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hotel, servicios, preparativos y resumen de compra de demostración. Hay 100 productos, 18 destinos y 90 hoteles.
+
+Si recibiste tu paquete personal del equipo, extraelo y abre `CONECTAR-EQUIPO.cmd`. Consulta [Acceso del equipo](docs/ACCESO-EQUIPO.md) para los requisitos y la autorización de la IP de tu casa. Para consultar las tablas en SSMS, abre `VER-BD-AZURE.cmd`.
 
 PHP sirve el sitio en **8000**. Node conserva Rumbito en **3000**; el lanzador inicia ambos. `npm start` inicia la versión Node alternativa. El chat con IA necesita una clave propia en `.env`; sin ella se conserva el planificador local. `ACTIVAR-RUMBO-AUTOMATICO.cmd` mantiene el arranque anterior de Node; para entrar al sitio PHP utiliza `INICIAR-RUMBO.cmd`.
 

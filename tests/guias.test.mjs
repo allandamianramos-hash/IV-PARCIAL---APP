@@ -81,7 +81,10 @@ test('todos los destinos muestran sus propias actividades e imagen', () => {
       assert.ok(html.includes(title));
       assert.ok(html.includes(`src="${image}"`),title+' debe mostrar su propia fotografía');
     }
-    assert.equal((html.match(/class="guide-photo-credit"/g)||[]).length,10);
+    const available=experiences.filter(e=>e.destination===d.id);
+    assert.equal((html.match(/class="guide-photo-credit"/g)||[]).length,available.length);
+    if(!available.length){assert.match(html,/Aún no hay recorridos/);assert.match(html,/Explorar el destino/);assert.equal(ui.node('guide-save').disabled,true);}
+    else assert.equal(available.length,10);
     assert.ok(ui.node('guide-destination-link').href.includes('pantalla=detalle-destino'));
   }
 });
@@ -131,7 +134,8 @@ test('cada recorrido tiene foto local, licencia y paradas específicas', async (
     assert.ok(credits.some(c=>c.file===item.image&&c.author&&c.license&&c.commons===item.photoPage));
     assert.ok(item.photoAuthor&&item.photoLicense&&item.photoLicenseUrl,item.id+' necesita atribución visible');
   }
-  for(const d of catalog.destinations){
+  for(const destinationId of new Set(experiences.map(e=>e.destination))){
+    const d=catalog.destinations.find(d=>d.id===destinationId);assert.ok(d,'Cada guía pertenece a un destino existente');
     const items=experiences.filter(e=>e.destination===d.id);
     assert.ok(items.length>=10);assert.equal(new Set(items.map(e=>e.title)).size,items.length);assert.ok(items.some(e=>e.style==='naturaleza'));
     assert.ok(new Set(items.map(e=>e.style)).size>=2);

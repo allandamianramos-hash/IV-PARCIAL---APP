@@ -1,6 +1,16 @@
 /* Enlaces compartidos. Cada sección conserva su propio módulo de datos. */
 (() => {
   'use strict';
+  // A static Live Server page cannot inject the session or run the PHP API.
+  // Keep the hostname so an existing HttpOnly session remains valid.
+  if(!document.getElementById('rumbo-bootstrap')&&
+    (location.protocol==='file:'||(['localhost','127.0.0.1'].includes(location.hostname)&&location.port!=='8000'))){
+    const page=location.pathname.split('/').pop()||'index.html';
+    if(['index.html','viajes.html','tienda.html','servicios.html','registro.html','iniciar-sesion.html'].includes(page)){
+      location.replace('http://'+(location.hostname||'localhost')+':8000/'+page+location.search+location.hash);
+      return;
+    }
+  }
   const routes={login:'iniciar-sesion',register:'registro',experiences:'guias',transfers:'traslados',insurance:'seguros',faq:'ayuda',support:'ayuda',changes:'cambios',about:'acerca',team:'equipo',privacy:'privacidad',terms:'terminos'};
   document.querySelectorAll('[data-module]').forEach(button=>{
     const key=button.dataset.module;

@@ -1,8 +1,8 @@
 # Rumbo — PHP y SQL Server
 
-**Conexión gratuita del equipo:** usa [MANUAL-GRATIS-MISMA-BASE.html](docs/MANUAL-GRATIS-MISMA-BASE.html). Explica cómo conectar a todos a la base de Jimmy mediante Tailscale, sin contratar alojamiento. Incluye los pasos de Jimmy, los de sus compañeros y la comprobación final. La computadora de Jimmy debe permanecer encendida. El manual de Azure se conserva únicamente como alternativa.
+**Conexión actual: Azure SQL.** Consulta [AZURE-CONEXION.md](docs/AZURE-CONEXION.md) para abrir la aplicación, conectar SSMS y verificar el guardado. El manual de Tailscale se conserva como referencia de la configuración anterior.
 
-El sitio guarda cuentas, perfiles y selecciones en SQL Server mediante PHP/PDO_SQLSRV. En esta computadora utiliza `localhost`, `BD_VIAJES` y autenticación de Windows.
+El sitio guarda cuentas, perfiles y selecciones mediante PHP/PDO_SQLSRV en `rumbo-2026.database.windows.net`, base `BD_VIAJES`, con autenticación SQL y conexión cifrada. Las credenciales están en el `.env` privado.
 
 ## Abrir el proyecto
 
@@ -14,7 +14,7 @@ Para trabajar juntos con una base alojada, lee [el manual para el equipo](docs/M
 
 **Live Server ya está configurado para pasar todo el sitio a PHP.** Abre esta carpeta principal en VS Code, inicia PHP con Ctrl+Shift+B y reinicia Go Live. Usa http://127.0.0.1:5500/index.html. La tarea puede arrancar al abrir la carpeta si autorizas las tareas automáticas de este proyecto. Los archivos PHP necesitan PHP y un servidor SQL funcionando; compartir esos archivos no comparte los datos.
 
-Si aparece guardado local, ejecuta **COMPROBAR-CONEXION.cmd**. Para trabajar sin Live Server, usa **INICIAR-RUMBO.cmd** y http://localhost:8000. La configuración local de Jimmy permanece local hasta que se cree la base alojada y se cambie su .env.
+Si aparece guardado local, ejecuta **COMPROBAR-CONEXION.cmd**. Para trabajar sin Live Server, usa **INICIAR-RUMBO.cmd** y http://127.0.0.1:8000. Las páginas estáticas abiertas desde Live Server se redirigen a PHP. Usa siempre el mismo hostname para conservar la misma sesión del navegador.
 
 ## Carpetas
 

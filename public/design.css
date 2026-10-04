@@ -159,6 +159,7 @@ body main .campaign .campaign-copy h2 span { font-family:'Source Sans 3','Segoe 
  .campaign .campaign-art { height:460px; }
  .campaign .campaign-photo.photo-2 { width:65%; height:175px; left:0; }
 }
+<<<<<<< HEAD
 @media(max-width:760px) {
  .campaign .campaign-slide { display:flex; flex-direction:column; padding:24px 22px 0; min-height:0; }
  .campaign .campaign-copy { width:100%; padding:0 0 26px; order:1; }
@@ -173,3 +174,254 @@ body main .campaign .campaign-copy h2 span { font-family:'Source Sans 3','Segoe 
  .campaign .campaign-controls { padding:8px 20px; }
 }
 
+=======
+body .catalog-hero>div:first-child,
+body .guides-page .catalog-hero .guide-hero-copy {padding:48px 40px;max-width:none;align-self:center;}
+body .catalog-hero h1,
+body .guides-page .catalog-hero h1 {font-size:clamp(38px,4.5vw,64px);line-height:1.06;letter-spacing:-.035em;color:var(--tinta);margin:0 0 22px;max-width:650px;}
+body .catalog-hero p,body .guides-page .catalog-hero p {font-size:16px;line-height:1.65;color:var(--tinta);max-width:460px;margin:0 0 26px;}
+body .catalog-hero figure,body .catalog-hero .hero-photo,
+body .guides-page .catalog-hero .guide-hero-photo {position:relative;inset:auto;z-index:auto;margin:0;width:100%;height:100%;min-height:430px;border-radius:0;overflow:hidden;transform:none;}
+body .catalog-hero img,body .guides-page .catalog-hero .guide-hero-photo>img {display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover;border-radius:0;transform:none;}
+body .catalog-hero::before,body .catalog-hero::after,body .catalog-hero figure::after,body .catalog-hero .hero-photo::after {display:none!important;}
+body .catalog-hero .photo-caption {background:var(--fondo);color:var(--tinta);bottom:20px;left:20px;right:20px;border:0;border-radius:12px;}
+body .guides-page .catalog-hero .guide-hero-location {background:var(--fondo);color:var(--tinta);border:0;right:20px;bottom:20px;border-radius:12px;}
+body .catalog-hero .guide-catalog-facts {gap:22px;border-color:var(--border);margin-bottom:0;}
+body .catalog-hero .guide-catalog-facts :is(dt,dd),body .catalog-hero .hero-footnote {color:var(--tinta);}
+body .catalog-hero .guide-catalog-facts dd {font-size:24px;}
+body .catalog-hero .hero-footnote {margin-top:24px;}
+body .store-hero.catalog-hero {width:min(1200px,calc(100% - 48px));margin:32px auto;}
+body .journey-progress {background:transparent;border:0;border-bottom:1px solid var(--border);border-radius:0;padding:0 0 24px;margin:24px 0 32px;box-shadow:none;}
+body .journey-progress>p {display:none;}
+body .journey-progress a {background:transparent;color:var(--tinta);border-color:var(--border);}
+body .journey-progress a[aria-current] {background:var(--verde);color:white;}
+body .journey-progress a[aria-current] span {color:var(--verde);background:var(--fondo);}
+body .service-grid {gap:32px 24px;margin-top:40px;}
+body .service-tile {padding:0 0 24px;background:transparent;border:0;border-bottom:1px solid var(--border);border-radius:0;overflow:hidden;}
+body .service-tile .service-tile-photo {width:100%;height:220px;margin:0 0 22px;border-radius:20px;object-fit:cover;}
+body .service-tile h2 {font-size:27px;margin:0 0 10px;}
+body .service-tile p {font-size:16px;margin:0 0 14px;}
+body .service-tile a {color:var(--verde);margin-top:auto;}
+body :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) {background:white;border:1px solid var(--border);border-radius:20px;box-shadow:none;}
+body .service-stage {background:none;border:0;padding:0;margin:32px 0 16px;}
+body .service-stage>span {display:none;}
+body .service-stage h2 {font-size:27px;}
+body :is(.service-summary,.guide-summary,.rv-trip-summary) {background:var(--arena);border:1px solid var(--border);border-radius:20px;box-shadow:none;}
+body :is(.guide-destination,.guide-faq,.service-notice,.store-benefits) {background:var(--arena);color:var(--tinta);border-color:var(--border);box-shadow:none;}
+body .guide-page-nav {display:none;}
+body :is(.guide-card,.service-option,.rv-flight-card,.rv-hotel-card,.product-card) {background:white;border:1px solid var(--border);border-radius:20px;box-shadow:none;}
+body :is(.guide-card,.service-option,.rv-flight-card,.rv-hotel-card)[data-selected=true] {border:2px solid var(--verde);}
+body :is(.guide-filters button,.filter-btn,.service-tabs a) {background:transparent;color:var(--tinta);border-color:var(--border);}
+body :is(.guide-filters button[aria-pressed=true],.filter-btn.active) {background:var(--verde);color:white;border-color:var(--verde);}
+body :is(.guide-form,.service-form,.rv-search-panel) :is(input,select) {color:var(--tinta);border:1px solid var(--border);background:var(--fondo);border-radius:10px;min-height:46px;}
+body :is(.guide-badge,.service-badge,.guide-card-category) {color:var(--verde);background:var(--fondo);}
+body :is(.services-main,.rv-main) {padding-top:24px;}
+body :is(.service-layout,.guide-layout,.rv-flow-layout)>* {min-width:0;}
+body :is(#flight-search,#hotel-search,#guide-search,#catalogo,#opciones-servicios) {scroll-margin-top:24px;}
+body :is(.catalog-hero,.service-grid,.guide-layout,.service-layout,.rv-flow-layout) a:focus-visible,
+body :is(button,input,select):focus-visible {outline:2px solid var(--verde);outline-offset:4px;}
+@media(max-width:900px){
+ body .catalog-hero,body .guides-page .catalog-hero {grid-template-columns:1fr 1fr;min-height:380px;}
+ body .catalog-hero>div:first-child,body .guides-page .catalog-hero .guide-hero-copy {padding:32px 24px;}
+ body .catalog-hero figure,body .catalog-hero .hero-photo,body .guides-page .catalog-hero .guide-hero-photo {min-height:380px;}
+ body .service-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:650px){
+ body .catalog-hero,body .guides-page .catalog-hero {grid-template-columns:1fr;min-height:0;border-radius:20px;margin-top:16px;}
+ body .catalog-hero h1,body .guides-page .catalog-hero h1 {font-size:38px;}
+ body .catalog-hero figure,body .catalog-hero .hero-photo,body .guides-page .catalog-hero .guide-hero-photo {height:260px;min-height:260px;}
+ body .catalog-hero .guide-hero-location {bottom:16px;right:16px;}
+ body .catalog-hero .guide-catalog-facts {display:none;}
+ body .store-hero.catalog-hero {width:calc(100% - 32px);margin:16px auto 24px;}
+ body .service-grid,body .service-layout,body .guide-layout,body .rv-flow-layout {grid-template-columns:1fr;}
+ body .service-form {grid-template-columns:1fr;}
+ body .service-form-foot,body .service-option-bottom {align-items:stretch;flex-direction:column;}
+ body .service-summary,body .guide-summary {position:static;}
+ body .journey-progress {max-width:100%;}
+ body .journey-progress ol {display:flex;overflow-x:auto;padding-bottom:8px;}
+ body .journey-progress li {flex-shrink:0;}
+}
+body .catalog-hero.catalog-hero {padding:0;gap:0;background:var(--arena);}
+body .catalog-hero.catalog-hero figure {min-height:430px;}
+body .catalog-hero.catalog-hero .hero-photo {padding:0;}
+body .site-header .main-nav a[aria-current],body .site-header .main-nav a:hover {background:var(--arena);color:var(--tinta);}
+@media(max-width:650px){body .catalog-hero.catalog-hero figure{min-height:260px;}}
+body .service-grid .service-tile:nth-child(n) {background:transparent;}
+body .variant-stage {background:var(--fondo);}
+body .services-main .service-notice {color:var(--tinta);}
+/* Respeta estados ocultos y evita que los controles de tienda desborden la cabecera. */
+body [hidden]:not([hidden="until-found"]) {display:none!important;}
+body .journey-progress a>span {background:var(--fondo);color:var(--verde);}
+body .journey-next {background:var(--arena);border-color:var(--border);color:var(--tinta);}
+body:has(.store-hero) main>.journey-progress {width:min(1200px,calc(100% - 48px));margin-inline:auto;}
+@media(max-width:1100px){body:has(.store-hero) .site-header .header-actions {flex-wrap:wrap;}}
+@media(max-width:650px){
+ body:has(.store-hero) .site-header .header-actions {display:flex;width:100%;gap:10px;flex-wrap:wrap;}
+ body:has(.store-hero) .site-header .header-actions .account-actions {flex-basis:100%;padding:0;border:0;}
+ body:has(.store-hero) .site-header .header-actions .cart-button {margin-left:auto;}
+ body:has(.store-hero) main>.journey-progress {width:calc(100% - 32px);}
+}
+/* Servicios: superficies claras, fotografías independientes y navegación inicial. */
+body.rumbo-services {
+ --fondo:#F6F1E7;--arena:#E9DCC3;--border:rgba(23,48,43,.2);
+ background:var(--fondo)!important;
+}
+body.rumbo-services .site-header {background:#fff;border-bottom:1px solid var(--border);}
+body.rumbo-services .catalog-hero.catalog-hero {
+ background:transparent;gap:40px;border-radius:0;overflow:visible;min-height:360px;
+ margin-block:32px 48px;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);
+}
+body.rumbo-services .catalog-hero>div:first-child,
+body.rumbo-services .guides-page .catalog-hero .guide-hero-copy {padding:24px 12px 24px 0;min-width:0;}
+body.rumbo-services .catalog-hero h1,
+body.rumbo-services .guides-page .catalog-hero h1 {font-size:clamp(34px,4vw,54px);line-height:1.12;overflow-wrap:anywhere;text-wrap:balance;}
+body.rumbo-services .catalog-hero p {color:#4b6056;}
+body.rumbo-services .catalog-hero.catalog-hero :is(figure,.hero-photo),
+body.rumbo-services .guides-page .catalog-hero .guide-hero-photo {min-height:360px;border-radius:20px;}
+body.rumbo-services .catalog-hero .photo-caption,
+body.rumbo-services .guides-page .catalog-hero .guide-hero-location {background:#ffffffed;border:1px solid var(--border);}
+body.rumbo-services .journey-progress {
+ width:100%;max-width:none;margin:0 0 24px;padding:12px 0;border-bottom:1px solid var(--border);background:transparent;
+}
+body.rumbo-services .journey-progress ol {display:flex;flex-wrap:wrap;gap:6px;overflow:visible;padding:0;}
+body.rumbo-services .journey-progress li {min-width:0;flex:1 1 auto;}
+body.rumbo-services .journey-progress a {min-height:44px;justify-content:center;padding:10px 12px;line-height:1.35;border:1px solid transparent;border-radius:10px;white-space:normal;text-align:center;}
+body.rumbo-services .journey-progress a>span {display:none;}
+body.rumbo-services .journey-progress a[aria-current] {background:#e8f2ec;color:#176247;border-color:#cdded3;}
+body.rumbo-services .journey-progress a:hover {background:#f0f5f1;color:var(--tinta);}
+body.rumbo-services:has(.store-hero) main>.journey-progress {width:min(1200px,calc(100% - 48px));margin:20px auto 24px;}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary,.packing-section,.journey-next,.guide-destination,.store-benefits) {background:#f1f5f2;border-color:var(--border);}
+body.rumbo-services :is(.service-notice,.guide-faq) {background:transparent;border:1px solid var(--border);border-radius:16px;}
+body.rumbo-services :is(.guide-form,.service-form,.rv-search-panel) :is(input,select) {background:#fff;}
+body.rumbo-services :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card,.product-card,.service-summary,.guide-summary,.rv-trip-summary,.rv-results-heading,.guide-heading,.service-form-foot,.service-option-bottom,.catalog-tools,.catalog-hero) {min-width:0;}
+body.rumbo-services :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card,.product-card,.service-summary,.guide-summary,.rv-trip-summary,.rv-results-heading,.guide-heading,.service-form-foot,.service-option-bottom,.catalog-tools,.catalog-hero)>* {min-width:0;max-width:100%;}
+body.rumbo-services main :is(h1,h2,h3,p,li,small,strong,a,label) {overflow-wrap:anywhere;}
+body.rumbo-services main :is(button,.button) {white-space:normal;max-width:100%;height:auto;min-height:44px;overflow-wrap:anywhere;}
+body.rumbo-services main :is(input,select,textarea) {min-width:0;max-width:100%;box-sizing:border-box;}
+body.rumbo-services :is(.guide-catalog-facts,.service-option-bottom,.service-form-foot,.rv-results-heading,.guide-heading,.rv-results-toolbar,.hero-footnote) {flex-wrap:wrap;}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) :is(h2,h3) {font-size:24px;line-height:1.25;}
+body.rumbo-services .service-grid {row-gap:36px;}
+@media(max-width:950px){
+ body.rumbo-services :is(.service-layout,.guide-layout,.rv-flow-layout) {grid-template-columns:minmax(0,1fr);}
+ body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) {position:static;width:100%;}
+ body.rumbo-services .catalog-hero.catalog-hero {gap:24px;}
+ body.rumbo-services .journey-progress li {flex:1 1 22%;}
+}
+@media(max-width:650px){
+ body.rumbo-services .catalog-hero.catalog-hero {grid-template-columns:minmax(0,1fr);gap:24px;margin-block:24px 36px;min-height:0;}
+ body.rumbo-services .catalog-hero>div:first-child,
+ body.rumbo-services .guides-page .catalog-hero .guide-hero-copy {padding:0;}
+ body.rumbo-services .catalog-hero.catalog-hero :is(figure,.hero-photo),
+ body.rumbo-services .guides-page .catalog-hero .guide-hero-photo {height:240px;min-height:240px;border-radius:16px;}
+ body.rumbo-services .journey-progress li {flex:1 1 28%;}
+ body.rumbo-services .journey-progress a {font-size:13px;padding:8px 6px;}
+ body.rumbo-services:has(.store-hero) main>.journey-progress {width:calc(100% - 32px);margin-top:16px;}
+ body.rumbo-services .guide-hero-location {max-width:calc(100% - 32px);}
+ body.rumbo-services .service-grid {grid-template-columns:minmax(0,1fr);}
+ body.rumbo-services .journey-next {flex-direction:column;align-items:stretch;margin-inline:16px;padding:20px;}
+ body.rumbo-services .journey-next>div {text-align:left;}
+}
+@media(max-width:360px){body.rumbo-services .journey-progress li{flex-basis:44%;}}
+/* Lectura: pesos reales de General Sans, contraste y tamaños cómodos. */
+body {font-family:var(--fuente);font-synthesis:none;}
+body :is(strong,b,dt,dd,figcaption) {font-family:var(--fuente)!important;}
+body :is(button,input,select,textarea,label,summary) {font-family:var(--fuente)!important;text-shadow:none;letter-spacing:normal;}
+body :is(button,.button,label,summary) {font-weight:500;}
+body :is(strong,b) {font-weight:600;}
+body.rumbo-services {font-size:16px;}
+body.rumbo-services main :is(p,li) {line-height:1.65;}
+body.rumbo-services main :is(.service-field label,.rv-field label,.guide-form label,.sort-field label,.rv-sort,.filter-btn,.journey-progress a) {font-size:14px;font-weight:500;letter-spacing:normal;}
+body.rumbo-services main :is(.product-description,.service-option p,.guide-card p,.rv-caption,.rv-demo-caption,.service-summary p,.guide-summary p,.rv-trip-summary p) {font-size:15px;color:#3f544a;}
+body.rumbo-services main :is(.service-option small,.product-card small,.rv-flight-card small,.rv-hotel-card small,.service-form-foot p,.guide-demo) {font-size:14px;line-height:1.5;color:#3f544a;}
+body.rumbo-services .catalog-hero p {font-size:17px;color:#3f544a;}
+body.rumbo-services .store-hero.catalog-hero {min-height:340px;margin-bottom:36px;}
+body.rumbo-services .store-hero.catalog-hero .hero-photo {min-height:340px;}
+body.rumbo-services .store-hero.catalog-hero .hero-photo img {object-position:50% 60%;filter:none;}
+body.rumbo-services .catalog-section {padding-top:16px;}
+body.rumbo-services .journey-progress a {font-size:14px;}
+@media(max-width:650px){
+ body.rumbo-services .store-hero.catalog-hero {min-height:0;}
+ body.rumbo-services .store-hero.catalog-hero .hero-photo {min-height:260px;height:260px;}
+ body.rumbo-services .journey-progress li {flex-basis:44%;}
+}
+
+/* Una misma composición para explorar y comparar todos los servicios. */
+body.rumbo-services .catalog-hero.catalog-hero {gap:48px;margin-bottom:64px;}
+body.rumbo-services .catalog-hero>div:first-child,
+body.rumbo-services .guides-page .catalog-hero .guide-hero-copy {padding:32px 0;}
+body.rumbo-services .catalog-hero h1 {font-weight:500;max-width:12ch;}
+body.rumbo-services .catalog-hero.catalog-hero :is(figure,.hero-photo),
+body.rumbo-services .guides-page .catalog-hero .guide-hero-photo {min-height:384px;}
+body.rumbo-services .service-catalog-heading {margin-top:96px;padding-top:40px;border-top:1px solid var(--border);scroll-margin-top:32px;}
+body.rumbo-services .service-catalog-heading>span {font-size:12px;letter-spacing:.12em;color:var(--verde);font-weight:500;}
+body.rumbo-services .service-catalog-heading h2 {font-size:clamp(28px,3vw,40px);font-weight:500;line-height:1.2;margin:16px 0;letter-spacing:-.025em;}
+body.rumbo-services .service-catalog-heading p {margin:0;}
+body.rumbo-services .service-grid {gap:40px 24px;margin-top:32px;}
+body.rumbo-services .service-tile {display:flex;flex-direction:column;padding:0 0 24px;}
+body.rumbo-services .service-tile .service-tile-photo {height:auto;aspect-ratio:3/2;margin-bottom:24px;}
+body.rumbo-services .service-tile h2 {font-weight:500;font-size:26px;}
+body.rumbo-services .service-tile p {max-width:34ch;margin-bottom:24px;}
+body.rumbo-services .service-tile a {padding-top:8px;}
+body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) {padding:32px;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:none;gap:24px;}
+body.rumbo-services :is(.service-field,.rv-field,.guide-form) :is(input,select) {min-height:48px;border:1px solid var(--border);border-radius:12px;padding:12px 16px;color:var(--tinta);font-size:16px;}
+body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) :is(input,select,button):focus-visible {outline:2px solid var(--verde);outline-offset:3px;}
+body.rumbo-services :is(.service-layout,.guide-layout,.rv-flow-layout) {gap:32px;margin-top:32px;align-items:start;}
+body.rumbo-services :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card) {background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:none;overflow:hidden;}
+body.rumbo-services :is(.service-option,.rv-flight-card) {padding:24px;}
+body.rumbo-services :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card) h3 {font-size:24px;line-height:1.25;font-weight:500;letter-spacing:-.02em;}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) {padding:24px;background:var(--arena);border:1px solid var(--border);border-radius:20px;box-shadow:none;}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) :is(h2,h3) {font-weight:500;}
+body.rumbo-services .service-option[data-selected="true"] {border:2px solid var(--verde);padding:23px;box-shadow:none;}
+body.rumbo-services .service-stage {margin-top:40px;}
+body.rumbo-services .service-tabs {gap:8px;padding:8px 0 24px;border-bottom:1px solid var(--border);}
+body.rumbo-services .service-tabs a {padding:12px 16px;border-radius:999px;}
+body.rumbo-services .service-tabs a[aria-current] {background:var(--verde);color:#fff;}
+@media(max-width:650px){
+ body.rumbo-services .catalog-hero.catalog-hero {gap:24px;margin-bottom:40px;}
+ body.rumbo-services .catalog-hero>div:first-child,
+ body.rumbo-services .guides-page .catalog-hero .guide-hero-copy {padding:0;}
+ body.rumbo-services .catalog-hero.catalog-hero :is(figure,.hero-photo),
+ body.rumbo-services .guides-page .catalog-hero .guide-hero-photo {min-height:240px;height:240px;}
+ body.rumbo-services .service-catalog-heading {margin-top:56px;padding-top:32px;}
+ body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) {padding:20px;gap:16px;}
+ body.rumbo-services :is(.service-layout,.guide-layout,.rv-flow-layout) {gap:24px;}
+}
+
+/* Arena y verde: jerarquía común para la planificación del viaje. */
+body .rv-discover-photo figcaption {inset:auto auto 24px 24px;max-width:calc(100% - 48px);padding:12px 20px;border-radius:999px;background:var(--tinta);color:var(--blanco-texto);font-size:12px;font-weight:500;letter-spacing:.08em;gap:0;box-shadow:none;}
+body .rv-discover-photo figcaption span {display:none;}
+body .rv-catalog {position:relative;border-top:2px solid rgba(23,48,43,.32);padding-top:40px;margin-top:24px;}
+body .rv-catalog::before {content:"";position:absolute;top:-3px;left:0;width:80px;height:4px;border-radius:999px;background:var(--verde);}
+body.rumbo-services .site-header {background:var(--fondo);}
+body.rumbo-services .journey-progress {border-bottom-color:rgba(23,48,43,.26);}
+body.rumbo-services .journey-progress a[aria-current] {background:var(--verde);color:var(--blanco-texto);border-color:var(--verde);}
+body.rumbo-services .journey-progress a:hover {background:var(--arena);color:var(--tinta);}
+body.rumbo-services .catalog-hero h1 {color:var(--tinta);}
+body.rumbo-services .service-catalog-heading {position:relative;border-top:2px solid rgba(23,48,43,.3);}
+body.rumbo-services .service-catalog-heading::before {content:"";position:absolute;top:-3px;left:0;width:80px;height:4px;border-radius:999px;background:var(--verde);}
+body.rumbo-services .service-tile {background:rgba(255,255,255,.48);border:1px solid var(--border);border-radius:20px;padding-bottom:24px;}
+body.rumbo-services .service-tile .service-tile-photo {border-radius:0;}
+body.rumbo-services .service-tile :is(h2,p,a) {margin-left:24px;margin-right:24px;}
+body.rumbo-services .service-tile a {border-top:1px solid var(--border);padding-top:16px;}
+body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) {background:var(--arena);border-color:rgba(23,48,43,.18);}
+body.rumbo-services :is(.service-field,.rv-field,.guide-form) :is(input,select) {background:var(--fondo);border-color:rgba(23,48,43,.25);}
+body.rumbo-services :is(.service-stage,.rv-results-heading,.guide-heading) h2 {color:var(--tinta);}
+body.rumbo-services .service-stage {display:flex;align-items:center;gap:16px;}
+body.rumbo-services .service-stage>span {display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:var(--verde);color:white;font-size:14px;}
+body.rumbo-services .service-stage h2 {margin:0;}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) {background:var(--arena);border-top:4px solid var(--verde);}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) :is(h2,h3) {color:var(--tinta);}
+body.rumbo-services :is(.service-option-bottom,.guide-card-bottom,.rv-flight-bottom) {border-top:1px solid rgba(11,125,99,.28);padding-top:20px;}
+body.rumbo-services :is(.service-option-bottom,.guide-card-bottom) strong,
+body.rumbo-services .rv-price {color:var(--verde);}
+body.rumbo-services :is(.service-badge,.guide-badge,.guide-card-category) {background:var(--arena);color:var(--tinta);border-radius:999px;padding:6px 12px;}
+body.rumbo-services :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card)[data-selected="true"] {background:color-mix(in srgb,var(--verde) 6%,white);border-color:var(--verde);}
+body.rumbo-services :is(.service-notice,.guide-faq) {background:rgba(233,220,195,.35);}
+body.rumbo-services .button-outline {background:var(--fondo);border-color:var(--verde);color:var(--verde);}
+body.rumbo-services .button-outline:hover {background:var(--verde);color:var(--blanco-texto);}
+@media(max-width:650px){
+ body .rv-discover-photo figcaption {inset:auto auto 16px 16px;padding:10px 16px;max-width:calc(100% - 32px);font-size:11px;}
+ body .rv-catalog {padding-top:32px;}
+ body.rumbo-services .service-tile :is(h2,p,a) {margin-left:20px;margin-right:20px;}
+}
+>>>>>>> 29aaa114c2e75f68e0c88c0b280db125eb8d9ded

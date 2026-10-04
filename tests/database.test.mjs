@@ -16,16 +16,16 @@ test('vista estatica indica como conectar y conserva selecciones locales',async(
   const c=client(null,new Map(),async()=>{calls++;});
   c.storage.setItem('rumbo.profile.v1',JSON.stringify({alias:'Ana',preference:'playa'}));
   await c.storage.flush();assert.equal(calls,0);
-  assert.match(c.nodes[1].textContent,/no ejecuta el servidor/);
-  assert.equal(c.nodes[2].textContent,'Abrir versión conectada');c.nodes[2].click();
-  assert.equal(c.location.href,'http://localhost:8000/tienda.html?categoria=viaje');
+  assert.match(c.nodes[1].textContent,/modo local/);
+  assert.equal(c.nodes[2].textContent,'Abrir versión conectada');await c.nodes[2].click();
+  assert.equal(c.location.href,'error.html?code=offline');
   assert.ok(c.data.get('rumbo.sync.pending.v1').includes('Ana'));
 });
 
 test('una caida SQL conserva el borrador y nunca anuncia guardado en SQL',async()=>{
   let calls=0;const c=client({connected:false,reason:'unavailable'},new Map(),async()=>{calls++;});
   c.storage.setItem('rumbo.profile.v1',JSON.stringify({alias:'Ana',preference:'playa'}));
-  await c.storage.flush();assert.equal(calls,0);assert.match(c.nodes[1].textContent,/Sin conexión a SQL Server/);
+  await c.storage.flush();assert.equal(calls,0);assert.match(c.nodes[1].textContent,/Sin conexión a la base de datos/);
   assert.ok(c.storage.hasPending());
 });
 test('recupera un cambio pendiente después de una caída y recarga',async()=>{

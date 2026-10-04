@@ -7,8 +7,9 @@ import { loadEnvFile } from 'node:process';
 import { spawn } from 'node:child_process';
 import { bootstrap, databaseApi, safeJson } from './backend/node/database-api.mjs';
 import { authApi } from './backend/node/auth-api.mjs';
+import { sendError } from './backend/node/error-pages.mjs';
 const root = fileURLToPath(new URL("./public/", import.meta.url));
-const publicFiles = new Set(["index.html", "script.js", "chat-engine.js", "chat-client.js", "chat-ui.js", "chat.css", "style.css", "viajes.html", "viajes.js", "viajes.css", "tienda.html", "tienda.js", "tienda.css", "logo-rumbo.jpg", "servicios.html", "servicios.js", "servicios.css", "common.js", "common.css", "journey.js", "promociones.css", "design.css"]);
+const publicFiles = new Set(["error.html", "error.js", "connection.js", "index.html", "script.js", "chat-engine.js", "chat-client.js", "chat-ui.js", "chat.css", "style.css", "viajes.html", "viajes.js", "viajes.css", "tienda.html", "tienda.js", "tienda.css", "logo-rumbo.jpg", "servicios.html", "servicios.js", "servicios.css", "common.js", "common.css", "journey.js", "promociones.css", "design.css"]);
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
 publicFiles.add('database-client.js');
 for (const file of ['registro.html','iniciar-sesion.html','auth-client.js','auth.css']) publicFiles.add(file);
@@ -18,7 +19,7 @@ export function createApp(chatOptions) {
   return createServer(async (req, res) => {
     const trustedHost = process.env.APP_ORIGIN ? new URL(process.env.APP_ORIGIN).host : null;
     if (trustedHost ? req.headers.host !== trustedHost : !/^(?:localhost|127\.0\.0\.1)(?::\d+)?$/.test(req.headers.host || '')) {
-      res.writeHead(403); res.end(); return;
+      sendError(req,res,403); return;
     }
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
@@ -32,21 +33,21 @@ export function createApp(chatOptions) {
         return;
       }
       if (new URL(req.url, 'http://localhost').pathname === '/api/chat') return await chat(req, res);
-      if (!["GET", "HEAD"].includes(req.method)) { res.writeHead(405); res.end(); return; }
+      if (!["GET", "HEAD"].includes(req.method)) { sendError(req,res,405); return; }
       let path;
       try { path = decodeURIComponent(new URL(req.url, "http://localhost").pathname).slice(1) || "index.html"; }
-      catch { res.writeHead(400); res.end(); return; }
+      catch { sendError(req,res,400); return; }
       const image = /^(imagenes|imagenes-viajes)\/[a-zA-Z0-9_-]+\.(jpg|png|webp)$/.test(path);
       // Only public assets; credentials and configuration never leave the server.
-      if (!publicFiles.has(path) && !image) { res.writeHead(404); res.end(); return; }
+      if (!publicFiles.has(path) && !image) { sendError(req,res,404); return; }
       let data = await readFile(resolve(root, path));
-      if (extname(path) === '.html' && req.method === 'GET') {
+      if (extname(path) === '.html' && path !== 'error.html' && req.method === 'GET') {
         const initial = await bootstrap(req, res);
         data = data.toString('utf8').replace('<head>', `<head><script id="rumbo-bootstrap" type="application/json">${safeJson(initial)}</script><script src="auth-client.js" defer></script><link rel="stylesheet" href="auth.css">`);
       }
       res.writeHead(200, { "Content-Type": mime[extname(path)] || "application/octet-stream" });
       res.end(req.method === "HEAD" ? undefined : data);
-    } catch (error) { res.writeHead(error.code === "ENOENT" ? 404 : 500); res.end(); }
+    } catch (error) { sendError(req,res,error.code === "ENOENT" ? 404 : 500); }
   });
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

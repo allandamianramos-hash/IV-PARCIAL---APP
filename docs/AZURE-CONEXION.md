@@ -7,10 +7,10 @@ Cifrado: obligatorio, con validación del certificado.
 
 ## Abrir el proyecto
 
-Ejecuta `INICIAR-RUMBO.cmd` y abre http://127.0.0.1:8000.
-En Visual Studio Code puedes usar Ctrl+Shift+B para iniciar PHP.
-Si Live Server entrega una página estática, el sitio te lleva al servidor PHP
-conservando la página y la sección que estabas abriendo.
+Abre el proyecto en Visual Studio Code y pulsa **Go Live**. Live Server usa
+http://127.0.0.1:5500 y envía las solicitudes a PHP en segundo plano, sin cambiar
+la dirección del navegador. La tarea de apertura prepara PHP; si no se ejecuta,
+usa Ctrl+Shift+B una vez. Reinicia Live Server después de cambiar su configuración.
 Usa siempre el mismo nombre de host: `localhost` y `127.0.0.1` tienen cookies
 y almacenamiento de navegador independientes.
 
@@ -42,6 +42,11 @@ en `.runtime/`. Contienen información de cuentas y no se deben compartir ni
 incluir en una entrega. `.env` y `.runtime/` están excluidos de Git.
 
 ## Red y comprobaciones
+
+El 4 de octubre de 2026 se autorizó la IP individual `168.181.123.147` con la
+regla `ClientIPAddress_2026-10-4_12-42-14`. Se verificaron lectura y escritura
+en `BD_VIAJES`, además de catálogo y sesión a través de Live Server sin redirección.
+Si la conexión pública cambia, será necesario revisar la IP que Azure rechaza.
 
 La regla `Rumbo-PC-SQL` autoriza el rango `168.228.44.0–168.228.44.255`, aprobado
 por el propietario después de observar distintas IP de salida. Si cambias de

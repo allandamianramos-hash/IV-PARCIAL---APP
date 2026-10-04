@@ -5,7 +5,7 @@
       "label": "Rumbo: iniciar proyecto y comprobar Azure",
       "type": "process",
       "command": "powershell.exe",
-      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/iniciar-proyecto.ps1", "-Open"],
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/iniciar-proyecto.ps1"],
       "options": {"cwd": "${workspaceFolder}"},
       "problemMatcher": [],
       "group": {"kind": "build", "isDefault": true},

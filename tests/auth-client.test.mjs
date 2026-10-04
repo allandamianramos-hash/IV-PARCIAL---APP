@@ -44,12 +44,17 @@ test('una página ya cargada muestra la cuenta y el visitante conserva los enlac
   assert.deepEqual(links.children,['Iniciar sesión','Registrarse']);
 });
 
-test('Live Server dirige las páginas estáticas a PHP conservando host, ruta y sección',async()=>{
-  const common=await readFile(new URL('../public/common.js',import.meta.url),'utf8');
+test('Live Server conserva su puerto y solo reconecta al solicitarlo',async()=>{
+  const common=await readFile(new URL('../public/connection.js',import.meta.url),'utf8');
   const redirects=[];
-  vm.runInNewContext(common,{
+  const scope={window:{},fetch:async()=>({ok:true,json:async()=>({app:'rumbo-viajes',backend:'php'})}),AbortSignal,URL,
+
     document:{getElementById:()=>null},
     location:{protocol:'http:',hostname:'127.0.0.1',port:'5500',pathname:'/public/servicios.html',search:'?seccion=mi-viaje',hash:'#perfil',replace:url=>redirects.push(url)}
-  });
-  assert.deepEqual(redirects,['http://127.0.0.1:8000/servicios.html?seccion=mi-viaje#perfil']);
+  };
+  vm.runInNewContext(common,scope);
+  await new Promise(resolve=>setImmediate(resolve));
+  assert.deepEqual(redirects,[]);
+  assert.equal(await scope.window.RumboConnect(),true);
+  assert.deepEqual(redirects,['http://127.0.0.1:5500/servicios.html?seccion=mi-viaje#perfil']);
 });

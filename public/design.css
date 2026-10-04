@@ -249,7 +249,7 @@ body:has(.store-hero) main>.journey-progress {width:min(1200px,calc(100% - 48px)
 }
 /* Servicios: superficies claras, fotografías independientes y navegación inicial. */
 body.rumbo-services {
- --fondo:#fafbf9;--arena:#eef3ef;--border:#dce5df;
+ --fondo:#F6F1E7;--arena:#E9DCC3;--border:rgba(23,48,43,.2);
  background:var(--fondo)!important;
 }
 body.rumbo-services .site-header {background:#fff;border-bottom:1px solid var(--border);}
@@ -329,4 +329,84 @@ body.rumbo-services .journey-progress a {font-size:14px;}
  body.rumbo-services .store-hero.catalog-hero {min-height:0;}
  body.rumbo-services .store-hero.catalog-hero .hero-photo {min-height:260px;height:260px;}
  body.rumbo-services .journey-progress li {flex-basis:44%;}
+}
+
+/* Una misma composición para explorar y comparar todos los servicios. */
+body.rumbo-services .catalog-hero.catalog-hero {gap:48px;margin-bottom:64px;}
+body.rumbo-services .catalog-hero>div:first-child,
+body.rumbo-services .guides-page .catalog-hero .guide-hero-copy {padding:32px 0;}
+body.rumbo-services .catalog-hero h1 {font-weight:500;max-width:12ch;}
+body.rumbo-services .catalog-hero.catalog-hero :is(figure,.hero-photo),
+body.rumbo-services .guides-page .catalog-hero .guide-hero-photo {min-height:384px;}
+body.rumbo-services .service-catalog-heading {margin-top:96px;padding-top:40px;border-top:1px solid var(--border);scroll-margin-top:32px;}
+body.rumbo-services .service-catalog-heading>span {font-size:12px;letter-spacing:.12em;color:var(--verde);font-weight:500;}
+body.rumbo-services .service-catalog-heading h2 {font-size:clamp(28px,3vw,40px);font-weight:500;line-height:1.2;margin:16px 0;letter-spacing:-.025em;}
+body.rumbo-services .service-catalog-heading p {margin:0;}
+body.rumbo-services .service-grid {gap:40px 24px;margin-top:32px;}
+body.rumbo-services .service-tile {display:flex;flex-direction:column;padding:0 0 24px;}
+body.rumbo-services .service-tile .service-tile-photo {height:auto;aspect-ratio:3/2;margin-bottom:24px;}
+body.rumbo-services .service-tile h2 {font-weight:500;font-size:26px;}
+body.rumbo-services .service-tile p {max-width:34ch;margin-bottom:24px;}
+body.rumbo-services .service-tile a {padding-top:8px;}
+body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) {padding:32px;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:none;gap:24px;}
+body.rumbo-services :is(.service-field,.rv-field,.guide-form) :is(input,select) {min-height:48px;border:1px solid var(--border);border-radius:12px;padding:12px 16px;color:var(--tinta);font-size:16px;}
+body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) :is(input,select,button):focus-visible {outline:2px solid var(--verde);outline-offset:3px;}
+body.rumbo-services :is(.service-layout,.guide-layout,.rv-flow-layout) {gap:32px;margin-top:32px;align-items:start;}
+body.rumbo-services :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card) {background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:none;overflow:hidden;}
+body.rumbo-services :is(.service-option,.rv-flight-card) {padding:24px;}
+body.rumbo-services :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card) h3 {font-size:24px;line-height:1.25;font-weight:500;letter-spacing:-.02em;}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) {padding:24px;background:var(--arena);border:1px solid var(--border);border-radius:20px;box-shadow:none;}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) :is(h2,h3) {font-weight:500;}
+body.rumbo-services .service-option[data-selected="true"] {border:2px solid var(--verde);padding:23px;box-shadow:none;}
+body.rumbo-services .service-stage {margin-top:40px;}
+body.rumbo-services .service-tabs {gap:8px;padding:8px 0 24px;border-bottom:1px solid var(--border);}
+body.rumbo-services .service-tabs a {padding:12px 16px;border-radius:999px;}
+body.rumbo-services .service-tabs a[aria-current] {background:var(--verde);color:#fff;}
+@media(max-width:650px){
+ body.rumbo-services .catalog-hero.catalog-hero {gap:24px;margin-bottom:40px;}
+ body.rumbo-services .catalog-hero>div:first-child,
+ body.rumbo-services .guides-page .catalog-hero .guide-hero-copy {padding:0;}
+ body.rumbo-services .catalog-hero.catalog-hero :is(figure,.hero-photo),
+ body.rumbo-services .guides-page .catalog-hero .guide-hero-photo {min-height:240px;height:240px;}
+ body.rumbo-services .service-catalog-heading {margin-top:56px;padding-top:32px;}
+ body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) {padding:20px;gap:16px;}
+ body.rumbo-services :is(.service-layout,.guide-layout,.rv-flow-layout) {gap:24px;}
+}
+
+/* Arena y verde: jerarquía común para la planificación del viaje. */
+body .rv-discover-photo figcaption {inset:auto auto 24px 24px;max-width:calc(100% - 48px);padding:12px 20px;border-radius:999px;background:var(--tinta);color:var(--blanco-texto);font-size:12px;font-weight:500;letter-spacing:.08em;gap:0;box-shadow:none;}
+body .rv-discover-photo figcaption span {display:none;}
+body .rv-catalog {position:relative;border-top:2px solid rgba(23,48,43,.32);padding-top:40px;margin-top:24px;}
+body .rv-catalog::before {content:"";position:absolute;top:-3px;left:0;width:80px;height:4px;border-radius:999px;background:var(--verde);}
+body.rumbo-services .site-header {background:var(--fondo);}
+body.rumbo-services .journey-progress {border-bottom-color:rgba(23,48,43,.26);}
+body.rumbo-services .journey-progress a[aria-current] {background:var(--verde);color:var(--blanco-texto);border-color:var(--verde);}
+body.rumbo-services .journey-progress a:hover {background:var(--arena);color:var(--tinta);}
+body.rumbo-services .catalog-hero h1 {color:var(--tinta);}
+body.rumbo-services .service-catalog-heading {position:relative;border-top:2px solid rgba(23,48,43,.3);}
+body.rumbo-services .service-catalog-heading::before {content:"";position:absolute;top:-3px;left:0;width:80px;height:4px;border-radius:999px;background:var(--verde);}
+body.rumbo-services .service-tile {background:rgba(255,255,255,.48);border:1px solid var(--border);border-radius:20px;padding-bottom:24px;}
+body.rumbo-services .service-tile .service-tile-photo {border-radius:0;}
+body.rumbo-services .service-tile :is(h2,p,a) {margin-left:24px;margin-right:24px;}
+body.rumbo-services .service-tile a {border-top:1px solid var(--border);padding-top:16px;}
+body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools) {background:var(--arena);border-color:rgba(23,48,43,.18);}
+body.rumbo-services :is(.service-field,.rv-field,.guide-form) :is(input,select) {background:var(--fondo);border-color:rgba(23,48,43,.25);}
+body.rumbo-services :is(.service-stage,.rv-results-heading,.guide-heading) h2 {color:var(--tinta);}
+body.rumbo-services .service-stage {display:flex;align-items:center;gap:16px;}
+body.rumbo-services .service-stage>span {display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:var(--verde);color:white;font-size:14px;}
+body.rumbo-services .service-stage h2 {margin:0;}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) {background:var(--arena);border-top:4px solid var(--verde);}
+body.rumbo-services :is(.service-summary,.guide-summary,.rv-trip-summary) :is(h2,h3) {color:var(--tinta);}
+body.rumbo-services :is(.service-option-bottom,.guide-card-bottom,.rv-flight-bottom) {border-top:1px solid rgba(11,125,99,.28);padding-top:20px;}
+body.rumbo-services :is(.service-option-bottom,.guide-card-bottom) strong,
+body.rumbo-services .rv-price {color:var(--verde);}
+body.rumbo-services :is(.service-badge,.guide-badge,.guide-card-category) {background:var(--arena);color:var(--tinta);border-radius:999px;padding:6px 12px;}
+body.rumbo-services :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card)[data-selected="true"] {background:color-mix(in srgb,var(--verde) 6%,white);border-color:var(--verde);}
+body.rumbo-services :is(.service-notice,.guide-faq) {background:rgba(233,220,195,.35);}
+body.rumbo-services .button-outline {background:var(--fondo);border-color:var(--verde);color:var(--verde);}
+body.rumbo-services .button-outline:hover {background:var(--verde);color:var(--blanco-texto);}
+@media(max-width:650px){
+ body .rv-discover-photo figcaption {inset:auto auto 16px 16px;padding:10px 16px;max-width:calc(100% - 32px);font-size:11px;}
+ body .rv-catalog {padding-top:32px;}
+ body.rumbo-services .service-tile :is(h2,p,a) {margin-left:20px;margin-right:20px;}
 }

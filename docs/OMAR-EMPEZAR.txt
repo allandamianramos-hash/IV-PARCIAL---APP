@@ -1,0 +1,46 @@
+OMAR: CONECTAR AZURE EN TU REPOSITORIO ACTUAL DE GITHUB
+
+No uses la copia completa RUMBO-OMAR-LISTO.zip para trabajar con Git.
+Conserva la carpeta que ya tienes conectada a GitHub en Visual Studio Code.
+Este nuevo paquete SOLO instala tu acceso privado y Node portable.
+No reemplaza tu codigo, no cambia origin y no crea otro repositorio.
+
+PRIMERA VEZ
+1. En tu carpeta habitual de Visual Studio Code, guarda tus cambios.
+   Si tienes cambios pendientes, haz Commit antes de descargar los del equipo.
+2. Control de codigo fuente > ... > Pull (Extraer).
+   Si aparecen conflictos, pide ayuda; no descartes tus cambios.
+3. Extrae ACCESO-OMAR-GITHUB.zip en Descargas.
+4. Abre INSTALAR-ACCESO-OMAR.cmd de esa carpeta extraida.
+5. Cuando te pida una carpeta, selecciona TU REPOSITORIO ORIGINAL:
+   la carpeta que ya abres en Visual Studio Code, con public y server.mjs.
+6. Espera a que diga LISTO. Se abrira http://127.0.0.1:3010 conectado a Azure.
+
+DESPUES
+Sigue editando la misma carpeta en Visual Studio Code.
+Para abrir/reiniciar Rumbo: Terminal > Nueva terminal, escribe:
+.\INICIAR-RUMBO.cmd
+Tambien puedes usar Ctrl+Shift+B. Para Omar se usa el navegador en el puerto
+3010; no Go Live (la configuracion compartida de Go Live usa el PHP de Allan).
+No necesitas instalar PHP, XAMPP ni SQL Server para esta modalidad.
+Necesitas Windows x64, Git ya instalado e Internet.
+
+COMPARTIR CAMBIOS (AMBOS)
+Antes de editar: Pull para recibir los cambios del otro.
+Despues de editar: guarda, revisa los archivos en Control de codigo fuente,
+prepara solo los archivos que quieras enviar (+), escribe un mensaje,
+haz Commit y despues Push (Insertar). El otro hace Pull para recibirlos.
+Si Pull informa conflictos o cambios pendientes, no uses restablecer,
+Descartar ni Force Push. Resuelvanlos conservando el trabajo de ambos.
+Tras un Pull, vuelve a ejecutar INICIAR-RUMBO.cmd y recarga la pagina.
+
+Los datos estan en Azure. El codigo viaja por GitHub.
+.env, .rumbo-equipo.json, .runtime y node_modules son privados/locales y
+Git los ignora. Un Pull normal no borra la conexion ni las credenciales.
+No uses git clean -fdx: borraria estos archivos locales ignorados.
+No publiques el ZIP privado ni fuerces la inclusion de archivos ignorados.
+
+La cuenta SQL ya viene configurada. Para iniciar sesion en la pagina usa
+una cuenta del sitio (tu correo y contrasena), no el usuario SQL.
+Si aparece un error, envia a Allan una foto del mensaje, sin contrasenas.
+Si Azure informa una IP bloqueada, envia esa IP para revisar la autorizacion.

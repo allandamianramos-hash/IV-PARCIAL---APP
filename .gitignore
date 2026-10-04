@@ -3,3 +3,9 @@
 !.env.example
 node_modules/
 *.log
+.runtime/
+ENTREGA-RUMBO.zip
+.rumbo-equipo.json
+RUMBO-EQUIPO-*.zip
+RUMBO-OMAR-*.zip
+ACCESO-OMAR-*.zip

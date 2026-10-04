@@ -1,0 +1,145 @@
+[
+  {
+    "id": "cancun",
+    "title": "Cancún",
+    "file": "imagenes-viajes/hd-cancun.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Cancun_Strand_Luftbild_%2822143397586%29.jpg/3840px-Cancun_Strand_Luftbild_%2822143397586%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Canc%C3%BAn",
+    "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/132646954@N02\">dronepicr</a>",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "description": "Luftbildaufnahmen von Cancun."
+  },
+  {
+    "id": "venecia",
+    "title": "Venice",
+    "file": "imagenes-viajes/hd-venecia.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Venezia_aerial_view.jpg/3840px-Venezia_aerial_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Venice",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Kallerna\" title=\"User:Kallerna\">kallerna</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Aerial view of <a href=\"//commons.wikimedia.org/wiki/Venice\" class=\"mw-redirect\" title=\"Venice\">Venice</a>, <a href=\"//commons.wikimedia.org/wiki/Stazione_di_Venezia_Santa_Lucia\" title=\"Stazione di Venezia Santa Lucia\">railway station Santa Lucia</a> and port, Canale della Giudecca, <a href=\"//commons.wikimedia.org/wiki/Giudecca_a_Venezia\" title=\"Giudecca a Venezia\">island Giudecca</a>"
+  },
+  {
+    "id": "paris",
+    "title": "Paris",
+    "file": "imagenes-viajes/hd-paris.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/3840px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Paris",
+    "author": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/10288162@N07\">Yann Caradec</a> from Paris, France",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "description": "La Tour Eiffel vue de la Tour Saint-Jacques, Paris."
+  },
+  {
+    "id": "venecia-canal",
+    "file": "imagenes-viajes/hd-venecia-canal.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg/960px-View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Grand_Canal_(Venice)",
+    "commons": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg",
+    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Archaeodontosaurus\" title=\"User:Archaeodontosaurus\">Didier Descouens</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "The <a href=\"https://en.wikipedia.org/wiki/Grand_Canal_(Venice)\" class=\"extiw\" title=\"w:Grand Canal (Venice)\">Grand Canal</a>, in Venice - View from the Rialto towards the south-west."
+  },
+  {
+    "id": "madrid-retiro",
+    "file": "imagenes-viajes/hd-madrid-retiro.jpg",
+    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/MADRID_051116_MXALX_041.jpg/960px-MADRID_051116_MXALX_041.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://en.wikipedia.org/wiki/Parque_del_Buen_Retiro",
+    "commons": "https://commons.wikimedia.org/wiki/File:MADRID_051116_MXALX_041.jpg",
+    "author": "Max Alexander / <a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/57084189@N03\">PromoMadrid</a>",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "description": "<p>Madrid Retiro Park\n<a href=\"https://en.wikipedia.org/wiki/es:Parque_del_Retiro\" class=\"extiw\" title=\"w:es:Parque del Retiro\">es.wikipedia.org/wiki/Parque_del_Retiro</a>\n</p><p>This photograph can be used for  publications, including this copyright statement:  “©PromoMadrid, author Max Alexander”.\n</p>\nEsta fotografía puede usarse en publicaciones,  incluyendo la declaración “©PromoMadrid, autor Max Alexander”."
+  },
+  {
+    "id": "portada-cancun",
+    "file": "imagenes-viajes/portada-cancun-paisaje.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Sunrise_In_Canc%C3%BAn_I_(219464941).jpeg/1280px-Sunrise_In_Canc%C3%BAn_I_(219464941).jpeg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Sunrise_In_Canc%C3%BAn_I_(219464941).jpeg",
+    "author": "Eric Johnson",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "description": "Amanecer sobre el mar y la playa de Cancún",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "portada-madrid",
+    "file": "imagenes-viajes/portada-madrid-paisaje.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Skyline_view_of_Madrid%2C_Spain_at_night_-_50317258357.jpg/1280px-Skyline_view_of_Madrid%2C_Spain_at_night_-_50317258357.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Skyline_view_of_Madrid%2C_Spain_at_night_-_50317258357.jpg",
+    "author": "Tim Adams",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "description": "La Gran Vía y el centro de Madrid iluminados de noche",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "portada-paris",
+    "file": "imagenes-viajes/portada-paris-paisaje.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Paris_sunset.JPG/1280px-Paris_sunset.JPG",
+    "commons": "https://commons.wikimedia.org/wiki/File:Paris_sunset.JPG",
+    "author": "Zinneke",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "description": "El Sena y la torre Eiffel al atardecer",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "hero-paris",
+    "file": "imagenes-viajes/hero-paris-eiffel.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg/1280px-Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg",
+    "author": "Guilhem Vellut",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "description": "La torre Eiffel vista de cerca desde Trocadéro",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "hero-madrid",
+    "file": "imagenes-viajes/hero-madrid-palacio.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Palacio_Real_de_Madrid._Fachada_principal.jpg/1280px-Palacio_Real_de_Madrid._Fachada_principal.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Madrid._Fachada_principal.jpg",
+    "author": "Jose Luis Filpo Cabana",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "description": "La fachada del Palacio Real de Madrid desde la plaza de la Armería",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "hero-cancun",
+    "file": "imagenes-viajes/hero-cancun-delfines.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/26/Playa_Delfines%2C_Canc%C3%BAn_-_Panorama.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Playa_Delfines%2C_Canc%C3%BAn_-_Panorama.jpg",
+    "author": "Capmo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "La arena blanca y el mar turquesa de Playa Delfines en Cancún",
+    "modifications": "Redimensionada y comprimida para la web; encuadre adaptable."
+  },
+  {
+    "id": "hero-osaka-sakura",
+    "file": "imagenes-viajes/hero-osaka-sakura.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg/3840px-Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Osaka-Castle-cherry-blossom-2018-Luka-Peternel.jpg",
+    "author": "Luka Peternel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "Castillo de Osaka enmarcado por cerezos en flor",
+    "modifications": "Miniatura de 3840 px publicada por Wikimedia; encuadre CSS adaptable."
+  },
+  {
+    "id": "hero-paris-hd",
+    "file": "imagenes-viajes/hero-paris-hd.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/26/Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg",
+    "commons": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_%40_Trocad%C3%A9ro_%40_Paris_(23765954062).jpg",
+    "author": "Guilhem Vellut",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "description": "La torre Eiffel vista de cerca desde Trocadéro",
+    "modifications": "Archivo original de alta resolución; encuadre CSS adaptable."
+  }
+]

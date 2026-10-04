@@ -12,10 +12,12 @@
   const download = text => { const url = URL.createObjectURL(new Blob(['\uFEFF'+text], {type:'text/plain;charset=utf-8'})); const a = document.createElement('a'); a.href=url; a.download='mi-viaje-rumbo.txt'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 10000); };
   const catalog = window.RumboViajesDatos.destinations;
   const configs = {
-    traslados: {name:'Traslados', title:'Traslados al aeropuerto', intro:'Del aeropuerto al primer paseo. Elige una ruta y encuentra espacio para todos y sus maletas.', icon:'↔', stamp:'DEL PUNTO A AL PUNTO B'},
+    traslados: {name:'Traslados', title:'Transporte y traslados', intro:'Organiza la llegada a tu hospedaje desde el aeropuerto o punto de llegada de cada destino.', icon:'↔', stamp:'DEL PUNTO A AL PUNTO B'},
     seguros: {name:'Seguro de viaje', title:'Comparar seguros de viaje', intro:'Compara planes y guarda una opción para revisarla después.', icon:'◇', stamp:'CUIDA LO QUE IMPORTA'},
-    guias: {name:'Guías locales', title:'Recorridos con guías locales', intro:'Consulta recorridos culturales, parques, playas y mercados de cada destino.', icon:'◎', stamp:'HISTORIAS QUE CONECTAN'}
+    guias: {name:'Experiencias', title:'Recorridos con guías locales', intro:'Consulta recorridos culturales, parques, playas y mercados de cada destino.', icon:'◎', stamp:'HISTORIAS QUE CONECTAN'}
   };
+  const routeId = d => ({'san-pedro-sula':'sps','san-jose':'sjo'})[d.id] || d.id;
+  const routeLabel = d => 'Aeropuerto '+d.airport.name+' ('+d.airport.code+') → hospedaje';
   const params = new URLSearchParams(location.search);
   const section = params.get('seccion') || 'servicios';
   const pageNames = {'mi-viaje':'Mi viaje',perfil:'Mi perfil',ayuda:'Centro de ayuda',acerca:'Acerca de Rumbo',equipo:'Nuestro equipo',cambios:'Cambios',privacidad:'Privacidad',terminos:'Condiciones de uso'};
@@ -30,8 +32,8 @@
     tienda:['imagenes/bolso-mano.jpg','Bolso de viaje de cuero']
   };
   const hero = (title, intro, eyebrow, icon='↗', stamp='') => {
-    const [src,alt]=servicePhotos[section]||['imagenes-viajes/naturaleza.jpg','Sendero entre árboles para explorar nuevos lugares'];
-    return `<section class="service-hero"><div><h1>${title}</h1><p>${intro}</p>${section==='servicios'?'<a class="button button-primary service-explore" href="#opciones-servicios">Elegir un servicio <span aria-hidden="true">↘</span></a>':''}</div><figure class="service-photo"><img src="${src}" alt="${alt}" width="720" height="540"></figure></section>`;
+    const [src,alt]=servicePhotos[section]||['imagenes-viajes/hero-cancun-delfines.jpg','Playa Delfines en Cancún'];
+    return `<section class="service-hero catalog-hero"><div><h1>${title}</h1><p>${intro}</p>${section==='servicios'?'<a class="button button-primary service-explore" href="#opciones-servicios">Elegir un servicio <span aria-hidden="true">↘</span></a>':configs[section]?'<a class="button button-primary" href="#service-search">'+(section==='traslados'?'Buscar traslado':'Comparar planes')+' ↓</a>':''}</div><figure class="service-photo"><img src="${src}" alt="${alt}" width="720" height="540"></figure></section>`;
   };
   const tabs = () => `<nav class="service-tabs" aria-label="Servicios de viaje"><a href="viajes.html?pantalla=vuelos">Vuelos</a><a href="viajes.html?pantalla=hoteles">Hoteles</a>${Object.entries(configs).map(([id,c]) => `<a href="servicios.html?seccion=${id}" ${section===id?'aria-current="page"':''}>${c.name}</a>`).join('')}</nav>`;
   const input = (id,label,type,value,extra='') => `<div class="service-field"><label for="${id}">${label}</label><input id="${id}" name="${id}" type="${type}" value="${value}" ${extra} required></div>`;
@@ -43,10 +45,10 @@
     const c=configs[section];
     document.title=`${c.name} | Rumbo`;
     let fields='';
-    if(section==='traslados') fields=select('route','Ruta', [['roatan','Aeropuerto de Roatán → West Bay'],['sps','Aeropuerto Ramón Villeda Morales → San Pedro Sula'],['sjo','Aeropuerto Juan Santamaría → San José']])+input('date','Fecha del traslado','date',today(),`min="${today()}"`)+input('time','Hora de recogida','time','10:00')+input('people','Pasajeros','number',2,'min="1" max="12" step="1"')+input('bags','Maletas grandes','number',2,'min="0" max="12" step="1"')+select('direction','Sentido',[['out','Ida'],['back','Ruta inversa']]);
-    if(section==='seguros') fields=select('zone','Zona del viaje',[['nacional','Honduras'],['internacional','Internacional']])+input('date','Inicio del viaje','date',today(),`min="${today()}"`)+input('end','Fin del viaje','date',today(),`min="${today()}"`)+input('people','Viajeros','number',1,'min="1" max="12" step="1"');
+    if(section==='traslados') fields=select('route','Ruta', catalog.map(d=>[routeId(d),escape(d.name)+' · '+escape(routeLabel(d))]))+input('date','Fecha del traslado','date',today(),`min="${today()}"`)+input('time','Hora de recogida','time','10:00')+input('people','Pasajeros','number',2,'min="1" max="12" step="1"')+input('bags','Maletas grandes','number',2,'min="0" max="12" step="1"')+select('direction','Sentido',[['out','Ida'],['back','Ruta inversa']]);
+    if(section==='seguros') fields=select('destination','Destino',catalog.map(d=>[d.id,escape(d.name)]))+select('zone','Zona del viaje',[['nacional','Honduras'],['internacional','Internacional']])+input('date','Inicio del viaje','date',today(),`min="${today()}"`)+input('end','Fin del viaje','date',today(),`min="${today()}"`)+input('people','Viajeros','number',1,'min="1" max="12" step="1"');
     if(section==='guias') fields=select('destination','Destino',catalog.map(d=>[d.id,d.name]))+input('date','Fecha del recorrido','date',today(),`min="${today()}"`)+input('people','Personas','number',2,'min="1" max="12" step="1"')+select('language','Idioma',[['all','Cualquier idioma'],['es','Español'],['en','Inglés']])+select('style','Experiencia',[['all','Todas'],['cultura','Cultura e historia'],['naturaleza','Naturaleza'],['playa','Costa y descanso']]);
-    root.innerHTML=crumb(c.name)+hero(c.title,c.intro,'LOS DETALLES HACEN EL VIAJE',c.icon,c.stamp)+tabs()+`<div class="service-stage"><span>01</span><div><h2>Personaliza tu búsqueda</h2><p>Primero los detalles; después compara y elige.</p></div></div><form id="service-search" class="service-form">${fields}<div class="service-form-foot"><p id="form-notice">Ajusta los detalles y compara las opciones.</p><button class="button button-primary">Ver opciones ↗</button></div></form><div class="service-stage"><span>02</span><div><h2>Compara y elige tu opción</h2><p>Revisa qué incluye cada alternativa y guarda tu favorita en Mi viaje.</p></div></div><div class="service-layout"><section aria-labelledby="results-title"><h2 id="results-title">Opciones para tu viaje</h2><p id="results-count" role="status"></p><div id="service-results" class="service-results"></div></section><aside class="service-summary" aria-label="Resumen"><p class="eyebrow">TU ELECCIÓN</p><h2>Resumen del servicio</h2><div id="summary-content"><p>Elige una opción para revisar el importe y guardarla.</p></div><button id="save-service" class="button button-primary" disabled>Guardar y continuar →</button><p id="service-status" class="service-status" role="status" aria-live="polite"></p></aside></div>`;
+    root.innerHTML=crumb(c.name)+hero(c.title,c.intro,'LOS DETALLES HACEN EL VIAJE',c.icon,c.stamp)+tabs()+`<div class="service-stage"><span>01</span><div><h2>Destino y fechas</h2></div></div><form id="service-search" class="service-form">${fields}<div class="service-form-foot"><p id="form-notice">Ajusta los detalles y compara las opciones.</p><button class="button button-primary">Ver opciones ↗</button></div></form><div class="service-stage"><span>02</span><div><h2>Precios y condiciones</h2></div></div><p class="service-notice">Opciones y precios de demostración para planificar tu viaje. Guardar una selección no reserva transporte ni contrata una póliza. Confirma disponibilidad y condiciones con el proveedor.</p><div class="service-layout"><section aria-labelledby="results-title"><h2 id="results-title">Opciones para tu viaje</h2><p id="results-count" role="status"></p><div id="service-results" class="service-results"></div></section><aside class="service-summary" aria-label="Resumen"><p class="eyebrow">TU ELECCIÓN</p><h2>Resumen del servicio</h2><div id="summary-content"><p>Elige una opción para revisar el importe y guardarla.</p></div><button id="save-service" class="button button-primary" disabled>Guardar y continuar →</button><p id="service-status" class="service-status" role="status" aria-live="polite"></p></aside></div>`;
     if(section==='guias' && catalog.some(d=>d.id===params.get('destino'))) $('#destination').value=params.get('destino');
     const form=$('#service-search'); let selected=null, options=[], detail='';
     const saved = records().find(r=>r.section===section);
@@ -59,8 +61,9 @@
         if(!$('#date').checkValidity())$('#date').value=today();
         if(Number.isInteger(trip.travelers) && trip.travelers>=1 && trip.travelers<=12)$('#people').value=trip.travelers;
         if(section==='guias')$('#destination').value=destination.id;
-        if(section==='traslados')$('#route').value=({roatan:'roatan','san-pedro-sula':'sps','san-jose':'sjo'})[destination.id] || 'roatan';
+        if(section==='traslados')$('#route').value=routeId(destination);
         if(section==='seguros'){
+          $('#destination').value=destination.id;
           $('#zone').value=destination.region==='honduras'?'nacional':'internacional';
           const end=new Date($('#date').value+'T12:00:00Z');end.setUTCDate(end.getUTCDate()+Math.min(30,Math.max(1,Number(trip.nights)||1)));$('#end').value=end.toISOString().slice(0,10);
         }
@@ -74,42 +77,46 @@
       }
     }
     if(section==='guias' && catalog.some(d=>d.id===params.get('destino'))) $('#destination').value=params.get('destino');
+    const requested=catalog.find(d=>d.id===params.get('destino'));
+    if(requested){if(section==='traslados')$('#route').value=routeId(requested);else if(section==='seguros')$('#destination').value=requested.id;}
+    if(section==='seguros'){
+      const syncZone=()=>{$('#zone').value=catalog.find(d=>d.id===$('#destination').value)?.region==='honduras'?'nacional':'internacional';};
+      syncZone(); $('#destination').addEventListener('change',syncZone);
+    }
     function clearSelection(){ selected=null; $('#save-service').disabled=true; $('#summary-content').innerHTML='<p>Elige una opción para revisar el importe y guardarla.</p>'; root.querySelectorAll('[data-choose]').forEach(b=>{b.setAttribute('aria-pressed','false');b.textContent='Elegir opción';b.closest('article').dataset.selected='false';}); status(''); }
-    function validate(){
+    function validate(report=false){
       $('#date').min=today();
       if(section==='seguros') { $('#end').min=$('#date').value; $('#end').setCustomValidity($('#end').value < $('#date').value?'La fecha final debe ser igual o posterior al inicio.':''); }
-      return form.reportValidity();
+      return report?form.reportValidity():form.checkValidity();
     }
-    function render(){
-      if(!validate()) return;
+    function render(report=false){
+      if(!validate(report)) return;
       clearSelection(); form.dataset.dirty='false';
       const values=Object.fromEntries(new FormData(form)); const people=Number(values.people);
       detail=`${values.date} · ${people} ${people===1?'persona':'personas'}`;
       if(section==='traslados'){
-        const base=(window.RumboDatabase?.catalog?.serviceRates?.transfers || {roatan:750,sps:800,sjo:950})[values.route];
+        const destination=catalog.find(d=>routeId(d)===values.route);
+        const base=window.RumboDatabase?.catalog?.serviceRates?.transfers?.[values.route] ?? ({roatan:750,sps:800,sjo:950})[values.route] ?? (destination.region==='honduras'?850:1250);
+        const connection=destination.arrival!==destination.name;
+        $('#form-notice').textContent=connection ? 'La llegada es en '+destination.arrival+'. Confirma los tramos terrestres o marítimos hasta '+destination.name+'.' : 'Confirma dirección del hospedaje y punto de recogida con el proveedor.';
         detail=`${$('#route').selectedOptions[0].textContent}${values.direction==='back'?' (ruta inversa)':''} · ${detail} · ${values.time} · ${values.bags} maletas`;
-        options=[{id:'compacto',title:'Auto privado',tag:'Auto privado',capacity:3,bags:2,factor:1,desc:'Un vehículo solo para tu grupo. Ideal para viajar ligero.'},{id:'familiar',title:'Miniván privada',tag:'Miniván privada',capacity:6,bags:6,factor:1.65,desc:'Más espacio para las maletas y para las personas que te acompañan.'},{id:'grupo',title:'Van para grupos',tag:'Van para grupos',capacity:12,bags:12,factor:2.6,desc:'Vehículo con capacidad para hasta 12 pasajeros.'}].filter(o=>o.capacity>=people && o.bags>=Number(values.bags)).map(o=>({...o,total:Math.round(base*o.factor),unit:'Total por vehículo · un trayecto',items:[`Hasta ${o.capacity} pasajeros y ${o.bags} maletas`,'Recogida y destino según la ruta elegida','Paradas adicionales no incluidas']}));
+        options=[{id:'compacto',title:'Auto privado',tag:'Auto privado',capacity:3,bags:2,factor:1,desc:'Un vehículo solo para tu grupo. Ideal para viajar ligero.'},{id:'familiar',title:'Miniván privada',tag:'Miniván privada',capacity:6,bags:6,factor:1.65,desc:'Más espacio para las maletas y para las personas que te acompañan.'},{id:'grupo',title:'Van para grupos',tag:'Van para grupos',capacity:12,bags:12,factor:2.6,desc:'Vehículo con capacidad para hasta 12 pasajeros.'}].filter(o=>o.capacity>=people && o.bags>=Number(values.bags)).map(o=>({...o,total:Math.round(base*o.factor),unit:'Total por vehículo · un trayecto',items:[`Hasta ${o.capacity} pasajeros y ${o.bags} maletas`,'Recogida y destino según la ruta elegida','Paradas adicionales no incluidas',...(connection?['Tramos marítimos, billetes y conexiones se cotizan por separado']:[])]}));
       } else if(section==='seguros') {
         const days=Math.round((Date.parse(values.end)-Date.parse(values.date))/86400000)+1;
-        detail=`${$('#zone').selectedOptions[0].textContent} · ${values.date} al ${values.end} · ${days} ${days===1?'día':'días'} · ${people} ${people===1?'viajero':'viajeros'}`;
-        options=[{id:'esencial',title:'Esencial',price:35,tag:'Lo básico del camino',desc:'Una primera idea de asistencia para una escapada sencilla.',items:['Asistencia médica: límite L 100,000','Equipaje: no contemplado','Cancelación: no contemplada']},{id:'acompanado',title:'Acompañado',price:60,tag:'Más aspectos del viaje',desc:'Una propuesta que también contempla contratiempos con el equipaje.',items:['Asistencia médica: límite L 250,000','Equipaje: límite L 8,000','Cancelación: no contemplada']},{id:'amplio',title:'Más tranquilo',price:95,tag:'Una comparación más amplia',desc:'Compara también interrupciones del viaje.',items:['Asistencia médica: límite L 500,000','Equipaje: límite L 15,000','Interrupción: límite L 20,000']}].map(o=>({...o,price:window.RumboDatabase?.catalog?.serviceRates?.insurance?.[o.id] ?? o.price})).map(o=>({...o,total:o.price*days*people*(values.zone==='internacional'?2:1),unit:`${days} ${days===1?'día':'días'} × ${people} ${people===1?'viajero':'viajeros'}`,items:[...o.items,'Excluye actividades de riesgo y condiciones preexistentes']}));
+        detail=`${$('#destination').selectedOptions[0].textContent} · ${$('#zone').selectedOptions[0].textContent} · ${values.date} al ${values.end} · ${days} ${days===1?'día':'días'} · ${people} ${people===1?'viajero':'viajeros'}`;
+        options=[{id:'esencial',title:'Esencial',price:35,tag:'Asistencia médica',desc:'Referencia de protección médica para viajes cortos.',items:['Asistencia médica: límite L 100,000','Equipaje: no contemplado','Cancelación: no contemplada']},{id:'acompanado',title:'Médico y equipaje',price:60,tag:'Equipaje incluido',desc:'Añade un límite de referencia para incidencias con el equipaje.',items:['Asistencia médica: límite L 250,000','Equipaje: límite L 8,000','Cancelación: no contemplada']},{id:'amplio',title:'Cobertura ampliada',price:95,tag:'Interrupción del viaje',desc:'Incluye un límite adicional de referencia para interrupciones.',items:['Asistencia médica: límite L 500,000','Equipaje: límite L 15,000','Interrupción: límite L 20,000']},{id:'cancelacion',title:'Cancelación y asistencia',price:115,tag:'Cancelación incluida',desc:'Compara asistencia médica, equipaje y cancelación por causas cubiertas.',items:['Asistencia médica: límite L 500,000','Equipaje: límite L 15,000','Cancelación: límite L 25,000']}].map(o=>({...o,price:window.RumboDatabase?.catalog?.serviceRates?.insurance?.[o.id] ?? o.price})).map(o=>({...o,total:o.price*days*people*(values.zone==='internacional'?2:1),unit:`${days} ${days===1?'día':'días'} × ${people} ${people===1?'viajero':'viajeros'}`,items:[...o.items,'Excluye actividades de riesgo y condiciones preexistentes']}));
       } else {
         const d=catalog.find(d=>d.id===values.destination); detail=`${d.name} · ${detail}`;
         options=[{id:d.id+'-paseo',title:`Una primera mirada a ${d.name}`,tag:'Recorrido cultural · 2 horas',style:'cultura',language:'es',price:380,desc:'Un paseo para orientarte, escuchar historias y reconocer los rincones del destino.'},{id:d.id+'-paisaje',title:'El paisaje, paso a paso',tag:'Al aire libre · 3 horas',style:d.type==='playa'?'playa':'naturaleza',language:'en',price:550,desc:'Una salida pausada para disfrutar del entorno y llevarte una perspectiva distinta.'},{id:d.id+'-sabores',title:'Historias y sabores del lugar',tag:'Cultura local · 3 horas',style:'cultura',language:'es',price:650,desc:'Una idea de recorrido para conocer el destino a través de sus costumbres y su cocina.'}].map(o=>({...o,price:window.RumboDatabase?.catalog?.serviceRates?.guides?.[o.id.split('-').pop()] ?? o.price})).filter(o=>(values.language==='all'||o.language===values.language)&&(values.style==='all'||o.style===values.style)).map(o=>({...o,total:o.price*people,unit:`${money(o.price)} por persona × ${people}`,items:[`Idioma del recorrido: ${o.language==='es'?'español':'inglés'}`,'Acompañamiento de guía local (perfil por confirmar)','Entradas, comidas y traslados no incluidos']}));
       }
       $('#results-count').textContent=`${options.length} ${options.length===1?'opción':'opciones'} · ${detail}`;
-      $('#form-notice').textContent='Resultados actualizados. Revisa el precio y las condiciones antes de elegir.';
+      if(section!=='traslados') $('#form-notice').textContent='Importes de demostración. Revisa límites, exclusiones y condiciones de la póliza del proveedor.';
       $('#service-results').innerHTML=options.length?options.map(o=>`<article class="service-option" data-option="${o.id}"><span class="service-badge">${o.tag}</span><h3>${o.title}</h3><p>${o.desc}</p><ul>${o.items.map(i=>`<li>${i}</li>`).join('')}</ul><div class="service-option-bottom"><div><strong>${money(o.total)}</strong><small>${o.unit}</small></div><button class="button button-outline" type="button" data-choose="${o.id}" aria-pressed="false" aria-label="Elegir ${o.title}">Elegir opción</button></div></article>`).join(''):'<div class="service-empty"><h3>No hay opciones con estos filtros.</h3><p>Prueba otro idioma o tipo de experiencia.</p><button class="button button-outline" type="button" id="reset-service">Limpiar filtros</button></div>';
       $('#reset-service')?.addEventListener('click',()=>{ $('#language').value='all'; $('#style').value='all'; render(); });
-      const target=read('rumbo.integrante2.viaje.v1',{})?.destinationId;
-      if(section==='traslados' && target && !['roatan','san-pedro-sula','san-jose'].includes(target)){
-        options=[];
-        $('#results-count').textContent='No hay rutas para el destino elegido.';
-        $('#service-results').innerHTML='<div class="service-empty"><h3>Puedes continuar sin traslado.</h3><p>Las rutas disponibles actualmente son Roatán, San Pedro Sula y San José. No añadiremos un transporte que no corresponda a tu destino.</p></div>';
-      }
+
     }
     form.addEventListener('input',()=>{clearSelection(); form.dataset.dirty='true'; $('#form-notice').textContent='Pulsa Ver opciones para aplicar tus cambios.'; root.querySelectorAll('[data-choose]').forEach(b=>b.disabled=true); if(section==='seguros') { $('#end').min=$('#date').value; $('#end').setCustomValidity(''); }});
-    form.addEventListener('submit',event=>{event.preventDefault();render();});
+    form.addEventListener('submit',event=>{event.preventDefault();render(true);});
     $('#service-results').addEventListener('click',event=>{
       const button=event.target.closest('[data-choose]'); if(!button || button.disabled || form.dataset.dirty==='true')return;
       selected=options.find(o=>o.id===button.dataset.choose); if(!selected)return;
@@ -118,7 +125,7 @@
     });
     $('#save-service').addEventListener('click',()=>{
       if(!selected||form.dataset.dirty==='true')return;
-      const next=records().filter(r=>r.section!==section); next.push({section,title:selected.title,detail,total:selected.total,values:Object.fromEntries(new FormData(form)),destinationId:read('rumbo.integrante2.viaje.v1',{})?.destinationId,savedAt:new Date().toISOString()});
+      const next=records().filter(r=>r.section!==section); next.push({section,title:selected.title,detail,total:selected.total,values:Object.fromEntries(new FormData(form)),destinationId:section==='traslados'?catalog.find(d=>routeId(d)===$('#route').value)?.id:$('#destination')?.value,savedAt:new Date().toISOString()});
       if(write(KEY,next)){status('Guardado. Continuamos con el siguiente paso.'); location.href=({traslados:'servicios.html?seccion=seguros',seguros:'servicios.html?seccion=guias',guias:'tienda.html'})[section];}
       else {status('El navegador no permite guardar. Descarga el resumen para conservarlo.');const b=document.createElement('button');b.type='button';b.className='button button-outline';b.textContent='Descargar esta elección';b.onclick=()=>download(`${c.name}\n${selected.title}\n${detail}\n${money(selected.total)}`);$('#service-status').append(b);}
     });
@@ -134,8 +141,8 @@
     const styles = { cultura: 'Cultura', naturaleza: 'Naturaleza', playa: 'Playa', gastronomia: 'Gastronomía' };
     const experiences = window.RumboGuias || [];
     root.innerHTML = crumb('Guías locales') + `
-      <section class="guide-hero" aria-labelledby="guide-title">
-        <div class="guide-hero-copy"><p class="guide-hero-eyebrow">GUÍAS LOCALES · EXPERIENCIAS PARA RECORDAR</p><h1 id="guide-title">Los mejores viajes<br>se viven <em>de cerca.</em></h1><p>Piérdete entre calles con historia, descubre sabores nuevos y encuentra tu rincón favorito. Compara recorridos y prepara tu próxima experiencia.</p><a href="#guide-search" class="button button-primary">Encuentra tu experiencia <span aria-hidden="true">↗</span></a><dl class="guide-catalog-facts"><div><dt>Destinos con recorridos</dt><dd>${new Set(experiences.map(o=>o.destination)).size}</dd></div><div><dt>Recorridos</dt><dd>${experiences.length}</dd></div><div><dt>Formas de explorar</dt><dd>${Object.keys(styles).length}</dd></div></dl></div>
+      <section class="guide-hero catalog-hero" aria-labelledby="guide-title">
+        <div class="guide-hero-copy"><h1 id="guide-title">Experiencias y guías locales</h1><p>Encuentra recorridos culturales, gastronomía y actividades al aire libre. Consulta duración, idioma y precio por persona.</p><a href="#guide-search" class="button button-primary">Encuentra tu experiencia <span aria-hidden="true">↗</span></a><dl class="guide-catalog-facts"><div><dt>Destinos con recorridos</dt><dd>${new Set(experiences.map(o=>o.destination)).size}</dd></div><div><dt>Recorridos</dt><dd>${experiences.length}</dd></div><div><dt>Formas de explorar</dt><dd>${Object.keys(styles).length}</dd></div></dl></div>
         <figure class="guide-hero-photo"><img id="guide-cover" src="${initial.image}" alt="${escape(initial.alt)}" width="720" height="650" fetchpriority="high"></figure><div class="guide-hero-location"><strong id="guide-cover-name">${escape(initial.name)}</strong><span id="guide-cover-country">${escape(initial.country)}</span></div>
       </section>
       ${tabs()}
@@ -253,7 +260,7 @@
 
   function hub(){
     root.innerHTML=hero('Servicios de viaje','Consulta vuelos, hoteles, traslados, seguros y guías. Las selecciones se reúnen en Mi viaje.','ORGANIZA TU VIAJE')+`<div class="service-grid" id="opciones-servicios">${[
-      ['✈','Vuelos','Compara horarios, clases y precios para llegar a tu destino.','viajes.html?pantalla=vuelos','Buscar vuelos'],['⌂','Hoteles','Elige dónde descansar y calcula tu estancia completa.','viajes.html?pantalla=hoteles','Buscar hoteles'],['↔','Traslados','Conecta el aeropuerto y tu hospedaje con espacio para todos.','servicios.html?seccion=traslados','Organizar traslado'],['◇','Seguro de viaje','Explora planes y compara sus diferencias.','servicios.html?seccion=seguros','Comparar planes'],['◎','Guías locales','Consulta recorridos, paradas, duración y precios por persona.','servicios.html?seccion=guias','Explorar recorridos'],['▣','Tienda de viaje','Compara equipaje y accesorios, y prepara una lista de productos.','tienda.html','Explorar tienda']
+      ['✈','Vuelos','Compara horarios, clases y precios para llegar a tu destino.','viajes.html?pantalla=vuelos','Buscar vuelos'],['⌂','Hoteles','Elige dónde descansar y calcula tu estancia completa.','viajes.html?pantalla=hoteles','Buscar hoteles'],['↔','Traslados','Conecta el aeropuerto y tu hospedaje con espacio para todos.','servicios.html?seccion=traslados','Organizar traslado'],['◇','Seguro de viaje','Explora planes y compara sus diferencias.','servicios.html?seccion=seguros','Comparar planes'],['◎','Experiencias','Consulta recorridos, paradas, duración y precios por persona.','servicios.html?seccion=guias','Explorar recorridos'],['▣','Tienda de viaje','Compara equipaje y accesorios, y prepara una lista de productos.','tienda.html','Explorar tienda']
     ].map(([icon,title,desc,url,label])=>`<article class="service-tile" ${url==='tienda.html'?'id="tienda"':''}><img class="service-tile-photo" src="${servicePhotos[url.includes("traslados")?"traslados":url.includes("seguros")?"seguros":url.includes("guias")?"guias":url.includes("hoteles")?"hoteles":url.includes("tienda")?"tienda":"vuelos"][0]}" alt="${title}" loading="lazy" width="560" height="320"><h2>${title}</h2><p>${desc}</p><a class="text-link" href="${url}">${label} ↗</a></article>`).join('')}</div><div class="service-footer-links"><a class="button button-outline" href="viajes.html?pantalla=destinos">Todavía estoy buscando un destino</a><a class="button button-primary" href="servicios.html?seccion=mi-viaje">Ver mis elecciones ↗</a></div>`;
   }
 

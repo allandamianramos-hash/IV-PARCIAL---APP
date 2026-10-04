@@ -11,6 +11,10 @@
       return;
     }
   }
+  // Preserve explicit anchors, but start every section at its cover.
+  if ('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.addEventListener('pageshow',()=>{if(!location.hash)window.scrollTo({top:0,left:0,behavior:'instant'});});
+  if(document.querySelector('.services-main,.store-hero') || ['vuelos','hoteles'].includes(document.body.dataset.page)) document.body.classList.add('rumbo-services');
   const routes={login:'iniciar-sesion',register:'registro',experiences:'guias',transfers:'traslados',insurance:'seguros',faq:'ayuda',support:'ayuda',changes:'cambios',about:'acerca',team:'equipo',privacy:'privacidad',terms:'terminos'};
   document.querySelectorAll('[data-module]').forEach(button=>{
     const key=button.dataset.module;

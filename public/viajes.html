@@ -24,7 +24,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="design.css">
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&amp;display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap">
 </head>
 <body class="rv-page">
 
@@ -78,7 +78,7 @@
 
   <!-- VUELOS -->
   <template id="rv-vista-vuelos">
-    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title"><h1 id="page-title">Vuelos</h1><p>Compara horarios, equipaje y tarifas por pasajero.</p></section>
+    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title catalog-hero"><div><h1 id="page-title">Vuelos</h1><p>Compara horarios, equipaje y tarifas por pasajero.</p><a class="button button-primary" href="#flight-search">Buscar vuelos ↓</a></div><figure><img src="imagenes-viajes/servicio-vuelo.jpg" alt="Ala de avión sobre las montañas" width="900" height="650" fetchpriority="high"></figure></section>
     <form id="flight-search" class="rv-search-panel">
       <div class="rv-field"><label for="flight-destination">Destino</label><select id="flight-destination" name="destination"></select></div>
       <div class="rv-field"><label for="flight-origin">Origen</label><select id="flight-origin" name="origin"></select></div>
@@ -94,7 +94,7 @@
 
   <!-- HOTELES -->
   <template id="rv-vista-hoteles">
-    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title"><h1 id="page-title">Hospedaje</h1><p>Compara habitaciones y consulta el total según noches y huéspedes.</p></section>
+    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title catalog-hero"><div><h1 id="page-title">Hoteles y hospedajes</h1><p>Compara habitaciones y consulta el total según noches y huéspedes.</p><a class="button button-primary" href="#hotel-search">Buscar hospedaje ↓</a></div><figure><img src="imagenes-viajes/hotel-piscina.jpg" alt="Piscina y terrazas de un hotel" width="900" height="650" fetchpriority="high"></figure></section>
     <form id="hotel-search" class="rv-search-panel rv-hotel-search">
       <div class="rv-field"><label for="hotel-destination">Destino</label><select id="hotel-destination" name="destination"></select></div>
       <div class="rv-field"><label for="hotel-date">Entrada al hotel</label><input id="hotel-date" name="checkIn" type="date" required></div>

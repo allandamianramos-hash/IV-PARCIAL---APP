@@ -5,7 +5,7 @@
   const write=(key,value)=>{try{(window.RumboStorage || localStorage).setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const money=n=>'L '+Number(n).toLocaleString('es-HN',{minimumFractionDigits:2,maximumFractionDigits:2});
-  const steps=[['vuelos','Vuelo','viajes.html?pantalla=vuelos'],['hoteles','Hospedaje','viajes.html?pantalla=hoteles'],['traslados','Transporte','servicios.html?seccion=traslados'],['seguros','Seguro','servicios.html?seccion=seguros'],['guias','Experiencias','servicios.html?seccion=guias'],['tienda','Tienda','tienda.html#catalogo'],['mi-viaje','Resumen del viaje','servicios.html?seccion=mi-viaje']];
+  const steps=[['vuelos','Vuelo','viajes.html?pantalla=vuelos'],['hoteles','Hospedaje','viajes.html?pantalla=hoteles'],['traslados','Transporte','servicios.html?seccion=traslados'],['seguros','Seguro','servicios.html?seccion=seguros'],['guias','Experiencias','servicios.html?seccion=guias'],['tienda','Tienda','tienda.html'],['mi-viaje','Resumen del viaje','servicios.html?seccion=mi-viaje']];
   const tripKey='rumbo.integrante2.viaje.v1', receiptKey='rumbo.checkout.v1';
   const day=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
   const dateValid=d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d)&&!isNaN(Date.parse(d))&&new Date(d).toISOString().slice(0,10)===d;
@@ -28,7 +28,7 @@
     if(Array.isArray(services))for(const s of services){const step=steps.find(x=>x[0]===s?.section);if(!step||!['traslados','seguros','guias'].includes(s.section)||seen.has(s.section)||!Number.isFinite(s.total)||s.total<0)continue;seen.add(s.section);
       items.push({key:s.section,label:step[1],title:s.title,detail:s.detail,total:s.total,url:step[2]});
       const v=s.values||{};
-      if(d&&((s.destinationId&&s.destinationId!==d.id)||(s.section==='guias'&&v.destination!==d.id)||(s.section==='traslados'&&v.route!==({roatan:'roatan','san-pedro-sula':'sps','san-jose':'sjo'})[d.id])||Number(v.people)!==t.travelers||!dateValid(v.date)||v.date<t.date||v.date>end||(s.section==='seguros'&&(!dateValid(v.end)||v.end<end))))issues.push({label:`Ajusta ${step[1].toLowerCase()} a las fechas y viajeros de este viaje`,url:step[2]});
+      if(d&&((s.destinationId&&s.destinationId!==d.id)||(s.section==='guias'&&v.destination!==d.id)||(s.section==='seguros'&&v.destination&&v.destination!==d.id)||(s.section==='traslados'&&v.route!==(({'san-pedro-sula':'sps','san-jose':'sjo'})[d.id]||d.id))||Number(v.people)!==t.travelers||!dateValid(v.date)||v.date<t.date||v.date>end||(s.section==='seguros'&&(!dateValid(v.end)||v.end<end))))issues.push({label:`Ajusta ${step[1].toLowerCase()} a las fechas y viajeros de este viaje`,url:step[2]});
     }
     const cart=read('rumbo.store.cart.v2',[]), products=window.RumboProducts||[];
     if(Array.isArray(cart))for(const [cartIndex,row] of cart.entries()){const p=products.find(p=>p.id===row?.id);if(!p||!integer(row.quantity,1,99))continue;const price=window.RumboProductPrice?.(p,row.options)||p.price;const options=row.options&&typeof row.options==='object'?Object.entries(row.options).map(([key,value])=>`${key}: ${value}`).join(' · '):'';items.push({key:'tienda',cartIndex,label:'Tienda',title:p.name,detail:`${row.quantity} × ${money(price)}${options?' · '+options:''}`,total:price*row.quantity,url:'tienda.html?carrito=1'});}
@@ -105,9 +105,7 @@
     document.querySelectorAll('.rv-steps,.service-tabs,.journey-progress').forEach(n=>n.remove());
     const main=document.querySelector('main'), nav=document.createElement('nav');nav.className='journey-progress';nav.setAttribute('aria-label','Organiza tu viaje por pasos');
     nav.innerHTML='<p>ORGANIZAR VIAJE <span>Elige un paso para continuar o cambiar tu selección.</span></p><ol>'+steps.map(([id,label,url],i)=>`<li><a href="${url}" ${id===active?'aria-current="step"':''}><span>${i+1}</span>${label}</a></li>`).join('')+'</ol>';
-    const guideHero = main.querySelector('.guide-hero');
-    if (guideHero) guideHero.after(nav);
-    else main.prepend(nav);
+    main.prepend(nav);
     if(['traslados','seguros','guias','tienda'].includes(active)&&!document.querySelector('.journey-next')){const next=steps[index+1],footer=document.createElement('div');footer.className='journey-next';footer.innerHTML=`<a href="${steps[index-1][2]}">← ${steps[index-1][1]}</a><div><p>${active==='tienda'?'Los productos del carrito se incluyen en Mi viaje.':'Este paso es opcional. Guarda tu elección antes de continuar.'}</p><a class="button button-primary" href="${next[2]}">Continuar a ${next[1].toLowerCase()} →</a></div>`;main.append(footer);}
   }
   window.RumboJourney={snapshot,renderSummary,mountSteps,skipFlight,removeItem,clearTrip,undoRemoval};

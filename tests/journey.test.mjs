@@ -24,3 +24,12 @@ test('eliminar un producto conserva las otras variantes',()=>{const {write,journ
 test('vaciar el viaje elimina todas las selecciones y permite deshacer',()=>{const {write,journey}=setup();write('rumbo.store.cart.v2',[{id:1,quantity:1}]);write('rumbo.services.v1',[{section:'seguros',title:'Plan',detail:'Ejemplo',total:100}]);const total=journey.snapshot().total;assert.equal(journey.clearTrip(),true);assert.equal(journey.snapshot().items.length,0);assert.equal(journey.snapshot().total,0);assert.equal(journey.undoRemoval(),true);assert.equal(journey.snapshot().total,total);assert.equal(journey.undoRemoval(),false);});
 test('cada servicio puede eliminarse sin afectar a los otros',()=>{const {write,journey}=setup();write('rumbo.services.v1',['traslados','seguros','guias'].map(section=>({section,title:section,detail:'Ejemplo',total:100})));assert.equal(journey.removeItem('seguros'),true);assert.deepEqual(Array.from(journey.snapshot().items,i=>i.key),['vuelos','hoteles','traslados','guias']);});
 test('una eliminación invalida el pago incluso si luego se restaura la selección',()=>{const {write,journey}=setup();write('rumbo.checkout.v1',{signature:journey.snapshot().signature,demo:true,code:'TEST'});journey.removeItem('hoteles');journey.undoRemoval();assert.equal(journey.snapshot().paid,false);});
+
+test('Mi viaje acepta traslados nuevos y detecta un destino de seguro distinto',()=>{
+ const {write,journey}=setup();
+ write('rumbo.integrante2.viaje.v1',{destinationId:'paris',origin:'Tegucigalpa',date:'2099-10-12',checkIn:'2099-10-12',travelers:1,nights:3,cabin:'economica',rooms:1,roomType:'estandar'});
+ write('rumbo.services.v1',[{section:'traslados',title:'Auto privado',detail:'París',total:1250,destinationId:'paris',values:{route:'paris',date:'2099-10-12',people:'1'}}]);
+ assert.equal(journey.snapshot().issues.some(i=>i.label.includes('transporte')),false);
+ write('rumbo.services.v1',[{section:'seguros',title:'Esencial',detail:'Otro destino',total:100,values:{destination:'bali',date:'2099-10-12',end:'2099-10-15',people:'1'}}]);
+ assert.equal(journey.snapshot().issues.some(i=>i.label.includes('seguro')),true);
+});

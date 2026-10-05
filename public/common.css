@@ -110,8 +110,6 @@ main { animation: rumbo-page-enter 240ms ease-out; }
   .service-tile:hover,.booking-card:hover,.site-header .main-nav a:hover { transform: none; }
   ::view-transition-old(root),::view-transition-new(root) { animation: none; }
 }
-<<<<<<< HEAD:common.css
-=======
 /* Ambientes del inicio: arena para planificar, salvia para conocer Rumbo. */
 #servicios.section { padding:clamp(28px,4vw,56px); background:#f6f3ed; border:1px solid #ebe5da; border-radius:32px; margin-block:64px; }
 #destinos.destinations-section { background:#edf5f6; padding-block:64px; }
@@ -238,4 +236,3 @@ body .guide-hero h1 { letter-spacing:-.035em; }
  body:has(.guides-page) .chat-launcher::after { display:none; }
  body:has(.guides-page) .database-status { max-width:calc(100vw - 94px); padding:7px 9px; font-size:11px; }
 }
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/common.css

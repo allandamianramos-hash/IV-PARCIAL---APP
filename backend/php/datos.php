@@ -76,7 +76,7 @@ function bootstrap_data(): array {
     try {
         $catalog=load_catalog();$user=auth_user();$id=$user['VisitorId'] ?? guest_owner(true);
         return ['backend'=>'php','connected'=>true,'visitor'=>$id,'user'=>public_user($user),'catalog'=>$catalog,'state'=>read_state($id)];
-    } catch (Throwable $e) { error_log('Rumbo SQL: '.get_class($e));return ['backend'=>'php','connected'=>false,'reason'=>'unavailable']; }
+    } catch (Throwable $e) { error_log('Rumbo SQL: '.get_class($e));return ['backend'=>'php','connected'=>false,'reason'=>str_contains($e->getMessage(),'is not allowed to access the server')?'firewall':'unavailable']; }
 }
 
 function handle_data(string $path, string $method): never {

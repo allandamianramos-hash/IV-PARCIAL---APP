@@ -1,6 +1,10 @@
 /* Enlaces compartidos. Cada sección conserva su propio módulo de datos. */
 (() => {
   'use strict';
+  // Preserve explicit anchors, but start every section at its cover.
+  if ('scrollRestoration' in history) history.scrollRestoration='manual';
+  window.addEventListener('pageshow',()=>{if(!location.hash)window.scrollTo({top:0,left:0,behavior:'instant'});});
+  if(document.querySelector('.services-main,.store-hero') || ['vuelos','hoteles'].includes(document.body.dataset.page)) document.body.classList.add('rumbo-services');
   const routes={login:'iniciar-sesion',register:'registro',experiences:'guias',transfers:'traslados',insurance:'seguros',faq:'ayuda',support:'ayuda',changes:'cambios',about:'acerca',team:'equipo',privacy:'privacidad',terms:'terminos'};
   document.querySelectorAll('[data-module]').forEach(button=>{
     const key=button.dataset.module;
@@ -58,7 +62,7 @@
     order.forEach((key,i)=>{const card=cards.find(c=>c.querySelector('[data-module="'+key+'"]')||c.classList.contains(({transfers:'none',insurance:'none',experiences:'none',shop:'shop-card'})[key]||'none')||c.querySelector('a[href="'+({transfers:'servicios.html?seccion=traslados',insurance:'servicios.html?seccion=seguros',experiences:'servicios.html?seccion=guias'})[key]+'"]'));
       if(!card)return;grid.append(card);
       // En Inicio, estas tarjetas conservan el diseño con iconos.
-      const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1)+' / '+names[i]+(i>1?' · opcional':'');card.prepend(label);
+      const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1);card.prepend(label);
       const link=card.querySelector('a,button');if(link){card.tabIndex=0;card.setAttribute('role','link');card.setAttribute('aria-label','Organizar '+names[i]);card.addEventListener('click',e=>{if(!e.target.closest('a,button'))link.click();});card.addEventListener('keydown',e=>{if(e.target===card&&e.key==='Enter'){e.preventDefault();link.click();}});}
     });
   }

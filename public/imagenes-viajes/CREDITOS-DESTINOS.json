@@ -86,8 +86,6 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "description": "<div class=\"description\">\n500px provided description: Panama-Stadt mit ca. 1,5 Millionen Einwohnern ist die Hauptstadt und der Regierungssitz des mittelamerikanischen Staates Panama. [#city ,#architecture ,#panama ,#aerial ,#photo ,#sight ,#travelling ,#holiday ,#skyscrapper ,#architektur ,#papers ,#pa ,#stadt ,#urlaub ,#reisen ,#sehensw?rdigkeit ,#luftbild ,#panamacity ,#panam? ,#aerialphotography ,#luftbildaufnahme ,#allgemein ,#panamapapers ,#panamastadt ,#panamap]</div>"
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-DESTINOS.json
-=======
   },
   {
     "id": "venecia",
@@ -198,6 +196,5 @@
     "license": "CC BY 3.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
     "description": "<p>A 5x5 segment panorama taken by myself with a Canon 5D and 24-105mm f/4L IS lens. Stitched with rectilinear projection to keep lines straight. \n</p>\nThis view is about 100 degrees horizontally, close to the upper practical limit of rectilinear projection."
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-DESTINOS.json
   }
 ]

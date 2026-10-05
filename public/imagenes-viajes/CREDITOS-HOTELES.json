@@ -66,13 +66,8 @@
   },
   {
     "id": "rio",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Hotel Río Verde",
-    "destination": "La Ceiba",
-=======
     "hotel": "Hotel Patio del Café",
     "destination": "San José",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-rio-ref.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Cerulean_Tower_Tokyu_Hotel_Sky_View_Floor_Deluxe_Single_bedroom_20160923-001.jpg/960px-Cerulean_Tower_Tokyu_Hotel_Sky_View_Floor_Deluxe_Single_bedroom_20160923-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -84,13 +79,8 @@
   },
   {
     "id": "palmas",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Las Palmas Lodge",
-    "destination": "La Ceiba",
-=======
     "hotel": "Lodge Jardín de la Sabana",
     "destination": "San José",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-palmas-ref.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Mitsui_Garden_Hotel_Hiroshima_Moderate_Double_bedroom_20190928-001.jpg/960px-Mitsui_Garden_Hotel_Hiroshima_Moderate_Double_bedroom_20190928-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -102,13 +92,8 @@
   },
   {
     "id": "bahia",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Bahía Serena",
-    "destination": "La Ceiba",
-=======
     "hotel": "Boutique Valle del Sol",
     "destination": "San José",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "pool",
     "file": "hotel-bahia.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Pool_-_Nicon_Hotel.jpg/960px-Pool_-_Nicon_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -120,13 +105,8 @@
   },
   {
     "id": "la-ceiba-apartamentos",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Apartamentos Sendero del Río",
-    "destination": "La Ceiba",
-=======
     "hotel": "Apartamentos Paseo del Cedro",
     "destination": "San José",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-la-ceiba-apartamentos.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Bedroom%2C_Bear_Hotel_%28geograph_4847914%29.jpg/960px-Bedroom%2C_Bear_Hotel_%28geograph_4847914%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -138,13 +118,8 @@
   },
   {
     "id": "la-ceiba-terraza",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Hotel Ceiba Dorada",
-    "destination": "La Ceiba",
-=======
     "hotel": "Hotel Cúpula Esmeralda",
     "destination": "San José",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "pool",
     "file": "hotel-la-ceiba-terraza.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Omni_Interlocken_Resort%2C_pool.jpg/960px-Omni_Interlocken_Resort%2C_pool.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -156,13 +131,8 @@
   },
   {
     "id": "patio",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Hotel Patio Maya",
-    "destination": "Copán Ruinas",
-=======
     "hotel": "Maison Lumière",
     "destination": "París",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-patio.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Bedroom%2C_H%C3%B4tel_d%27Abbaye%2C_Paris_May_2017.jpg/960px-Bedroom%2C_H%C3%B4tel_d%27Abbaye%2C_Paris_May_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -174,13 +144,8 @@
   },
   {
     "id": "jardin",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Jardín de Copán",
-    "destination": "Copán Ruinas",
-=======
     "hotel": "Hotel Jardín del Sena",
     "destination": "París",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "pool",
     "file": "hotel-jardin.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Uxmal%2C_Yucatan%2C_Mexico_-_Swimming_pool%2C_Uxmal_Resort_Maya_2021.jpg/960px-Uxmal%2C_Yucatan%2C_Mexico_-_Swimming_pool%2C_Uxmal_Resort_Maya_2021.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -192,13 +157,8 @@
   },
   {
     "id": "loma",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "La Loma Boutique",
-    "destination": "Copán Ruinas",
-=======
     "hotel": "Boutique Atelier Azul",
     "destination": "París",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-loma.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Antigua_Guatemala_-_Fine_Hotel_Bedroom.jpg/960px-Antigua_Guatemala_-_Fine_Hotel_Bedroom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -210,13 +170,8 @@
   },
   {
     "id": "copan-apartamentos",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Apartamentos Casa del Glifo",
-    "destination": "Copán Ruinas",
-=======
     "hotel": "Suites de la Ópera",
     "destination": "París",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-copan-apartamentos-ref.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Hotel_Trusty_Kanazawa_Korinbo_Superior_Single_bedroom_20131206-001.jpg/960px-Hotel_Trusty_Kanazawa_Korinbo_Superior_Single_bedroom_20131206-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -228,13 +183,8 @@
   },
   {
     "id": "copan-terraza",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Posada Piedra de Jade",
-    "destination": "Copán Ruinas",
-=======
     "hotel": "Posada del Bulevar",
     "destination": "París",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "pool",
     "file": "hotel-copan-terraza.jpg",
     "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Hotel_Roosevelt_from_the_hotel_pool.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
@@ -311,13 +261,8 @@
   },
   {
     "id": "alpino",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Refugio Alpino",
-    "destination": "Dolomitas",
-=======
     "hotel": "Posada del Canal",
     "destination": "Venecia",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-alpino.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Bancroft_Hotel%2C_Berkeley%2C_California_-_Bedroom.jpg/960px-Bancroft_Hotel%2C_Berkeley%2C_California_-_Bedroom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -330,11 +275,7 @@
   {
     "id": "valle",
     "hotel": "Valle Sereno",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Dolomitas",
-=======
     "destination": "Venecia",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-valle.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Hotel_bedroom_-_geograph.org.uk_-_5280127.jpg/960px-Hotel_bedroom_-_geograph.org.uk_-_5280127.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -346,13 +287,8 @@
   },
   {
     "id": "cumbres",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Cumbres Boutique",
-    "destination": "Dolomitas",
-=======
     "hotel": "Palacio de la Laguna",
     "destination": "Venecia",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-cumbres-ref.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Hotel_La_Raison_Osaka_Standard_Twin_bedroom_20161216-001.jpg/960px-Hotel_La_Raison_Osaka_Standard_Twin_bedroom_20161216-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -365,11 +301,7 @@
   {
     "id": "dolomitas-apartamentos",
     "hotel": "Apartamentos Nido de Abeto",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Dolomitas",
-=======
     "destination": "Venecia",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-dolomitas-apartamentos.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Hotel_Edit_Yokohama_Single_bedroom_20190714-001.jpg/960px-Hotel_Edit_Yokohama_Single_bedroom_20190714-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -381,13 +313,8 @@
   },
   {
     "id": "dolomitas-terraza",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Chalet Roca del Alba",
-    "destination": "Dolomitas",
-=======
     "hotel": "Casa del Puente",
     "destination": "Venecia",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-dolomitas-terraza-ref.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Richmond_Hotel_Premier_Kyoto_Ekimae_Corner_Twin_bedroom_20220205-001.jpg/960px-Richmond_Hotel_Premier_Kyoto_Ekimae_Corner_Twin_bedroom_20220205-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -400,11 +327,7 @@
   {
     "id": "sakura",
     "hotel": "Casa Sakura",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Kioto",
-=======
     "destination": "Osaka",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-sakura.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Hotel_Monterey_Kobe_Deluxe_Single_bedroom_20111122-001.jpg/960px-Hotel_Monterey_Kobe_Deluxe_Single_bedroom_20111122-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -417,11 +340,7 @@
   {
     "id": "bambu",
     "hotel": "Jardín de Bambú",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Kioto",
-=======
     "destination": "Osaka",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-bambu.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Lake_Bedroom_Guatemala_2018.jpg/960px-Lake_Bedroom_Guatemala_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -433,13 +352,8 @@
   },
   {
     "id": "luna",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Luna de Kioto",
-    "destination": "Kioto",
-=======
     "hotel": "Luna de Naniwa",
     "destination": "Osaka",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "pool",
     "file": "hotel-luna.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Hotel_pool_with_view_over_the_valley_%286323256471%29.jpg/960px-Hotel_pool_with_view_over_the_valley_%286323256471%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -452,11 +366,7 @@
   {
     "id": "kioto-apartamentos",
     "hotel": "Apartamentos Patio de Arce",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Kioto",
-=======
     "destination": "Osaka",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-kioto-apartamentos.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Lotte_City_Hotel_Kinshicho_Elite_Single_bedroom_20140927-001.jpg/960px-Lotte_City_Hotel_Kinshicho_Elite_Single_bedroom_20140927-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -469,11 +379,7 @@
   {
     "id": "kioto-terraza",
     "hotel": "Posada Farol de Papel",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Kioto",
-=======
     "destination": "Osaka",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "pool",
     "file": "hotel-kioto-terraza.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Hotel_Thermal_Pool.jpg/960px-Hotel_Thermal_Pool.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -485,13 +391,8 @@
   },
   {
     "id": "utila-esencial",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Posada Concha Azul",
-    "destination": "Utila",
-=======
     "hotel": "Hotel Hudson Garden",
     "destination": "Nueva York",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-utila-esencial.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Hotel_Sunroute_Ariake_Standard_Single_bedroom_20110603-001.jpg/960px-Hotel_Sunroute_Ariake_Standard_Single_bedroom_20110603-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -503,13 +404,8 @@
   },
   {
     "id": "utila-jardin",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Hotel Jardín del Manglar",
-    "destination": "Utila",
-=======
     "hotel": "Skyline Loft",
     "destination": "Nueva York",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-utila-jardin.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Hakodate_Kokusai_Hotel_Premium_Twin_bedroom_20201017-001.jpg/960px-Hakodate_Kokusai_Hotel_Premium_Twin_bedroom_20201017-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -521,13 +417,8 @@
   },
   {
     "id": "utila-boutique",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Boutique Faro de Nácar",
-    "destination": "Utila",
-=======
     "hotel": "Boutique Maple House",
     "destination": "Nueva York",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-utila-boutique.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Richmond_Hotel_Premier_Tokyo_Oshiage_Single_bedroom_20160220-001.jpg/960px-Richmond_Hotel_Premier_Tokyo_Oshiage_Single_bedroom_20160220-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -539,13 +430,8 @@
   },
   {
     "id": "utila-apartamentos",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Apartamentos Brisa del Arrecife",
-    "destination": "Utila",
-=======
     "hotel": "Suites del Puente",
     "destination": "Nueva York",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-utila-apartamentos.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Kobe_Portopia_Hotel_Oval_Club_single_bedroom_20130621-002.jpg/960px-Kobe_Portopia_Hotel_Oval_Club_single_bedroom_20130621-002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -557,13 +443,8 @@
   },
   {
     "id": "utila-terraza",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Villa Cayo Escondido",
-    "destination": "Utila",
-=======
     "hotel": "Hotel Avenue Central",
     "destination": "Nueva York",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-utila-terraza.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Richmond_Hotel_Premier_Musashi-Kosugi_single_bedroom_20100618-001.jpg/960px-Richmond_Hotel_Premier_Musashi-Kosugi_single_bedroom_20100618-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -575,13 +456,8 @@
   },
   {
     "id": "tela-esencial",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Hotel Arena de Ámbar",
-    "destination": "Tela",
-=======
     "hotel": "Hotel Patio del Eixample",
     "destination": "Barcelona",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-tela-esencial.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Kyoto_Brighton_Hotel_Superior_Double_bedroom_20200823-001.jpg/960px-Kyoto_Brighton_Hotel_Superior_Double_bedroom_20200823-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -593,13 +469,8 @@
   },
   {
     "id": "tela-jardin",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Lodge Sendero de Palmas",
-    "destination": "Tela",
-=======
     "hotel": "Casa del Mosaico",
     "destination": "Barcelona",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-tela-jardin-ref.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Millennium_Mitsui_Garden_Hotel_Tokyo_Superior_Double_bedroom_20170318-001.jpg/960px-Millennium_Mitsui_Garden_Hotel_Tokyo_Superior_Double_bedroom_20170318-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -611,13 +482,8 @@
   },
   {
     "id": "tela-boutique",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Boutique Bahía del Sol",
-    "destination": "Tela",
-=======
     "hotel": "Boutique Brisa Catalana",
     "destination": "Barcelona",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-tela-boutique.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Celestine_Hotel_Superior_Double_bedroom_20160501-001.jpg/960px-Celestine_Hotel_Superior_Double_bedroom_20160501-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -629,13 +495,8 @@
   },
   {
     "id": "tela-apartamentos",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Apartamentos Patio de Cocos",
-    "destination": "Tela",
-=======
     "hotel": "Suites del Paseo",
     "destination": "Barcelona",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-tela-apartamentos.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Kyoto_Century_Hotel_Kyo-Premium_bedroom_20210717-001.jpg/960px-Kyoto_Century_Hotel_Kyo-Premium_bedroom_20210717-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -647,13 +508,8 @@
   },
   {
     "id": "tela-terraza",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Villa Orquídea Costera",
-    "destination": "Tela",
-=======
     "hotel": "Hotel Jardín Condal",
     "destination": "Barcelona",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-tela-terraza.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Hotel_Niwa_Tokyo_standard_bedroom_20131027-001.jpg/960px-Hotel_Niwa_Tokyo_standard_bedroom_20131027-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -665,13 +521,8 @@
   },
   {
     "id": "yojoa-esencial",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Posada Orilla del Junco",
-    "destination": "Lago de Yojoa",
-=======
     "hotel": "Hotel Patio del Tíber",
     "destination": "Roma",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-yojoa-esencial.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Hotel_Tokyu_Bizfort_Kobe_Motomachi_single_bedroom_20120427-001.jpg/960px-Hotel_Tokyu_Bizfort_Kobe_Motomachi_single_bedroom_20120427-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -683,13 +534,8 @@
   },
   {
     "id": "yojoa-jardin",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Lodge Bosque de Niebla",
-    "destination": "Lago de Yojoa",
-=======
     "hotel": "Casa del Olivo",
     "destination": "Roma",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-yojoa-jardin.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Mitsui_Garden_Hotel_Kanazawa_Moderate_Double_bedroom_20200103-001.jpg/960px-Mitsui_Garden_Hotel_Kanazawa_Moderate_Double_bedroom_20200103-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -701,13 +547,8 @@
   },
   {
     "id": "yojoa-boutique",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Boutique Mirador del Agua",
-    "destination": "Lago de Yojoa",
-=======
     "hotel": "Boutique Terra Dorada",
     "destination": "Roma",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-yojoa-boutique.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/ANA_Hotel_Okayama_Upper_Floor_Single_bedroom_20150809-002.jpg/960px-ANA_Hotel_Okayama_Upper_Floor_Single_bedroom_20150809-002.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -719,13 +560,8 @@
   },
   {
     "id": "yojoa-apartamentos",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Apartamentos Casa del Colibrí",
-    "destination": "Lago de Yojoa",
-=======
     "hotel": "Suites del Mosaico",
     "destination": "Roma",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-yojoa-apartamentos.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Hotel_Monterey_Amalie_Deluxe_Twin_bedroom_20130531-001.jpg/960px-Hotel_Monterey_Amalie_Deluxe_Twin_bedroom_20130531-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -737,13 +573,8 @@
   },
   {
     "id": "yojoa-terraza",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "hotel": "Hotel Reflejos del Lago",
-    "destination": "Lago de Yojoa",
-=======
     "hotel": "Posada Via Serena",
     "destination": "Roma",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-yojoa-terraza.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Hotel_Piena_Kobe_Royal_Twin_bedroom_20141124-001.jpg/960px-Hotel_Piena_Kobe_Royal_Twin_bedroom_20141124-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -756,11 +587,7 @@
   {
     "id": "antigua-esencial",
     "hotel": "Posada Patio de Canela",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Antigua Guatemala",
-=======
     "destination": "Ciudad de Guatemala",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-antigua-esencial.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Hotel_Monterey_Kyoto_Standard_Twin_bedroom_20130201-001.jpg/960px-Hotel_Monterey_Kyoto_Standard_Twin_bedroom_20130201-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -773,11 +600,7 @@
   {
     "id": "antigua-jardin",
     "hotel": "Hotel Jardín de los Arcos",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Antigua Guatemala",
-=======
     "destination": "Ciudad de Guatemala",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-antigua-jardin.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Mitsui_Garden_Hotel_Sendai_Standard_Single_B_bedroom_20100809-001.jpg/960px-Mitsui_Garden_Hotel_Sendai_Standard_Single_B_bedroom_20100809-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -790,11 +613,7 @@
   {
     "id": "antigua-boutique",
     "hotel": "Boutique Casona del Volcán",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Antigua Guatemala",
-=======
     "destination": "Ciudad de Guatemala",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-antigua-boutique.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Nishitetsu_Hotel_Croom_Hakata_Premium_Business_bedroom_20190413-001.jpg/960px-Nishitetsu_Hotel_Croom_Hakata_Premium_Business_bedroom_20190413-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -807,11 +626,7 @@
   {
     "id": "antigua-apartamentos",
     "hotel": "Apartamentos Balcón de Barro",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Antigua Guatemala",
-=======
     "destination": "Ciudad de Guatemala",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-antigua-apartamentos.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Hotel_Associa_Takayama_Resort_Standard_Twin_bedroom_20170723-001.jpg/960px-Hotel_Associa_Takayama_Resort_Standard_Twin_bedroom_20170723-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -824,11 +639,7 @@
   {
     "id": "antigua-terraza",
     "hotel": "Casa Buganvilia Colonial",
-<<<<<<< HEAD:imagenes-viajes/CREDITOS-HOTELES.json
-    "destination": "Antigua Guatemala",
-=======
     "destination": "Ciudad de Guatemala",
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/imagenes-viajes/CREDITOS-HOTELES.json
     "kind": "room",
     "file": "hotel-antigua-terraza-ref.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Mitsui_Garden_Hotel_Ginza_Premier_Moderate_bedroom_20151223-001.jpg/960px-Mitsui_Garden_Hotel_Ginza_Premier_Moderate_bedroom_20151223-001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
@@ -1097,5 +908,1103 @@
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "title": "File:Hotel room at ProfilHotels Riddargatan.jpg"
+  },
+  {
+    "id": "londres-estancia-1",
+    "destination": "Londres",
+    "kind": "room",
+    "file": "hotel-londres-estancia-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Siena_-_hotel_room_-_2012-5.jpg/1920px-Siena_-_hotel_room_-_2012-5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Siena_-_hotel_room_-_2012-5.jpg",
+    "author": "Thomas Duesing",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Siena - hotel room - 2012-5.jpg"
+  },
+  {
+    "id": "londres-estancia-2",
+    "destination": "Londres",
+    "kind": "room",
+    "file": "hotel-londres-estancia-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Hotel_bed_with_lit_lamp_at_Hotel_Esplanade_in_October_2023.jpg/1920px-Hotel_bed_with_lit_lamp_at_Hotel_Esplanade_in_October_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_bed_with_lit_lamp_at_Hotel_Esplanade_in_October_2023.jpg",
+    "author": "JIP",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Hotel bed with lit lamp at Hotel Esplanade in October 2023.jpg"
+  },
+  {
+    "id": "londres-estancia-3",
+    "destination": "Londres",
+    "kind": "room",
+    "file": "hotel-londres-estancia-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Hotel_Lutetia_Paris_Room_419.jpg/1920px-Hotel_Lutetia_Paris_Room_419.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_Lutetia_Paris_Room_419.jpg",
+    "author": "Gary Bembridge from London, UK",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Hotel Lutetia Paris Room 419.jpg"
+  },
+  {
+    "id": "londres-estancia-4",
+    "destination": "Londres",
+    "kind": "room",
+    "file": "hotel-londres-estancia-4.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Hotel_room_Hotel_Burgenland_in_Eisenstadt.JPG/1920px-Hotel_room_Hotel_Burgenland_in_Eisenstadt.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_room_Hotel_Burgenland_in_Eisenstadt.JPG",
+    "author": "Usien",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Hotel room Hotel Burgenland in Eisenstadt.JPG"
+  },
+  {
+    "id": "londres-estancia-5",
+    "destination": "Londres",
+    "kind": "room",
+    "file": "hotel-londres-estancia-5.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Bed_at_Hotel_Esplanade_in_Stockholm_in_the_evening.jpg/1920px-Bed_at_Hotel_Esplanade_in_Stockholm_in_the_evening.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bed_at_Hotel_Esplanade_in_Stockholm_in_the_evening.jpg",
+    "author": "JIP",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Bed at Hotel Esplanade in Stockholm in the evening.jpg"
+  },
+  {
+    "id": "lisboa-estancia-1",
+    "destination": "Lisboa",
+    "kind": "room",
+    "file": "hotel-lisboa-estancia-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Hotel_Room_with_queen_size_bed.jpg/1920px-Hotel_Room_with_queen_size_bed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_Room_with_queen_size_bed.jpg",
+    "author": "Tim36272",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Hotel Room with queen size bed.jpg"
+  },
+  {
+    "id": "lisboa-estancia-2",
+    "destination": "Lisboa",
+    "kind": "room",
+    "file": "hotel-lisboa-estancia-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Hotel-room-renaissance-columbus-ohio.jpg/1920px-Hotel-room-renaissance-columbus-ohio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel-room-renaissance-columbus-ohio.jpg",
+    "author": "Derek Jensen (Tysto)",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "title": "File:Hotel-room-renaissance-columbus-ohio.jpg"
+  },
+  {
+    "id": "lisboa-estancia-3",
+    "destination": "Lisboa",
+    "kind": "room",
+    "file": "hotel-lisboa-estancia-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Bed_at_Elite_Hotel_Ideon_Lund_in_October_2023.jpg/1920px-Bed_at_Elite_Hotel_Ideon_Lund_in_October_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bed_at_Elite_Hotel_Ideon_Lund_in_October_2023.jpg",
+    "author": "JIP",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Bed at Elite Hotel Ideon Lund in October 2023.jpg"
+  },
+  {
+    "id": "lisboa-estancia-4",
+    "destination": "Lisboa",
+    "kind": "room",
+    "file": "hotel-lisboa-estancia-4.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Kruisherenhotel%2C_hotel_room_1.jpg/1920px-Kruisherenhotel%2C_hotel_room_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Kruisherenhotel,_hotel_room_1.jpg",
+    "author": "Kleon3",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Kruisherenhotel, hotel room 1.jpg"
+  },
+  {
+    "id": "lisboa-estancia-5",
+    "destination": "Lisboa",
+    "kind": "room",
+    "file": "hotel-lisboa-estancia-5.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Kruisherenhotel%2C_hotel_room_2.jpg/1920px-Kruisherenhotel%2C_hotel_room_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Kruisherenhotel,_hotel_room_2.jpg",
+    "author": "Kleon3",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Kruisherenhotel, hotel room 2.jpg"
+  },
+  {
+    "id": "toronto-estancia-1",
+    "destination": "Toronto",
+    "kind": "room",
+    "file": "hotel-toronto-estancia-1.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Hotel_room_with_traditional_wooden_decor_and_city_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_room_with_traditional_wooden_decor_and_city_view.jpg",
+    "author": "JesusisGreat7",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "title": "File:Hotel room with traditional wooden decor and city view.jpg"
+  },
+  {
+    "id": "toronto-estancia-2",
+    "destination": "Toronto",
+    "kind": "room",
+    "file": "hotel-toronto-estancia-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Room_Stanley_Hotel_Estes_Park_Colorado_2024.jpg/1920px-Room_Stanley_Hotel_Estes_Park_Colorado_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Room_Stanley_Hotel_Estes_Park_Colorado_2024.jpg",
+    "author": "Larry D. Moore",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:Room Stanley Hotel Estes Park Colorado 2024.jpg"
+  },
+  {
+    "id": "toronto-estancia-3",
+    "destination": "Toronto",
+    "kind": "room",
+    "file": "hotel-toronto-estancia-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Omenahotelli_hotel_room_in_Tampere.jpg/1920px-Omenahotelli_hotel_room_in_Tampere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Omenahotelli_hotel_room_in_Tampere.jpg",
+    "author": "JIP",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Omenahotelli hotel room in Tampere.jpg"
+  },
+  {
+    "id": "toronto-estancia-4",
+    "destination": "Toronto",
+    "kind": "room",
+    "file": "hotel-toronto-estancia-4.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Interior_of_Rental_Room_24%2C_Ikebukuro%2C_Tokyo%2C_Japan.jpg/1920px-Interior_of_Rental_Room_24%2C_Ikebukuro%2C_Tokyo%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Interior_of_Rental_Room_24,_Ikebukuro,_Tokyo,_Japan.jpg",
+    "author": "Stck w",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Interior of Rental Room 24, Ikebukuro, Tokyo, Japan.jpg"
+  },
+  {
+    "id": "toronto-estancia-5",
+    "destination": "Toronto",
+    "kind": "room",
+    "file": "hotel-toronto-estancia-5.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/La_fonda_hotel_room.jpg/1920px-La_fonda_hotel_room.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:La_fonda_hotel_room.jpg",
+    "author": "Atakra",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "title": "File:La fonda hotel room.jpg"
+  },
+  {
+    "id": "rio-janeiro-estancia-1",
+    "destination": "Río de Janeiro",
+    "kind": "room",
+    "file": "hotel-rio-janeiro-estancia-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Bed_at_Omenahotelli_Tampere.jpg/1920px-Bed_at_Omenahotelli_Tampere.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bed_at_Omenahotelli_Tampere.jpg",
+    "author": "JIP",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Bed at Omenahotelli Tampere.jpg"
+  },
+  {
+    "id": "rio-janeiro-estancia-2",
+    "destination": "Río de Janeiro",
+    "kind": "room",
+    "file": "hotel-rio-janeiro-estancia-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Two_beds_room_of_Hyatt_place_New_York_Chelsea.jpg/1920px-Two_beds_room_of_Hyatt_place_New_York_Chelsea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Two_beds_room_of_Hyatt_place_New_York_Chelsea.jpg",
+    "author": "গীতাশ্ৰী গগৈ আপ্তে",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Two beds room of Hyatt place New York Chelsea.jpg"
+  },
+  {
+    "id": "rio-janeiro-estancia-3",
+    "destination": "Río de Janeiro",
+    "kind": "room",
+    "file": "hotel-rio-janeiro-estancia-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Conrad_Indianapolis_hotel%2C_room.jpg/1920px-Conrad_Indianapolis_hotel%2C_room.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Conrad_Indianapolis_hotel,_room.jpg",
+    "author": "Deans Charbal",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Conrad Indianapolis hotel, room.jpg"
+  },
+  {
+    "id": "rio-janeiro-estancia-4",
+    "destination": "Río de Janeiro",
+    "kind": "room",
+    "file": "hotel-rio-janeiro-estancia-4.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Hotel_Aragon_Chambre_Henry_James.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_Aragon_Chambre_Henry_James.jpg",
+    "author": "Aragon",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Hotel Aragon Chambre Henry James.jpg"
+  },
+  {
+    "id": "rio-janeiro-estancia-5",
+    "destination": "Río de Janeiro",
+    "kind": "room",
+    "file": "hotel-rio-janeiro-estancia-5.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Cozy_hotel_room_with_modern_furnishings_and_natural_light_flowing_through_the_curtains.jpg/1920px-Cozy_hotel_room_with_modern_furnishings_and_natural_light_flowing_through_the_curtains.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Cozy_hotel_room_with_modern_furnishings_and_natural_light_flowing_through_the_curtains.jpg",
+    "author": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Cozy hotel room with modern furnishings and natural light flowing through the curtains.jpg"
+  },
+  {
+    "id": "ciudad-mexico-opcion-1",
+    "destination": "Ciudad de México",
+    "kind": "room",
+    "file": "hotel-ciudad-mexico-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Efteling_Loonsche_Land_Hotel_themed_room_water_-_bunk_beds.jpg/1280px-Efteling_Loonsche_Land_Hotel_themed_room_water_-_bunk_beds.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Efteling_Loonsche_Land_Hotel_themed_room_water_-_bunk_beds.jpg",
+    "author": "Eliedion",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Efteling Loonsche Land Hotel themed room water - bunk beds.jpg",
+    "hotel": "Patio del Cenzontle"
+  },
+  {
+    "id": "ciudad-mexico-opcion-2",
+    "destination": "Ciudad de México",
+    "kind": "room",
+    "file": "hotel-ciudad-mexico-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Hotel_Room_Chicago_Hilton2.jpg/1280px-Hotel_Room_Chicago_Hilton2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_Room_Chicago_Hilton2.jpg",
+    "author": "Michael Gray",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "File:Hotel Room Chicago Hilton2.jpg",
+    "hotel": "Casa Jacaranda"
+  },
+  {
+    "id": "ciudad-mexico-opcion-3",
+    "destination": "Ciudad de México",
+    "kind": "room",
+    "file": "hotel-ciudad-mexico-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg/1280px-Cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Cozy_hotel_room_with_warm_lighting_and_refreshments_on_a_small_table.jpg",
+    "author": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Cozy hotel room with warm lighting and refreshments on a small table.jpg",
+    "hotel": "Suites del Ahuehuete"
+  },
+  {
+    "id": "bogota-opcion-1",
+    "destination": "Bogotá",
+    "kind": "room",
+    "file": "hotel-bogota-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Guest_Room_of_Mandarin_Oriental%2C_Taipei_01.jpg/1280px-Guest_Room_of_Mandarin_Oriental%2C_Taipei_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Guest_Room_of_Mandarin_Oriental,_Taipei_01.jpg",
+    "author": "阿道",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Guest Room of Mandarin Oriental, Taipei 01.jpg",
+    "hotel": "Casa del Arrayán"
+  },
+  {
+    "id": "bogota-opcion-2",
+    "destination": "Bogotá",
+    "kind": "room",
+    "file": "hotel-bogota-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Accommodation_Kouvola_traditional_room_upstairs_Rauhala_Inn.jpg/1280px-Accommodation_Kouvola_traditional_room_upstairs_Rauhala_Inn.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Accommodation_Kouvola_traditional_room_upstairs_Rauhala_Inn.jpg",
+    "author": "Aaveecloud",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Accommodation Kouvola traditional room upstairs Rauhala Inn.jpg",
+    "hotel": "Hotel Patio Andino"
+  },
+  {
+    "id": "bogota-opcion-3",
+    "destination": "Bogotá",
+    "kind": "room",
+    "file": "hotel-bogota-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_room_window_curtain_n_beds_night_August_2019_SSG_03.jpg/1280px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_room_window_curtain_n_beds_night_August_2019_SSG_03.jpg",
+    "author": "Fung Hong Yuenai",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:TW 台灣 Taiwan 台北市 Taipei City 中正區 Zhongzheng District 忠孝西路一段 Zhongxiao West Road 1 section 台北凱撒大飯店 Caesar Park Taipei hotel room window curtain n beds night August 2019 SSG 03.jpg",
+    "hotel": "Suites del Ceramista"
+  },
+  {
+    "id": "cartagena-opcion-1",
+    "destination": "Cartagena",
+    "kind": "room",
+    "file": "hotel-cartagena-opcion-1.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Grand_Hyatt_Taipei_bedroom_in_Grand_Premier_Room.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "source": "https://commons.wikimedia.org/wiki/File:Grand_Hyatt_Taipei_bedroom_in_Grand_Premier_Room.JPG",
+    "author": "Jakehutai",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Grand Hyatt Taipei bedroom in Grand Premier Room.JPG",
+    "hotel": "Casa del Balcón Coral"
+  },
+  {
+    "id": "cartagena-opcion-2",
+    "destination": "Cartagena",
+    "kind": "room",
+    "file": "hotel-cartagena-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/2014.11.15.151019_Bed_Imperial_Palace_Club_Shanghai.jpg/1280px-2014.11.15.151019_Bed_Imperial_Palace_Club_Shanghai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:2014.11.15.151019_Bed_Imperial_Palace_Club_Shanghai.jpg",
+    "author": "Hermann Luyken",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "title": "File:2014.11.15.151019 Bed Imperial Palace Club Shanghai.jpg",
+    "hotel": "Hotel Patio de Sal"
+  },
+  {
+    "id": "cartagena-opcion-3",
+    "destination": "Cartagena",
+    "kind": "room",
+    "file": "hotel-cartagena-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Room_18120%2C_Luxor_Resort_%26_Casino.jpg/1280px-Room_18120%2C_Luxor_Resort_%26_Casino.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Room_18120,_Luxor_Resort_%26_Casino.jpg",
+    "author": "YosemiteYamper",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Room 18120, Luxor Resort & Casino.jpg",
+    "hotel": "Suites del Alcatraz"
+  },
+  {
+    "id": "lima-opcion-1",
+    "destination": "Lima",
+    "kind": "room",
+    "file": "hotel-lima-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Restored_Shashi_Kapoor_Room.jpg/1280px-Restored_Shashi_Kapoor_Room.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Restored_Shashi_Kapoor_Room.jpg",
+    "author": "Wiki.webscapeoy",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Restored Shashi Kapoor Room.jpg",
+    "hotel": "Hotel Patio del Pacífico"
+  },
+  {
+    "id": "lima-opcion-2",
+    "destination": "Lima",
+    "kind": "room",
+    "file": "hotel-lima-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Days_Inn_motel_room_Needles_CA_2026-04-04_19-12-45_1.jpg/1280px-Days_Inn_motel_room_Needles_CA_2026-04-04_19-12-45_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Days_Inn_motel_room_Needles_CA_2026-04-04_19-12-45_1.jpg",
+    "author": "G. Edward Johnson",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:Days Inn motel room Needles CA 2026-04-04 19-12-45 1.jpg",
+    "hotel": "Casa de la Garúa"
+  },
+  {
+    "id": "lima-opcion-3",
+    "destination": "Lima",
+    "kind": "room",
+    "file": "hotel-lima-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/6.13.08ABQMarriotPyramidRoomByLuigiNovi8.jpg/1280px-6.13.08ABQMarriotPyramidRoomByLuigiNovi8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:6.13.08ABQMarriotPyramidRoomByLuigiNovi8.jpg",
+    "author": "Nightscream",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:6.13.08ABQMarriotPyramidRoomByLuigiNovi8.jpg",
+    "hotel": "Suites del Acantilado"
+  },
+  {
+    "id": "buenos-aires-opcion-1",
+    "destination": "Buenos Aires",
+    "kind": "room",
+    "file": "hotel-buenos-aires-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Tropical_Noir_Chic_Boutique_Hotel_Room_in_Lisbon_%2854940806211%29.jpg/1280px-Tropical_Noir_Chic_Boutique_Hotel_Room_in_Lisbon_%2854940806211%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Tropical_Noir_Chic_Boutique_Hotel_Room_in_Lisbon_(54940806211).jpg",
+    "author": "Dale Cruse - 10M views from San Francisco, CA, USA",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:Tropical Noir Chic Boutique Hotel Room in Lisbon (54940806211).jpg",
+    "hotel": "Casa del Jacarandá Porteño"
+  },
+  {
+    "id": "buenos-aires-opcion-2",
+    "destination": "Buenos Aires",
+    "kind": "room",
+    "file": "hotel-buenos-aires-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Hyatt_Place_Chicago-South_room_interior.jpg/1280px-Hyatt_Place_Chicago-South_room_interior.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hyatt_Place_Chicago-South_room_interior.jpg",
+    "author": "Jonathan Schilling",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Hyatt Place Chicago-South room interior.jpg",
+    "hotel": "Hotel Patio del Tango"
+  },
+  {
+    "id": "buenos-aires-opcion-3",
+    "destination": "Buenos Aires",
+    "kind": "room",
+    "file": "hotel-buenos-aires-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Ocean_Palm_Room.JPG/1280px-Ocean_Palm_Room.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Ocean_Palm_Room.JPG",
+    "author": "Infrogmation of New Orleans",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "title": "File:Ocean Palm Room.JPG",
+    "hotel": "Suites Pasaje del Sur"
+  },
+  {
+    "id": "santiago-opcion-1",
+    "destination": "Santiago",
+    "kind": "room",
+    "file": "hotel-santiago-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Forest_Of_Hope_Guest_House.jpg/1280px-Forest_Of_Hope_Guest_House.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Forest_Of_Hope_Guest_House.jpg",
+    "author": "Rasse2",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Forest Of Hope Guest House.jpg",
+    "hotel": "Hotel Patio de los Andes"
+  },
+  {
+    "id": "santiago-opcion-2",
+    "destination": "Santiago",
+    "kind": "room",
+    "file": "hotel-santiago-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/La_Bastide_en_Gascogne_%2811%29.jpg/1280px-La_Bastide_en_Gascogne_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:La_Bastide_en_Gascogne_(11).jpg",
+    "author": "Tournasol7",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:La Bastide en Gascogne (11).jpg",
+    "hotel": "Casa del Peumo"
+  },
+  {
+    "id": "santiago-opcion-3",
+    "destination": "Santiago",
+    "kind": "room",
+    "file": "hotel-santiago-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Red_Roof_NextGen_Room.jpg/1280px-Red_Roof_NextGen_Room.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Red_Roof_NextGen_Room.jpg",
+    "author": "SuperDalio",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Red Roof NextGen Room.jpg",
+    "hotel": "Suites Cerro Claro"
+  },
+  {
+    "id": "medellin-opcion-1",
+    "destination": "Medellín",
+    "kind": "room",
+    "file": "hotel-medellin-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Bari_Kothi_4.jpg/1280px-Bari_Kothi_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bari_Kothi_4.jpg",
+    "author": "Rangan Datta Wiki",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Bari Kothi 4.jpg",
+    "hotel": "Casa del Guayacán"
+  },
+  {
+    "id": "medellin-opcion-2",
+    "destination": "Medellín",
+    "kind": "room",
+    "file": "hotel-medellin-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Hyatt_Regency_Lake_Tahoe_Resort%2C_Spa_and_Casino_-_2021-10-17_-_Sarah_Stierch_02.jpg/1280px-Hyatt_Regency_Lake_Tahoe_Resort%2C_Spa_and_Casino_-_2021-10-17_-_Sarah_Stierch_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hyatt_Regency_Lake_Tahoe_Resort,_Spa_and_Casino_-_2021-10-17_-_Sarah_Stierch_02.jpg",
+    "author": "Missvain",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:Hyatt Regency Lake Tahoe Resort, Spa and Casino - 2021-10-17 - Sarah Stierch 02.jpg",
+    "hotel": "Hotel Valle Florido"
+  },
+  {
+    "id": "medellin-opcion-3",
+    "destination": "Medellín",
+    "kind": "room",
+    "file": "hotel-medellin-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Sober_Living_in_San_Diego.jpg/1280px-Sober_Living_in_San_Diego.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Sober_Living_in_San_Diego.jpg",
+    "author": "Adioslepido",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Sober Living in San Diego.jpg",
+    "hotel": "Suites Patio de Helechos"
+  },
+  {
+    "id": "punta-cana-opcion-1",
+    "destination": "Punta Cana",
+    "kind": "room",
+    "file": "hotel-punta-cana-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/At_Morocco_2023_33.jpg/1280px-At_Morocco_2023_33.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:At_Morocco_2023_33.jpg",
+    "author": "Photograph by Mike Peel (www.mikepeel.net).",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:At Morocco 2023 33.jpg",
+    "hotel": "Hotel Duna de Coco"
+  },
+  {
+    "id": "punta-cana-opcion-2",
+    "destination": "Punta Cana",
+    "kind": "room",
+    "file": "hotel-punta-cana-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/PensacolaVictorianBnBPort.jpg/1280px-PensacolaVictorianBnBPort.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:PensacolaVictorianBnBPort.jpg",
+    "author": "Infrogmation of New Orleans",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:PensacolaVictorianBnBPort.jpg",
+    "hotel": "Casa Brisa de Bávaro"
+  },
+  {
+    "id": "punta-cana-opcion-3",
+    "destination": "Punta Cana",
+    "kind": "room",
+    "file": "hotel-punta-cana-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Hyatt_Fisherman%27s_Bedroom_2.jpg/1280px-Hyatt_Fisherman%27s_Bedroom_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hyatt_Fisherman%27s_Bedroom_2.jpg",
+    "author": "Prayitno from Los Angeles, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Hyatt Fisherman's Bedroom 2.jpg",
+    "hotel": "Suites Mar de Almendra"
+  },
+  {
+    "id": "san-salvador-opcion-1",
+    "destination": "San Salvador",
+    "kind": "room",
+    "file": "hotel-san-salvador-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Westin_Bonaventure_%286770536767%29.jpg/1280px-Westin_Bonaventure_%286770536767%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Westin_Bonaventure_(6770536767).jpg",
+    "author": "Prayitno / Thank you for (12 millions +) view from Los Angeles, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Westin Bonaventure (6770536767).jpg",
+    "hotel": "Casa del Maquilishuat"
+  },
+  {
+    "id": "san-salvador-opcion-2",
+    "destination": "San Salvador",
+    "kind": "room",
+    "file": "hotel-san-salvador-opcion-2.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Mandarin_Oriental_Tokyo_%5E1_-_Flickr_-_hatch.m.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "source": "https://commons.wikimedia.org/wiki/File:Mandarin_Oriental_Tokyo_%5E1_-_Flickr_-_hatch.m.jpg",
+    "author": "hatch.m from Tokyo, Japan",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "File:Mandarin Oriental Tokyo ^1 - Flickr - hatch.m.jpg",
+    "hotel": "Hotel Patio Cuscatleco"
+  },
+  {
+    "id": "san-salvador-opcion-3",
+    "destination": "San Salvador",
+    "kind": "room",
+    "file": "hotel-san-salvador-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/2025.01.02_Bialystok_Hotel_Branicki_Interior_of_Bedroom_05.jpg/1280px-2025.01.02_Bialystok_Hotel_Branicki_Interior_of_Bedroom_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:2025.01.02_Bialystok_Hotel_Branicki_Interior_of_Bedroom_05.jpg",
+    "author": "Tess Mattew",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:2025.01.02 Bialystok Hotel Branicki Interior of Bedroom 05.jpg",
+    "hotel": "Suites Volcán de Jade"
+  },
+  {
+    "id": "san-juan-opcion-1",
+    "destination": "San Juan",
+    "kind": "room",
+    "file": "hotel-san-juan-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Bedroom%2C_Bowery_Hotel_New_York_%2815642356845%29.jpg/1280px-Bedroom%2C_Bowery_Hotel_New_York_%2815642356845%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom,_Bowery_Hotel_New_York_(15642356845).jpg",
+    "author": "John Mason from Edinburgh, UK",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Bedroom, Bowery Hotel New York (15642356845).jpg",
+    "hotel": "Casa del Adoquín Azul"
+  },
+  {
+    "id": "san-juan-opcion-2",
+    "destination": "San Juan",
+    "kind": "room",
+    "file": "hotel-san-juan-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Forte_Hotel_Changhua_bedroom_on_13_April_2016.jpg/1280px-Forte_Hotel_Changhua_bedroom_on_13_April_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Forte_Hotel_Changhua_bedroom_on_13_April_2016.jpg",
+    "author": "Kenming Wang",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "File:Forte Hotel Changhua bedroom on 13 April 2016.jpg",
+    "hotel": "Hotel Patio Borinquen"
+  },
+  {
+    "id": "san-juan-opcion-3",
+    "destination": "San Juan",
+    "kind": "room",
+    "file": "hotel-san-juan-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Modern_bedroom_design_in_a_stylish_hotel_room_featuring_geometric_patterns_and_soft_linens.jpg/1280px-Modern_bedroom_design_in_a_stylish_hotel_room_featuring_geometric_patterns_and_soft_linens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Modern_bedroom_design_in_a_stylish_hotel_room_featuring_geometric_patterns_and_soft_linens.jpg",
+    "author": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Modern bedroom design in a stylish hotel room featuring geometric patterns and soft linens.jpg",
+    "hotel": "Suites Brisa del Morro"
+  },
+  {
+    "id": "los-angeles-opcion-1",
+    "destination": "Los Ángeles",
+    "kind": "room",
+    "file": "hotel-los-angeles-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Washington_Mayfair_Hotel%2C_Bedroom.jpg/1280px-Washington_Mayfair_Hotel%2C_Bedroom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Washington_Mayfair_Hotel,_Bedroom.jpg",
+    "author": "Mastcraft",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Washington Mayfair Hotel, Bedroom.jpg",
+    "hotel": "Hotel Laurel Avenue"
+  },
+  {
+    "id": "los-angeles-opcion-2",
+    "destination": "Los Ángeles",
+    "kind": "room",
+    "file": "hotel-los-angeles-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Hotel_room_interior_at_hotel_Radisson_Blu_Oulu.jpg/1280px-Hotel_room_interior_at_hotel_Radisson_Blu_Oulu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_room_interior_at_hotel_Radisson_Blu_Oulu.jpg",
+    "author": "JIP",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Hotel room interior at hotel Radisson Blu Oulu.jpg",
+    "hotel": "Casa Pacific Terrace"
+  },
+  {
+    "id": "los-angeles-opcion-3",
+    "destination": "Los Ángeles",
+    "kind": "room",
+    "file": "hotel-los-angeles-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Hotel_L%27Agora_Interior_1.jpg/1280px-Hotel_L%27Agora_Interior_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_L%27Agora_Interior_1.jpg",
+    "author": "https://www.flickr.com/photos/toprural/",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "File:Hotel L'Agora Interior 1.jpg",
+    "hotel": "Suites Silver Palm"
+  },
+  {
+    "id": "las-vegas-opcion-1",
+    "destination": "Las Vegas",
+    "kind": "room",
+    "file": "hotel-las-vegas-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Interior_of_a_room_at_City_Lodge_OR_Tambo_Airport_hotel_February_2025.jpg/1280px-Interior_of_a_room_at_City_Lodge_OR_Tambo_Airport_hotel_February_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Interior_of_a_room_at_City_Lodge_OR_Tambo_Airport_hotel_February_2025.jpg",
+    "author": "Nick-D",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Interior of a room at City Lodge OR Tambo Airport hotel February 2025.jpg",
+    "hotel": "Hotel Desert Willow"
+  },
+  {
+    "id": "las-vegas-opcion-2",
+    "destination": "Las Vegas",
+    "kind": "room",
+    "file": "hotel-las-vegas-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/The_William_Vale_Hotel_Bedroom_Brooklyn%2C_NYC.jpg/1280px-The_William_Vale_Hotel_Bedroom_Brooklyn%2C_NYC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:The_William_Vale_Hotel_Bedroom_Brooklyn,_NYC.jpg",
+    "author": "TaurusEmerald",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:The William Vale Hotel Bedroom Brooklyn, NYC.jpg",
+    "hotel": "Suites Copper Dune"
+  },
+  {
+    "id": "las-vegas-opcion-3",
+    "destination": "Las Vegas",
+    "kind": "room",
+    "file": "hotel-las-vegas-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/New_Orleans%2C_LA_%28Warehouse_District%29_-_Loft_523_Hotel_interior%2C_Feb_2011_-_3.jpg/1280px-New_Orleans%2C_LA_%28Warehouse_District%29_-_Loft_523_Hotel_interior%2C_Feb_2011_-_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:New_Orleans,_LA_(Warehouse_District)_-_Loft_523_Hotel_interior,_Feb_2011_-_3.jpg",
+    "author": "JasonParis",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:New Orleans, LA (Warehouse District) - Loft 523 Hotel interior, Feb 2011 - 3.jpg",
+    "hotel": "Casa Mojave Court"
+  },
+  {
+    "id": "vancouver-opcion-1",
+    "destination": "Vancouver",
+    "kind": "room",
+    "file": "hotel-vancouver-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Bedroom_-_Hotel_Pulitzer_%288698641138%29.jpg/1280px-Bedroom_-_Hotel_Pulitzer_%288698641138%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom_-_Hotel_Pulitzer_(8698641138).jpg",
+    "author": "William J Sisti from Morristown, NJ, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "File:Bedroom - Hotel Pulitzer (8698641138).jpg",
+    "hotel": "Hotel Cedar Harbour"
+  },
+  {
+    "id": "vancouver-opcion-2",
+    "destination": "Vancouver",
+    "kind": "room",
+    "file": "hotel-vancouver-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Bedroom%2C_Westin_Canal_Place_-_New_Orleans.jpg/1280px-Bedroom%2C_Westin_Canal_Place_-_New_Orleans.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom,_Westin_Canal_Place_-_New_Orleans.jpg",
+    "author": "TravelingOtter",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "File:Bedroom, Westin Canal Place - New Orleans.jpg",
+    "hotel": "Casa Evergreen Cove"
+  },
+  {
+    "id": "vancouver-opcion-3",
+    "destination": "Vancouver",
+    "kind": "room",
+    "file": "hotel-vancouver-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Bedroom_Suite_-_Hotel_Pulitzer_%288697518713%29.jpg/1280px-Bedroom_Suite_-_Hotel_Pulitzer_%288697518713%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom_Suite_-_Hotel_Pulitzer_(8697518713).jpg",
+    "author": "William J Sisti from Morristown, NJ, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "File:Bedroom Suite - Hotel Pulitzer (8697518713).jpg",
+    "hotel": "Suites Pacific Fern"
+  },
+  {
+    "id": "amsterdam-opcion-1",
+    "destination": "Ámsterdam",
+    "kind": "room",
+    "file": "hotel-amsterdam-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Hotel_room_interior_at_apartment_hotel_Ona_Cala_P%C3%AD_Club%2C_Mallorca%2C_Spain.jpg/1280px-Hotel_room_interior_at_apartment_hotel_Ona_Cala_P%C3%AD_Club%2C_Mallorca%2C_Spain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_room_interior_at_apartment_hotel_Ona_Cala_P%C3%AD_Club,_Mallorca,_Spain.jpg",
+    "author": "JIP",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Hotel room interior at apartment hotel Ona Cala Pí Club, Mallorca, Spain.jpg",
+    "hotel": "Casa del Canal de Olmo"
+  },
+  {
+    "id": "amsterdam-opcion-2",
+    "destination": "Ámsterdam",
+    "kind": "room",
+    "file": "hotel-amsterdam-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/JW_Marriott_Hotel_New_Orleans_March_2012_Bedroom.jpg/1280px-JW_Marriott_Hotel_New_Orleans_March_2012_Bedroom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:JW_Marriott_Hotel_New_Orleans_March_2012_Bedroom.jpg",
+    "author": "Prayitno / Thank you for (12 millions +) view",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:JW Marriott Hotel New Orleans March 2012 Bedroom.jpg",
+    "hotel": "Hotel Tulip Courtyard"
+  },
+  {
+    "id": "amsterdam-opcion-3",
+    "destination": "Ámsterdam",
+    "kind": "room",
+    "file": "hotel-amsterdam-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Hyatt_Fisherman%27s_Bedroom_1.jpg/1280px-Hyatt_Fisherman%27s_Bedroom_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hyatt_Fisherman%27s_Bedroom_1.jpg",
+    "author": "Prayitno from Los Angeles, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Hyatt Fisherman's Bedroom 1.jpg",
+    "hotel": "Suites Puente de Ámbar"
+  },
+  {
+    "id": "berlin-opcion-1",
+    "destination": "Berlín",
+    "kind": "room",
+    "file": "hotel-berlin-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg/1280px-Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom_hotel_interior_with_open_door_window._(51536308276).jpg",
+    "author": "Nenad Stojkovic",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Bedroom hotel interior with open door window. (51536308276).jpg",
+    "hotel": "Hotel Linden Hof"
+  },
+  {
+    "id": "berlin-opcion-2",
+    "destination": "Berlín",
+    "kind": "room",
+    "file": "hotel-berlin-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Hotel_Central_-_Room.jpg/1280px-Hotel_Central_-_Room.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_Central_-_Room.jpg",
+    "author": "Fred Cherrygarden",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Hotel Central - Room.jpg",
+    "hotel": "Casa del Patio de Berlín"
+  },
+  {
+    "id": "berlin-opcion-3",
+    "destination": "Berlín",
+    "kind": "room",
+    "file": "hotel-berlin-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Grand_Island_Hotel_bedroom_2006.JPG/1280px-Grand_Island_Hotel_bedroom_2006.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Grand_Island_Hotel_bedroom_2006.JPG",
+    "author": "Tangerineduel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Grand Island Hotel bedroom 2006.JPG",
+    "hotel": "Suites Spree Garden"
+  },
+  {
+    "id": "praga-opcion-1",
+    "destination": "Praga",
+    "kind": "room",
+    "file": "hotel-praga-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Hotel_L%27Agora_Interior_2.jpg/1280px-Hotel_L%27Agora_Interior_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_L%27Agora_Interior_2.jpg",
+    "author": "https://www.flickr.com/photos/toprural/",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "title": "File:Hotel L'Agora Interior 2.jpg",
+    "hotel": "Casa del Reloj de Ámbar"
+  },
+  {
+    "id": "praga-opcion-2",
+    "destination": "Praga",
+    "kind": "room",
+    "file": "hotel-praga-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Hotel_Central_-_Room_%28II%29.jpg/1280px-Hotel_Central_-_Room_%28II%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_Central_-_Room_(II).jpg",
+    "author": "Fred Cherrygarden",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Hotel Central - Room (II).jpg",
+    "hotel": "Hotel Patio de Bohemia"
+  },
+  {
+    "id": "praga-opcion-3",
+    "destination": "Praga",
+    "kind": "room",
+    "file": "hotel-praga-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Canopy_bed_of_Khan_Pool_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg/1280px-Canopy_bed_of_Khan_Pool_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Canopy_bed_of_Khan_Pool_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+    "author": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Canopy bed of Khan Pool Suite in Amantaka luxury Resort & Hotel in Luang Prabang Laos.jpg",
+    "hotel": "Suites Puente del Moldava"
+  },
+  {
+    "id": "estambul-opcion-1",
+    "destination": "Estambul",
+    "kind": "room",
+    "file": "hotel-estambul-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Bedroom_at_Town_Hall_Hotel%2C_London_2026-06-06.jpg/1280px-Bedroom_at_Town_Hall_Hotel%2C_London_2026-06-06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedroom_at_Town_Hall_Hotel,_London_2026-06-06.jpg",
+    "author": "Bex Walton",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:Bedroom at Town Hall Hotel, London 2026-06-06.jpg",
+    "hotel": "Hotel Patio del Bósforo"
+  },
+  {
+    "id": "estambul-opcion-2",
+    "destination": "Estambul",
+    "kind": "room",
+    "file": "hotel-estambul-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Junior_Suite_Bedroom_-_Westin_Ottawa_%2840586472474%29.jpg/1280px-Junior_Suite_Bedroom_-_Westin_Ottawa_%2840586472474%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Junior_Suite_Bedroom_-_Westin_Ottawa_(40586472474).jpg",
+    "author": "TravelingOtter from Houston, Texas, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Junior Suite Bedroom - Westin Ottawa (40586472474).jpg",
+    "hotel": "Casa del Tulipán Turco"
+  },
+  {
+    "id": "estambul-opcion-3",
+    "destination": "Estambul",
+    "kind": "room",
+    "file": "hotel-estambul-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/The_Ritz-Carlton_Hotel_de_la_Paix%2C_Geneva_%E2%80%94_Grace_Kelly_Suite_Bedroom.jpg/1280px-The_Ritz-Carlton_Hotel_de_la_Paix%2C_Geneva_%E2%80%94_Grace_Kelly_Suite_Bedroom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Ritz-Carlton_Hotel_de_la_Paix,_Geneva_%E2%80%94_Grace_Kelly_Suite_Bedroom.jpg",
+    "author": "Marriott InternationalⓇ The Ritz-Carlton Hotel de la Paix, Geneva",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:The Ritz-Carlton Hotel de la Paix, Geneva — Grace Kelly Suite Bedroom.jpg",
+    "hotel": "Suites Cúpula de Jade"
+  },
+  {
+    "id": "dubai-opcion-1",
+    "destination": "Dubái",
+    "kind": "room",
+    "file": "hotel-dubai-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Radisson_Blu_Hotel_Shanghai_New_World_%28interior%29%2C_December_2015_-_05.JPG/1280px-Radisson_Blu_Hotel_Shanghai_New_World_%28interior%29%2C_December_2015_-_05.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Radisson_Blu_Hotel_Shanghai_New_World_(interior),_December_2015_-_05.JPG",
+    "author": "Another Believer",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Radisson Blu Hotel Shanghai New World (interior), December 2015 - 05.JPG",
+    "hotel": "Hotel Patio de las Dunas"
+  },
+  {
+    "id": "dubai-opcion-2",
+    "destination": "Dubái",
+    "kind": "room",
+    "file": "hotel-dubai-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Thatcher_Hotel_-_Feburary_2023_-_Sarah_Stierch_01.jpg/1280px-Thatcher_Hotel_-_Feburary_2023_-_Sarah_Stierch_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Thatcher_Hotel_-_Feburary_2023_-_Sarah_Stierch_01.jpg",
+    "author": "Missvain",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "title": "File:Thatcher Hotel - Feburary 2023 - Sarah Stierch 01.jpg",
+    "hotel": "Casa del Dátil"
+  },
+  {
+    "id": "dubai-opcion-3",
+    "destination": "Dubái",
+    "kind": "room",
+    "file": "hotel-dubai-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Tower_Hotel_-_Executive_Twin.jpg/1280px-Tower_Hotel_-_Executive_Twin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Tower_Hotel_-_Executive_Twin.jpg",
+    "author": "TheTowerHotel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Tower Hotel - Executive Twin.jpg",
+    "hotel": "Suites Creek Pearl"
+  },
+  {
+    "id": "tokio-opcion-1",
+    "destination": "Tokio",
+    "kind": "room",
+    "file": "hotel-tokio-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Disney_Aulani_1-bedroom_villa_%283%29.JPG/1280px-Disney_Aulani_1-bedroom_villa_%283%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Disney_Aulani_1-bedroom_villa_(3).JPG",
+    "author": "Holly Cheng",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Disney Aulani 1-bedroom villa (3).JPG",
+    "hotel": "Casa del Farol de Asakusa"
+  },
+  {
+    "id": "tokio-opcion-2",
+    "destination": "Tokio",
+    "kind": "room",
+    "file": "hotel-tokio-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Hotel_room_in_Nice.jpg/1280px-Hotel_room_in_Nice.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_room_in_Nice.jpg",
+    "author": "JIP",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Hotel room in Nice.jpg",
+    "hotel": "Hotel Jardín del Ginkgo"
+  },
+  {
+    "id": "tokio-opcion-3",
+    "destination": "Tokio",
+    "kind": "room",
+    "file": "hotel-tokio-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Budapest%2C_Astoria_Hotel%2C_58.jpg/1280px-Budapest%2C_Astoria_Hotel%2C_58.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Budapest,_Astoria_Hotel,_58.jpg",
+    "author": "Random photos 1989",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Budapest, Astoria Hotel, 58.jpg",
+    "hotel": "Suites Puente de Sumida"
+  },
+  {
+    "id": "seul-opcion-1",
+    "destination": "Seúl",
+    "kind": "room",
+    "file": "hotel-seul-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Thiranagama_Sri_Lanka_Riff_Hotel_5-star_resort_Suite_bedroom.jpg/1280px-Thiranagama_Sri_Lanka_Riff_Hotel_5-star_resort_Suite_bedroom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Thiranagama_Sri_Lanka_Riff_Hotel_5-star_resort_Suite_bedroom.jpg",
+    "author": "Xandrium",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "title": "File:Thiranagama Sri Lanka Riff Hotel 5-star resort Suite bedroom.jpg",
+    "hotel": "Casa del Patio Hanok"
+  },
+  {
+    "id": "seul-opcion-2",
+    "destination": "Seúl",
+    "kind": "room",
+    "file": "hotel-seul-opcion-2.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Wyndham_New_Orleans_at_Canal_Place_hotel_room_2002_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "source": "https://commons.wikimedia.org/wiki/File:Wyndham_New_Orleans_at_Canal_Place_hotel_room_2002_02.jpg",
+    "author": "Jeff Kern",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "title": "File:Wyndham New Orleans at Canal Place hotel room 2002 02.jpg",
+    "hotel": "Hotel Jardín del Han"
+  },
+  {
+    "id": "seul-opcion-3",
+    "destination": "Seúl",
+    "kind": "room",
+    "file": "hotel-seul-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Zimmer_im_Hotel_Dorint_Camp_de_Mar.jpg/1280px-Zimmer_im_Hotel_Dorint_Camp_de_Mar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Zimmer_im_Hotel_Dorint_Camp_de_Mar.jpg",
+    "author": "Gamgee",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Zimmer im Hotel Dorint Camp de Mar.jpg",
+    "hotel": "Suites Luna de Seúl"
+  },
+  {
+    "id": "singapur-opcion-1",
+    "destination": "Singapur",
+    "kind": "room",
+    "file": "hotel-singapur-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Yanggakdo_International_Hotel_room_1.jpg/960px-Yanggakdo_International_Hotel_room_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Yanggakdo_International_Hotel_room_1.jpg",
+    "author": "r",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "title": "File:Yanggakdo International Hotel room 1.jpg",
+    "hotel": "Hotel Orchid Courtyard"
+  },
+  {
+    "id": "singapur-opcion-2",
+    "destination": "Singapur",
+    "kind": "room",
+    "file": "hotel-singapur-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_328.jpg/1280px-Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_328.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo,_2019_-_328.jpg",
+    "author": "Another Believer",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Room interior in the Park Hotel Tokyo in Tokyo, 2019 - 328.jpg",
+    "hotel": "Casa del Jardín del Estrecho"
+  },
+  {
+    "id": "singapur-opcion-3",
+    "destination": "Singapur",
+    "kind": "room",
+    "file": "hotel-singapur-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_329.jpg/1280px-Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo%2C_2019_-_329.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo,_2019_-_329.jpg",
+    "author": "Another Believer",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Room interior in the Park Hotel Tokyo in Tokyo, 2019 - 329.jpg",
+    "hotel": "Suites Marina Fern"
+  },
+  {
+    "id": "sidney-opcion-1",
+    "destination": "Sídney",
+    "kind": "room",
+    "file": "hotel-sidney-opcion-1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Hotel_d%27Europe_-_Room_today.jpg/1280px-Hotel_d%27Europe_-_Room_today.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_d%27Europe_-_Room_today.jpg",
+    "author": "Damienmcr",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Hotel d'Europe - Room today.jpg",
+    "hotel": "Hotel Harbour Wattle"
+  },
+  {
+    "id": "sidney-opcion-2",
+    "destination": "Sídney",
+    "kind": "room",
+    "file": "hotel-sidney-opcion-2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Budapest%2C_Astoria_Hotel%2C_54.jpg/1280px-Budapest%2C_Astoria_Hotel%2C_54.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Budapest,_Astoria_Hotel,_54.jpg",
+    "author": "Random photos 1989",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Budapest, Astoria Hotel, 54.jpg",
+    "hotel": "Casa del Eucalipto"
+  },
+  {
+    "id": "sidney-opcion-3",
+    "destination": "Sídney",
+    "kind": "room",
+    "file": "hotel-sidney-opcion-3.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Tower_Hotel_-_Standard.jpg/1280px-Tower_Hotel_-_Standard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Tower_Hotel_-_Standard.jpg",
+    "author": "TheTowerHotel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "title": "File:Tower Hotel - Standard.jpg",
+    "hotel": "Suites Bondi Courtyard"
   }
 ]

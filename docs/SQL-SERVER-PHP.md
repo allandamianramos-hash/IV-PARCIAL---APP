@@ -106,7 +106,7 @@ Al agregar una función, crea su migración numerada, validación y endpoint si 
 
 ## 6. Problemas frecuentes
 
-- **Modo local / no se guarda:** abre INICIAR-RUMBO.cmd, no `file://` ni Live Server. `http://localhost:8000/api/database` debe indicar `connected: true`.
+- **Modo local / no se guarda:** abre INICIAR-RUMBO.cmd. El sitio inicia aunque SQL no responda y conserva las selecciones pendientes en el navegador. El indicador inferior confirma si están sincronizadas. `http://localhost:8000/api/database` debe indicar `connected: true` para confirmar SQL.
 - **Login failed:** comprueba permisos del mismo usuario de Windows en SSMS. El administrador debe asignarlos; no es necesario compartir la contraseña de `sa`.
 - **Servidor no encontrado:** revisa el servicio SQL Server y DB_SERVER en `.env`.
 - **Falta PDO_SQLSRV:** ejecuta CONFIGURAR-PHP.cmd y verifica PHP 8.2 TS x64 y ODBC 18 x64.
@@ -118,3 +118,11 @@ Este arranque es local. Publicar requiere servidor web con HTTPS, cuenta SQL de 
 
 Referencias: [requisitos oficiales de Microsoft](https://learn.microsoft.com/en-us/sql/connect/php/system-requirements-for-the-php-sql-driver) y [controlador Microsoft 5.12.0](https://github.com/microsoft/msphpsql/releases/tag/v5.12.0), compatible con el PHP 8.2 usado aquí.
 - Para usar Live Server: sigue el manual nuevo y conserva .vscode/settings.json. La apertura mediante file:// sigue siendo una vista estática.
+
+## Arranque y errores de Rumbo
+
+Live Server envía las solicitudes a PHP mediante el proxy de `.vscode/settings.json`, conservando el puerto 5500 en el navegador. Reinícialo después de actualizar esa configuración. PHP se prepara con la tarea de apertura del proyecto (o Ctrl+Shift+B). El puerto 8000 es interno y no se abre automáticamente.
+
+El mensaje de Azure «Client with IP address … is not allowed to access the server» indica que la IP pública actual no está autorizada. El administrador de Azure debe autorizar esa IP para recuperar SQL; reinstalar PHP no corrige ese rechazo. La IP puede cambiar. El arranque informa del bloqueo sin detener el sitio ni mostrar credenciales. No se han modificado las reglas de Azure.
+
+Las rutas inexistentes y los errores de navegación en PHP y Node muestran `public/error.html` con el estado HTTP correspondiente; los endpoints `/api/` conservan JSON. La página de conexión local está en `error.html?code=offline`. Si ningún servidor está en ejecución, una dirección directa a su puerto seguirá mostrando el error propio del navegador.

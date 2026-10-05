@@ -37,15 +37,15 @@
   const label=document.createElement('span'), retry=document.createElement('button');retry.type='button';retry.textContent='Reintentar';
   banner.append(label,retry);document.body.append(banner);
   function show(message){
-    label.textContent=message||(conflict?'Otra pestaña tiene cambios más recientes.':staticPage?'Esta vista no ejecuta el servidor. Abre INICIAR-RUMBO.cmd para guardar en SQL Server. Tus selecciones siguen en este navegador.':!boot.connected?'Sin conexión a SQL Server. Tus cambios están pendientes en este navegador.':Object.keys(pending).length?'Guardando en SQL Server…':'Guardado en SQL Server.');
+    label.textContent=message||(conflict?'Otra pestaña tiene cambios más recientes.':staticPage?'Rumbo está en modo local. Inicia INICIAR-RUMBO.cmd para conectar; tus selecciones se guardan en este navegador.':!boot.connected?'Sin conexión a la base de datos. Tus cambios están pendientes en este navegador.':Object.keys(pending).length?'Guardando en SQL Server…':'Guardado en SQL Server.');
     retry.hidden=boot.connected&&!conflict&&!message;
     retry.textContent=conflict?'Cargar versión guardada':localPreview?'Abrir versión conectada':boot.connected?'Reintentar':'Volver a conectar';
   }
-  retry.addEventListener('click',()=>{
+  retry.addEventListener('click',async()=>{
     if(localPreview){
       const file=location.pathname.split('/').pop();
       const page=['index.html','viajes.html','tienda.html','servicios.html','registro.html','iniciar-sesion.html'].includes(file)?file:'index.html';
-      location.href='http://localhost:8000/'+page+(location.search||'');return;
+      if(!await window.RumboConnect?.(page+(location.search||'')))location.href='error.html?code=offline';return;
     }
     if(conflict){pending={};try{savePending();}catch{}location.reload();}
     else if(!boot.connected)location.reload();else flush();

@@ -6,6 +6,7 @@
     const form=document.querySelector('#auth-form'),feedback=document.querySelector('#auth-feedback');
     const sessionKeys=['rumbo.store.cart.v2','rumbo.store.favorites.v2','rumbo.integrante2.viaje.v1','rumbo.services.v1','rumbo.profile.v1','rumbo.checkout.v1','rumbo.no-flight.v1','rumbo.departureChecklist.v1','rumbo.sync.pending.v1','rumbo.sync.visitor.v1'];
     function changed(){
+      try{sessionStorage.removeItem("rumbo.socialDemo");}catch{}
       try{sessionKeys.forEach(k=>localStorage.removeItem(k));localStorage.setItem('rumbo.auth.changed',String(Date.now()));}catch{}
     }
     async function request(path,data){
@@ -19,7 +20,19 @@
       document.querySelectorAll('a[href="servicios.html?seccion=registro"]').forEach(a=>a.href='registro.html');
       document.querySelectorAll('a[href="servicios.html?seccion=iniciar-sesion"]').forEach(a=>a.href='iniciar-sesion.html');
       if(!accounts||!user)return;
-      const name=document.createElement('span');name.className='auth-user-name';name.textContent=user.name;name.title=user.name;
+      const menu=document.createElement('details');menu.className='account-menu';
+      const toggle=document.createElement('summary');toggle.className='account-toggle';toggle.setAttribute('aria-label','Mi cuenta');
+      toggle.innerHTML='<span class="account-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span><span>Mi cuenta</span><svg class="account-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>';
+      const panel=document.createElement('div');panel.className='account-panel';
+      const identity=document.createElement('div');identity.className='account-identity';
+      const greeting=document.createElement('strong');greeting.textContent='Hola, '+(user.name?.trim().split(/\s+/)[0]||'viajero');
+      const email=document.createElement('span');email.textContent=user.email||'';
+      identity.append(greeting,email);
+      const nav=document.createElement('nav');nav.setAttribute('aria-label','Opciones de mi cuenta');
+      const paths={profile:'<circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/>',trip:'<rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V4h6v3M8 11v6m8-6v6"/>',cart:'<path d="M3 3h2l3 12h10l3-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/>'};
+      for(const [label,href,icon]of [['Mi perfil','servicios.html?seccion=perfil','profile'],['Mi viaje','servicios.html?seccion=mi-viaje','trip'],['Mi carrito','tienda.html?carrito=1','cart']]){
+        const link=document.createElement('a');link.href=href;link.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">'+paths[icon]+'</svg><span>'+label+'</span>';nav.append(link);
+      }
       const logout=document.createElement('button');logout.type='button';logout.className='account-link auth-logout';logout.textContent='Cerrar sesión';
       const status=document.createElement('span');status.className='auth-header-status';status.setAttribute('role','status');
       logout.addEventListener('click',async()=>{
@@ -27,9 +40,36 @@
         try{await window.RumboStorage?.flush?.();await request('logout');changed();location.replace('index.html');}
         catch(e){status.textContent=e.name==='TimeoutError'?'La conexión tardó demasiado. Inténtalo de nuevo.':e.message;logout.disabled=false;}
       });
-      accounts.replaceChildren(name,logout,status);
+      panel.append(identity,nav,logout,status);menu.append(toggle,panel);
+      document.addEventListener('click',e=>{if(!menu.contains(e.target))menu.open=false;});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.open){menu.open=false;toggle.focus();}});
+      accounts.classList.add('is-authenticated');accounts.replaceChildren(menu);
     }
     render();
+    // Vista de demostración: nunca crea cookies ni autoriza operaciones del servidor.
+    let demoProvider=null;
+    try{demoProvider=sessionStorage.getItem('rumbo.socialDemo');}catch{}
+    if(!user&&['Google','Microsoft'].includes(demoProvider)){
+      const banner=document.createElement('div');banner.className='auth-demo-banner';banner.setAttribute('role','status');
+      const message=document.createElement('span');message.textContent='Modo demostración · Cuenta de ejemplo de '+demoProvider+'. No has iniciado una sesión real.';
+      const exit=document.createElement('button');exit.type='button';exit.textContent='Salir de la demo';
+      exit.addEventListener('click',()=>{try{sessionStorage.removeItem('rumbo.socialDemo');}catch{}location.reload();});
+      banner.append(message,exit);document.querySelector('.site-header')?.after(banner);
+      if(accounts){const label=document.createElement('span');label.className='auth-user-name';label.textContent='Viajero de ejemplo · Demo';accounts.replaceChildren(label);}
+    }
+    document.querySelectorAll('.auth-provider').forEach(button=>{
+      button.addEventListener('click',()=>{
+        const provider=button.querySelector('span').textContent;
+        const dialog=document.createElement('dialog');dialog.className='auth-demo-dialog';dialog.setAttribute('aria-labelledby','demo-title');dialog.setAttribute('aria-describedby','demo-description');
+        dialog.innerHTML='<p class="auth-demo-tag">DEMOSTRACIÓN DE RUMBO</p><h2 id="demo-title"></h2><p id="demo-description">Prueba cómo se vería el acceso con una cuenta de ejemplo. No nos conectaremos al proveedor ni solicitaremos tus credenciales.</p><div class="auth-demo-person"><strong>Viajero de ejemplo</strong><span>viajero@example.com</span></div><p class="auth-demo-error" role="status"></p><button type="button" class="button button-primary" data-demo-enter>Explorar como usuario de ejemplo</button><button type="button" class="auth-demo-cancel">Cancelar</button>';
+        dialog.querySelector('h2').textContent='Probar acceso con '+provider;
+        dialog.querySelector('[data-demo-enter]').addEventListener('click',()=>{
+          try{sessionStorage.setItem('rumbo.socialDemo',provider);location.assign('index.html');}catch{dialog.querySelector('.auth-demo-error').textContent='El navegador no permite guardar la demostración en esta pestaña.';}
+        });
+        dialog.querySelector('.auth-demo-cancel').addEventListener('click',()=>dialog.close());
+        dialog.addEventListener('close',()=>{dialog.remove();button.focus();});document.body.append(dialog);dialog.showModal();
+      });
+    });
     if(form){
       if(user){location.replace('index.html');return;}
       const register=form.dataset.mode==='register';
@@ -54,5 +94,7 @@
       try{const response=await fetch('/api/auth/me');if(!response.ok)return;const data=await response.json();if((data.user?.id||null)!==(user?.id||null)){changed();location.reload();}}catch{}
     });
   }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  // Deferred scripts run while readyState is "interactive". Wait until common.js
+  // has built the header before replacing its guest links with the current user.
+  if(document.readyState!=='complete')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

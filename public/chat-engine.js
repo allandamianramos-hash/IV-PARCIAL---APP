@@ -123,11 +123,7 @@
       }
       state.active = false; state.topic = ""; state.destination = choices[0].id;
       plan.destination = choices[0].id;
-<<<<<<< HEAD:chat-engine.js
-      return answer(`¡Ya tenemos rumbo! ${choices[0].name} encaja en tu presupuesto.\n${choices.map(t => `• ${t.name}: ${money(t.price)} por persona × ${plan.people} = ${money(t.price * plan.people)} de base para el grupo.`).join("\n")}\n${!matching.length || (state.wanted && plan.style !== "all" && choices[0].style !== plan.style) ? "Ten en cuenta que esta opción es de otro estilo al que indicaste. " : ""}Ya tienes una idea para empezar. Elige tus servicios y consúltalos juntos en Mi viaje. Podrás descargar el resumen al finalizar tu plan.`, ["Ver hoteles", "Ver vuelos", `Itinerario de ${choices[0].name}`, "Qué llevar"], [{ label: "Elegir mis servicios", href: "#servicios" }], true);
-=======
       return answer(`${choices[0].name} encaja en tu presupuesto.\n${choices.map(t => `• ${t.name}: ${money(t.price)} por persona × ${plan.people} = ${money(t.price * plan.people)} de base para el grupo.`).join("\n")}\n${!matching.length || (state.wanted && plan.style !== "all" && choices[0].style !== plan.style) ? "Ten en cuenta que esta opción es de otro estilo al que indicaste. " : ""}Ya tienes una idea para empezar. Elige tus servicios y consúltalos juntos en Mi viaje. Podrás descargar el resumen al finalizar tu plan.`, ["Ver hoteles", "Ver vuelos", `Itinerario de ${choices[0].name}`, "Qué llevar"], [{ label: "Elegir mis servicios", href: "#servicios" }], true);
->>>>>>> f45cbf652893ecc1ab7882dac08dcdca4d9426d3:public/chat-engine.js
     }
     if (trip && mentioned.length) return answer(`${trip.name}: ${trip.description}\n${trip.tip || ""}\n¿Te imaginas ahí? Podemos explorar dónde dormir, qué hacer o preparar un plan.`, [`Hoteles en ${trip.name}`, `Itinerario de ${trip.name}`, `Quiero un pase para ${trip.name}`], [link("Explorar destino")]);
     if (/destino|opciones|donde|barato|economico/.test(q)) return answer("Tenemos seis rumbos para imaginar:\n" + trips.map(t => `• ${t.name}: ${t.tag || t.style}.`).join("\n") + "\nEn el orientador de destinos, Copán Ruinas tiene la base más baja: L 4,500 por persona. ¿Lo comparamos con tus gustos y presupuesto?", ["Planificar mi viaje", "Comparar destinos", "Hoteles en La Ceiba"]);

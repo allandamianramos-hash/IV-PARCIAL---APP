@@ -1,13 +1,11 @@
 param([switch]$Open)
 . "$PSScriptRoot\php-runtime.ps1"
 Assert-RumboDriver
-& $rumboPhp -d "extension=$rumboDll" (Join-Path $rumboRoot 'backend\php\install.php') check
-if ($LASTEXITCODE -ne 0) { throw 'No hay conexion SQL. Ejecuta CONFIGURAR-PHP.cmd.' }
 New-Item -ItemType Directory -Path (Join-Path $rumboRoot '.runtime') -Force | Out-Null
 # El chat es auxiliar: una caida de Node no bloquea PHP ni SQL Server.
 try { & (Join-Path $rumboRoot 'rumbo-background.ps1') }
 catch { Write-Warning 'El asistente Node no inicio. PHP y SQL Server pueden seguir funcionando.' }
-$rumboUrl = 'http://localhost:8000'
+$rumboUrl = 'http://127.0.0.1:5500'
 function Test-RumboPhp {
     try { return (Invoke-RestMethod 'http://127.0.0.1:8000/api/health' -TimeoutSec 3).backend -eq 'php' } catch { return $false }
 }
@@ -22,8 +20,19 @@ if (-not (Test-RumboPhp)) {
 }
 $rumboPage = Invoke-WebRequest -UseBasicParsing 'http://127.0.0.1:8000/index.html' -TimeoutSec 15
 $rumboMatch = [regex]::Match($rumboPage.Content, 'id="rumbo-bootstrap" type="application/json">(.*?)</script>')
-if (-not $rumboMatch.Success -or -not ($rumboMatch.Groups[1].Value | ConvertFrom-Json).connected) {
-    throw 'La web no confirma conexion SQL. Ejecuta CONFIGURAR-PHP.cmd y revisa .runtime/php-errors.log.'
+$rumboConnected = $rumboMatch.Success -and ($rumboMatch.Groups[1].Value | ConvertFrom-Json).connected
+if (-not $rumboConnected) {
+    Write-Warning 'RUMBO | El sitio esta disponible, pero no hay conexion a la base de datos. Tus selecciones se conservan en este navegador.'
+    if ($rumboMatch.Success -and ($rumboMatch.Groups[1].Value | ConvertFrom-Json).reason -eq 'firewall') {
+        Write-Warning 'RUMBO | Azure bloqueo la IP de esta conexion. Autoriza la IP publica actual en las reglas de red de SQL Server y vuelve a conectar desde el sitio.'
+    }
 }
-if ($Open) { Start-Process explorer.exe -ArgumentList $rumboUrl -WindowStyle Hidden }
-Write-Output "PHP y SQL Server disponibles: $rumboUrl"
+if ($Open) {
+    try {
+        $rumboLive = Invoke-RestMethod "$rumboUrl/api/health" -TimeoutSec 2
+        if ($rumboLive.backend -eq 'php') { Start-Process explorer.exe -ArgumentList $rumboUrl -WindowStyle Hidden }
+    } catch { }
+}
+Write-Output 'RUMBO | PHP listo en segundo plano. Abre el sitio con Go Live en Visual Studio Code.'
+Write-Output "RUMBO | Direccion de Live Server: $rumboUrl"
+if ($rumboConnected) { Write-Output 'RUMBO | Base de datos conectada.' }

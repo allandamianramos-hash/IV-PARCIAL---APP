@@ -11,10 +11,10 @@ test('SQL Server: catálogo, aislamiento, guardado, conflictos y eliminaciones',
   const page=async()=>{const res=await fetch(origin);assert.equal(res.status,200);const html=await res.text();const boot=JSON.parse(html.match(/id="rumbo-bootstrap" type="application\/json">(.*?)<\/script>/s)[1]);assert.equal(boot.connected,true);visitors.push(boot.visitor);return {cookie:res.headers.get('set-cookie').split(';')[0],boot};};
   try{
     const a=await page(),b=await page();assert.notEqual(a.cookie,b.cookie);
-    assert.equal(a.boot.catalog.products.length,100);assert.equal(a.boot.catalog.destinations.length,14);
+    assert.equal(a.boot.catalog.products.length,100);assert.equal(a.boot.catalog.destinations.length,18);
     assert.equal(typeof a.boot.catalog.products[0].price,'number');
     assert.equal(typeof a.boot.catalog.destinations[0].hotels[0].rate,'number');
-    assert.equal(a.boot.catalog.destinations.reduce((n,d)=>n+d.hotels.length,0),70);
+    assert.equal(a.boot.catalog.destinations.reduce((n,d)=>n+d.hotels.length,0),90);
     const values={
       'rumbo.profile.v1':{alias:'Prueba SQL ñ <script>',preference:'cultura'},
       'rumbo.store.cart.v2':[{id:1,quantity:2,options:{}}],

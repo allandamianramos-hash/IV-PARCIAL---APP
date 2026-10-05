@@ -1,53 +1,56 @@
-# Rumbo
+# Rumbo — PHP y SQL Server
 
-Sitio de viajes en HTML, CSS y JavaScript. Los catálogos y precios son de demostración; todavía no hay base de datos ni pagos.
+**Conexión actual: Azure SQL.** Consulta [AZURE-CONEXION.md](docs/AZURE-CONEXION.md) para abrir la aplicación, conectar SSMS y verificar el guardado. El manual de Tailscale se conserva como referencia de la configuración anterior.
 
-## Abrir la copia correcta
+El sitio guarda cuentas, perfiles y selecciones mediante PHP/PDO_SQLSRV en `rumbo-2026.database.windows.net`, base `BD_VIAJES`, con autenticación SQL y conexión cifrada. Las credenciales están en el `.env` privado.
 
-Desde esta carpeta, ejecutar `npm start` o abrir `INICIAR-RUMBO.cmd`. Visitar `http://localhost:3000`. No requiere instalar paquetes; utiliza Node 22 o posterior. El chat requiere LIGHTNING_API_KEY en el archivo local .env; consulta LEEME-RUMBITO.md.
+## Abrir el proyecto
 
-Para dejar Rumbito disponible entre sesiones de Windows, ejecutar una vez `ACTIVAR-RUMBO-AUTOMATICO.cmd`. Inicia el servidor en segundo plano al entrar a Windows y lo recupera si su proceso se detiene. `INICIAR-RUMBO.cmd` también funciona sin mantener abierta una terminal. El acceso automático depende de que esta carpeta permanezca en su ubicación; si la mueves, vuelve a activarlo.
+**Omar: conserva tu carpeta actual de GitHub.** Descarga los cambios con Pull e instala el paquete privado `ACCESO-OMAR-GITHUB.zip` sobre esa misma carpeta. No uses el antiguo ZIP completo como otra copia de trabajo. Lee [los pasos para Omar y el trabajo compartido](docs/OMAR-EMPEZAR.txt). El instalador conserva Git y el código; `.env`, `.rumbo-equipo.json` y `.runtime` quedan excluidos del repositorio. Una vez instalado, `INICIAR-RUMBO.cmd` o Ctrl+Shift+B abre su aplicación en `http://127.0.0.1:3010`. Allan conserva su arranque PHP habitual en 8000.
 
-Editar los archivos de esta misma carpeta y recargar el navegador. El servidor sirve los cambios directamente y desactiva la caché. Si se abre otra copia del proyecto o un sitio publicado, no se verán necesariamente los cambios locales. Un cambio de un compañero debe estar guardado en un commit y subido a la rama compartida para poder descargarlo.
+1. Ejecuta **INICIAR-RUMBO.cmd**.
+2. Abre **http://localhost:8000**.
+3. Regístrate, guarda elecciones y vuelve a iniciar sesión para recuperarlas.
 
-## Dónde está cada parte
+Para trabajar juntos con una base alojada, lee [el manual para el equipo](docs/MANUAL-PARA-EL-EQUIPO.html). También está disponible en [Markdown](docs/MANUAL-PARA-EL-EQUIPO.md). Incluye Azure SQL, usuarios individuales, configuración y pruebas entre compañeros.
 
-- **Inicio y Rumbito:** `index.html`, `style.css` y `script.js`. `chat-api.mjs` conecta GPT mediante Lightning AI y `chat-engine.js` conserva el planificador; `LEEME-RUMBITO.md` explica su funcionamiento.
-- **Destinos, vuelos y hoteles:** `viajes.html`, `viajes.css` y `viajes.js`. Una sola página usa `pantalla=destinos`, `detalle-destino`, `vuelos` o `hoteles`. El catálogo de `viajes.js` también alimenta el inicio.
-- **Tienda:** `tienda.html`, `tienda.css` y `tienda.js`. Incluye variantes, ajustes de precio, favoritos y carrito. `tienda.js` también proporciona los productos al asistente.
-- **Otros servicios:** `servicios.html`, `servicios.css` y `servicios.js`. El parámetro `seccion` abre traslados, seguros, guías, Mi viaje, perfil y ayuda.
-- **Navegación común:** `common.js` y `common.css`. Se utilizan en las cuatro páginas.
-- **Fotografías:** `imagenes/` para productos e `imagenes-viajes/` para destinos y alojamientos. `evidencias/` contiene capturas, no páginas del sitio.
-- **Servidor y validación:** `server.mjs`, `package.json` y los archivos `*.test.mjs`. Si se añade un recurso público, actualizar la lista permitida de `server.mjs`.
+**Live Server ya está configurado para pasar todo el sitio a PHP.** Abre esta carpeta principal en VS Code, inicia PHP con Ctrl+Shift+B y reinicia Go Live. Usa http://127.0.0.1:5500/index.html. La tarea puede arrancar al abrir la carpeta si autorizas las tareas automáticas de este proyecto. Los archivos PHP necesitan PHP y un servidor SQL funcionando; compartir esos archivos no comparte los datos.
 
-Se mantienen las rutas actuales para no romper enlaces. No hace falta crear un HTML distinto para cada vista de viajes o servicios. En el inicio, `viajes.js` debe cargarse antes de `script.js`.
+Si aparece guardado local, ejecuta **COMPROBAR-CONEXION.cmd**. Para trabajar sin Live Server, usa **INICIAR-RUMBO.cmd** y http://127.0.0.1:8000. Las páginas estáticas abiertas desde Live Server se redirigen a PHP. Usa siempre el mismo hostname para conservar la misma sesión del navegador.
 
-## Compartir cambios sin mezclar versiones
+## Carpetas
 
-1. Revisar `git status` y guardar los cambios propios en un commit antes de integrar cambios del equipo.
-2. Ejecutar `git fetch origin` y comparar la rama local con `origin/main`.
-3. Si solo faltan commits remotos, ejecutar `git pull --ff-only`. Si Git informa que las ramas divergieron, integrar y resolver cada conflicto; no pegar dos versiones completas dentro de un archivo.
-4. Ejecutar `npm test` y probar la página modificada en el navegador.
-5. Revisar el diff, guardar la integración y subirla con `git push` cuando corresponda.
+- `public/`: HTML, CSS, JavaScript del navegador e imágenes.
+- `backend/php/`: conexión PDO, cuentas, sesiones, catálogo, guardado e instalación.
+- `backend/node/`: Rumbito y API Node compatible con las cuentas existentes.
+- `database/`: instalador SQL, migraciones numeradas y herramientas de exportación.
+- `scripts/`: preparación de PHP y arranque.
+- `tests/`: pruebas; `tests/integration/` usa SQL Server real.
+- `docs/`: instrucciones y documentación.
+- `evidencias/`: capturas de comprobación.
+- `.runtime/`: controlador y registros locales, excluidos de Git.
 
-Quitar las líneas `<<<<<<<`, `=======` y `>>>>>>>` por sí solo no resuelve un conflicto: también hay que reconciliar las dos versiones del código. Cada HTML debe conservar un único documento y cada script cargarse una sola vez.
+La raíz conserva los accesos `.cmd`, los puntos de entrada `router.php` y `server.mjs`, configuración y dependencias. `.env` contiene la configuración privada y no se comparte. `rumbo-background.ps1` mantiene la compatibilidad con accesos automáticos anteriores.
 
-## Validación
+## Funcionamiento
 
-`npm test` comprueba el servidor, el asistente y la integridad del proyecto: sintaxis de todos los scripts, conflictos de Git, documentos duplicados, identificadores repetidos, recursos locales ausentes y disponibilidad del catálogo compartido.
+Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hotel, servicios, preparativos y resumen de compra de demostración. Hay 100 productos, 18 destinos y 90 hoteles.
 
-También conviene probar colores/tamaños y totales de la tienda, carrito desde el inicio, selección de vuelo/hotel y guardado de servicios. Las pruebas automáticas no sustituyen la revisión visual.
+Si recibiste tu paquete personal del equipo, extraelo y abre `CONECTAR-EQUIPO.cmd`. Consulta [Acceso del equipo](docs/ACCESO-EQUIPO.md) para los requisitos y la autorización de la IP de tu casa. Para consultar las tablas en SSMS, abre `VER-BD-AZURE.cmd`.
 
-## Reparación de la integración
+PHP sirve el sitio en **8000**. Node conserva Rumbito en **3000**; el lanzador inicia ambos. `npm start` inicia la versión Node alternativa. El chat con IA necesita una clave propia en `.env`; sin ella se conserva el planificador local. `ACTIVAR-RUMBO-AUTOMATICO.cmd` mantiene el arranque anterior de Node; para entrar al sitio PHP utiliza `INICIAR-RUMBO.cmd`.
 
-La fusión `52bd6ad` mezcló el trabajo de tienda de `13dfe7a` con las mejoras generales de `f22c22b`. El HTML contenía dos documentos y el JavaScript quedó cortado por un bloque de la versión anterior. La versión actual conserva las variantes y el diseño de la tienda nueva, junto con la navegación común y el acceso al carrito desde el inicio. Los créditos exactos de las fotografías se mantienen porque los archivos de imagen no cambiaron.
+Las cuentas y el almacenamiento son reales. Los pagos, billetes y reservas siguen siendo de demostración. El servidor integrado de PHP es para desarrollo local.
 
-## Recorrido organizado
+## Validación y cambios
 
-La sección «Arma tu viaje» del inicio es el punto de entrada. Las cabeceras llevan a las secciones del inicio. Cada servicio comparte siete pasos: vuelo, hospedaje, transporte, seguro, experiencias, tienda y resumen/pago. Transporte, seguro, experiencias y productos son opcionales; el vuelo también se puede omitir expresamente.
+```powershell
+npm test
+npm run db:test
+# Con INICIAR-RUMBO.cmd ejecutado:
+npm run php:test
+```
 
-`journey.js` reúne las selecciones en «Mi viaje», calcula variantes del carrito y comprueba fechas y viajeros. El botón final completa exclusivamente un pago de demostración; no cobra, no solicita datos bancarios y no genera reservas. El ticket solo aparece tras esa confirmación y deja de ser vigente si se modifica el viaje. Para cobrar de verdad hacen falta servidor de pedidos, proveedores y pasarela de pago.
+Las pruebas de integración crean y eliminan sus propios registros temporales. La prueba PHP comprueba login, persistencia, aislamiento, conflictos, hashes anteriores y bloqueo de archivos privados.
 
-La sección final del inicio es una lista personal de preparativos, guardada en el navegador. Las guías conservan las explicaciones y Rumbito mantiene la orientación.
-
-Pruebas: `npm test`. El recorrido completo, el pago de demostración, la invalidación del ticket, las variantes, el chat y la vista móvil fueron comprobados. En el catálogo actual ampliado a 100 productos faltan 64 archivos de fotografía; la comprobación de recursos informa ese problema. No se sustituyeron por imágenes de otros productos.
+Los cambios de estructura se agregan en nuevas migraciones `database/migrations/004_...sql`. No edites migraciones aplicadas. Ejecuta `npm run db:export` para regenerar el instalador y `CONFIGURAR-PHP.cmd` para aplicarlo. Comparte el código y SQL juntos en Git. **PREPARAR-ENTREGA.cmd** genera un ZIP sin credenciales ni cuentas de usuarios.

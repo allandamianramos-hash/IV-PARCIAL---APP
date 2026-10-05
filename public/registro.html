@@ -5,15 +5,18 @@
   <title>Crear cuenta | Rumbo</title><meta name="description" content="Crea tu cuenta de Rumbo para organizar tus viajes.">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="common.css"><link rel="stylesheet" href="auth.css">
-  <script src="common.js" defer></script>
+  <script src="connection.js" defer></script><script src="common.js" defer></script>
   <script src="database-client.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design.css">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap">
 </head>
-<body class="auth-page">
+<body class="auth-page auth-register">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header"><div class="container header-inner"><a class="logo" href="index.html" aria-label="Rumbo, inicio">rumbo<span aria-hidden="true">↗</span></a><nav class="main-nav" aria-label="Navegación principal"></nav></div></header>
   <main id="contenido" class="auth-main">
-    <aside class="auth-intro" aria-label="Rumbo, tu espacio de viaje"><p class="auth-kicker">TU ESPACIO DE VIAJE</p><div class="auth-emblem"><svg class="auth-orbit" viewBox="0 0 360 360" fill="none" aria-hidden="true"><circle cx="180" cy="180" r="159" stroke="currentColor" stroke-width=".8"/><circle cx="180" cy="180" r="132" stroke="currentColor" stroke-width=".8" stroke-dasharray="2 9"/><path d="M53 277C92 240 250 266 283 124" stroke="currentColor" stroke-dasharray="4 6"/><circle cx="53" cy="277" r="5" fill="currentColor"/><path d="m274 109 22-7-7 22-4-11-11-4Z" fill="#397c80"/></svg><div class="auth-brand"><img src="logo-rumbo.jpg" alt="Rumbo" width="1376" height="768"></div></div><div class="auth-intro-copy"><h2>Tu próximo viaje,<br>bien organizado.</h2><p>Guarda tus elecciones y encuentra<br>todo tu plan en un mismo lugar.</p></div><div class="auth-panel-foot"><span>Destinos</span><span>Hospedajes</span><span>Experiencias</span></div></aside>
-    <section class="auth-card" aria-labelledby="auth-title"><nav class="auth-tabs" aria-label="Acceso a tu cuenta"><a href="iniciar-sesion.html" >Iniciar sesión</a><a href="registro.html" aria-current="page">Registrarse</a></nav><div class="auth-heading"><p class="auth-kicker">EMPIEZA AQUÍ</p><h1 id="auth-title">Crea tu cuenta</h1><p>Completa tus datos para empezar.</p></div>
+    <aside class="auth-intro" aria-label="Rumbo, organiza tu viaje"><a class="auth-brand" href="index.html" aria-label="Rumbo, volver al inicio">rumbo<span aria-hidden="true">↗</span></a><div class="auth-intro-copy"><h2>Todo listo<br>para empezar.</h2><p>Guardá tus destinos y organizá tu próximo viaje.</p></div></aside>
+    <section class="auth-card" aria-labelledby="auth-title"><div class="auth-heading"><h1 id="auth-title">Crear cuenta</h1><p>Crea tu cuenta y reúne tus destinos, hospedajes y experiencias en un solo lugar.</p></div>
       <form id="auth-form" data-mode="register">
         <div class="auth-field"><label for="full-name">Nombre completo</label><input id="full-name" name="name" placeholder="Tu nombre y apellido" autocomplete="name" minlength="2" maxlength="120" required></div>
         <div class="auth-field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" placeholder="nombre@ejemplo.com" autocomplete="email" maxlength="254" required></div>
@@ -21,6 +24,7 @@
         <button class="button button-primary" type="submit">Crear mi cuenta</button>
         <p id="auth-feedback" role="status" aria-live="polite" tabindex="-1"></p>
       </form><p class="auth-session-note">Tu sesión se mantiene durante 30 días.<br>Si compartes este dispositivo, ciérrala al terminar.</p>
+<section class="auth-social" aria-labelledby="social-title"><p id="social-title" class="auth-divider"><span>O continúa con</span></p><div class="auth-social-options"><button type="button" class="auth-provider" aria-describedby="social-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.39-.18-2.05H12v3.88h5.38a4.6 4.6 0 0 1-2 3.02v2.52h3.24c1.9-1.75 2.98-4.33 2.98-7.37Z"/><path fill="#34A853" d="M12 22c2.7 0 4.96-.9 6.62-2.4l-3.24-2.52c-.9.6-2.05.97-3.38.97-2.6 0-4.8-1.76-5.59-4.13H3.07v2.59A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.41 13.92a6 6 0 0 1 0-3.84V7.49H3.07a10 10 0 0 0 0 9.02l3.34-2.59Z"/><path fill="#EA4335" d="M12 5.95c1.47 0 2.79.51 3.83 1.52L18.7 4.6A9.62 9.62 0 0 0 12 2a10 10 0 0 0-8.93 5.49l3.34 2.59A5.99 5.99 0 0 1 12 5.95Z"/></svg><span>Google</span></button><button type="button" class="auth-provider" aria-describedby="social-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#f25022" d="M2 2h9.5v9.5H2z"/><path fill="#7fba00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00a4ef" d="M2 12.5h9.5V22H2z"/><path fill="#ffb900" d="M12.5 12.5H22V22h-9.5z"/></svg><span>Microsoft</span></button></div><p id="social-note" class="auth-social-note">Modo demostración: usa una cuenta de ejemplo, sin conectar con el proveedor.</p></section>
       <p class="auth-switch">¿Ya tienes cuenta? <a href="iniciar-sesion.html">Iniciar sesión</a></p>
       <noscript>Activa JavaScript para crear tu cuenta.</noscript>
     </section>

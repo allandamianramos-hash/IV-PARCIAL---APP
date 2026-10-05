@@ -24,6 +24,7 @@
     /* RUMBITO */
     const panel = $("#help-chat");
     const launcher = $("#chat-launcher");
+    launcher.setAttribute("aria-label", "Rumbito, asistente de viajes");
     const messages = $("#chat-messages");
     const input = $("#chat-input");
     const form = $("#chat-form");
@@ -89,6 +90,28 @@
       launcher.classList.remove("chat-is-open");
       openButtons.forEach(item => item.setAttribute("aria-expanded", "false"));
       opener.focus();
+    }
+
+    // Observe the static hero wrapper so visibility also works without React.
+    const hero = document.querySelector('.home-hero-shell');
+    if (hero) {
+      const syncHeroVisibility = visible => {
+        document.body.classList.toggle('chat-outside-hero', !visible);
+        if (visible && !panel.hidden) {
+          clearTimeout(closeAnimation);
+          if (panel.contains(document.activeElement)) document.activeElement.blur();
+          panel.hidden = true;
+          panel.classList.remove('is-closing');
+          launcher.classList.remove('chat-is-open');
+          openButtons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+        }
+      };
+      const rect = hero.getBoundingClientRect();
+      syncHeroVisibility(rect.bottom > 0 && rect.top < window.innerHeight);
+      const heroObserver = new IntersectionObserver(([entry]) => {
+        syncHeroVisibility(entry.isIntersecting && entry.intersectionRect.height > 0);
+      });
+      heroObserver.observe(hero);
     }
 
     function addMessage(text, user = false) {

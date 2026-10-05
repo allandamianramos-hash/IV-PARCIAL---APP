@@ -14,9 +14,18 @@
   </style>
   <script src="connection.js" defer></script>
   <script src="error.js" defer></script>
+<link rel="stylesheet" href="navigation.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="navigation.js" defer></script>
+<link rel="stylesheet" href="chat.css">
+<script src="viajes.js" defer></script>
+<script src="tienda.js" defer></script>
+<script src="chat-engine.js" defer></script>
+<script src="chat-client.js" defer></script>
+<script src="chat-ui.js" defer></script>
 </head>
 <body>
-  <header><a class="logo" href="index.html" aria-label="Rumbo, inicio">rumbo<span aria-hidden="true">↗</span></a></header>
+  <header id="site-navbar" class="site-header"><div class="header-inner liquid-glass"><a class="logo" href="index.html" aria-label="Rumbo, inicio">rumbo<span aria-hidden="true">↗</span></a><nav class="main-nav" aria-label="Navegación principal"></nav></div></header>
   <main>
     <section aria-labelledby="error-title">
       <span class="eyebrow">Rumbo · <span id="error-label">Error 404</span></span>

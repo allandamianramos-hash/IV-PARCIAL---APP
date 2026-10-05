@@ -101,7 +101,7 @@
       }}catch{}
     });
   }
-  // Deferred scripts run while readyState is "interactive". Wait until common.js
+  // Deferred scripts run while readyState is "interactive". Wait until navigation.js
   // has built the header before replacing its guest links with the current user.
   if(document.readyState!=='complete')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();

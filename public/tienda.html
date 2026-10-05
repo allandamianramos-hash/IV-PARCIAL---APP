@@ -18,6 +18,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="navigation.css">
+<script src="navigation.js" defer></script>
 </head>
 <body class="rumbo-services">
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -28,10 +30,10 @@
     <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
   </svg>
   <a class="skip-link" href="#catalogo">Saltar al catálogo</a>
-  <header class="site-header"><div class="container header-inner">
+  <header id="site-navbar" class="site-header"><div class="container header-inner liquid-glass">
     <a class="logo" href="index.html" aria-label="Rumbo, volver al inicio">rumbo<span aria-hidden="true">↗</span></a>
     <nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="viajes.html">Destinos</a><a href="servicios.html">Servicios</a></nav>
-    <div class="header-actions"><button id="favorites-toggle" class="icon-button" type="button" aria-label="Mostrar favoritos" aria-pressed="false" title="Mis favoritos"><svg class="icon" aria-hidden="true"><use href="#heart"/></svg><span id="favorites-count" class="small-count" hidden>0</span></button><button id="open-cart-btn" class="cart-button" type="button" aria-haspopup="dialog" aria-controls="cart-modal"><svg class="icon" aria-hidden="true"><use href="#bag"/></svg><span>Mi carrito</span><span id="cart-count">0</span></button></div>
+
   </div></header>
   <main>
     <section class="container store-hero catalog-hero" aria-labelledby="store-title">
@@ -39,6 +41,7 @@
       <div class="hero-photo"><img src="imagenes/tienda-portada-equipaje.jpg" alt="Maleta abierta con ropa, cámara y accesorios preparados para viajar" width="2200" height="3322" fetchpriority="high"></div>
     </section>
     <section class="container catalog-section" id="catalogo" aria-labelledby="catalog-title"><div class="section-heading"><div><h2 id="catalog-title">Catálogo de productos</h2></div></div>
+    <div class="store-utilities"><button id="favorites-toggle" class="icon-button" type="button" aria-label="Mostrar favoritos" aria-pressed="false" title="Mis favoritos"><svg class="icon" aria-hidden="true"><use href="#heart"/></svg><span id="favorites-count" class="small-count" hidden>0</span></button><button id="open-cart-btn" class="cart-button" type="button" aria-haspopup="dialog" aria-controls="cart-modal"><svg class="icon" aria-hidden="true"><use href="#bag"/></svg><span>Mi carrito</span><span id="cart-count">0</span></button></div>
       <div class="catalog-tools"><div class="search-box"><svg class="icon" aria-hidden="true"><use href="#search"/></svg><label class="sr-only" for="product-search">Buscar productos</label><input id="product-search" type="search" placeholder="¿Qué te falta para viajar?" maxlength="100" autocomplete="off"></div><div class="sort-field"><label for="product-sort">Ordenar por</label><select id="product-sort"><option value="featured">Orden del catálogo</option><option value="price-asc">Menor precio</option><option value="price-desc">Mayor precio</option><option value="name">Nombre, A–Z</option></select></div></div>
       <div class="filter-row"><div class="filters" role="group" aria-label="Categorías de productos"><button type="button" class="filter-btn active" data-category="Todos" aria-pressed="true">Todos <span>100</span></button><button type="button" class="filter-btn" data-category="Equipaje" aria-pressed="false">Equipaje</button><button type="button" class="filter-btn" data-category="Tecnología" aria-pressed="false">Tecnología</button><button type="button" class="filter-btn" data-category="Confort" aria-pressed="false">Confort</button><button type="button" class="filter-btn" data-category="Seguridad" aria-pressed="false">Seguridad</button><button type="button" class="filter-btn" data-category="Cuidado" aria-pressed="false">Cuidado</button></div><button class="text-button" id="reset-filters" type="button" hidden>Restablecer filtros</button></div>
       <div class="results-row"><p id="products-result" role="status" aria-live="polite"></p><span id="favorites-label" hidden>♡ Tus favoritos</span></div><div id="products-grid" class="products-grid"></div><div id="empty-products" class="empty-state" hidden><span class="empty-symbol" aria-hidden="true">⌕</span><h3>No encontramos esa combinación.</h3><p>Prueba otra búsqueda o guarda algún producto como favorito.</p><button id="empty-reset" class="button button-primary" type="button">Ver todos los productos</button></div><noscript><p>Activa JavaScript para explorar los productos y utilizar el carrito.</p></noscript>

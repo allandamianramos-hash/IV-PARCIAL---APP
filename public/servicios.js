@@ -33,7 +33,7 @@
   };
   const hero = (title, intro, eyebrow, icon='↗', stamp='') => {
     const [src,alt]=servicePhotos[section]||['imagenes-viajes/hero-cancun-delfines.jpg','Playa Delfines en Cancún'];
-    return `<section class="service-hero catalog-hero"><div><h1>${title}</h1><p>${intro}</p>${section==='servicios'?'<a class="button button-primary service-explore" href="#opciones-servicios">Elegir un servicio <span aria-hidden="true">↘</span></a>':configs[section]?'<a class="button button-primary" href="#service-search">'+(section==='traslados'?'Buscar traslado':'Comparar planes')+' ↓</a>':''}</div><figure class="service-photo"><img src="${src}" alt="${alt}" width="720" height="540"></figure></section>`;
+    return `<section class="service-hero catalog-hero"><div><h1>${title}</h1><p>${intro}</p>${section==='servicios'?'<a class="button button-primary service-explore" href="#opciones-servicios">Elegir un servicio <span aria-hidden="true">↓</span></a>':configs[section]?'<a class="button button-primary" href="#service-search">'+(section==='traslados'?'Buscar traslado':'Comparar planes')+' ↓</a>':''}</div><figure class="service-photo"><img src="${src}" alt="${alt}" width="720" height="540"></figure></section>`;
   };
   const tabs = () => `<nav class="service-tabs" aria-label="Servicios de viaje"><a href="viajes.html?pantalla=vuelos">Vuelos</a><a href="viajes.html?pantalla=hoteles">Hoteles</a>${Object.entries(configs).map(([id,c]) => `<a href="servicios.html?seccion=${id}" ${section===id?'aria-current="page"':''}>${c.name}</a>`).join('')}</nav>`;
   const input = (id,label,type,value,extra='') => `<div class="service-field"><label for="${id}">${label}</label><input id="${id}" name="${id}" type="${type}" value="${value}" ${extra} required></div>`;

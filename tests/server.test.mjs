@@ -6,7 +6,7 @@ test("sirve el sitio y bloquea secretos y módulos privados", async () => {
   await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
   try {
     const url = `http://127.0.0.1:${server.address().port}`;
-    for (const [path, contentType] of [['/hero.js', 'text/javascript; charset=utf-8'], ['/hero.css', 'text/css; charset=utf-8']]) {
+    for (const [path, contentType] of [['/hero.js', 'text/javascript; charset=utf-8'], ['/hero.css', 'text/css; charset=utf-8'], ['/navigation.js', 'text/javascript; charset=utf-8'], ['/navigation.css', 'text/css; charset=utf-8']]) {
       for (const method of ['GET', 'HEAD']) {
         const response = await fetch(url + path, { method });
         assert.equal(response.status, 200, `${method} ${path}`);

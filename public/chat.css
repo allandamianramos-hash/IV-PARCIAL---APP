@@ -73,3 +73,16 @@ body:has(dialog[open]) .chat-launcher,body:has(dialog[open]) .chat-panel { visib
   .rumbito-face { transform: none; transition: none; }
   .chat-launcher,.chat-panel button { transition: none; }
 }
+
+/* Un único acceso discreto al asistente, en todas las páginas. */
+body .chat-launcher {
+ width:64px; height:64px; min-height:64px; padding:6px;
+ justify-content:center; gap:0; border-radius:50%;
+ background:#FCFBF8; border:1px solid #DDE3D9;
+ box-shadow:0 4px 16px rgba(23,48,43,.08);
+}
+body .chat-launcher:hover {background:#F1F4EE;border-color:#B7C7BC;transform:none;box-shadow:0 4px 16px rgba(23,48,43,.1);}
+body .chat-launcher .rumbito-avatar {width:50px;height:50px;flex:0 0 50px;animation:none!important;}
+body .chat-launcher> :not(.rumbito-avatar),body .chat-launcher::after {display:none;}
+/* Oculto desde el primer render, incluso antes de iniciar React. */
+body:has(.home-hero-shell):not(.chat-outside-hero) :is(.chat-launcher,.chat-panel) {visibility:hidden;pointer-events:none;}

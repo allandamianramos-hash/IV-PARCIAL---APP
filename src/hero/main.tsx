@@ -80,13 +80,11 @@ function Hero() {
     document.addEventListener('visibilitychange', update);
     const observer = new IntersectionObserver(([entry]) => {
       setInView(entry.isIntersecting);
-      document.body.classList.toggle('hero-in-view', entry.isIntersecting);
     });
     if (section.current) observer.observe(section.current);
     return () => {
       observer.disconnect();
       document.removeEventListener('visibilitychange', update);
-      document.body.classList.remove('hero-in-view');
     };
   }, []);
 
@@ -180,13 +178,7 @@ function Hero() {
 function mount() {
   const root = document.getElementById('home-hero-root');
   if (root) createRoot(root).render(<Hero />);
-  // The shared header stays outside React so the existing account/session code remains its owner.
-  const menu = document.querySelector<HTMLDetailsElement>('.hero-mobile-menu');
-  menu?.addEventListener('click', event => { if ((event.target as HTMLElement).closest('a')) menu.open = false; });
-  document.addEventListener('click', event => { if (menu?.open && !menu.contains(event.target as Node)) menu.open = false; });
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && menu?.open) { menu.open = false; menu.querySelector('summary')?.focus(); }
-  });
+
 }
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, { once: true });
 else mount();

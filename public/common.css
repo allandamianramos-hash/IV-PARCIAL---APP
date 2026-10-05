@@ -226,11 +226,3 @@ body, body :is(h1,h2,h3,h4,p,dd,dt,li,label,input,select,textarea,button,small,f
 body :is(h1,h2,h3,h4):not(.logo) { font-weight:600; letter-spacing:-.02em; }
 body .eyebrow { letter-spacing:.04em; }
 body .guide-hero h1 { letter-spacing:-.035em; }
-
-/* En móvil, el asistente no tapa los controles de selección de guías. */
-@media(max-width:560px) {
- body:has(.guides-page) .chat-launcher { width:54px; min-height:54px; height:54px; padding:5px; border-radius:50%; justify-content:center; gap:0; }
- body:has(.guides-page) .chat-launcher .rumbito-avatar { width:42px; height:44px; flex-basis:42px; }
- body:has(.guides-page) .chat-launcher>span:last-of-type:not(.rumbito-avatar) { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
- body:has(.guides-page) .chat-launcher::after { display:none; }
-}

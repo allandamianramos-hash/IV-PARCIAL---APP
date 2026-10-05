@@ -84,8 +84,8 @@ html:has(.home-hero-shell) { scroll-padding-top: 104px; }
 /* Keep the existing navigation and authenticated account menu working. */
 body #home-navbar.site-header { color: #fff; position: fixed; inset: 0 0 auto; z-index: 80; padding: 20px 24px 0; border: 0; background: transparent; box-shadow: none; pointer-events: none; }
 body #home-navbar .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1120px; min-height: 62px; margin-inline: auto; gap: 48px; padding: 8px 12px 8px 28px; flex-wrap: nowrap; border-radius: 999px; overflow: visible; background: rgba(10,19,17,.94); pointer-events: auto; }
-body #home-navbar .logo, body #home-navbar .logo>span { color: var(--verde); }
-body #home-navbar .logo { font-size: 30px; font-weight: 600; letter-spacing: -1.5px; flex-shrink: 0; }
+/* Share the original wordmark from common.css with the rest of the site. */
+body #home-navbar .logo { flex-shrink: 0; }
 body #home-navbar .main-nav { display: flex; gap: 32px; width: auto; padding: 0; order: initial; background: transparent; border: 0; border-radius: 0; backdrop-filter: none; flex-wrap: nowrap; }
 body #home-navbar .main-nav a { padding: 8px 0; border: 0; border-radius: 0; font-size: 14px; font-weight: 400; color: #fff; background: transparent; }
 body #home-navbar .main-nav a[aria-current=page] { box-shadow: inset 0 -1px #fff; }
@@ -122,7 +122,6 @@ body.hero-in-view .chat-launcher>span:not(:first-child),body.hero-in-view .chat-
   .hero-photo[data-place=paris] { object-position: 49% center; }
   body #home-navbar.site-header { padding: 16px 16px 0; }
   body #home-navbar .header-inner { min-height: 58px; gap: 16px; padding: 8px 10px 8px 20px; }
-  body #home-navbar .logo { font-size: 27px; }
   body #home-navbar .main-nav, body #home-navbar .header-trip, body #home-navbar .header-actions .login-button { display: none!important; }
   body #home-navbar .header-actions .register-button { padding: 8px 12px!important; min-height: 36px; font-size: 12px; }
   .hero-mobile-menu { display: block; margin-left: auto; }

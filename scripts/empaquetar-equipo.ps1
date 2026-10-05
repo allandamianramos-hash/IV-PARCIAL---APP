@@ -4,8 +4,8 @@ Add-Type -AssemblyName System.IO.Compression.FileSystem
 $rumboRoot = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
 $rumboOutput = Join-Path $rumboRoot '.runtime\equipo'
 $rumboAccess = Get-Content -LiteralPath (Join-Path $rumboOutput 'accesos.json') -Raw | ConvertFrom-Json
-$rumboDirectories = @('public','backend','database','scripts','tests','docs','.vscode')
-$rumboFiles = @('README.md','package.json','package-lock.json','.env.example','.gitignore','router.php','server.mjs','rumbo-background.ps1','INICIAR-RUMBO.cmd','CONFIGURAR-PHP.cmd','COMPROBAR-CONEXION.cmd','CONECTAR-EQUIPO.cmd','VER-BD-AZURE.cmd') | ForEach-Object { Get-Item -LiteralPath (Join-Path $rumboRoot $_) }
+$rumboDirectories = @('public','src','backend','database','scripts','tests','docs','.vscode')
+$rumboFiles = @('README.md','package.json','package-lock.json','vite.config.ts','tsconfig.json','tailwind.config.cjs','postcss.config.cjs','.env.example','.gitignore','router.php','server.mjs','rumbo-background.ps1','INICIAR-RUMBO.cmd','CONFIGURAR-PHP.cmd','COMPROBAR-CONEXION.cmd','CONECTAR-EQUIPO.cmd','VER-BD-AZURE.cmd') | ForEach-Object { Get-Item -LiteralPath (Join-Path $rumboRoot $_) }
 foreach ($rumboDirectory in $rumboDirectories) { $rumboFiles += Get-ChildItem -LiteralPath (Join-Path $rumboRoot $rumboDirectory) -Recurse -File }
 # Explicit allowlist: never package .env, .runtime, backups, administrator credentials or node_modules.
 $rumboBase = Join-Path $rumboOutput 'proyecto-sin-claves.zip'

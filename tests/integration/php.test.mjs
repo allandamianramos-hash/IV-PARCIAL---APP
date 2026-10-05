@@ -35,7 +35,7 @@ test('PHP + SQL Server: registro, login, persistencia, aislamiento y compatibili
   assert.equal((await (await request('/api/auth/me',{cookie})).json()).user,null);
   r=await request('/api/auth/login',{method:'POST',body:{email,password:'incorrecta'}});assert.equal(r.status,401);
   r=await request('/api/auth/login',{method:'POST',body:{email,password}});assert.equal(r.status,200);const newCookie=session(r);assert.notEqual(newCookie,cookie);
-  const saved=await (await request('/api/state',{cookie:newCookie})).json();assert.deepEqual(saved.state[key].value,value);
+  const saved=await (await request('/api/state',{cookie:newCookie})).json();assert.deepEqual(saved.state[key].value,value);assert.equal(saved.visitor,signed.boot.visitor);
   // Verify every state key against the PHP validator and actual SQL persistence.
   const values={
    'rumbo.store.cart.v2':[{id:1,quantity:2,options:{}}], 'rumbo.store.favorites.v2':[1,2],

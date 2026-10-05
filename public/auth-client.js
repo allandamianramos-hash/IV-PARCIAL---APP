@@ -10,9 +10,13 @@
       try{sessionKeys.forEach(k=>localStorage.removeItem(k));localStorage.setItem('rumbo.auth.changed',String(Date.now()));}catch{}
     }
     async function request(path,data){
-      await window.RumboStorage?.flush?.();
-      if(window.RumboStorage?.hasPending?.())throw Error('Hay cambios pendientes de guardar. Usa Reintentar antes de cambiar de cuenta.');
-      const response=await fetch('/api/auth/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data||{}),signal:AbortSignal.timeout(15000)});
+      if(await window.RumboStorage?.flush?.()===false)throw Error('No pudimos guardar tus cambios. Reintenta la conexión para continuar.');
+      if(window.RumboDatabase?.connected===false){window.RumboStorage?.reportError?.('offline');throw Error('Conecta Rumbo para acceder a tu cuenta.');}
+      if(window.RumboStorage?.hasPending?.())throw Error('Hay cambios pendientes de guardar. Reintenta antes de cambiar de cuenta.');
+      let response;
+      try{response=await fetch('/api/auth/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data||{}),signal:AbortSignal.timeout(15000)});}
+      catch(error){window.RumboStorage?.reportError?.('database');throw error;}
+      if(response.status>=500)window.RumboStorage?.reportError?.('database');
       const result=await response.json();if(!response.ok)throw Error(result.error||'No se pudo completar la solicitud.');return result;
     }
     const accounts=document.querySelector('.account-actions');
@@ -37,7 +41,7 @@
       const status=document.createElement('span');status.className='auth-header-status';status.setAttribute('role','status');
       logout.addEventListener('click',async()=>{
         logout.disabled=true;status.textContent='';
-        try{await window.RumboStorage?.flush?.();await request('logout');changed();location.replace('index.html');}
+        try{await request('logout');changed();location.replace('index.html');}
         catch(e){status.textContent=e.name==='TimeoutError'?'La conexión tardó demasiado. Inténtalo de nuevo.':e.message;logout.disabled=false;}
       });
       panel.append(identity,nav,logout,status);menu.append(toggle,panel);
@@ -71,7 +75,7 @@
       });
     });
     if(form){
-      if(user){location.replace('index.html');return;}
+      if(user){if(!window.RumboStorage?.isRedirecting?.())location.replace('index.html');return;}
       const register=form.dataset.mode==='register';
       form.addEventListener('submit',async event=>{
         event.preventDefault();if(!form.reportValidity())return;
@@ -91,7 +95,10 @@
     window.addEventListener('storage',e=>{if(e.key==='rumbo.auth.changed')location.reload();});
     window.addEventListener('pageshow',e=>{if(e.persisted)location.reload();});
     window.addEventListener('focus',async()=>{
-      try{const response=await fetch('/api/auth/me');if(!response.ok)return;const data=await response.json();if((data.user?.id||null)!==(user?.id||null)){changed();location.reload();}}catch{}
+      try{const response=await fetch('/api/auth/me');if(!response.ok)return;const data=await response.json();if((data.user?.id||null)!==(user?.id||null)){
+        if(window.RumboStorage?.hasPending?.()){window.RumboStorage?.reportError?.('session');return;}
+        changed();location.reload();
+      }}catch{}
     });
   }
   // Deferred scripts run while readyState is "interactive". Wait until common.js

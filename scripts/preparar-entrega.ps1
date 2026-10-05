@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $rumboRoot = Split-Path -Parent $PSScriptRoot
-$rumboItems = @('public','backend','database','scripts','tests','docs','README.md','package.json','package-lock.json','.env.example','.gitignore','.htaccess','router.php','server.mjs','rumbo-background.ps1','INICIAR-RUMBO.cmd','CONFIGURAR-PHP.cmd','PREPARAR-ENTREGA.cmd','ACTIVAR-RUMBO-AUTOMATICO.cmd')
+$rumboItems = @('public','src','backend','database','scripts','tests','docs','README.md','package.json','package-lock.json','vite.config.ts','tsconfig.json','tailwind.config.cjs','postcss.config.cjs','.env.example','.gitignore','.htaccess','router.php','server.mjs','rumbo-background.ps1','INICIAR-RUMBO.cmd','CONFIGURAR-PHP.cmd','PREPARAR-ENTREGA.cmd','ACTIVAR-RUMBO-AUTOMATICO.cmd')
 $rumboItems += 'COMPROBAR-CONEXION.cmd'
 $rumboItems += '.vscode'
 $rumboItems += 'config'

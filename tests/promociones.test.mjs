@@ -48,8 +48,11 @@ test('Mi viaje aplica una sola vez el descuento a cada pasajero y conserva el ho
 
 test('las cuatro campañas configuradas conservan precios y recursos reales', async () => {
   const html = await readFile(new URL('index.html', new URL('../public/', import.meta.url)), 'utf8');
-  const script = html.match(/<script id="rumbo-hero-script">([\s\S]*?)<\/script>/)[1];
-  const config = vm.runInNewContext(script.slice(0, script.indexOf("document.addEventListener('DOMContentLoaded'")) + '\nRUMBO_HERO_CONFIG');
+  const script = html.match(/<script id="rumbo-hero-script">([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(script, 'El inicio debe conservar la configuración de las campañas');
+  const configSource = script.match(/\bconst RUMBO_HERO_CONFIG\s*=\s*(\{[\s\S]*?\})\s*;/)?.[1];
+  assert.ok(configSource, 'La configuración debe ser un objeto JSON terminado en punto y coma');
+  const config = JSON.parse(configSource);
   const { catalog } = setup();
   assert.equal(config.slides.length, 4);
   for (const slide of config.slides) {

@@ -75,7 +75,7 @@ export async function databaseApi(req,res){
     if(path==='/api/catalog'&&req.method==='GET'){json(res,200,await loadCatalog());return true;}
     if(path==='/api/state'&&req.method==='GET'){
       const id=await visitor(req,res);if(!id){json(res,401,{error:'Abre una página de Rumbo para iniciar tu sesión de visitante.'});return true;}
-      json(res,200,{state:await readState(id)});return true;
+      json(res,200,{visitor:id,state:await readState(id)});return true;
     }
     if(path!=='/api/state'||req.method!=='PUT'){json(res,405,{error:'Método no permitido.'});return true;}
     const origin=process.env.APP_ORIGIN||`http://${req.headers.host}`;

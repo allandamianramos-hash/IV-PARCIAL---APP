@@ -47,7 +47,7 @@ test('una página ya cargada muestra la cuenta y el visitante conserva los enlac
 test('Live Server conserva su puerto y solo reconecta al solicitarlo',async()=>{
   const common=await readFile(new URL('../public/connection.js',import.meta.url),'utf8');
   const redirects=[];
-  const scope={window:{},fetch:async()=>({ok:true,json:async()=>({app:'rumbo-viajes',backend:'php'})}),AbortSignal,URL,
+  const scope={window:{},fetch:async url=>({ok:true,json:async()=>url.endsWith('/api/database')?({connected:true}):({app:'rumbo-viajes',backend:'php'})}),AbortSignal,URL,
 
     document:{getElementById:()=>null},
     location:{protocol:'http:',hostname:'127.0.0.1',port:'5500',pathname:'/public/servicios.html',search:'?seccion=mi-viaje',hash:'#perfil',replace:url=>redirects.push(url)}
@@ -57,4 +57,21 @@ test('Live Server conserva su puerto y solo reconecta al solicitarlo',async()=>{
   assert.deepEqual(redirects,[]);
   assert.equal(await scope.window.RumboConnect(),true);
   assert.deepEqual(redirects,['http://127.0.0.1:5500/servicios.html?seccion=mi-viaje#perfil']);
+});
+
+test('cerrar sesión se detiene si falla el guardado y respeta la página de error',async()=>{
+  const p=page('complete'),header=p.buildHeader();let requests=0;
+  p.scope.window.RumboStorage={flush:async()=>false,hasPending:()=>true};
+  p.scope.fetch=async()=>{requests++;return {ok:true,json:async()=>({ok:true})};};
+  p.run();const panel=header.children[0].children[1];await panel.children[2].click();
+  assert.equal(requests,0);assert.deepEqual(p.redirects,[]);assert.match(panel.children[3].textContent,/guardar tus cambios/);
+});
+
+test('cambiar de sesión desde otra pestaña conserva los cambios pendientes',async()=>{
+  const p=page('complete');p.buildHeader();let errorCode,deleted=0;
+  p.scope.window.RumboStorage={hasPending:()=>true,reportError:code=>errorCode=code};
+  p.scope.localStorage.removeItem=()=>deleted++;
+  p.scope.fetch=async()=>({ok:true,json:async()=>({user:null})});
+  p.run();await p.windowEvents.focus();
+  assert.equal(errorCode,'session');assert.equal(deleted,0);assert.deepEqual(p.redirects,[]);
 });

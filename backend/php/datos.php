@@ -88,7 +88,7 @@ function handle_data(string $path, string $method): never {
     if ($method==='PUT') check_origin();
     $id=state_owner();
     if (!$id) throw new HttpError(401,'Abre una página de Rumbo para iniciar tu sesión.');
-    if ($method==='GET') respond(200,['state'=>read_state($id)]);
+    if ($method==='GET') respond(200,['visitor'=>$id,'state'=>read_state($id)]);
     if (strtolower($_SERVER['HTTP_X_RUMBO_VISITOR'] ?? '')!==strtolower($id)) throw new HttpError(409,'La sesión ha cambiado. Recarga antes de guardar.');
     $body=request_body();
     if (!($body->changes ?? null) instanceof stdClass || count((array)$body->changes)<1 || count((array)$body->changes)>count(STATE_KEYS)) throw new HttpError(400,'Selección inválida.');

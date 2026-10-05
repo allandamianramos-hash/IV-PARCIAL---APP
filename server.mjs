@@ -14,6 +14,7 @@ const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; cha
 publicFiles.add('database-client.js');
 for (const file of ['registro.html','iniciar-sesion.html','auth-client.js','auth.css']) publicFiles.add(file);
 publicFiles.add('guias-catalogo.js');
+for (const file of ['hero.js', 'hero.css']) publicFiles.add(file);
 export function createApp(chatOptions) {
   const chat = createChatHandler(chatOptions);
   return createServer(async (req, res) => {

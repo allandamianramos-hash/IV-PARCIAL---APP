@@ -44,6 +44,8 @@ Las cuentas y el almacenamiento son reales. Los pagos, billetes y reservas sigue
 
 ## Validación y cambios
 
+La portada de Inicio es una isla React con TypeScript y Tailwind CSS en `src/hero/`. Después de cambiarla, ejecuta `npm install` y `npm run build` con Node 22.12 o posterior. Vite genera `public/hero.js` y `public/hero.css` sin borrar los demás archivos públicos; comparte también estos dos archivos compilados para que PHP y los accesos habituales funcionen sin un servidor Vite. `npm run dev:hero` vuelve a compilar al guardar mientras navegas con el servidor habitual. La configuración de campañas de `public/index.html` y el catálogo compartido de `public/viajes.js` siguen siendo las fuentes de destinos y tarifas.
+
 ```powershell
 npm test
 npm run db:test

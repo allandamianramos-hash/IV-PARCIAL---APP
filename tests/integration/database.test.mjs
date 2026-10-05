@@ -31,7 +31,7 @@ test('SQL Server: catálogo, aislamiento, guardado, conflictos y eliminaciones',
     assert.equal((await put(changes,'')).status,401);
     assert.equal((await put({'unknown':{value:1,revision:0}})).status,400);
     assert.equal((await put(changes)).status,200);
-    const read=async(cookie)=>{const r=await fetch(origin+'/api/state',{headers:{Cookie:cookie}});assert.equal(r.status,200);return (await r.json()).state;};
+    const read=async(cookie)=>{const r=await fetch(origin+'/api/state',{headers:{Cookie:cookie}});assert.equal(r.status,200);const result=await r.json();assert.equal(result.visitor,cookie===a.cookie?a.boot.visitor:b.boot.visitor);return result.state;};
     const saved=await read(a.cookie);for(const [key,value]of Object.entries(values))assert.deepEqual(saved[key].value,value);
     assert.deepEqual(await read(b.cookie),{});
     assert.equal((await put(changes)).status,409);

@@ -5,27 +5,30 @@ import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 const clientSource=await readFile(new URL('database-client.js', new URL('../public/', import.meta.url)),'utf8');
 function client(boot, data=new Map(), fetchImpl=async()=>Response.json({revisions:{'rumbo.profile.v1':1}})){
-  const nodes=[];
-  const scope={window:{addEventListener(){}},navigator:{},AbortSignal,location:{protocol:'http:',hostname:'127.0.0.1',pathname:'/public/tienda.html',search:'?categoria=viaje',reload(){}},fetch:fetchImpl,clearTimeout(){},setTimeout(){return 1;},localStorage:{getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)},document:{getElementById:()=>boot?({textContent:JSON.stringify(boot)}):null,addEventListener(){},body:{append(){}},createElement:()=>{const n={setAttribute(){},append(){},addEventListener(type,fn){this[type]=fn;}};nodes.push(n);return n;}}};
+  const nodes=[],events={},redirects=[];
+  const scope={window:{addEventListener(){}},navigator:{},AbortSignal,URLSearchParams,location:{origin:'http://127.0.0.1',protocol:'http:',hostname:'127.0.0.1',pathname:'/public/tienda.html',search:'?categoria=viaje',hash:'#seleccion',reload(){},replace:url=>redirects.push(url)},fetch:fetchImpl,clearTimeout(){},setTimeout(){return 1;},localStorage:{getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)},document:{getElementById:()=>boot?({textContent:JSON.stringify(boot)}):null,addEventListener:(type,fn)=>events[type]=fn,body:{append(){}},createElement:()=>{const n={setAttribute(){},append(){},addEventListener(type,fn){this[type]=fn;}};nodes.push(n);return n;}}};
   vm.runInNewContext(clientSource,scope);
-  return {storage:scope.window.RumboStorage,nodes,data,location:scope.location};
+  return {storage:scope.window.RumboStorage,nodes,data,location:scope.location,events,redirects};
 }
 
-test('vista estatica indica como conectar y conserva selecciones locales',async()=>{
+test('vista estática conserva selecciones sin banner ni redirección automática',async()=>{
   let calls=0;
   const c=client(null,new Map(),async()=>{calls++;});
   c.storage.setItem('rumbo.profile.v1',JSON.stringify({alias:'Ana',preference:'playa'}));
   await c.storage.flush();assert.equal(calls,0);
-  assert.match(c.nodes[1].textContent,/modo local/);
-  assert.equal(c.nodes[2].textContent,'Abrir versión conectada');await c.nodes[2].click();
-  assert.equal(c.location.href,'error.html?code=offline');
+  assert.equal(c.nodes.length,0);
+  assert.deepEqual(c.redirects,[]);
   assert.ok(c.data.get('rumbo.sync.pending.v1').includes('Ana'));
 });
 
-test('una caida SQL conserva el borrador y nunca anuncia guardado en SQL',async()=>{
+test('una caída SQL abre error personalizado y conserva el destino y el borrador',async()=>{
   let calls=0;const c=client({connected:false,reason:'unavailable'},new Map(),async()=>{calls++;});
   c.storage.setItem('rumbo.profile.v1',JSON.stringify({alias:'Ana',preference:'playa'}));
-  await c.storage.flush();assert.equal(calls,0);assert.match(c.nodes[1].textContent,/Sin conexión a la base de datos/);
+  assert.equal(await c.storage.flush(),false);assert.equal(calls,0);assert.equal(c.nodes.length,0);
+  assert.equal(c.redirects.length,1);
+  const target=new URL(c.redirects[0],'http://127.0.0.1/');
+  assert.equal(target.searchParams.get('code'),'database');
+  assert.equal(target.searchParams.get('returnTo'),'tienda.html?categoria=viaje#seleccion');
   assert.ok(c.storage.hasPending());
 });
 test('recupera un cambio pendiente después de una caída y recarga',async()=>{
@@ -37,6 +40,7 @@ test('recupera un cambio pendiente después de una caída y recarga',async()=>{
   const second=client(boot,data);await second.storage.flush();
   assert.equal(data.get('rumbo.sync.pending.v1'),'{}');
   assert.equal(JSON.parse(second.storage.getItem('rumbo.profile.v1')).alias,'Ana');
+  assert.equal(second.nodes.length,0);assert.deepEqual(second.redirects,[]);
 });
 test('el servidor restaura datos sin caché local y conserva eliminaciones',()=>{
   const key='rumbo.profile.v1';
@@ -57,6 +61,43 @@ test('un conflicto conserva el borrador local y no sobrescribe el servidor',asyn
   const c=client({connected:true,visitor:'a',state:{'rumbo.profile.v1':{value:{alias:'Nuevo',preference:'playa'},revision:2}}},data,async()=>{calls++;});
   await c.storage.flush();assert.equal(calls,0);
   assert.equal(JSON.parse(c.storage.getItem('rumbo.profile.v1')).alias,'Borrador');
+  assert.match(c.redirects[0],/code=conflict/);assert.ok(c.storage.hasPending());
+});
+
+test('409 y respuestas incompletas conservan la cola sin anunciar éxito',async()=>{
+  for(const response of [()=>Response.json({error:'conflict'},{status:409}),()=>Response.json({revisions:{}})]){
+    const c=client({connected:true,visitor:'a',state:{}},new Map(),async()=>response());
+    c.storage.setItem('rumbo.profile.v1',JSON.stringify({alias:'Ana',preference:'playa'}));
+    assert.equal(await c.storage.flush(),false);assert.ok(c.storage.hasPending());assert.equal(c.redirects.length,1);
+  }
+});
+
+test('la navegación espera al guardado en curso y nunca reemplaza su página de error',async()=>{
+  let settle;
+  const c=client({connected:true,visitor:'a',state:{}},new Map(),()=>new Promise(resolve=>settle=resolve));
+  c.storage.setItem('rumbo.profile.v1',JSON.stringify({alias:'Ana',preference:'playa'}));
+  const saving=c.storage.flush();await Promise.resolve();
+  let prevented=false;
+  const link={href:'http://127.0.0.1/servicios.html',origin:'http://127.0.0.1',pathname:'/servicios.html',search:'',hasAttribute:()=>false};
+  const navigation=c.events.click({button:0,target:{closest:()=>link},preventDefault(){prevented=true;}});
+  assert.equal(prevented,true);assert.equal(c.location.href,undefined);
+  settle(Response.json({error:'offline'},{status:503}));await saving;await navigation;
+  assert.equal(c.location.href,undefined);assert.match(c.redirects[0],/code=save/);assert.ok(c.storage.hasPending());
+});
+
+test('la navegación continúa únicamente después de confirmar todos los cambios',async()=>{
+  const c=client({connected:true,visitor:'a',state:{}});
+  c.storage.setItem('rumbo.profile.v1',JSON.stringify({alias:'Ana',preference:'playa'}));
+  const link={href:'http://127.0.0.1/servicios.html',origin:'http://127.0.0.1',pathname:'/servicios.html',search:'',hasAttribute:()=>false};
+  await c.events.click({button:0,target:{closest:()=>link},preventDefault(){}});
+  assert.equal(c.location.href,link.href);assert.equal(c.storage.hasPending(),false);
+});
+
+test('otra pestaña no guarda automáticamente un borrador que requiere revisión',async()=>{
+  let requests=0;
+  const c=client({connected:true,visitor:'a',state:{}},new Map(),async()=>{requests++;});
+  c.data.set('rumbo.sync.pending.v1',JSON.stringify({'rumbo.profile.v1':{value:{alias:'Recuperada',preference:'playa'},revision:0,needsReview:true}}));
+  assert.equal(await c.storage.flush(),false);assert.equal(requests,0);assert.ok(c.storage.hasPending());assert.match(c.redirects[0],/code=recovery/);
 });
 test('solo permite selecciones conocidas y limita los datos de visitante',()=>{
   assert.ok(validState('rumbo.profile.v1',{alias:'José',preference:'playa'}));

@@ -26,7 +26,11 @@ test('el descuento de grupo empieza en tres pasajeros y se acumula sobre la tari
 
 test('todos los anuncios con precio apuntan a destinos con tarifas finitas', async()=>{
   const html=await readFile(new URL('index.html', new URL('../public/', import.meta.url)),'utf8');
-  const config=JSON.parse(html.match(/const RUMBO_HERO_CONFIG = ([\s\S]*?);\r?\ndocument.addEventListener/)[1]);
+  const script=html.match(/<script id="rumbo-hero-script">([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(script,'El inicio debe conservar la configuración de las campañas');
+  const configSource=script.match(/\bconst RUMBO_HERO_CONFIG\s*=\s*(\{[\s\S]*?\})\s*;/)?.[1];
+  assert.ok(configSource,'La configuración debe ser un objeto JSON terminado en punto y coma');
+  const config=JSON.parse(configSource);
   for(const slide of config.slides.filter(s=>s.price)){
     const d=destinations.find(d=>d.id===slide.id);assert.ok(d,slide.id);
     const f=flights(d,origins[0])[0];assert.ok(Number.isFinite(f.economy));

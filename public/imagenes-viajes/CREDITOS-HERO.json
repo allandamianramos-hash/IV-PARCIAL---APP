@@ -1,0 +1,59 @@
+[
+  {
+    "id": "venecia",
+    "file": "imagenes-viajes/hero-premium-venecia.jpg",
+    "title": "View from the Ponte dell'Accademia night 2023-msu-2023-0I9A5861-.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/07/View_from_the_Ponte_dell%27Accademia_night_2023-msu-2023-0I9A5861-.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_from_the_Ponte_dell%27Accademia_night_2023-msu-2023-0I9A5861-.jpg",
+    "author": "Matthias Süßen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "width": 5256,
+    "height": 3504,
+    "modifications": "Archivo original, sin retoques. Encuadre adaptable mediante object-fit: cover en CSS."
+  },
+  {
+    "id": "cancun",
+    "file": "imagenes-viajes/hero-premium-cancun.jpg",
+    "title": "Vista aérea de la costa de Cancún y el mar Caribe",
+    "source": "https://images.unsplash.com/photo-1622237428188-55d2ce282b09?fm=jpg&q=95",
+    "page": "https://unsplash.com/photos/aerial-view-of-city-near-ocean-during-daytime-vAmfQleMfzE",
+    "author": "sergey sergienko",
+    "authorUrl": "https://unsplash.com/@sergedo",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "modifications": "JPEG a resolución nativa servido por Unsplash (calidad 95). Sin retoques. Encuadre adaptable mediante CSS.",
+    "width": 5000,
+    "height": 3333
+  },
+  {
+    "id": "osaka",
+    "file": "imagenes-viajes/hero-premium-osaka.jpg",
+    "title": "Castillo de Osaka iluminado y su reflejo en el jardín japonés",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/%E5%A4%9C%E3%81%AE%E5%A4%A7%E9%98%AA%E5%9F%8E.jpg/3840px-%E5%A4%9C%E3%81%AE%E5%A4%A7%E9%98%AA%E5%9F%8E.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/7/79/%E5%A4%9C%E3%81%AE%E5%A4%A7%E9%98%AA%E5%9F%8E.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%E5%A4%9C%E3%81%AE%E5%A4%A7%E9%98%AA%E5%9F%8E.jpg",
+    "author": "Hironoyama",
+    "authorUrl": "https://commons.wikimedia.org/wiki/User:Hironoyama",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 3840,
+    "height": 2560,
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "modifications": "Miniatura oficial Wikimedia de 3840 px. Sin retoques ni cambios de color. Encuadre adaptable mediante CSS."
+  },
+  {
+    "id": "paris",
+    "file": "imagenes-viajes/hero-premium-paris.jpg",
+    "title": "Eiffel Tower and Pont des Invalides, Paris 18 January 2020.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/1/10/Eiffel_Tower_and_Pont_des_Invalides%2C_Paris_18_January_2020.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower_and_Pont_des_Invalides,_Paris_18_January_2020.jpg",
+    "author": "Pierre Blaché from Paris, France",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "width": 6000,
+    "height": 3375,
+    "modifications": "Archivo original, sin retoques. Encuadre adaptable mediante object-fit: cover en CSS."
+  }
+]

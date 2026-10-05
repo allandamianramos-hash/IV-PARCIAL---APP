@@ -7,12 +7,14 @@
     if(!local||location.protocol==='file:')return false;
     const origin=location.protocol+'//'+location.hostname+(location.port?':'+location.port:'');
     try{
-      const response=await fetch(origin+'/api/health',{credentials:'omit',signal:AbortSignal.timeout(2500)});
-      const health=await response.json();
-      if(!response.ok||health.app!=='rumbo-viajes'||health.backend!=='php')return false;
       const path=target||((location.pathname.split('/').pop()||'index.html')+location.search+location.hash);
       const url=new URL(path,origin+'/');
       if(url.origin!==origin||!pages.includes(url.pathname.slice(1)))return false;
+      const response=await fetch(origin+'/api/health',{credentials:'omit',signal:AbortSignal.timeout(2500)});
+      const health=await response.json();
+      if(!response.ok||health.app!=='rumbo-viajes')return false;
+      const database=await fetch(origin+'/api/database',{cache:'no-store',credentials:'same-origin',signal:AbortSignal.timeout(10000)});
+      if(!database.ok||(await database.json()).connected!==true)return false;
       location.replace(url.href);return true;
     }catch{return false;}
   };

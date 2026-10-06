@@ -34,7 +34,7 @@ try {
     if (!in_array($method,['GET','HEAD'],true)) throw new HttpError(405,'Método no permitido.');
     $file=rawurldecode(ltrim($path,'/')) ?: 'index.html';
     $public=['error.html','error.js','connection.js','index.html','script.js','chat-engine.js','chat-client.js','chat-ui.js','chat.css','style.css','viajes.html','viajes.js','viajes.css','tienda.html','tienda.js','tienda.css','logo-rumbo.jpg','servicios.html','servicios.js','servicios.css','common.js','common.css','journey.js','promociones.css','design.css','database-client.js','registro.html','iniciar-sesion.html','auth-client.js','auth.css','guias-catalogo.js'];
-    array_push($public,'hero.js','hero.css','navigation.js','navigation.css');
+    array_push($public,'hero.js','hero.css','navigation.js','navigation.css','palette.css');
     if (!in_array($file,$public,true) && !preg_match('~^(imagenes|imagenes-viajes)/[a-zA-Z0-9_-]+\.(jpg|png|webp)$~D',$file)) throw new HttpError(404,'Archivo no encontrado.');
     $absolute=__DIR__.'/public/'.$file;
     if (!is_file($absolute)) throw new HttpError(404,'Archivo no encontrado.');

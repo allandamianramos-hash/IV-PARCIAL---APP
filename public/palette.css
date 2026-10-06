@@ -11,7 +11,7 @@
   /* El gris de apoyo original pierde contraste en campos; se aclara. */
   --support: #969e98;
   --lime: #b8d86b;
-  --on-lime: #1b2208;
+  --on-lime: #577600;
   --tag: #2a3318;
   --on-tag: #cfe595;
   --demo: #2b2416;
@@ -159,6 +159,13 @@ body #quienes-somos :is(h2,p,span,dt,dd) { color: var(--foreground)!important; }
 body #quienes-somos .eyebrow, body .eyebrow { color: var(--lime)!important; }
 body :is(.catalog-hero,.store-hero,.service-hero) p { color: var(--secondary)!important; }
 body .guides-layout { background: var(--surface)!important; }
+body #antes-de-viajar.departure-guide {
+  background: var(--surface); border: 0; border-radius: 20px; box-shadow: none;
+}
+body #antes-de-viajar p { color: var(--secondary); }
+body #antes-de-viajar #departure-progress { color: var(--lime); }
+body .departure-checklist label { border-color: var(--line); }
+body .departure-checklist :is(input,progress) { accent-color: var(--lime); }
 body:has(.error-number) :is(p,footer) { color: var(--secondary); }
 body:has(.error-number) .button:not(.primary) { color: var(--foreground); border-color: var(--line); }
 body .skip-link { background: var(--lime); color: var(--on-lime); }

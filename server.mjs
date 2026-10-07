@@ -17,7 +17,7 @@ publicFiles.add('database-client.js');
 for (const file of ['registro.html','iniciar-sesion.html','auth-client.js','auth.css']) publicFiles.add(file);
 publicFiles.add('guias-catalogo.js');
 publicFiles.add('palette.css');
-for(const file of ['reviews.js','preferences.js','translations.js','community.css']) publicFiles.add(file);
+for(const file of ['api-client.js','reviews.js','preferences.js','translations.js','community.css']) publicFiles.add(file);
 for (const file of ['hero.js', 'hero.css', 'navigation.js', 'navigation.css']) publicFiles.add(file);
 export function createApp(chatOptions) {
   const chat = createChatHandler(chatOptions);

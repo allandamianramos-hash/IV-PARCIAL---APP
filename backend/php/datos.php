@@ -43,7 +43,7 @@ function load_catalog(): array {
     $hotels=query('SELECT * FROM dbo.RumboHotels ORDER BY SortOrder')->fetchAll();
     if (!$products || !$destinations) throw new RuntimeException('Catálogo vacío. Ejecuta la instalación.');
     $catalog=[];
-    foreach (query('SELECT * FROM dbo.RumboSettings')->fetchAll() as $row) $catalog[$row['Name']]=json_decode($row['DataJson'],false,512,JSON_THROW_ON_ERROR);
+    foreach (query("SELECT * FROM dbo.RumboSettings WHERE Name NOT LIKE 'review:%'")->fetchAll() as $row) $catalog[$row['Name']]=json_decode($row['DataJson'],false,512,JSON_THROW_ON_ERROR);
     $catalog['products']=[]; $catalog['productOptions']=new stdClass(); $catalog['priceAdjustments']=new stdClass();
     foreach ($products as $p) {
         $item=json_decode($p['DataJson'],true,512,JSON_THROW_ON_ERROR);

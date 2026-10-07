@@ -4,7 +4,7 @@
  const form=root.querySelector('form'),status=root.querySelector('[role=status]'),list=root.querySelector('.reviews-list');let page=0;
  const say=text=>{status.textContent=text;};
  async function load(){
-  try{const response=await fetch('/api/reviews?page='+page);const data=await response.json();if(!response.ok)throw Error(data.error);
+  try{const data=await window.RumboApi.json('/api/reviews?page='+page);if(!Number.isInteger(data.total)||data.total<0||!Array.isArray(data.reviews)||(data.total>0&&(!Number.isFinite(data.average)||data.average<1||data.average>5)))throw Error('No se pudieron cargar las reseñas. Inténtalo de nuevo.');
    root.querySelector('.reviews-average').textContent=data.total?Number(data.average).toFixed(1):'—';
    root.querySelector('.reviews-count').textContent=data.total+' '+(data.total===1?'reseña':'reseñas');
    root.querySelector('.reviews-stars').textContent=data.total?'★'.repeat(Math.round(data.average))+'☆'.repeat(5-Math.round(data.average)):'☆☆☆☆☆';
@@ -24,7 +24,7 @@
  }
  root.querySelectorAll('[name=rating]').forEach(input=>input.addEventListener('change',()=>{root.querySelectorAll('.review-rating label').forEach(label=>label.classList.toggle('is-rated',Number(label.querySelector('input').value)<=Number(input.value)));}));
  form.addEventListener('submit',async event=>{event.preventDefault();const button=form.querySelector('[type=submit]');button.disabled=true;say('Publicando…');
-  try{const response=await fetch('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({rating:Number(new FormData(form).get('rating')),comment:form.elements.comment.value})});const data=await response.json();if(!response.ok)throw Error(data.error);
+  try{const data=await window.RumboApi.json('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({rating:Number(new FormData(form).get('rating')),comment:form.elements.comment.value})});if(data.saved!==true)throw Error('No se confirmó el guardado. Tu texto se conserva para reintentar.');
    const rating=Number(new FormData(form).get('rating'));say(rating>=4?'Gracias por tu confianza. Nos alegra que disfrutés usando Rumbo.':rating===3?'Gracias por contarnos tu experiencia. Tu opinión nos ayuda a mejorar.':'Gracias por compartir lo que podemos mejorar. Sentimos que tu experiencia no haya sido la esperada.');
    form.reset();root.querySelectorAll('.is-rated').forEach(label=>label.classList.remove('is-rated'));page=0;await load();
   }catch(error){say(error.message);}finally{button.disabled=false;}

@@ -39,9 +39,9 @@
 
   if(header){
     const menu=document.createElement('details');menu.className='site-mobile-menu';
-    menu.innerHTML='<summary>Menú</summary><nav aria-label="Navegación móvil">'+mainNav.innerHTML+'<a href="servicios.html?seccion=mi-viaje">Mi viaje</a><a href="iniciar-sesion.html" data-mobile-login>Iniciar sesión</a></nav>';
+    menu.innerHTML='<summary>Menú</summary><nav aria-label="Navegación móvil">'+mainNav.innerHTML+'<a href="servicios.html?seccion=mi-viaje">Mi viaje</a><a href="iniciar-sesion.html" data-mobile-login>Iniciar sesión</a><a href="registro.html" data-mobile-register>Registrarse</a></nav>';
     header.querySelector('.header-actions').before(menu);
-    const updateLogin=()=>{const loggedIn=!!header.querySelector('.account-menu');menu.querySelector('[data-mobile-login]').hidden=loggedIn;};
+    const updateLogin=()=>{const loggedIn=!!header.querySelector('.account-menu');menu.querySelector('[data-mobile-login]').hidden=loggedIn;menu.querySelector('[data-mobile-register]').hidden=loggedIn;};
     updateLogin();new MutationObserver(updateLogin).observe(header.querySelector('.account-actions'),{childList:true});
     menu.addEventListener('click',event=>{if(event.target.closest('a'))menu.open=false;});
     document.addEventListener('click',event=>{if(!menu.contains(event.target))menu.open=false;});

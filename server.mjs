@@ -6,6 +6,8 @@ import { createChatHandler } from './backend/node/chat-api.mjs';
 import { loadEnvFile } from 'node:process';
 import { spawn } from 'node:child_process';
 import { bootstrap, databaseApi, safeJson } from './backend/node/database-api.mjs';
+import {reviewsApi} from './backend/node/reviews-api.mjs';
+import {exchangeApi} from './backend/node/exchange-api.mjs';
 import { authApi } from './backend/node/auth-api.mjs';
 import { sendError } from './backend/node/error-pages.mjs';
 const root = fileURLToPath(new URL("./public/", import.meta.url));
@@ -15,6 +17,7 @@ publicFiles.add('database-client.js');
 for (const file of ['registro.html','iniciar-sesion.html','auth-client.js','auth.css']) publicFiles.add(file);
 publicFiles.add('guias-catalogo.js');
 publicFiles.add('palette.css');
+for(const file of ['reviews.js','preferences.js','translations.js','community.css']) publicFiles.add(file);
 for (const file of ['hero.js', 'hero.css', 'navigation.js', 'navigation.css']) publicFiles.add(file);
 export function createApp(chatOptions) {
   const chat = createChatHandler(chatOptions);
@@ -27,6 +30,8 @@ export function createApp(chatOptions) {
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
     res.setHeader("Cache-Control", "no-store");
     try {
+      if (await reviewsApi(req,res)) return;
+      if (await exchangeApi(req,res)) return;
       if (await authApi(req, res)) return;
       if (await databaseApi(req, res)) return;
       if (req.url === '/api/health' && ['GET', 'HEAD'].includes(req.method)) {

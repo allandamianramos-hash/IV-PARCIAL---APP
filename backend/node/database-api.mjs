@@ -45,7 +45,7 @@ async function visitor(req,res,create=false) {
 }
 export async function loadCatalog(){
   const {pool}=await getDb();
-  const r=await pool.request().query('SELECT * FROM dbo.RumboProducts ORDER BY Id; SELECT * FROM dbo.RumboDestinations ORDER BY SortOrder; SELECT * FROM dbo.RumboHotels ORDER BY SortOrder; SELECT * FROM dbo.RumboSettings;');
+  const r=await pool.request().query('SELECT * FROM dbo.RumboProducts ORDER BY Id; SELECT * FROM dbo.RumboDestinations ORDER BY SortOrder; SELECT * FROM dbo.RumboHotels ORDER BY SortOrder; SELECT * FROM dbo.RumboSettings WHERE Name NOT LIKE \'review:%\';');
   const [products,destinations,hotels,settings]=r.recordsets;
   if(!products.length||!destinations.length)throw Error('DB_NOT_SEEDED');
   const config=Object.fromEntries(settings.map(s=>[s.Name,JSON.parse(s.DataJson)]));

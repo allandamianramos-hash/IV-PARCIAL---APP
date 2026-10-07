@@ -283,6 +283,10 @@ document.addEventListener('DOMContentLoaded', () => {
 <link rel="stylesheet" href="navigation.css">
 <script src="navigation.js" defer></script>
 <link rel="stylesheet" href="palette.css">
+<link rel="stylesheet" href="community.css">
+<script src="translations.js" defer></script>
+<script src="preferences.js" defer></script>
+<script src="reviews.js" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -534,7 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="container about-rumbo" id="quienes-somos" aria-labelledby="about-rumbo-title">
       <figure class="about-rumbo-photo">
         <div class="about-photo-frame"><img src="imagenes-viajes/rumbo-paris.jpg" alt="Una viajera contempla la Torre Eiffel desde un puente de París" width="1200" height="1800" loading="lazy">
-          <span class="about-photo-location">París, Francia <span aria-hidden="true">↗</span></span>
+          <span class="about-photo-location">Francia</span>
         </div>
         <svg class="about-photo-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M15 130C90 130 45 20 140 50S205 135 280 15" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7"/><circle cx="15" cy="130" r="5" fill="currentColor"/><path d="m265 20 18-10-6 21-4-10Z" fill="currentColor"/></svg>
       </figure>
@@ -542,7 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="eyebrow">SOBRE RUMBO</p>
         <h2 id="about-rumbo-title">Quiénes somos</h2>
         <p class="about-rumbo-lead">Planificación de viajes desde Honduras.</p>
-        <p>Somos una agencia de viajes hondureña. Te ayudamos a organizar desde una escapada cerca de casa hasta ese viaje al extranjero que llevas tiempo planeando.</p>
+        <p>Somos un equipo hondureño que creó Rumbo para hacer más sencilla la planificación de un viaje.</p>
         <p>En Rumbo puedes elegir destinos, comparar vuelos y hospedajes, y reunir lo que necesitas en un solo plan, a tu ritmo y según tu presupuesto.</p>
         <dl class="about-rumbo-values">
           <div><dt>Opciones flexibles</dt><dd>Combina vuelo, hotel, traslados y experiencias según lo que necesitas.</dd></div>
@@ -630,7 +634,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <button type="button" id="departure-reset" class="text-link" hidden>Preparar una nueva lista</button>
       </div>
     </section>
-  </main>
+  <section class="container home-reviews" id="resenas" aria-labelledby="reviews-title">
+ <div class="reviews-heading"><div><p class="eyebrow">LA COMUNIDAD RUMBO</p><h2 id="reviews-title">Tu opinión nos ayuda a mejorar.</h2><p>Contanos cómo te fue al planificar tu viaje.</p></div><div class="reviews-score" aria-label="Valoración de los usuarios"><strong class="reviews-average">—</strong><div><span class="reviews-stars" aria-hidden="true">☆☆☆☆☆</span><p class="reviews-count">0 reseñas</p><small>Valoraciones de Rumbo</small></div></div></div>
+ <form class="review-form"><div><h3>Dejá tu reseña</h3><p>Se publicará con tu primer nombre. Una reseña por cuenta; podés actualizarla cuando querás.</p><a href="iniciar-sesion.html">Iniciar sesión</a></div><div class="review-fields"><fieldset class="review-rating"><legend>¿Cómo fue tu experiencia?</legend><label><input type="radio" name="rating" value="1" required aria-label="1 / 5"><span aria-hidden="true">★</span></label><label><input type="radio" name="rating" value="2" required aria-label="2 / 5"><span aria-hidden="true">★</span></label><label><input type="radio" name="rating" value="3" required aria-label="3 / 5"><span aria-hidden="true">★</span></label><label><input type="radio" name="rating" value="4" required aria-label="4 / 5"><span aria-hidden="true">★</span></label><label><input type="radio" name="rating" value="5" required aria-label="5 / 5"><span aria-hidden="true">★</span></label></fieldset><label for="review-comment">Tu comentario</label><textarea id="review-comment" name="comment" minlength="10" maxlength="1200" rows="3" required placeholder="¿Qué te gustó o qué podríamos mejorar?"></textarea><button type="submit" class="button button-primary">Publicar reseña</button><p role="status" aria-live="polite"></p></div></form>
+ <div class="reviews-list" aria-label="Reseñas de usuarios"></div><div class="reviews-pagination" hidden><button class="button button-outline" type="button" data-reviews-prev>Anterior</button><button class="button button-outline" type="button" data-reviews-next>Siguiente</button></div>
+ </section></main>
 
   <!-- FOOTER -->
   <footer class="site-footer" id="contacto"><div class="container footer-grid">

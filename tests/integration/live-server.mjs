@@ -15,7 +15,7 @@ try{
  const origin=`http://127.0.0.1:${server.address().port}`;
  const page=await fetch(origin);const html=await page.text();
  assert.equal(page.status,200);assert.match(html,/"connected":true/);
- assert.match(html,/auth-client.js/);
+ assert.match(html,/js/cuenta/auth-client.js/);
  const code=await new Promise((resolve,reject)=>{
   const child=spawn(process.execPath,['--test',fileURLToPath(new URL('./php.test.mjs',import.meta.url))],{stdio:'inherit',windowsHide:true,env:{...process.env,PHP_TEST_ORIGIN:origin}});
   child.once('error',reject);child.once('exit',resolve);

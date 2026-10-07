@@ -32,7 +32,7 @@ servidor remoto, configurar TCP/puerto y los permisos de la cuenta correspondien
 - `db.mjs`: pool privado de conexiones y configuración de autenticación.
 - `database-api.mjs`: lectura de catálogos y estado; valida solicitudes y usa
   parámetros SQL, cookies HttpOnly y comprobación de origen.
-- `database-client.js`: caché local, cola de cambios pendientes e indicador de guardado.
+- `js/compartido/database-client.js`: caché local, cola de cambios pendientes e indicador de guardado.
 - `database/migrations/001_initial.sql`: primera estructura.
 - `database/manage.mjs`: migraciones y carga inicial, siempre explícitas.
 

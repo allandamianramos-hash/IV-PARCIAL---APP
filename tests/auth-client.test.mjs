@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 
-const source=await readFile(new URL('../public/auth-client.js',import.meta.url),'utf8');
+const source=await readFile(new URL('../public/js/cuenta/auth-client.js',import.meta.url),'utf8');
 function page(readyState='interactive',signedIn=true){
   const events={},windowEvents={},redirects=[];
   let header=null;
@@ -30,7 +30,7 @@ test('la sesión espera al encabezado creado por los scripts defer',async()=>{
   const header=p.buildHeader();p.events.DOMContentLoaded();
   const menu=header.children[0],panel=menu.children[1];
   assert.equal(menu.className,'account-menu');
-  assert.equal(panel.children[0].children[0].textContent,'Hola, Viajera');
+  assert.equal(panel.children[0].children[0].children.map(n=>n.textContent).join(''),'Hola, Viajera');
   assert.deepEqual(panel.children[1].children.map(n=>n.href),['servicios.html?seccion=perfil','servicios.html?seccion=mi-viaje','tienda.html?carrito=1']);
   menu.open=true;p.events.keydown({key:'Escape'});assert.equal(menu.open,false);assert.equal(menu.children[0].focused,true);
   await panel.children[2].click();
@@ -45,7 +45,7 @@ test('una página ya cargada muestra la cuenta y el visitante conserva los enlac
 });
 
 test('Live Server conserva su puerto y solo reconecta al solicitarlo',async()=>{
-  const common=await readFile(new URL('../public/connection.js',import.meta.url),'utf8');
+  const common=await readFile(new URL('../public/js/compartido/connection.js',import.meta.url),'utf8');
   const redirects=[];
   const scope={window:{},fetch:async url=>({ok:true,json:async()=>url.endsWith('/api/database')?({connected:true}):({app:'rumbo-viajes',backend:'php'})}),AbortSignal,URL,
 

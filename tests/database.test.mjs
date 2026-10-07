@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { validState, safeJson } from '../backend/node/database-api.mjs';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
-const clientSource=await readFile(new URL('database-client.js', new URL('../public/', import.meta.url)),'utf8');
+const clientSource=await readFile(new URL('js/compartido/database-client.js', new URL('../public/', import.meta.url)),'utf8');
 function client(boot, data=new Map(), fetchImpl=async()=>Response.json({revisions:{'rumbo.profile.v1':1}})){
   const nodes=[],events={},redirects=[];
   const scope={window:{addEventListener(){}},navigator:{},AbortSignal,URLSearchParams,location:{origin:'http://127.0.0.1',protocol:'http:',hostname:'127.0.0.1',pathname:'/public/tienda.html',search:'?categoria=viaje',hash:'#seleccion',reload(){},replace:url=>redirects.push(url)},fetch:fetchImpl,clearTimeout(){},setTimeout(){return 1;},localStorage:{getItem:k=>data.get(k)??null,setItem:(k,v)=>data.set(k,v),removeItem:k=>data.delete(k)},document:{getElementById:()=>boot?({textContent:JSON.stringify(boot)}):null,addEventListener:(type,fn)=>events[type]=fn,body:{append(){}},createElement:()=>{const n={setAttribute(){},append(){},addEventListener(type,fn){this[type]=fn;}};nodes.push(n);return n;}}};

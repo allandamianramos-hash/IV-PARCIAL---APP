@@ -38,17 +38,20 @@ try {
     }
     if (!in_array($method,['GET','HEAD'],true)) throw new HttpError(405,'Método no permitido.');
     $file=rawurldecode(ltrim($path,'/')) ?: 'index.html';
-    $public=['error.html','error.js','connection.js','index.html','script.js','chat-engine.js','chat-client.js','chat-ui.js','chat.css','style.css','viajes.html','viajes.js','viajes.css','tienda.html','tienda.js','tienda.css','logo-rumbo.jpg','servicios.html','servicios.js','servicios.css','common.js','common.css','journey.js','promociones.css','design.css','database-client.js','registro.html','iniciar-sesion.html','auth-client.js','auth.css','guias-catalogo.js'];
-    array_push($public,'hero.js','hero.css','navigation.js','navigation.css','palette.css','community.css','reviews.js','translations.js','preferences.js','api-client.js');
-    if (!in_array($file,$public,true) && !preg_match('~^(imagenes|imagenes-viajes)/[a-zA-Z0-9_-]+\.(jpg|png|webp)$~D',$file)) throw new HttpError(404,'Archivo no encontrado.');
+    $assetAliases=json_decode(file_get_contents(__DIR__.'/config/asset-aliases.json'),true,512,JSON_THROW_ON_ERROR);
+    $file=$assetAliases[$file]??$file;
+    $public=['error.html','js/compartido/error.js','js/compartido/connection.js','index.html','js/inicio/script.js','js/rumbito/chat-engine.js','js/rumbito/chat-client.js','js/rumbito/chat-ui.js','css/rumbito/chat.css','css/inicio/style.css','viajes.html','js/destinos/viajes.js','css/destinos/viajes.css','tienda.html','js/tienda/tienda.js','css/tienda/tienda.css','servicios.html','js/servicios/servicios.js','css/servicios/servicios.css','js/compartido/common.js','css/compartido/common.css','js/servicios/journey.js','css/inicio/promociones.css','css/compartido/design.css','js/compartido/database-client.js','registro.html','iniciar-sesion.html','js/cuenta/auth-client.js','css/cuenta/auth.css','js/destinos/guias-catalogo.js'];
+    array_push($public,'js/inicio/hero.js','css/inicio/hero.css','js/compartido/navigation.js','css/compartido/navigation.css','css/compartido/palette.css','css/comunidad/community.css','js/comunidad/reviews.js','js/idiomas/translations.js','js/idiomas/preferences.js','js/compartido/api-client.js');
+    $public[]='js/idiomas/locale-engine.js';foreach(['es','en','de','fr','it','pt','ja','ko','zh','ar'] as $lang)$public[]='locales/'.$lang.'.json';
+    if (!in_array($file,$public,true) && !preg_match('~^(imagenes|imagenes-viajes)(?:/[a-zA-Z0-9_-]+)+\.(jpg|png|webp)$~D',$file)) throw new HttpError(404,'Archivo no encontrado.');
     $absolute=__DIR__.'/public/'.$file;
     if (!is_file($absolute)) throw new HttpError(404,'Archivo no encontrado.');
     $ext=pathinfo($file,PATHINFO_EXTENSION);
-    $mime=['html'=>'text/html; charset=utf-8','js'=>'text/javascript; charset=utf-8','css'=>'text/css; charset=utf-8','jpg'=>'image/jpeg','png'=>'image/png','webp'=>'image/webp'];
+    $mime=['html'=>'text/html; charset=utf-8','js'=>'text/javascript; charset=utf-8','css'=>'text/css; charset=utf-8','jpg'=>'image/jpeg','png'=>'image/png','webp'=>'image/webp','json'=>'application/json; charset=utf-8'];
     header('Content-Type: '.$mime[$ext]);
     if ($method==='HEAD') exit;
     if ($file==='error.html') { readfile($absolute);exit; }
-    if ($ext==='html') echo str_replace('<head>','<head><script id="rumbo-bootstrap" type="application/json">'.encode_json(bootstrap_data()).'</script><script src="auth-client.js" defer></script><link rel="stylesheet" href="auth.css">',file_get_contents($absolute));
+    if ($ext==='html') echo str_replace('<head>','<head><script id="rumbo-bootstrap" type="application/json">'.encode_json(bootstrap_data()).'</script><script src="js/cuenta/auth-client.js" defer></script><link rel="stylesheet" href="css/cuenta/auth.css">',file_get_contents($absolute));
     else readfile($absolute);
 } catch (HttpError $e) {
     if (!str_starts_with((string)$path,'/api/')) rumbo_error_page($e->status);

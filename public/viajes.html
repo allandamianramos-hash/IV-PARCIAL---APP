@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script src="database-client.js" defer></script>
+  <script src="js/compartido/database-client.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explora destinos y elige vuelos y hoteles para tu viaje con Rumbo.">
@@ -9,28 +9,29 @@
   <title>Destinos | Rumbo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- INTEGRANTE 2: este módulo utiliza únicamente viajes.css y viajes.js. -->
-  <link rel="stylesheet" href="viajes.css">
-  <script src="viajes.js" defer></script>
-  <link rel="stylesheet" href="common.css">
-  <script src="journey.js" defer></script><script src="connection.js" defer></script><script src="common.js" defer></script>
-  <script src="tienda.js" defer></script>
-  <script src="chat-engine.js" defer></script>
-  <script src="chat-client.js" defer></script>
-  <script src="chat-ui.js" defer></script>
-  <link rel="stylesheet" href="chat.css">
-  <link rel="stylesheet" href="promociones.css">
-<link rel="stylesheet" href="design.css">
+    <!-- INTEGRANTE 2: este módulo utiliza únicamente css/destinos/viajes.css y js/destinos/viajes.js. -->
+  <link rel="stylesheet" href="css/destinos/viajes.css">
+  <script src="js/destinos/viajes.js" defer></script>
+  <link rel="stylesheet" href="css/compartido/common.css">
+  <script src="js/servicios/journey.js" defer></script><script src="js/compartido/connection.js" defer></script><script src="js/compartido/common.js" defer></script>
+  <script src="js/tienda/tienda.js" defer></script>
+  <script src="js/rumbito/chat-engine.js" defer></script>
+  <script src="js/rumbito/chat-client.js" defer></script>
+  <script src="js/rumbito/chat-ui.js" defer></script>
+  <link rel="stylesheet" href="css/rumbito/chat.css">
+  <link rel="stylesheet" href="css/inicio/promociones.css">
+<link rel="stylesheet" href="css/compartido/design.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="navigation.css">
-<script src="navigation.js" defer></script>
-<link rel="stylesheet" href="palette.css">
-<link rel="stylesheet" href="community.css">
-<script src="api-client.js" defer></script>
-<script src="translations.js" defer></script>
-<script src="preferences.js" defer></script>
+<link rel="stylesheet" href="css/compartido/navigation.css">
+<script src="js/compartido/navigation.js" defer></script>
+<link rel="stylesheet" href="css/compartido/palette.css">
+<link rel="stylesheet" href="css/comunidad/community.css">
+<script src="js/compartido/api-client.js" defer></script>
+<script src="js/idiomas/translations.js" defer></script>
+<script src="js/idiomas/locale-engine.js" defer></script>
+<script src="js/idiomas/preferences.js" defer></script>
 </head>
 <body class="rv-page">
 
@@ -59,7 +60,7 @@
       <p>Consulta lugares, actividades y precios orientativos. Desde cada destino puedes buscar vuelos, hospedaje y recorridos con guía.</p>
       <a class="button button-primary" href="#catalogo">Explorar destinos <span aria-hidden="true">↓</span></a>
       <div class="rv-discover-note"><strong data-destination-total>40 destinos</strong><span>Honduras y el mundo.</span></div></div>
-      <figure class="rv-discover-photo"><img src="imagenes-viajes/hd-venecia-canal.jpg" alt="El Gran Canal de Venecia entre edificios de tonos cálidos" width="1100" height="760" fetchpriority="high"><figcaption>VENECIA, ITALIA <span aria-hidden="true">↗</span></figcaption></figure>
+      <figure class="rv-discover-photo"><img src="imagenes-viajes/portadas/hd-venecia-canal.jpg" alt="El Gran Canal de Venecia entre edificios de tonos cálidos" width="1100" height="760" fetchpriority="high"><figcaption>VENECIA, ITALIA <span aria-hidden="true">↗</span></figcaption></figure>
     </section>
     <section id="catalogo" class="rv-catalog" aria-labelledby="catalog-title">
       <div class="rv-section-title"><div><h2 id="catalog-title">Catálogo de destinos</h2></div><p>Filtra por nombre, región o tipo de viaje.</p></div>
@@ -84,7 +85,7 @@
 
   <!-- VUELOS -->
   <template id="rv-vista-vuelos">
-    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title catalog-hero"><div><h1 id="page-title">Vuelos</h1><p>Compara horarios, equipaje y tarifas por pasajero.</p><a class="button button-primary" href="#flight-search">Buscar vuelos ↓</a></div><figure><img src="imagenes-viajes/servicio-vuelo.jpg" alt="Ala de avión sobre las montañas" width="900" height="650" fetchpriority="high"></figure></section>
+    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title catalog-hero"><div><h1 id="page-title">Vuelos</h1><p>Compara horarios, equipaje y tarifas por pasajero.</p><a class="button button-primary" href="#flight-search">Buscar vuelos ↓</a></div><figure><img src="imagenes-viajes/servicios/servicio-vuelo.jpg" alt="Ala de avión sobre las montañas" width="900" height="650" fetchpriority="high"></figure></section>
     <form id="flight-search" class="rv-search-panel">
       <div class="rv-field"><label for="flight-destination">Destino</label><select id="flight-destination" name="destination"></select></div>
       <div class="rv-field"><label for="flight-origin">Origen</label><select id="flight-origin" name="origin"></select></div>
@@ -100,7 +101,7 @@
 
   <!-- HOTELES -->
   <template id="rv-vista-hoteles">
-    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title catalog-hero"><div><h1 id="page-title">Hoteles y hospedajes</h1><p>Compara habitaciones y consulta el total según noches y huéspedes.</p><a class="button button-primary" href="#hotel-search">Buscar hospedaje ↓</a></div><figure><img src="imagenes-viajes/hotel-piscina.jpg" alt="Piscina y terrazas de un hotel" width="900" height="650" fetchpriority="high"></figure></section>
+    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title catalog-hero"><div><h1 id="page-title">Hoteles y hospedajes</h1><p>Compara habitaciones y consulta el total según noches y huéspedes.</p><a class="button button-primary" href="#hotel-search">Buscar hospedaje ↓</a></div><figure><img src="imagenes-viajes/hoteles/hotel-piscina.jpg" alt="Piscina y terrazas de un hotel" width="900" height="650" fetchpriority="high"></figure></section>
     <form id="hotel-search" class="rv-search-panel rv-hotel-search">
       <div class="rv-field"><label for="hotel-destination">Destino</label><select id="hotel-destination" name="destination"></select></div>
       <div class="rv-field"><label for="hotel-date">Entrada al hotel</label><input id="hotel-date" name="checkIn" type="date" required></div>

@@ -5,12 +5,12 @@ import vm from 'node:vm';
 import { createHash } from 'node:crypto';
 import { validState } from '../backend/node/database-api.mjs';
 
-const source = await readFile(new URL('servicios.js', new URL('../public/', import.meta.url)), 'utf8');
-const travelSource = await readFile(new URL('viajes.js', new URL('../public/', import.meta.url)), 'utf8');
+const source = await readFile(new URL('js/servicios/servicios.js', new URL('../public/', import.meta.url)), 'utf8');
+const travelSource = await readFile(new URL('js/destinos/viajes.js', new URL('../public/', import.meta.url)), 'utf8');
 const data = { window: {} };
 vm.runInNewContext(travelSource.slice(0, travelSource.indexOf('/* Abre una')), data);
 const catalog = data.window.RumboViajesDatos;
-vm.runInNewContext(await readFile(new URL('guias-catalogo.js', new URL('../public/', import.meta.url)), 'utf8'), data);
+vm.runInNewContext(await readFile(new URL('js/destinos/guias-catalogo.js', new URL('../public/', import.meta.url)), 'utf8'), data);
 const experiences = data.window.RumboGuias;
 
 // Small DOM boundary for exercising the actual page event handlers and storage.
@@ -74,7 +74,7 @@ function page(query = '', stored = {}) {
 test('todos los destinos muestran sus propias actividades e imagen', () => {
   for (const d of catalog.destinations) {
     const ui=page('&destino='+d.id);
-    assert.equal(ui.node('guide-cover').src,d.id==='roatan'?'imagenes-viajes/guia-roatan-west-bay.jpg':d.image);
+    assert.equal(ui.node('guide-cover').src,d.id==='roatan'?'imagenes-viajes/guias/guia-roatan-west-bay.jpg':d.image);
     assert.equal(ui.node('guide-results-title').textContent,'Recorridos en '+d.name);
     const html=ui.node('guide-results').innerHTML;
     for(const {title,image} of experiences.filter(e=>e.destination===d.id)) {

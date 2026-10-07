@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import vm from 'node:vm';
 const scope={window:{},URLSearchParams,document:{body:{classList:{contains:()=>false},dataset:{}},readyState:'loading',addEventListener(){},querySelector:()=>null}};
 vm.createContext(scope);
-for(const name of ['viajes.js','tienda.js'])vm.runInContext(await readFile(new URL('../public/'+name,import.meta.url),'utf8'),scope,{timeout:3000});
+for(const name of ['js/destinos/viajes.js','js/tienda/tienda.js'])vm.runInContext(await readFile(new URL('../public/'+name,import.meta.url),'utf8'),scope,{timeout:3000});
 const data=scope.window.RumboViajesDatos, products=scope.window.RumboProducts;
 const options=vm.runInContext('PRODUCT_OPTIONS',scope), adjustments=vm.runInContext('OPTION_PRICE_ADJUSTMENTS',scope);
 const lit=value=>"N'"+String(value).replace(/'/g,"''")+"'";

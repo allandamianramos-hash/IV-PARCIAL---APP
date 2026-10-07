@@ -6,6 +6,6 @@ function rumbo_error_page(int $status): never {
     http_response_code($status);header('Content-Type: text/html; charset=utf-8');header('Cache-Control: no-store');
     if (($_SERVER['REQUEST_METHOD'] ?? 'GET')==='HEAD') exit;
     $html=file_get_contents(__DIR__.'/../../public/error.html');
-    echo str_replace(['Página no encontrada | Rumbo','Error 404','>404<','No encontramos esta página.','El enlace puede haber cambiado o la página ya no está disponible. Puedes seguir explorando desde el inicio.','href="index.html"','href="servicios.html"','src="connection.js"','src="error.js"'],[htmlspecialchars($title).' | Rumbo','Error '.$status,'>'.$status.'<',htmlspecialchars($title),htmlspecialchars($message),'href="/index.html"','href="/servicios.html"','src="/connection.js"','src="/error.js"'],$html);
+    echo str_replace(['Página no encontrada | Rumbo','Error 404','>404<','No encontramos esta página.','El enlace puede haber cambiado o la página ya no está disponible. Puedes seguir explorando desde el inicio.','href="index.html"','href="servicios.html"','src="js/compartido/connection.js"','src="js/compartido/error.js"'],[htmlspecialchars($title).' | Rumbo','Error '.$status,'>'.$status.'<',htmlspecialchars($title),htmlspecialchars($message),'href="/index.html"','href="/servicios.html"','src="/js/compartido/connection.js"','src="/js/compartido/error.js"'],$html);
     exit;
 }

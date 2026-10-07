@@ -18,6 +18,8 @@ Para trabajar juntos con una base alojada, lee [el manual para el equipo](docs/M
 
 Si aparece guardado local, ejecuta **COMPROBAR-CONEXION.cmd**. Para trabajar sin Live Server, usa **INICIAR-RUMBO.cmd** y http://127.0.0.1:8000. Las páginas estáticas abiertas desde Live Server se redirigen a PHP. Usa siempre el mismo hostname para conservar la misma sesión del navegador.
 
+Consulta [Idiomas, organización y diagnóstico de Rumbito](docs/IDIOMAS-Y-ESTRUCTURA.md) para las nuevas carpetas, traducciones y pruebas de reseñas.
+
 ## Carpetas
 
 - `public/`: HTML, CSS, JavaScript del navegador e imágenes.
@@ -30,11 +32,13 @@ Si aparece guardado local, ejecuta **COMPROBAR-CONEXION.cmd**. Para trabajar sin
 - `evidencias/`: capturas de comprobación.
 - `.runtime/`: controlador y registros locales, excluidos de Git.
 
+Los scripts del navegador están en `public/js/`, los estilos en `public/css/` y las imágenes están agrupadas por función. Las traducciones están en `public/locales/`.
+
 La raíz conserva los accesos `.cmd`, los puntos de entrada `router.php` y `server.mjs`, configuración y dependencias. `.env` contiene la configuración privada y no se comparte. `rumbo-background.ps1` mantiene la compatibilidad con accesos automáticos anteriores.
 
 ## Funcionamiento
 
-Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hotel, servicios, preparativos y resumen de compra de demostración. Hay 100 productos, 18 destinos y 90 hoteles.
+Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hotel, servicios, preparativos y resumen de compra de demostración. Hay 100 productos y 40 destinos; el catálogo combina los datos de SQL con las propuestas adicionales del sitio.
 
 Si recibiste tu paquete personal del equipo, extraelo y abre `CONECTAR-EQUIPO.cmd`. Consulta [Acceso del equipo](docs/ACCESO-EQUIPO.md) para los requisitos y la autorización de la IP de tu casa. Para consultar las tablas en SSMS, abre `VER-BD-AZURE.cmd`.
 
@@ -44,7 +48,7 @@ Las cuentas y el almacenamiento son reales. Los pagos, billetes y reservas sigue
 
 ## Validación y cambios
 
-La portada de Inicio es una isla React con TypeScript y Tailwind CSS en `src/hero/`. Después de cambiarla, ejecuta `npm install` y `npm run build` con Node 22.12 o posterior. Vite genera `public/hero.js` y `public/hero.css` sin borrar los demás archivos públicos; comparte también estos dos archivos compilados para que PHP y los accesos habituales funcionen sin un servidor Vite. `npm run dev:hero` vuelve a compilar al guardar mientras navegas con el servidor habitual. La configuración de campañas de `public/index.html` y el catálogo compartido de `public/viajes.js` siguen siendo las fuentes de destinos y tarifas.
+La portada de Inicio es una isla React con TypeScript y Tailwind CSS en `src/hero/`. Después de cambiarla, ejecuta `npm install` y `npm run build` con Node 22.12 o posterior. Vite genera `public/js/inicio/hero.js` y `public/css/inicio/hero.css` sin borrar los demás archivos públicos; comparte también estos dos archivos compilados para que PHP y los accesos habituales funcionen sin un servidor Vite. `npm run dev:hero` vuelve a compilar al guardar mientras navegas con el servidor habitual. La configuración de campañas de `public/index.html` y el catálogo compartido de `public/js/destinos/viajes.js` siguen siendo las fuentes de destinos y tarifas.
 
 ```powershell
 npm test

@@ -2,7 +2,7 @@
 
 Primera demostración, habilitada para el producto 2. Cuatro colores y tres escalas sobre la misma base; las variantes no cambian la geometría. El tamaño representa una comparación visual orientativa, no dimensiones exactas. El carrito conserva las opciones y utiliza la misma representación. Los demás productos conservan sus fotografías de referencia hasta disponer de una base individual.
 
-Base: imagenes/maleta-variantes-base.png. Referencia: imagenes/maleta.jpg. Creada con la herramienta integrada de ImageGen, preservando transparencia; sin API/CLI externa. La extracción generativa es ilustrativa y puede introducir diferencias con la fotografía original, disponible en el detalle.
+Base: imagenes/productos/maleta-variantes-base.png. Referencia: imagenes/productos/maleta.jpg. Creada con la herramienta integrada de ImageGen, preservando transparencia; sin API/CLI externa. La extracción generativa es ilustrativa y puede introducir diferencias con la fotografía original, disponible en el detalle.
 
 Prompt utilizado:
 
@@ -12,7 +12,7 @@ Validación: node --test server.test.mjs chat.test.mjs project.test.mjs journey.
 
 ## Fondo del jardín
 
-La vista interactiva ahora compone la maleta sobre `imagenes/maleta-fondo-jardin.png`. El fondo permanece sin filtros de color y no cambia de escala. Se reconstruyó con la herramienta integrada de ImageGen a partir de la fotografía original, retirando la maleta; no es una copia exacta píxel por píxel del paisaje original. La misma composición se utiliza en la miniatura del carrito.
+La vista interactiva ahora compone la maleta sobre `imagenes/productos/maleta-fondo-jardin.png`. El fondo permanece sin filtros de color y no cambia de escala. Se reconstruyó con la herramienta integrada de ImageGen a partir de la fotografía original, retirando la maleta; no es una copia exacta píxel por píxel del paisaje original. La misma composición se utiliza en la miniatura del carrito.
 
 Prompt utilizado para el fondo:
 

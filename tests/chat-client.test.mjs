@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 const scope = { window: {}, location: { href: 'http://localhost:3000/index.html', protocol: 'http:' }, URL, AbortSignal };
-vm.runInNewContext(await readFile(new URL('chat-client.js', new URL('../public/', import.meta.url)), 'utf8'), scope);
+vm.runInNewContext(await readFile(new URL('js/rumbito/chat-client.js', new URL('../public/', import.meta.url)), 'utf8'), scope);
 const request = scope.window.RumboChatClient.request;
 const payload = { message: 'Hola', history: [] };
 const fallback = () => ({ reply: 'Orientación del catálogo', state: { destination: 'roatan' } });

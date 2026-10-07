@@ -11,7 +11,7 @@ Las cuatro campañas sustituyen la imagen de portada. El carrusel cambia cada 5 
 
 Los importes anteriores son de ida desde Tegucigalpa, en económica y por persona. El porcentaje también se aplica a ejecutiva y al otro origen del catálogo, calculando primero la tarifa completa y redondeando a centavos. Hoteles y servicios no se descuentan. El total del viaje y su resumen descargable usan estos mismos precios. Los presupuestos orientativos de los destinos promocionados suman el vuelo rebajado y la estancia base.
 
-La campaña se adaptó al catálogo existente: no anuncia París ni Roma, que no tienen itinerarios aquí. No se conserva la restricción de octubre ni el mensaje «próximamente» de las referencias; estas ofertas del catálogo están activas sin límite de fechas. Los descuentos se configuran en `promotions` en `viajes.js`; si cambian, actualizar también los porcentajes y condiciones del anuncio en `index.html`.
+La campaña se adaptó al catálogo existente: no anuncia París ni Roma, que no tienen itinerarios aquí. No se conserva la restricción de octubre ni el mensaje «próximamente» de las referencias; estas ofertas del catálogo están activas sin límite de fechas. Los descuentos se configuran en `promotions` en `js/destinos/viajes.js`; si cambian, actualizar también los porcentajes y condiciones del anuncio en `index.html`.
 
 El sitio sigue siendo un planificador de demostración. La reducción sí se aplica a sus cálculos; no constituye una oferta ni una reserva de una aerolínea externa. No se añadieron cobros ni se alteraron las funciones de selección y eliminación de servicios.
 
@@ -21,7 +21,7 @@ La portada usa Montserrat (500, 600 y 800) en una composición de álbum de viaj
 
 En móvil, el collage y el descuento aparecen entre el titular y el precio. Las fotos usan `object-fit: cover` y se reemplazan cambiando los `src` de `.campaign-photo` en `index.html`. Las animaciones de entrada y el avión respetan movimiento reducido; el carrusel conserva pausa, flechas y cambios cada cinco segundos.
 
-Fotografías activas: `destino-cancun.jpg`, `hotel-bali-terraza.jpg` (piscina en Cancún), `dolomitas.jpg`, `hotel-valle.jpg`, `bali.jpg`, `kioto.jpg`, `playa.jpg` y `destino-madrid.jpg`, de `imagenes-viajes`. Sus referencias y licencias permanecen en el catálogo. Los archivos `promo-*.jpg/png` se conservan como versiones anteriores, pero ya no se muestran en la portada.
+Fotografías activas: `destinos/destino-cancun.jpg`, `hoteles/hotel-bali-terraza.jpg` (piscina en Cancún), `destinos/dolomitas.jpg`, `hoteles/hotel-valle.jpg`, `destinos/bali.jpg`, `destinos/kioto.jpg`, `destinos/playa.jpg` y `destinos/destino-madrid.jpg`, de `imagenes-viajes`. Sus referencias y licencias permanecen en el catálogo. Los archivos `promo-*.jpg/png` se conservan como versiones anteriores, pero ya no se muestran en la portada.
 
 ## Imágenes de la primera versión (archivadas)
 
@@ -46,7 +46,7 @@ Las versiones web se codificaron como JPEG calidad 88, sin cambiar dimensiones n
 `npm test` incluye comprobaciones de porcentajes, vuelos de ambos orígenes, ambas clases, ausencia de descuentos acumulados, varios pasajeros y conservación del precio del hotel. Las pruebas de integridad comprueban recursos, sintaxis y navegación existente.
 ## Fondo vivo y controles
 
-El HERO completo (CSS y JavaScript incluidos) está en `index.html`, identificado por `rumbo-hero-styles` y `rumbo-hero-script`. `RUMBO_HERO_CONFIG.slides` define las cuatro campañas: textos, fotos, etiqueta, ambiente, precios, dato útil y fecha opcional. Los precios configurados sirven de respaldo; dentro del sitio prevalece el catálogo compartido para que la oferta y el viaje siempre coincidan. `promociones.css` solo contiene estilos de descuentos usados por otras páginas.
+El HERO completo (CSS y JavaScript incluidos) está en `index.html`, identificado por `rumbo-hero-styles` y `rumbo-hero-script`. `RUMBO_HERO_CONFIG.slides` define las cuatro campañas: textos, fotos, etiqueta, ambiente, precios, dato útil y fecha opcional. Los precios configurados sirven de respaldo; dentro del sitio prevalece el catálogo compartido para que la oferta y el viaje siempre coincidan. `css/inicio/promociones.css` solo contiene estilos de descuentos usados por otras páginas.
 
 Las capas SVG `.campaign-scenery` son independientes y decorativas. Cancún: mar y sol. Italia: tres montañas, neblina y sol bajo, sin mar. Fin de año: atardecer, luna creciente y cinco estrellas fijas. Estilos: mapa, playa, montaña y ciudad; sus enlaces resaltan el paisaje y foto correspondientes con puntero o foco de teclado.
 

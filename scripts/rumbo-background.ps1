@@ -13,6 +13,7 @@ if (Test-Path -LiteralPath (Join-Path $rumboRoot '.env')) {
 }
 if ($env:PORT) { $rumboPort = [int]$env:PORT }
 if ($rumboPort -lt 1 -or $rumboPort -gt 65535) { throw 'PORT debe estar entre 1 y 65535.' }
+New-Item -ItemType Directory -Force -Path (Join-Path $rumboRoot '.runtime') | Out-Null
 $rumboUrl = "http://127.0.0.1:$rumboPort"
 function Test-RumboReady {
     try {
@@ -40,7 +41,7 @@ if (-not $Watch) {
     Start-Process -FilePath $rumboPowerShell -ArgumentList "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$rumboScript`" -Watch" -WorkingDirectory $rumboRoot -WindowStyle Hidden
     $rumboDeadline = (Get-Date).AddSeconds(25)
     while (-not (Test-RumboReady)) {
-        if ((Get-Date) -ge $rumboDeadline) { throw "No se pudo iniciar Rumbo en $rumboUrl. Revisa rumbo-errors.log y si otro programa ocupa el puerto." }
+        if ((Get-Date) -ge $rumboDeadline) { throw "No se pudo iniciar Rumbo en $rumboUrl. Revisa .runtime/rumbo-errors.log y si otro programa ocupa el puerto." }
         Start-Sleep -Seconds 1
     }
     if ($Open) { Start-Process explorer.exe -ArgumentList "http://localhost:$rumboPort" -WindowStyle Hidden }
@@ -60,11 +61,11 @@ try {
         try {
             if (-not (Test-RumboReady)) {
                 if ($null -eq $rumboChild -or $rumboChild.HasExited) {
-                    $rumboChild = Start-Process -FilePath $rumboNode -ArgumentList ('"' + (Join-Path $rumboRoot 'server.mjs') + '"') -WorkingDirectory $rumboRoot -WindowStyle Hidden -RedirectStandardOutput (Join-Path $rumboRoot 'rumbo-server.log') -RedirectStandardError (Join-Path $rumboRoot 'rumbo-errors.log') -PassThru
+                    $rumboChild = Start-Process -FilePath $rumboNode -ArgumentList ('"' + (Join-Path $rumboRoot 'server.mjs') + '"') -WorkingDirectory $rumboRoot -WindowStyle Hidden -RedirectStandardOutput (Join-Path $rumboRoot '.runtime\rumbo-server.log') -RedirectStandardError (Join-Path $rumboRoot '.runtime\rumbo-errors.log') -PassThru
                 }
             }
         } catch {
-            Add-Content -LiteralPath (Join-Path $rumboRoot 'rumbo-background.log') -Value "$(Get-Date -Format o) No se pudo iniciar el servidor. Se reintentara."
+            Add-Content -LiteralPath (Join-Path $rumboRoot '.runtime\rumbo-background.log') -Value "$(Get-Date -Format o) No se pudo iniciar el servidor. Se reintentara."
         }
         Start-Sleep -Seconds 5
     }

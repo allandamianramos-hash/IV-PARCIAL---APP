@@ -1,0 +1,88 @@
+.liquid-glass {
+  background: rgba(0, 0, 0, 0.4);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+
+/* Shared navigation on every Rumbo page. */
+body #site-navbar.site-header { color: #fff; position: fixed; inset: 0 0 auto; width: 100%; max-width: none; margin: 0; z-index: 80; padding: 20px 24px 0; border: 0; background: transparent; box-shadow: none; pointer-events: none; }
+body #site-navbar .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1120px; min-height: 62px; margin-inline: auto; gap: 48px; padding: 8px 12px 8px 28px; flex-wrap: nowrap; border-radius: 999px; overflow: visible; background: rgba(10,19,17,.94); pointer-events: auto; }
+/* Share the original wordmark from css/compartido/common.css with the rest of the site. */
+body #site-navbar .logo { flex-shrink: 0; display: inline-flex; align-items: baseline; gap: 0; white-space: nowrap; color: #087d72; font: 800 34px/1.1 'Segoe UI',Arial,sans-serif!important; letter-spacing: -2px; }
+body #site-navbar .logo>span { color: inherit; margin-left: 3px; }
+body #site-navbar .main-nav { display: flex; gap: 32px; width: auto; padding: 0; order: initial; background: transparent; border: 0; border-radius: 0; backdrop-filter: none; flex-wrap: nowrap; }
+body #site-navbar .main-nav a { padding: 8px 0; border: 0; border-radius: 0; font-size: 14px; font-weight: 400; color: #fff; background: transparent; }
+body #site-navbar .main-nav a[aria-current=page] { box-shadow: inset 0 -1px #fff; }
+body #site-navbar .main-nav a:hover { color: #d1d5db; }
+body #site-navbar .header-actions { display: flex; width: auto; gap: 20px; flex-wrap: nowrap; flex: 0 0 auto; }
+body #site-navbar .account-actions { display: flex; gap: 16px; width: auto; border: 0; padding: 0; margin: 0; }
+body #site-navbar .header-actions :is(.header-trip,.login-button,.register-button) { padding: 8px 12px!important; border: 0!important; border-radius: 999px!important; min-height: 42px; font-size: 13px; font-weight: 500!important; line-height: 1.5; box-shadow: none; background: transparent!important; color: #fff!important; }
+body #site-navbar .header-actions .register-button { padding-inline: 24px!important; background: #fff!important; color: #000!important; }
+body #site-navbar .header-actions .register-button:hover { background: #f3f4f6!important; }
+body #site-navbar .header-actions :is(.header-trip,.login-button):hover { color: #d1d5db!important; }
+body #site-navbar .account-toggle { background: #fff; color: #000; border: 0; border-radius: 999px; }
+body #site-navbar .account-avatar { background: #000; }
+body #site-navbar .account-panel { color: #000; border-color: #d1d5db; border-radius: 12px; }
+body #site-navbar .account-panel :is(a,button,strong,span) { color: #000!important; }
+body #site-navbar .account-panel :is(a,button):hover { background: #f3f4f6!important; color: #000!important; }
+body #site-navbar .account-panel .auth-logout { background: transparent!important; border-color: #d1d5db!important; }
+body #site-navbar .account-panel :focus-visible { outline-color: #000; }
+.site-mobile-menu { display: none; }
+
+
+#site-navbar, #site-navbar * { box-sizing: border-box; }
+#site-navbar a { text-decoration: none; }
+#site-navbar :is(a,button,summary,span) { font-family: Inter,sans-serif; }
+#site-navbar .header-inner { position: relative; }
+#site-navbar .main-nav a::after { display:none; }
+#site-navbar :focus-visible { outline:2px solid white; outline-offset:4px; }
+#site-navbar .header-action-icon { display:none; }
+#site-navbar .header-actions :is(.header-trip,.login-button,.register-button) {display:inline-flex;align-items:center;justify-content:center;}
+body:has(#site-navbar):not(:has(.home-hero-shell)) { padding-top:104px; }
+html:has(#site-navbar) { scroll-padding-top:104px; }
+.store-utilities { display:flex; justify-content:flex-end; align-items:center; gap:12px; margin-bottom:20px; }
+@media(max-width:1100px) { body #site-navbar .header-inner {gap:28px;} body #site-navbar .header-actions,body #site-navbar .account-actions {gap:8px;} }
+@media(min-width:768px) and (max-width:960px) { body #site-navbar .header-trip {display:none!important;} body #site-navbar .main-nav {gap:24px;} }
+@media(min-width:768px) and (max-width:1023px) { body #site-navbar .header-actions :is(.login-button,.register-button) {padding-inline:12px!important;} }
+@media(max-width:767.98px) {
+  body #site-navbar.site-header { padding: 16px 16px 0; }
+  body #site-navbar .header-inner { min-height: 58px; gap: 16px; padding: 8px 10px 8px 20px; }
+  body #site-navbar .main-nav, body #site-navbar .header-trip, body #site-navbar .header-actions .login-button { display: none!important; }
+  body #site-navbar .header-actions .register-button { padding: 8px 12px!important; min-height: 36px; font-size: 12px; }
+  .site-mobile-menu { display: block; margin-left: auto; }
+  .site-mobile-menu summary { cursor: pointer; list-style: none; display:grid; place-items:center; width:44px; height:44px; padding:10px; border:1px solid var(--line); border-radius:50%; color:var(--foreground); background:var(--field); }
+  .site-mobile-menu summary::-webkit-details-marker { display: none; }
+  .site-mobile-menu summary::after { content: none; }
+  .site-mobile-menu .menu-icon { width:22px; height:22px; }
+  .site-mobile-menu .menu-close,.site-mobile-menu[open] .menu-lines { display:none; }
+  .site-mobile-menu[open] .menu-close { display:block; }
+  .site-mobile-menu nav { position: absolute; left: 0; right: 0; top: calc(100% + 10px); padding: 14px; border: 1px solid #ffffff33; border-radius: 12px; background: #000; display: grid; gap: 2px; }
+  .site-mobile-menu nav a { padding: 10px 12px; font-size: 14px; color: #fff; border-radius: 6px; }
+  .site-mobile-menu nav a:hover { background: #fff; color: #000; }
+
+ body:has(#site-navbar):not(:has(.home-hero-shell)) {padding-top:96px;}
+}
+@media(max-width:370px) { body #site-navbar .header-inner {gap:8px;} }
+@media(max-width:350px) { body #site-navbar .header-inner {gap:6px;padding-left:14px;} body #site-navbar .logo {font-size:27px!important;} }

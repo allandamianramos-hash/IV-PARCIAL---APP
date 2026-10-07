@@ -2,7 +2,7 @@
   {
     "id": "londres",
     "name": "Londres",
-    "file": "destino-londres.jpg",
+    "file": "destinos/destino-londres.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/London_Skyline_from_Waterloo_Bridge%2C_London%2C_UK_-_Diliff.jpg/1920px-London_Skyline_from_Waterloo_Bridge%2C_London%2C_UK_-_Diliff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:London_Skyline_from_Waterloo_Bridge,_London,_UK_-_Diliff.jpg",
     "author": "Diliff",
@@ -13,7 +13,7 @@
   {
     "id": "lisboa",
     "name": "Lisboa",
-    "file": "destino-lisboa.jpg",
+    "file": "destinos/destino-lisboa.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Torre_Bel%C3%A9m_April_2009-4a.jpg/1920px-Torre_Bel%C3%A9m_April_2009-4a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Torre_Bel%C3%A9m_April_2009-4a.jpg",
     "author": "Alvesgaspar",
@@ -24,7 +24,7 @@
   {
     "id": "toronto",
     "name": "Toronto",
-    "file": "destino-toronto.jpg",
+    "file": "destinos/destino-toronto.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Toronto_-_ON_-_CN_Tower_bei_Nacht2.jpg/1920px-Toronto_-_ON_-_CN_Tower_bei_Nacht2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Toronto_-_ON_-_CN_Tower_bei_Nacht2.jpg",
     "author": "Wladyslaw, Correction of perspective distortion: Niabot",
@@ -35,7 +35,7 @@
   {
     "id": "rio-janeiro",
     "name": "Río de Janeiro",
-    "file": "destino-rio-janeiro.jpg",
+    "file": "destinos/destino-rio-janeiro.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Rio-panorama-Botafogo-Sugarloaf.jpg/1920px-Rio-panorama-Botafogo-Sugarloaf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Rio-panorama-Botafogo-Sugarloaf.jpg",
     "author": "Acediscovery",
@@ -46,7 +46,7 @@
   {
     "id": "ciudad-mexico",
     "name": "Ciudad de México",
-    "file": "destino-ciudad-mexico.jpg",
+    "file": "destinos/destino-ciudad-mexico.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Mexico_City_Palacio_de_bellas_artes.jpg/1280px-Mexico_City_Palacio_de_bellas_artes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Mexico_City_Palacio_de_bellas_artes.jpg",
     "author": "Jeses",
@@ -57,7 +57,7 @@
   {
     "id": "bogota",
     "name": "Bogotá",
-    "file": "destino-bogota.jpg",
+    "file": "destinos/destino-bogota.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Horizons_proyect_guadalupe_church_Bogota.jpg/1280px-Horizons_proyect_guadalupe_church_Bogota.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Horizons_proyect_guadalupe_church_Bogota.jpg",
     "author": "Galahad´sPendragon",
@@ -68,7 +68,7 @@
   {
     "id": "cartagena",
     "name": "Cartagena",
-    "file": "destino-cartagena.jpg",
+    "file": "destinos/destino-cartagena.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Colombia%2C_Cartagena%2C_Castillogrande_Lighthouse_and_Bocagrande%27s_Skyline.jpg/1280px-Colombia%2C_Cartagena%2C_Castillogrande_Lighthouse_and_Bocagrande%27s_Skyline.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Colombia,_Cartagena,_Castillogrande_Lighthouse_and_Bocagrande%27s_Skyline.jpg",
     "author": "Dr. Thomas Liptak",
@@ -79,7 +79,7 @@
   {
     "id": "lima",
     "name": "Lima",
-    "file": "destino-lima.jpg",
+    "file": "destinos/destino-lima.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Miraflores_Beach_%28Lima%2C_Peru%29.jpg/1280px-Miraflores_Beach_%28Lima%2C_Peru%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Miraflores_Beach_(Lima,_Peru).jpg",
     "author": "Avodrocc",
@@ -90,7 +90,7 @@
   {
     "id": "buenos-aires",
     "name": "Buenos Aires",
-    "file": "destino-buenos-aires.jpg",
+    "file": "destinos/destino-buenos-aires.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/193_-_Buenos_Aires_-_Puerto_Madero_-_Janvier_2010.jpg/1280px-193_-_Buenos_Aires_-_Puerto_Madero_-_Janvier_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:193_-_Buenos_Aires_-_Puerto_Madero_-_Janvier_2010.jpg",
     "author": "Martin St-Amant (S23678)",
@@ -101,7 +101,7 @@
   {
     "id": "santiago",
     "name": "Santiago",
-    "file": "destino-santiago.jpg",
+    "file": "destinos/destino-santiago.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Gran_Santiago_Tower%2C_Views_from_San_Crit%C3%B3bal_Hill_-_Santiago_-_Chile_08.jpg/1280px-Gran_Santiago_Tower%2C_Views_from_San_Crit%C3%B3bal_Hill_-_Santiago_-_Chile_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Gran_Santiago_Tower,_Views_from_San_Crit%C3%B3bal_Hill_-_Santiago_-_Chile_08.jpg",
     "author": "3BRBS",
@@ -112,7 +112,7 @@
   {
     "id": "medellin",
     "name": "Medellín",
-    "file": "destino-medellin.jpg",
+    "file": "destinos/destino-medellin.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Monumento_a_La_Vida%2C_de_Rodrigo_Arenas_Betancourt_-_Medell%C3%ADn%2C_2017.jpg/1280px-Monumento_a_La_Vida%2C_de_Rodrigo_Arenas_Betancourt_-_Medell%C3%ADn%2C_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Monumento_a_La_Vida,_de_Rodrigo_Arenas_Betancourt_-_Medell%C3%ADn,_2017.jpg",
     "author": "Ianturo",
@@ -123,7 +123,7 @@
   {
     "id": "punta-cana",
     "name": "Punta Cana",
-    "file": "destino-punta-cana.jpg",
+    "file": "destinos/destino-punta-cana.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/B%C3%A1varo%2C_23000%2C_Dominican_Republic_-_panoramio_%28258%29.jpg/1280px-B%C3%A1varo%2C_23000%2C_Dominican_Republic_-_panoramio_%28258%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:B%C3%A1varo,_23000,_Dominican_Republic_-_panoramio_(258).jpg",
     "author": "Максим Улитин",
@@ -134,7 +134,7 @@
   {
     "id": "san-salvador",
     "name": "San Salvador",
-    "file": "destino-san-salvador.jpg",
+    "file": "destinos/destino-san-salvador.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Palacio_Nacional_de_El_Salvador_en_Centro_Hist%C3%B3rico.jpg/1280px-Palacio_Nacional_de_El_Salvador_en_Centro_Hist%C3%B3rico.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Palacio_Nacional_de_El_Salvador_en_Centro_Hist%C3%B3rico.jpg",
     "author": "Lexdjelectronic2013",
@@ -145,7 +145,7 @@
   {
     "id": "san-juan",
     "name": "San Juan",
-    "file": "destino-san-juan.jpg",
+    "file": "destinos/destino-san-juan.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Castillo_San_Felipe_del_Morro%2C_San_Juan%2C_Puerto_Rico_2019-10-28.jpg/1280px-Castillo_San_Felipe_del_Morro%2C_San_Juan%2C_Puerto_Rico_2019-10-28.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Castillo_San_Felipe_del_Morro,_San_Juan,_Puerto_Rico_2019-10-28.jpg",
     "author": "Alexey Komarov",
@@ -156,7 +156,7 @@
   {
     "id": "los-angeles",
     "name": "Los Ángeles",
-    "file": "destino-los-angeles.jpg",
+    "file": "destinos/destino-los-angeles.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Portrait_of_Los_Angeles_2024_by_photographer_Ithaka_Darin_Pappas.jpg/1280px-Portrait_of_Los_Angeles_2024_by_photographer_Ithaka_Darin_Pappas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Los_Angeles_2024_by_photographer_Ithaka_Darin_Pappas.jpg",
     "author": "IthakaDarinPappas",
@@ -167,7 +167,7 @@
   {
     "id": "las-vegas",
     "name": "Las Vegas",
-    "file": "destino-las-vegas.jpg",
+    "file": "destinos/destino-las-vegas.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg/1280px-Las_Vegas_%28Nevada%2C_USA%29%2C_The_Strip_--_2012_--_6232.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Las_Vegas_(Nevada,_USA),_The_Strip_--_2012_--_6232.jpg",
     "author": "Dietmar Rabich",
@@ -178,7 +178,7 @@
   {
     "id": "vancouver",
     "name": "Vancouver",
-    "file": "destino-vancouver.jpg",
+    "file": "destinos/destino-vancouver.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Vancouver_%28BC%2C_Canada%29%2C_Skyline_--_2022_--_2080-92.jpg/1280px-Vancouver_%28BC%2C_Canada%29%2C_Skyline_--_2022_--_2080-92.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Vancouver_(BC,_Canada),_Skyline_--_2022_--_2080-92.jpg",
     "author": "Dietmar Rabich",
@@ -189,7 +189,7 @@
   {
     "id": "amsterdam",
     "name": "Ámsterdam",
-    "file": "destino-amsterdam.jpg",
+    "file": "destinos/destino-amsterdam.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Amsterdam_Canal_%28Ank_Kumar_%29_13.jpg/1280px-Amsterdam_Canal_%28Ank_Kumar_%29_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Amsterdam_Canal_(Ank_Kumar_)_13.jpg",
     "author": "Ank kumar",
@@ -200,7 +200,7 @@
   {
     "id": "berlin",
     "name": "Berlín",
-    "file": "destino-berlin.jpg",
+    "file": "destinos/destino-berlin.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Brandenburger_Tor_abends.jpg/1280px-Brandenburger_Tor_abends.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_abends.jpg",
     "author": "Thomas Wolf, www.foto-tw.de",
@@ -211,7 +211,7 @@
   {
     "id": "praga",
     "name": "Praga",
-    "file": "destino-praga.jpg",
+    "file": "destinos/destino-praga.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Panorama_of_Prague_from_Prague_Castle.jpg/1280px-Panorama_of_Prague_from_Prague_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Panorama_of_Prague_from_Prague_Castle.jpg",
     "author": "Slyronit",
@@ -222,7 +222,7 @@
   {
     "id": "estambul",
     "name": "Estambul",
-    "file": "destino-estambul.jpg",
+    "file": "destinos/destino-estambul.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Skyline_-_Istanbul%2C_Turkey_-_October_11%2C_2025.jpg/1280px-Skyline_-_Istanbul%2C_Turkey_-_October_11%2C_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Skyline_-_Istanbul,_Turkey_-_October_11,_2025.jpg",
     "author": "Giorgio Galeotti",
@@ -233,7 +233,7 @@
   {
     "id": "dubai",
     "name": "Dubái",
-    "file": "destino-dubai.jpg",
+    "file": "destinos/destino-dubai.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Dubai_Skyline_from_Offshore_La_Mer.jpg/1280px-Dubai_Skyline_from_Offshore_La_Mer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Dubai_Skyline_from_Offshore_La_Mer.jpg",
     "author": "In Transit",
@@ -244,7 +244,7 @@
   {
     "id": "tokio",
     "name": "Tokio",
-    "file": "destino-tokio.jpg",
+    "file": "destinos/destino-tokio.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Looking_southeast_from_Dentsu_Building%2C_Shiodome%2C_Tokyo_-_Jul_16%2C_2008.jpg/1280px-Looking_southeast_from_Dentsu_Building%2C_Shiodome%2C_Tokyo_-_Jul_16%2C_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Looking_southeast_from_Dentsu_Building,_Shiodome,_Tokyo_-_Jul_16,_2008.jpg",
     "author": "Miyo Sekimoto",
@@ -255,7 +255,7 @@
   {
     "id": "seul",
     "name": "Seúl",
-    "file": "destino-seul.jpg",
+    "file": "destinos/destino-seul.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Gyeonghoeru_%28Royal_Banquet_Hall%29_at_Gyeongbokgung_Palace%2C_Seoul.jpg/1280px-Gyeonghoeru_%28Royal_Banquet_Hall%29_at_Gyeongbokgung_Palace%2C_Seoul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Gyeonghoeru_(Royal_Banquet_Hall)_at_Gyeongbokgung_Palace,_Seoul.jpg",
     "author": "Frank Schulenburg",
@@ -266,7 +266,7 @@
   {
     "id": "singapur",
     "name": "Singapur",
-    "file": "destino-singapur.jpg",
+    "file": "destinos/destino-singapur.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Skyline_of_the_Central_Business_District_of_Singapore_with_Esplanade_Bridge.jpg/1280px-Skyline_of_the_Central_Business_District_of_Singapore_with_Esplanade_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_the_Central_Business_District_of_Singapore_with_Esplanade_Bridge.jpg",
     "author": "Basile Morin",
@@ -277,7 +277,7 @@
   {
     "id": "sidney",
     "name": "Sídney",
-    "file": "destino-sidney.jpg",
+    "file": "destinos/destino-sidney.jpg",
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Sydney_Opera_House_-_Dec_2008.jpg/1280px-Sydney_Opera_House_-_Dec_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "source": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_-_Dec_2008.jpg",
     "author": "Diliff",

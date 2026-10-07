@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile,access} from 'node:fs/promises';
 import vm from 'node:vm';
 const context={window:{},document:{querySelector:()=>null}};
-vm.runInNewContext(await readFile(new URL('tienda.js', new URL('../public/', import.meta.url)),'utf8'),context);
+vm.runInNewContext(await readFile(new URL('js/tienda/tienda.js', new URL('../public/', import.meta.url)),'utf8'),context);
 const preview=context.window.RumboVariantPreview;
 const product=context.window.RumboProducts.find(p=>p.id===2);
 test('las doce variantes conservan el mismo modelo y escalan sin deformarlo',async()=>{

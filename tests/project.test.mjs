@@ -7,7 +7,7 @@ import { resolve } from 'node:path';
 import vm from 'node:vm';
 
 const root = fileURLToPath(new URL('.', new URL('../public/', import.meta.url)));
-const files = await readdir(root);
+const files = await readdir(root,{recursive:true});
 
 test('todos los scripts compilan antes de iniciar el sitio', () => {
   for (const file of files.filter(name => /\.(?:js|mjs)$/.test(name))) {
@@ -42,14 +42,14 @@ test('cada página tiene un documento, recursos existentes y scripts sin duplica
     for (const [, url] of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/g)) {
       if (/^(?:https?:|mailto:|tel:|#|data:)/.test(url)) continue;
       const path = url.split(/[?#]/)[0];
-      if (path) await access(resolve(root, path));
+      if (path) await access(resolve(root, path.replace(/^\//,'')));
     }
   }
 });
 
 test('el catálogo compartido funciona fuera de la tienda y sus imágenes existen', async () => {
   const context = { window: {}, document: { querySelector: () => null } };
-  vm.runInNewContext(await readFile(resolve(root, 'tienda.js'), 'utf8'), context);
+  vm.runInNewContext(await readFile(resolve(root, 'js/tienda/tienda.js'), 'utf8'), context);
   const products = context.window.RumboProducts;
   assert.ok(products.length >= 30);
   assert.equal(new Set(products.map(p => p.id)).size, products.length);

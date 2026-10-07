@@ -6,7 +6,7 @@ test("sirve el sitio y bloquea secretos y módulos privados", async () => {
   await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
   try {
     const url = `http://127.0.0.1:${server.address().port}`;
-    for (const [path, contentType] of [['/hero.js', 'text/javascript; charset=utf-8'], ['/hero.css', 'text/css; charset=utf-8'], ['/navigation.js', 'text/javascript; charset=utf-8'], ['/navigation.css', 'text/css; charset=utf-8']]) {
+    for (const [path, contentType] of [['/js/inicio/hero.js', 'text/javascript; charset=utf-8'], ['/css/inicio/hero.css', 'text/css; charset=utf-8'], ['/js/compartido/navigation.js', 'text/javascript; charset=utf-8'], ['/css/compartido/navigation.css', 'text/css; charset=utf-8']]) {
       for (const method of ['GET', 'HEAD']) {
         const response = await fetch(url + path, { method });
         assert.equal(response.status, 200, `${method} ${path}`);
@@ -16,7 +16,7 @@ test("sirve el sitio y bloquea secretos y módulos privados", async () => {
         else assert.ok(body.length > 0, `${method} ${path}`);
       }
     }
-    for (const path of ["/", "/chat-engine.js", "/promociones.css", "/imagenes/promo-ofertas.jpg", "/imagenes/promo-europa.jpg", "/imagenes/promo-temporada.jpg", "/imagenes/promo-destinos.jpg", "/tienda.js", "/servicios.html?seccion=traslados", "/servicios.js", "/servicios.css", "/common.js", "/common.css", "/imagenes-viajes/cultura.jpg", "/viajes.html?pantalla=hoteles"]) assert.equal((await fetch(url + path)).status, 200);
+    for (const path of ["/", "/js/rumbito/chat-engine.js", "/css/inicio/promociones.css", "/imagenes-viajes/portadas/hero-premium-venecia.jpg", "/imagenes-viajes/hoteles/hotel-playa.jpg", "/js/tienda/tienda.js", "/servicios.html?seccion=traslados", "/js/servicios/servicios.js", "/css/servicios/servicios.css", "/js/compartido/common.js", "/css/compartido/common.css", "/imagenes-viajes/destinos/cultura.jpg", "/viajes.html?pantalla=hoteles"]) assert.equal((await fetch(url + path)).status, 200);
     for (const path of ["/.env", "/.env.example", "/server.mjs", "/chat-api.mjs", "/.git/config", "/package.json"]) assert.equal((await fetch(url + path)).status, 404);
     assert.equal((await fetch(url + "/api/chat")).status, 405);
     const health = await fetch(url + '/api/health');

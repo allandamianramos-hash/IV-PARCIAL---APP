@@ -13,7 +13,11 @@
     "db:seed": "node database/manage.mjs seed",
     "db:test": "node --test tests/integration/database.test.mjs tests/integration/auth.test.mjs",
     "php:test": "node --test tests/integration/php.test.mjs",
-    "db:export": "node database/export-installer.mjs"
+    "db:export": "node database/export-installer.mjs",
+    "test:browser": "node --test tests/browser/*.test.mjs",
+    "test:reviews": "node --test tests/integration/reviews.test.mjs",
+    "i18n:extract": "node scripts/i18n/extract.mjs",
+    "chat:check": "node scripts/diagnostico-rumbito.mjs"
   },
   "engines": {
     "node": ">=22.12"
@@ -26,6 +30,7 @@
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/node": "^22.20.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",

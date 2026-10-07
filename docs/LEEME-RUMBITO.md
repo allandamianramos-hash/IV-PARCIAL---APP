@@ -1,5 +1,7 @@
 # Rumbito
 
+La configuración y el diagnóstico actuales están en [IDIOMAS-Y-ESTRUCTURA.md](IDIOMAS-Y-ESTRUCTURA.md). El sitio funciona en PHP 8000 o por el proxy de Live Server 5500; Node 3000 atiende la IA. La clave se relee al enviar cada mensaje. Usa `npm run chat:check` para comprobar la autenticación sin mostrar secretos.
+
 > Las páginas y scripts del navegador están ahora en `public/`; la API está en `backend/node/chat-api.mjs`. `INICIAR-RUMBO.cmd` abre PHP en el puerto 8000 y conserva Node en 3000 como servicio auxiliar del chat. Consulta [SQL-SERVER-PHP.md](SQL-SERVER-PHP.md).
 
 Rumbito conversa con GPT-5 mini a través de Lightning AI. El servidor mantiene la llave privada y usa los catálogos del sitio y el planificador existente para orientar las respuestas.
@@ -10,11 +12,11 @@ Requiere Node 22 o posterior. Copia .env.example a .env si aún no tienes config
 
 En Windows, abre `ACTIVAR-RUMBO-AUTOMATICO.cmd` una sola vez: instala un acceso directo de inicio de sesión para tu usuario y deja el servidor en segundo plano. Al entrar de nuevo a Windows, Rumbito arranca automáticamente; si el proceso del servidor termina, el supervisor lo vuelve a iniciar. Cerrar el navegador o la ventana del lanzador no detiene el servidor. `INICIAR-RUMBO.cmd` abre la página y asegura que el supervisor esté activo, sin crear supervisores duplicados. `npm start` sigue siendo una alternativa manual para desarrollo.
 
-La comprobación `/api/health` solo confirma que el servidor local está disponible; no consulta al proveedor ni consume créditos. Internet, una llave válida y créditos del proveedor siguen siendo necesarios. La recuperación del servidor puede tardar unos segundos. Si otro programa ocupa el puerto, no se lo cierra automáticamente: revisa `rumbo-errors.log`.
+La comprobación `/api/health` solo confirma que el servidor local está disponible; no consulta al proveedor ni consume créditos. Internet, una llave válida y créditos del proveedor siguen siendo necesarios. La recuperación del servidor puede tardar unos segundos. Si otro programa ocupa el puerto, no se lo cierra automáticamente: revisa `.runtime/rumbo-errors.log`.
 
-El inicio automático apunta a esta carpeta: si la mueves, ejecuta de nuevo `ACTIVAR-RUMBO-AUTOMATICO.cmd`. Para desactivarlo, abre `shell:startup` desde Ejecutar y elimina únicamente `Rumbo - servidor automatico.lnk`; se dejará de iniciar en la siguiente sesión. Reinicia el servidor después de cambiar `.env`; si cambias `PORT`, reinicia también el supervisor o cierra y vuelve a iniciar la sesión de Windows.
+El inicio automático apunta a esta carpeta: si la mueves, ejecuta de nuevo `ACTIVAR-RUMBO-AUTOMATICO.cmd`. Para desactivarlo, abre `shell:startup` desde Ejecutar y elimina únicamente `Rumbo - servidor automatico.lnk`; se dejará de iniciar en la siguiente sesión. Los cambios de clave y modelo se leen al enviar el siguiente mensaje. Si cambias `PORT`, reinicia el supervisor y el proxy PHP.
 
-La IA requiere este servidor. Al abrir index.html directamente, usar una vista estática o perder conexión, Rumbito responde con el catálogo local y muestra «Modo local». Vuelve a intentar la IA en cada mensaje enviado por HTTP; el respaldo no oculta rechazos ni límites de uso. La configuración local ya está preparada en esta copia. Nunca publiques .env: está excluido de Git y el servidor no lo sirve.
+La IA requiere este servidor. Al abrir index.html directamente, usar una vista estática o perder conexión, Rumbito responde con el catálogo local y muestra «Modo local». Vuelve a intentar la IA en cada mensaje enviado por HTTP; el respaldo no oculta rechazos ni límites de uso. El diagnóstico actual de autenticación está documentado en IDIOMAS-Y-ESTRUCTURA.md. Nunca publiques .env: está excluido de Git y el servidor no lo sirve.
 
 ## Conversación y privacidad
 
@@ -26,13 +28,13 @@ Prueba: “Viajo con familia, somos dos, queremos playa y tenemos 20 mil”, “
 
 ## Configuración y despliegue
 
-Si ves «Modo local», comprueba primero la dirección del navegador. Debe ser `http://localhost:3000` cuando trabajas en este equipo. Abrir el HTML directamente, usar Live Server en otro puerto o publicar solo archivos estáticos no ejecuta `server.mjs`. La llave de `.env` se lee únicamente al iniciar ese servidor; no viaja con los archivos a GitHub ni a otro equipo.
+Si ves «Modo local», comprueba primero la dirección del navegador. Puede ser `http://127.0.0.1:8000`, Live Server 5500 con su proxy o Node 3000. Abrir el HTML directamente, usar Live Server en otro puerto o publicar solo archivos estáticos no ejecuta `server.mjs`. La llave de `.env` se lee en el servidor antes de cada consulta; no viaja con los archivos a GitHub ni a otro equipo.
 
 `INICIAR-RUMBO.cmd` abre la página correcta en Windows y deja el servidor en segundo plano. No necesitas mantener abierta una terminal. `npm run open` conserva el arranque manual en primer plano para desarrollo. Los errores distinguen llave rechazada, permisos, créditos, cuota, modelo y tiempo de espera; no hace falta cambiar la llave si el problema es una vista sin servidor.
 
 ### Usar Live Server en VS Code
 
-El proyecto incluye `.vscode/settings.json` para que Live Server envíe `/api` al servidor de Rumbo en `127.0.0.1:3000`. Después de cambiar esta configuración, detén Live Server pulsando «Port: 5500» y vuelve a iniciarlo con «Go Live». Con el inicio automático activado, no hace falta abrir otra terminal; Live Server muestra los archivos y Rumbo atiende las consultas de IA. Si cambias el puerto de Rumbo en `.env`, actualiza también `proxyUri` en la configuración del proyecto. El token permanece en `.env`, únicamente en el servidor.
+El proyecto incluye `.vscode/settings.json` para que Live Server envíe el sitio y `/api` a PHP en `127.0.0.1:8000`; PHP deriva el chat a Node en 3000. Después de cambiar esta configuración, detén Live Server pulsando «Port: 5500» y vuelve a iniciarlo con «Go Live». Con el inicio automático activado, no hace falta abrir otra terminal; Live Server muestra los archivos y Rumbo atiende las consultas de IA. `proxyUri` debe apuntar al puerto de PHP; el puerto de Node se configura mediante `PORT`. El token permanece en `.env`, únicamente en el servidor.
 
 - LIGHTNING_API_KEY: secreto del servidor, nunca del navegador.
 - RUMBITO_MODEL: openai/gpt-5-mini, modelo validado con esta integración.
@@ -46,18 +48,18 @@ Para publicar, ejecuta Node detrás de un proxy HTTPS, configura los secretos en
 
 - chat-api.mjs: conexión privada, catálogo, validación, límites y errores.
 - server.mjs: archivos públicos y POST /api/chat.
-- chat-engine.js: intenciones, cálculos, opciones y enlaces existentes.
-- script.js: historial, estados del chat y peticiones al servidor.
-- imagenes/rumbito-pin.png: mascota de ubicación de fondo transparente.
+- js/rumbito/chat-engine.js: intenciones, cálculos, opciones y enlaces existentes.
+- js/inicio/script.js: historial, estados del chat y peticiones al servidor.
+- imagenes/rumbito/rumbito-pin.png: mascota de ubicación de fondo transparente.
 - server.test.mjs: pruebas de conexión simulada y protección de secretos. npm test ejecuta toda la suite sin gastar créditos.
 
 ## Primera versión de servicios
 
 - `servicios.html`: entrada de servicios, traslados, seguros, guías locales, perfil local, ayuda y Mi viaje. El parámetro `seccion` elige la vista.
-- `servicios.js`: catálogo de ejemplo, filtros, validación, cálculos, guardado y descarga de selecciones. Conserva una elección por tipo de servicio. Los cambios de formulario requieren pulsar «Ver opciones» antes de seleccionar de nuevo.
-- `servicios.css`: presentación adaptable a móvil con la paleta original.
-- `common.js` y `common.css`: enlaces compartidos, acceso a Rumbito y navegación entre páginas.
-- `viajes.js`: catálogo único de los seis destinos, sus fotografías y presupuestos de inspiración; se carga antes de `script.js` en el inicio. Las tarifas de vuelos y hoteles se calculan por separado del presupuesto orientativo.
+- `js/servicios/servicios.js`: catálogo de ejemplo, filtros, validación, cálculos, guardado y descarga de selecciones. Conserva una elección por tipo de servicio. Los cambios de formulario requieren pulsar «Ver opciones» antes de seleccionar de nuevo.
+- `css/servicios/servicios.css`: presentación adaptable a móvil con la paleta original.
+- `js/compartido/common.js` y `css/compartido/common.css`: enlaces compartidos, acceso a Rumbito y navegación entre páginas.
+- `js/destinos/viajes.js`: catálogo único de los seis destinos, sus fotografías y presupuestos de inspiración; se carga antes de `js/inicio/script.js` en el inicio. Las tarifas de vuelos y hoteles se calculan por separado del presupuesto orientativo.
 
 Rumbito ahora es un marcador de ubicación de expresión cercana. También puede abrir las nuevas páginas al preguntar por traslados, seguros o guías locales. Copán utiliza la fotografía local del sitio arqueológico, con créditos disponibles desde el catálogo de destinos.
 

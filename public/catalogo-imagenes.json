@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Mochila de viaje",
-    "image": "imagenes/mochila.jpg",
+    "image": "imagenes/productos/mochila.jpg",
     "kind": "photo",
     "referenceProduct": 1,
     "referenceName": "Mochila de viaje"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "name": "Maleta de viaje",
-    "image": "imagenes/maleta.jpg",
+    "image": "imagenes/productos/maleta.jpg",
     "kind": "photo",
     "referenceProduct": 2,
     "referenceName": "Maleta de viaje"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "name": "Bolso de mano",
-    "image": "imagenes/bolso-mano.jpg",
+    "image": "imagenes/productos/bolso-mano.jpg",
     "kind": "photo",
     "referenceProduct": 3,
     "referenceName": "Bolso de mano"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "name": "Riñonera",
-    "image": "imagenes/rinonera.jpg",
+    "image": "imagenes/productos/rinonera.jpg",
     "kind": "photo",
     "referenceProduct": 4,
     "referenceName": "Riñonera"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "name": "Etiqueta para maleta",
-    "image": "imagenes/producto-43.jpg",
+    "image": "imagenes/productos/producto-43.jpg",
     "kind": "generated",
     "referenceProduct": 43,
     "referenceName": "Etiquetas para equipaje"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "name": "Candado para maleta",
-    "image": "imagenes/producto-76.jpg",
+    "image": "imagenes/productos/producto-76.jpg",
     "kind": "generated",
     "referenceProduct": 76,
     "referenceName": "Candado de combinación"
@@ -50,7 +50,7 @@
   {
     "id": 7,
     "name": "Power Bank",
-    "image": "imagenes/power-bank.jpg",
+    "image": "imagenes/productos/power-bank.jpg",
     "kind": "photo",
     "referenceProduct": 7,
     "referenceName": "Power Bank"
@@ -58,7 +58,7 @@
   {
     "id": 8,
     "name": "Cargador de celular",
-    "image": "imagenes/cargador.jpg",
+    "image": "imagenes/productos/cargador.jpg",
     "kind": "photo",
     "referenceProduct": 8,
     "referenceName": "Cargador de celular"
@@ -66,7 +66,7 @@
   {
     "id": 9,
     "name": "Cable USB",
-    "image": "imagenes/producto-47.jpg",
+    "image": "imagenes/productos/producto-47.jpg",
     "kind": "generated",
     "referenceProduct": 47,
     "referenceName": "Cable USB-C"
@@ -74,7 +74,7 @@
   {
     "id": 10,
     "name": "Adaptador universal",
-    "image": "imagenes/adaptador.jpg",
+    "image": "imagenes/productos/adaptador.jpg",
     "kind": "photo",
     "referenceProduct": 10,
     "referenceName": "Adaptador universal"
@@ -82,7 +82,7 @@
   {
     "id": 11,
     "name": "Audífonos",
-    "image": "imagenes/audifonos.jpg",
+    "image": "imagenes/productos/audifonos.jpg",
     "kind": "photo",
     "referenceProduct": 11,
     "referenceName": "Audífonos"
@@ -90,7 +90,7 @@
   {
     "id": 12,
     "name": "Soporte para celular",
-    "image": "imagenes/soporte-celular.jpg",
+    "image": "imagenes/productos/soporte-celular.jpg",
     "kind": "photo",
     "referenceProduct": 12,
     "referenceName": "Soporte para celular"
@@ -98,7 +98,7 @@
   {
     "id": 13,
     "name": "Almohada de viaje",
-    "image": "imagenes/almohada-viaje.jpg",
+    "image": "imagenes/productos/almohada-viaje.jpg",
     "kind": "photo",
     "referenceProduct": 13,
     "referenceName": "Almohada de viaje"
@@ -106,7 +106,7 @@
   {
     "id": 14,
     "name": "Botella reutilizable",
-    "image": "imagenes/botella.jpg",
+    "image": "imagenes/productos/botella.jpg",
     "kind": "photo",
     "referenceProduct": 14,
     "referenceName": "Botella reutilizable"
@@ -114,7 +114,7 @@
   {
     "id": 15,
     "name": "Antifaz para dormir",
-    "image": "imagenes/producto-61.jpg",
+    "image": "imagenes/productos/producto-61.jpg",
     "kind": "generated",
     "referenceProduct": 61,
     "referenceName": "Antifaz para dormir"
@@ -122,7 +122,7 @@
   {
     "id": 16,
     "name": "Tapones para oídos",
-    "image": "imagenes/tapones-oidos.jpg",
+    "image": "imagenes/productos/tapones-oidos.jpg",
     "kind": "photo",
     "referenceProduct": 16,
     "referenceName": "Tapones para oídos"
@@ -130,7 +130,7 @@
   {
     "id": 17,
     "name": "Paraguas compacto",
-    "image": "imagenes/paraguas.jpg",
+    "image": "imagenes/productos/paraguas.jpg",
     "kind": "photo",
     "referenceProduct": 17,
     "referenceName": "Paraguas compacto"
@@ -138,7 +138,7 @@
   {
     "id": 18,
     "name": "Toalla de viaje",
-    "image": "imagenes/toalla-viaje.jpg",
+    "image": "imagenes/productos/toalla-viaje.jpg",
     "kind": "photo",
     "referenceProduct": 18,
     "referenceName": "Toalla de viaje"
@@ -146,7 +146,7 @@
   {
     "id": 19,
     "name": "Porta pasaporte",
-    "image": "imagenes/producto-41.jpg",
+    "image": "imagenes/productos/producto-41.jpg",
     "kind": "generated",
     "referenceProduct": 41,
     "referenceName": "Porta pasaporte"
@@ -154,7 +154,7 @@
   {
     "id": 20,
     "name": "Porta documentos",
-    "image": "imagenes/porta-documentos.jpg",
+    "image": "imagenes/productos/porta-documentos.jpg",
     "kind": "photo",
     "referenceProduct": 20,
     "referenceName": "Porta documentos"
@@ -162,7 +162,7 @@
   {
     "id": 21,
     "name": "Billetera de viaje",
-    "image": "imagenes/billetera.jpg",
+    "image": "imagenes/productos/billetera.jpg",
     "kind": "photo",
     "referenceProduct": 21,
     "referenceName": "Billetera de viaje"
@@ -170,7 +170,7 @@
   {
     "id": 22,
     "name": "Bolsa impermeable",
-    "image": "imagenes/producto-22.jpg",
+    "image": "imagenes/productos/producto-22.jpg",
     "kind": "generated",
     "referenceProduct": 22,
     "referenceName": "Bolsa impermeable"
@@ -178,7 +178,7 @@
   {
     "id": 23,
     "name": "Correa para maleta",
-    "image": "imagenes/producto-35.jpg",
+    "image": "imagenes/productos/producto-35.jpg",
     "kind": "generated",
     "referenceProduct": 35,
     "referenceName": "Correa para maleta"
@@ -186,7 +186,7 @@
   {
     "id": 24,
     "name": "Linterna",
-    "image": "imagenes/linterna.jpg",
+    "image": "imagenes/productos/linterna.jpg",
     "kind": "photo",
     "referenceProduct": 24,
     "referenceName": "Linterna"
@@ -194,7 +194,7 @@
   {
     "id": 25,
     "name": "Neceser de viaje",
-    "image": "imagenes/neceser.jpg",
+    "image": "imagenes/productos/neceser.jpg",
     "kind": "photo",
     "referenceProduct": 25,
     "referenceName": "Neceser de viaje"
@@ -202,7 +202,7 @@
   {
     "id": 26,
     "name": "Botellas para líquidos",
-    "image": "imagenes/producto-92.jpg",
+    "image": "imagenes/productos/producto-92.jpg",
     "kind": "generated",
     "referenceProduct": 92,
     "referenceName": "Botellas para líquidos"
@@ -210,7 +210,7 @@
   {
     "id": 27,
     "name": "Cepillo de dientes de viaje",
-    "image": "imagenes/cepillo-dientes.jpg",
+    "image": "imagenes/productos/cepillo-dientes.jpg",
     "kind": "photo",
     "referenceProduct": 27,
     "referenceName": "Cepillo de dientes de viaje"
@@ -218,7 +218,7 @@
   {
     "id": 28,
     "name": "Kit de higiene",
-    "image": "imagenes/kit-higiene.jpg",
+    "image": "imagenes/productos/kit-higiene.jpg",
     "kind": "photo",
     "referenceProduct": 28,
     "referenceName": "Kit de higiene"
@@ -226,7 +226,7 @@
   {
     "id": 29,
     "name": "Protector solar",
-    "image": "imagenes/protector-solar.jpg",
+    "image": "imagenes/productos/protector-solar.jpg",
     "kind": "photo",
     "referenceProduct": 29,
     "referenceName": "Protector solar"
@@ -234,7 +234,7 @@
   {
     "id": 30,
     "name": "Botiquín básico",
-    "image": "imagenes/botiquin.jpg",
+    "image": "imagenes/productos/botiquin.jpg",
     "kind": "photo",
     "referenceProduct": 30,
     "referenceName": "Botiquín básico"
@@ -242,7 +242,7 @@
   {
     "id": 31,
     "name": "Organizador de maleta",
-    "image": "imagenes/producto-31.jpg",
+    "image": "imagenes/productos/producto-31.jpg",
     "kind": "generated",
     "referenceProduct": 31,
     "referenceName": "Organizador de maleta"
@@ -250,7 +250,7 @@
   {
     "id": 32,
     "name": "Bolsa para zapatos",
-    "image": "imagenes/producto-32.jpg",
+    "image": "imagenes/productos/producto-32.jpg",
     "kind": "generated",
     "referenceProduct": 32,
     "referenceName": "Bolsa para zapatos"
@@ -258,7 +258,7 @@
   {
     "id": 33,
     "name": "Cubos organizadores de ropa",
-    "image": "imagenes/producto-33.jpg",
+    "image": "imagenes/productos/producto-33.jpg",
     "kind": "generated",
     "referenceProduct": 33,
     "referenceName": "Cubos organizadores de ropa"
@@ -266,7 +266,7 @@
   {
     "id": 34,
     "name": "Funda para maleta",
-    "image": "imagenes/producto-34.jpg",
+    "image": "imagenes/productos/producto-34.jpg",
     "kind": "generated",
     "referenceProduct": 34,
     "referenceName": "Funda para maleta"
@@ -274,7 +274,7 @@
   {
     "id": 35,
     "name": "Correa para maleta",
-    "image": "imagenes/producto-35.jpg",
+    "image": "imagenes/productos/producto-35.jpg",
     "kind": "generated",
     "referenceProduct": 35,
     "referenceName": "Correa para maleta"
@@ -282,7 +282,7 @@
   {
     "id": 36,
     "name": "Neceser de viaje",
-    "image": "imagenes/producto-36.jpg",
+    "image": "imagenes/productos/producto-36.jpg",
     "kind": "generated",
     "referenceProduct": 36,
     "referenceName": "Neceser de viaje"
@@ -290,7 +290,7 @@
   {
     "id": 37,
     "name": "Bolsa para ropa sucia",
-    "image": "imagenes/producto-37.jpg",
+    "image": "imagenes/productos/producto-37.jpg",
     "kind": "generated",
     "referenceProduct": 37,
     "referenceName": "Bolsa para ropa sucia"
@@ -298,7 +298,7 @@
   {
     "id": 38,
     "name": "Bolsa plegable de viaje",
-    "image": "imagenes/producto-38.jpg",
+    "image": "imagenes/productos/producto-38.jpg",
     "kind": "generated",
     "referenceProduct": 38,
     "referenceName": "Bolsa plegable de viaje"
@@ -306,7 +306,7 @@
   {
     "id": 39,
     "name": "Mochila de viaje",
-    "image": "imagenes/producto-39.jpg",
+    "image": "imagenes/productos/producto-39.jpg",
     "kind": "generated",
     "referenceProduct": 39,
     "referenceName": "Mochila de viaje"
@@ -314,7 +314,7 @@
   {
     "id": 40,
     "name": "Riñonera de viaje",
-    "image": "imagenes/producto-40.jpg",
+    "image": "imagenes/productos/producto-40.jpg",
     "kind": "generated",
     "referenceProduct": 40,
     "referenceName": "Riñonera de viaje"
@@ -322,7 +322,7 @@
   {
     "id": 41,
     "name": "Porta pasaporte",
-    "image": "imagenes/producto-41.jpg",
+    "image": "imagenes/productos/producto-41.jpg",
     "kind": "generated",
     "referenceProduct": 41,
     "referenceName": "Porta pasaporte"
@@ -330,7 +330,7 @@
   {
     "id": 42,
     "name": "Organizador de documentos",
-    "image": "imagenes/producto-42.jpg",
+    "image": "imagenes/productos/producto-42.jpg",
     "kind": "generated",
     "referenceProduct": 42,
     "referenceName": "Organizador de documentos"
@@ -338,7 +338,7 @@
   {
     "id": 43,
     "name": "Etiquetas para equipaje",
-    "image": "imagenes/producto-43.jpg",
+    "image": "imagenes/productos/producto-43.jpg",
     "kind": "generated",
     "referenceProduct": 43,
     "referenceName": "Etiquetas para equipaje"
@@ -346,7 +346,7 @@
   {
     "id": 44,
     "name": "Bolsa para accesorios de viaje",
-    "image": "imagenes/producto-44.jpg",
+    "image": "imagenes/productos/producto-44.jpg",
     "kind": "generated",
     "referenceProduct": 44,
     "referenceName": "Bolsa para accesorios de viaje"
@@ -354,7 +354,7 @@
   {
     "id": 45,
     "name": "Cargador portátil",
-    "image": "imagenes/power-bank.jpg",
+    "image": "imagenes/productos/power-bank.jpg",
     "kind": "photo",
     "referenceProduct": 7,
     "referenceName": "Power Bank"
@@ -362,7 +362,7 @@
   {
     "id": 46,
     "name": "Cargador de celular",
-    "image": "imagenes/cargador.jpg",
+    "image": "imagenes/productos/cargador.jpg",
     "kind": "photo",
     "referenceProduct": 8,
     "referenceName": "Cargador de celular"
@@ -370,7 +370,7 @@
   {
     "id": 47,
     "name": "Cable USB-C",
-    "image": "imagenes/producto-47.jpg",
+    "image": "imagenes/productos/producto-47.jpg",
     "kind": "generated",
     "referenceProduct": 47,
     "referenceName": "Cable USB-C"
@@ -378,7 +378,7 @@
   {
     "id": 48,
     "name": "Adaptador universal de viaje",
-    "image": "imagenes/adaptador.jpg",
+    "image": "imagenes/productos/adaptador.jpg",
     "kind": "photo",
     "referenceProduct": 10,
     "referenceName": "Adaptador universal"
@@ -386,7 +386,7 @@
   {
     "id": 49,
     "name": "Audífonos Bluetooth",
-    "image": "imagenes/audifonos.jpg",
+    "image": "imagenes/productos/audifonos.jpg",
     "kind": "photo",
     "referenceProduct": 11,
     "referenceName": "Audífonos"
@@ -394,7 +394,7 @@
   {
     "id": 50,
     "name": "Audífonos con cable",
-    "image": "imagenes/producto-50.jpg",
+    "image": "imagenes/productos/producto-50.jpg",
     "kind": "generated",
     "referenceProduct": 50,
     "referenceName": "Audífonos con cable"
@@ -402,7 +402,7 @@
   {
     "id": 51,
     "name": "Soporte para celular",
-    "image": "imagenes/soporte-celular.jpg",
+    "image": "imagenes/productos/soporte-celular.jpg",
     "kind": "photo",
     "referenceProduct": 12,
     "referenceName": "Soporte para celular"
@@ -410,7 +410,7 @@
   {
     "id": 52,
     "name": "Memoria USB",
-    "image": "imagenes/producto-52.jpg",
+    "image": "imagenes/productos/producto-52.jpg",
     "kind": "generated",
     "referenceProduct": 52,
     "referenceName": "Memoria USB"
@@ -418,7 +418,7 @@
   {
     "id": 53,
     "name": "Lector de tarjetas",
-    "image": "imagenes/producto-53.jpg",
+    "image": "imagenes/productos/producto-53.jpg",
     "kind": "generated",
     "referenceProduct": 53,
     "referenceName": "Lector de tarjetas"
@@ -426,7 +426,7 @@
   {
     "id": 54,
     "name": "Hub USB",
-    "image": "imagenes/producto-54.jpg",
+    "image": "imagenes/productos/producto-54.jpg",
     "kind": "generated",
     "referenceProduct": 54,
     "referenceName": "Hub USB"
@@ -434,7 +434,7 @@
   {
     "id": 55,
     "name": "Luz de lectura USB",
-    "image": "imagenes/producto-55.jpg",
+    "image": "imagenes/productos/producto-55.jpg",
     "kind": "generated",
     "referenceProduct": 55,
     "referenceName": "Luz de lectura USB"
@@ -442,7 +442,7 @@
   {
     "id": 56,
     "name": "Reloj despertador de viaje",
-    "image": "imagenes/producto-56.jpg",
+    "image": "imagenes/productos/producto-56.jpg",
     "kind": "generated",
     "referenceProduct": 56,
     "referenceName": "Reloj despertador de viaje"
@@ -450,7 +450,7 @@
   {
     "id": 57,
     "name": "Batería portátil compacta",
-    "image": "imagenes/power-bank.jpg",
+    "image": "imagenes/productos/power-bank.jpg",
     "kind": "photo",
     "referenceProduct": 7,
     "referenceName": "Power Bank"
@@ -458,7 +458,7 @@
   {
     "id": 58,
     "name": "Cable multifunción",
-    "image": "imagenes/producto-58.jpg",
+    "image": "imagenes/productos/producto-58.jpg",
     "kind": "generated",
     "referenceProduct": 58,
     "referenceName": "Cable multifunción"
@@ -466,7 +466,7 @@
   {
     "id": 59,
     "name": "Almohada cervical",
-    "image": "imagenes/almohada-viaje.jpg",
+    "image": "imagenes/productos/almohada-viaje.jpg",
     "kind": "photo",
     "referenceProduct": 13,
     "referenceName": "Almohada de viaje"
@@ -474,7 +474,7 @@
   {
     "id": 60,
     "name": "Almohada inflable",
-    "image": "imagenes/producto-60.jpg",
+    "image": "imagenes/productos/producto-60.jpg",
     "kind": "generated",
     "referenceProduct": 60,
     "referenceName": "Almohada inflable"
@@ -482,7 +482,7 @@
   {
     "id": 61,
     "name": "Antifaz para dormir",
-    "image": "imagenes/producto-61.jpg",
+    "image": "imagenes/productos/producto-61.jpg",
     "kind": "generated",
     "referenceProduct": 61,
     "referenceName": "Antifaz para dormir"
@@ -490,7 +490,7 @@
   {
     "id": 62,
     "name": "Tapones para los oídos",
-    "image": "imagenes/tapones-oidos.jpg",
+    "image": "imagenes/productos/tapones-oidos.jpg",
     "kind": "photo",
     "referenceProduct": 16,
     "referenceName": "Tapones para oídos"
@@ -498,7 +498,7 @@
   {
     "id": 63,
     "name": "Manta de viaje",
-    "image": "imagenes/producto-63.jpg",
+    "image": "imagenes/productos/producto-63.jpg",
     "kind": "generated",
     "referenceProduct": 63,
     "referenceName": "Manta de viaje"
@@ -506,7 +506,7 @@
   {
     "id": 64,
     "name": "Calcetines de viaje",
-    "image": "imagenes/producto-64.jpg",
+    "image": "imagenes/productos/producto-64.jpg",
     "kind": "generated",
     "referenceProduct": 64,
     "referenceName": "Calcetines de viaje"
@@ -514,7 +514,7 @@
   {
     "id": 65,
     "name": "Pantuflas de viaje",
-    "image": "imagenes/producto-65.jpg",
+    "image": "imagenes/productos/producto-65.jpg",
     "kind": "generated",
     "referenceProduct": 65,
     "referenceName": "Pantuflas de viaje"
@@ -522,7 +522,7 @@
   {
     "id": 66,
     "name": "Botella reutilizable",
-    "image": "imagenes/botella.jpg",
+    "image": "imagenes/productos/botella.jpg",
     "kind": "photo",
     "referenceProduct": 14,
     "referenceName": "Botella reutilizable"
@@ -530,7 +530,7 @@
   {
     "id": 67,
     "name": "Botella térmica",
-    "image": "imagenes/producto-67.jpg",
+    "image": "imagenes/productos/producto-67.jpg",
     "kind": "generated",
     "referenceProduct": 67,
     "referenceName": "Botella térmica"
@@ -538,7 +538,7 @@
   {
     "id": 68,
     "name": "Vaso térmico",
-    "image": "imagenes/producto-68.jpg",
+    "image": "imagenes/productos/producto-68.jpg",
     "kind": "generated",
     "referenceProduct": 68,
     "referenceName": "Vaso térmico"
@@ -546,7 +546,7 @@
   {
     "id": 69,
     "name": "Toalla de microfibra",
-    "image": "imagenes/producto-69.jpg",
+    "image": "imagenes/productos/producto-69.jpg",
     "kind": "generated",
     "referenceProduct": 69,
     "referenceName": "Toalla de microfibra"
@@ -554,7 +554,7 @@
   {
     "id": 70,
     "name": "Cojín de asiento",
-    "image": "imagenes/producto-70.jpg",
+    "image": "imagenes/productos/producto-70.jpg",
     "kind": "generated",
     "referenceProduct": 70,
     "referenceName": "Cojín de asiento"
@@ -562,7 +562,7 @@
   {
     "id": 71,
     "name": "Botella deportiva",
-    "image": "imagenes/botella.jpg",
+    "image": "imagenes/productos/botella.jpg",
     "kind": "photo",
     "referenceProduct": 14,
     "referenceName": "Botella reutilizable"
@@ -570,7 +570,7 @@
   {
     "id": 72,
     "name": "Bolsa para snacks",
-    "image": "imagenes/producto-72.jpg",
+    "image": "imagenes/productos/producto-72.jpg",
     "kind": "generated",
     "referenceProduct": 72,
     "referenceName": "Bolsa para snacks"
@@ -578,7 +578,7 @@
   {
     "id": 73,
     "name": "Cartera de viaje",
-    "image": "imagenes/billetera.jpg",
+    "image": "imagenes/productos/billetera.jpg",
     "kind": "photo",
     "referenceProduct": 21,
     "referenceName": "Billetera de viaje"
@@ -586,7 +586,7 @@
   {
     "id": 74,
     "name": "Tarjetero",
-    "image": "imagenes/producto-74.jpg",
+    "image": "imagenes/productos/producto-74.jpg",
     "kind": "generated",
     "referenceProduct": 74,
     "referenceName": "Tarjetero"
@@ -594,7 +594,7 @@
   {
     "id": 75,
     "name": "Candado con llave",
-    "image": "imagenes/producto-75.jpg",
+    "image": "imagenes/productos/producto-75.jpg",
     "kind": "generated",
     "referenceProduct": 75,
     "referenceName": "Candado con llave"
@@ -602,7 +602,7 @@
   {
     "id": 76,
     "name": "Candado de combinación",
-    "image": "imagenes/producto-76.jpg",
+    "image": "imagenes/productos/producto-76.jpg",
     "kind": "generated",
     "referenceProduct": 76,
     "referenceName": "Candado de combinación"
@@ -610,7 +610,7 @@
   {
     "id": 77,
     "name": "Correa de seguridad para maleta",
-    "image": "imagenes/producto-35.jpg",
+    "image": "imagenes/productos/producto-35.jpg",
     "kind": "generated",
     "referenceProduct": 35,
     "referenceName": "Correa para maleta"
@@ -618,7 +618,7 @@
   {
     "id": 78,
     "name": "Funda para documentos",
-    "image": "imagenes/producto-78.jpg",
+    "image": "imagenes/productos/producto-78.jpg",
     "kind": "generated",
     "referenceProduct": 78,
     "referenceName": "Funda para documentos"
@@ -626,7 +626,7 @@
   {
     "id": 79,
     "name": "Porta tarjetas de viaje",
-    "image": "imagenes/producto-79.jpg",
+    "image": "imagenes/productos/producto-79.jpg",
     "kind": "generated",
     "referenceProduct": 79,
     "referenceName": "Porta tarjetas de viaje"
@@ -634,7 +634,7 @@
   {
     "id": 80,
     "name": "Bolsa para pasaporte",
-    "image": "imagenes/producto-80.jpg",
+    "image": "imagenes/productos/producto-80.jpg",
     "kind": "generated",
     "referenceProduct": 80,
     "referenceName": "Bolsa para pasaporte"
@@ -642,7 +642,7 @@
   {
     "id": 81,
     "name": "Etiqueta identificadora",
-    "image": "imagenes/producto-43.jpg",
+    "image": "imagenes/productos/producto-43.jpg",
     "kind": "generated",
     "referenceProduct": 43,
     "referenceName": "Etiquetas para equipaje"
@@ -650,7 +650,7 @@
   {
     "id": 82,
     "name": "Funda protectora para equipaje",
-    "image": "imagenes/producto-82.jpg",
+    "image": "imagenes/productos/producto-82.jpg",
     "kind": "generated",
     "referenceProduct": 82,
     "referenceName": "Funda protectora para equipaje"
@@ -658,7 +658,7 @@
   {
     "id": 83,
     "name": "Linterna pequeña",
-    "image": "imagenes/linterna.jpg",
+    "image": "imagenes/productos/linterna.jpg",
     "kind": "photo",
     "referenceProduct": 24,
     "referenceName": "Linterna"
@@ -666,7 +666,7 @@
   {
     "id": 84,
     "name": "Luz de seguridad",
-    "image": "imagenes/producto-84.jpg",
+    "image": "imagenes/productos/producto-84.jpg",
     "kind": "generated",
     "referenceProduct": 84,
     "referenceName": "Luz de seguridad"
@@ -674,7 +674,7 @@
   {
     "id": 85,
     "name": "Organizador de documentos",
-    "image": "imagenes/producto-42.jpg",
+    "image": "imagenes/productos/producto-42.jpg",
     "kind": "generated",
     "referenceProduct": 42,
     "referenceName": "Organizador de documentos"
@@ -682,7 +682,7 @@
   {
     "id": 86,
     "name": "Bolsa oculta de viaje",
-    "image": "imagenes/producto-86.jpg",
+    "image": "imagenes/productos/producto-86.jpg",
     "kind": "generated",
     "referenceProduct": 86,
     "referenceName": "Bolsa oculta de viaje"
@@ -690,7 +690,7 @@
   {
     "id": 87,
     "name": "Cepillo dental de viaje",
-    "image": "imagenes/cepillo-dientes.jpg",
+    "image": "imagenes/productos/cepillo-dientes.jpg",
     "kind": "photo",
     "referenceProduct": 27,
     "referenceName": "Cepillo de dientes de viaje"
@@ -698,7 +698,7 @@
   {
     "id": 88,
     "name": "Estuche para cepillo dental",
-    "image": "imagenes/producto-88.jpg",
+    "image": "imagenes/productos/producto-88.jpg",
     "kind": "generated",
     "referenceProduct": 88,
     "referenceName": "Estuche para cepillo dental"
@@ -706,7 +706,7 @@
   {
     "id": 89,
     "name": "Peine de viaje",
-    "image": "imagenes/producto-89.jpg",
+    "image": "imagenes/productos/producto-89.jpg",
     "kind": "generated",
     "referenceProduct": 89,
     "referenceName": "Peine de viaje"
@@ -714,7 +714,7 @@
   {
     "id": 90,
     "name": "Cepillo para cabello",
-    "image": "imagenes/producto-90.jpg",
+    "image": "imagenes/productos/producto-90.jpg",
     "kind": "generated",
     "referenceProduct": 90,
     "referenceName": "Cepillo para cabello"
@@ -722,7 +722,7 @@
   {
     "id": 91,
     "name": "Espejo pequeño",
-    "image": "imagenes/producto-91.jpg",
+    "image": "imagenes/productos/producto-91.jpg",
     "kind": "generated",
     "referenceProduct": 91,
     "referenceName": "Espejo pequeño"
@@ -730,7 +730,7 @@
   {
     "id": 92,
     "name": "Botellas para líquidos",
-    "image": "imagenes/producto-92.jpg",
+    "image": "imagenes/productos/producto-92.jpg",
     "kind": "generated",
     "referenceProduct": 92,
     "referenceName": "Botellas para líquidos"
@@ -738,7 +738,7 @@
   {
     "id": 93,
     "name": "Estuche de cuidado personal",
-    "image": "imagenes/producto-36.jpg",
+    "image": "imagenes/productos/producto-36.jpg",
     "kind": "generated",
     "referenceProduct": 36,
     "referenceName": "Neceser de viaje"
@@ -746,7 +746,7 @@
   {
     "id": 94,
     "name": "Toallitas húmedas",
-    "image": "imagenes/producto-94.jpg",
+    "image": "imagenes/productos/producto-94.jpg",
     "kind": "generated",
     "referenceProduct": 94,
     "referenceName": "Toallitas húmedas"
@@ -754,7 +754,7 @@
   {
     "id": 95,
     "name": "Protector solar",
-    "image": "imagenes/protector-solar.jpg",
+    "image": "imagenes/productos/protector-solar.jpg",
     "kind": "photo",
     "referenceProduct": 29,
     "referenceName": "Protector solar"
@@ -762,7 +762,7 @@
   {
     "id": 96,
     "name": "Gel antibacterial",
-    "image": "imagenes/producto-96.jpg",
+    "image": "imagenes/productos/producto-96.jpg",
     "kind": "generated",
     "referenceProduct": 96,
     "referenceName": "Gel antibacterial"
@@ -770,7 +770,7 @@
   {
     "id": 97,
     "name": "Kit de cuidado personal",
-    "image": "imagenes/kit-higiene.jpg",
+    "image": "imagenes/productos/kit-higiene.jpg",
     "kind": "photo",
     "referenceProduct": 28,
     "referenceName": "Kit de higiene"
@@ -778,7 +778,7 @@
   {
     "id": 98,
     "name": "Estuche para jabón",
-    "image": "imagenes/producto-98.jpg",
+    "image": "imagenes/productos/producto-98.jpg",
     "kind": "generated",
     "referenceProduct": 98,
     "referenceName": "Estuche para jabón"
@@ -786,7 +786,7 @@
   {
     "id": 99,
     "name": "Kit de viaje familiar",
-    "image": "imagenes/producto-99.jpg",
+    "image": "imagenes/productos/producto-99.jpg",
     "kind": "generated",
     "referenceProduct": 99,
     "referenceName": "Kit de viaje familiar"
@@ -794,7 +794,7 @@
   {
     "id": 100,
     "name": "Kit de cuidado infantil",
-    "image": "imagenes/producto-100.jpg",
+    "image": "imagenes/productos/producto-100.jpg",
     "kind": "generated",
     "referenceProduct": 100,
     "referenceName": "Kit de cuidado infantil"

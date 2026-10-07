@@ -13,6 +13,7 @@ type Destination = { id: string; country: string };
 declare const RUMBO_HERO_CONFIG: { slides: Slide[] };
 declare global {
   interface Window {
+    RumboLocale?: { language: string; translate: (text: string) => string; formatMoney: (amount: number) => string };
     RumboViajesDatos?: {
       destinations: Destination[];
       flights: (destination: Destination, origin: string, travelers: number) => Flight[];
@@ -21,38 +22,40 @@ declare global {
 }
 
 const slides = RUMBO_HERO_CONFIG.slides;
-const money = (amount: number) => `L ${new Intl.NumberFormat('es-HN', { maximumFractionDigits: 2 }).format(amount)}`;
-const countries: Record<string, string> = { venecia: 'Italia', cancun: 'México', osaka: 'Japón', paris: 'Francia' };
-const places: Record<string, string> = { venecia: 'Gran Canal', cancun: 'Punta Cancún', osaka: 'Castillo de Osaka', paris: 'Torre Eiffel · El Sena' };
+const money = (amount: number) => window.RumboLocale?.formatMoney(amount) ?? `L ${new Intl.NumberFormat('es-HN', { maximumFractionDigits: 2 }).format(amount)}`;
+const t = (text: string, values: Record<string, string | number> = {}) =>
+  (window.RumboLocale?.translate(text) ?? text).replace(/\{(\w+)\}/g, (match, key) => String(values[key] ?? match));
 
 function Hero() {
+  const reducedMotion = useReducedMotion();
+  const [, setLocaleRevision] = useState(0);
+  useEffect(() => {
+    const refresh = () => setLocaleRevision(value => value + 1);
+    window.addEventListener('rumbo:localechange', refresh);
+    refresh();
+    return () => window.removeEventListener('rumbo:localechange', refresh);
+  }, []);
   const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [focused, setFocused] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [inView, setInView] = useState(true);
-  const [pageVisible, setPageVisible] = useState(!document.hidden);
   const [announcement, setAnnouncement] = useState('');
   const [loadingPhoto, setLoadingPhoto] = useState(false);
   const [requestedPhotos, setRequestedPhotos] = useState(() => new Set([0]));
   const readyPhotos = useRef(new Set<number>());
   const pendingSlide = useRef<{ index: number; manual: boolean } | null>(null);
-  const reduced = useReducedMotion();
   const section = useRef<HTMLElement>(null);
   const touch = useRef<{ x: number; y: number } | null>(null);
-  const isPlaying = !paused && !reduced && !focused && !hovered && inView && pageVisible && !loadingPhoto;
   const slide = slides[current];
   const destination = window.RumboViajesDatos?.destinations.find(item => item.id === slide.id);
   const flight = destination ? window.RumboViajesDatos?.flights(destination, 'Tegucigalpa', 1)[0] : undefined;
   const available = flight && Number.isFinite(flight.economy);
   const discount = available ? flight.discountPercent : 0;
-  const headline = `${slide.title},\n${discount ? `${discount}% menos.` : 'un viaje distinto.'}`;
+  const title = t(slide.title);
+  const headline = t(discount ? '{destination},\n{discount}% menos.' : '{destination},\nun viaje distinto.', {destination:title,discount});
 
   function activate(index: number, manual: boolean) {
     pendingSlide.current = null;
     setLoadingPhoto(false);
     setCurrent(index);
-    setAnnouncement(manual ? `${slides[index].title}, ${index + 1} de ${slides.length}` : '');
+    setAnnouncement(manual ? t('{destination}, {index} de {total}', {destination:t(slides[index].title),index:index+1,total:slides.length}) : '');
   }
 
   function show(index: number, manual = true) {
@@ -60,7 +63,7 @@ function Hero() {
     if (next === current || readyPhotos.current.has(next)) { activate(next, manual); return; }
     pendingSlide.current = { index: next, manual };
     setLoadingPhoto(true);
-    if (manual) setAnnouncement(`Cargando la fotografía de ${slides[next].title}…`);
+    if (manual) setAnnouncement(t('Cargando la fotografía de {destination}…', {destination:t(slides[next].title)}));
     setRequestedPhotos(previous => new Set([...previous, next]));
   }
 
@@ -70,29 +73,24 @@ function Hero() {
   }
 
   useEffect(() => {
-    if (!isPlaying) return;
-    const timer = window.setTimeout(() => show(current + 1, false), 8000);
-    return () => clearTimeout(timer);
-  }, [current, isPlaying]);
-
-  useEffect(() => {
-    const update = () => setPageVisible(!document.hidden);
-    document.addEventListener('visibilitychange', update);
-    const observer = new IntersectionObserver(([entry]) => {
-      setInView(entry.isIntersecting);
-    });
-    if (section.current) observer.observe(section.current);
-    return () => {
-      observer.disconnect();
-      document.removeEventListener('visibilitychange', update);
-    };
-  }, []);
-
-  useEffect(() => {
     // Keep the originals at full resolution, but request only the next photo ahead.
     // A slide changes once its image has decoded, avoiding blank frames on slower networks.
     setRequestedPhotos(previous => new Set([...previous, (current + 1) % slides.length]));
   }, [current]);
+
+  useEffect(() => {
+    if (reducedMotion || loadingPhoto) return;
+    const timer = window.setInterval(() => {
+      const hero = section.current;
+      if (!hero || document.hidden || document.querySelector('dialog[open]')) return;
+      const bounds = hero.getBoundingClientRect();
+      if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) return;
+      // Allow keyboard users to follow a link without moving it under their focus.
+      if (hero.contains(document.activeElement) && document.activeElement?.matches(':focus-visible')) return;
+      if (readyPhotos.current.has(current)) show(current + 1, false);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [current, loadingPhoto, reducedMotion]);
 
   function onKeyDown(event: KeyboardEvent<HTMLElement>) {
     if (event.altKey || event.ctrlKey || event.metaKey) return;
@@ -111,9 +109,9 @@ function Hero() {
     touch.current = null;
   }
 
-  return <section ref={section} className="travel-hero font-sans" data-promo-carousel data-destination={slide.id} data-paused={!isPlaying}
-    aria-roledescription="carrusel" aria-label="Destinos y ofertas de Rumbo" aria-busy={loadingPhoto} onKeyDown={onKeyDown}
-    onFocusCapture={() => setFocused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}
+  // Rotación automática con las mismas flechas, teclado y gestos.
+  return <section ref={section} className="travel-hero font-sans" translate="no" data-promo-carousel data-destination={slide.id}
+    aria-roledescription={t('carrusel')} aria-label={t('Destinos y ofertas de Rumbo')} aria-busy={loadingPhoto} onKeyDown={onKeyDown}
     onTouchStart={event => { touch.current = { x: event.touches[0].clientX, y: event.touches[0].clientY }; }} onTouchEnd={onTouchEnd}>
     <div className="hero-background" aria-hidden="true">
       {slides.map((item, index) => <img key={item.id} src={requestedPhotos.has(index) ? item.photos[0].src : undefined} alt="" className="hero-photo" data-place={item.id} data-active={index === current}
@@ -124,52 +122,35 @@ function Hero() {
           if (pendingSlide.current?.index === index) {
             pendingSlide.current = null;
             setLoadingPhoto(false);
-            setAnnouncement(`No se pudo cargar ${item.title}. Volvé a intentar en unos momentos.`);
+            setAnnouncement(t('No se pudo cargar {destination}. Volvé a intentar en unos momentos.', {destination:t(item.title)}));
           }
         }} />)}
     </div>
-    <div className="hero-topline px-6 md:px-12 lg:px-16">
-      <span>EL MUNDO TE ESPERA.</span><span>{String(current + 1).padStart(2, '0')} — {countries[slide.id]}</span>
-    </div>
     <article className="hero-content relative px-6 md:px-12 lg:px-16 flex-1 flex flex-col justify-end pb-12 lg:pb-16 lg:grid lg:grid-cols-2 lg:items-end"
-      data-promo-slide aria-roledescription="diapositiva" aria-label={`${current + 1} de 4: ${slide.title}`}>
+      data-promo-slide aria-roledescription={t('diapositiva')} aria-label={t('{destination}, {index} de {total}',{destination:title,index:current+1,total:slides.length})}>
       <div className="hero-copy">
-        <FadeIn animationKey={slide.id} delay={200} duration={1000}><p className="hero-eyebrow">{discount ? 'TU PRÓXIMA ESCAPADA, CON DESCUENTO' : 'UN DESTINO PARA SALIR DE LO HABITUAL'}</p></FadeIn>
         <AnimatedHeading key={headline} text={headline} />
-        <FadeIn animationKey={slide.id} delay={800} duration={1000}><p className="hero-description text-base md:text-lg text-gray-300 mb-5">{slide.description}</p></FadeIn>
-        <FadeIn animationKey={slide.id} delay={1200} duration={1000} className="flex flex-wrap gap-4">
-          <a href={slide.cta.href} className="hero-primary bg-white text-black px-8 py-3 rounded-lg font-medium">{discount ? 'Aprovechar oferta' : `Explorar ${slide.title}`}<span aria-hidden="true">↗</span></a>
-          <a href="#buscador" className="hero-secondary liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-black">Buscar mi viaje</a>
+        <FadeIn animationKey={slide.id} delay={300} duration={500}><p className="hero-description text-base md:text-lg text-gray-300 mb-5">{t(slide.description)}</p></FadeIn>
+        <FadeIn animationKey={slide.id} delay={450} duration={500} className="hero-actions flex flex-wrap gap-4">
+          <a href={slide.cta.href} className="hero-primary bg-white text-black px-8 py-3 rounded-lg font-medium">{discount ? t('Aprovechar oferta') : t('Explorar {destination}',{destination:title})}<span aria-hidden="true">↗</span></a>
+          <a href="#buscador" className="hero-secondary liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-black">{t('Buscar mi viaje')}</a>
         </FadeIn>
       </div>
-      <FadeIn animationKey={slide.id} delay={1400} duration={1000} className="hero-fare-wrap flex items-end justify-start lg:justify-end">
+      <FadeIn animationKey={slide.id} delay={450} duration={500} className="hero-fare-wrap flex items-end justify-start lg:justify-end">
         <div className="hero-fare liquid-glass border border-white/20 px-6 py-3 rounded-xl">
-          <div className="hero-fare-top"><span>VUELO A {slide.title.toLocaleUpperCase('es')}</span>{discount > 0 && <span className="hero-saving">−{discount}%</span>}</div>
-          {available ? <><p className="hero-old-price">Desde {discount > 0 && <del>{money(flight.baseEconomy)}</del>}</p>
-            <p className="hero-price" data-promo-price={slide.id}>{money(flight.economy)}<span> / persona</span></p></> : <p className="hero-price-unavailable">Consultá las tarifas disponibles</p>}
-          <p className="hero-route">Tegucigalpa <span aria-hidden="true">↗</span> {slide.title} <span>· Solo ida</span></p>
+          <div className="hero-fare-top"><span>{t('Vuelo a {destination}',{destination:title})}</span>{discount > 0 && <span className="hero-saving">−{discount}%</span>}</div>
+          {available ? <><p className="hero-old-price">{t('Desde')} {discount > 0 && <del>{money(flight.baseEconomy)}</del>}</p>
+            <p className="hero-price" data-promo-price={slide.id}>{money(flight.economy)}<span> / {t('persona')}</span></p></> : <p className="hero-price-unavailable">{t('Consultá las tarifas disponibles')}</p>}
+          <p className="hero-route">Tegucigalpa <span aria-hidden="true">↗</span> {title} <span>· {t('Solo ida')}</span></p>
+          <p className="hero-fare-note">{t('Tarifa de demostración · Hospedaje aparte.')}</p>
         </div>
       </FadeIn>
     </article>
-    <div className="hero-bottom px-6 md:px-12 lg:px-16" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
-      <div className="hero-controls-row">
-        <div className="hero-destinations" role="group" aria-label="Elegir destino">
-          {slides.map((item, index) => <button type="button" key={item.id} data-promo-dot aria-current={index === current} aria-label={`Ver ${item.title}`} onClick={() => show(index)}>
-            <span className="hero-tab-number">{String(index + 1).padStart(2, '0')}</span>{item.title}
-            <span className="hero-tab-progress" aria-hidden="true"><span key={`${index}-${current}-${isPlaying}`} style={{ animationPlayState: isPlaying ? 'running' : 'paused' }} /></span>
-          </button>)}
+    <div className="hero-bottom px-6 md:px-12 lg:px-16">
+        <div className="hero-step" role="group" aria-label={t('Cambiar destino')}>
+          <button type="button" className="liquid-glass" data-promo-prev aria-label={t('Destino anterior')} onClick={() => show(current - 1)}>←</button>
+          <button type="button" className="liquid-glass" data-promo-next aria-label={t('Destino siguiente')} onClick={() => show(current + 1)}>→</button>
         </div>
-        <a className="hero-scroll" href="#buscador">Seguí explorando <span aria-hidden="true">↓</span></a>
-        <div className="hero-step"><span data-promo-count>{loadingPhoto ? 'Cargando…' : `${String(current + 1).padStart(2, '0')} / 04`}</span>
-          <button type="button" className="liquid-glass" data-promo-pause aria-label={reduced ? 'Rotación automática desactivada' : paused ? 'Reanudar carrusel' : 'Pausar carrusel'} aria-pressed={paused || reduced} onClick={() => {
-            if (paused) { setFocused(false); setHovered(false); }
-            setPaused(value => !value);
-          }} disabled={reduced} title={reduced ? 'Rotación desactivada por tu preferencia de movimiento reducido' : undefined}>{paused || reduced ? '▷' : 'Ⅱ'}</button>
-          <button type="button" className="liquid-glass" data-promo-prev aria-label="Destino anterior" onClick={() => show(current - 1)}>←</button>
-          <button type="button" className="liquid-glass" data-promo-next aria-label="Destino siguiente" onClick={() => show(current + 1)}>→</button>
-        </div>
-      </div>
-      <div className="hero-footnote"><p>Tarifas de demostración · Hospedaje aparte.</p><span>{slide.title} · {places[slide.id]}</span></div>
     </div>
     <span className="sr-only" data-promo-status aria-live="polite" aria-atomic="true">{announcement}</span>
   </section>;

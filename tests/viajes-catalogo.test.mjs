@@ -4,7 +4,7 @@ import { readFile, access } from 'node:fs/promises';
 import vm from 'node:vm';
 import { createHash } from 'node:crypto';
 
-const source = await readFile(new URL('viajes.js', new URL('../public/', import.meta.url)), 'utf8');
+const source = await readFile(new URL('js/destinos/viajes.js', new URL('../public/', import.meta.url)), 'utf8');
 const context = { window: {} };
 vm.runInNewContext(source.slice(0, source.indexOf('/* Abre una')), context);
 const { destinations, origins, flights } = context.window.RumboViajesDatos;

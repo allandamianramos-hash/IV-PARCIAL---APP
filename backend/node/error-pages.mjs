@@ -5,6 +5,6 @@ export function sendError(req,res,status){
   const [title,message]=messages[status]||messages[500];
   const api=(req.url||'').startsWith('/api/');
   res.writeHead(status,{'Content-Type':api?'application/json; charset=utf-8':'text/html; charset=utf-8','Cache-Control':'no-store'});
-  const html=template.replace('Página no encontrada | Rumbo',title+' | Rumbo').replaceAll('Error 404','Error '+status).replace('>404<','>'+status+'<').replace('No encontramos esta página.',title).replace('El enlace puede haber cambiado o la página ya no está disponible. Puedes seguir explorando desde el inicio.',message).replaceAll('href="index.html"','href="/index.html"').replaceAll('href="servicios.html"','href="/servicios.html"').replace('src="connection.js"','src="/connection.js"').replace('src="error.js"','src="/error.js"');
+  const html=template.replace('Página no encontrada | Rumbo',title+' | Rumbo').replaceAll('Error 404','Error '+status).replace('>404<','>'+status+'<').replace('No encontramos esta página.',title).replace('El enlace puede haber cambiado o la página ya no está disponible. Puedes seguir explorando desde el inicio.',message).replaceAll('href="index.html"','href="/index.html"').replaceAll('href="servicios.html"','href="/servicios.html"').replace('src="js/compartido/connection.js"','src="/js/compartido/connection.js"').replace('src="js/compartido/error.js"','src="/js/compartido/error.js"');
   res.end(req.method==='HEAD'?undefined:api?JSON.stringify({error:message}):html);
 }

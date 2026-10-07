@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<link rel="preload" as="image" href="imagenes-viajes/hero-premium-venecia.jpg" fetchpriority="high">
-  <script src="database-client.js" defer></script>
+<link rel="preload" as="image" href="imagenes-viajes/portadas/hero-premium-venecia.jpg" fetchpriority="high">
+  <script src="js/compartido/database-client.js" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101214">
@@ -12,17 +12,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/inicio/style.css">
 
-  <script src="tienda.js" defer></script>
-  <script src="chat-engine.js" defer></script>
-  <script src="chat-client.js" defer></script>
-  <script src="viajes.js" defer></script>
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="common.css">
-  <script src="journey.js" defer></script><script src="connection.js" defer></script><script src="common.js" defer></script>
-  <script src="chat-ui.js" defer></script>
-  <link rel="stylesheet" href="chat.css">
+  <script src="js/tienda/tienda.js" defer></script>
+  <script src="js/rumbito/chat-engine.js" defer></script>
+  <script src="js/rumbito/chat-client.js" defer></script>
+  <script src="js/destinos/viajes.js" defer></script>
+  <script src="js/inicio/script.js" defer></script>
+  <link rel="stylesheet" href="css/compartido/common.css">
+  <script src="js/servicios/journey.js" defer></script><script src="js/compartido/connection.js" defer></script><script src="js/compartido/common.js" defer></script>
+  <script src="js/rumbito/chat-ui.js" defer></script>
+  <link rel="stylesheet" href="css/rumbito/chat.css">
 
   <script id="rumbo-hero-script">
 const RUMBO_HERO_CONFIG = {
@@ -39,11 +39,11 @@ const RUMBO_HERO_CONFIG = {
       "discount": 20,
       "photos": [
         {
-          "src": "imagenes-viajes/hero-premium-venecia.jpg",
+          "src": "imagenes-viajes/portadas/hero-premium-venecia.jpg",
           "alt": "El Gran Canal y Santa Maria della Salute iluminados a la hora azul, Venecia"
         },
         {
-          "src": "imagenes-viajes/guia-venecia-ruta-8.jpg",
+          "src": "imagenes-viajes/guias/guia-venecia-ruta-8.jpg",
           "alt": "Detalle de los arcos junto a los canales de Venecia"
         }
       ],
@@ -65,11 +65,11 @@ const RUMBO_HERO_CONFIG = {
       "discount": 25,
       "photos": [
         {
-          "src": "imagenes-viajes/hero-premium-cancun.jpg",
+          "src": "imagenes-viajes/portadas/hero-premium-cancun.jpg",
           "alt": "Vista aérea del mar Caribe y Punta Cancún"
         },
         {
-          "src": "imagenes-viajes/guia-cancun-ruta-10.jpg",
+          "src": "imagenes-viajes/guias/guia-cancun-ruta-10.jpg",
           "alt": "Un pequeño muelle junto al mar de Cancún"
         }
       ],
@@ -92,11 +92,11 @@ const RUMBO_HERO_CONFIG = {
       "expires": null,
       "photos": [
         {
-          "src": "imagenes-viajes/hero-premium-osaka.jpg",
+          "src": "imagenes-viajes/portadas/hero-premium-osaka.jpg",
           "alt": "El castillo de Osaka iluminado al anochecer sobre sus jardines"
         },
         {
-          "src": "imagenes-viajes/guia-osaka-castillo.jpg",
+          "src": "imagenes-viajes/guias/guia-osaka-castillo.jpg",
           "alt": "El castillo de Osaka, Japón"
         }
       ],
@@ -117,11 +117,11 @@ const RUMBO_HERO_CONFIG = {
       "discount": 10,
       "photos": [
         {
-          "src": "imagenes-viajes/hero-premium-paris.jpg",
+          "src": "imagenes-viajes/portadas/hero-premium-paris.jpg",
           "alt": "La Torre Eiffel y el puente de los Inválidos reflejados junto al Sena al anochecer"
         },
         {
-          "src": "imagenes-viajes/guia-paris-ruta-7.jpg",
+          "src": "imagenes-viajes/guias/guia-paris-ruta-7.jpg",
           "alt": "Los arcos y la estructura de hierro de la Torre Eiffel vistos desde abajo"
         }
       ],
@@ -277,17 +277,18 @@ document.addEventListener('DOMContentLoaded', () => {
   else if (connected) note.textContent='Más canales, próximamente.';
 });
 </script>
-<link rel="stylesheet" href="design.css">
-<link rel="stylesheet" href="hero.css">
-<script src="hero.js" defer></script>
-<link rel="stylesheet" href="navigation.css">
-<script src="navigation.js" defer></script>
-<link rel="stylesheet" href="palette.css">
-<link rel="stylesheet" href="community.css">
-<script src="api-client.js" defer></script>
-<script src="translations.js" defer></script>
-<script src="preferences.js" defer></script>
-<script src="reviews.js" defer></script>
+<link rel="stylesheet" href="css/compartido/design.css">
+<link rel="stylesheet" href="css/inicio/hero.css">
+<script src="js/inicio/hero.js" defer></script>
+<link rel="stylesheet" href="css/compartido/navigation.css">
+<script src="js/compartido/navigation.js" defer></script>
+<link rel="stylesheet" href="css/compartido/palette.css">
+<link rel="stylesheet" href="css/comunidad/community.css">
+<script src="js/compartido/api-client.js" defer></script>
+<script src="js/idiomas/translations.js" defer></script>
+<script src="js/idiomas/locale-engine.js" defer></script>
+<script src="js/idiomas/preferences.js" defer></script>
+<script src="js/comunidad/reviews.js" defer></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -361,8 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="home-hero-shell" id="inicio">
   <div id="home-hero-root">
     <section class="travel-hero" aria-label="Destinos y ofertas de Rumbo">
-      <div class="hero-background"><img class="hero-photo" data-place="venecia" data-active="true" src="imagenes-viajes/hero-premium-venecia.jpg" alt="El Gran Canal de Venecia" fetchpriority="high"></div>
-      <div class="hero-topline px-6 md:px-12 lg:px-16"><span>EL MUNDO TE ESPERA.</span><span>01 — Italia</span></div>
+      <div class="hero-background"><img class="hero-photo" data-place="venecia" data-active="true" src="imagenes-viajes/portadas/hero-premium-venecia.jpg" alt="El Gran Canal de Venecia" fetchpriority="high"></div>
       <div class="hero-content relative px-6 md:px-12 lg:px-16 flex-1 flex flex-col justify-end pb-12 lg:pb-16">
         <div class="hero-copy"><h1 class="hero-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4">Tu próximo viaje<br>empieza aquí.</h1>
         <p class="hero-description text-base md:text-lg text-gray-300 mb-5">Descubrí Venecia, Cancún, Osaka y París con Rumbo.</p>
@@ -538,21 +538,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     <section class="container about-rumbo" id="quienes-somos" aria-labelledby="about-rumbo-title">
       <figure class="about-rumbo-photo">
-        <div class="about-photo-frame"><img src="imagenes-viajes/rumbo-paris.jpg" alt="Una viajera contempla la Torre Eiffel desde un puente de París" width="1200" height="1800" loading="lazy">
+        <div class="about-photo-frame"><img src="imagenes-viajes/portadas/rumbo-paris.jpg" alt="Una viajera contempla la Torre Eiffel desde un puente de París" width="1200" height="1800" loading="lazy">
           <span class="about-photo-location">Francia</span>
         </div>
         <svg class="about-photo-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M15 130C90 130 45 20 140 50S205 135 280 15" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7"/><circle cx="15" cy="130" r="5" fill="currentColor"/><path d="m265 20 18-10-6 21-4-10Z" fill="currentColor"/></svg>
       </figure>
       <div class="about-rumbo-copy">
-        <p class="eyebrow">SOBRE RUMBO</p>
+        <p class="eyebrow">DESDE HONDURAS, CON VOS</p>
         <h2 id="about-rumbo-title">Quiénes somos</h2>
-        <p class="about-rumbo-lead">Planificación de viajes desde Honduras.</p>
-        <p>Somos un equipo hondureño que creó Rumbo para hacer más sencilla la planificación de un viaje.</p>
-        <p>En Rumbo puedes elegir destinos, comparar vuelos y hospedajes, y reunir lo que necesitas en un solo plan, a tu ritmo y según tu presupuesto.</p>
+        <p class="about-rumbo-lead">Un equipo cercano para tu próximo destino.</p>
+        <p>Somos un equipo hondureño con una idea en común: hacer más sencillo planificar un viaje. Creamos Rumbo para que podás explorar, comparar y darle forma a tu próxima experiencia, a tu ritmo.</p>
         <dl class="about-rumbo-values">
-          <div><dt>Opciones flexibles</dt><dd>Combina vuelo, hotel, traslados y experiencias según lo que necesitas.</dd></div>
-          <div><dt>Presupuesto visible</dt><dd>Consulta precios, descuentos y el total de tus elecciones en Mi viaje.</dd></div>
-          <div><dt>Orientación para elegir</dt><dd>Consulta con Rumbito las opciones de destinos y servicios disponibles.</dd></div>
+          <div><dt>A tu manera</dt><dd>Combiná destinos, hospedajes y experiencias en un solo lugar.</dd></div>
+          <div><dt>Con claridad</dt><dd>Tené a mano tus opciones y tu presupuesto en Mi viaje.</dd></div>
+          <div><dt>Con orientación</dt><dd>Consultá con Rumbito y encontrá por dónde empezar.</dd></div>
         </dl>
       </div>
     </section>
@@ -719,18 +718,5 @@ document.addEventListener('DOMContentLoaded', () => {
       <button type="button" id="chat-restart">Empezar de nuevo</button>
     </div>
   </section>
-
-  <dialog
-    id="module-dialog"
-    class="module-dialog"
-    aria-labelledby="module-title"
-    aria-describedby="module-description"
-  >
-    <h2 id="module-title"></h2>
-    <p id="module-description"></p>
-    <form method="dialog">
-      <button class="button button-primary" type="submit" autofocus>Entendido</button>
-    </form>
-  </dialog>
 </body>
 </html>

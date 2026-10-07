@@ -1,96 +1,60 @@
 @tailwind utilities;
 
-/* The photograph is the entire background. Glass is limited to the navigation,
-   secondary button and fare card; there is no overlay on the photograph. */
-.home-hero-shell { position: relative; background: #000; color: #fff; }
-.travel-hero { position: relative; isolation: isolate; display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; color: #fff; overflow: hidden; }
-.hero-background { position: absolute; inset: 0; pointer-events: none; }
-.hero-photo { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 1000ms ease; }
-.hero-photo[data-active=true] { opacity: 1; }
-.hero-photo[data-place=venecia] { object-position: center 80%; }
-.hero-photo[data-place=cancun] { object-position: center 65%; }
-.hero-photo[data-place=osaka] { object-position: center 60%; }
-.hero-topline { position: relative; display: flex; justify-content: space-between; padding-top: 126px; font-size: 11px; letter-spacing: .14em; font-weight: 500; text-shadow: 0 1px 8px #000; }
-.hero-content { padding-top: 100px; gap: 32px; }
-.hero-copy { text-shadow: 0 2px 4px #0009, 0 4px 22px #0006; }
-#inicio .hero-eyebrow { margin: 0 0 20px; font-size: 11px; font-weight: 500; letter-spacing: .13em; color: #fff; }
-#inicio .hero-heading { font-weight: 400!important; line-height: 1.06; color: #fff; text-wrap: initial; -webkit-text-stroke: .45px #0006; paint-order: stroke fill; }
-.hero-heading-line { display: block; white-space: nowrap; }
-#inicio .hero-description { max-width: 460px; line-height: 1.65; font-weight: 500; text-shadow: 0 1px 2px #000c, 0 2px 6px #000a; -webkit-text-stroke: .25px #0008; paint-order: stroke fill; }
-.hero-primary, .hero-secondary { display: inline-flex; justify-content: center; align-items: center; gap: 26px; min-height: 48px; font-size: 14px; line-height: 1.5; text-shadow: none; transition: color .2s, background-color .2s; }
-.hero-primary:hover { background: #f3f4f6; }
-.hero-primary span { font-size: 20px; line-height: 1; }
-.hero-secondary:hover { background: #fff; color: #000; }
-.hero-fare { min-width: 280px; text-shadow: none; }
-.hero-fare-top { display: flex; align-items: center; justify-content: space-between; gap: 40px; font-size: 10px; letter-spacing: .1em; }
-.hero-saving { padding: 3px 8px; border: 1px solid #ffffff33; border-radius: 4px; letter-spacing: 0; font-size: 12px; }
-#inicio .hero-old-price { margin: 15px 0 2px; color: #d1d5db; font-size: 12px; }
-.hero-old-price del { margin-left: 8px; }
-#inicio .hero-price { margin: 0 0 14px; font-size: 34px; font-weight: 400; line-height: 1.2; letter-spacing: -.035em; }
-.hero-price span { font-size: 12px; letter-spacing: 0; color: #d1d5db; }
-#inicio .hero-route { display: flex; align-items: center; gap: 8px; margin: 0; padding-top: 10px; border-top: 1px solid #ffffff33; font-size: 11px; color: #d1d5db; }
-.hero-price-unavailable { font-size: 17px; margin-block: 20px; }
-.hero-bottom { position: relative; }
-.hero-controls-row { display: flex; align-items: center; justify-content: space-between; gap: 30px; border-top: 1px solid #ffffff33; }
-.hero-destinations { display: flex; gap: 28px; }
-.hero-destinations button { position: relative; display: flex; align-items: center; gap: 10px; border: 0; background: transparent; padding: 20px 0; color: #d1d5db; font-size: 13px; font-weight: 500; line-height: 1.5; text-shadow: 0 1px 3px #000, 0 2px 8px #0009; }
-.hero-destinations button[aria-current=true] { color: #fff; }
-.hero-tab-number { font-size: 10px; }
-.hero-tab-progress { position: absolute; height: 2px; background: #ffffff33; top: -1px; inset-inline: 0; overflow: hidden; opacity: 0; }
-[aria-current=true] .hero-tab-progress { opacity: 1; }
-.hero-tab-progress>span { display: block; width: 100%; height: 100%; background: #fff; transform: scaleX(0); transform-origin: left; }
-[aria-current=true] .hero-tab-progress>span { animation: hero-progress 8s linear forwards; }
-.hero-scroll { display: flex; align-items: center; gap: 16px; font-size: 12px; text-shadow: 0 1px 8px #000; }
-.hero-scroll span { font-size: 22px; }
-.hero-step { display: flex; align-items: center; gap: 8px; }
-.hero-step>span { font-size: 11px; letter-spacing: .06em; margin-right: 12px; text-shadow: 0 1px 8px #000; }
-.hero-step button { display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border-radius: 50%; border: 1px solid #ffffff33; color: #fff; font-size: 19px; text-shadow: 0 1px 8px #000; transition: background-color .2s,color .2s; }
-.hero-step button:hover { background: #fff; color: #000; text-shadow: none; }
-.hero-step button:disabled { opacity: .5; cursor: default; }
-.hero-footnote { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 22px; font-size: 10px; color: #d1d5db; text-shadow: 0 1px 6px #000; }
-#inicio .hero-footnote p { margin: 0; }
-#inicio :focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
-#inicio .hero-primary:focus-visible { outline-offset: 6px; }
-html:has(.home-hero-shell) { scroll-padding-top: 104px; }
-#buscador { scroll-margin-top: 0; }
-
-@keyframes hero-progress { to { transform: scaleX(1); } }
-@media (max-width: 1023px) { .hero-content { padding-top: 100px; } .hero-fare { min-width: 260px; } .hero-fare-wrap { margin-top: 0; } .hero-footnote { padding-right: 30px; } }
-@media (max-width: 767.98px) {
-  .hero-photo[data-place=venecia] { object-position: 57% center; }
-  .hero-photo[data-place=cancun] { object-position: 45% center; }
-  .hero-photo[data-place=osaka] { object-position: 57% center; }
-  .hero-photo[data-place=paris] { object-position: 49% center; }
-  .hero-topline { padding-top: 104px; font-size: 9px; }
-  .hero-content { padding-top: 72px; gap: 28px; padding-bottom: 28px; }
-  #inicio .hero-eyebrow { font-size: 9px; margin-bottom: 16px; letter-spacing: .1em; }
-  #inicio .hero-description { line-height: 1.5; max-width: 33ch; }
-  .hero-primary,.hero-secondary { font-size: 12px; padding: 12px 18px; gap: 14px; min-height: 44px; }
-  .hero-fare { min-width: 0; width: 100%; max-width: 370px; padding: 12px 18px; }
-  .hero-fare-top { font-size: 9px; }
-  #inicio .hero-old-price { display: inline-block; margin: 10px 8px 8px 0; }
-  #inicio .hero-price { display: inline-block; font-size: 27px; margin: 10px 0 8px; }
-  #inicio .hero-route { font-size: 10px; }
-  .hero-controls-row { flex-wrap: wrap; gap: 0; }
-  .hero-destinations { width: 100%; justify-content: space-between; gap: 16px; }
-  .hero-destinations button { font-size: 12px; padding: 16px 0; gap: 6px; }
-  .hero-tab-number { font-size: 9px; }
-  .hero-step { margin-left: auto; padding-bottom: 12px; }
-  .hero-step button { width: 36px; height: 36px; }
-  .hero-scroll { display: flex; font-size: 10px; }
-  .hero-footnote { font-size: 9px; padding-bottom: 22px; padding-right: 28px; }
-  .hero-footnote>span { display: none; }
+/* Fotografía completa, contenido espaciado y navegación con dos flechas. */
+.home-hero-shell {position:relative;background:#000;color:#fff;}
+.travel-hero {position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:100vh;min-height:100svh;color:#fff;overflow:hidden;}
+.hero-background {position:absolute;inset:0;pointer-events:none;}
+.hero-photo {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 700ms ease;}
+.hero-photo[data-active=true] {opacity:1;}
+.hero-photo[data-place=venecia] {object-position:center 80%;}
+.hero-photo[data-place=cancun] {object-position:center 65%;}
+.hero-photo[data-place=osaka] {object-position:center 60%;}
+.hero-content {padding-top:160px;padding-bottom:48px;gap:48px;min-width:0;}
+.hero-copy {min-width:0;text-shadow:0 2px 4px #0009,0 4px 22px #0006;}
+#inicio .hero-heading {font-weight:400!important;line-height:1.12;color:#fff;margin:0 0 28px;-webkit-text-stroke:.45px #0006;paint-order:stroke fill;}
+.hero-heading-line {display:block;white-space:normal;overflow-wrap:anywhere;text-wrap:balance;}
+#inicio .hero-description {max-width:42ch;line-height:1.8;margin:0 0 32px;font-weight:500;text-shadow:0 1px 2px #000c,0 2px 6px #000a;-webkit-text-stroke:.25px #0008;paint-order:stroke fill;}
+.hero-actions {gap:16px;}
+.hero-primary,.hero-secondary {display:inline-flex;justify-content:center;align-items:center;gap:24px;min-height:48px;font-size:14px;line-height:1.5;text-shadow:none;transition:color .2s,background-color .2s;}
+.hero-primary span {font-size:20px;line-height:1;}
+.hero-fare-wrap {min-width:0;}
+.hero-fare {min-width:280px;max-width:100%;padding:24px;text-shadow:none;}
+.hero-fare-top {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;font-size:10px;letter-spacing:.1em;}
+.hero-fare-top>span:first-child {text-transform:uppercase;overflow-wrap:anywhere;}
+.hero-primary,.hero-secondary {max-width:100%;overflow-wrap:anywhere;}
+.hero-saving {padding:4px 8px;border:1px solid #ffffff33;border-radius:4px;letter-spacing:0;font-size:12px;}
+#inicio .hero-old-price {margin:20px 0 8px;color:#d1d5db;font-size:12px;}
+.hero-old-price del {margin-left:8px;}
+#inicio .hero-price {margin:0 0 20px;font-size:34px;font-weight:400;line-height:1.3;letter-spacing:-.035em;overflow-wrap:anywhere;}
+.hero-price span {font-size:12px;letter-spacing:0;color:#d1d5db;}
+#inicio .hero-route {display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0;padding-top:16px;border-top:1px solid #ffffff33;font-size:11px;color:#d1d5db;}
+#inicio .hero-fare-note {margin:12px 0 0;font-size:11px;line-height:1.6;color:#a0a7a2;}
+.hero-price-unavailable {font-size:17px;margin-block:24px;}
+.hero-bottom {position:relative;display:flex;justify-content:flex-end;padding-top:0;padding-bottom:40px;}
+.hero-step {display:flex;align-items:center;gap:12px;}
+.hero-step button {display:grid;place-items:center;width:48px;height:48px;padding:0;border-radius:50%;border:1px solid #ffffff55;background:#181b1ed9;color:#fff;font-size:22px;transition:background-color .2s,color .2s;}
+.hero-step button:hover {background:#b8d86b;color:#1b260b;}
+#inicio :focus-visible {outline:2px solid #fff;outline-offset:5px;}
+html:has(.home-hero-shell) {scroll-padding-top:104px;}
+#buscador {scroll-margin-top:0;}
+@media(max-width:1023px) {.hero-content {padding-top:140px;gap:40px;}.hero-fare {width:min(100%,370px);}.hero-bottom {padding-bottom:32px;}}
+@media(max-width:767.98px) {
+ .hero-photo[data-place=venecia] {object-position:57% center;}
+ .hero-photo[data-place=cancun] {object-position:45% center;}
+ .hero-photo[data-place=osaka] {object-position:57% center;}
+ .hero-photo[data-place=paris] {object-position:49% center;}
+ .hero-content {padding-top:128px;padding-bottom:32px;gap:32px;}
+ #inicio .hero-heading {font-size:clamp(30px,7.8vw,48px);margin-bottom:24px;}
+ #inicio .hero-description {line-height:1.75;margin-bottom:28px;}
+ .hero-primary,.hero-secondary {font-size:13px;padding:12px 18px;gap:14px;min-height:46px;}
+ .hero-actions {gap:12px;}
+ .hero-fare {min-width:0;width:100%;max-width:370px;padding:20px;}
+ .hero-fare-top {font-size:10px;}
+ #inicio .hero-old-price {margin:16px 0 6px;}
+ #inicio .hero-price {font-size:28px;margin-bottom:16px;}
+ #inicio .hero-route {font-size:11px;}
+ .hero-bottom {padding-bottom:28px;}
+ .hero-step button {width:44px;height:44px;}
 }
-@media (max-width: 370px) {
-  .hero-content { padding-top: 54px; }
-  .hero-primary,.hero-secondary { padding-inline: 14px; }
-  #inicio .hero-heading { font-size: 32px; }
-  .hero-tab-number { display: none; }
-  .hero-fare { padding-inline: 14px; }
-  #inicio .hero-price { font-size: 24px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  #inicio *,#inicio *::before,#inicio *::after { animation: none!important; transition-duration: 0ms!important; transition-delay: 0ms!important; }
-  [aria-current=true] .hero-tab-progress>span { transform: scaleX(1); }
-}
-@media(max-width:1100px) { .hero-scroll {display:none;} }
+@media(max-width:370px) {.hero-actions {flex-direction:column;align-items:flex-start;}.hero-fare {padding:18px;}#inicio .hero-price {font-size:26px;}}
+@media(prefers-reduced-motion:reduce) {#inicio *,#inicio *::before,#inicio *::after {animation:none!important;transition-duration:0ms!important;transition-delay:0ms!important;}}

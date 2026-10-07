@@ -15,8 +15,8 @@ export default defineConfig({
       entry: 'src/hero/main.tsx',
       name: 'RumboHero',
       formats: ['iife'],
-      fileName: () => 'hero.js',
-      cssFileName: 'hero',
+      fileName: () => 'js/inicio/hero.js',
+      cssFileName: 'css/inicio/hero',
     },
   },
 });

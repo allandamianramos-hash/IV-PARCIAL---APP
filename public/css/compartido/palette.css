@@ -1,0 +1,406 @@
+/* Paleta compartida. Se carga al final para integrar los módulos heredados. */
+:root, body, body.rumbo-services, body.auth-page {
+  color-scheme: dark;
+  --page: #101214;
+  --nav: #1a1d20;
+  --surface: #181b1e;
+  --field: #1f2327;
+  --line: #2a2f33;
+  --foreground: #f0f2ee;
+  --secondary: #a0a7a2;
+  /* El gris de apoyo original pierde contraste en campos; se aclara. */
+  --support: #969e98;
+  --lime: #b8d86b;
+  --on-lime: #1b260b;
+  --tag: #2a3318;
+  --on-tag: #cfe595;
+  --demo: #2b2416;
+  --on-demo: #e3c77a;
+  --error: #f0a6a0;
+  --verde: var(--lime);
+  --fondo: var(--page);
+  --tinta: var(--foreground);
+  --arena: var(--surface);
+  --blanco-texto: var(--foreground);
+  --primary: var(--lime);
+  --primary-dark: var(--on-tag);
+  --primary-soft: var(--tag);
+  --text: var(--foreground);
+  --ink: var(--foreground);
+  --muted: var(--secondary);
+  --border: var(--line);
+  --background: var(--page);
+  --white: var(--surface);
+  --accent: var(--lime);
+  --accent-soft: var(--tag);
+  --hero: var(--surface);
+  --rumbo-brand: var(--lime);
+  --shadow: 0 16px 40px #0004;
+  --section-space: clamp(64px, 7vw, 104px);
+  --content-gap: clamp(24px, 3vw, 40px);
+  --card-padding: clamp(22px, 2.5vw, 32px);
+}
+body.rumbo-services, body .rv-page, body .guides-page {
+  --search-surface: var(--surface);
+  --search-border: var(--line);
+  --field-border: var(--line);
+  --summary-surface: var(--surface);
+  --guide-line: var(--line);
+  --rv-gold: var(--on-demo);
+  --rv-soft: var(--tag);
+}
+html, body, body.rumbo-services, body.auth-page { background: var(--page)!important; color: var(--foreground)!important; }
+::selection { background: var(--lime); color: var(--on-lime); }
+body :is(h1,h2,h3,h4,label,summary) { color: var(--foreground); }
+body :is(input,select,textarea) { color-scheme: dark; accent-color: var(--lime); }
+body :is(input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea) {
+  background: var(--field)!important; color: var(--foreground)!important; border-color: var(--line)!important;
+}
+body :is(input,textarea)::placeholder { color: var(--support)!important; opacity: 1; }
+body :is(a,button,input,select,textarea,summary):focus-visible { outline: 2px solid var(--lime)!important; outline-offset: 4px; }
+body input:-webkit-autofill { -webkit-text-fill-color: var(--foreground); box-shadow: 0 0 0 1000px var(--field) inset!important; }
+
+/* Navegación, cuenta y pie. */
+body #site-navbar .header-inner { background: var(--nav); border: 1px solid var(--line); }
+body #site-navbar .logo, body .logo { color: var(--lime); }
+body #site-navbar .main-nav a { color: var(--secondary); }
+body #site-navbar .main-nav a[aria-current=page] { color: var(--foreground); box-shadow: inset 0 -2px var(--lime); }
+body #site-navbar .main-nav a:hover { color: var(--lime); }
+body #site-navbar .header-actions :is(.header-trip,.login-button) { color: var(--foreground)!important; }
+body #site-navbar .header-actions .register-button,
+body :is(.button-primary,.register-button,.auth-card [type=submit],.hero-primary,.checkout-btn,.add-btn,.chat-send,.primary) {
+  background: var(--lime)!important; color: var(--on-lime)!important; border-color: var(--lime)!important;
+}
+body #site-navbar .header-actions .register-button:hover,
+body :is(.button-primary,.register-button,.auth-card [type=submit],.hero-primary,.checkout-btn,.add-btn,.chat-send,.primary):hover {
+  background: var(--on-tag)!important; color: var(--on-lime)!important;
+}
+body #site-navbar :is(.account-toggle,.account-panel), body .site-mobile-menu nav {
+  background: var(--nav); color: var(--foreground); border-color: var(--line);
+}
+body #site-navbar .account-panel :is(a,button,strong,span) { color: var(--foreground)!important; }
+body #site-navbar .account-panel :is(a,button):hover,
+body .site-mobile-menu nav a:hover { background: var(--tag)!important; color: var(--on-tag)!important; }
+body #site-navbar .account-avatar { background: var(--tag); color: var(--on-tag); }
+body .site-footer { background: var(--nav)!important; color: var(--secondary); }
+body .site-footer :is(a,button,p,h2,summary,address), body .site-footer .logo { color: var(--foreground); }
+body .footer-bottom { border-color: var(--line); }
+
+/* Superficies: formularios, catálogos, resúmenes y ventanas. */
+body :is(.search-form,.product-card,.rv-flight-card,.rv-hotel-card,.rv-destination-card,.rv-dialog,
+ .service-form,.service-option,.service-tile,.help-card,.guide-card,.guide-search,.catalog-tools,
+ .rv-search-panel,.rv-plan-panel,.rv-filter-bar,.service-summary,.guide-summary,.rv-trip-summary,
+ .team-person,.departure-checklist,.about-photo-note,.cart-dialog,.product-dialog,.cart-summary,
+ .auth-demo-dialog,.auth-demo-person,.faq-grid details,.rv-tip,.guide-faq,.service-notice,
+ .journey-ticket,.journey-extras,.illustration) {
+  background: var(--surface)!important; color: var(--foreground); border-color: var(--line)!important;
+}
+body :is(.team-person,.about-photo-note,.departure-checklist,.cart-summary,.auth-demo-person) :is(h2,h3,strong) { color: var(--foreground)!important; }
+body :is(.team-avatar,.empty-symbol,.benefit-number) { background: var(--tag)!important; color: var(--on-tag)!important; }
+body :is(.team-person p,.team-intro>p,.auth-heading>p,.auth-field small,.auth-session-note,
+ .auth-switch,.auth-footer,.auth-social-note,.auth-divider,.auth-demo-person span,.product-description,
+ .product-image-note,.variant-note,.catalog-note,.promo-original,.departure-checklist small,
+ .chat-launcher small,.chat-header p,.chat-form label) { color: var(--secondary)!important; }
+body :is(.product-title,.product-price,.detail-price,.line-total,.total-row,.team-intro h2) { color: var(--foreground); }
+body :is(.auth-field label,.service-field label,.rv-field label,.guide-form label,.sort-field label) { color: var(--foreground)!important; }
+body :is(.auth-switch a,.auth-password button,.text-button,.variant-caption,.promo-note,.free,.chat-message a,.chat-tools button) { color: var(--lime); }
+body :is(.button-outline,.auth-provider,.continue-button,.customize-btn,.variant-original,
+ .cart-button,.favorite-button,.detail-close,.quantity-controls button,.chat-options button) {
+  background: var(--field)!important; color: var(--foreground)!important; border-color: var(--line)!important;
+}
+body :is(.button-outline,.customize-btn,.cart-button,.chat-options button):hover {
+  background: var(--tag)!important; color: var(--on-tag)!important; border-color: var(--lime)!important;
+}
+body :is(.service-option,.guide-card,.rv-flight-card,.rv-hotel-card)[data-selected=true] {
+  background: var(--tag)!important; border-color: var(--lime)!important;
+}
+body :is(.journey-progress a[aria-current],.service-tabs a[aria-current],.filter-btn.active,
+ .guide-filters button[aria-pressed=true],.service-stage>span,.small-count) {
+  background: var(--lime)!important; color: var(--on-lime)!important; border-color: var(--lime)!important;
+}
+body :is(.service-option-bottom,.guide-card-bottom,.rv-flight-bottom,.auth-switch,.auth-divider::before,
+ .auth-divider::after,.account-identity,.cart-item,.quantity-controls,.dialog-header,.total-row) { border-color: var(--line)!important; }
+body .auth-divider::before, body .auth-divider::after { background: var(--line); }
+
+/* Etiquetas oliva y avisos de demostración ámbar. */
+body :is(.service-badge,.guide-badge,.guide-card-category,.promo-badge,.hero-saving,.product-category) {
+  background: var(--tag)!important; color: var(--on-tag)!important; border-color: var(--tag)!important;
+}
+body :is(.auth-demo-banner,.auth-demo-tag,.demo-note,.rv-notice,.journey-notice,.rv-demo-caption) {
+  background: var(--demo)!important; color: var(--on-demo)!important; border-color: var(--on-demo)!important;
+}
+body :is(.demo-note,.rv-demo-caption) { padding: 10px 14px; border-radius: 8px; }
+body .auth-demo-banner button { background: var(--demo); color: var(--on-demo); border-color: var(--on-demo); }
+body :is(#auth-feedback,.auth-demo-error,.auth-header-status,.remove-btn) { color: var(--error); }
+body :is(.toast,.rv-toast) { background: var(--nav); color: var(--foreground); border: 1px solid var(--line); }
+body dialog::backdrop { background: #101214cc; }
+
+/* La fotografía conserva sus colores; controles y tarifas usan la paleta. */
+body .hero-secondary, body .hero-fare { background: #181b1eeb; color: var(--foreground); border-color: var(--line); }
+body .hero-secondary:hover { background: var(--field); color: var(--lime); }
+body .hero-tab-progress>span { background: var(--lime); }
+body .hero-destinations button[aria-current=true] { color: var(--on-tag); }
+body #inicio :is(.hero-old-price,.hero-route), body .hero-price span { color: var(--secondary); }
+body .hero-step button:hover { background: var(--lime); color: var(--on-lime); }
+body .rv-discover-photo figcaption { background: var(--nav); color: var(--foreground); }
+body.auth-page .auth-brand { mix-blend-mode: normal; }
+body.auth-page .auth-intro { background-color: var(--surface); }
+
+/* Rumbito: conserva la ilustración, integra la ventana y los mensajes. */
+body :is(.chat-launcher,.chat-panel,.chat-header,.chat-messages,.chat-options,.chat-form,.chat-tools) {
+  background: var(--surface); color: var(--foreground); border-color: var(--line);
+}
+body .chat-header { background: var(--nav); }
+body .chat-message, body .chat-input-row { background: var(--field); color: var(--foreground); border-color: var(--line); }
+body .chat-message.user { background: var(--tag); color: var(--on-tag); border-color: var(--tag); }
+body .chat-message.user a { color: var(--on-tag); }
+body .chat-launcher::after { background: var(--lime); border-color: var(--tag); }
+body .chat-input-row:focus-within { border-color: var(--lime); box-shadow: none; }
+
+/* Excepciones de las composiciones editoriales anteriores. */
+body #quienes-somos :is(h2,p,span,dt,dd) { color: var(--foreground)!important; }
+body #quienes-somos .eyebrow, body .eyebrow { color: var(--lime)!important; }
+body :is(.catalog-hero,.store-hero,.service-hero) p { color: var(--secondary)!important; }
+body .guides-layout { background: var(--surface)!important; }
+body #antes-de-viajar.departure-guide {
+  background: var(--surface); border: 0; border-radius: 20px; box-shadow: none;
+}
+body #antes-de-viajar p { color: var(--secondary); }
+body #antes-de-viajar #departure-progress { color: var(--lime); }
+body .departure-checklist label { border-color: var(--line); }
+body .departure-checklist :is(input,progress) { accent-color: var(--lime); }
+body:has(.error-number) :is(p,footer) { color: var(--secondary); }
+body:has(.error-number) .button:not(.primary) { color: var(--foreground); border-color: var(--line); }
+body .skip-link { background: var(--lime); color: var(--on-lime); }
+body.rumbo-services main :is(.product-description,.service-option p,.guide-card p,.rv-caption,
+ .service-summary p,.guide-summary p,.rv-trip-summary p,.service-option small,.product-card small,
+ .rv-flight-card small,.rv-hotel-card small,.service-form-foot p,.guide-demo) { color: var(--secondary); }
+body :is(.packing-section,.journey-next,.guide-destination,.store-benefits,.product-image-container,.variant-stage) {
+  background: var(--surface)!important; color: var(--foreground); border-color: var(--line);
+}
+body :is(.icon-button,.rv-select-button,.chat-header .close-button) {
+  background: var(--field); color: var(--foreground); border-color: var(--line);
+}
+body .rv-select-button:hover, body .rv-select-button[aria-pressed=true] {
+  background: var(--lime); color: var(--on-lime); border-color: var(--lime);
+}
+body .rv-badge { background: var(--demo); color: var(--on-demo); }
+body .journey-next a { color: var(--lime); }
+body .journey-next p { color: var(--secondary); }
+body.rumbo-services .catalog-hero :is(.photo-caption,.guide-hero-location) { background: var(--nav); color: var(--foreground); }
+body .guide-card-image>span { background: var(--tag); color: var(--on-tag); }
+body .rv-search-bottom p { color: var(--secondary); }
+body .chat-launcher:hover { background: var(--field); border-color: var(--lime); }
+
+/* Componentes heredados: fondos y estados completos, también en las esquinas. */
+body :is(.rv-card-photo,.rv-highlight-list li,.rv-credits,.saved-card,.journey-item,
+ .journey-checkout,.journey-empty,.empty-state,.service-art,.service-hero,.search-section,
+ .rv-footer,.services-footer,.global-rumbito,.cart-empty,.cart-item-image,.detail-image,
+ .detail-info,.cart-header,.cart-footer,.variant-panel,.benefit-card) {
+  background:var(--surface);color:var(--foreground);border-color:var(--line);
+}
+body :is(.rv-card-tag,.image-tag,.guide-number,.rv-highlight-list span,.journey-progress a>span,
+ .planner-steps li>span,.booking-icon,.circle-link,.carousel-arrow,.rv-dialog-close,#chat-back) {
+  background:var(--field);color:var(--foreground);border-color:var(--line);
+}
+body .rv-card-tag {background:#181b1ee8;border:1px solid var(--line);border-radius:999px;}
+body .rv-card-photo {border-radius:18px 18px 0 0;}
+body .rv-card-photo img {display:block;object-fit:cover;}
+body .guide-route li::before {background:var(--field);color:var(--lime);border-color:var(--line);}
+body .rv-highlight-list span {background:transparent;color:var(--lime);}
+body :is(.circle-link,.carousel-arrow,.global-rumbito,.rv-dialog-close,#chat-back):hover {
+  background:var(--tag);color:var(--on-tag);border-color:var(--lime);
+}
+body .journey-progress a[aria-current] span {background:var(--tag);color:var(--on-tag);}
+body .journey-progress a:hover {background:var(--tag);color:var(--on-tag);}
+body :is(.journey-item,.journey-checkout,.journey-empty) p {color:var(--secondary);}
+body :is(.journey-item,.journey-checkout) a {color:var(--lime);}
+body .chat-progress {background:var(--demo);color:var(--on-demo);}
+body .chat-header .close-button:hover {background:var(--tag);color:var(--on-tag);border-color:var(--lime);}
+body .rv-hotel-filters {background:var(--surface);border:1px solid var(--line);border-radius:16px;}
+body .rv-amenities li {background:var(--field);color:var(--secondary);}
+body.rumbo-services .guides-page .catalog-hero .guide-hero-location {background:var(--nav);color:var(--foreground);border-color:var(--line);}
+body :is(.journey-remove,.journey-clear,.journey-undo) {background:var(--surface);color:var(--error);border-color:var(--line);}
+body :is(.journey-remove,.journey-clear,.journey-undo):hover {background:#332324;border-color:var(--error);}
+body .journey-empty>span {background:var(--tag);color:var(--on-tag);}
+body :is(.store-hero .hero-photo,.product-image) {background:var(--surface);}
+body :is(.packing-links button,.detail-options,.auth-panel-foot>span) {background:var(--field);color:var(--foreground);border-color:var(--line);}
+body .packing-links button:hover {background:var(--tag);color:var(--on-tag);}
+body :is(.rv-search-bottom,.rv-flight-bottom,.rv-card-footer,.guide-route,.service-catalog-heading) {border-color:var(--line);}
+body #destinos.destinations-section::before {content:none;}
+body #servicios.section {background:transparent;border-color:var(--line);}
+body #servicios .booking-card {background:transparent;border-color:var(--line);}
+body #servicios .journey-card-number {color:var(--lime);}
+body #guias.section {background:var(--surface);border-color:var(--line);}
+body #guias .guides-layout {padding:0;border:0;}
+
+/* Permitir que los textos crezcan sin recortes, también al cambiar de idioma. */
+body :is(.rv-card-content,.rv-card-footer,.rv-detail-copy,.rv-plan-panel,.rv-flight-card,
+ .rv-hotel-content,.service-tile,.service-option,.service-summary,.guide-card,.guide-summary,
+ .team-person,.journey-item,.journey-checkout,.product-card,.booking-card,.search-field) {min-width:0;overflow-wrap:anywhere;}
+body :is(.rv-card-footer,.rv-flight-bottom,.service-option-bottom,.guide-card-bottom,
+ .rv-summary-line,.rv-detail-price,.journey-item,.journey-next,.service-form-foot) {flex-wrap:wrap;}
+body :is(.rv-card-footer strong,.rv-summary-line>strong,.journey-item strong) {white-space:normal;}
+body .rv-detail-title {inset:auto 28px 28px;overflow-wrap:anywhere;}
+body .rv-detail-title h1 {font-size:clamp(30px,5vw,60px);line-height:1.1;}
+body :is(.button,.booking-action,.rv-select-button,.service-tabs a) {max-width:100%;height:auto;white-space:normal;overflow-wrap:anywhere;text-align:center;}
+body :is(.service-field,.rv-field,.rv-sort,.sort-field,.rv-field-pair>*) {min-width:0;}
+body :is(input,select,textarea) {max-width:100%;min-width:0;}
+body .rv-trip-summary {top:104px;max-height:calc(100dvh - 128px);}
+body :is(.service-summary,.guide-summary) {top:104px;}
+@media(max-width:700px) {
+ body .rv-field-pair {grid-template-columns:minmax(0,1fr);}
+ body .rv-detail-body {grid-template-columns:minmax(0,1fr);gap:28px;}
+ body :is(.rv-trip-summary,.service-summary,.guide-summary,.journey-checkout) {position:static;max-height:none;}
+ body .rv-detail-title {inset:auto 20px 24px;}
+ body .rv-detail-hero {min-height:320px;}
+ body .journey-overview {grid-template-columns:minmax(0,1fr);}
+ body .journey-next {align-items:flex-start;}
+ body .journey-next>div {text-align:start;}
+}
+
+/* Pie compartido: marca y redes, navegación y contacto en una cuadrícula flexible. */
+body .rumbo-footer {padding:64px 0 28px;margin-top:40px;border-top:1px solid var(--line);background:var(--nav)!important;}
+body .rumbo-footer :is(a,button) {text-decoration:none;}
+body .rumbo-footer-main {display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr) minmax(0,1fr) minmax(0,1.2fr);gap:40px;padding-bottom:48px;}
+body .rumbo-footer-main>* {min-width:0;}
+body .rumbo-footer .logo {font-size:42px;line-height:1.1;color:var(--lime);}
+body .rumbo-footer .logo span {color:inherit;}
+body .rumbo-footer-brand>p {color:var(--secondary);font-size:16px;line-height:1.7;margin:20px 0 16px;}
+body .rumbo-footer-origin {font-size:12px;color:var(--secondary);}
+body .rumbo-footer .rumbo-socials {display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+body .rumbo-footer .rumbo-socials a {display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border:1px solid #3c4347;border-radius:50%;background:transparent;color:var(--foreground);}
+body .rumbo-socials svg {width:20px;height:20px;}
+body .rumbo-footer .rumbo-socials a:hover {background:var(--lime);border-color:var(--lime);color:var(--page);}
+body .rumbo-footer-column {display:flex;flex-direction:column;align-items:flex-start;gap:8px;}
+body .rumbo-footer-column h2 {font-size:13px;font-weight:500;letter-spacing:.03em;line-height:1.5;margin:6px 0 14px;color:var(--lime);}
+body .rumbo-footer-column :is(a,button,summary) {font-size:14px;line-height:1.6;color:var(--secondary);overflow-wrap:anywhere;text-align:start;}
+body .rumbo-footer-column>a,body .rumbo-footer-column>button {padding:5px 0;}
+body .rumbo-footer-column button {background:none;border:0;cursor:pointer;font:inherit;font-size:14px;}
+body .rumbo-footer-column p {font-size:14px;color:var(--secondary);line-height:1.7;margin:0 0 8px;}
+body .rumbo-footer .rumbo-contact-link {color:var(--foreground);text-decoration:underline;text-decoration-color:#596541;text-underline-offset:6px;}
+body .rumbo-footer :is(a,button,summary):hover {color:var(--lime);}
+body .rumbo-footer-team {width:100%;margin-top:12px;}
+body .rumbo-footer-team details {border-top:1px solid var(--line);padding:12px 0;}
+body .rumbo-footer-team summary {cursor:pointer;}
+body .rumbo-footer-team address {display:grid;gap:10px;margin-top:16px;font-style:normal;}
+body .rumbo-footer-bottom {display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:24px;border-top:1px solid var(--line);}
+body .rumbo-footer-bottom p,body .rumbo-footer-bottom a {margin:0;color:var(--secondary);font-size:12px;line-height:1.7;}
+body .rumbo-footer-bottom nav {display:flex;flex-wrap:wrap;gap:12px 24px;}
+body .rumbo-footer .rumbo-back-top {display:inline-flex;align-items:center;gap:16px;min-height:44px;}
+body .rumbo-footer .hero-photo-credits {margin-top:24px;font-size:12px;color:var(--secondary);}
+body .rumbo-footer .hero-photo-credits summary {cursor:pointer;color:var(--secondary);}
+body .rumbo-footer .hero-photo-credits li {margin-block:12px;overflow-wrap:anywhere;}
+@media(max-width:1000px) {body .rumbo-footer-main {grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;}}
+@media(max-width:540px) {
+ body .rumbo-footer {padding-top:40px;padding-bottom:100px;}
+ body .rumbo-footer-main {gap:32px 24px;}
+ body .rumbo-footer-brand,body .rumbo-footer-contact {grid-column:1/-1;}
+ body .rumbo-footer-brand>p br {display:none;}
+ body .rumbo-footer-bottom {align-items:flex-start;flex-direction:column;gap:16px;}
+ body .rumbo-footer-bottom nav {gap:12px 20px;}
+}
+
+/* Ritmo vertical compartido: cada sección tiene entrada, lectura y cierre propios. */
+body #buscador.search-section {padding-block:64px 48px;}
+body #destinos.destinations-section {padding-block:var(--section-space);}
+body #servicios.section {margin-block:0;padding:var(--section-space) 0;border-top:1px solid var(--line);}
+body #nuestro-equipo.home-team {padding-block:var(--section-space);margin-block:0;border-top:1px solid var(--line);}
+body #guias.section {margin-block:var(--section-space);padding:clamp(28px,4vw,56px);}
+body #antes-de-viajar.departure-guide {margin-block:var(--section-space);padding:clamp(28px,4vw,56px);gap:var(--content-gap);}
+body .home-reviews {padding-block:var(--section-space);margin-top:var(--section-space);}
+body .section-heading {margin-bottom:40px;gap:24px;}
+body .section-heading h2 {margin-bottom:20px;line-height:1.2;}
+body #destinos .section-heading {margin-bottom:40px;}
+body #destinos .destination-intro {line-height:1.8;max-width:54ch;}
+body #destinations-track {column-gap:32px;row-gap:64px;}
+body #destinations-track .destination-body {padding-block:24px;}
+body #destinations-track h3 {margin-block:12px 16px;line-height:1.3;}
+body #servicios .booking-card {padding-block:40px;gap:28px;}
+body #servicios .booking-card>p:not(.journey-card-number) {line-height:1.8;}
+body .team-intro {margin-bottom:40px;max-width:660px;}
+body .team-intro h2 {margin-block:18px 24px;}
+body .team-intro>p:last-child {line-height:1.8;}
+body .team-grid {gap:24px;}
+body .team-person {padding:32px 24px;}
+body .team-person h3 {line-height:1.4;margin-bottom:12px;}
+body .team-actions {margin-top:40px;gap:24px;}
+body .guides-copy h2 {margin-bottom:24px;}
+body .guides-copy .section-description {line-height:1.8;margin-bottom:32px;}
+body .guide-details summary {padding-block:24px;line-height:1.6;}
+body .departure-guide h2 {margin-bottom:24px;}
+body .departure-guide>div>p {margin-bottom:28px;}
+body .departure-checklist label {padding-block:22px;}
+body .reviews-heading {margin-bottom:48px;}
+body .rumbo-footer {margin-top:var(--section-space);padding-top:72px;}
+body .rumbo-footer-main {padding-bottom:56px;gap:48px;}
+body .rumbo-footer-column {gap:12px;}
+
+/* Catálogos, servicios y formularios: espacio interior sin anchos ni alturas rígidas. */
+body.rumbo-services .catalog-hero.catalog-hero {margin-block:40px 80px;gap:clamp(32px,5vw,72px);}
+body.rumbo-services .catalog-hero h1 {margin-bottom:28px;line-height:1.15;}
+body.rumbo-services .catalog-hero p {line-height:1.8;}
+body.rumbo-services .journey-progress {margin-bottom:40px;padding-bottom:24px;}
+body.rumbo-services:has(.store-hero) main>.journey-progress {margin-block:24px 40px;}
+body .rv-discover {padding-block:48px 80px;gap:clamp(32px,5vw,72px);}
+body .rv-discover h1 {margin-bottom:28px;}
+body .rv-discover>div>p:not(.eyebrow) {line-height:1.8;}
+body .rv-catalog {margin-top:32px;padding-top:48px;}
+body :is(.rv-destination-grid,.products-grid) {gap:40px 28px;}
+body.rumbo-services .service-grid {gap:48px 32px;margin-top:40px;}
+body.rumbo-services :is(.service-layout,.guide-layout,.rv-flow-layout) {gap:40px;margin-top:48px;}
+body :is(.service-results,.rv-options-list,.guide-results,.saved-list) {gap:28px;}
+body :is(.rv-card-content,.guide-card-content,.product-info,.rv-hotel-content) {padding:var(--card-padding);}
+body :is(.rv-card-content,.guide-card-content,.product-info,.rv-hotel-content) :is(h2,h3) {line-height:1.35;margin-bottom:16px;}
+body :is(.rv-card-content,.guide-card-content,.product-info,.rv-hotel-content)>p {line-height:1.8;margin-bottom:20px;}
+body.rumbo-services :is(.service-option,.rv-flight-card,.service-summary,.guide-summary,.rv-trip-summary,.rv-plan-panel) {padding:var(--card-padding);}
+body.rumbo-services .service-option[data-selected=true] {padding:calc(var(--card-padding) - 1px);}
+body.rumbo-services .service-option h3 {margin-block:16px 20px;line-height:1.35;}
+body.rumbo-services .service-option :is(p,li) {line-height:1.8;}
+body.rumbo-services .service-option ul {margin-block:20px 28px;}
+body.rumbo-services .service-tile {padding-bottom:32px;}
+body.rumbo-services .service-tile h2 {margin-bottom:20px;line-height:1.35;}
+body.rumbo-services .service-tile p {line-height:1.8;margin-bottom:28px;}
+body.rumbo-services :is(.service-form,.rv-search-panel,.guide-search,.catalog-tools,.rv-filter-bar) {padding:var(--card-padding);gap:24px;margin-bottom:40px;}
+body :is(.service-field,.rv-field) {row-gap:10px;}
+body :is(.rv-results-toolbar,.rv-results-heading,.guide-heading) {gap:24px;margin-bottom:28px;}
+body .rv-results-toolbar {padding-block:28px;}
+body :is(.rv-card-footer,.service-option-bottom,.guide-card-bottom,.rv-flight-bottom) {padding-top:24px;gap:20px;}
+body .rv-detail-body {padding-top:48px;gap:48px;}
+body .rv-detail-copy>p {line-height:1.85;margin-bottom:28px;}
+body .rv-detail-copy h2 {margin-bottom:24px;}
+body .rv-highlight-list {gap:16px;margin-block:32px;}
+body .rv-highlight-list li {padding:18px 20px;line-height:1.7;}
+body .rv-page-title {padding-block:40px 32px;}
+body .rv-page-title h1 {margin-bottom:24px;}
+body .rv-hotel-filters {margin-bottom:32px;padding:24px;gap:20px;}
+body .help-card {padding:var(--card-padding);margin-bottom:40px;}
+body .help-card h2 {margin-bottom:24px;line-height:1.3;}
+body .help-card :is(p,li) {line-height:1.85;}
+body .help-card details {padding-block:24px;}
+body :is(.packing-section,.faq-section,.store-benefits,.journey-next) {margin-block:64px;}
+@media(max-width:800px) {
+ body #servicios .booking-card {gap:20px;}
+ body #destinations-track {gap:40px 20px;}
+ body .team-grid {gap:20px;}
+ body .team-person {padding:24px 20px;}
+ body .rumbo-footer-main {gap:40px 28px;}
+ body .rv-detail-body {gap:32px;}
+ body.rumbo-services :is(.service-layout,.guide-layout,.rv-flow-layout) {gap:32px;}
+}
+@media(max-width:540px) {
+ body #buscador.search-section {padding-block:48px 24px;}
+ body .section-heading {margin-bottom:32px;}
+ body #servicios .booking-card {grid-template-columns:24px minmax(0,1fr);padding-block:32px;gap:16px;}
+ body .team-grid {grid-template-columns:minmax(0,1fr);}
+ body .team-person {display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:20px;align-items:center;}
+ body .team-avatar {grid-row:span 2;width:56px;height:56px;margin:0;}
+ body .team-person h3 {margin:0 0 6px;}
+ body .team-person p {grid-column:2;}
+ body.rumbo-services .catalog-hero.catalog-hero {margin-block:24px 64px;gap:32px;}
+ body .rv-discover {padding-block:32px 64px;}
+ body :is(.rv-destination-grid,.products-grid) {gap:32px 20px;}
+ body :is(.rv-results-heading,.guide-heading) {flex-wrap:wrap;}
+ body .rumbo-footer {padding-top:48px;}
+ body .rumbo-footer-main {gap:40px 24px;}
+}

@@ -34,7 +34,7 @@
   },
   {
     "id": "venecia-canal",
-    "file": "imagenes-viajes/hd-venecia-canal.jpg",
+    "file": "imagenes-viajes/portadas/hd-venecia-canal.jpg",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg/960px-View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "page": "https://en.wikipedia.org/wiki/Grand_Canal_(Venice)",
     "commons": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg",
@@ -45,7 +45,7 @@
   },
   {
     "id": "madrid-retiro",
-    "file": "imagenes-viajes/hd-madrid-retiro.jpg",
+    "file": "imagenes-viajes/portadas/hd-madrid-retiro.jpg",
     "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/MADRID_051116_MXALX_041.jpg/960px-MADRID_051116_MXALX_041.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "page": "https://en.wikipedia.org/wiki/Parque_del_Buen_Retiro",
     "commons": "https://commons.wikimedia.org/wiki/File:MADRID_051116_MXALX_041.jpg",
@@ -111,7 +111,7 @@
   },
   {
     "id": "hero-cancun",
-    "file": "imagenes-viajes/hero-cancun-delfines.jpg",
+    "file": "imagenes-viajes/portadas/hero-cancun-delfines.jpg",
     "source": "https://upload.wikimedia.org/wikipedia/commons/2/26/Playa_Delfines%2C_Canc%C3%BAn_-_Panorama.jpg",
     "commons": "https://commons.wikimedia.org/wiki/File:Playa_Delfines%2C_Canc%C3%BAn_-_Panorama.jpg",
     "author": "Capmo",

@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 const manifest=JSON.parse(await readFile(new URL('catalogo-imagenes.json', new URL('../public/', import.meta.url)),'utf8'));
 const context={window:{},document:{querySelector:()=>null}};
-vm.runInNewContext(await readFile(new URL('tienda.js', new URL('../public/', import.meta.url)),'utf8'),context);
+vm.runInNewContext(await readFile(new URL('js/tienda/tienda.js', new URL('../public/', import.meta.url)),'utf8'),context);
 test('las cien fichas conservan sus identificadores y usan la asignación visual revisada',()=>{
  const products=context.window.RumboProducts;
  assert.equal(products.length,100);
@@ -18,6 +18,6 @@ test('todos los archivos del catálogo son imágenes JPEG válidas y locales',as
 test('los productos que antes compartían fotos ajenas tienen imágenes diferentes',()=>{
  const p=id=>context.window.RumboProducts.find(p=>p.id===id);
  for(const [a,b] of [[31,2],[47,8],[50,8],[52,8],[63,13],[65,13],[75,20],[89,28],[94,28]])assert.notEqual(p(a).image,p(b).image);
- assert.equal(p(2).image,'imagenes/maleta.jpg');
+ assert.equal(p(2).image,'imagenes/productos/maleta.jpg');
  assert.ok(context.window.RumboVariantPreview.model(p(2),{Color:'Azul',Tamaño:'28 pulgadas'}));
 });

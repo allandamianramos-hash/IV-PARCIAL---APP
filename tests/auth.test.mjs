@@ -24,7 +24,7 @@ test('páginas públicas y errores seguros sin conexión a SQL Server',async()=>
   try{
     for(const path of ['/registro.html','/iniciar-sesion.html']){
       const r=await fetch(origin+path);assert.equal(r.status,200);
-      const html=await r.text();assert.ok(html.includes('auth-client.js'));assert.ok(html.includes('id="auth-form"'));
+      const html=await r.text();assert.ok(html.includes('js/cuenta/auth-client.js'));assert.ok(html.includes('id="auth-form"'));
     }
     for(const path of ['register','login','logout']){
       const r=await fetch(origin+'/api/auth/'+path,{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:'{}'});

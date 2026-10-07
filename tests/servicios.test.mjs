@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 const read=f=>readFileSync(new URL('../public/'+f,import.meta.url),'utf8');
-const travel=read('viajes.js'), services=read('servicios.js');
+const travel=read('js/destinos/viajes.js'), services=read('js/servicios/servicios.js');
 const data={window:{}};
 vm.runInNewContext(travel.slice(0,travel.indexOf('/* Abre una')),data);
 const catalog=data.window.RumboViajesDatos.destinations;

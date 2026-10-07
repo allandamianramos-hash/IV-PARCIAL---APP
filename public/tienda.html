@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script src="database-client.js" defer></script>
+  <script src="js/compartido/database-client.js" defer></script>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101214">
   <meta name="description" content="Catálogo de equipaje, tecnología y accesorios de viaje. Compara productos y guarda tu lista en Rumbo.">
   <title>Tienda de viaje | Rumbo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="tienda.css?v=catalogo-limpio-3"><script src="tienda.js?v=catalogo-limpio-3" defer></script>
-  <link rel="stylesheet" href="common.css">
-  <script src="journey.js" defer></script><script src="connection.js" defer></script><script src="common.js" defer></script>
-  <script src="viajes.js" defer></script>
-  <script src="chat-engine.js" defer></script>
-  <script src="chat-client.js" defer></script>
-  <script src="chat-ui.js" defer></script>
-  <link rel="stylesheet" href="chat.css">
-<link rel="stylesheet" href="design.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/tienda/tienda.css?v=catalogo-limpio-3"><script src="js/tienda/tienda.js?v=catalogo-limpio-3" defer></script>
+  <link rel="stylesheet" href="css/compartido/common.css">
+  <script src="js/servicios/journey.js" defer></script><script src="js/compartido/connection.js" defer></script><script src="js/compartido/common.js" defer></script>
+  <script src="js/destinos/viajes.js" defer></script>
+  <script src="js/rumbito/chat-engine.js" defer></script>
+  <script src="js/rumbito/chat-client.js" defer></script>
+  <script src="js/rumbito/chat-ui.js" defer></script>
+  <link rel="stylesheet" href="css/rumbito/chat.css">
+<link rel="stylesheet" href="css/compartido/design.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="navigation.css">
-<script src="navigation.js" defer></script>
-<link rel="stylesheet" href="palette.css">
-<link rel="stylesheet" href="community.css">
-<script src="api-client.js" defer></script>
-<script src="translations.js" defer></script>
-<script src="preferences.js" defer></script>
+<link rel="stylesheet" href="css/compartido/navigation.css">
+<script src="js/compartido/navigation.js" defer></script>
+<link rel="stylesheet" href="css/compartido/palette.css">
+<link rel="stylesheet" href="css/comunidad/community.css">
+<script src="js/compartido/api-client.js" defer></script>
+<script src="js/idiomas/translations.js" defer></script>
+<script src="js/idiomas/locale-engine.js" defer></script>
+<script src="js/idiomas/preferences.js" defer></script>
 </head>
 <body class="rumbo-services">
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -43,7 +44,7 @@
   <main>
     <section class="container store-hero catalog-hero" aria-labelledby="store-title">
       <div class="hero-copy"><h1 id="store-title">Equipaje y accesorios</h1><p>Maletas, organizadores y accesorios para preparar tu viaje.</p><a class="button button-primary" href="#catalogo">Ver productos <span aria-hidden="true">↓</span></a></div>
-      <div class="hero-photo"><img src="imagenes/tienda-portada-equipaje.jpg" alt="Maleta abierta con ropa, cámara y accesorios preparados para viajar" width="2200" height="3322" fetchpriority="high"></div>
+      <div class="hero-photo"><img src="imagenes/productos/tienda-portada-equipaje.jpg" alt="Maleta abierta con ropa, cámara y accesorios preparados para viajar" width="2200" height="3322" fetchpriority="high"></div>
     </section>
     <section class="container catalog-section" id="catalogo" aria-labelledby="catalog-title"><div class="section-heading"><div><h2 id="catalog-title">Catálogo de productos</h2></div></div>
     <div class="store-utilities"><button id="favorites-toggle" class="icon-button" type="button" aria-label="Mostrar favoritos" aria-pressed="false" title="Mis favoritos"><svg class="icon" aria-hidden="true"><use href="#heart"/></svg><span id="favorites-count" class="small-count" hidden>0</span></button><button id="open-cart-btn" class="cart-button" type="button" aria-haspopup="dialog" aria-controls="cart-modal"><svg class="icon" aria-hidden="true"><use href="#bag"/></svg><span>Mi carrito</span><span id="cart-count">0</span></button></div>

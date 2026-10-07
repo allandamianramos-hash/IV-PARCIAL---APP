@@ -12,7 +12,7 @@ test('los errores de navegación son Rumbo; las API conservan JSON y HEAD no tie
     for(const [path,options,status] of [['/ruta/no-existe',{},404],['/%ZZ',{},400],['/index.html',{method:'POST'},405]]){
       const response=await fetch(base+path,options);assert.equal(response.status,status);
       assert.match(response.headers.get('content-type'),/text\/html/);
-      const body=await response.text();assert.match(body,new RegExp('Error '+status));assert.match(body,/href="\/index.html"/);assert.match(body,/src="\/error.js"/);
+      const body=await response.text();assert.match(body,new RegExp('Error '+status));assert.match(body,/href="\/index.html"/);assert.match(body,/src="\/js\/compartido\/error.js"/);
       assert.doesNotMatch(body,/SQLSTATE|PDOException|stack trace/i);
     }
     const forbidden=await new Promise((resolve,reject)=>{const req=request(base,{headers:{host:'otro.example'}},res=>{let body='';res.on('data',chunk=>body+=chunk);res.on('end',()=>resolve({status:res.statusCode,body}));});req.on('error',reject);req.end();});
@@ -23,7 +23,7 @@ test('los errores de navegación son Rumbo; las API conservan JSON y HEAD no tie
 });
 
 test('Live Server conserva la vista si PHP no responde y rechaza redirecciones externas',async()=>{
-  const source=await readFile(new URL('../public/connection.js',import.meta.url),'utf8');
+  const source=await readFile(new URL('../public/js/compartido/connection.js',import.meta.url),'utf8');
   const redirects=[];
   const scope={window:{},document:{getElementById:()=>null},URL,AbortSignal,fetch:async()=>{throw new Error('offline');},location:{protocol:'http:',hostname:'127.0.0.1',port:'5500',pathname:'/tienda.html',search:'',hash:'',replace:url=>redirects.push(url)}};
   vm.runInNewContext(source,scope);
@@ -33,7 +33,7 @@ test('Live Server conserva la vista si PHP no responde y rechaza redirecciones e
   assert.equal(await scope.window.RumboConnect('/.env'),false);assert.deepEqual(redirects,[]);
 });
 
-const errorSource=await readFile(new URL('../public/error.js',import.meta.url),'utf8');
+const errorSource=await readFile(new URL('../public/js/compartido/error.js',import.meta.url),'utf8');
 function errorPage(code,fetchImpl,data=new Map(),returnTo='servicios.html?seccion=mi-viaje#plan'){
   const elements=new Map(),redirects=[],calls=[];
   const node=()=>({children:[],textContent:'',hidden:true,append(...children){this.children.push(...children);},replaceChildren(...children){this.children=children;},addEventListener(type,fn){this[type]=fn;}});
@@ -109,7 +109,7 @@ test('la recuperación no envía el borrador a una sesión diferente',async()=>{
 });
 
 test('sesión vencida: el borrador reaparece solo en la cuenta original y exige elección explícita',async()=>{
-  const databaseSource=await readFile(new URL('../public/database-client.js',import.meta.url),'utf8');
+  const databaseSource=await readFile(new URL('../public/js/compartido/database-client.js',import.meta.url),'utf8');
   const data=draft(),savedValue={alias:'Antes',preference:'cultura'};
   let savedState={value:savedValue,revision:1},writes=0;
   const backend=async(path,options={})=>{

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import "../public/chat-engine.js";
+import "../public/js/rumbito/chat-engine.js";
 const context = {
   catalog: [{ id: "roatan", name: "Roatán", style: "playa", price: 8500, duration: "4 días" }, { id: "copan", name: "Copán Ruinas", style: "cultura", price: 4500, duration: "3 días" }],
   trips: [{ id: "roatan", name: "Roatán", description: "Playa", tag: "Playa", highlights: ["Explorar la isla"], hotels: [{ name: "Hotel Mar", rate: 1500, stars: 3, amenities: ["Wi-Fi"] }] }, { id: "copan", name: "Copán Ruinas", description: "Historia", hotels: [] }, { id: "la-ceiba", name: "La Ceiba", description: "Naturaleza", hotels: [] }],

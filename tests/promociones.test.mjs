@@ -2,8 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
-const source = await readFile(new URL('viajes.js', new URL('../public/', import.meta.url)), 'utf8');
-const journey = await readFile(new URL('journey.js', new URL('../public/', import.meta.url)), 'utf8');
+const source = await readFile(new URL('js/destinos/viajes.js', new URL('../public/', import.meta.url)), 'utf8');
+const journey = await readFile(new URL('js/servicios/journey.js', new URL('../public/', import.meta.url)), 'utf8');
 function setup() {
   const data = new Map();
   const scope = { window: {}, document: { querySelector: () => null }, localStorage: { getItem: k => data.get(k) || null, setItem: (k,v) => data.set(k,v) } };

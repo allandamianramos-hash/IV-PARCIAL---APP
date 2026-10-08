@@ -36,6 +36,9 @@ body #quienes-somos .about-rumbo-values dd {color:var(--secondary)!important;fon
 .review-form-actions {display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:4px;}
 .review-form-actions .button {max-width:100%;white-space:normal;text-align:center;}
 .review-delete[hidden] {display:none!important;}
+.review-card .review-delete {display:block;margin-top:20px;max-width:100%;white-space:normal;text-align:center;}
+.review-delete-preview {margin:24px 0;padding:16px;border:1px solid var(--line);border-radius:12px;max-height:40dvh;overflow:auto;}
+.review-delete-preview time {font-size:13px;color:var(--secondary);}
 .review-fields [role=status] {max-width:none;min-height:24px;margin:0;}
 .review-rating {border:0;padding:0;margin:0 0 8px;display:flex;gap:8px;}
 .review-rating {min-inline-size:0;}

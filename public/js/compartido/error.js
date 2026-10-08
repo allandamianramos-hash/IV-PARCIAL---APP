@@ -78,7 +78,7 @@
         delete latest[key];
         const value=state[key].value;
         if(value===null)localStorage.removeItem(key);else localStorage.setItem(key,JSON.stringify(value));
-      }else if(latest[key])latest[key].revision=state[key].revision;
+      }else if(latest[key]){latest[key].revision=state[key].revision;latest[key].base=state[key].value;}
     }
     localStorage.setItem(pendingKey,JSON.stringify(latest));
   }
@@ -112,6 +112,7 @@
     const draft=pending();
     if(!Object.keys(draft).length){location.replace(destination());return;}
     const data=await snapshot();
+    if(Object.entries(draft).every(([key,change])=>!change.needsReview&&same(change.value,data.state[key]?.value))){acknowledge(draft,data.state);location.replace(destination());return;}
     if(['conflict','recovery'].includes(mode)||Object.entries(draft).some(([key,change])=>change.needsReview||change.revision!==(data.state[key]?.revision||0)&&!same(change.value,data.state[key]?.value))){showReview(draft,data);return;}
     await save(draft,data);
   }));

@@ -7,11 +7,12 @@
   const boot=JSON.parse(initial?.textContent||'{"connected":false}');
   const staticPage=!initial;
   window.RumboDatabase=boot;
-  const memory=new Map(), revisions={};
+  const memory=new Map(), revisions={},savedValues={};
   let pending={},conflict=false,timer,activeFlush,redirecting=false;
   const read=k=>{try{return localStorage.getItem(k);}catch{return null;}};
   const readPending=()=>{try{const p=JSON.parse(read(pendingKey)||'{}');return p&&typeof p==='object'&&!Array.isArray(p)?p:{};}catch{return {};}};
   const readRecoveries=()=>{const value=JSON.parse(read(recoveryKey)||'[]');return Array.isArray(value)?value:value?.visitor?[value]:[];};
+  const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
   const cache=(k,v)=>{memory.set(k,v);try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v);}catch{}};
   function reportError(code='database'){
     if(redirecting)return false;
@@ -48,15 +49,16 @@
     }catch{reportError('storage');return;}
   }
   for(const key of keys){
-    const row=boot.state?.[key];revisions[key]=row?.revision||0;
+    const row=boot.state?.[key];revisions[key]=row?.revision||0;savedValues[key]=row?.value??null;
     if(pending[key]&&!pending[key].needsReview&&row&&JSON.stringify(pending[key].value)===JSON.stringify(row.value))delete pending[key];
+    if(pending[key]&&!pending[key].needsReview&&Object.hasOwn(pending[key],'base')&&same(pending[key].base,savedValues[key]))pending[key].revision=revisions[key];
     if(pending[key]){
       if(boot.connected&&(pending[key].needsReview||pending[key].revision!==revisions[key]))conflict=true;
       cache(key,pending[key].value===null?null:JSON.stringify(pending[key].value));
     }else if(row)cache(key,row.value===null?null:JSON.stringify(row.value));
     else{
       memory.set(key,read(key));
-      if(boot.connected&&memory.get(key)!==null){try{pending[key]={value:JSON.parse(memory.get(key)),revision:0};}catch{}}
+      if(boot.connected&&memory.get(key)!==null){try{pending[key]={value:JSON.parse(memory.get(key)),revision:0,base:null};}catch{}}
     }
   }
   function savePending(){localStorage.setItem(pendingKey,JSON.stringify(pending));}
@@ -73,14 +75,36 @@
     if(staticPage)return true;
     if(!boot.connected)return fail('database');
     if(conflict)return fail('conflict');
-    pending=readPending();
+    pending=readPending();let reconciled=false;
     while(Object.keys(pending).length){
       if(read(identityKey)!==boot.visitor)return fail('session');
       if(Object.values(pending).some(change=>change.needsReview)){conflict=true;return fail('recovery');}
       const changes=JSON.parse(JSON.stringify(pending));
       try{
-        const response=await fetch('/api/state',{method:'PUT',headers:{'Content-Type':'application/json','X-Rumbo-Visitor':boot.visitor},body:JSON.stringify({changes}),signal:AbortSignal.timeout(10000),keepalive:true});
+        const payload=Object.fromEntries(Object.entries(changes).map(([key,{value,revision}])=>[key,{value,revision}]));
+        const response=await fetch('/api/state',{method:'PUT',headers:{'Content-Type':'application/json','X-Rumbo-Visitor':boot.visitor},body:JSON.stringify({changes:payload}),signal:AbortSignal.timeout(10000),keepalive:true});
         if(!response.ok){
+          if(response.status===409&&!reconciled){
+            // A save may have succeeded before its response was lost, or another view
+            // may have saved the same value. Reconcile only demonstrably safe changes.
+            const check=await fetch('/api/state',{cache:'no-store',signal:AbortSignal.timeout(10000)});
+            if(!check.ok)return fail(check.status===401?'session':'save');
+            const snapshot=await check.json();
+            if(snapshot.visitor!==boot.visitor||read(identityKey)!==boot.visitor)return fail('session');
+            if(!snapshot.state||typeof snapshot.state!=='object'||Array.isArray(snapshot.state))return fail('save');
+            const latest=readPending();
+            for(const [key,change]of Object.entries(latest)){
+              const row=snapshot.state[key],value=row?.value??null,revision=row?.revision??0;
+              if(!keys.includes(key)||!Number.isInteger(revision)||revision<0)return fail('save');
+              if(change.needsReview||(!same(change.value,value)&&(!Object.hasOwn(change,'base')||!same(change.base,value)))){conflict=true;return fail('conflict');}
+            }
+            for(const [key,change]of Object.entries(latest)){
+              const row=snapshot.state[key];revisions[key]=row?.revision||0;savedValues[key]=row?.value??null;
+              if(same(change.value,savedValues[key]))delete latest[key];
+              else latest[key]={...change,revision:revisions[key],base:savedValues[key]};
+            }
+            pending=latest;savePending();reconciled=true;continue;
+          }
           conflict=response.status===409;
           return fail(conflict?'conflict':response.status===401?'session':'save');
         }
@@ -89,9 +113,9 @@
         if(!result.revisions||!Object.entries(changes).every(([key,change])=>Number.isInteger(result.revisions[key])&&result.revisions[key]>change.revision))return fail('save');
         pending=readPending();
         for(const key of Object.keys(changes)){
-          const revision=result.revisions[key];revisions[key]=revision;
+          const revision=result.revisions[key];revisions[key]=revision;savedValues[key]=changes[key].value;
           if(JSON.stringify(pending[key])===JSON.stringify(changes[key]))delete pending[key];
-          else if(pending[key])pending[key].revision=revision;
+          else if(pending[key]){pending[key].revision=revision;pending[key].base=changes[key].value;}
         }
         savePending();
       }catch{return fail('save');}
@@ -104,14 +128,16 @@
     setItem(key,raw){
       if(!keys.includes(key))return localStorage.setItem(key,raw);
       const value=JSON.parse(raw);
+      if((memory.get(key)??null)===(value===null?null:raw))return;
       const previousPending=readPending();
-      const next={...previousPending,[key]:{...previousPending[key],value,revision:revisions[key]||0}};
+      const next={...previousPending,[key]:{...previousPending[key],value,revision:previousPending[key]?.revision??revisions[key]??0,base:previousPending[key]&&Object.hasOwn(previousPending[key],'base')?previousPending[key].base:savedValues[key]??null}};
       try{localStorage.setItem(pendingKey,JSON.stringify(next));}
       catch(error){reportError('storage');throw error;}
       pending=next;cache(key,raw);clearTimeout(timer);timer=setTimeout(flush,80);
     },
     removeItem(key){this.setItem(key,'null');cache(key,null);},
     flush,reportError,
+    async navigate(url){if(await flush())location.href=url;},
     isRedirecting(){return redirecting;},
     hasPending(){return Object.keys(readPending()).length>0;}
   };

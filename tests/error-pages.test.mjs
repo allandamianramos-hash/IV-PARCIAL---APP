@@ -93,6 +93,12 @@ test('conflictos permiten comparar antes de guardar y conservan el borrador al f
   await p.get('keep-local').click();assert.equal(puts,1);assert.ok(data.get(queue).includes('Mi selección'));assert.deepEqual(p.redirects,[]);
 });
 
+test('un aviso 409 antiguo se recupera sin elegir entre dos versiones idénticas',async()=>{
+  const data=draft(),value=JSON.parse(data.get(queue))[profile].value;
+  const p=errorPage('conflict',async path=>path==='/api/database'?Response.json({connected:true}):Response.json({visitor:'a',state:{[profile]:{value,revision:2}}}),data);
+  await p.get('retry').click();assert.equal(data.get(queue),'{}');assert.equal(p.redirects.length,1);assert.equal(p.get('conflict-review').hidden,true);assert.equal(p.calls.filter(c=>c.options.method==='PUT').length,0);
+});
+
 test('usar la versión guardada es explícito y conserva una copia del borrador',async()=>{
   const data=draft();
   const p=errorPage('conflict',async path=>path==='/api/database'?Response.json({connected:true}):stateResponse(),data);

@@ -3223,6 +3223,10 @@
     });
   }
   let storageAvailable = true;
+  function navigate(url) {
+    if(window.RumboStorage?.navigate)return window.RumboStorage.navigate(url);
+    location.href=url;
+  }
   function persist(updateURL = true) {
     cleanState();
     try { (window.RumboStorage || localStorage).setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) { storageAvailable = false; }
@@ -3317,7 +3321,7 @@
       event.preventDefault();
       updateTrip({ date: $('#detail-date').value, travelers: Number($('#detail-travelers').value), nights: Number($('#detail-nights').value) });
       if (event.submitter?.value === 'hoteles') { state.flightId = ''; persist(); window.RumboJourney?.skipFlight(); }
-      location.href = link(event.submitter?.value === 'hoteles' ? 'hoteles' : 'vuelos');
+      navigate(link(event.submitter?.value === 'hoteles' ? 'hoteles' : 'vuelos'));
     });
   }
 
@@ -3335,17 +3339,17 @@
     const element = $('#resumen-viaje');
     const destination = currentDestination();
     const parts = summaryParts();
-    element.innerHTML = `<h2>Resumen del viaje</h2><div class="rv-summary-destination"><img src="${destination.image}" alt="" width="59" height="62"><div><strong>${destination.name}</strong><small>${destination.country}</small></div></div>
-      <div class="rv-summary-part"><h3>01 / Vuelo ${mode === 'hoteles' ? `<a href="${escapeHTML(link('vuelos'))}">${parts.flight ? 'Cambiar' : 'Elegir'}</a>` : ''}</h3>${parts.flightHTML}</div>
-      <div class="rv-summary-part"><h3>02 / Hotel</h3>${parts.hotelHTML}</div>
+    element.innerHTML = `<h2>Tu selección</h2><div class="rv-summary-destination"><img src="${destination.image}" alt="" width="59" height="62"><div><strong>${destination.name}</strong><small>${destination.country}</small></div></div>
+      <div class="rv-summary-part"><h3>Vuelo ${mode === 'hoteles' ? `<a href="${escapeHTML(link('vuelos'))}">${parts.flight ? 'Cambiar' : 'Elegir'}</a>` : ''}</h3>${parts.flightHTML}</div>
+      <div class="rv-summary-part"><h3>Hospedaje</h3>${parts.hotelHTML}</div>
       <div class="rv-summary-total"><span>Subtotal elegido</span><strong id="summary-total" data-amount="${parts.total}" aria-live="polite">${money(parts.total)}</strong></div>
       <p class="rv-caption">Suma de las opciones elegidas. Actividades y traslados no incluidos.</p>
       ${mode === 'vuelos' ? `<button class="button button-primary" id="continue-hotel" type="button" ${parts.flight ? '' : 'disabled'}>Elegir hotel ↗</button><a data-skip-flight class="rv-link-button rv-summary-clear" href="${escapeHTML(link('hoteles', { flightId: '' }))}">Continuar solo con hotel →</a>` : `<button class="button button-primary" id="save-selection" type="button" ${parts.hotel ? '' : 'disabled'}>Continuar a transporte →</button>`}
       ${parts.flight || parts.hotel ? '<button class="rv-link-button rv-summary-clear" id="clear-selection" type="button">Quitar selecciones</button>' : ''}`;
-    $('#continue-hotel')?.addEventListener('click', () => { location.href = link('hoteles'); });
+    $('#continue-hotel')?.addEventListener('click', () => { navigate(link('hoteles')); });
     $('#save-selection')?.addEventListener('click', () => {
       persist();
-      location.href = 'servicios.html?seccion=traslados';
+      navigate('servicios.html?seccion=traslados');
     });
     $('#clear-selection')?.addEventListener('click', () => {
       state.flightId = ''; state.hotelId = ''; persist(); afterClear(); toast('Se quitaron el vuelo y el hotel de tu selección.');
@@ -3401,10 +3405,9 @@
         const end = arrival(flight);
         const selected = state.flightId === flight.id;
         return `<article class="rv-flight-card" data-selected="${selected}" aria-label="Vuelo ${flight.code}">
-          <div class="rv-flight-top"><div class="rv-flight-name"><span class="rv-plane-icon" aria-hidden="true">✈</span><div><strong>${flight.airline.name}</strong><small>Referencia ${flight.code} · no es número de vuelo</small></div></div><span class="rv-badge">Boleto de muestra</span></div>
-          <div class="rv-ticket-details"><span><small>Fecha de salida</small><strong>${formatDate(state.date)}</strong></span><span><small>Pasajeros</small><strong>${state.travelers}</strong></span><span><small>Clase</small><strong>${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</strong></span></div>
+          <div class="rv-flight-top"><div class="rv-flight-name"><div><strong>${flight.airline.name}</strong><small>Referencia ${flight.code} · no es número de vuelo</small></div></div></div>
           <div class="rv-flight-timing"><div class="rv-time"><strong>${flight.departure}</strong><small>${state.origin}</small></div><div class="rv-flight-line"><span>${duration(flight.minutes)}</span><div aria-hidden="true"></div><span>${flight.stops}</span></div><div class="rv-time"><strong>${end.time}${end.days ? `<sup> +${end.days} d</sup>` : ''}</strong><small>${destination.arrival}</small></div></div>
-          <div class="rv-airline-booking"><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar en ${flight.airline.name} ↗<span class="sr-only"> (abre una pestaña nueva)</span></a><p>Horario, ruta, equipaje y precio simulados. Consulta rutas y disponibilidad en el sitio oficial; tus selecciones no se transfieren y este boleto no permite abordar.</p></div>
+          <details class="booking-details"><summary>Ver condiciones</summary><div class="rv-ticket-details"><span><small>Fecha de salida</small><strong>${formatDate(state.date)}</strong></span><span><small>Pasajeros</small><strong>${state.travelers}</strong></span><span><small>Clase</small><strong>${state.cabin === 'economica' ? 'Económica' : 'Ejecutiva'}</strong></span></div><div class="rv-airline-booking"><a href="${flight.airline.url}" target="_blank" rel="noopener noreferrer">Consultar en ${flight.airline.name} ↗<span class="sr-only"> (abre una pestaña nueva)</span></a><p>Horario, ruta, equipaje y precio simulados. Consulta rutas y disponibilidad en el sitio oficial; tus selecciones no se transfieren y este boleto no permite abordar.</p></div></details>
           <div class="rv-flight-bottom"><p>${state.cabin === 'economica' ? 'Económica<br>Equipaje de mano' : 'Ejecutiva<br>Mano + una maleta'}<br>${end.days ? `Llegada: ${formatDate(addDays(state.date, end.days))}` : 'Llegada el mismo día'}</p><div class="rv-price">${flight.discountPercent ? `<span class="promo-badge">−${flight.discountPercent}% aplicado</span><del class="promo-original">${money(state.cabin === 'ejecutiva' ? flight.baseExecutive : flight.baseEconomy)}</del>` : ''}<strong>${money(flightRate(flight))}</strong><small>Por persona · solo ida</small><small>${money(flightRate(flight) * state.travelers)} por ${state.travelers} ${state.travelers === 1 ? 'pasajero' : 'pasajeros'}</small></div><button class="rv-select-button" type="button" data-select-flight="${flight.id}" aria-pressed="${selected}" aria-label="${selected ? 'Vuelo seleccionado' : 'Seleccionar vuelo'} ${flight.code} de las ${flight.departure}">${selected ? 'Seleccionado ✓' : 'Elegir vuelo'}</button></div></article>`;
       }).join('') : `<div class="rv-empty"><h3>Ya sales de la ciudad de conexión.</h3><p>Desde ${state.origin}, este viaje continúa por tierra hacia ${destination.name}. El traslado no está incluido.</p><a class="button button-primary" href="${escapeHTML(link('hoteles', { flightId: '' }))}">Elegir hotel ↗</a></div>`;
       renderSummary('vuelos', render);
@@ -3477,10 +3480,10 @@
         const selected = hotel.id === state.hotelId && type === state.roomType;
         const enoughSpace = rooms[type].capacity * state.rooms >= state.travelers;
         return `<article class="rv-hotel-card" data-selected="${selected}"><img class="rv-hotel-photo" src="imagenes-viajes/${hotel.image}" alt="${escapeHTML(hotel.imageAlt || 'Fotografía de referencia de un alojamiento')}" width="700" height="700" loading="lazy">
-          <div class="rv-hotel-content"><p class="rv-stars" aria-label="${hotel.stars} estrellas de demostración">${'★'.repeat(hotel.stars)}</p><h3>${hotel.name}</h3><p class="rv-hotel-location">${destination.name} · ${hotel.area}</p><p class="rv-demo-caption">Hospedaje de demostración · fotografía de referencia</p><ul class="rv-amenities" aria-label="Servicios">${hotel.amenities.map(item => `<li>${item}</li>`).join('')}</ul>
+          <div class="rv-hotel-content"><p class="rv-stars" aria-label="${hotel.stars} estrellas de demostración">${'★'.repeat(hotel.stars)}</p><h3>${hotel.name}</h3><p class="rv-hotel-location">${destination.name} · ${hotel.area}</p><ul class="rv-amenities" aria-label="Servicios">${hotel.amenities.map(item => `<li>${item}</li>`).join('')}</ul>
           <div class="rv-field rv-room-choice"><label for="room-${hotel.id}">Tipo de habitación en ${hotel.name}</label><select id="room-${hotel.id}" data-room-hotel="${hotel.id}">${Object.entries(rooms).map(([key, room]) => `<option value="${key}" ${key === type ? 'selected' : ''}>${room.name} · hasta ${room.capacity} personas / hab.</option>`).join('')}</select></div>
           <div class="rv-hotel-price-row"><div class="rv-price"><strong>${money(nightly)}</strong><small>Por noche / habitación</small></div><button class="rv-select-button" type="button" data-select-hotel="${hotel.id}" aria-pressed="${selected}" aria-label="${selected ? 'Hotel seleccionado' : 'Seleccionar'} ${hotel.name}" ${!enoughSpace || dirty ? 'disabled' : ''}>${selected ? 'Seleccionado ✓' : 'Elegir hotel'}</button></div><p class="rv-hotel-total">${state.nights} ${state.nights === 1 ? 'noche' : 'noches'} × ${state.rooms} ${state.rooms === 1 ? 'habitación' : 'habitaciones'} · <strong>${money(nightly * state.nights * state.rooms)}</strong></p>
-          ${enoughSpace ? '' : `<p class="rv-capacity-error">Para ${state.travelers} personas necesitas al menos ${Math.ceil(state.travelers / rooms[type].capacity)} habitaciones de este tipo, o elegir otra capacidad.</p>`}</div></article>`;
+          <p class="booking-disclosure">Hospedaje de demostración · fotografía de referencia</p>${enoughSpace ? '' : `<p class="rv-capacity-error">Para ${state.travelers} personas necesitas al menos ${Math.ceil(state.travelers / rooms[type].capacity)} habitaciones de este tipo, o elegir otra capacidad.</p>`}</div></article>`;
       }).join('');
       renderSummary('hoteles', render);
       if (dirty) $('#save-selection').disabled = true;

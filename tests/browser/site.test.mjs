@@ -56,20 +56,24 @@ test('mobile Arabic layout keeps the hero and language controls inside the viewp
  const browser=await launch();try{const page=await browser.newPage({viewport:{width:390,height:844},reducedMotion:'reduce'});await page.goto(base);await language(page,'ar');await page.waitForFunction(()=>getComputedStyle(document.querySelector('.hero-fare-wrap')).opacity==='1');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await page.screenshot({path:'evidencias/idiomas/hero-arabe-movil.png'});await language(page,'es');assert.equal(await page.locator('html').getAttribute('dir'),'ltr');}finally{await browser.close();}
 });
 test('review controls respect ownership, cancel, delete and preserve original review text',async()=>{
- const browser=await launch();try{const page=await browser.newPage();let owns=true,deleted=0;
- await page.route('**/api/reviews*',route=>{if(route.request().method()==='DELETE'){owns=false;deleted++;return route.fulfill({json:{deleted:true}});}return route.fulfill({json:{total:owns?1:0,average:owns?5:null,hasOwnReview:owns,reviews:owns?[{name:'Usuario prueba',comment:'Esta reseña debe conservar su idioma original.',rating:5,date:'2026-10-06T12:00:00Z'}]:[]}});});
- await page.goto(base);await page.locator('.review-delete').waitFor({state:'visible'});await language(page,'en');assert.match(await page.locator('.review-comment').innerText(),/Esta reseña/);
- assert.equal(await page.locator('.review-form-actions .review-delete').count(),1);
+ const browser=await launch();try{const page=await browser.newPage();let deleted=0,failDelete=true;
+ let reviews=[{id:'review:me:one',isOwn:true,name:'Usuario prueba',comment:'Esta reseña debe conservar su idioma original.',rating:5,date:'2026-10-06T12:00:00Z'},{id:'review:me:two',isOwn:true,name:'Usuario prueba',comment:'Segunda reseña que quiero eliminar.',rating:3,date:'2026-10-07T12:00:00Z'},{id:'review:other',isOwn:false,name:'Otra persona',comment:'Esta reseña pertenece a otra cuenta.',rating:4,date:'2026-10-05T12:00:00Z'}];
+ await page.route('**/api/reviews*',route=>{if(route.request().method()==='DELETE'){const id=new URL(route.request().url()).searchParams.get('id');assert.equal(id,'review:me:two');if(failDelete){failDelete=false;return route.fulfill({status:503,json:{error:'No se pudo eliminar tu reseña. Inténtalo de nuevo.'}});}reviews=reviews.filter(review=>review.id!==id);deleted++;return route.fulfill({json:{deleted:true}});}return route.fulfill({json:{total:reviews.length,average:reviews.reduce((sum,review)=>sum+review.rating,0)/reviews.length,hasOwnReview:true,reviews}});});
+ await page.goto(base);await page.locator('.review-delete').first().waitFor({state:'visible'});await language(page,'en');assert.match(await page.locator('.reviews-list .review-comment').first().innerText(),/Esta reseña/);
+ assert.equal(await page.locator('.review-form-actions .review-delete').count(),0);
+ assert.equal(await page.locator('.review-delete').count(),2);
+ assert.equal(await page.locator('.review-delete').first().innerText(),'Delete my review');
+ assert.equal(await page.locator('.review-card').nth(2).locator('.review-delete').count(),0);
  for(const width of [1280,390]){
   await page.setViewportSize({width,height:900});
-  const bounds=await page.locator('.review-delete').boundingBox(),formBounds=await page.locator('.review-form').boundingBox(),cards=await page.locator('.reviews-list').boundingBox();
-  assert.ok(bounds.x>=formBounds.x&&bounds.x+bounds.width<=formBounds.x+formBounds.width+1);
-  assert.ok(bounds.y+bounds.height<=formBounds.y+formBounds.height&&bounds.y+bounds.height<cards.y);
+  const bounds=await page.locator('.review-delete').first().boundingBox(),card=await page.locator('.review-card').first().boundingBox();
+  assert.ok(bounds.x>=card.x&&bounds.x+bounds.width<=card.x+card.width+1);
+  assert.ok(bounds.y+bounds.height<=card.y+card.height);
  }
- await page.locator('.review-form').scrollIntoViewIfNeeded();await page.screenshot({path:'evidencias/idiomas/resena-acciones-movil.png'});
- await page.locator('.review-delete').click();await page.locator('.review-delete-dialog button[value=cancel]').click();assert.equal(deleted,0);
- await page.locator('.review-delete').click();await page.locator('[data-confirm-delete]').click();await page.locator('.review-delete').waitFor({state:'hidden'});assert.equal(deleted,1);assert.equal(await page.locator('.review-card').count(),0);
- await page.reload();await page.locator('.reviews-list').waitFor();assert.equal(await page.locator('.review-delete').isVisible(),false);
+ await page.locator('.review-delete').nth(1).click();assert.equal(await page.locator('.review-delete-preview .review-comment').innerText(),reviews[1].comment);await page.locator('.review-delete-dialog button[value=cancel]').click();assert.equal(deleted,0);
+ await page.locator('.review-delete').nth(1).click();await page.locator('[data-confirm-delete]').click();await page.waitForFunction(()=>document.querySelector('.review-delete-dialog [role=status]').textContent.length>0);assert.equal(deleted,0);assert.equal(reviews.length,3);
+ await page.locator('[data-confirm-delete]').click();await page.locator('.review-delete-dialog').waitFor({state:'hidden'});await page.waitForFunction(()=>document.querySelectorAll('.review-card').length===2);assert.equal(deleted,1);assert.match(await page.locator('.reviews-list .review-comment').first().innerText(),/Esta reseña debe conservar/);assert.equal(await page.locator('.review-delete').count(),1);
+ await page.reload();await page.locator('.review-delete').waitFor({state:'visible'});assert.equal(await page.locator('.review-card').count(),2);
  }finally{await browser.close();}
 });
 

@@ -93,6 +93,62 @@ test('la navegación continúa únicamente después de confirmar todos los cambi
   assert.equal(c.location.href,link.href);assert.equal(c.storage.hasPending(),false);
 });
 
+test('abrir de nuevo la misma selección no guarda otra versión del viaje',async()=>{
+  const key='rumbo.integrante2.viaje.v1',value={destinationId:'roatan',travelers:2};let calls=0;
+  const c=client({connected:true,visitor:'a',state:{[key]:{value,revision:3}}},new Map(),async()=>{calls++;});
+  c.storage.setItem(key,JSON.stringify(value));
+  assert.equal(await c.storage.flush(),true);assert.equal(calls,0);assert.equal(c.storage.hasPending(),false);
+});
+
+test('una confirmación perdida se reconoce sin sobrescribir ni mostrar un falso 409',async()=>{
+  const key='rumbo.integrante2.viaje.v1',value={destinationId:'paris',travelers:2};const methods=[];
+  const c=client({connected:true,visitor:'a',state:{}},new Map(),async(url,options)=>{
+    methods.push(options.method||'GET');
+    return options.method==='PUT'?Response.json({error:'conflict'},{status:409}):Response.json({visitor:'a',state:{[key]:{value,revision:1}}});
+  });
+  c.storage.setItem(key,JSON.stringify(value));
+  assert.equal(await c.storage.flush(),true);assert.deepEqual(methods,['PUT','GET']);assert.equal(c.storage.hasPending(),false);assert.deepEqual(c.redirects,[]);
+});
+
+test('una versión nueva con el mismo contenido permite guardar el destino elegido',async()=>{
+  const key='rumbo.integrante2.viaje.v1',base={destinationId:'roatan'},value={destinationId:'paris'};let puts=0;
+  const c=client({connected:true,visitor:'a',state:{[key]:{value:base,revision:1}}},new Map(),async(url,options)=>{
+    if(options.method!=='PUT')return Response.json({visitor:'a',state:{[key]:{value:base,revision:2}}});
+    const change=JSON.parse(options.body).changes[key];puts++;assert.deepEqual(change.value,value);
+    if(puts===1){assert.equal(change.revision,1);return Response.json({error:'conflict'},{status:409});}
+    assert.equal(change.revision,2);return Response.json({revisions:{[key]:3}});
+  });
+  c.storage.setItem(key,JSON.stringify(value));assert.equal(await c.storage.flush(),true);assert.equal(puts,2);assert.deepEqual(c.redirects,[]);
+});
+
+test('una selección realmente distinta conserva el conflicto y el borrador',async()=>{
+  const key='rumbo.integrante2.viaje.v1';let puts=0;
+  const c=client({connected:true,visitor:'a',state:{[key]:{value:{destinationId:'roatan'},revision:1}}},new Map(),async(url,options)=>{
+    if(options.method==='PUT'){puts++;return Response.json({error:'conflict'},{status:409});}
+    return Response.json({visitor:'a',state:{[key]:{value:{destinationId:'osaka'},revision:2}}});
+  });
+  c.storage.setItem(key,JSON.stringify({destinationId:'paris'}));assert.equal(await c.storage.flush(),false);assert.equal(puts,1);assert.match(c.redirects[0],/code=conflict/);assert.equal(JSON.parse(c.storage.getItem(key)).destinationId,'paris');assert.equal(c.storage.hasPending(),true);
+});
+
+test('la reconciliación rechaza otra sesión y limita los reintentos',async()=>{
+  const key='rumbo.integrante2.viaje.v1';
+  for(const visitor of ['a','b']){
+    let puts=0;
+    const c=client({connected:true,visitor:'a',state:{}},new Map(),async(url,options)=>{
+      if(options.method==='PUT'){puts++;return Response.json({error:'conflict'},{status:409});}
+      return Response.json({visitor,state:{}});
+    });
+    c.storage.setItem(key,JSON.stringify({destinationId:'paris'}));assert.equal(await c.storage.flush(),false);assert.equal(puts,visitor==='a'?2:1);assert.equal(c.storage.hasPending(),true);assert.match(c.redirects[0],visitor==='a'?/code=conflict/:/code=session/);
+  }
+});
+
+test('los botones esperan el guardado antes de pasar de destino a vuelos',async()=>{
+  let settle;
+  const key='rumbo.integrante2.viaje.v1',c=client({connected:true,visitor:'a',state:{}},new Map(),()=>new Promise(resolve=>settle=resolve));
+  c.storage.setItem(key,JSON.stringify({destinationId:'paris'}));const navigation=c.storage.navigate('viajes.html?pantalla=vuelos');await Promise.resolve();
+  assert.equal(c.location.href,undefined);settle(Response.json({revisions:{[key]:1}}));await navigation;assert.equal(c.location.href,'viajes.html?pantalla=vuelos');assert.equal(c.storage.hasPending(),false);
+});
+
 test('otra pestaña no guarda automáticamente un borrador que requiere revisión',async()=>{
   let requests=0;
   const c=client({connected:true,visitor:'a',state:{}},new Map(),async()=>{requests++;});

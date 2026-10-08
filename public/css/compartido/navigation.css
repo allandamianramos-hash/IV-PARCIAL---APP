@@ -86,3 +86,11 @@ html:has(#site-navbar) { scroll-padding-top:104px; }
 }
 @media(max-width:370px) { body #site-navbar .header-inner {gap:8px;} }
 @media(max-width:350px) { body #site-navbar .header-inner {gap:6px;padding-left:14px;} body #site-navbar .logo {font-size:27px!important;} }
+
+/* Return links stay visible near the page heading, outside the service steps. */
+body .page-back {display:inline-flex;align-items:center;gap:10px;min-height:44px;width:fit-content;margin:0 0 24px;padding:8px 0;color:var(--secondary);font-size:14px;line-height:1.4;text-decoration:none;}
+body .page-back svg {width:22px;height:22px;flex:0 0 22px;}
+body .page-back:hover {color:var(--lime);}
+body :is(.rv-breadcrumb,.service-breadcrumb):has(.page-back) {margin:0;}
+body .auth-card>.page-back {margin-bottom:20px;}
+html[dir=rtl] .page-back svg {transform:scaleX(-1);}

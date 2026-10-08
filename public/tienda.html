@@ -22,6 +22,7 @@
 <script src="js/compartido/navigation.js" defer></script>
 <link rel="stylesheet" href="css/compartido/palette.css">
 <link rel="stylesheet" href="css/comunidad/community.css">
+<link rel="stylesheet" href="css/servicios/servicios.css">
 <script src="js/compartido/api-client.js" defer></script>
 <script src="js/idiomas/translations.js" defer></script>
 <script src="js/idiomas/locale-engine.js" defer></script>
@@ -42,9 +43,9 @@
 
   </div></header>
   <main>
-    <section class="container store-hero catalog-hero" aria-labelledby="store-title">
-      <div class="hero-copy"><h1 id="store-title">Equipaje y accesorios</h1><p>Maletas, organizadores y accesorios para preparar tu viaje.</p><a class="button button-primary" href="#catalogo">Ver productos <span aria-hidden="true">↓</span></a></div>
-      <div class="hero-photo"><img src="imagenes/productos/tienda-portada-equipaje.jpg" alt="Maleta abierta con ropa, cámara y accesorios preparados para viajar" width="2200" height="3322" fetchpriority="high"></div>
+    <section class="booking-intro" aria-labelledby="store-title">
+      <div><p class="booking-kicker">Servicios de viaje</p><h1 id="store-title">Equipaje y accesorios</h1><p>Maletas, organizadores y accesorios para preparar tu viaje.</p></div>
+      <figure><img src="imagenes/productos/tienda-portada-equipaje.jpg" alt="Maleta abierta con ropa, cámara y accesorios preparados para viajar" width="2200" height="3322" fetchpriority="high"></figure>
     </section>
     <section class="container catalog-section" id="catalogo" aria-labelledby="catalog-title"><div class="section-heading"><div><h2 id="catalog-title">Catálogo de productos</h2></div></div>
     <div class="store-utilities"><button id="favorites-toggle" class="icon-button" type="button" aria-label="Mostrar favoritos" aria-pressed="false" title="Mis favoritos"><svg class="icon" aria-hidden="true"><use href="#heart"/></svg><span id="favorites-count" class="small-count" hidden>0</span></button><button id="open-cart-btn" class="cart-button" type="button" aria-haspopup="dialog" aria-controls="cart-modal"><svg class="icon" aria-hidden="true"><use href="#bag"/></svg><span>Mi carrito</span><span id="cart-count">0</span></button></div>

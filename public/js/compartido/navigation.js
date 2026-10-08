@@ -1,7 +1,35 @@
 /* Shared navigation; account rendering remains owned by js/cuenta/auth-client.js. */
 (() => {
   'use strict';
+  const currentFile=location.pathname.split('/').pop()||'index.html';
+  const currentSection=new URLSearchParams(location.search).get('seccion')||'servicios';
+  const travelView=document.body.dataset.page;
+  if(['vuelos','hoteles'].includes(travelView)||currentFile==='tienda.html'||(currentFile==='servicios.html'&&['servicios','traslados','seguros','guias','mi-viaje'].includes(currentSection)))document.body.classList.add('booking-page');
+  // Use a real internal link: it works on direct entry and lets the shared save
+  // handler finish pending changes before leaving the current page.
+  let backTarget,backLabel,backContainer;
+  if(travelView==='detalle-destino'){backTarget='viajes.html?pantalla=destinos';backLabel='Volver a destinos';backContainer=document.querySelector('.rv-breadcrumb');}
+  else if(travelView==='destinos'){backTarget='index.html';backLabel='Volver al inicio';backContainer=document.querySelector('main');}
+  else if(document.querySelector('.auth-card')){backTarget='index.html';backLabel='Volver';backContainer=document.querySelector('.auth-card');}
+  else if(currentFile==='servicios.html'&&!['servicios','traslados','seguros','guias','mi-viaje'].includes(currentSection)){backTarget='servicios.html';backLabel='Volver';backContainer=document.querySelector('.service-breadcrumb');}
+  if(backContainer){
+    try{const previous=new URL(document.referrer);const previousFile=previous.pathname.split('/').pop();
+      const allowed=travelView==='detalle-destino'?previousFile==='viajes.html'&&previous.searchParams.get('pantalla')==='destinos':['index.html','viajes.html','servicios.html','tienda.html'].includes(previousFile);
+      if(previous.origin===location.origin&&allowed&&previous.href!==location.href){backTarget=previous.href;if(travelView!=='detalle-destino')backLabel='Volver';}
+    }catch{}
+    const back=document.createElement('a');back.className='page-back';back.href=backTarget;
+    back.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14"/></svg><span>'+backLabel+'</span>';
+    if(backContainer.matches('.rv-breadcrumb,.service-breadcrumb'))backContainer.replaceChildren(back);else backContainer.prepend(back);
+  }
   // Una cabecera consistente: los accesos principales llevan a las secciones del inicio.
+  const revealCurrentStep=()=>requestAnimationFrame(()=>{
+    const list=document.querySelector('.booking-page .journey-progress ol'),active=list?.querySelector('[aria-current]');
+    if(!list||!active||list.scrollWidth<=list.clientWidth)return;
+    const outer=list.getBoundingClientRect(),item=active.getBoundingClientRect();
+    list.scrollBy({left:item.left-outer.left-(outer.width-item.width)/2,behavior:'instant'});
+  });
+  window.addEventListener('pageshow',revealCurrentStep);
+  window.addEventListener('rumbo:localechange',revealCurrentStep);
   const mainNav=document.querySelector('.main-nav');
   if(mainNav){
     const page=location.pathname.split('/').pop()||'index.html';

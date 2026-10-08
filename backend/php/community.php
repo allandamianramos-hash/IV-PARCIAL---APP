@@ -7,33 +7,34 @@ function handle_reviews(string $method): never {
  if($method==='GET') {
   $page=max(0,min(100000,(int)($_GET['page']??0)));$offset=$page*6;
   $user=auth_user();$ownKey=$user?'review:'.$user['Id']:'';
-  $aggregate=query("SELECT COUNT(*) AS total,AVG(TRY_CAST(JSON_VALUE(DataJson,'$.rating') AS float)) AS average,MAX(CASE WHEN Name=? THEN 1 ELSE 0 END) AS hasOwnReview FROM dbo.RumboSettings WHERE Name LIKE 'review:%'",[$ownKey])->fetch();
+  $aggregate=query("SELECT COUNT(*) AS total,AVG(TRY_CAST(JSON_VALUE(DataJson,'$.rating') AS float)) AS average,MAX(CASE WHEN Name=? OR Name LIKE ? THEN 1 ELSE 0 END) AS hasOwnReview FROM dbo.RumboSettings WHERE Name LIKE 'review:%'",[$ownKey,$ownKey.':%'])->fetch();
   // Offset is a bounded integer, not raw user input.
-  $rows=query("SELECT JSON_VALUE(DataJson,'$.name') AS name,TRY_CAST(JSON_VALUE(DataJson,'$.rating') AS int) AS rating,JSON_VALUE(DataJson,'$.comment') AS comment,JSON_VALUE(DataJson,'$.date') AS date FROM dbo.RumboSettings WHERE Name LIKE 'review:%' ORDER BY JSON_VALUE(DataJson,'$.date') DESC,Name OFFSET $offset ROWS FETCH NEXT 6 ROWS ONLY")->fetchAll();
-  foreach($rows as &$row)$row['rating']=(int)$row['rating'];unset($row);
+  $rows=query("SELECT Name AS id,CASE WHEN Name=? OR Name LIKE ? THEN 1 ELSE 0 END AS isOwn,JSON_VALUE(DataJson,'$.name') AS name,TRY_CAST(JSON_VALUE(DataJson,'$.rating') AS int) AS rating,JSON_VALUE(DataJson,'$.comment') AS comment,JSON_VALUE(DataJson,'$.date') AS date FROM dbo.RumboSettings WHERE Name LIKE 'review:%' ORDER BY JSON_VALUE(DataJson,'$.date') DESC,Name OFFSET $offset ROWS FETCH NEXT 6 ROWS ONLY",[$ownKey,$ownKey.':%'])->fetchAll();
+  foreach($rows as &$row){$row['rating']=(int)$row['rating'];$row['isOwn']=(int)$row['isOwn']===1;}unset($row);
   respond(200,['total'=>(int)$aggregate['total'],'average'=>$aggregate['average']===null?null:(float)$aggregate['average'],'hasOwnReview'=>(int)$aggregate['hasOwnReview']===1,'reviews'=>$rows,'page'=>$page]);
  }
  check_origin();$user=auth_user();if(!$user)throw new HttpError(401,$method==='DELETE'?'Inicia sesión para eliminar tu reseña.':'Inicia sesión para publicar tu reseña.');
  if($method==='DELETE') {
-  // La identidad procede únicamente de la sesión, nunca del cuerpo o la URL.
-  query('DELETE FROM dbo.RumboSettings WHERE Name=?',['review:'.$user['Id']])->closeCursor();
+  $id=$_GET['id']??null;
+  if(!is_string($id)||strlen($id)>80||!preg_match('/^review:[a-zA-Z0-9:-]+$/D',$id))throw new HttpError(400,'Selecciona la reseña que quieres eliminar.');
+  // La reseña se selecciona por ID; su propietario se comprueba con la sesión.
+  $ownKey='review:'.$user['Id'];
+  $deleted=query('DELETE FROM dbo.RumboSettings OUTPUT DELETED.Name WHERE Name=? AND (Name=? OR Name LIKE ?)',[$id,$ownKey,$ownKey.':%']);
+  $found=$deleted->fetchColumn();$deleted->closeCursor();
+  if($found===false)throw new HttpError(404,'No se encontró esa reseña en tu cuenta.');
   respond(200,['deleted'=>true]);
  }
  $body=request_body(8000);
  if(!is_int($body->rating??null)||$body->rating<1||$body->rating>5||!is_string($body->comment??null)||mb_strlen(trim($body->comment))<10||mb_strlen(trim($body->comment))>1200||preg_match('/[\x00-\x08\x0b\x0c\x0e-\x1f]/',$body->comment))throw new HttpError(400,'Elige de 1 a 5 estrellas y escribe entre 10 y 1200 caracteres.');
- persist_review($user,$body);
- respond(200,['saved'=>true]);
+ $id=persist_review($user,$body);
+ respond(200,['saved'=>true,'id'=>$id]);
 }
 // Accepts only the authenticated identity resolved by handle_reviews.
-function persist_review(array $user,stdClass $body): void {
+function persist_review(array $user,stdClass $body): string {
  $review=['name'=>preg_split('/\s+/u',trim($user['FullName']))[0],'rating'=>$body->rating,'comment'=>trim($body->comment),'date'=>gmdate('Y-m-d\TH:i:s.000\Z')];
- $key='review:'.$user['Id'];$connection=db();$ownsTransaction=!$connection->inTransaction();if($ownsTransaction)$connection->beginTransaction();
- try{
-  $found=query('SELECT Name FROM dbo.RumboSettings WITH(UPDLOCK,HOLDLOCK) WHERE Name=?',[$key])->fetchColumn();
-  if($found)query('UPDATE dbo.RumboSettings SET DataJson=? WHERE Name=?',[encode_json($review),$key])->closeCursor();
-  else query('INSERT dbo.RumboSettings(Name,DataJson) VALUES(?,?)',[$key,encode_json($review)])->closeCursor();
-  if($ownsTransaction)$connection->commit();
- }catch(Throwable $e){if($ownsTransaction&&$connection->inTransaction())$connection->rollBack();throw $e;}
+ $key='review:'.$user['Id'].':'.bin2hex(random_bytes(16));
+ query('INSERT dbo.RumboSettings(Name,DataJson) VALUES(?,?)',[$key,encode_json($review)])->closeCursor();
+ return $key;
 }
 function handle_exchange_rates(string $method): never {
  if($method!=='GET')throw new HttpError(405,'Método no permitido.');

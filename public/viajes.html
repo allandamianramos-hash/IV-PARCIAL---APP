@@ -28,6 +28,7 @@
 <script src="js/compartido/navigation.js" defer></script>
 <link rel="stylesheet" href="css/compartido/palette.css">
 <link rel="stylesheet" href="css/comunidad/community.css">
+<link rel="stylesheet" href="css/servicios/servicios.css">
 <script src="js/compartido/api-client.js" defer></script>
 <script src="js/idiomas/translations.js" defer></script>
 <script src="js/idiomas/locale-engine.js" defer></script>
@@ -85,7 +86,7 @@
 
   <!-- VUELOS -->
   <template id="rv-vista-vuelos">
-    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title catalog-hero"><div><h1 id="page-title">Vuelos</h1><p>Compara horarios, equipaje y tarifas por pasajero.</p><a class="button button-primary" href="#flight-search">Buscar vuelos ↓</a></div><figure><img src="imagenes-viajes/servicios/servicio-vuelo.jpg" alt="Ala de avión sobre las montañas" width="900" height="650" fetchpriority="high"></figure></section>
+    <section class="booking-intro" aria-labelledby="page-title"><div><p class="booking-kicker">Servicios de viaje</p><h1 id="page-title">Vuelos</h1><p>Compara horarios, equipaje y tarifas por pasajero.</p></div><figure><img src="imagenes-viajes/servicios/servicio-vuelo.jpg" alt="Ala de avión sobre las montañas" width="900" height="650" fetchpriority="high"></figure></section>
     <form id="flight-search" class="rv-search-panel">
       <div class="rv-field"><label for="flight-destination">Destino</label><select id="flight-destination" name="destination"></select></div>
       <div class="rv-field"><label for="flight-origin">Origen</label><select id="flight-origin" name="origin"></select></div>
@@ -101,7 +102,7 @@
 
   <!-- HOTELES -->
   <template id="rv-vista-hoteles">
-    <nav class="rv-steps" aria-label="Pasos del viaje"><a href="viajes.html?pantalla=destinos"><span>01</span> Destino</a><a href="viajes.html?pantalla=vuelos" data-step="vuelos" data-path="vuelos" data-context><span>02</span> Vuelo</a><a href="viajes.html?pantalla=hoteles" data-step="hoteles" data-path="hoteles" data-context><span>03</span> Hotel</a></nav><section class="rv-page-title catalog-hero"><div><h1 id="page-title">Hoteles y hospedajes</h1><p>Compara habitaciones y consulta el total según noches y huéspedes.</p><a class="button button-primary" href="#hotel-search">Buscar hospedaje ↓</a></div><figure><img src="imagenes-viajes/hoteles/hotel-piscina.jpg" alt="Piscina y terrazas de un hotel" width="900" height="650" fetchpriority="high"></figure></section>
+    <section class="booking-intro" aria-labelledby="page-title"><div><p class="booking-kicker">Servicios de viaje</p><h1 id="page-title">Hospedaje</h1><p>Compara habitaciones y consulta el total según noches y huéspedes.</p></div><figure><img src="imagenes-viajes/hoteles/hotel-piscina.jpg" alt="Piscina y terrazas de un hotel" width="900" height="650" fetchpriority="high"></figure></section>
     <form id="hotel-search" class="rv-search-panel rv-hotel-search">
       <div class="rv-field"><label for="hotel-destination">Destino</label><select id="hotel-destination" name="destination"></select></div>
       <div class="rv-field"><label for="hotel-date">Entrada al hotel</label><input id="hotel-date" name="checkIn" type="date" required></div>

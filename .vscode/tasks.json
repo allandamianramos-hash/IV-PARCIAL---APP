@@ -2,10 +2,10 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Rumbo: iniciar proyecto y comprobar Azure",
+      "label": "Rumbo: abrir sitio independiente y comprobar Azure",
       "type": "process",
       "command": "powershell.exe",
-      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/iniciar-proyecto.ps1"],
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/iniciar-proyecto.ps1", "-Open"],
       "options": {"cwd": "${workspaceFolder}"},
       "problemMatcher": [],
       "group": {"kind": "build", "isDefault": true},

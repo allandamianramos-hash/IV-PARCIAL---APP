@@ -11,8 +11,10 @@ Abre **INICIAR-RUMBO.cmd** o el acceso **Rumbo** del escritorio. El sitio abre
 directamente en http://127.0.0.1:8000 y continúa funcionando en segundo plano
 al cerrar Visual Studio Code. Ejecuta **ACTIVAR-RUMBO-AUTOMATICO.cmd** una vez
 para preparar el servidor al entrar a Windows y crear el acceso del escritorio.
-Live Server en el puerto 5500 sigue siendo opcional para desarrollo y depende
-del editor; no es la dirección habitual para usar el sitio.
+Go Live en el puerto 5500 comprueba el servidor independiente y pasa al puerto
+8000 después de guardar los cambios pendientes. La tarea de VS Code también
+abre directamente el servidor independiente; la pestaña sigue funcionando
+cuando se cierra el editor.
 Usa siempre el mismo nombre de host: `localhost` y `127.0.0.1` tienen cookies
 y almacenamiento de navegador independientes.
 

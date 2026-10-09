@@ -44,19 +44,19 @@ test('una página ya cargada muestra la cuenta y el visitante conserva los enlac
   assert.deepEqual(links.children,['Iniciar sesión','Registrarse']);
 });
 
-test('Live Server conserva su puerto y solo reconecta al solicitarlo',async()=>{
+test('el servidor independiente conserva su puerto y solo reconecta al solicitarlo',async()=>{
   const common=await readFile(new URL('../public/js/compartido/connection.js',import.meta.url),'utf8');
   const redirects=[];
   const scope={window:{},fetch:async url=>({ok:true,json:async()=>url.endsWith('/api/database')?({connected:true}):({app:'rumbo-viajes',backend:'php'})}),AbortSignal,URL,
 
     document:{getElementById:()=>null},
-    location:{protocol:'http:',hostname:'127.0.0.1',port:'5500',pathname:'/public/servicios.html',search:'?seccion=mi-viaje',hash:'#perfil',replace:url=>redirects.push(url)}
+    location:{protocol:'http:',hostname:'127.0.0.1',port:'8000',pathname:'/public/servicios.html',search:'?seccion=mi-viaje',hash:'#perfil',replace:url=>redirects.push(url)}
   };
   vm.runInNewContext(common,scope);
   await new Promise(resolve=>setImmediate(resolve));
   assert.deepEqual(redirects,[]);
   assert.equal(await scope.window.RumboConnect(),true);
-  assert.deepEqual(redirects,['http://127.0.0.1:5500/servicios.html?seccion=mi-viaje#perfil']);
+  assert.deepEqual(redirects,['http://127.0.0.1:8000/servicios.html?seccion=mi-viaje#perfil']);
 });
 
 test('cerrar sesión se detiene si falla el guardado y respeta la página de error',async()=>{

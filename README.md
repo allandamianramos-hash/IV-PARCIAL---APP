@@ -14,7 +14,7 @@ El sitio guarda cuentas, perfiles y selecciones mediante PHP/PDO_SQLSRV en `rumb
 
 Para trabajar juntos con una base alojada, lee [el manual para el equipo](docs/MANUAL-PARA-EL-EQUIPO.html). También está disponible en [Markdown](docs/MANUAL-PARA-EL-EQUIPO.md). Incluye Azure SQL, usuarios individuales, configuración y pruebas entre compañeros.
 
-**Visual Studio Code y Live Server son opcionales.** La dirección `http://127.0.0.1:8000` corresponde al servidor PHP independiente. El puerto `5500` pertenece a Live Server y deja de funcionar al cerrar el editor; úsalo solo para desarrollo. La tarea de VS Code también puede iniciar el servidor mediante Ctrl+Shift+B.
+**Visual Studio Code y Live Server son opcionales.** La dirección `http://127.0.0.1:8000` corresponde al servidor PHP independiente. La tarea de VS Code abre esa dirección al iniciar el proyecto o pulsar Ctrl+Shift+B. Si usas Go Live en el puerto `5500`, la página comprueba el servidor independiente, guarda los cambios pendientes y pasa al puerto `8000`, conservando la página y sus parámetros. Así la pestaña continúa funcionando al cerrar el editor. Si el servidor no responde o hay cambios que no se pueden guardar, conserva la página para no perder el trabajo.
 
 Ejecuta **ACTIVAR-RUMBO-AUTOMATICO.cmd** una vez para iniciar el proyecto al entrar a Windows y crear el acceso **Rumbo** en el escritorio. Este acceso prepara el servidor y abre la página directamente. El inicio automático usa la misma selección de PHP o Node portable que `INICIAR-RUMBO.cmd`; no requiere el editor. Para desactivarlo, elimina el acceso `Rumbo - servidor automatico` de `shell:startup`.
 

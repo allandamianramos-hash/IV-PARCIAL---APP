@@ -2,25 +2,41 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,access} from 'node:fs/promises';
 import vm from 'node:vm';
+const catalog=JSON.parse(await readFile(new URL('../config/store-catalog.json',import.meta.url),'utf8'));
 const context={window:{},document:{querySelector:()=>null}};
-vm.runInNewContext(await readFile(new URL('js/tienda/tienda.js', new URL('../public/', import.meta.url)),'utf8'),context);
+vm.runInNewContext(await readFile(new URL('../public/js/tienda/tienda.js',import.meta.url),'utf8'),context);
 const preview=context.window.RumboVariantPreview;
-const product=context.window.RumboProducts.find(p=>p.id===2);
-test('las doce variantes conservan el mismo modelo y escalan sin deformarlo',async()=>{
- const images=new Set(),markup=new Set();
- for(const Color of ['Negro','Azul','Rojo','Verde'])for(const Tamaño of ['20 pulgadas','24 pulgadas','28 pulgadas']){
-  const v=preview.model(product,{Color,Tamaño});images.add(v.image);markup.add(preview.markup(product,{Color,Tamaño}).replace(/variant-color-\d+/g,'filter'));
-  assert.equal(v.color,Color);assert.equal(v.size,Tamaño);assert.ok(v.scale>0&&v.scale<=1);
-  await access(new URL(v.image, new URL('../public/', import.meta.url)));
+
+test('cada combinación mantiene la foto del producto, sin cambiar de modelo',async()=>{
+ let count=0;
+ for(const product of catalog.products){
+  const options=catalog.productOptions[product.id];
+  if(!product.preview){assert.equal(preview.model(product),null);continue;}
+  count++;const images=new Set();
+  for(const [key,values] of Object.entries(options))for(const value of values){
+   const v=preview.model(product,{[key]:value});images.add(v.image);assert.equal(v.image,product.image);
+   assert.equal(v.options[key],value);assert.ok(v.scale>0&&v.scale<=1);
+   assert.ok(!v.summary.includes('undefined'));assert.match(preview.markup(product,v.options),/data-variant-product=/);
+  }
+  assert.equal(images.size,1,product.name);await access(new URL([...images][0],new URL('../public/',import.meta.url)));
  }
- assert.equal(images.size,1);assert.equal(markup.size,12);
+ assert.equal(count,81);
 });
-test('el tamaño crece progresivamente y los filtros de cada miniatura son únicos',()=>{
- const sizes=['20 pulgadas','24 pulgadas','28 pulgadas'].map(Tamaño=>preview.model(product,{Tamaño}).scale);
- assert.ok(sizes[0]<sizes[1]&&sizes[1]<sizes[2]);
- const a=preview.markup(product),b=preview.markup(product);assert.notEqual(a.match(/id="([^"]+)"/)[1],b.match(/id="([^"]+)"/)[1]);
+test('solo las dimensiones físicas aumentan la escala y siempre conservan proporciones',()=>{
+ for(const product of catalog.products.filter(p=>p.preview)){
+  const {sizeKey}=product.preview;
+  const values=catalog.productOptions[product.id][sizeKey]||[];
+  const scales=values.map(value=>preview.model(product,{[sizeKey]:value}).scale);
+  for(let i=1;i<scales.length;i++)assert.ok(scales[i]>scales[i-1],product.name);
+ }
+ const usb=catalog.products.find(p=>p.name==='Memoria USB');
+ assert.equal(preview.model(usb,{Capacidad:'32 GB'}).scale,preview.model(usb,{Capacidad:'128 GB'}).scale);
 });
-test('opciones desconocidas no inyectan contenido y los demás productos conservan su foto',()=>{
- assert.equal(preview.model({id:1}),null);assert.equal(preview.markup({id:1}),'');
- const image=preview.markup(product,{Color:'<script>',Tamaño:'invalid'});assert.ok(!image.includes('<script>'));assert.match(image,/Negro, 20 pulgadas/);
+test('opciones inexistentes no se interpolan y no afectan al precio',()=>{
+ for(const product of catalog.products.filter(p=>p.preview)){
+  const clean=preview.model(product,{Color:'<script>',Tamaño:'invalid',Extra:'" onload="alert(1)'});
+  assert.doesNotMatch(preview.markup(product,clean.options),/<script>|onload=/);
+  assert.equal(context.window.RumboProductPrice(product,{Color:'<script>'}),context.window.RumboProductPrice(product,{}));
+  assert.ok(!('Extra' in clean.options));
+ }
 });

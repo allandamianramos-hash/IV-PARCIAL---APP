@@ -7,10 +7,12 @@ Cifrado: obligatorio, con validación del certificado.
 
 ## Abrir el proyecto
 
-Abre el proyecto en Visual Studio Code y pulsa **Go Live**. Live Server usa
-http://127.0.0.1:5500 y envía las solicitudes a PHP en segundo plano, sin cambiar
-la dirección del navegador. La tarea de apertura prepara PHP; si no se ejecuta,
-usa Ctrl+Shift+B una vez. Reinicia Live Server después de cambiar su configuración.
+Abre **INICIAR-RUMBO.cmd** o el acceso **Rumbo** del escritorio. El sitio abre
+directamente en http://127.0.0.1:8000 y continúa funcionando en segundo plano
+al cerrar Visual Studio Code. Ejecuta **ACTIVAR-RUMBO-AUTOMATICO.cmd** una vez
+para preparar el servidor al entrar a Windows y crear el acceso del escritorio.
+Live Server en el puerto 5500 sigue siendo opcional para desarrollo y depende
+del editor; no es la dirección habitual para usar el sitio.
 Usa siempre el mismo nombre de host: `localhost` y `127.0.0.1` tienen cookies
 y almacenamiento de navegador independientes.
 

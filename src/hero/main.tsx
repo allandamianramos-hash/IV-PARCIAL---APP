@@ -22,7 +22,7 @@ declare global {
 }
 
 const slides = RUMBO_HERO_CONFIG.slides;
-const money = (amount: number) => window.RumboLocale?.formatMoney(amount) ?? `L ${new Intl.NumberFormat('es-HN', { maximumFractionDigits: 2 }).format(amount)}`;
+const money = (amount: number) => window.RumboLocale?.formatMoney(amount) ?? `L ${new Intl.NumberFormat('en-US', { useGrouping: true, maximumFractionDigits: 2 }).format(amount)}`;
 const t = (text: string, values: Record<string, string | number> = {}) =>
   (window.RumboLocale?.translate(text) ?? text).replace(/\{(\w+)\}/g, (match, key) => String(values[key] ?? match));
 

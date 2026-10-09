@@ -48,7 +48,7 @@ function page(query = '', stored = {}) {
     set innerHTML(html) {
       for (const [,id,,value] of html.matchAll(/<input id="([^"]+)"[^>]*type="([^"]+)" value="([^"]*)"/g)) node(id).value=value;
       node('date').min = node('date').value;
-      node('language').value='es'; node('time').value='09:00'; node('guide-sort').value='recommended';
+      node('guide-sort').value='recommended';
     },
     querySelector: selector => node(selector.slice(1)),
     querySelectorAll: selector => selector === '[data-guide-filter]' ? filters : selector === '.guide-review-link' ? [] : choices
@@ -64,6 +64,7 @@ function page(query = '', stored = {}) {
   });
   return {
     node, storage,
+    complete() { for(const [id,value]of Object.entries({destination:'roatan',date:'2099-01-01',people:'2',language:'es',time:'09:00'}))if(!node(id).value)node(id).value=value;form.events.input(); },
     change(id,value) { node(id).value=value; form.events.input(); },
     choose() { const button=choices[0]; assert.ok(button);node('guide-results').events.click({target:{closest:()=>button}}); },
     filter(value) { filters.find(b=>b.dataset.guideFilter===value).events.click(); },
@@ -94,7 +95,7 @@ test('el enlace de destino prevalece sobre una elección guardada', () => {
 });
 
 test('los filtros vacíos permiten recuperar todas las experiencias', () => {
-  const ui=page('&destino=paris');ui.filter('playa');
+  const ui=page('&destino=paris');ui.complete();ui.filter('playa');
   assert.match(ui.node('guide-results').innerHTML,/No hay propuestas/);
   ui.node('guide-clear').events.click();
   assert.match(ui.node('guide-count').textContent,/10 experiencias/);
@@ -103,6 +104,7 @@ test('los filtros vacíos permiten recuperar todas las experiencias', () => {
 test('guardar calcula el grupo, conserva otros servicios y restaura la selección', () => {
   const other={section:'seguros',title:'Seguro',detail:'Detalle',total:35,values:{people:'1'}};
   const ui=page('&destino=bali',{'rumbo.services.v1':JSON.stringify([other])});
+  ui.complete();
   ui.change('people','4');ui.choose();ui.save();
   const result=JSON.parse(ui.storage.get('rumbo.services.v1'));
   assert.equal(result.length,2);assert.equal(result[0].section,'seguros');
@@ -142,7 +144,7 @@ test('cada recorrido tiene foto local, licencia y paradas específicas', async (
 });
 
 test('cambiar personas recalcula la selección y cambiar ciudad restablece las categorías',()=>{
-  const ui=page('&destino=roatan');ui.filter('playa');ui.choose();ui.change('people','3');
+  const ui=page('&destino=roatan');ui.complete();ui.filter('playa');ui.choose();ui.change('people','3');
   assert.equal(ui.node('guide-save').disabled,false);ui.save();
   assert.equal(JSON.parse(ui.storage.get('rumbo.services.v1'))[0].total,1140);
   ui.change('destination','paris');
@@ -151,7 +153,7 @@ test('cambiar personas recalcula la selección y cambiar ciudad restablece las c
 });
 
 test('cambiar preferencias invalida la selección y no permite guardar valores inválidos', () => {
-  const ui=page();ui.choose();ui.change('people','13');ui.save();
+  const ui=page();ui.complete();ui.choose();ui.change('people','13');ui.save();
   assert.equal(ui.node('guide-save').disabled,true);
   assert.equal(ui.storage.has('rumbo.services.v1'),false);
   ui.change('people','2');ui.choose();ui.change('date','2000-01-01');ui.save();

@@ -21,6 +21,7 @@ publicFiles.add('css/compartido/palette.css');
 for(const file of ['js/compartido/api-client.js','js/comunidad/reviews.js','js/idiomas/preferences.js','js/idiomas/translations.js','css/comunidad/community.css']) publicFiles.add(file);
 for (const file of ['js/inicio/hero.js', 'css/inicio/hero.css', 'js/compartido/navigation.js', 'css/compartido/navigation.css']) publicFiles.add(file);
 publicFiles.add('js/idiomas/locale-engine.js');
+publicFiles.add('js/tienda/variant-preview.js');
 for(const lang of ['es','en','de','fr','it','pt','ja','ko','zh','ar'])publicFiles.add('locales/'+lang+'.json');
 mime['.json']='application/json; charset=utf-8';
 const assetAliases=JSON.parse(await readFile(new URL('./config/asset-aliases.json',import.meta.url),'utf8'));

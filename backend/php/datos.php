@@ -29,7 +29,8 @@ function valid_state(string $key, mixed $v): bool {
         case 'rumbo.integrante2.viaje.v1':
             if (!$v instanceof stdClass) return false;
             foreach ((array)$v as $k=>$x) {
-                if (in_array($k,['destinationId','origin','date','checkIn','cabin','flightId','hotelId','roomType'],true)) { if (!short_text($x,100)) return false; }
+                if ($k === 'searchConfigured') { if (!is_bool($x)) return false; }
+                elseif (in_array($k,['destinationId','origin','date','checkIn','cabin','flightId','hotelId','roomType'],true)) { if (!short_text($x,100)) return false; }
                 else { $ranges=['travelers'=>[1,12],'nights'=>[1,30],'rooms'=>[1,6]]; if (!isset($ranges[$k]) || !bounded_integer($x,...$ranges[$k])) return false; }
             }
             return true;
@@ -52,6 +53,19 @@ function load_catalog(): array {
         $catalog['productOptions']->{(string)$p['Id']}=json_decode($p['OptionsJson'],false,512,JSON_THROW_ON_ERROR);
         $catalog['priceAdjustments']->{(string)$p['Id']}=json_decode($p['AdjustmentsJson'],false,512,JSON_THROW_ON_ERROR);
     }
+    $reviewed=json_decode(file_get_contents(dirname(__DIR__,2).'/config/store-catalog.json'),true,512,JSON_THROW_ON_ERROR);
+    $byId=array_column($reviewed['products'],null,'id');
+    foreach ($catalog['products'] as &$item) {
+        if (isset($byId[$item['id']])) {
+            $price=$item['price'];
+            $item=array_replace($item,$byId[$item['id']]);
+            $item['price']=$price;
+            $catalog['productOptions']->{(string)$item['id']}=(object)($reviewed['productOptions'][$item['id']] ?? []);
+            $catalog['priceAdjustments']->{(string)$item['id']}=(object)($reviewed['priceAdjustments'][$item['id']] ?? []);
+        }
+    }
+    unset($item);
+    $catalog['storeCatalogRevision']=$reviewed['revision'];
     $catalog['destinations']=[];
     foreach ($destinations as $d) {
         $item=json_decode($d['DataJson'],true,512,JSON_THROW_ON_ERROR);

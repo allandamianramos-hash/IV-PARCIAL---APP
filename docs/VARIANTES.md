@@ -1,6 +1,22 @@
-# Vista interactiva de la maleta
+# Variantes del catálogo
 
-Primera demostración, habilitada para el producto 2. Cuatro colores y tres escalas sobre la misma base; las variantes no cambian la geometría. El tamaño representa una comparación visual orientativa, no dimensiones exactas. El carrito conserva las opciones y utiliza la misma representación. Los demás productos conservan sus fotografías de referencia hasta disponer de una base individual.
+Revisión del 9 de octubre de 2026: 100 productos con nombres y fotografías distintos; 47 fotografías sustituidas por imágenes nuevas generadas con ImageGen integrado, sin CLI ni API externa. Los archivos están en `public/imagenes/productos/revisado-{id}.png`. Los prompts de cada recurso están en [catalogo-prompts.json](catalogo-prompts.json).
+
+81 productos tienen opciones de color, tamaño o capacidad según corresponda. El navegador dibuja la misma foto en un canvas y anima el color y la escala durante 460 ms, conservando proporciones, textura y detalles. Una selección nueva interrumpe la transición anterior desde su estado actual. Con movimiento reducido el cambio es inmediato. La vista original sigue accesible y sirve de respaldo si la vista interactiva falla. Los cambios de capacidad electrónica (GB, mAh) conservan las dimensiones exteriores.
+
+El tamaño es una comparación visual orientativa, no una medida física exacta. Las imágenes son ilustrativas; el recoloreado no sustituye fotografías de inventario real. No se cambia de modelo ni de fotografía al elegir otra variante. El carrito guarda y muestra las opciones seleccionadas.
+
+La fuente del catálogo es `config/store-catalog.json`. Después de editarla, ejecutar `node scripts/sync-store-catalog.mjs` para actualizar el snapshot del navegador y el manifiesto de imágenes. Node y PHP aplican la misma revisión sobre el catálogo de la base de datos y mantienen los precios almacenados. Los carritos anteriores conservan sus artículos equivalentes cuando un identificador duplicado se reutiliza.
+
+Verificación: pruebas de hashes de las 100 imágenes, sincronización de los catálogos, opciones válidas, persistencia del carrito, renderizado de las 81 vistas, transiciones interrumpidas y movimiento reducido. Capturas de escritorio y móvil en `.runtime/catalog-audit/` (archivos locales de QA).
+
+## Catálogo con fondo blanco
+
+Se aislaron las 53 fotografías que aún tenían fondos, incluida la mochila y la maleta. Los recortes están en `public/imagenes/productos/recorte-{id}.png`; los originales permanecen disponibles en el repositorio. Los 100 productos se presentan sobre blanco, con la misma foto transparente en la ficha y en las variantes. Ya no se compone la maleta sobre el jardín ni se recortan fotos de estudio en tiempo de ejecución. Los prompts y referencias de cada recorte están en [catalogo-recortes.json](catalogo-recortes.json), realizados con ImageGen integrado.
+
+## Referencias históricas de la maleta
+
+La primera versión del producto 2 utilizaba una base neutra y un jardín reconstruido. Estos recursos se conservan como antecedentes y no se utilizan en la presentación actual.
 
 Base: imagenes/productos/maleta-variantes-base.png. Referencia: imagenes/productos/maleta.jpg. Creada con la herramienta integrada de ImageGen, preservando transparencia; sin API/CLI externa. La extracción generativa es ilustrativa y puede introducir diferencias con la fotografía original, disponible en el detalle.
 
@@ -10,9 +26,9 @@ Use case: background-extraction and precise-object-edit. Edit target: attached s
 
 Validación: node --test server.test.mjs chat.test.mjs project.test.mjs journey.test.mjs variantes.test.mjs (31 pruebas). Comprobado en navegador: rojo, 28 pulgadas, precio L 950, miniatura coincidente en carrito; artículo de prueba eliminado después.
 
-## Fondo del jardín
+### Fondo del jardín (versión anterior)
 
-La vista interactiva ahora compone la maleta sobre `imagenes/productos/maleta-fondo-jardin.png`. El fondo permanece sin filtros de color y no cambia de escala. Se reconstruyó con la herramienta integrada de ImageGen a partir de la fotografía original, retirando la maleta; no es una copia exacta píxel por píxel del paisaje original. La misma composición se utiliza en la miniatura del carrito.
+La vista anterior componía la maleta sobre `imagenes/productos/maleta-fondo-jardin.png`, tanto en el detalle como en el carrito. El fondo se reconstruyó con la herramienta integrada de ImageGen a partir de la fotografía original, retirando la maleta. Se conserva como referencia histórica; la vista actual utiliza únicamente el recorte transparente sobre blanco.
 
 Prompt utilizado para el fondo:
 

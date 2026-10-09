@@ -1,0 +1,378 @@
+{
+  "tool": "ImageGen integrado",
+  "date": "2026-10-09",
+  "purpose": "Unificar el catálogo: producto aislado con transparencia, presentado sobre blanco.",
+  "assets": [
+    {
+      "id": 1,
+      "name": "Mochila de viaje",
+      "reference": "imagenes/productos/mochila.jpg",
+      "file": "imagenes/productos/recorte-1.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photo of Mochila de viaje. Remove ONLY the complete background, floor, wall, scenery and cast shadow. Isolate the actual product (and the items that form its pictured set) on a genuinely transparent alpha background. Preserve the exact product identity, original color, materials, small details, shape, perspective and proportions. Keep the whole product visible, centered in a square canvas with consistent 8% empty margin on its longest dimension. No frame, tile, white or gray rectangle, gradient, environment or added objects. High fidelity clean ecommerce cutout with crisp natural edges, including openings between handles and straps. Do not redesign or replace the product."
+    },
+    {
+      "id": 2,
+      "name": "Maleta de viaje",
+      "reference": "imagenes/productos/maleta.jpg",
+      "file": "imagenes/productos/recorte-2.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photo of Maleta de viaje. Remove ONLY the complete background, floor, wall, scenery and cast shadow. Isolate the actual product (and the items that form its pictured set) on a genuinely transparent alpha background. Preserve the exact product identity, original color, materials, small details, shape, perspective and proportions. Keep the whole product visible, centered in a square canvas with consistent 8% empty margin on its longest dimension. No frame, tile, white or gray rectangle, gradient, environment or added objects. High fidelity clean ecommerce cutout with crisp natural edges, including openings between handles and straps. Do not redesign or replace the product."
+    },
+    {
+      "id": 4,
+      "name": "Riñonera",
+      "reference": "imagenes/productos/producto-40.jpg",
+      "file": "imagenes/productos/recorte-4.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photo of Riñonera. Remove ONLY the complete background, floor, wall, scenery and cast shadow. Isolate the actual product (and the items that form its pictured set) on a genuinely transparent alpha background. Preserve the exact product identity, original color, materials, small details, shape, perspective and proportions. Keep the whole product visible, centered in a square canvas with consistent 8% empty margin on its longest dimension. No frame, tile, white or gray rectangle, gradient, environment or added objects. High fidelity clean ecommerce cutout with crisp natural edges, including openings between handles and straps. Do not redesign or replace the product."
+    },
+    {
+      "id": 5,
+      "name": "Etiquetas para equipaje",
+      "reference": "imagenes/productos/producto-43.jpg",
+      "file": "imagenes/productos/recorte-5.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photo of Etiquetas para equipaje. Remove ONLY the complete background, floor, wall, scenery and cast shadow. Isolate the actual product (and the items that form its pictured set) on a genuinely transparent alpha background. Preserve the exact product identity, original color, materials, small details, shape, perspective and proportions. Keep the whole product visible, centered in a square canvas with consistent 8% empty margin on its longest dimension. No frame, tile, white or gray rectangle, gradient, environment or added objects. High fidelity clean ecommerce cutout with crisp natural edges, including openings between handles and straps. Do not redesign or replace the product."
+    },
+    {
+      "id": 6,
+      "name": "Candado de combinación",
+      "reference": "imagenes/productos/producto-76.jpg",
+      "file": "imagenes/productos/recorte-6.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Candado de combinación. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 9,
+      "name": "Cable USB-C",
+      "reference": "imagenes/productos/producto-47.jpg",
+      "file": "imagenes/productos/recorte-9.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Cable USB-C. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 10,
+      "name": "Adaptador universal",
+      "reference": "imagenes/productos/adaptador.jpg",
+      "file": "imagenes/productos/recorte-10.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Adaptador universal. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 15,
+      "name": "Antifaz para dormir",
+      "reference": "imagenes/productos/producto-61.jpg",
+      "file": "imagenes/productos/recorte-15.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Antifaz para dormir. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 18,
+      "name": "Toalla de microfibra",
+      "reference": "imagenes/productos/producto-69.jpg",
+      "file": "imagenes/productos/recorte-18.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Toalla de microfibra. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 19,
+      "name": "Funda para pasaporte",
+      "reference": "imagenes/productos/producto-41.jpg",
+      "file": "imagenes/productos/recorte-19.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Funda para pasaporte. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 20,
+      "name": "Organizador de documentos",
+      "reference": "imagenes/productos/producto-42.jpg",
+      "file": "imagenes/productos/recorte-20.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Organizador de documentos. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 22,
+      "name": "Bolsa estanca",
+      "reference": "imagenes/productos/producto-22.jpg",
+      "file": "imagenes/productos/recorte-22.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Bolsa estanca. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 23,
+      "name": "Correa para maleta",
+      "reference": "imagenes/productos/producto-35.jpg",
+      "file": "imagenes/productos/recorte-23.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Correa para maleta. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 25,
+      "name": "Neceser de viaje",
+      "reference": "imagenes/productos/producto-36.jpg",
+      "file": "imagenes/productos/recorte-25.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Neceser de viaje. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 26,
+      "name": "Botellas rellenables",
+      "reference": "imagenes/productos/producto-92.jpg",
+      "file": "imagenes/productos/recorte-26.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Botellas rellenables. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 31,
+      "name": "Organizador para camisas",
+      "reference": "imagenes/productos/producto-31.jpg",
+      "file": "imagenes/productos/recorte-31.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Organizador para camisas. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 32,
+      "name": "Bolsa para zapatos",
+      "reference": "imagenes/productos/producto-32.jpg",
+      "file": "imagenes/productos/recorte-32.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Bolsa para zapatos. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 33,
+      "name": "Cubos organizadores de ropa",
+      "reference": "imagenes/productos/producto-33.jpg",
+      "file": "imagenes/productos/recorte-33.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Cubos organizadores de ropa. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 34,
+      "name": "Funda textil para maleta",
+      "reference": "imagenes/productos/producto-34.jpg",
+      "file": "imagenes/productos/recorte-34.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Funda textil para maleta. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 37,
+      "name": "Bolsa para ropa sucia",
+      "reference": "imagenes/productos/producto-37.jpg",
+      "file": "imagenes/productos/recorte-37.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Bolsa para ropa sucia. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background. Remove the pile of folded clothes at left; keep only the laundry bag. Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 38,
+      "name": "Bolsa plegable de viaje",
+      "reference": "imagenes/productos/producto-38.jpg",
+      "file": "imagenes/productos/recorte-38.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Bolsa plegable de viaje. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 44,
+      "name": "Organizador de cables",
+      "reference": "imagenes/productos/producto-44.jpg",
+      "file": "imagenes/productos/recorte-44.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Organizador de cables. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 50,
+      "name": "Audífonos con cable",
+      "reference": "imagenes/productos/producto-50.jpg",
+      "file": "imagenes/productos/recorte-50.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Audífonos con cable. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 52,
+      "name": "Memoria USB",
+      "reference": "imagenes/productos/producto-52.jpg",
+      "file": "imagenes/productos/recorte-52.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Memoria USB. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 53,
+      "name": "Lector de tarjetas",
+      "reference": "imagenes/productos/producto-53.jpg",
+      "file": "imagenes/productos/recorte-53.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Lector de tarjetas. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 54,
+      "name": "Hub USB",
+      "reference": "imagenes/productos/producto-54.jpg",
+      "file": "imagenes/productos/recorte-54.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Hub USB. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 55,
+      "name": "Luz de lectura USB",
+      "reference": "imagenes/productos/producto-55.jpg",
+      "file": "imagenes/productos/recorte-55.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Luz de lectura USB. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 56,
+      "name": "Reloj despertador de viaje",
+      "reference": "imagenes/productos/producto-56.jpg",
+      "file": "imagenes/productos/recorte-56.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Reloj despertador de viaje. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 58,
+      "name": "Cable multifunción",
+      "reference": "imagenes/productos/producto-58.jpg",
+      "file": "imagenes/productos/recorte-58.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Cable multifunción. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 60,
+      "name": "Almohada inflable",
+      "reference": "imagenes/productos/producto-60.jpg",
+      "file": "imagenes/productos/recorte-60.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Almohada inflable. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 63,
+      "name": "Manta de viaje",
+      "reference": "imagenes/productos/producto-63.jpg",
+      "file": "imagenes/productos/recorte-63.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Manta de viaje. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 64,
+      "name": "Calcetines de viaje",
+      "reference": "imagenes/productos/producto-64.jpg",
+      "file": "imagenes/productos/recorte-64.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Calcetines de viaje. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 65,
+      "name": "Pantuflas de viaje",
+      "reference": "imagenes/productos/producto-65.jpg",
+      "file": "imagenes/productos/recorte-65.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Pantuflas de viaje. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 67,
+      "name": "Botella térmica",
+      "reference": "imagenes/productos/producto-67.jpg",
+      "file": "imagenes/productos/recorte-67.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Botella térmica. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 68,
+      "name": "Vaso térmico",
+      "reference": "imagenes/productos/producto-68.jpg",
+      "file": "imagenes/productos/recorte-68.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Vaso térmico. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 70,
+      "name": "Cojín de asiento",
+      "reference": "imagenes/productos/producto-70.jpg",
+      "file": "imagenes/productos/recorte-70.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Cojín de asiento. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 72,
+      "name": "Bolsa para snacks",
+      "reference": "imagenes/productos/producto-72.jpg",
+      "file": "imagenes/productos/recorte-72.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Bolsa para snacks. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 74,
+      "name": "Tarjetero",
+      "reference": "imagenes/productos/producto-74.jpg",
+      "file": "imagenes/productos/recorte-74.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Tarjetero. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 75,
+      "name": "Candado con llave",
+      "reference": "imagenes/productos/producto-75.jpg",
+      "file": "imagenes/productos/recorte-75.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Candado con llave. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 78,
+      "name": "Funda impermeable A4",
+      "reference": "imagenes/productos/producto-78.jpg",
+      "file": "imagenes/productos/recorte-78.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Funda impermeable A4. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 79,
+      "name": "Portacredencial con cordón",
+      "reference": "imagenes/productos/producto-79.jpg",
+      "file": "imagenes/productos/recorte-79.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Portacredencial con cordón. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 80,
+      "name": "Portadocumentos de cuello",
+      "reference": "imagenes/productos/producto-80.jpg",
+      "file": "imagenes/productos/recorte-80.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Portadocumentos de cuello. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 84,
+      "name": "Luz de seguridad",
+      "reference": "imagenes/productos/producto-84.jpg",
+      "file": "imagenes/productos/recorte-84.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Luz de seguridad. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 86,
+      "name": "Bolsa oculta de viaje",
+      "reference": "imagenes/productos/producto-86.jpg",
+      "file": "imagenes/productos/recorte-86.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Bolsa oculta de viaje. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 88,
+      "name": "Estuche para cepillo dental",
+      "reference": "imagenes/productos/producto-88.jpg",
+      "file": "imagenes/productos/recorte-88.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Estuche para cepillo dental. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 89,
+      "name": "Peine de viaje",
+      "reference": "imagenes/productos/producto-89.jpg",
+      "file": "imagenes/productos/recorte-89.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Peine de viaje. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 90,
+      "name": "Cepillo para cabello",
+      "reference": "imagenes/productos/producto-90.jpg",
+      "file": "imagenes/productos/recorte-90.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Cepillo para cabello. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 91,
+      "name": "Espejo pequeño",
+      "reference": "imagenes/productos/producto-91.jpg",
+      "file": "imagenes/productos/recorte-91.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Espejo pequeño. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 94,
+      "name": "Toallitas húmedas",
+      "reference": "imagenes/productos/producto-94.jpg",
+      "file": "imagenes/productos/recorte-94.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Toallitas húmedas. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 96,
+      "name": "Gel antibacterial",
+      "reference": "imagenes/productos/producto-96.jpg",
+      "file": "imagenes/productos/recorte-96.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Gel antibacterial. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 98,
+      "name": "Estuche para jabón",
+      "reference": "imagenes/productos/producto-98.jpg",
+      "file": "imagenes/productos/recorte-98.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Estuche para jabón. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 99,
+      "name": "Kit de higiene familiar",
+      "reference": "imagenes/productos/producto-99.jpg",
+      "file": "imagenes/productos/recorte-99.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Kit de higiene familiar. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    },
+    {
+      "id": 100,
+      "name": "Kit de cuidado infantil",
+      "reference": "imagenes/productos/producto-100.jpg",
+      "file": "imagenes/productos/recorte-100.png",
+      "prompt": "Use case: background-extraction. Edit target: the supplied local photograph of Kit de cuidado infantil. Remove ONLY the complete backdrop, floor, tabletop and cast shadow. Isolate the product and the elements belonging to its pictured set on a genuinely transparent alpha background.  Preserve the exact original product, color, shape, proportions, perspective, texture, and hardware. Entire product visible, centered square canvas, 8% empty margin on its longest dimension. Clean premium ecommerce cutout, crisp natural edges and clear openings between handles, straps or cables. No background rectangle, frame, tile, gradient, scene, lettering changes or new objects. Do not redesign the product. Retain translucent plastic and clear glass edges without deleting those parts."
+    }
+  ]
+}

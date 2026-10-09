@@ -93,7 +93,7 @@
     }
 
     // Observe the static hero wrapper so visibility also works without React.
-    const hero = document.querySelector('.home-hero-shell,.section-hero');
+    const hero = document.querySelector('.home-hero-shell');
     if (hero) {
       const syncHeroVisibility = visible => {
         document.body.classList.toggle('chat-outside-hero', !visible);

@@ -89,11 +89,11 @@
   <template id="rv-vista-vuelos">
     <section class="booking-intro section-hero" aria-labelledby="page-title"><div><h1 id="page-title">Vuelos</h1><p>Compara horarios, equipaje y tarifas por pasajero.</p></div><figure><img src="imagenes-viajes/servicios/servicio-vuelo.jpg" alt="Ala de avión sobre las nubes" width="2560" height="1707" fetchpriority="high"></figure></section>
     <form id="flight-search" class="rv-search-panel">
-      <div class="rv-field"><label for="flight-destination">Destino</label><select id="flight-destination" name="destination"></select></div>
-      <div class="rv-field"><label for="flight-origin">Origen</label><select id="flight-origin" name="origin"></select></div>
+      <div class="rv-field"><label for="flight-destination">Destino</label><select id="flight-destination" name="destination" required></select></div>
+      <div class="rv-field"><label for="flight-origin">Origen</label><select id="flight-origin" name="origin" required></select></div>
       <div class="rv-field"><label for="flight-date">Fecha de salida</label><input id="flight-date" name="date" type="date" required></div>
-      <div class="rv-field"><label for="flight-travelers">Pasajeros</label><input id="flight-travelers" name="travelers" type="number" min="1" max="12" step="1" required></div>
-      <div class="rv-field"><label for="flight-cabin">Clase</label><select id="flight-cabin" name="cabin"><option value="economica">Económica</option><option value="ejecutiva">Ejecutiva</option></select></div>
+      <div class="rv-field"><label for="flight-travelers">Pasajeros</label><input id="flight-travelers" name="travelers" type="number" min="1" max="12" step="1" placeholder="Ej.: 2" required></div>
+      <div class="rv-field"><label for="flight-cabin">Clase</label><select id="flight-cabin" name="cabin" required><option value="" disabled>Seleccionar</option><option value="economica">Económica</option><option value="ejecutiva">Ejecutiva</option></select></div>
       <div class="rv-search-bottom"><p id="flight-form-notice" role="status">Vuelos de ida · ajusta fechas y pasajeros.</p><button class="button button-primary" type="submit">Actualizar búsqueda ↗</button></div>
     </form>
     <div class="rv-flow-layout"><section aria-labelledby="flight-result-title"><div class="rv-results-heading"><div><h2 id="flight-result-title"></h2><p id="flight-results-meta" role="status"></p></div><label class="rv-sort">Ordenar<select id="flight-sort"><option value="recommended">Recomendados</option><option value="price-low">Menor precio</option><option value="time">Salida más temprana</option></select></label></div>
@@ -105,11 +105,11 @@
   <template id="rv-vista-hoteles">
     <section class="booking-intro section-hero" aria-labelledby="page-title"><div><h1 id="page-title">Hospedaje</h1><p>Compara habitaciones y consulta el total según noches y huéspedes.</p></div><figure><img src="imagenes-viajes/hoteles/hotel-piscina.jpg" alt="Piscina y terrazas de un hotel" width="2560" height="1707" fetchpriority="high"></figure></section>
     <form id="hotel-search" class="rv-search-panel rv-hotel-search">
-      <div class="rv-field"><label for="hotel-destination">Destino</label><select id="hotel-destination" name="destination"></select></div>
+      <div class="rv-field"><label for="hotel-destination">Destino</label><select id="hotel-destination" name="destination" required></select></div>
       <div class="rv-field"><label for="hotel-date">Entrada al hotel</label><input id="hotel-date" name="checkIn" type="date" required></div>
-      <div class="rv-field"><label for="hotel-nights">Noches</label><input id="hotel-nights" name="nights" type="number" min="1" max="30" step="1" required></div>
-      <div class="rv-field"><label for="hotel-travelers">Huéspedes</label><input id="hotel-travelers" name="travelers" type="number" min="1" max="12" step="1" required></div>
-      <div class="rv-field"><label for="hotel-rooms">Habitaciones</label><input id="hotel-rooms" name="rooms" type="number" min="1" max="6" step="1" required></div>
+      <div class="rv-field"><label for="hotel-nights">Noches</label><input id="hotel-nights" name="nights" type="number" min="1" max="30" step="1" placeholder="Ej.: 3" required></div>
+      <div class="rv-field"><label for="hotel-travelers">Huéspedes</label><input id="hotel-travelers" name="travelers" type="number" min="1" max="12" step="1" placeholder="Ej.: 2" required></div>
+      <div class="rv-field"><label for="hotel-rooms">Habitaciones</label><input id="hotel-rooms" name="rooms" type="number" min="1" max="6" step="1" placeholder="Ej.: 1" required></div>
       <div class="rv-search-bottom"><p id="hotel-form-notice" role="status"></p><button class="button button-primary" type="submit">Actualizar estancia ↗</button></div>
     </form>
     <div class="rv-flow-layout"><section aria-labelledby="hotel-result-title">

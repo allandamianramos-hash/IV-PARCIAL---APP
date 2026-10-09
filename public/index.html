@@ -146,7 +146,7 @@ const RUMBO_HERO_CONFIG = {
 .about-rumbo-copy .about-rumbo-lead { color:#304c47; font-size:21px; line-height:1.4; font-weight:600; margin-bottom:20px; }
 .about-rumbo-copy>p:not(.eyebrow):not(.about-rumbo-lead) { color:#52665f; font-size:14px; line-height:1.85; margin-bottom:14px; max-width:560px; }
 .about-rumbo-values { margin:24px 0; }
-.about-rumbo-values>div { padding:13px 0; border-top:1px solid #dce5dc; }
+.about-rumbo-values>div { padding:10px 0; }
 .about-rumbo-values dt { font-size:14px; font-weight:700; color:#254e48; margin-bottom:4px; }
 .about-rumbo-values dd { margin:0; font-size:12px; line-height:1.65; color:#5b6d64; }
 .about-rumbo-link { display:inline-flex; gap:16px; align-items:center; font-size:13px; color:#1f4e52; }
@@ -210,7 +210,9 @@ const RUMBO_HERO_CONFIG = {
 .about-rumbo-copy h2 { font-size:clamp(32px,3.4vw,44px); font-weight:700; letter-spacing:-1.3px; }
 .about-rumbo-copy .about-rumbo-lead { font-size:23px; line-height:1.35; max-width:430px; margin-bottom:24px; }
 .about-rumbo-copy>p:not(.eyebrow):not(.about-rumbo-lead) { font-size:16px; line-height:1.65; color:#40564f; }
-.about-rumbo-values { margin:22px 0; }
+.about-rumbo-values { margin:28px 0 0; display:grid; gap:10px; }
+.about-rumbo-values>div { display:grid; grid-template-columns:135px 1fr; gap:16px; align-items:baseline; border:0; background:none; }
+body #quienes-somos .about-rumbo-values dd { color:var(--secondary)!important; }
 .about-rumbo-values dt { font-size:16px; }
 .about-rumbo-values dd { font-size:15px; line-height:1.55; color:#52665f; }
 .about-rumbo-link { font-size:16px; font-weight:600; }
@@ -252,6 +254,7 @@ const RUMBO_HERO_CONFIG = {
  .about-rumbo-photo img { height:auto; aspect-ratio:4/5; object-position:center 37%; }
  .about-rumbo-copy h2 { font-size:34px; }
  .about-rumbo-copy .about-rumbo-lead { font-size:22px; }
+ .about-rumbo-values>div { grid-template-columns:1fr; gap:4px; }
  .site-footer .footer-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
  .site-footer .back-top { margin-left:0; }
 }
@@ -283,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <link rel="stylesheet" href="css/compartido/navigation.css">
 <script src="js/compartido/navigation.js" defer></script>
 <link rel="stylesheet" href="css/compartido/palette.css">
-<link rel="stylesheet" href="css/comunidad/community.css">
+<link rel="stylesheet" href="css/comunidad/community.css?v=about-context-5">
 <script src="js/compartido/api-client.js" defer></script>
 <script src="js/idiomas/translations.js" defer></script>
 <script src="js/idiomas/locale-engine.js" defer></script>
@@ -530,19 +533,18 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="container about-rumbo" id="quienes-somos" aria-labelledby="about-rumbo-title">
       <figure class="about-rumbo-photo">
         <div class="about-photo-frame"><img src="imagenes-viajes/portadas/rumbo-paris.jpg" alt="Una viajera contempla la Torre Eiffel desde un puente de París" width="1200" height="1800" loading="lazy">
-          <span class="about-photo-location">Francia</span>
+          <span class="about-photo-location"><span class="about-photo-country">Francia</span></span>
         </div>
         <svg class="about-photo-route" viewBox="0 0 300 150" fill="none" aria-hidden="true"><path d="M15 130C90 130 45 20 140 50S205 135 280 15" stroke="currentColor" stroke-width="2" stroke-dasharray="5 7"/><circle cx="15" cy="130" r="5" fill="currentColor"/><path d="m265 20 18-10-6 21-4-10Z" fill="currentColor"/></svg>
       </figure>
       <div class="about-rumbo-copy">
-        <p class="eyebrow">DESDE HONDURAS, CON VOS</p>
         <h2 id="about-rumbo-title">Quiénes somos</h2>
-        <p class="about-rumbo-lead">Un equipo cercano para tu próximo destino.</p>
-        <p>Somos un equipo hondureño con una idea en común: hacer más sencillo planificar un viaje. Creamos Rumbo para que podás explorar, comparar y darle forma a tu próxima experiencia, a tu ritmo.</p>
+        <p>Somos Rumbo, un equipo hondureño que reúne destinos, hospedajes y experiencias para ayudarte a planificar un viaje a tu medida.</p>
+        <p>Nuestro propósito es que viajés con confianza, con opciones claras y un presupuesto bajo control. Cuidamos cada paso de tu planificación para que sintás que estás en las mejores manos.</p>
         <dl class="about-rumbo-values">
-          <div><dt>A tu manera</dt><dd>Combiná destinos, hospedajes y experiencias en un solo lugar.</dd></div>
-          <div><dt>Con claridad</dt><dd>Tené a mano tus opciones y tu presupuesto en Mi viaje.</dd></div>
-          <div><dt>Con orientación</dt><dd>Consultá con Rumbito y encontrá por dónde empezar.</dd></div>
+          <div><dt>A tu manera</dt><dd>Combiná destinos, hospedajes y experiencias.</dd></div>
+          <div><dt>Con claridad</dt><dd>Tus opciones y presupuesto, en Mi viaje.</dd></div>
+          <div><dt>Con orientación</dt><dd>Rumbito te ayuda a empezar.</dd></div>
         </dl>
       </div>
     </section>

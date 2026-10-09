@@ -1,0 +1,288 @@
+{
+  "tool": "ImageGen integrado",
+  "date": "2026-10-09",
+  "assets": [
+    {
+      "id": 3,
+      "name": "Bolso de mano",
+      "file": "imagenes/productos/revisado-3.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: modern navy nylon weekender duffel bag, dark zipper and shoulder strap. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 7,
+      "name": "Batería portátil",
+      "file": "imagenes/productos/revisado-7.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: slim slate blue power bank, one USB-C port, four tiny indicator dots, no cable. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 8,
+      "name": "Cargador de pared USB-C",
+      "file": "imagenes/productos/revisado-8.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: compact slate blue USB-C wall charger with folded silver US plug prongs, one USB-C socket. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 11,
+      "name": "Audífonos Bluetooth",
+      "file": "imagenes/productos/revisado-11.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: pair of pristine slate blue wireless in-ear earbuds resting in their open compact charging case. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 12,
+      "name": "Soporte plegable para celular",
+      "file": "imagenes/productos/revisado-12.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: modern matte slate blue folding tabletop phone stand, no phone, clean aluminum structure. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 13,
+      "name": "Almohada cervical de espuma",
+      "file": "imagenes/productos/revisado-13.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: navy blue U-shaped memory foam neck travel pillow, woven soft cover, small black snap closure. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 14,
+      "name": "Botella plegable",
+      "file": "imagenes/productos/revisado-14.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: fully expanded slate blue accordion silicone collapsible water bottle with matching cap and black carrying loop. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 16,
+      "name": "Tapones para oídos",
+      "file": "imagenes/productos/revisado-16.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: one pair of slate blue soft silicone ear plugs with rounded stems beside their open small matching case. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 17,
+      "name": "Paraguas compacto",
+      "file": "imagenes/productos/revisado-17.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: new navy blue folded compact umbrella with neatly gathered fabric, black short handle and matching sleeve beside it. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 21,
+      "name": "Billetera de viaje",
+      "file": "imagenes/productos/revisado-21.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: new cognac brown minimalist leather bifold wallet slightly open to show card slots, empty, no packaging. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 24,
+      "name": "Linterna de mano",
+      "file": "imagenes/productos/revisado-24.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: brand-new slate blue aluminum handheld flashlight, silver reflector and dark rubber power button, three quarter view. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 27,
+      "name": "Cepillo dental plegable",
+      "file": "imagenes/productos/revisado-27.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: slate blue folding travel toothbrush partially opened showing white bristles and hollow handle. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 28,
+      "name": "Kit de higiene personal",
+      "file": "imagenes/productos/revisado-28.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of a compact personal hygiene travel kit: an open new navy blue zip toiletry pouch with one folding toothbrush, small toothpaste tube, small deodorant and a simple soap case neatly arranged in front. No shaving razor, brush or duplicate objects. All unbranded with no lettering. Brand new pristine contemporary travel accessories, never vintage, used, scratched or worn. Entire kit visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text or collage. Retain natural dark hardware and metallic details."
+    },
+    {
+      "id": 29,
+      "name": "Protector solar",
+      "file": "imagenes/productos/revisado-29.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: pristine white sunscreen squeeze tube with muted sand colored cap, very small clean text SPF 50 centered on tube, no brand. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 30,
+      "name": "Botiquín de viaje",
+      "file": "imagenes/productos/revisado-30.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: new red compact first aid soft zip case open to show clean individually wrapped gauze, bandage roll, small scissors, white medical cross. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 35,
+      "name": "Báscula para equipaje",
+      "file": "imagenes/productos/revisado-35.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: compact slate blue handheld digital luggage scale, small LCD showing 0.0, black short hanging strap and metal hook. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 36,
+      "name": "Joyero de viaje",
+      "file": "imagenes/productos/revisado-36.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: small open dusty rose square travel jewelry case, pale beige suede compartments and ring rolls, empty. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 39,
+      "name": "Funda para portátil",
+      "file": "imagenes/productos/revisado-39.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: navy slim padded zippered laptop sleeve, no laptop, premium clean woven fabric. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 40,
+      "name": "Portatrajes plegable",
+      "file": "imagenes/productos/revisado-40.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: modern navy blue fabric foldable garment carrier bag, folded in half, two carry handles and black zip, no other luggage. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 41,
+      "name": "Bolsas de compresión al vacío",
+      "file": "imagenes/productos/revisado-41.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: two clear rectangular vacuum storage bags with navy zip seals and white round air valves, neatly folded clothing compressed inside. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 42,
+      "name": "Bolsa acolchada para cámara",
+      "file": "imagenes/productos/revisado-42.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: small navy camera shoulder bag with top flap open showing empty padded dividers, black strap. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 43,
+      "name": "Carrito plegable para equipaje",
+      "file": "imagenes/productos/revisado-43.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: compact folding luggage trolley, black wheels, silver telescopic handle extended, slate blue base plate, no suitcase. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 45,
+      "name": "Router portátil",
+      "file": "imagenes/productos/revisado-45.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: small slate blue rectangular travel wifi router, two short antennas, ethernet and USB-C ports on side, no text. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 46,
+      "name": "Cargador para automóvil",
+      "file": "imagenes/productos/revisado-46.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: compact slate blue car cigarette lighter USB charger with silver tip and two black USB sockets. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 47,
+      "name": "Funda impermeable para celular",
+      "file": "imagenes/productos/revisado-47.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: clear waterproof phone pouch, slate blue locking top closure and navy neck cord, no phone. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 48,
+      "name": "Regleta compacta de viaje",
+      "file": "imagenes/productos/revisado-48.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: compact white travel power strip with two US AC outlets and two USB-C sockets, short neatly coiled white power cord. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 49,
+      "name": "Audífonos de diadema",
+      "file": "imagenes/productos/revisado-49.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: new navy over-ear headphones with padded headband and dark cushioned ear cups, folded inward slightly. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 51,
+      "name": "Trípode para celular",
+      "file": "imagenes/productos/revisado-51.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: small navy tabletop travel tripod for smartphone with three extended legs and black phone clamp, no phone. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 57,
+      "name": "Panel solar plegable",
+      "file": "imagenes/productos/revisado-57.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: foldable portable solar charging panel with two dark photovoltaic panels open like a book, navy fabric border and small USB output pouch. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 59,
+      "name": "Reposapiés de viaje",
+      "file": "imagenes/productos/revisado-59.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: navy fabric airplane foot hammock with black adjustable straps laid neatly to show padded foot cradle, no people. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 61,
+      "name": "Gafas de sol",
+      "file": "imagenes/productos/revisado-61.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: modern navy sunglasses with dark smoked lenses and clean slim frame, temples open, no case. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 62,
+      "name": "Sombrero plegable",
+      "file": "imagenes/productos/revisado-62.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: new sand beige foldable wide brim travel sun hat with simple narrow matching band, clean woven textile. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 66,
+      "name": "Cubiertos de viaje",
+      "file": "imagenes/productos/revisado-66.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: stainless steel travel fork spoon and rounded dinner knife arranged in open slate blue slim silicone case. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 69,
+      "name": "Poncho impermeable",
+      "file": "imagenes/productos/revisado-69.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: new navy blue hooded rain poncho folded neatly with hood visible, matching small storage pouch alongside, no person. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 71,
+      "name": "Recipiente plegable para comida",
+      "file": "imagenes/productos/revisado-71.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: slate blue collapsible silicone rectangular food container expanded, clear lid with blue clips leaning next to it, empty. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 73,
+      "name": "Alarma personal",
+      "file": "imagenes/productos/revisado-73.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: small slate blue oval personal safety alarm keychain, silver pull pin and key ring, perforated speaker, no lettering. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 76,
+      "name": "Cerradura portátil de puerta",
+      "file": "imagenes/productos/revisado-76.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: portable hotel door lock, stainless steel perforated flat locking plate and navy ergonomic locking cover connected by short chain, product only. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 77,
+      "name": "Cable retráctil de seguridad",
+      "file": "imagenes/productos/revisado-77.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: slate blue retractable luggage security cable lock with small black combination dials, coiled thin steel cable extended as one loop. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 81,
+      "name": "Localizador de equipaje",
+      "file": "imagenes/productos/revisado-81.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: small round white luggage tracking tag in slate blue silicone keychain holder with silver key ring, no logo. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 82,
+      "name": "Mosquetones con seguro",
+      "file": "imagenes/productos/revisado-82.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: pair of slate blue anodized aluminum accessory carabiners with black screw locking sleeves, not climbing equipment. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 83,
+      "name": "Linterna frontal",
+      "file": "imagenes/productos/revisado-83.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: new slate blue headlamp with clear circular lens, dark gray adjustable elastic head strap neatly looped behind. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 85,
+      "name": "Fundas RFID para tarjetas",
+      "file": "imagenes/productos/revisado-85.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: three thin navy RFID shielding credit card sleeves with silver edges, one blank white card partly inserted, no words or logos. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 87,
+      "name": "Hilo dental",
+      "file": "imagenes/productos/revisado-87.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: pristine white compact dental floss dispenser with pale blue flip lid open, short strand visible, no branding. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 92,
+      "name": "Frascos para crema",
+      "file": "imagenes/productos/revisado-92.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: three small frosted clear round travel cream jars with slate blue screw lids, one open empty jar. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 93,
+      "name": "Pastillero semanal",
+      "file": "imagenes/productos/revisado-93.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: slate blue compact seven compartment weekly pill organizer open, empty frosted lids, no pills, no text. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 95,
+      "name": "Repelente de insectos",
+      "file": "imagenes/productos/revisado-95.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: pristine muted sage green travel insect repellent spray bottle, white pump and clear cap, small simple mosquito pictogram on front, no brand. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    },
+    {
+      "id": 97,
+      "name": "Kit de costura de viaje",
+      "file": "imagenes/productos/revisado-97.png",
+      "prompt": "Use case: product-mockup. Create ONE premium ecommerce photograph of: open navy compact travel sewing case with miniature scissors, several neutral thread spools, safety pins, needle holder and buttons neatly organized. Brand new pristine contemporary travel accessory, never vintage, used, scratched or worn. Entire product visible, centered three-quarter view, square composition with generous margins. Soft natural directional studio illumination, sharp realistic material textures, restrained palette. Match the clean modern feel of a navy travel backpack catalog photo. Genuinely transparent background. No people, floor, scenery, decoration, branding, watermark, text unless expressly specified, or collage. Retain natural dark hardware and metallic details. One product or the expressly described set only."
+    }
+  ]
+}

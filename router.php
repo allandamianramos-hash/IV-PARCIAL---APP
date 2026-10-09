@@ -42,6 +42,7 @@ try {
     $file=$assetAliases[$file]??$file;
     $public=['error.html','js/compartido/error.js','js/compartido/connection.js','index.html','js/inicio/script.js','js/rumbito/chat-engine.js','js/rumbito/chat-client.js','js/rumbito/chat-ui.js','css/rumbito/chat.css','css/inicio/style.css','viajes.html','js/destinos/viajes.js','css/destinos/viajes.css','tienda.html','js/tienda/tienda.js','css/tienda/tienda.css','servicios.html','js/servicios/servicios.js','css/servicios/servicios.css','js/compartido/common.js','css/compartido/common.css','js/servicios/journey.js','css/inicio/promociones.css','css/compartido/design.css','js/compartido/database-client.js','registro.html','iniciar-sesion.html','js/cuenta/auth-client.js','css/cuenta/auth.css','js/destinos/guias-catalogo.js'];
     array_push($public,'js/inicio/hero.js','css/inicio/hero.css','js/compartido/navigation.js','css/compartido/navigation.css','css/compartido/palette.css','css/comunidad/community.css','js/comunidad/reviews.js','js/idiomas/translations.js','js/idiomas/preferences.js','js/compartido/api-client.js');
+    $public[]='js/tienda/variant-preview.js';
     $public[]='js/idiomas/locale-engine.js';foreach(['es','en','de','fr','it','pt','ja','ko','zh','ar'] as $lang)$public[]='locales/'.$lang.'.json';
     if (!in_array($file,$public,true) && !preg_match('~^(imagenes|imagenes-viajes)(?:/[a-zA-Z0-9_-]+)+\.(jpg|png|webp)$~D',$file)) throw new HttpError(404,'Archivo no encontrado.');
     $absolute=__DIR__.'/public/'.$file;

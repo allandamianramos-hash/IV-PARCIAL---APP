@@ -4,7 +4,7 @@
   const read=(key,fallback)=>{try{return JSON.parse((window.RumboStorage || localStorage).getItem(key))??fallback;}catch{return fallback;}};
   const write=(key,value)=>{try{(window.RumboStorage || localStorage).setItem(key,JSON.stringify(value));return true;}catch{return false;}};
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const money=n=>'L '+Number(n).toLocaleString('es-HN',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const money=n=>'L '+Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
   const steps=[['vuelos','Vuelo','viajes.html?pantalla=vuelos'],['hoteles','Hospedaje','viajes.html?pantalla=hoteles'],['traslados','Transporte','servicios.html?seccion=traslados'],['seguros','Seguro','servicios.html?seccion=seguros'],['guias','Experiencias','servicios.html?seccion=guias'],['mi-viaje','Resumen del viaje','servicios.html?seccion=mi-viaje']];
   const tripKey='rumbo.integrante2.viaje.v1', receiptKey='rumbo.checkout.v1';
   const day=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};

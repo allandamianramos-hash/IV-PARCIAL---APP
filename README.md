@@ -9,14 +9,16 @@ El sitio guarda cuentas, perfiles y selecciones mediante PHP/PDO_SQLSRV en `rumb
 **Omar: conserva tu carpeta actual de GitHub.** Descarga los cambios con Pull e instala el paquete privado `ACCESO-OMAR-GITHUB.zip` sobre esa misma carpeta. No uses el antiguo ZIP completo como otra copia de trabajo. Lee [los pasos para Omar y el trabajo compartido](docs/OMAR-EMPEZAR.txt). El instalador conserva Git y el código; `.env`, `.rumbo-equipo.json` y `.runtime` quedan excluidos del repositorio. Una vez instalado, `INICIAR-RUMBO.cmd` o Ctrl+Shift+B abre su aplicación en `http://127.0.0.1:3010`. Allan conserva su arranque PHP habitual en 8000.
 
 1. Ejecuta **INICIAR-RUMBO.cmd**.
-2. Abre **http://localhost:8000**.
+2. El lanzador abre **http://127.0.0.1:8000** en el navegador. Puedes cerrar la ventana del lanzador y Visual Studio Code.
 3. Regístrate, guarda elecciones y vuelve a iniciar sesión para recuperarlas.
 
 Para trabajar juntos con una base alojada, lee [el manual para el equipo](docs/MANUAL-PARA-EL-EQUIPO.html). También está disponible en [Markdown](docs/MANUAL-PARA-EL-EQUIPO.md). Incluye Azure SQL, usuarios individuales, configuración y pruebas entre compañeros.
 
-**Live Server ya está configurado para pasar todo el sitio a PHP.** Abre esta carpeta principal en VS Code, inicia PHP con Ctrl+Shift+B y reinicia Go Live. Usa http://127.0.0.1:5500/index.html. La tarea puede arrancar al abrir la carpeta si autorizas las tareas automáticas de este proyecto. Los archivos PHP necesitan PHP y un servidor SQL funcionando; compartir esos archivos no comparte los datos.
+**Visual Studio Code y Live Server son opcionales.** La dirección `http://127.0.0.1:8000` corresponde al servidor PHP independiente. El puerto `5500` pertenece a Live Server y deja de funcionar al cerrar el editor; úsalo solo para desarrollo. La tarea de VS Code también puede iniciar el servidor mediante Ctrl+Shift+B.
 
-Si aparece guardado local, ejecuta **COMPROBAR-CONEXION.cmd**. Para trabajar sin Live Server, usa **INICIAR-RUMBO.cmd** y http://127.0.0.1:8000. Las páginas estáticas abiertas desde Live Server se redirigen a PHP. Usa siempre el mismo hostname para conservar la misma sesión del navegador.
+Ejecuta **ACTIVAR-RUMBO-AUTOMATICO.cmd** una vez para iniciar el proyecto al entrar a Windows y crear el acceso **Rumbo** en el escritorio. Este acceso prepara el servidor y abre la página directamente. El inicio automático usa la misma selección de PHP o Node portable que `INICIAR-RUMBO.cmd`; no requiere el editor. Para desactivarlo, elimina el acceso `Rumbo - servidor automatico` de `shell:startup`.
+
+Si aparece guardado local, ejecuta **COMPROBAR-CONEXION.cmd**. Usa siempre el mismo hostname para conservar la sesión; `localhost` y `127.0.0.1` tienen cookies diferentes, y el almacenamiento local también depende del puerto. La computadora debe estar encendida y con la sesión de Windows iniciada; el acceso a Azure requiere Internet. Esto es ejecución local, no una publicación pública del sitio.
 
 Consulta [Idiomas, organización y diagnóstico de Rumbito](docs/IDIOMAS-Y-ESTRUCTURA.md) para las nuevas carpetas, traducciones y pruebas de reseñas.
 
@@ -42,7 +44,7 @@ Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hot
 
 Si recibiste tu paquete personal del equipo, extraelo y abre `CONECTAR-EQUIPO.cmd`. Consulta [Acceso del equipo](docs/ACCESO-EQUIPO.md) para los requisitos y la autorización de la IP de tu casa. Para consultar las tablas en SSMS, abre `VER-BD-AZURE.cmd`.
 
-PHP sirve el sitio en **8000**. Node conserva Rumbito en **3000**; el lanzador inicia ambos. `npm start` inicia la versión Node alternativa. El chat con IA necesita una clave propia en `.env`; sin ella se conserva el planificador local. `ACTIVAR-RUMBO-AUTOMATICO.cmd` mantiene el arranque anterior de Node; para entrar al sitio PHP utiliza `INICIAR-RUMBO.cmd`.
+PHP sirve el sitio en **8000**. Node conserva Rumbito en **3000**; el lanzador inicia ambos en segundo plano. `npm start` inicia la versión Node alternativa. El chat con IA necesita una clave propia en `.env`; sin ella se conserva el planificador local. `ACTIVAR-RUMBO-AUTOMATICO.cmd` activa el arranque del proyecto completo al iniciar sesión en Windows.
 
 Las cuentas y el almacenamiento son reales. Los pagos, billetes y reservas siguen siendo de demostración. El servidor integrado de PHP es para desarrollo local.
 

@@ -240,3 +240,10 @@ const rows=[
 ];
 languages.forEach((language,index)=>rows.forEach(row=>window.RumboTranslations[language][row[0]]=row[index]));
 })();
+// Mensajes de búsqueda vacía y ejemplos: no son valores del formulario.
+(()=>{
+ const langs=['es','en','de','fr','it','pt','ja','ko','zh','ar'];
+  const rows=[['Completa los datos de tu viaje para ver opciones y precios.','Enter your trip details to see options and prices.','Gib deine Reisedaten ein, um Optionen und Preise zu sehen.','Renseignez votre voyage pour voir les options et les prix.','Inserisci i dettagli del viaggio per vedere opzioni e prezzi.','Preencha os dados da viagem para ver opções e preços.','旅行の詳細を入力すると、プランと料金が表示されます。','여행 정보를 입력하면 옵션과 요금을 볼 수 있습니다.','填写旅行信息以查看选项和价格。','أدخل تفاصيل رحلتك لعرض الخيارات والأسعار.']];
+  for(const n of [1,2,3])rows.push([`Ej.: ${n}`,`E.g. ${n}`,`Z. B. ${n}`,`Ex. : ${n}`,`Es.: ${n}`,`Ex.: ${n}`,`例：${n}`,`예: ${n}`,`例如：${n}`,`مثال: ${n}`]);
+  langs.forEach((lang,i)=>rows.forEach(row=>window.RumboTranslations[lang][row[0]]=row[i]));
+})();

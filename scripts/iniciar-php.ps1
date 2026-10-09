@@ -5,7 +5,7 @@ New-Item -ItemType Directory -Path (Join-Path $rumboRoot '.runtime') -Force | Ou
 # El chat es auxiliar: una caida de Node no bloquea PHP ni SQL Server.
 try { & (Join-Path $rumboRoot 'rumbo-background.ps1') }
 catch { Write-Warning 'El asistente Node no inicio. PHP y SQL Server pueden seguir funcionando.' }
-$rumboUrl = 'http://127.0.0.1:5500'
+$rumboUrl = 'http://127.0.0.1:8000'
 function Test-RumboPhp {
     try { return (Invoke-RestMethod 'http://127.0.0.1:8000/api/health' -TimeoutSec 3).backend -eq 'php' } catch { return $false }
 }
@@ -27,12 +27,7 @@ if (-not $rumboConnected) {
         Write-Warning 'RUMBO | Azure bloqueo la IP de esta conexion. Autoriza la IP publica actual en las reglas de red de SQL Server y vuelve a conectar desde el sitio.'
     }
 }
-if ($Open) {
-    try {
-        $rumboLive = Invoke-RestMethod "$rumboUrl/api/health" -TimeoutSec 2
-        if ($rumboLive.backend -eq 'php') { Start-Process explorer.exe -ArgumentList $rumboUrl -WindowStyle Hidden }
-    } catch { }
-}
-Write-Output 'RUMBO | PHP listo en segundo plano. Abre el sitio con Go Live en Visual Studio Code.'
-Write-Output "RUMBO | Direccion de Live Server: $rumboUrl"
+if ($Open) { Start-Process explorer.exe -ArgumentList $rumboUrl -WindowStyle Hidden }
+Write-Output 'RUMBO | Sitio listo en segundo plano. Puedes cerrar Visual Studio Code y esta ventana.'
+Write-Output "RUMBO | Abre el sitio directamente: $rumboUrl"
 if ($rumboConnected) { Write-Output 'RUMBO | Base de datos conectada.' }

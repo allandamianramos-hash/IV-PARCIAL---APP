@@ -1,7 +1,7 @@
 (function (root) {
   "use strict";
   const normalize = value => String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
-  const money = value => `L ${new Intl.NumberFormat("es-HN", { maximumFractionDigits: 2 }).format(value)}`;
+  const money = value => `L ${new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 }).format(value)}`;
   const words = { uno: 1, una: 1, dos: 2, tres: 3, cuatro: 4, cinco: 5, seis: 6, siete: 7, ocho: 8, nueve: 9, diez: 10, once: 11, doce: 12 };
   const number = value => words[value] || Number(value);
   const defaults = ["Planificar mi viaje", "Recomiéndame un destino", "Ver hoteles", "Qué llevar"];

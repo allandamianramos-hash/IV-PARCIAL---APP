@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdir} from 'node:fs/promises';
 import {chromium} from '@playwright/test';
+import {completeBookingForm} from './booking-helpers.mjs';
 
 const base=process.env.BROWSER_TEST_ORIGIN||'http://127.0.0.1:8000';
 const launch=()=>chromium.launch({channel:process.env.BROWSER_CHANNEL||'msedge',headless:true});
@@ -26,6 +27,7 @@ test('mobile selection stays reachable through every booking step and restores d
    const context=await browser.newContext({viewport:{width,height:844},reducedMotion:'reduce'});
    const page=await context.newPage();const errors=[];page.on('pageerror',e=>{if(!e.message.startsWith('Transition was aborted'))errors.push(e.message);});
    await page.goto(base+'/viajes.html?pantalla=vuelos');
+   await completeBookingForm(page);
    await page.locator('[data-select-flight]').first().click();
    await page.waitForFunction(()=>document.querySelector('.mobile-selection-amount')?.textContent===document.querySelector('#summary-total')?.textContent);
    const scrollBefore=await page.evaluate(()=>scrollY);
@@ -45,15 +47,18 @@ test('mobile selection stays reachable through every booking step and restores d
    await page.setViewportSize({width,height:844});
    await openSelection(page);
    await page.locator('#continue-hotel').click();await page.waitForURL(/pantalla=hoteles/);
+   await completeBookingForm(page);
    await page.locator('[data-select-hotel]:not([disabled])').first().click();
    await openSelection(page);
    await page.screenshot({path:`.runtime/mobile-qa/hotel-sheet-${width}.png`});
    await page.locator('#save-selection').click();await page.waitForURL(/seccion=traslados/);
    for(const next of ['seguros','guias']){
+    await completeBookingForm(page);
     await page.locator('[data-choose]').first().click();await openSelection(page);
     assert.notEqual(await page.locator('.mobile-selection-amount').innerText(),'—');
     await page.locator('#save-service').click();await page.waitForURL(new RegExp('seccion='+next));
    }
+   await completeBookingForm(page);
    await page.locator('[data-guide-choose]').first().click();
    await page.locator('.guide-review-link').click();
    await page.locator('#mobile-selection-panel').waitFor({state:'visible'});
@@ -81,6 +86,7 @@ test('mobile sheets handle empty selections, changed filters, language, and smal
   await page.goto(base+'/viajes.html?pantalla=vuelos');
   await openSelection(page);assert.ok(await page.locator('#continue-hotel').isDisabled());
   await page.locator('.mobile-selection-close').click();
+  await completeBookingForm(page);
   await page.locator('[data-select-flight]').first().click();
   await page.locator('#flight-travelers').fill('13');
   await openSelection(page);assert.ok(await page.locator('#continue-hotel').isDisabled());

@@ -1,22 +1,29 @@
 /* Comunidad y preferencias: la misma paleta oscura de Rumbo. */
-body #quienes-somos.about-rumbo {grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,104px);align-items:center;padding:var(--section-space) 0;margin:0 auto;background:none;border:0;border-top:1px solid var(--line);border-radius:0;overflow:visible;}
-body #quienes-somos .about-rumbo-photo {padding:0;min-width:0;}
-body #quienes-somos .about-rumbo-photo::before,body #quienes-somos .about-photo-route {display:none;}
-body #quienes-somos .about-photo-frame {transform:none;border-radius:20px;box-shadow:none;}
+body #quienes-somos.about-rumbo {grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,104px);align-items:center;padding:var(--section-space) 0;margin:0 auto;background:none;border:0;border-radius:0;overflow:visible;}
+body #quienes-somos .about-rumbo-photo {--photo-offset:clamp(14px,2vw,24px);position:relative;display:block;align-self:center;isolation:isolate;padding:0 var(--photo-offset) var(--photo-offset) 0;min-width:0;}
+body #quienes-somos .about-rumbo-photo::before {content:"";display:block;position:absolute;inset:var(--photo-offset) 0 0 var(--photo-offset);border:1px solid var(--line);border-radius:28px;background:var(--surface);transform:none;z-index:-1;pointer-events:none;}
+body #quienes-somos .about-photo-route {display:none;}
+body #quienes-somos .about-photo-frame {transform:none;border-radius:28px;box-shadow:none;transition:none;}
 body #quienes-somos .about-photo-frame img {height:620px;object-position:50% 38%;}
-body #quienes-somos .about-photo-location {inset:auto auto 20px 20px;background:#181b1ee8!important;color:var(--foreground)!important;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:12px;}
+body #quienes-somos .about-photo-location {inset:auto auto 24px 24px;display:inline-flex;align-items:stretch;max-width:calc(100% - 48px);background:#181b1ef5!important;color:var(--foreground)!important;border:1px solid #41474a;border-radius:10px;padding:0;overflow:hidden;font-size:12px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;}
+body #quienes-somos .about-photo-location>span {margin:0;padding:13px 18px;}
+body #quienes-somos .about-photo-country {font-weight:500;}
 body #quienes-somos .about-rumbo-copy {min-width:0;}
-body #quienes-somos .eyebrow {font-size:11px;letter-spacing:.14em;margin:0 0 18px;}
-body #quienes-somos h2 {font-size:clamp(40px,4.5vw,64px);font-weight:600!important;line-height:1.12;letter-spacing:-.04em;margin:0 0 32px;text-wrap:balance;}
-body #quienes-somos .about-rumbo-lead {font-size:clamp(18px,1.6vw,21px);line-height:1.65;font-weight:400;color:var(--secondary)!important;max-width:34ch;margin:0 0 28px;}
-body #quienes-somos .about-rumbo-copy>p:not(.eyebrow):not(.about-rumbo-lead) {font-size:16px;line-height:1.8;color:var(--secondary)!important;max-width:49ch;margin:0;}
-body #quienes-somos .about-rumbo-values {display:grid;gap:0;margin:36px 0 0;border:0;background:none;}
-body #quienes-somos .about-rumbo-values>div {display:grid;grid-template-columns:minmax(100px,.75fr) minmax(0,1.5fr);gap:24px;margin:0;padding:22px 0;border:0;border-top:1px solid var(--line);background:none;box-shadow:none;}
-body #quienes-somos .about-rumbo-values>div::before {content:none;}
-body #quienes-somos .about-rumbo-values dt {font-size:14px;font-weight:500;line-height:1.65;margin:0;}
-body #quienes-somos .about-rumbo-values dd {color:var(--secondary)!important;font-size:14px;line-height:1.65;margin:0;}
-@media(max-width:800px) {body #quienes-somos.about-rumbo {grid-template-columns:minmax(0,1fr);gap:40px;}body #quienes-somos .about-photo-frame img {height:420px;}body #quienes-somos .about-rumbo-copy>p:not(.eyebrow):not(.about-rumbo-lead) {max-width:60ch;}}
-@media(max-width:420px) {body #quienes-somos .about-photo-frame img {height:340px;}body #quienes-somos .about-rumbo-values>div {grid-template-columns:1fr;gap:5px;}}
+body #quienes-somos h2 {font-size:clamp(44px,5.6vw,76px);font-weight:700!important;line-height:1.05;letter-spacing:-.045em;margin:0 0 36px;text-wrap:balance;}
+body #quienes-somos .about-rumbo-copy>p {font-size:16px;line-height:1.8;font-weight:400;color:var(--secondary)!important;max-width:49ch;margin:0;}
+body #quienes-somos .about-rumbo-copy>p+p {margin-top:16px;}
+body #quienes-somos .about-rumbo-values {display:block;counter-reset:about-route;margin:48px 0 0;border:0;background:none;}
+body #quienes-somos .about-rumbo-values>div {position:relative;display:block;counter-increment:about-route;margin:0 0 24px;padding:0 0 24px 60px;border:0;background:none;box-shadow:none;}
+body #quienes-somos .about-rumbo-values>div:last-child {margin-bottom:0;padding-bottom:0;}
+/* Each segment reaches the next node, even when a description wraps. */
+body #quienes-somos .about-rumbo-values>div:not(:last-child)::before {content:"";position:absolute;left:3px;top:12px;bottom:-36px;width:1px;background:var(--line);}
+body #quienes-somos .about-rumbo-values>div:not(:last-child)::after {content:"";position:absolute;left:28px;right:0;bottom:0;height:1px;background:rgb(240 242 238 / 7%);}
+body #quienes-somos .about-rumbo-values dt {color:var(--foreground)!important;font-size:16px;font-weight:700;line-height:24px;margin:0;}
+body #quienes-somos .about-rumbo-values dt::before {content:counter(about-route,decimal-leading-zero);position:absolute;left:28px;top:0;color:var(--secondary);font-size:11px;font-weight:400;font-variant-numeric:tabular-nums;line-height:24px;}
+body #quienes-somos .about-rumbo-values dt::after {content:"";position:absolute;left:0;top:8.5px;width:7px;height:7px;border-radius:50%;background:var(--lime);}
+body #quienes-somos .about-rumbo-values dd {color:var(--secondary)!important;font-size:14px;line-height:1.75;margin:8px 0 0;max-width:none;}
+@media(max-width:800px) {body #quienes-somos.about-rumbo {grid-template-columns:minmax(0,1fr);gap:40px;}body #quienes-somos .about-photo-frame img {height:420px;}body #quienes-somos .about-rumbo-copy>p {max-width:60ch;}}
+@media(max-width:420px) {body #quienes-somos .about-photo-frame img {height:340px;}body #quienes-somos .about-photo-location {inset:auto auto 18px 18px;max-width:calc(100% - 36px);}body #quienes-somos .about-photo-location>span {padding:11px 14px;}}
 .home-reviews {padding-block:80px;border-top:1px solid var(--line);}
 .reviews-heading {display:flex;align-items:center;justify-content:space-between;gap:40px;margin-bottom:40px;}
 .reviews-heading h2 {font-size:clamp(30px,3.5vw,48px);max-width:18ch;line-height:1.1;margin:12px 0 20px;}

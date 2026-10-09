@@ -7,13 +7,15 @@ const regions=[['HN','Honduras','HNL'],['US','Estados Unidos','USD'],['MX','Méx
 let prefs={language:'es',region:'HN'},rates={HNL:1};try{const saved=JSON.parse(localStorage.getItem('rumbo.preferences.v1'));if(languages.some(x=>x[0]===saved?.language)&&regions.some(x=>x[0]===saved?.region))prefs=saved;}catch{}
 const sources=new WeakMap(),attrs=new WeakMap();let observer,queued=false,lastLocale='';
 const currency=()=>regions.find(x=>x[0]===prefs.region)[2];
-function money(value){const c=currency();return new Intl.NumberFormat(prefs.language,{style:'currency',currency:c,currencyDisplay:'code',maximumFractionDigits:['JPY','KRW','CLP'].includes(c)?0:2}).format(value*rates[c]);}
+// Los importes usan siempre coma de miles y punto decimal, independientemente del idioma.
+const formatHNL=(value,minimumFractionDigits=0)=>'L '+new Intl.NumberFormat('en-US',{useGrouping:true,minimumFractionDigits,maximumFractionDigits:2}).format(value);
+function money(value){const c=currency();return new Intl.NumberFormat('en-US',{style:'currency',currency:c,currencyDisplay:'code',useGrouping:true,maximumFractionDigits:['JPY','KRW','CLP'].includes(c)?0:2}).format(value*rates[c]);}
 function translate(text){return window.RumboI18n.translate(String(text),prefs.language);}
-function convert(text){if(currency()==='HNL'||!rates[currency()])return text;return text.replace(/\bL\.?\s*([0-9][0-9,.]*)/g,(full,amount)=>{const match=amount.match(/^(.*)[.,](\d{1,2})$/);const value=match?Number(match[1].replace(/[.,]/g,'')+'.'+match[2]):Number(amount.replace(/[.,]/g,''));return Number.isFinite(value)?money(value):full;});}
+function convert(text){return text.replace(/\bL\.?\s*([0-9](?:[0-9,.]*[0-9])?)/g,(full,amount)=>{const match=amount.match(/^(.*)[.,](\d{1,2})$/);const value=match?Number(match[1].replace(/[.,]/g,'')+'.'+match[2]):Number(amount.replace(/[.,]/g,''));return Number.isFinite(value)?(currency()==='HNL'||!rates[currency()]?formatHNL(value,match?.[2].length||0):money(value)):full;});}
 // React owns its translated DOM; the generic walker must not rewrite its text nodes.
 window.RumboLocale={get language(){return prefs.language;},translate,
  originalText(element){return [...element.childNodes].map(node=>sources.get(node)?.original||node.textContent).join('');},
- formatMoney(value){return currency()==='HNL'||!rates[currency()]?'L '+new Intl.NumberFormat(prefs.language,{maximumFractionDigits:2}).format(value):money(value);}};
+ formatMoney(value){return currency()==='HNL'||!rates[currency()]?formatHNL(value):money(value);}};
 function update(){
  observer?.disconnect();
  document.documentElement.lang=prefs.language;document.documentElement.dir=prefs.language==='ar'?'rtl':'ltr';

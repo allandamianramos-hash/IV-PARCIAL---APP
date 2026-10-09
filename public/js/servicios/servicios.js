@@ -4,10 +4,11 @@
   if (!root) return;
   const $ = s => root.querySelector(s);
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const money = value => `L ${Number(value).toLocaleString('es-HN', { maximumFractionDigits: 0 })}`;
+  const money = value => `L ${Number(value).toLocaleString('en-US', { maximumFractionDigits: 2 })}`;
   const KEY = 'rumbo.services.v1';
   const read = (key, fallback) => { try { return JSON.parse((window.RumboStorage || localStorage).getItem(key)) ?? fallback; } catch { return fallback; } };
   const write = (key, value) => { try { (window.RumboStorage || localStorage).setItem(key, JSON.stringify(value)); return true; } catch { return false; } };
+  const readTrip = () => { const trip=read('rumbo.integrante2.viaje.v1',{}); return trip?.flightId || trip?.hotelId || trip?.searchConfigured === true ? trip : {}; };
   const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; };
   const download = text => { const url = URL.createObjectURL(new Blob(['\uFEFF'+text.split('\n').map(line=>window.RumboLocale?.translate(line)||line).join('\n')], {type:'text/plain;charset=utf-8'})); const a = document.createElement('a'); a.href=url; a.download='mi-viaje-rumbo.txt'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 10000); };
   const catalog = window.RumboViajesDatos.destinations;
@@ -37,7 +38,7 @@
   };
   const tabs = () => `<nav class="service-tabs" aria-label="Servicios de viaje"><a href="viajes.html?pantalla=vuelos">Vuelos</a><a href="viajes.html?pantalla=hoteles">Hoteles</a>${Object.entries(configs).map(([id,c]) => `<a href="servicios.html?seccion=${id}" ${section===id?'aria-current="page"':''}>${c.name}</a>`).join('')}</nav>`;
   const input = (id,label,type,value,extra='') => `<div class="service-field"><label for="${id}">${label}</label><input id="${id}" name="${id}" type="${type}" value="${value}" ${extra} required></div>`;
-  const select = (id,label,options) => `<div class="service-field"><label for="${id}">${label}</label><select id="${id}" name="${id}">${options.map(([value,text])=>`<option value="${value}">${text}</option>`).join('')}</select></div>`;
+  const select = (id,label,options) => `<div class="service-field"><label for="${id}">${label}</label><select id="${id}" name="${id}" required><option value="" disabled selected>Seleccionar</option>${options.map(([value,text])=>`<option value="${value}">${text}</option>`).join('')}</select></div>`;
   const records = () => { const data=read(KEY,[]); return Array.isArray(data) ? data.filter(r => r && Object.hasOwn(configs,r.section) && typeof r.title==='string' && typeof r.detail==='string' && Number.isFinite(r.total) && r.total>=0).slice(0,3) : []; };
   const status = text => { $('#service-status').textContent=text; };
 
@@ -45,27 +46,25 @@
     const c=configs[section];
     document.title=`${c.name} | Rumbo`;
     let fields='';
-    if(section==='traslados') fields=select('route','Ruta', catalog.map(d=>[routeId(d),escape(d.name)+' · '+escape(routeLabel(d))]))+input('date','Fecha del traslado','date',today(),`min="${today()}"`)+input('time','Hora de recogida','time','10:00')+input('people','Pasajeros','number',2,'min="1" max="12" step="1"')+input('bags','Maletas grandes','number',2,'min="0" max="12" step="1"')+select('direction','Sentido',[['out','Ida'],['back','Ruta inversa']]);
-    if(section==='seguros') fields=select('destination','Destino',catalog.map(d=>[d.id,escape(d.name)]))+select('zone','Zona del viaje',[['nacional','Honduras'],['internacional','Internacional']])+input('date','Inicio del viaje','date',today(),`min="${today()}"`)+input('end','Fin del viaje','date',today(),`min="${today()}"`)+input('people','Viajeros','number',1,'min="1" max="12" step="1"');
-    if(section==='guias') fields=select('destination','Destino',catalog.map(d=>[d.id,d.name]))+input('date','Fecha del recorrido','date',today(),`min="${today()}"`)+input('people','Personas','number',2,'min="1" max="12" step="1"')+select('language','Idioma',[['all','Cualquier idioma'],['es','Español'],['en','Inglés']])+select('style','Experiencia',[['all','Todas'],['cultura','Cultura e historia'],['naturaleza','Naturaleza'],['playa','Costa y descanso']]);
+    if(section==='traslados') fields=select('route','Ruta', catalog.map(d=>[routeId(d),escape(d.name)+' · '+escape(routeLabel(d))]))+input('date','Fecha del traslado','date','',`min="${today()}"`)+input('time','Hora de recogida','time','')+input('people','Pasajeros','number','','min="1" max="12" step="1" placeholder="Ej.: 2"')+input('bags','Maletas grandes','number','','min="0" max="12" step="1" placeholder="Ej.: 1"')+select('direction','Sentido',[['out','Ida'],['back','Ruta inversa']]);
+    if(section==='seguros') fields=select('destination','Destino',catalog.map(d=>[d.id,escape(d.name)]))+select('zone','Zona del viaje',[['nacional','Honduras'],['internacional','Internacional']])+input('date','Inicio del viaje','date','',`min="${today()}"`)+input('end','Fin del viaje','date','',`min="${today()}"`)+input('people','Viajeros','number','','min="1" max="12" step="1" placeholder="Ej.: 2"');
     root.innerHTML=hero(c.title,c.intro,'',c.icon)+tabs()+`<form id="service-search" class="service-form">${fields}<div class="service-form-foot"><p id="form-notice">Ajusta los detalles y compara las opciones.</p><button class="button button-primary">Ver opciones ↗</button></div></form><div class="service-layout"><section aria-labelledby="results-title"><h2 id="results-title">${section==='traslados'?'Opciones de transporte':'Planes de seguro'}</h2><p id="results-count" role="status"></p><div id="service-results" class="service-results"></div><p class="booking-disclosure">Precios de demostración. La selección no confirma una reserva ni contrata una póliza.</p></section><aside class="service-summary" aria-label="Resumen"><h2>Tu selección</h2><div id="summary-content"><p>Elige una opción para revisar el importe y guardarla.</p></div><button id="save-service" class="button button-primary" disabled>Guardar y continuar →</button><p id="service-status" class="service-status" role="status" aria-live="polite"></p></aside></div>`;
     if(section==='guias' && catalog.some(d=>d.id===params.get('destino'))) $('#destination').value=params.get('destino');
     const form=$('#service-search'); let selected=null, options=[], detail='';
     const saved = records().find(r=>r.section===section);
     if(!saved) {
-      const trip=read('rumbo.integrante2.viaje.v1',{});
+      const trip=readTrip();
       const destination=catalog.find(d=>d.id===trip?.destinationId);
       if(destination){
         const date=trip.checkIn || trip.date;
         if(typeof date==='string' && /^\d{4}-\d{2}-\d{2}$/.test(date) && date>=today())$('#date').value=date;
-        if(!$('#date').checkValidity())$('#date').value=today();
         if(Number.isInteger(trip.travelers) && trip.travelers>=1 && trip.travelers<=12)$('#people').value=trip.travelers;
         if(section==='guias')$('#destination').value=destination.id;
         if(section==='traslados')$('#route').value=routeId(destination);
         if(section==='seguros'){
           $('#destination').value=destination.id;
           $('#zone').value=destination.region==='honduras'?'nacional':'internacional';
-          const end=new Date($('#date').value+'T12:00:00Z');end.setUTCDate(end.getUTCDate()+Math.min(30,Math.max(1,Number(trip.nights)||1)));$('#end').value=end.toISOString().slice(0,10);
+          if($('#date').value && Number(trip.nights)>0){const end=new Date($('#date').value+'T12:00:00Z');end.setUTCDate(end.getUTCDate()+Math.min(30,Number(trip.nights)));$('#end').value=end.toISOString().slice(0,10);}
         }
       }
     }
@@ -80,7 +79,7 @@
     const requested=catalog.find(d=>d.id===params.get('destino'));
     if(requested){if(section==='traslados')$('#route').value=routeId(requested);else if(section==='seguros')$('#destination').value=requested.id;}
     if(section==='seguros'){
-      const syncZone=()=>{$('#zone').value=catalog.find(d=>d.id===$('#destination').value)?.region==='honduras'?'nacional':'internacional';};
+      const syncZone=()=>{const d=catalog.find(d=>d.id===$('#destination').value);$('#zone').value=d?(d.region==='honduras'?'nacional':'internacional'):'';};
       syncZone(); $('#destination').addEventListener('change',syncZone);
     }
     function clearSelection(){ selected=null; $('#save-service').disabled=true; $('#summary-content').innerHTML='<p>Elige una opción para revisar el importe y guardarla.</p>'; root.querySelectorAll('[data-choose]').forEach(b=>{b.setAttribute('aria-pressed','false');b.textContent='Elegir opción';b.closest('article').dataset.selected='false';}); status(''); }
@@ -90,7 +89,12 @@
       return report?form.reportValidity():form.checkValidity();
     }
     function render(report=false){
-      if(!validate(report)) return;
+      if(!validate(report)) {
+        clearSelection(); options=[];
+        $('#results-count').textContent='Completa los datos de tu viaje para ver opciones y precios.';
+        $('#service-results').innerHTML='<div class="service-empty"><h3>Organizar tu viaje</h3><p>Completa los datos de tu viaje para ver opciones y precios.</p></div>';
+        return;
+      }
       clearSelection(); form.dataset.dirty='false';
       const values=Object.fromEntries(new FormData(form)); const people=Number(values.people);
       detail=`${values.date} · ${people} ${people===1?'persona':'personas'}`;
@@ -136,8 +140,8 @@
   function guidesPage() {
     root.classList.add('guides-page');
     const saved = records().find(r => r.section === 'guias');
-    const trip = read('rumbo.integrante2.viaje.v1', {});
-    const initial = [params.get('destino'), saved?.values?.destination, trip?.destinationId].map(id => catalog.find(d => d.id === id)).find(Boolean) || catalog[0];
+    const trip = readTrip();
+    const initial = [params.get('destino'), saved?.values?.destination, trip?.destinationId].map(id => catalog.find(d => d.id === id)).find(Boolean);
     const styles = { cultura: 'Cultura', naturaleza: 'Naturaleza', playa: 'Playa', gastronomia: 'Gastronomía' };
     const experiences = window.RumboGuias || [];
     root.innerHTML = `
@@ -147,7 +151,7 @@
       </section>
       ${tabs()}
       <section id="guide-search" class="guide-search" aria-label="Destino y preferencias">
-      <form id="guide-form" class="guide-form">${select('destination','Tu destino',catalog.map(d=>[d.id,escape(d.name)]))}${input('date','Fecha del paseo','date',today(),`min="${today()}"`)}${input('people','Personas','number',2,'min="1" max="12" step="1"')}${select('language','Idioma del guía',[['es','Español'],['en','Inglés']])}${select('time','Horario preferido',[['09:00','Mañana · 09:00'],['14:00','Tarde · 14:00']])}<div class="guide-form-note"><span>Los resultados se actualizan al cambiar tus preferencias.</span><button type="reset" class="guide-text-button">Restablecer</button></div></form></section>
+      <form id="guide-form" class="guide-form">${select('destination','Tu destino',catalog.map(d=>[d.id,escape(d.name)]))}${input('date','Fecha del paseo','date','',`min="${today()}"`)}${input('people','Personas','number','','min="1" max="12" step="1" placeholder="Ej.: 2"')}${select('language','Idioma del guía',[['es','Español'],['en','Inglés']])}${select('time','Horario preferido',[['09:00','Mañana · 09:00'],['14:00','Tarde · 14:00']])}<div class="guide-form-note"><span>Los resultados se actualizan al cambiar tus preferencias.</span><button type="reset" class="guide-text-button">Restablecer</button></div></form></section>
       <div class="guide-layout"><section aria-labelledby="guide-results-title"><div class="guide-heading guide-results-heading"><div><p class="eyebrow" id="guide-region"></p><h2 id="guide-results-title"></h2><p id="guide-count" role="status" aria-live="polite"></p></div><div class="service-field"><label for="guide-sort">Ordenar por</label><select id="guide-sort"><option value="recommended">Orden sugerido</option><option value="price">Menor precio</option><option value="duration">Menor duración</option></select></div></div>
       <div class="guide-filters" role="group" aria-label="Tipo de experiencia">${[['all','Todas'],...Object.entries(styles)].map(([id,label])=>`<button type="button" data-guide-filter="${id}" aria-pressed="${id==='all'}">${label}</button>`).join('')}</div><p class="guide-category-note" id="guide-category-note"></p><div id="guide-results" class="guide-results"></div></section>
       <aside class="guide-summary" aria-labelledby="guide-summary-title"><h2 id="guide-summary-title" tabindex="-1">Tu selección</h2><div id="guide-selection"><div class="guide-summary-empty"><h3>Ningún recorrido seleccionado</h3><p>Elige una experiencia para ver aquí los detalles y el total de tu grupo.</p></div></div><button type="button" id="guide-save" class="button button-primary" disabled>Guardar en Mi viaje <span aria-hidden="true">↗</span></button><p id="guide-status" role="status" aria-live="polite"></p><a href="servicios.html?seccion=mi-viaje" class="guide-trip-link">Ver Mi viaje</a><p class="guide-demo">Experiencias y precios de demostración. Guardar una idea no confirma una reserva ni realiza un cobro.</p></aside></div>
@@ -159,7 +163,7 @@
         ['¿Puedo cambiar o cancelar mi elección?','Puedes volver a esta página y guardar una nueva experiencia para reemplazar la anterior, o quitarla desde Mi viaje. Las condiciones de una reserva real dependerán del proveedor.']
       ].map(([q,a])=>`<details><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></section></details>`;
     const form = $('#guide-form');
-    $('#destination').value = initial.id;
+    $('#destination').value = initial?.id || '';
     for (const name of ['date','people','language','time']) {
       const value = saved?.values?.[name] ?? ({date:trip?.checkIn || trip?.date, people:trip?.travelers})[name];
       if (value == null) continue;
@@ -169,7 +173,7 @@
     }
     let activeFilter = 'all', selected = null, options = [];
     const formattedDate = value => new Intl.DateTimeFormat('es-HN',{day:'numeric',month:'long',year:'numeric'}).format(new Date(value+'T12:00:00'));
-    const destination = () => catalog.find(d => d.id === $('#destination').value) || initial;
+    const destination = () => catalog.find(d => d.id === $('#destination').value);
 
     function showSelection() {
       $('#guide-save').disabled = !selected || !form.checkValidity();
@@ -183,6 +187,17 @@
       const d = destination();
       $('#date').min = today();
       const valid = form.checkValidity();
+      $('.guide-destination').hidden = !d;
+      if (!d) {
+        selected=null; options=[];
+        $('#guide-region').textContent='GUÍAS LOCALES';
+        $('#guide-results-title').textContent='Buscar recorridos';
+        $('#guide-count').textContent='Completa los datos de tu viaje para ver opciones y precios.';
+        $('#guide-category-note').textContent='';
+        $('#guide-results').innerHTML='<div class="service-empty"><h3>Buscar recorridos</h3><p>Completa los datos de tu viaje para ver opciones y precios.</p></div>';
+        root.querySelectorAll('[data-guide-filter]').forEach(b=>{b.disabled=true;b.textContent=b.dataset.guideFilter==='all'?'Todas':styles[b.dataset.guideFilter];});
+        showSelection(); return;
+      }
       $('#guide-region').textContent = `${d.country} · GUÍAS LOCALES`;
       $('#guide-results-title').textContent = `Recorridos en ${d.name}`;
       $('#guide-destination-title').textContent = `Información para visitar ${d.name}`;
@@ -205,7 +220,7 @@
       if ($('#guide-sort').value==='price') options.sort((a,b)=>a.price-b.price);
       if ($('#guide-sort').value==='duration') options.sort((a,b)=>a.hours-b.hours);
       if (!valid || !options.some(o=>o.id===selected?.id)) selected=null;
-      $('#guide-count').textContent = valid ? `${options.length} ${options.length===1?'experiencia':'experiencias'} · Precios por persona` : 'Revisa la fecha y el número de personas para continuar.';
+      $('#guide-count').textContent = valid ? `${options.length} ${options.length===1?'experiencia':'experiencias'} · Precios por persona` : 'Completa los datos de tu viaje para ver opciones y precios.';
       $('#guide-results').innerHTML = options.length ? options.map(o=>`<article class="guide-card" data-selected="${selected?.id===o.id}"><div class="guide-card-image"><img src="${o.image}" alt="${escape(o.alt)}" loading="lazy" width="960" height="640" style="object-position:${o.position||'50% 50%'}"><span>${styles[o.style]}</span>${o.photoContext?'<small class="guide-image-reference">Foto del destino</small>':''}</div><div class="guide-card-content"><p class="guide-card-meta">${escape(d.name)} <span aria-hidden="true">·</span> ${o.hours} horas estimadas</p><h3>${escape(o.title)}</h3><p>${escape(o.description)}</p><details><summary>Ver detalles del paseo</summary><div class="guide-route-details"><h4>Paradas propuestas</h4><ol class="guide-route">${o.stops.map(stop=>`<li>${escape(stop)}</li>`).join('')}</ol>${o.photoContext?`<p class="guide-photo-context">${escape(o.photoContext)}</p>`:''}<p><strong>Incluye:</strong> acompañamiento durante ${o.hours} horas estimadas.</p><p><strong>Por separado:</strong> entradas, comidas y traslados.</p><p>Punto de encuentro, accesibilidad, guía e idioma sujetos a confirmación.</p><p class="guide-photo-credit">Foto: ${escape(o.photoAuthor)} · <a href="${escape(o.photoLicenseUrl)}" target="_blank" rel="noopener noreferrer">${escape(o.photoLicense)}</a>. Adaptada para la web. <a href="${escape(o.photoPage)}" target="_blank" rel="noopener noreferrer">Ver original ↗</a></p></div></details><div class="guide-card-bottom"><div><small>Precio orientativo</small><strong>${money(o.price)} <span>/ persona</span></strong></div><button class="button button-outline" data-guide-choose="${o.id}" aria-label="Elegir: ${escape(o.title)}" aria-pressed="${selected?.id===o.id}" ${valid?'':'disabled'}>${selected?.id===o.id?'Seleccionada ✓':'Elegir experiencia'}</button></div></div></article>`).join('') : '<div class="service-empty"><h3>No hay recorridos en esta categoría.</h3><p>No hay propuestas de este tipo aquí. Explora las demás experiencias o elige otro destino.</p><button id="guide-clear" class="button button-outline">Ver todas las experiencias</button></div>';
       if(!cityOptions.length){
         $('#guide-category-note').textContent='Estamos preparando recorridos para este destino.';
@@ -220,14 +235,14 @@
       render();
     }
     form.addEventListener('submit',e=>{e.preventDefault();if(form.reportValidity())render();});
-    let previousDestination=initial.id;
+    let previousDestination=initial?.id || '';
     function updatePreferences(){
       if(previousDestination!==$('#destination').value){previousDestination=$('#destination').value;activeFilter='all';selected=null;}
       render();
     }
     form.addEventListener('input',updatePreferences);
     form.addEventListener('change',updatePreferences);
-    form.addEventListener('reset',()=>{setTimeout(()=>{$('#destination').value=initial.id;$('#date').value=today();selected=null;$('#guide-sort').value='recommended';setFilter('all');},0);});
+    form.addEventListener('reset',()=>{setTimeout(()=>{previousDestination='';selected=null;$('#guide-sort').value='recommended';setFilter('all');},0);});
     $('#guide-sort').addEventListener('change',render);
     root.querySelectorAll('[data-guide-filter]').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.guideFilter)));
     $('#guide-results').addEventListener('click',e=>{
@@ -248,7 +263,7 @@
       else { $('#guide-status').textContent='No se pudo guardar. Puedes descargar tu elección.';const b=document.createElement('button');b.className='guide-text-button';b.textContent='Descargar resumen';b.onclick=()=>download(`${selected.title}\n${detail}\n${money(selected.price*Number(values.people))}`);$('#guide-status').append(b); }
     });
     render();
-    if(saved?.values?.destination===initial.id) {
+    if(initial && saved?.values?.destination===initial.id) {
       selected=options.find(o=>o.id===saved.optionId) || null;
       if(selected)render();
       else $('#guide-status').textContent='El recorrido guardado ya no está en este catálogo. Elige uno de los recorridos actuales para reemplazarlo.';

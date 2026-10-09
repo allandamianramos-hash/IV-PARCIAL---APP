@@ -488,19 +488,22 @@ body.booking-page main .service-tile {padding-bottom:24px;}
 }
 
 /* Complete destination photographs and readable catalog information. */
-body.rv-page .rv-card-photo {display:flex;align-items:center;justify-content:center;height:auto;aspect-ratio:3/2;background:var(--page);}
+body.rv-page .rv-card-photo {display:flex;align-items:center;justify-content:center;height:auto;aspect-ratio:3/2;background:#151b18;}
 body.rv-page .rv-card-image {display:block;position:relative;flex:none;overflow:hidden;border-radius:16px;}
 body.rv-page .rv-card-photo img {display:block;height:auto;width:100%;max-width:100%;object-fit:contain;transform:none!important;}
 body.rv-page .rv-card-tag {inset:12px auto auto 12px;max-width:calc(100% - 24px);padding:7px 11px;line-height:1.4;overflow-wrap:anywhere;text-align:left;}
-body.rv-page .rv-card-content {padding:24px 0 0;}
+body.rv-page .rv-card-content {padding:24px 14px 12px;}
 body.rv-page .rv-card-content>p {margin-bottom:16px;line-height:1.75;}
 body.rv-page .rv-card-content>.rv-card-country {margin-bottom:8px;}
 body.rv-page .rv-card-footer {flex-wrap:wrap;gap:12px 20px;}
 body.rv-page .rv-card-footer>div {min-width:0;}
 body.rv-page .rv-card-footer a {display:inline-flex;align-items:center;min-height:44px;}
-body.rv-page .rv-destination-card {border:0;background:transparent!important;overflow:visible;}
+body.rv-page .rv-destination-card {min-width:0;padding:12px;border:1px solid #344039;background:#1b211e!important;border-radius:22px;overflow:hidden;}
+body.rv-page .rv-destination-card:nth-child(3n+2) {background:#22211d!important;border-color:#403e34;}
+body.rv-page .rv-destination-card:nth-child(3n) {background:#1c2225!important;border-color:#343f45;}
+body.rv-page .rv-destination-card:focus-within,body.rv-page .rv-destination-card:hover {border-color:#73816c;}
 body.rv-page .rv-card-photo {border-radius:16px;overflow:hidden;}
-body.rv-page .rv-destination-grid {gap:48px 28px;}
+body.rv-page .rv-destination-grid {gap:36px 28px;align-items:stretch;}
 body.rv-page .rv-detail-hero {display:grid;grid-template-columns:minmax(0,1fr);align-items:end;position:relative;isolation:isolate;width:100%;min-width:0;height:auto;min-height:560px;aspect-ratio:16/10;background:var(--page);border-radius:20px;overflow:hidden;margin:24px 0 0;padding:clamp(28px,4vw,56px);}
 body.rv-page .rv-detail-hero::after {content:none;background:none;}
 body.rv-page .rv-detail-hero>img {position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;object-fit:cover;object-position:center;filter:brightness(.6);}

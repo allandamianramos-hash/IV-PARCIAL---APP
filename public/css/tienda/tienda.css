@@ -2204,6 +2204,41 @@ svg.cart-item-image{width:76px;height:91px;background:#eef3f3;flex-shrink:0}
 
 .product-image-note{font-size:10px;color:#52636c;line-height:1.4;margin:0 0 8px;font-weight:400}
 
+/* A quiet catalog: the photograph and name carry the hierarchy. */
+body.rumbo-store .products-grid {gap:44px 28px;}
+body.rumbo-store .product-card {border:0!important;background:transparent!important;border-radius:0;box-shadow:none!important;}
+body.rumbo-store .product-card:hover {transform:none;}
+body.rumbo-store .product-image-container {aspect-ratio:1;height:auto!important;border-radius:14px;overflow:hidden;background:#fff!important;}
+body.rumbo-store .image-detail-button {display:block;width:100%;height:100%;background:transparent;}
+body.rumbo-store .products-grid .product-image {width:100%;height:100%!important;object-fit:contain!important;transform:none!important;background:transparent!important;}
+body.rumbo-store .products-grid .product-image {padding:24px;}
+body.rumbo-store .products-grid .product-info {padding:18px 0 0!important;gap:0;}
+body.rumbo-store .product-category {display:inline-flex;align-self:flex-start;width:fit-content;max-width:100%;padding:4px 9px;margin:0 0 12px;border:0!important;border-radius:6px;background:#302d36!important;color:#ddd0e5!important;font-size:10px;line-height:1.4;font-weight:500;letter-spacing:.055em;}
+body.rumbo-store .product-title {font-size:17px;line-height:1.4;margin-bottom:16px;}
+body.rumbo-store .product-description {display:none;}
+body.rumbo-store .products-grid .product-bottom {border:0;padding-top:6px;}
+body.rumbo-store .product-card .favorite-button {background:#fffdf9ed!important;color:#3f4445!important;border:0!important;box-shadow:none;}
+body.rumbo-store .product-card .favorite-button[aria-pressed=true] {background:#eadfe8!important;color:#734e72!important;}
+body.rumbo-store .variant-stage {border:0;border-radius:14px;background:#fff!important;}
+body.rumbo-store .variant-image {position:relative;display:block;overflow:hidden;background:#fff;}
+body.rumbo-store .variant-stage .variant-image {height:auto!important;aspect-ratio:1;}
+body.rumbo-store .variant-image canvas,body.rumbo-store .variant-fallback {display:block;width:100%;height:100%;object-fit:contain;}
+body.rumbo-store .variant-caption {margin:16px 0 0;font-size:13px;font-weight:400;line-height:1.5;color:var(--secondary);}
+body.rumbo-store .variant-original {margin:4px auto 0;padding:8px 0;border:0!important;background:transparent!important;font-weight:400;font-size:12px;text-decoration:underline;text-underline-offset:4px;color:var(--secondary)!important;}
+body.rumbo-store .detail-options {padding:0;margin:26px 0;border:0;background:transparent;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+body.rumbo-store .detail-options h3 {grid-column:1/-1;margin:0;font-size:14px;font-weight:500;}
+body.rumbo-store .product-option {min-width:0;margin:0;}
+body.rumbo-store .product-option select {width:100%;min-height:44px;}
+body.rumbo-store .cart-item-image.variant-image {width:76px;height:91px;flex-shrink:0;border-radius:8px;}
+body.rumbo-store .variant-image[data-ready="error"] .variant-fallback {display:block;}
+@media(max-width:700px){
+ body.rumbo-store .products-grid {gap:32px 16px;}
+ body.rumbo-store .product-title {font-size:16px;}
+ body.rumbo-store .products-grid .product-image {padding:16px;}
+ body.rumbo-store .cart-item-image.variant-image {width:64px;height:76px;}
+}
+@media(max-width:380px){body.rumbo-store .detail-options {grid-template-columns:1fr;}}
+
 /* Store navigation and checkout are independent of the travel planner. */
 body.rumbo-store .store-utilities {position:relative;top:auto;display:flex;justify-content:space-between;gap:24px;margin:0 0 32px;padding:0 0 24px;border-bottom:1px solid var(--line);background:var(--page);z-index:2;}
 body.rumbo-store .store-actions {display:flex;align-items:center;gap:16px;}

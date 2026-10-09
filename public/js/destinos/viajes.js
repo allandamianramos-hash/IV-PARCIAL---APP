@@ -3200,10 +3200,12 @@
   // Se guarda una selección independiente; no se utiliza el carrito de la tienda.
   let stored = {};
   try { stored = JSON.parse((window.RumboStorage || localStorage).getItem(STORAGE_KEY) || '{}') || {}; } catch (_) { stored = {}; }
+  // Las visitas antiguas guardaban valores de ejemplo aun sin buscar ni elegir nada.
+  if (!stored.flightId && !stored.hotelId && stored.searchConfigured !== true) stored = {};
   const fields = { destinationId: 'destino', origin: 'origen', date: 'salida', checkIn: 'entrada', travelers: 'viajeros', nights: 'noches', cabin: 'clase', rooms: 'habitaciones', flightId: 'vuelo', hotelId: 'hotel', roomType: 'tipoHabitacion' };
   let state = {
-    destinationId: 'roatan', origin: 'Tegucigalpa', date: addDays(today(), 14), checkIn: '',
-    travelers: 1, nights: 3, cabin: 'economica', rooms: 1, flightId: '', hotelId: '', roomType: 'estandar'
+    destinationId: '', origin: '', date: '', checkIn: '',
+    travelers: '', nights: '', cabin: '', rooms: '', flightId: '', hotelId: '', roomType: 'estandar'
   };
   for (const key of Object.keys(fields)) {
     if (stored[key] !== undefined) state[key] = stored[key];
@@ -3213,45 +3215,44 @@
   if (params.has('destino') && params.get('destino') !== stored.destinationId) {
     if (!params.has('vuelo')) state.flightId = '';
     if (!params.has('hotel')) state.hotelId = '';
-    if (!params.has('noches')) state.nights = destinationById(params.get('destino'))?.nights || 3;
   }
-  const invalidDestination = params.has('destino') && !destinationById(params.get('destino'));
+  const invalidDestination = Boolean(params.get('destino')) && !destinationById(params.get('destino'));
   // Al volver con las flechas del navegador, recupera la elección más reciente.
   if (performance.getEntriesByType('navigation')[0]?.type === 'back_forward' && stored.destinationId === state.destinationId) {
     for (const key of Object.keys(fields)) if (stored[key] !== undefined) state[key] = stored[key];
   }
 
   function currentDestination() { return destinationById(state.destinationId); }
-  function currentFlight() { return flights(currentDestination(), state.origin, state.travelers).find(flight => flight.id === state.flightId); }
-  function currentHotel() { return currentDestination().hotels.find(hotel => hotel.id === state.hotelId); }
+  function currentFlight() { return currentDestination() && state.origin && state.travelers && state.cabin && validDate(state.date) ? flights(currentDestination(), state.origin, state.travelers).find(flight => flight.id === state.flightId) : undefined; }
+  function currentHotel() { return state.nights && state.rooms && state.travelers && validDate(state.checkIn) ? currentDestination()?.hotels.find(hotel => hotel.id === state.hotelId) : undefined; }
   function rate(hotel, roomType = state.roomType) { return Math.round(hotel.rate * rooms[roomType].factor); }
   function flightRate(flight) { return state.cabin === 'ejecutiva' ? flight.executive : flight.economy; }
   function earliestCheckIn() {
     const flight = currentFlight();
-    return flight ? addDays(state.date, arrival(flight).days) : state.date;
+    return flight ? addDays(state.date, arrival(flight).days) : state.date || today();
   }
   function cleanState() {
-    if (!destinationById(state.destinationId)) state.destinationId = 'roatan';
-    if (!origins.includes(state.origin)) state.origin = origins[0];
-    state.travelers = integer(state.travelers, 1, 12, 1);
-    state.nights = integer(state.nights, 1, 30, currentDestination().nights);
-    state.rooms = integer(state.rooms, 1, 6, 1);
-    if (!['economica', 'ejecutiva'].includes(state.cabin)) state.cabin = 'economica';
+    if (!destinationById(state.destinationId)) state.destinationId = '';
+    if (!origins.includes(state.origin)) state.origin = '';
+    state.travelers = integer(state.travelers, 1, 12, '');
+    state.nights = integer(state.nights, 1, 30, '');
+    state.rooms = integer(state.rooms, 1, 6, '');
+    if (!['economica', 'ejecutiva'].includes(state.cabin)) state.cabin = '';
     if (!Object.hasOwn(rooms, state.roomType)) state.roomType = 'estandar';
     if (!validDate(state.date) || state.date < today()) {
-      state.date = addDays(today(), 14);
-      state.flightId = ''; state.hotelId = ''; state.checkIn = '';
+      state.date = '';
+      state.flightId = '';
     }
     if (!currentFlight()) state.flightId = '';
     if (!currentHotel() || rooms[state.roomType].capacity * state.rooms < state.travelers) state.hotelId = '';
     const earliest = earliestCheckIn();
-    if (!validDate(state.checkIn) || state.checkIn < earliest) state.checkIn = earliest;
+    if (!validDate(state.checkIn) || state.checkIn < earliest) { state.checkIn = ''; state.hotelId = ''; }
   }
   cleanState();
 
   function contextFor(destination) {
     return destination.id === state.destinationId ? {} : {
-      destinationId: destination.id, nights: destination.nights,
+      destinationId: destination.id,
       flightId: '', hotelId: '', roomType: 'estandar', checkIn: state.date
     };
   }
@@ -3276,7 +3277,8 @@
   }
   function persist(updateURL = true) {
     cleanState();
-    try { (window.RumboStorage || localStorage).setItem(STORAGE_KEY, JSON.stringify(state)); } catch (_) { storageAvailable = false; }
+    const savedState = Object.fromEntries(Object.entries(state).filter(([key,value]) => !['travelers','nights','rooms'].includes(key) || value !== ''));
+    try { (window.RumboStorage || localStorage).setItem(STORAGE_KEY, JSON.stringify({...savedState, searchConfigured: true})); } catch (_) { storageAvailable = false; }
     updateNavigation();
     if (updateURL && page !== 'destinos') {
       try { history.replaceState(null, '', link(`${page}${location.hash}`)); } catch (_) { /* file:// puede limitar History. */ }
@@ -3296,7 +3298,7 @@
     element.textContent = message; element.hidden = false;
     clearTimeout(toastTimer); toastTimer = setTimeout(() => { element.hidden = true; }, 3500);
   }
-  function destinationOptions() { return destinations.map(item => `<option value="${item.id}">${item.name} · ${item.airport.code}</option>`).join(''); }
+  function destinationOptions() { return '<option value="" disabled>Seleccionar</option>' + destinations.map(item => `<option value="${item.id}">${item.name} · ${item.airport.code}</option>`).join(''); }
   function notFound() {
     $('#contenido').innerHTML = '<section class="rv-empty" style="margin-top:32px"><h1>Ese destino no está en el catálogo.</h1><p>Elige una de las opciones disponibles para continuar.</p><a class="button button-primary" href="viajes.html?pantalla=destinos">Explorar destinos ↗</a></section>';
   }
@@ -3385,7 +3387,7 @@
     const element = $('#resumen-viaje');
     const destination = currentDestination();
     const parts = summaryParts();
-    element.innerHTML = `<h2>Tu selección</h2><div class="rv-summary-destination"><img src="${destination.image}" alt="" width="59" height="62"><div><strong>${destination.name}</strong><small>${destination.country}</small></div></div>
+    element.innerHTML = `<h2>Tu selección</h2>${destination ? `<div class="rv-summary-destination"><img src="${destination.image}" alt="" width="59" height="62"><div><strong>${destination.name}</strong><small>${destination.country}</small></div></div>` : '<p>Indica un destino o consulta las opciones disponibles.</p>'}
       <div class="rv-summary-part"><h3>Vuelo ${mode === 'hoteles' ? `<a href="${escapeHTML(link('vuelos'))}">${parts.flight ? 'Cambiar' : 'Elegir'}</a>` : ''}</h3>${parts.flightHTML}</div>
       <div class="rv-summary-part"><h3>Hospedaje</h3>${parts.hotelHTML}</div>
       <div class="rv-summary-total"><span>Subtotal elegido</span><strong id="summary-total" data-amount="${parts.total}" aria-live="polite">${money(parts.total)}</strong></div>
@@ -3404,7 +3406,10 @@
 
   // Desactiva selecciones antiguas cuando hay datos editados sin aplicar.
   function bindSearchForm(form, apply, noticeSelector, mode) {
+    const signature = () => JSON.stringify([...new FormData(form)]);
+    let applied = signature();
     function markDirty() {
+      if (signature() === applied && form.dataset.dirty !== 'true') return;
       document.querySelectorAll('[data-select-flight], [data-select-hotel]').forEach(button => { button.disabled = true; });
       const next = mode === 'vuelos' ? $('#continue-hotel') : $('#save-selection');
       if (next) next.disabled = true;
@@ -3413,14 +3418,17 @@
     }
     form.addEventListener('input', markDirty);
     form.addEventListener('change', () => {
+      if (signature() === applied && form.dataset.dirty !== 'true') return;
       markDirty();
       if (form.checkValidity()) form.requestSubmit();
     });
     form.addEventListener('submit', event => {
       event.preventDefault();
       if (!form.reportValidity()) return;
+      if (signature() === applied && form.dataset.dirty !== 'true') return;
       form.dataset.dirty = 'false';
       apply();
+      applied = signature();
     });
   }
 
@@ -3428,7 +3436,7 @@
   function initFlights() {
     const form = $('#flight-search');
     $('#flight-destination').innerHTML = destinationOptions();
-    $('#flight-origin').innerHTML = origins.map(item => `<option>${item}</option>`).join('');
+    $('#flight-origin').innerHTML = '<option value="" disabled>Seleccionar</option>' + origins.map(item => `<option>${item}</option>`).join('');
     function fillForm() {
       $('#flight-destination').value = state.destinationId;
       $('#flight-origin').value = state.origin;
@@ -3439,6 +3447,15 @@
     }
     function render() {
       const destination = currentDestination();
+      if (!destination || !state.origin || !state.date || !state.travelers || !state.cabin) {
+        $('#flight-result-title').textContent = 'Buscar vuelos';
+        $('#flight-results-meta').textContent = 'Completa los datos de tu viaje para ver opciones y precios.';
+        $('#flight-form-notice').textContent = 'Completa los datos de tu viaje para ver opciones y precios.';
+        $('#flight-transfer').hidden = true;
+        $('#flight-list').innerHTML = '<div class="rv-empty"><h3>Buscar vuelos</h3><p>Completa los datos de tu viaje para ver opciones y precios.</p></div>';
+        renderSummary('vuelos', render);
+        return;
+      }
       const options = flights(destination, state.origin, state.travelers);
       if ($('#flight-sort').value === 'price-low') options.sort((a, b) => flightRate(a) - flightRate(b));
       if ($('#flight-sort').value === 'time') options.sort((a, b) => a.departure.localeCompare(b.departure));
@@ -3467,7 +3484,7 @@
       updateTrip({
         destinationId: newId, origin: $('#flight-origin').value, date: $('#flight-date').value,
         travelers: Number($('#flight-travelers').value), cabin: $('#flight-cabin').value,
-        ...(changingDestination ? { nights: destinationById(newId).nights, checkIn: $('#flight-date').value } : {})
+        ...(changingDestination ? { checkIn: $('#flight-date').value } : {})
       });
       fillForm(); render();
     }, '#flight-form-notice', 'vuelos');
@@ -3479,6 +3496,8 @@
       const button = event.target.closest('[data-select-flight]');
       if (!button || button.disabled || form.dataset.dirty === 'true') return;
       state.flightId = button.dataset.selectFlight;
+      const earliest = earliestCheckIn();
+      if (!state.checkIn || state.checkIn < earliest) state.checkIn = earliest;
       persist(); render();
       $(`[data-select-flight="${state.flightId}"]`)?.focus({ preventScroll: true });
       toast('Vuelo guardado. Continúa con el hospedaje.');
@@ -3504,6 +3523,15 @@
     }
     function render() {
       const destination = currentDestination();
+      if (!destination || !state.checkIn || !state.nights || !state.travelers || !state.rooms) {
+        $('#hotel-result-title').textContent = 'Buscar hoteles';
+        $('#hotel-results-meta').textContent = 'Completa los datos de tu viaje para ver opciones y precios.';
+        $('#hotel-form-notice').textContent = 'Completa los datos de tu viaje para ver opciones y precios.';
+        $('#hotel-empty').hidden = true;
+        $('#hotel-list').innerHTML = '<div class="rv-empty"><h3>Buscar hoteles</h3><p>Completa los datos de tu viaje para ver opciones y precios.</p></div>';
+        renderSummary('hoteles', render);
+        return;
+      }
       const stars = $('#hotel-stars').value;
       const maxInput = $('#hotel-max-price').value;
       const max = maxInput === '' ? Infinity : Math.max(0, Number(maxInput));
@@ -3545,6 +3573,7 @@
       const changingDestination = newId !== state.destinationId;
       updateTrip({
         destinationId: newId, checkIn: $('#hotel-date').value,
+        ...(!state.date ? {date: $('#hotel-date').value} : {}),
         nights: Number($('#hotel-nights').value), rooms: Number($('#hotel-rooms').value), travelers: Number($('#hotel-travelers').value)
       });
       if (changingDestination) { for (const key of Object.keys(draftRoomTypes)) delete draftRoomTypes[key]; filters.reset(); }
@@ -3583,8 +3612,8 @@
   const activeNav = page === 'detalle-destino' ? 'destinos' : page;
   document.querySelector(`[data-nav="${activeNav}"]`)?.setAttribute('aria-current', 'page');
   document.querySelector(`[data-step="${page}"]`)?.setAttribute('aria-current', 'step');
-  if (invalidDestination && page !== 'destinos') { notFound(); return; }
-  persist(false);
+  if ((invalidDestination && page !== 'destinos') || (page === 'detalle-destino' && !currentDestination())) { notFound(); return; }
+  updateNavigation();
   if (page === 'destinos') initDestinations();
   if (page === 'detalle-destino') initDetail();
   if (page === 'vuelos') initFlights();

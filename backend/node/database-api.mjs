@@ -1,6 +1,7 @@
 import { randomBytes, createHash } from 'node:crypto';
 import { getDb, dbEnabled } from './db.mjs';
 import { sessionUser, publicUser, appendCookie } from './auth-api.mjs';
+import { applyStoreCatalog } from './store-catalog.mjs';
 
 export const stateKeys = ['rumbo.store.cart.v2','rumbo.store.favorites.v2','rumbo.integrante2.viaje.v1','rumbo.services.v1','rumbo.profile.v1','rumbo.checkout.v1','rumbo.no-flight.v1','rumbo.departureChecklist.v1'];
 const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
@@ -21,6 +22,7 @@ export function validState(key,v) {
     case 'rumbo.integrante2.viaje.v1': {
       const ranges={travelers:[1,12],nights:[1,30],rooms:[1,6]};
       return object(v)&&Object.entries(v).every(([k,x])=>{
+        if(k==='searchConfigured')return typeof x==='boolean';
         if(['destinationId','origin','date','checkIn','cabin','flightId','hotelId','roomType'].includes(k))return text(x,100);
         return Object.hasOwn(ranges,k)&&integer(x,...ranges[k]);
       });
@@ -49,7 +51,7 @@ export async function loadCatalog(){
   const [products,destinations,hotels,settings]=r.recordsets;
   if(!products.length||!destinations.length)throw Error('DB_NOT_SEEDED');
   const config=Object.fromEntries(settings.map(s=>[s.Name,JSON.parse(s.DataJson)]));
-  return {...config,products:products.map(p=>({...JSON.parse(p.DataJson),id:p.Id,name:p.Name,price:p.Price})),productOptions:Object.fromEntries(products.map(p=>[p.Id,JSON.parse(p.OptionsJson)])),priceAdjustments:Object.fromEntries(products.map(p=>[p.Id,JSON.parse(p.AdjustmentsJson)])),destinations:destinations.map(d=>({...JSON.parse(d.DataJson),id:d.Id,name:d.Name,economy:d.Economy,hotels:hotels.filter(h=>h.DestinationId===d.Id).map(h=>({...JSON.parse(h.DataJson),id:h.Id,name:h.Name,rate:h.Rate}))}))};
+  return applyStoreCatalog({...config,products:products.map(p=>({...JSON.parse(p.DataJson),id:p.Id,name:p.Name,price:p.Price})),productOptions:Object.fromEntries(products.map(p=>[p.Id,JSON.parse(p.OptionsJson)])),priceAdjustments:Object.fromEntries(products.map(p=>[p.Id,JSON.parse(p.AdjustmentsJson)])),destinations:destinations.map(d=>({...JSON.parse(d.DataJson),id:d.Id,name:d.Name,economy:d.Economy,hotels:hotels.filter(h=>h.DestinationId===d.Id).map(h=>({...JSON.parse(h.DataJson),id:h.Id,name:h.Name,rate:h.Rate}))}))});
 }
 async function readState(id){
   const {pool,sql}=await getDb();

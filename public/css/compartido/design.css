@@ -43,9 +43,10 @@ body .carousel-toolbar{margin-bottom:24px;justify-content:space-between}
 body .carousel-controls[hidden]{display:none}
 body #surprise-destination{background:none;border:0;color:var(--verde)}
 body #servicios{background:transparent;border-radius:0}
-body #servicios .booking-grid{display:block;border-top:1px solid var(--border)}
-body #servicios .booking-card{display:grid;grid-template-columns:48px minmax(180px,1fr) minmax(200px,1.5fr) auto;align-items:center;gap:24px;padding:32px 0;min-height:0;border:0;border-bottom:1px solid var(--border);border-radius:0;background:transparent;box-shadow:none;transform:none}
+body #servicios .booking-grid{display:block;border:0}
+body #servicios .booking-card{display:grid;grid-template-columns:48px minmax(180px,1fr) minmax(200px,1.5fr) auto;align-items:center;gap:24px;padding:32px 0;min-height:0;border:0;border-radius:0;background:transparent;box-shadow:none;transform:none}
 body #servicios .booking-card::before,body #servicios .booking-card::after{display:none}
+body #servicios .booking-card+.booking-card{border-top:1px solid var(--line)}
 body #servicios .journey-card-number{font-size:14px;color:var(--verde);margin:0;letter-spacing:0}
 body #servicios h3{font-size:24px;margin:0;line-height:1.2}
 body #servicios .booking-card>p:not(.journey-card-number){font-size:16px;margin:0;color:var(--tinta)}

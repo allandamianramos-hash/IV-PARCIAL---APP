@@ -11,7 +11,7 @@
       .toLowerCase()
       .trim();
 
-    const money = value => `L ${new Intl.NumberFormat("es-HN", {
+    const money = value => `L ${new Intl.NumberFormat("en-US", {
       maximumFractionDigits: 0
     }).format(value)}`;
 

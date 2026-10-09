@@ -27,7 +27,7 @@
     const catalog = window.RumboViajesDatos.destinations.map((trip,index) => ({
       id:trip.id, name:trip.name, country:trip.country, style:trip.type,
       price:trip.inspirationBudget, originalPrice:trip.originalInspirationBudget, promotion:trip.promotion, duration:`${trip.nights+1} días / ${trip.nights} noches`,
-      code:`RMB-${String(index+1).padStart(2,'0')}`, image:trip.image, alt:trip.alt, description:trip.intro
+      code:`RMB-${String(index+1).padStart(2,'0')}`, image:trip.image, thumbnail:trip.thumbnail, mediumImage:trip.mediumImage, imageWidth:trip.imageWidth, imageHeight:trip.imageHeight, alt:trip.alt, description:trip.intro
     }));
 
     /* DESTINOS Y CARRUSEL */
@@ -53,7 +53,7 @@
         // Solo se interpola el catálogo fijo, nunca mensajes del usuario.
         card.innerHTML = `
           <a class="destination-link" href="viajes.html?pantalla=detalle-destino&destino=${encodeURIComponent(trip.id)}">
-            <div class="destination-image"><img src="${trip.image.startsWith('imagenes-') ? trip.image : 'https://images.unsplash.com/'+trip.image+'?auto=format&fit=crop&w=800&q=85'}" alt="${trip.alt}" width="800" height="600" loading="lazy"></div>
+            <div class="destination-image"><img src="${trip.thumbnail || (trip.image.startsWith('imagenes-') ? trip.image : 'https://images.unsplash.com/'+trip.image+'?auto=format&fit=crop&w=800&q=85')}" ${trip.thumbnail ? `srcset="${trip.thumbnail} 720w, ${trip.mediumImage} 1280w, ${trip.image} ${trip.imageWidth}w" sizes="(max-width:600px) 82vw, (max-width:900px) 45vw, 380px"` : ''} alt="${trip.alt}" width="800" height="600" loading="lazy"></div>
             <div class="destination-body"><span class="destination-country">${trip.country} · ${trip.duration}</span><h3>${trip.name}<span aria-hidden="true">↗</span></h3><p>Desde ${money(trip.price)} por persona</p></div>
           </a>`;
 

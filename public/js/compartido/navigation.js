@@ -5,22 +5,6 @@
   const currentSection=new URLSearchParams(location.search).get('seccion')||'servicios';
   const travelView=document.body.dataset.page;
   if(['vuelos','hoteles'].includes(travelView)||currentFile==='tienda.html'||(currentFile==='servicios.html'&&['servicios','traslados','seguros','guias','mi-viaje'].includes(currentSection)))document.body.classList.add('booking-page');
-  // Use a real internal link: it works on direct entry and lets the shared save
-  // handler finish pending changes before leaving the current page.
-  let backTarget,backLabel,backContainer;
-  if(travelView==='detalle-destino'){backTarget='viajes.html?pantalla=destinos';backLabel='Volver a destinos';backContainer=document.querySelector('.rv-breadcrumb');}
-  else if(travelView==='destinos'){backTarget='index.html';backLabel='Volver al inicio';backContainer=document.querySelector('main');}
-  else if(document.querySelector('.auth-card')){backTarget='index.html';backLabel='Volver';backContainer=document.querySelector('.auth-card');}
-  else if(currentFile==='servicios.html'&&!['servicios','traslados','seguros','guias','mi-viaje'].includes(currentSection)){backTarget='servicios.html';backLabel='Volver';backContainer=document.querySelector('.service-breadcrumb');}
-  if(backContainer){
-    try{const previous=new URL(document.referrer);const previousFile=previous.pathname.split('/').pop();
-      const allowed=travelView==='detalle-destino'?previousFile==='viajes.html'&&previous.searchParams.get('pantalla')==='destinos':['index.html','viajes.html','servicios.html','tienda.html'].includes(previousFile);
-      if(previous.origin===location.origin&&allowed&&previous.href!==location.href){backTarget=previous.href;if(travelView!=='detalle-destino')backLabel='Volver';}
-    }catch{}
-    const back=document.createElement('a');back.className='page-back';back.href=backTarget;
-    back.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14"/></svg><span>'+backLabel+'</span>';
-    if(backContainer.matches('.rv-breadcrumb,.service-breadcrumb'))backContainer.replaceChildren(back);else backContainer.prepend(back);
-  }
   // Una cabecera consistente: los accesos principales llevan a las secciones del inicio.
   const revealCurrentStep=()=>requestAnimationFrame(()=>{
     const list=document.querySelector('.booking-page .journey-progress ol'),active=list?.querySelector('[aria-current]');
@@ -30,11 +14,82 @@
   });
   window.addEventListener('pageshow',revealCurrentStep);
   window.addEventListener('rumbo:localechange',revealCurrentStep);
+  // Keep the actual selection controls in one place. On small screens the
+  // same summary opens in a modal; no cloned controls or second booking state.
+  const main=document.querySelector('main');
+  if(document.body.classList.contains('booking-page')&&main){
+    const mobile=matchMedia('(max-width:850px)');
+    const summarySelector='.rv-trip-summary,.service-summary,.guide-summary,.journey-checkout';
+    let panel,summary,anchor,dock,queued=false;
+    const setText=(node,value)=>{if(node.textContent!==value)node.textContent=value;};
+    const closePanel=()=>{if(panel?.open)panel.close();};
+    const restore=()=>{
+      closePanel();
+      if(summary?.isConnected&&anchor?.isConnected)anchor.replaceWith(summary);
+      panel?.remove();dock?.remove();
+      panel=summary=anchor=dock=null;
+      document.body.classList.remove('has-mobile-selection','selection-open');
+    };
+    const refresh=()=>{
+      queued=false;
+      if(!mobile.matches){restore();return;}
+      if(summary&&!summary.isConnected)restore();
+      const next=main.querySelector(summarySelector);
+      if(!next)return;
+      if(!panel){
+        summary=next;
+        anchor=document.createComment('Desktop selection position');
+        summary.before(anchor);
+        panel=document.createElement('dialog');
+        panel.id='mobile-selection-panel';panel.className='mobile-selection-panel';
+        panel.setAttribute('aria-labelledby','mobile-selection-title');
+        panel.innerHTML='<header class="mobile-selection-header"><h2 id="mobile-selection-title">Tu selección</h2><button type="button" class="mobile-selection-close" aria-label="Cerrar resumen" autofocus>×</button></header>';
+        anchor.after(panel);panel.append(summary);
+        dock=document.createElement('button');
+        dock.type='button';dock.className='mobile-selection-dock';
+        dock.setAttribute('aria-haspopup','dialog');dock.setAttribute('aria-controls',panel.id);dock.setAttribute('aria-expanded','false');
+        dock.innerHTML='<span class="mobile-selection-copy"><span>Tu selección</span><strong class="mobile-selection-amount" translate="no" aria-live="polite" aria-atomic="true"></strong></span><span class="mobile-selection-action">Revisar el resumen <span aria-hidden="true">↑</span></span>';
+        main.append(dock);
+        dock.addEventListener('click',()=>{
+          document.querySelector('.site-mobile-menu')?.removeAttribute('open');
+          panel.showModal();panel.scrollTop=0;
+          dock.setAttribute('aria-expanded','true');document.body.classList.add('selection-open');
+        });
+        panel.querySelector('.mobile-selection-close').addEventListener('click',closePanel);
+        panel.addEventListener('click',event=>{
+          const bounds=panel.getBoundingClientRect();
+          if(event.target===panel&&(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom))closePanel();
+        });
+        panel.addEventListener('close',event=>{
+          if(event.currentTarget!==panel)return;
+          document.body.classList.remove('selection-open');
+          if(dock?.isConnected){dock.setAttribute('aria-expanded','false');if(mobile.matches)dock.focus({preventScroll:true});}
+        });
+        document.body.classList.add('has-mobile-selection');
+      }
+      const total=summary.querySelector('#summary-total,.service-total,.guide-price-breakdown strong')||(summary.matches('.journey-checkout')?summary.querySelector('h2'):null);
+      const amount=total?.textContent.trim()||'—';
+      setText(dock.querySelector('.mobile-selection-amount'),amount);
+    };
+    const schedule=()=>{if(!queued){queued=true;requestAnimationFrame(refresh);}};
+    new MutationObserver(records=>{
+      if(records.some(record=>!(record.target.nodeType===1?record.target:record.target.parentElement)?.closest('.mobile-selection-dock,.mobile-selection-header')))schedule();
+    }).observe(main,{childList:true,subtree:true,characterData:true});
+    mobile.addEventListener('change',schedule);
+    window.addEventListener('rumbo:localechange',schedule);
+    // Experience cards link to their summary; open it without losing scroll.
+    main.addEventListener('click',event=>{
+      if(mobile.matches&&panel&&event.target.closest('a[href="#guide-summary-title"]')){
+        event.preventDefault();dock.click();
+      }
+    });
+    schedule();
+  }
   const mainNav=document.querySelector('.main-nav');
   if(mainNav){
     const page=location.pathname.split('/').pop()||'index.html';
-    const inServices=['servicios.html','tienda.html'].includes(page)||['vuelos','hoteles'].includes(document.body.dataset.page);
-    mainNav.innerHTML=[['index.html','Inicio'],['viajes.html?pantalla=destinos','Destinos'],['servicios.html','Servicios']].map(([url,label])=>`<a href="${url}" ${(url==='servicios.html'?inServices:url.split('?')[0]===page&&!inServices)?'aria-current="page"':''}>${label}</a>`).join('');
+    const inServices=page==='servicios.html'||['vuelos','hoteles'].includes(document.body.dataset.page);
+    mainNav.innerHTML=[['index.html','Inicio'],['viajes.html?pantalla=destinos','Destinos'],['servicios.html','Servicios'],['tienda.html','Tienda']].map(([url,label])=>`<a href="${url}" ${(url==='servicios.html'?inServices:url.split('?')[0]===page&&!inServices)?'aria-current="page"':''}>${label}</a>`).join('');
   }
   const header=document.querySelector('.header-inner');
   if(header&&!header.querySelector('a[href="servicios.html?seccion=mi-viaje"]')){const trip=document.createElement('a');trip.className='button button-outline';trip.href='servicios.html?seccion=mi-viaje';trip.textContent='Mi viaje ↗';header.append(trip);}

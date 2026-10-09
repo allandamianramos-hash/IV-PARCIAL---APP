@@ -23,7 +23,7 @@
     <nav class="rumbo-footer-column" aria-label="Explorar Rumbo"><h2>Explorá</h2><a href="viajes.html?pantalla=destinos">Destinos</a><a href="servicios.html">Servicios</a><a href="servicios.html?seccion=guias">Guías de viaje</a><a href="tienda.html">Tienda de viaje</a><a href="index.html#quienes-somos">Quiénes somos</a><a href="index.html#nuestro-equipo">Nuestro equipo</a></nav>
     <nav class="rumbo-footer-column" aria-label="Ayuda e información"><h2>Te acompañamos</h2><a href="servicios.html?seccion=mi-viaje">Mi viaje</a><a href="servicios.html?seccion=ayuda">Centro de ayuda</a><a href="servicios.html?seccion=cambios">Cambios y cancelaciones</a><button type="button" data-open-help>Consultar a Rumbito <span aria-hidden="true">↗</span></button></nav>
     <div class="rumbo-footer-column rumbo-footer-contact"><h2>Hablemos</h2><p>Estamos a un mensaje de distancia.</p><a class="rumbo-contact-link" href="https://wa.me/50496767669" target="_blank" rel="noopener noreferrer">Escribinos por WhatsApp <span aria-hidden="true">↗</span></a><a href="tel:+50496767669">+504 9676-7669</a><div class="rumbo-footer-team"></div></div>
-  </div><div class="container rumbo-footer-bottom"><p>© <span id="year">${new Date().getFullYear()}</span> Rumbo · Honduras</p><nav aria-label="Información legal"><a href="servicios.html?seccion=privacidad">Privacidad</a><a href="servicios.html?seccion=terminos">Términos y condiciones</a><a href="servicios.html?seccion=legal">Información legal</a></nav><a href="#" class="rumbo-back-top">Volver arriba <span aria-hidden="true">↑</span></a></div>`;
+  </div><div class="container rumbo-footer-bottom"><p>© <span id="year">${new Date().getFullYear()}</span> Rumbo · Honduras</p><nav aria-label="Información legal"><a href="servicios.html?seccion=privacidad">Privacidad</a><a href="servicios.html?seccion=terminos">Términos y condiciones</a><a href="servicios.html?seccion=legal">Información legal</a></nav><a href="#" class="rumbo-back-top">Ir al inicio de la página</a></div>`;
   footer.querySelector('.rumbo-footer-team').append(...contacts);
   if (credits) footer.append(credits);
 })();
@@ -51,10 +51,10 @@
 
   if(document.getElementById('servicios')){
     const grid=document.querySelector('.booking-grid');
-    const order=['flights','stays','transfers','insurance','experiences','shop'];
-    const names=['Vuelo','Hospedaje','Transporte','Seguro','Experiencias','Tienda'];
+    const order=['flights','stays','transfers','insurance','experiences'];
+    const names=['Vuelo','Hospedaje','Transporte','Seguro','Experiencias'];
     const cards=[...grid.children];
-    order.forEach((key,i)=>{const card=cards.find(c=>c.querySelector('[data-module="'+key+'"]')||c.classList.contains(({transfers:'none',insurance:'none',experiences:'none',shop:'shop-card'})[key]||'none')||c.querySelector('a[href="'+({transfers:'servicios.html?seccion=traslados',insurance:'servicios.html?seccion=seguros',experiences:'servicios.html?seccion=guias'})[key]+'"]'));
+    order.forEach((key,i)=>{const card=cards.find(c=>c.querySelector('[data-module="'+key+'"]')||c.classList.contains(({transfers:'none',insurance:'none',experiences:'none'})[key]||'none')||c.querySelector('a[href="'+({transfers:'servicios.html?seccion=traslados',insurance:'servicios.html?seccion=seguros',experiences:'servicios.html?seccion=guias'})[key]+'"]'));
       if(!card)return;grid.append(card);
       // En Inicio, estas tarjetas conservan el diseño con iconos.
       const label=document.createElement('p');label.className='journey-card-number';label.textContent='0'+(i+1);card.prepend(label);

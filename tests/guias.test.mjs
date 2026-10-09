@@ -71,10 +71,9 @@ function page(query = '', stored = {}) {
   };
 }
 
-test('todos los destinos muestran sus propias actividades e imagen', () => {
+test('todos los destinos muestran sus propias actividades y fotografías', () => {
   for (const d of catalog.destinations) {
     const ui=page('&destino='+d.id);
-    assert.equal(ui.node('guide-cover').src,d.id==='roatan'?'imagenes-viajes/guias/guia-roatan-west-bay.jpg':d.image);
     assert.equal(ui.node('guide-results-title').textContent,'Recorridos en '+d.name);
     const html=ui.node('guide-results').innerHTML;
     for(const {title,image} of experiences.filter(e=>e.destination===d.id)) {

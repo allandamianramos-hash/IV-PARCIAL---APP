@@ -185,20 +185,8 @@ body.booking-page main .journey-progress a {display:flex;align-items:center;min-
 body.booking-page main .journey-progress a span {display:none;}
 body.booking-page main .journey-progress a[aria-current] {border-bottom-color:var(--lime)!important;color:var(--foreground)!important;}
 body.booking-page main .journey-progress a:hover {color:var(--lime)!important;}
-body.booking-page main .booking-intro {display:grid;grid-template-columns:minmax(0,1fr) 36%;align-items:center;gap:56px;margin:0;padding:36px 0;background:none;border:0;}
-body.booking-page main .booking-intro h1 {font-size:clamp(36px,4.4vw,60px);font-weight:500;line-height:1.06;letter-spacing:-.045em;margin:0 0 18px;max-width:16ch;}
-body.booking-page main .booking-intro p {font-size:15px;line-height:1.65;color:var(--secondary);max-width:46ch;margin:0;}
-body.booking-page main .booking-intro .booking-kicker {font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:18px;}
-body.booking-page main .booking-intro figure {position:relative;margin:0;min-width:0;height:208px;overflow:hidden;border-radius:16px;background:var(--surface);}
-body.booking-page main .booking-intro img {display:block;width:100%;height:100%;object-fit:cover;}
-body.booking-page main .booking-intro figcaption {position:absolute;inset:auto 12px 12px auto;display:flex;gap:8px;padding:6px 10px;background:var(--nav);border-radius:6px;color:var(--foreground);font-size:11px;}
-body.booking-page main .booking-intro figcaption span {color:var(--secondary);}
-body.booking-page main .booking-hub-intro {grid-template-columns:minmax(0,1fr) 48%;padding:20px 0 48px;gap:56px;}
-body.booking-page main .booking-hub-intro h1 {font-size:clamp(40px,5vw,68px);max-width:11ch;}
-body.booking-page main .booking-hub-intro figure {height:300px;}
 body.booking-page .booking-text-link {display:inline-flex;align-items:center;gap:18px;min-height:44px;color:var(--foreground);font-size:14px;text-decoration:none;}
 body.booking-page .booking-text-link:hover {color:var(--lime);}
-body.booking-page .booking-intro .booking-text-link {margin-top:20px;}
 
 /* The same field treatment and spacing on all five selection screens. */
 body.booking-page main :is(.service-form,.rv-search-panel,.guide-search) {padding:24px;margin:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:none;}
@@ -361,25 +349,14 @@ body.booking-page main .journey-empty h2 {margin-top:0;}
 @media(max-width:850px) {
  body.booking-page main :is(.service-layout,.guide-layout,.rv-flow-layout) {grid-template-columns:minmax(0,1fr);}
  body.booking-page main :is(.service-summary,.guide-summary,.rv-trip-summary) {position:static;max-height:none;overflow:visible;}
- body.booking-page main .booking-intro {gap:32px;grid-template-columns:minmax(0,1fr) 34%;}
- body.booking-page main .booking-intro figure {height:180px;}
- body.booking-page main .booking-hub-intro {grid-template-columns:minmax(0,1fr) 42%;}
- body.booking-page main .booking-hub-intro figure {height:240px;}
  body.booking-page main .service-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
  body.booking-page main :is(.rv-hotel-card,.guide-results .guide-card) {grid-template-columns:220px minmax(0,1fr);}
 }
 @media(max-width:600px) {
  body.booking-page main {width:calc(100% - 32px);padding-top:12px;}
- body.booking-page main .journey-progress ol {gap:24px;}
- body.booking-page main .journey-progress a {font-size:13px;min-height:48px;}
- body.booking-page main .booking-intro {grid-template-columns:minmax(0,1fr);gap:24px;padding:28px 0;}
- body.booking-page main .booking-intro h1 {font-size:40px;margin-bottom:12px;}
- body.booking-page main .booking-intro p {font-size:14px;}
- body.booking-page main .booking-intro .booking-kicker {margin-bottom:12px;font-size:10px;}
- body.booking-page main .booking-intro figure {display:none;}
- body.booking-page main .booking-hub-intro {padding:24px 0 32px;}
- body.booking-page main .booking-hub-intro figure {display:block;height:190px;}
- body.booking-page main .booking-hub-intro h1 {font-size:46px;max-width:12ch;}
+ body.booking-page main .journey-progress ol {gap:12px;padding:4px 2px 12px;justify-content:flex-start;scroll-snap-type:x proximity;}
+ body.booking-page main .journey-progress a {font-size:14px;min-height:48px;padding:12px 18px;border:1px solid var(--line);border-radius:12px;scroll-snap-align:center;}
+ body.booking-page main .journey-progress a[aria-current] {background:var(--tag)!important;border-color:var(--lime)!important;color:var(--on-tag)!important;}
  body.booking-page main :is(.service-form,.rv-search-panel,.guide-form),body.booking-page:has(#route) main .service-form {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
  body.booking-page main :is(.service-form,.rv-search-panel,.guide-search) {padding:18px;}
  body.booking-page main :is(.service-form,.rv-search-panel,.guide-form)>:first-child {grid-column:1/-1;}
@@ -412,3 +389,139 @@ body.booking-page main .journey-empty h2 {margin-top:0;}
  body.booking-page main .service-tile-title span {width:28px;height:28px;flex:0 0 28px;font-size:16px;}
  body.booking-page main .service-tile p {font-size:12px;line-height:1.6;}
 }
+
+/* A reachable selection sheet, with the existing save/continue actions. */
+.mobile-selection-dock,.mobile-selection-panel {display:none;}
+@media(max-width:850px) {
+ body.has-mobile-selection {padding-bottom:calc(104px + env(safe-area-inset-bottom));}
+ body.selection-open {overflow:hidden;}
+ body.booking-page main .mobile-selection-dock {position:fixed;z-index:75;inset:auto 0 0;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:84px;padding:14px max(16px,env(safe-area-inset-right)) calc(14px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));border:0;border-top:1px solid var(--line);border-radius:0;background:var(--nav);color:var(--foreground);text-align:start;box-shadow:0 -8px 30px #0003;cursor:pointer;}
+ .mobile-selection-copy {display:grid;gap:4px;min-width:0;}
+ .mobile-selection-copy>span {font-size:13px;color:var(--secondary);}
+ .mobile-selection-amount {font-size:21px;line-height:1.25;overflow-wrap:anywhere;}
+ .mobile-selection-action {display:flex;align-items:center;gap:10px;max-width:48%;font-size:14px;line-height:1.4;color:var(--lime);}
+ body.booking-page main .mobile-selection-panel {position:fixed;inset:auto 0 0;width:100%;max-width:600px;max-height:85dvh;margin:0 auto;padding:0 0 env(safe-area-inset-bottom);border:1px solid var(--line);border-bottom:0;border-radius:20px 20px 0 0;background:var(--surface);color:var(--foreground);overflow:auto;overscroll-behavior:contain;}
+ body.booking-page main .mobile-selection-panel[open] {display:block;}
+ .mobile-selection-panel::backdrop {background:#0009;}
+ .mobile-selection-header {position:sticky;top:0;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 20px;background:var(--surface);border-bottom:1px solid var(--line);}
+ body.booking-page main .mobile-selection-header h2 {margin:0;font-size:20px;line-height:1.3;}
+ body.booking-page main .mobile-selection-close {flex:0 0 44px;min-width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--field);color:var(--foreground);font-size:28px;cursor:pointer;}
+ body.booking-page main .mobile-selection-panel :is(.service-summary,.guide-summary,.rv-trip-summary,.journey-checkout) {position:static;max-height:none;overflow:visible;margin:0;padding:20px;border:0;border-radius:0;}
+ .mobile-selection-panel :is(.service-summary,.guide-summary,.rv-trip-summary)>h2 {display:none;}
+ body.has-mobile-selection .chat-launcher {bottom:calc(100px + env(safe-area-inset-bottom));}
+ body.has-mobile-selection :is(.toast,.rv-toast) {bottom:calc(100px + env(safe-area-inset-bottom));}
+ body.booking-page main :is(.guide-filters button,.filter-btn,.guide-text-button,.rv-summary-clear,.guide-trip-link) {min-height:44px;}
+ body.booking-page main :is(.rv-summary-clear,.guide-trip-link) {display:flex;align-items:center;width:100%;margin-block:8px;white-space:normal;}
+ body.booking-page main :is(.service-option-bottom,.guide-card-bottom,.rv-flight-bottom,.rv-hotel-price-row)>* {min-width:0;max-width:100%;}
+ body.booking-page main :is(.button,.rv-select-button) {white-space:normal;overflow-wrap:anywhere;text-align:center;}
+ body.booking-page main :is(.rv-flight-name,.rv-time,.guide-card-content,.rv-hotel-content,.guide-summary dd) {min-width:0;overflow-wrap:anywhere;}
+ body.booking-page main .guide-summary dl>div {gap:16px;}
+ body.booking-page main .guide-summary dd {margin-inline-start:0;text-align:end;}
+}
+@media(max-width:480px) {
+ body.booking-page main :is(.service-form,.rv-search-panel,.guide-form),body.booking-page:has(#route) main .service-form {grid-template-columns:minmax(0,1fr);}
+ body.booking-page main .rv-flight-bottom :is(.button,.rv-select-button) {width:100%;}
+ body.booking-page main .rv-hotel-price-row {flex-wrap:wrap;}
+ body.booking-page main .rv-hotel-price-row .button {width:100%;}
+ body.booking-page main .journey-next {margin-inline:0;}
+}
+
+/* Contained photographic covers shared by Destinations and every service. */
+body.rv-page main.container:has(>.section-hero) {width:min(1180px,calc(100% - 64px));margin-inline:auto;padding-top:24px;}
+body main :is(.booking-intro,.rv-discover).section-hero {
+ position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr);align-items:end;
+ min-height:clamp(440px,43vw,560px);gap:0;margin:0 0 64px;padding:48px;
+ border:0;border-radius:20px;overflow:hidden;background:var(--surface);color:#fff;
+}
+body main :is(.booking-intro,.rv-discover).section-hero>div {position:relative;z-index:1;max-width:760px;width:100%;margin:0 auto;text-align:center;}
+body main :is(.booking-intro,.rv-discover).section-hero h1 {max-width:none;margin:0 0 18px;font-size:clamp(44px,5vw,72px);font-weight:400!important;line-height:1.08;letter-spacing:-.045em;color:#fff;text-wrap:balance;text-shadow:0 2px 18px #0006;}
+body main :is(.booking-intro,.rv-discover).section-hero p {max-width:56ch;margin:0 auto;font-size:16px;font-weight:400;line-height:1.7;color:#fff;text-wrap:pretty;text-shadow:0 1px 8px #0009;}
+body main :is(.booking-intro,.rv-discover).section-hero .button {margin-top:26px;min-height:48px;padding:12px 24px;border-radius:999px;font-size:14px;box-shadow:none;text-shadow:none;}
+body main :is(.booking-intro,.rv-discover).section-hero figure {position:absolute;z-index:-1;inset:0;display:block;width:100%;height:100%;min-height:0;margin:0;border-radius:0;background:var(--surface);}
+body main :is(.booking-intro,.rv-discover).section-hero figure::after {content:'';position:absolute;inset:0;background:rgba(0,0,0,.55);pointer-events:none;}
+body main :is(.booking-intro,.rv-discover).section-hero img {display:block;width:100%;height:100%;object-fit:cover;object-position:var(--cover-position,center);}
+body main :is(.booking-intro,.rv-discover).section-hero figcaption {position:absolute;z-index:1;inset:24px 24px auto auto;display:flex;align-items:center;gap:8px;max-width:calc(100% - 48px);padding:7px 12px;border:0;border-radius:999px;background:#101214b3;color:#fff;font-size:11px;line-height:1.5;font-weight:400;letter-spacing:0;}
+body main :is(.booking-intro,.rv-discover).section-hero figcaption span {font-size:inherit;color:inherit;}
+body.booking-page main .booking-navigation {display:flex;align-items:center;gap:36px;min-width:0;margin-bottom:28px;border-bottom:1px solid var(--line);}
+body.booking-page main .booking-navigation>.journey-progress {flex:1;min-width:0;border:0;}
+body.booking-page main .booking-navigation+.section-hero {margin-bottom:64px;}
+body.booking-page .guides-page .section-hero {--cover-position:center 72%;}
+body.booking-page main .booking-hub-intro {--cover-position:center 55%;margin-bottom:72px;}
+body[data-page=vuelos] .section-hero {--cover-position:center 44%;}
+body:has(#store-title) .section-hero {--cover-position:center 52%;}
+body main .section-hero+.rv-catalog {margin-top:0;padding-top:0;border-top:0;}
+body.booking-page main .service-catalog-heading {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px 32px;margin:0 0 32px;padding:0;border:0;}
+body.booking-page main .service-catalog-heading h2 {font-size:28px;line-height:1.3;margin:0;}
+body.booking-page main .service-catalog-heading .booking-text-link {margin:0;font-size:14px;color:var(--secondary);}
+body.booking-page main .service-grid {gap:40px 28px;}
+body.booking-page main .service-tile .service-tile-photo {height:220px;margin-bottom:24px;}
+body.booking-page main .service-tile {padding-bottom:24px;}
+@media(prefers-reduced-motion:no-preference) {
+ .section-hero {animation:section-cover-enter 650ms ease-out both;}
+ .section-hero>figure>img {animation:section-photo-enter 1100ms cubic-bezier(.2,.7,.2,1) both;}
+ .section-hero>div {animation:section-copy-enter 650ms 160ms ease-out both;}
+}
+@keyframes section-cover-enter {from {opacity:0;} to {opacity:1;}}
+@keyframes section-photo-enter {from {transform:scale(1.035);} to {transform:scale(1);}}
+@keyframes section-copy-enter {from {opacity:0;transform:translateY(12px);} to {opacity:1;transform:translateY(0);}}
+@media(max-width:850px) {
+ body.booking-page main .booking-navigation {flex-direction:column;align-items:stretch;gap:4px;}
+ body.rv-page main.container:has(>.section-hero) {width:calc(100% - 48px);}
+ body main :is(.booking-intro,.rv-discover).section-hero {min-height:440px;padding:40px 32px;margin-bottom:48px;}
+ body main :is(.booking-intro,.rv-discover).section-hero h1 {font-size:clamp(40px,6vw,56px);}
+ body.booking-page main .booking-hub-intro {margin-bottom:56px;}
+}
+@media(max-width:600px) {
+ body.rv-page main.container:has(>.section-hero) {width:calc(100% - 32px);padding-top:12px;}
+ body main :is(.booking-intro,.rv-discover).section-hero {min-height:400px;min-height:clamp(360px,60svh,460px);padding:32px 24px;margin-bottom:40px;border-radius:16px;}
+ body main :is(.booking-intro,.rv-discover).section-hero h1 {font-size:clamp(34px,8.5vw,46px);margin-bottom:16px;letter-spacing:-.035em;overflow-wrap:anywhere;}
+ body main :is(.booking-intro,.rv-discover).section-hero p {font-size:14px;line-height:1.65;}
+ body main :is(.booking-intro,.rv-discover).section-hero figcaption {inset:16px 16px auto auto;max-width:calc(100% - 32px);font-size:10px;}
+ body main :is(.booking-intro,.rv-discover).section-hero .button {margin-top:24px;}
+ body.booking-page main .booking-navigation {margin-bottom:24px;}
+ body.booking-page main .booking-navigation+.section-hero {margin-bottom:48px;}
+ body.booking-page main .booking-hub-intro {margin-bottom:48px;}
+ body.booking-page main .service-catalog-heading {gap:12px;margin-bottom:24px;}
+ body.booking-page main .service-catalog-heading h2 {font-size:24px;}
+ body.booking-page main .service-grid {gap:28px;}
+ body.booking-page main .service-tile .service-tile-photo {height:112px;margin-bottom:0;}
+}
+
+/* Complete destination photographs and readable catalog information. */
+body.rv-page .rv-card-photo {display:flex;align-items:center;justify-content:center;height:auto;aspect-ratio:3/2;background:var(--page);}
+body.rv-page .rv-card-image {display:block;position:relative;flex:none;overflow:hidden;border-radius:16px;}
+body.rv-page .rv-card-photo img {display:block;height:auto;width:100%;max-width:100%;object-fit:contain;transform:none!important;}
+body.rv-page .rv-card-tag {inset:12px auto auto 12px;max-width:calc(100% - 24px);padding:7px 11px;line-height:1.4;overflow-wrap:anywhere;text-align:left;}
+body.rv-page .rv-card-content {padding:24px 0 0;}
+body.rv-page .rv-card-content>p {margin-bottom:16px;line-height:1.75;}
+body.rv-page .rv-card-content>.rv-card-country {margin-bottom:8px;}
+body.rv-page .rv-card-footer {flex-wrap:wrap;gap:12px 20px;}
+body.rv-page .rv-card-footer>div {min-width:0;}
+body.rv-page .rv-card-footer a {display:inline-flex;align-items:center;min-height:44px;}
+body.rv-page .rv-destination-card {border:0;background:transparent!important;overflow:visible;}
+body.rv-page .rv-card-photo {border-radius:16px;overflow:hidden;}
+body.rv-page .rv-destination-grid {gap:48px 28px;}
+body.rv-page .rv-detail-hero {display:grid;grid-template-columns:minmax(0,1fr);align-items:end;position:relative;isolation:isolate;width:100%;min-width:0;height:auto;min-height:560px;aspect-ratio:16/10;background:var(--page);border-radius:20px;overflow:hidden;margin:24px 0 0;padding:clamp(28px,4vw,56px);}
+body.rv-page .rv-detail-hero::after {content:none;background:none;}
+body.rv-page .rv-detail-hero>img {position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;object-fit:cover;object-position:center;filter:brightness(.6);}
+body.rv-page .rv-detail-title {position:relative;inset:auto;width:min(100%,560px);padding:0;text-align:left;color:#fff;background:none;border-radius:0;text-shadow:0 1px 3px #0009,0 2px 16px #0006;}
+body.rv-page .rv-detail-title h1 {font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1.12;margin:0 0 14px;letter-spacing:-.035em;}
+body.rv-page .rv-detail-title p {max-width:44ch;margin:0;color:inherit;font-size:15px;line-height:1.7;}
+body.rv-page .rv-detail-body {padding-top:64px;gap:48px;}
+@media(max-width:700px) {
+ body.rv-page .rv-detail-hero {margin-top:16px;min-height:460px;aspect-ratio:4/5;padding:28px 24px;border-radius:16px;}
+ body.rv-page .rv-detail-title h1 {font-size:clamp(30px,7vw,40px);}
+ body.rv-page .rv-detail-title p {font-size:14px;}
+ body.rv-page .rv-detail-body {padding-top:48px;gap:36px;}
+ body.rv-page .rv-card-content {padding-top:20px;}
+ body.rv-page .rv-destination-grid {gap:40px;}
+}
+
+@media(max-width:480px) {
+ body.rv-page .rv-filter-bar {grid-template-columns:minmax(0,1fr);}
+ body.rv-page .rv-filter-bar>* {grid-column:1/-1;}
+}
+
+body.rv-page .rv-credits {margin-top:64px;}
+body.rv-page .rv-credits li {overflow-wrap:anywhere;line-height:1.7;}
+@media(max-width:700px) {body.rv-page .rv-credits {margin-top:48px;}}

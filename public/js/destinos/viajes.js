@@ -3045,6 +3045,53 @@
     for (const key of Object.keys(promotions)) delete promotions[key];
     Object.assign(promotions, catalog.promotions);
   }
+  // Fotografías locales completas, con tamaños adaptados a cada pantalla.
+  const destinationPhotos = {
+    "roatan": ["playa.jpg", 2560, 1704, "Playa de West Bay en Roatán, con palmeras y agua turquesa", "Playas de West Bay y West End, manglares y recorridos por la isla."],
+    "san-jose": ["destino-san-jose-teatro.jpg", 2560, 1920, "Fachada del Teatro Nacional en San José, Costa Rica", "Museos, mercados y parques en el Valle Central de Costa Rica."],
+    "paris": ["destino-paris.jpg", 2560, 1600, "Vista de París; fotografía de Wikimedia Commons", "Museos, cafés y paseos junto al Sena en la capital francesa."],
+    "bali": ["bali.jpg", 2560, 1707, "Templo Ulun Danu Bratan junto al lago en Bali", "Templos de Tanah Lot y Uluwatu, arrozales de Ubud y costa de Sanur."],
+    "venecia": ["destino-venecia.jpg", 2560, 1432, "Vista de Venecia; fotografía de Wikimedia Commons", "Canales, puentes y plazas para descubrir a pie."],
+    "osaka": ["destino-osaka.jpg", 2560, 1706, "Vista de Osaka; fotografía de Wikimedia Commons", "Gastronomía, barrios animados y cultura urbana japonesa."],
+    "nueva-york": ["destino-nueva-york.jpg", 2560, 1703, "Vista de Nueva York; fotografía de Wikimedia Commons", "Central Park, el puente de Brooklyn y los barrios de Manhattan."],
+    "barcelona": ["destino-barcelona.jpg", 2560, 1195, "Vista de Barcelona; fotografía de Wikimedia Commons", "Arquitectura, gastronomía y paseos junto al Mediterráneo."],
+    "roma": ["destino-roma.jpg", 2560, 1701, "Vista de Roma; fotografía de Wikimedia Commons", "Coliseo, plazas de Trastevere y jardines de Villa Borghese."],
+    "ciudad-guatemala": ["destino-ciudad-guatemala.jpg", 2560, 1555, "Vista de Ciudad de Guatemala; fotografía de Wikimedia Commons", "Museos, mercados y barrios para una escapada urbana."],
+    "panama": ["destino-panama.jpg", 2048, 1152, "Vista de Ciudad de Panamá; fotografía de Wikimedia Commons", "Casco Antiguo, Cerro Ancón y Parque Natural Metropolitano."],
+    "cancun": ["destino-cancun.jpg", 2560, 1438, "Vista de Cancún; fotografía de Wikimedia Commons", "Playa Delfines, laguna Nichupté y sitio arqueológico El Rey."],
+    "miami": ["destino-miami.jpg", 2560, 1422, "Vista de Miami; fotografía de Wikimedia Commons", "South Beach, Little Havana y jardines de Vizcaya."],
+    "madrid": ["destino-madrid.jpg", 2560, 1348, "Vista de Madrid; fotografía de Wikimedia Commons", "Parque de El Retiro, Plaza Mayor y mercados del centro."],
+    "londres": ["destino-londres.jpg", 2560, 1259, "Vista de Londres", "Museos, mercados y paseos por las orillas del Támesis."],
+    "lisboa": ["destino-lisboa.jpg", 2560, 1392, "Vista de las colinas y los tejados de Lisboa", "Tranvías, miradores y barrios para recorrer junto al Tajo."],
+    "rio-janeiro": ["destino-rio-janeiro.jpg", 2560, 1920, "Vista de Río de Janeiro", "Playas de Ipanema, jardines y vistas desde el Pan de Azúcar."],
+    "ciudad-mexico": ["destino-ciudad-mexico.jpg", 2272, 1704, "Vista de Ciudad de México, México", "Chapultepec, Coyoacán y museos para recorrer por barrios."],
+    "bogota": ["destino-bogota.jpg", 2048, 1120, "Panorama de Bogotá al atardecer", "La Candelaria, el Museo del Oro y vistas desde Monserrate."],
+    "cartagena": ["destino-cartagena.jpg", 2560, 1440, "Vista de Cartagena, Colombia", "Murallas, plazas y tardes junto al Caribe colombiano."],
+    "lima": ["destino-lima.jpg", 2560, 1696, "Costa y parques de Miraflores en Lima", "Malecón de Miraflores, Barranco y cocina peruana."],
+    "buenos-aires": ["destino-buenos-aires.jpg", 2560, 1714, "Puente de la Mujer y edificios de Puerto Madero en Buenos Aires", "Librerías, cafés y paseos por Palermo y San Telmo."],
+    "santiago": ["destino-santiago.jpg", 2560, 1707, "Santiago de Chile al anochecer con la cordillera al fondo", "Barrios históricos, parques y vistas desde el cerro San Cristóbal."],
+    "medellin": ["destino-medellin.jpg", 2560, 1920, "Vista panorámica de Medellín y las montañas del valle", "Jardín Botánico, parques y recorridos por el valle de Aburrá."],
+    "punta-cana": ["destino-punta-cana.jpg", 2560, 1920, "Playa Bávaro en Punta Cana, con palmeras y mar turquesa", "Arena clara, costa de Bávaro y días de descanso junto al mar."],
+    "san-salvador": ["destino-san-salvador.jpg", 2560, 1920, "Vista de San Salvador al anochecer con su volcán al fondo", "Centro Histórico, museos y cafés en la capital salvadoreña."],
+    "san-juan": ["destino-san-juan.jpg", 2560, 1702, "Vista aérea de la costa y el Viejo San Juan", "Calles del Viejo San Juan, fortalezas y costa de Condado."],
+    "los-angeles": ["destino-los-angeles.jpg", 2560, 1707, "Panorama de Los Ángeles con sus rascacielos al atardecer", "Museos, Griffith Park y paseos por Santa Mónica."],
+    "las-vegas": ["destino-las-vegas.jpg", 2560, 1762, "Vista de Las Vegas, Estados Unidos", "Espectáculos, gastronomía y recorridos por el Strip."],
+    "vancouver": ["destino-vancouver.jpg", 2560, 1920, "Vancouver, su puerto y las montañas al fondo", "Stanley Park, Granville Island y paseos entre bosque y costa."],
+    "amsterdam": ["destino-amsterdam.jpg", 2560, 1697, "Canal de Ámsterdam junto a sus casas y puentes", "Canales, museos y recorridos a pie por Jordaan."],
+    "berlin": ["destino-berlin.jpg", 1920, 1280, "Vista de Berlín, Alemania", "Isla de los Museos, parques y barrios con historia."],
+    "estambul": ["destino-estambul.jpg", 2560, 1237, "Mezquitas y panorama de Estambul al atardecer", "Bazares, mezquitas y recorridos en ferry por el Bósforo."],
+    "dubai": ["destino-dubai.jpg", 2560, 1920, "Vista de Dubái, Emiratos Árabes Unidos", "Arquitectura, mercados de Al Fahidi y paseos junto al Creek."],
+    "tokio": ["destino-tokio.jpg", 2560, 1928, "Torre de Tokio iluminada y panorama nocturno de la ciudad", "Asakusa, jardines y barrios conectados por tren."],
+    "seul": ["destino-seul.jpg", 2560, 1707, "Vista de Seúl, Corea del Sur", "Palacios, mercados y paseos junto al río Han."],
+    "singapur": ["destino-singapur.jpg", 2560, 1737, "Vista de Singapur, Singapur", "Jardines botánicos, barrios históricos y paseos por Marina Bay."],
+    "sidney": ["destino-sidney.jpg", 2544, 1406, "Ópera de Sídney y su bahía iluminadas de noche", "La bahía, la Ópera y senderos costeros cerca de Bondi."],
+    "praga": ["destino-praga.jpg", 2560, 1706, "Vista de Praga y los puentes sobre el río Moldava", "Puente de Carlos, plazas y miradores sobre el Moldava."],
+    "toronto": ["destino-toronto.jpg", 2560, 1704, "Vista de Toronto y la torre CN desde las islas", "El lago Ontario, museos y mercados a tu ritmo."]
+  };
+  destinations.forEach(d => {
+    const photo = destinationPhotos[d.id];
+    if (photo) Object.assign(d, { image: `imagenes-viajes/destinos/${photo[0]}`, imageWidth: photo[1], imageHeight: photo[2], alt: photo[3], intro: photo[4], thumbnail: `imagenes-viajes/destinos/miniaturas/${d.id}.jpg`, mediumImage: `imagenes-viajes/destinos/miniaturas/${d.id}-1280.jpg` });
+  });
   const discounted = (amount, percent) => Math.round(amount * (100 - percent)) / 100;
   destinations.forEach(d => { d.promotion = promotions[d.id] || null; });
 
@@ -3281,7 +3328,7 @@
       $('#destination-empty').hidden = results.length !== 0;
       $('#destination-list').innerHTML = results.map(item => {
         const href = escapeHTML(link('detalle-destino', contextFor(item)));
-        return `<article class="rv-destination-card"><a href="${href}" class="rv-card-photo" tabindex="-1" aria-hidden="true"><img src="${item.image}" alt="" width="1100" height="760" loading="lazy"><span class="rv-card-tag">${item.tag}</span></a>
+        return `<article class="rv-destination-card"><a href="${href}" class="rv-card-photo" tabindex="-1" aria-hidden="true"><span class="rv-card-image" style="width:${Math.min(100, ((item.imageWidth || 1100) / (item.imageHeight || 760)) / 1.5 * 100)}%"><img src="${item.thumbnail || item.image}" ${item.thumbnail ? `srcset="${item.thumbnail} 720w, ${item.mediumImage} 1280w, ${item.image} ${item.imageWidth}w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:1050px) 45vw, 380px"` : ''} alt="" width="${item.imageWidth || 1100}" height="${item.imageHeight || 760}" loading="lazy" decoding="async"><span class="rv-card-tag">${item.tag}</span></span></a>
           <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p>${item.intro}</p><p class="rv-demo-caption">Aeropuerto: ${item.airport.name} (${item.airport.code})</p>${item.promotion ? `<p class="promo-note"><span class="promo-badge">−${item.promotion.percent}% en vuelos</span> Descuento automático</p>` : ''}<div class="rv-card-footer"><div><small>Idea de presupuesto / persona</small>${item.originalInspirationBudget ? `<del class="promo-original">${money(item.originalInspirationBudget)}</del>` : ''}<strong>${money(item.inspirationBudget)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino ↗</a></div></div></article>`;
       }).join('');
       const query = new URLSearchParams(new FormData(form));
@@ -3312,9 +3359,8 @@
     refreshPage = initDetail;
     const destination = currentDestination();
     document.title = `${destination.name} | Rumbo`;
-    $('#destination-detail').innerHTML = `<nav class="rv-breadcrumb" aria-label="Ruta de navegación"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><a href="viajes.html?pantalla=destinos">Destinos</a><span aria-hidden="true">/</span><span aria-current="page">${destination.name}</span></nav>
-      <section class="rv-detail-hero" aria-labelledby="page-title"><img src="${destination.image}" alt="${destination.alt}" width="1100" height="760"><div class="rv-detail-title"><p class="rv-card-country">${destination.country} · ${destination.tag}</p><h1 id="page-title">${destination.name}</h1><p>${destination.intro}</p></div></section>
-      <div class="rv-detail-body"><section class="rv-detail-copy"><h2>Actividades y lugares de interés</h2><p>${destination.description}</p><ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div><p><a class="rv-link-button" href="servicios.html?seccion=traslados&destino=${destination.id}">Ver traslados en ${destination.name} ↗</a></p><p><a class="rv-link-button" href="servicios.html?seccion=seguros&destino=${destination.id}">Comparar seguros para este destino ↗</a></p><p><a class="rv-link-button" href="servicios.html?seccion=guias&destino=${destination.id}">Explorar recorridos con guía en ${destination.name} ↗</a></p>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Fotografía de inspiración. Las actividades se presentan como ideas y no están incluidas en los precios de vuelo u hotel.</p></section>
+    $('#destination-detail').innerHTML = `<section class="rv-detail-hero" aria-labelledby="page-title"><img src="${destination.image}" ${destination.thumbnail ? `srcset="${destination.thumbnail} 720w, ${destination.mediumImage} 1280w, ${destination.image} ${destination.imageWidth}w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:1240px) calc(100vw - 64px), 1180px"` : ''} alt="${destination.alt}" width="${destination.imageWidth || 1100}" height="${destination.imageHeight || 760}" fetchpriority="high"><div class="rv-detail-title"><h1 id="page-title">${destination.name}</h1><p>${destination.intro}</p></div></section>
+      <div class="rv-detail-body"><section class="rv-detail-copy"><h2>Actividades y lugares de interés</h2>${destination.description !== destination.intro ? `<p>${destination.description}</p>` : ''}<ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div><p><a class="rv-link-button" href="servicios.html?seccion=traslados&destino=${destination.id}">Ver traslados en ${destination.name} ↗</a></p><p><a class="rv-link-button" href="servicios.html?seccion=seguros&destino=${destination.id}">Comparar seguros para este destino ↗</a></p><p><a class="rv-link-button" href="servicios.html?seccion=guias&destino=${destination.id}">Explorar recorridos con guía en ${destination.name} ↗</a></p>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Las actividades se organizan por separado del vuelo y el hospedaje.</p></section>
       <aside class="rv-plan-panel" aria-labelledby="detail-plan-title"><h2 id="detail-plan-title">Planificar ${destination.name}</h2>${destination.promotion ? `<p class="promo-badge">−${destination.promotion.percent}% en vuelos · descuento aplicado</p>` : ''}<p class="rv-detail-price">Vuelo desde ${destination.promotion ? `<del class="promo-original">${money(destination.economy)}</del>` : ''}<strong>${money(flights(destination, 'Tegucigalpa')[0]?.economy ?? destination.economy)}</strong></p>${destination.promotion ? '<p class="promo-note">Aplica a vuelos de ida, en ambas clases y orígenes del catálogo. Sin cupón. Hotel y otros servicios por separado. Oferta de demostración de Rumbo; no se transfiere a la aerolínea.</p>' : ''}<p class="rv-caption" style="margin: -8px 0 22px">Por persona · económica · solo ida desde Tegucigalpa.</p>
       <form id="detail-form"><div class="rv-field"><label for="detail-date">Fecha de salida</label><input id="detail-date" type="date" value="${state.date}" min="${today()}" required></div><div class="rv-field-pair"><div class="rv-field"><label for="detail-travelers">Viajeros</label><input id="detail-travelers" type="number" value="${state.travelers}" min="1" max="12" step="1" required></div><div class="rv-field"><label for="detail-nights">Noches de hotel</label><input id="detail-nights" type="number" value="${state.nights}" min="1" max="30" step="1" required></div></div><button class="button button-primary" type="submit" name="next" value="vuelos">Elegir vuelo <span aria-hidden="true">↗</span></button><button class="rv-link-button" type="submit" name="next" value="hoteles">Solo necesito hotel →</button></form></aside></div>`;
     $('#detail-form').addEventListener('submit', event => {

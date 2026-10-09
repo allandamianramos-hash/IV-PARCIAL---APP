@@ -101,8 +101,8 @@ body .site-header .account-actions .login-button{background:var(--arena);border:
 body .site-header .account-actions .register-button{background:var(--verde)!important;border:1px solid var(--verde);color:white!important;padding:12px 20px;border-radius:999px}
 body .site-header .account-actions .login-button:hover{background:var(--tinta);color:white}
 body .site-header .account-actions .register-button:hover{background:var(--tinta)!important;border-color:var(--tinta)}
-body .site-header a[href="tienda.html"],body #servicios .shop-card .booking-action{background:var(--arena)!important;color:var(--tinta)!important;border:1px solid transparent;border-radius:999px;padding:12px 20px}
-body .site-header a[href="tienda.html"]:hover,body #servicios .shop-card .booking-action:hover{background:var(--verde)!important;color:white!important}
+body #servicios .shop-card .booking-action{background:var(--arena)!important;color:var(--tinta)!important;border:1px solid transparent;border-radius:999px;padding:12px 20px}
+body #servicios .shop-card .booking-action:hover{background:var(--verde)!important;color:white!important}
 body.auth-page .auth-intro::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(23,48,43,.85),rgba(23,48,43,.12) 70%);border-radius:inherit}
 @media(max-width:600px){body .site-header .account-actions :is(.login-button,.register-button){padding:10px 14px}}
 body .site-header .header-actions .account-actions .login-button{background:var(--arena)!important;color:var(--tinta)!important;border-color:transparent!important}

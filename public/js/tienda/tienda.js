@@ -2930,6 +2930,7 @@ notify(
   // ==========================================================
 
   function renderCart() {
+    if (document.querySelector("#store-checkout[open]")) renderStoreCheckout();
 
     const active =
       document.activeElement;
@@ -3891,7 +3892,8 @@ $("#continue-shopping")
 
           if (
             !cartDialog.open &&
-            !detailDialog.open
+            !detailDialog.open &&
+            !document.querySelector("#store-checkout[open]")
           ) {
 
             document.body.classList.remove(
@@ -3973,124 +3975,34 @@ outside = false;
   // LISTA / CHECKOUT
   // ==========================================================
 
-  $("#checkout-btn")
-    .addEventListener(
-      "click",
-      () => {
-
-        if (!cart.length) return;
-
-const lines = [
-          "RUMBO · MI LISTA DE VIAJE",
-
-          "",
-          ...cart.map(item => {
-
-            const product =
-              productsById.get(
-                item.id
-              );
-
-const price =
-              getProductPrice(
-                product,
-                item.options
-              );
-
-const optionsText =
-              item.options &&
-              Object.keys(
-                item.options
-              ).length
-
-                ? ` — ${
-                    optionSummary(
-                      item.options
-                    )
-                  }`
-
-                : "";
-
-return (
-              `${item.quantity} × ` +
-              `${product.name}` +
-              `${optionsText}` +
-              ` — ${money(price)}` +
-              ` por unidad — ` +
-              `${money(
-                price *
-                item.quantity
-              )}`
-            );
-
-          }),
-          "",
-          `Subtotal de productos: ${money(total())} HNL`,
-          "Envío e impuestos adicionales: no calculados.",
-          "Revisa tu selección en Mi viaje."
-        ];
-
-const url =
-          URL.createObjectURL(
-            new Blob(
-              [
-                "\uFEFF" +
-                lines.map(line=>window.RumboLocale?.translate(line)||line).join("\r\n")
-              ],
-              {
-                type:
-                  "text/plain;charset=utf-8"
-              }
-            )
-          );
-
-const link =
-          document.createElement(
-            "a"
-          );
-
-link.href = url;
-
-        link.download =
-          "mi-lista-rumbo.txt";
-
-document.body.appendChild(
-          link
-        );
-
-link.click();
-
-        link.remove();
-
-setTimeout(
-          () =>
-            URL.revokeObjectURL(
-              url
-            ),
-          10000
-        );
-
-$("#cart-feedback")
-          .textContent =
-          "Lista preparada. Revisa las descargas de tu navegador. El carrito se ha conservado.";
-
-$("#checkout-btn")
-          .textContent =
-          "✓ Lista descargada";
-
-setTimeout(
-          () => {
-
-            $("#checkout-btn")
-              .innerHTML =
-              'Descargar mi lista <span aria-hidden="true">↓</span>';
-
-          },
-          2000
-        );
-
-      }
-    );
+  const checkoutDialog = $('#store-checkout');
+  function renderStoreCheckout() {
+    $('#checkout-items').innerHTML = cart.map(item => {
+      const product = productsById.get(item.id);
+      const options = optionSummary(item.options || {});
+      return '<article class="checkout-item"><div><h3>' + escapeHTML(product.name) + '</h3><p>' + item.quantity + ' × ' + money(getProductPrice(product, item.options)) + '</p>' + (options ? '<p>' + escapeHTML(options) + '</p>' : '') + '</div><strong>' + money(getProductPrice(product, item.options) * item.quantity) + '</strong></article>';
+    }).join('') || '<p>Tu carrito está vacío.</p>';
+    $('#checkout-total').textContent = money(total());
+  }
+  $('#checkout-btn').addEventListener('click', () => {
+    if (!cart.length) return;
+    $('#cart-modal').close();
+    renderStoreCheckout();
+    checkoutDialog.showModal();
+    document.body.classList.add('dialog-open');
+    $('#close-checkout').focus();
+  });
+  $('#close-checkout').addEventListener('click', () => checkoutDialog.close());
+  $('#edit-checkout-cart').addEventListener('click', () => { checkoutDialog.close(); openCart(); });
+  checkoutDialog.addEventListener('close', () => {
+    if (!document.querySelector('dialog[open]')) document.body.classList.remove('dialog-open');
+    if (!document.querySelector('dialog[open]')) $('#open-cart-btn').focus({preventScroll:true});
+  });
+  checkoutDialog.addEventListener('click', event => {
+    if (event.target !== checkoutDialog) return;
+    const box = checkoutDialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) checkoutDialog.close();
+  });
 
 // ==========================================================
   // SINCRONIZACIÓN DEL CARRITO

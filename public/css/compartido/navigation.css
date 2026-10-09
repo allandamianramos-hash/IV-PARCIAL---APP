@@ -81,6 +81,8 @@ html:has(#site-navbar) { scroll-padding-top:104px; }
   .site-mobile-menu nav { position: absolute; left: 0; right: 0; top: calc(100% + 10px); padding: 14px; border: 1px solid #ffffff33; border-radius: 12px; background: #000; display: grid; gap: 2px; }
   .site-mobile-menu nav a { padding: 10px 12px; font-size: 14px; color: #fff; border-radius: 6px; }
   .site-mobile-menu nav a:hover { background: #fff; color: #000; }
+  .site-mobile-menu nav {max-height:calc(100dvh - 108px);overflow-y:auto;overscroll-behavior:contain;}
+  .site-mobile-menu nav a {display:flex;align-items:center;min-height:44px;}
 
  body:has(#site-navbar):not(:has(.home-hero-shell)) {padding-top:96px;}
 }
@@ -88,9 +90,3 @@ html:has(#site-navbar) { scroll-padding-top:104px; }
 @media(max-width:350px) { body #site-navbar .header-inner {gap:6px;padding-left:14px;} body #site-navbar .logo {font-size:27px!important;} }
 
 /* Return links stay visible near the page heading, outside the service steps. */
-body .page-back {display:inline-flex;align-items:center;gap:10px;min-height:44px;width:fit-content;margin:0 0 24px;padding:8px 0;color:var(--secondary);font-size:14px;line-height:1.4;text-decoration:none;}
-body .page-back svg {width:22px;height:22px;flex:0 0 22px;}
-body .page-back:hover {color:var(--lime);}
-body :is(.rv-breadcrumb,.service-breadcrumb):has(.page-back) {margin:0;}
-body .auth-card>.page-back {margin-bottom:20px;}
-html[dir=rtl] .page-back svg {transform:scaleX(-1);}

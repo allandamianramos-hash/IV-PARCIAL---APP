@@ -2172,9 +2172,84 @@ img {
 .variant-original{display:block;margin:14px auto 0;padding:10px 14px;min-height:44px;border:1px solid #bfd5d2;border-radius:9px;background:#fff;color:#065f68;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer}
 .variant-original:hover{background:#e8f3f3}
 svg.cart-item-image{width:76px;height:91px;background:#eef3f3;flex-shrink:0}
+
+/* Keep the cart reachable while browsing and let narrow dialog content wrap. */
+@media(max-width:850px) {
+ body .store-utilities {position:sticky;top:96px;z-index:60;padding:10px 0;background:var(--page);}
+ body .store-utilities .cart-button {min-height:44px;}
+ body .store-utilities .cart-button span:not(#cart-count) {display:inline;}
+ body .cart-dialog,body .product-dialog {max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain;}
+ body .cart-layout {max-height:none;}
+ body .cart-items {overflow:visible;}
+ body .cart-dialog .dialog-header {position:sticky;top:0;z-index:1;padding:16px;background:var(--surface);gap:12px;}
+ body .cart-dialog .dialog-header h2 {font-size:22px;overflow-wrap:anywhere;}
+ body .cart-dialog .dialog-header .icon-button {flex-shrink:0;min-width:44px;min-height:44px;}
+ body .cart-item {grid-template-columns:64px minmax(0,1fr);gap:12px;}
+ body .cart-item-image,body svg.cart-item-image {width:64px;height:76px;}
+ body .cart-item-main {min-width:0;overflow-wrap:anywhere;}
+ body .cart-item-bottom {flex-wrap:wrap;gap:12px;}
+ body .quantity-controls {flex-wrap:wrap;gap:6px;}
+ body .quantity-controls button {width:44px;height:44px;}
+ body .cart-summary {padding:20px;}
+ body .cart-summary .summary-row {flex-wrap:wrap;gap:8px 16px;}
+ body .cart-item .remove-btn,body .cart-summary .continue-button {min-height:44px;}
+ body .product-dialog :is(input,select) {font-size:16px;}
+ body .product-dialog :is(.detail-info,.detail-layout) {min-width:0;overflow-wrap:anywhere;}
+ body .product-dialog .detail-close {position:sticky;top:12px;z-index:2;display:flex;margin:12px 12px -56px auto;min-width:44px;min-height:44px;background:var(--surface);}
+}
 @media(max-width:700px){.variant-stage .detail-image{height:280px}}
 
 /* El paisaje queda fijo; únicamente cambia la maleta. */
 .variant-stage .variant-image{height:auto;aspect-ratio:1000/667}
 
 .product-image-note{font-size:10px;color:#52636c;line-height:1.4;margin:0 0 8px;font-weight:400}
+
+/* Store navigation and checkout are independent of the travel planner. */
+body.rumbo-store .store-utilities {position:relative;top:auto;display:flex;justify-content:space-between;gap:24px;margin:0 0 32px;padding:0 0 24px;border-bottom:1px solid var(--line);background:var(--page);z-index:2;}
+body.rumbo-store .store-actions {display:flex;align-items:center;gap:16px;}
+body.rumbo-store .store-catalog-link {display:flex;align-items:center;min-height:48px;color:var(--foreground);font-size:15px;}
+body.rumbo-store .favorites-button,body.rumbo-store .cart-button {display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;border:1px solid var(--line);border-radius:12px;padding:12px 18px;color:var(--foreground);background:var(--field);font:inherit;font-size:14px;cursor:pointer;}
+body.rumbo-store .favorites-button[aria-pressed=true] {border-color:var(--lime);color:var(--lime);}
+body.rumbo-store .favorites-button .small-count {position:static;min-width:20px;min-height:20px;display:inline-grid;place-items:center;}
+body.rumbo-store .favorites-button .small-count[hidden] {display:none;}
+body.rumbo-store #catalogo {scroll-margin-top:190px;}
+body.rumbo-store .section-hero {margin-bottom:72px!important;}
+body.rumbo-store .catalog-section {width:100%;padding-top:0;}
+body.rumbo-store .section-heading {margin-bottom:32px;}
+body.rumbo-store .cart-dialog {width:min(960px,calc(100vw - 40px));max-height:calc(100dvh - 40px);overflow:auto;}
+body.rumbo-store .cart-layout {display:grid;grid-template-columns:minmax(0,1fr) 300px;max-height:none;align-items:start;}
+body.rumbo-store .cart-layout>.dialog-header {grid-column:1/-1;position:sticky;top:0;background:var(--surface);z-index:2;}
+body.rumbo-store .cart-summary {border-top:0;border-left:1px solid var(--line);padding:28px 24px;}
+body.rumbo-store .cart-items {max-height:none;overflow:visible;padding:24px;}
+body.rumbo-store .store-checkout-dialog {width:min(960px,calc(100vw - 40px));max-width:none;max-height:calc(100dvh - 40px);padding:0;overflow:auto;border:1px solid var(--line);border-radius:20px;background:var(--surface);color:var(--foreground);}
+body.rumbo-store .store-checkout-dialog::backdrop {background:#0009;}
+body.rumbo-store .store-checkout-dialog>.dialog-header {position:sticky;top:0;background:var(--surface);z-index:2;}
+body.rumbo-store .store-checkout-dialog .dialog-header p {margin:8px 0 0;color:var(--secondary);font-size:14px;}
+body.rumbo-store .store-checkout-layout {display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;padding:32px;}
+body.rumbo-store .store-checkout-layout>section {min-width:0;}
+body.rumbo-store .checkout-item {display:flex;align-items:start;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);padding:0 0 24px;margin-bottom:24px;overflow-wrap:anywhere;}
+body.rumbo-store .checkout-item h3 {font-size:17px;line-height:1.4;margin:0 0 8px;}
+body.rumbo-store .checkout-item p {font-size:14px;line-height:1.6;color:var(--secondary);margin:4px 0;}
+body.rumbo-store .checkout-item strong {flex-shrink:0;font-size:15px;}
+body.rumbo-store .store-payment {padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--field);}
+body.rumbo-store .store-payment h3 {margin:0 0 24px;font-size:20px;}
+body.rumbo-store .store-payment p {font-size:13px;color:var(--secondary);line-height:1.7;}
+body.rumbo-store .store-card-brands {display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 16px;}
+body.rumbo-store .store-card-brands span {padding:8px 12px;border:1px solid var(--line);border-radius:6px;font-size:13px;}
+body.rumbo-store #pay-store {width:100%;margin-top:8px;}
+body.rumbo-store:has(dialog[open]) {overflow:hidden;}
+@media(max-width:700px) {
+ body.rumbo-store .store-utilities {position:sticky;top:96px;padding:12px 0;margin-bottom:24px;gap:12px;z-index:60;flex-wrap:wrap;}
+ body.rumbo-store .store-actions {gap:10px;}
+ body.rumbo-store .favorites-button,body.rumbo-store .cart-button {padding:10px 12px;font-size:13px;gap:8px;}
+ body.rumbo-store .section-hero {margin-bottom:48px!important;}
+ body.rumbo-store .cart-dialog,body.rumbo-store .store-checkout-dialog {width:calc(100vw - 24px);max-height:calc(100dvh - 24px);border-radius:16px;}
+ body.rumbo-store .cart-layout,body.rumbo-store .store-checkout-layout {grid-template-columns:minmax(0,1fr);}
+ body.rumbo-store .cart-summary {border-left:0;border-top:1px solid var(--line);padding:24px 20px;}
+ body.rumbo-store .store-checkout-layout {padding:20px;gap:24px;}
+ body.rumbo-store .checkout-item {gap:12px;flex-wrap:wrap;}
+ body.rumbo-store .store-payment {padding:20px;}
+ body.rumbo-store .store-checkout-dialog .dialog-header {padding:20px;}
+ body.rumbo-store .store-checkout-dialog :is(button,.text-button) {min-height:44px;}
+}
+@media(max-width:370px) {body.rumbo-store .store-catalog-link {display:none;}body.rumbo-store .store-actions {width:100%;justify-content:space-between;}}

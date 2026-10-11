@@ -38,13 +38,14 @@
  }
  root.querySelectorAll('[name=rating]').forEach(input=>input.addEventListener('change',()=>{root.querySelectorAll('.review-rating label').forEach(label=>label.classList.toggle('is-rated',Number(label.querySelector('input').value)<=Number(input.value)));}));
  form.addEventListener('submit',async event=>{event.preventDefault();const button=form.querySelector('[type=submit]');button.disabled=true;say('Publicando…');
-  try{const data=await window.RumboApi.json('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({rating:Number(new FormData(form).get('rating')),comment:form.elements.comment.value})});if(data.saved!==true)throw Error('No se confirmó el guardado. Tu texto se conserva para reintentar.');
+  try{if(await window.RumboStorage?.flush?.()===false)throw Error('No se pudo guardar tu perfil. Reintenta antes de publicar.');const data=await window.RumboApi.json('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({rating:Number(new FormData(form).get('rating')),comment:form.elements.comment.value})});if(data.saved!==true)throw Error('No se confirmó el guardado. Tu texto se conserva para reintentar.');
    const rating=Number(new FormData(form).get('rating'));say(rating>=4?'Gracias por tu confianza. Nos alegra que disfrutés usando Rumbo.':rating===3?'Gracias por contarnos tu experiencia. Tu opinión nos ayuda a mejorar.':'Gracias por compartir lo que podemos mejorar. Sentimos que tu experiencia no haya sido la esperada.');
    form.reset();root.querySelectorAll('.is-rated').forEach(label=>label.classList.remove('is-rated'));page=0;await load();
   }catch(error){say(error.message);}finally{button.disabled=false;}
  });
  root.querySelector('[data-reviews-prev]').onclick=()=>{page--;load();};root.querySelector('[data-reviews-next]').onclick=()=>{page++;load();};
  document.addEventListener('visibilitychange',()=>{if(!document.hidden)load();});
+ window.addEventListener('rumbo:profile-changed',()=>{if(!document.hidden)load();});
  window.addEventListener('rumbo:localechange',()=>{list.querySelectorAll('.review-delete').forEach(button=>{button.textContent=translate('Eliminar mi reseña');});root.querySelectorAll('time[datetime]').forEach(date=>{date.textContent=new Intl.DateTimeFormat(document.documentElement.lang||'es',{dateStyle:'medium'}).format(new Date(date.dateTime));});});
  setInterval(()=>{if(!document.hidden)load();},60000);
  load();

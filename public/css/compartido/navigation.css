@@ -69,7 +69,8 @@ html:has(#site-navbar) { scroll-padding-top:104px; }
 @media(max-width:767.98px) {
   body #site-navbar.site-header { padding: 16px 16px 0; }
   body #site-navbar .header-inner { min-height: 58px; gap: 16px; padding: 8px 10px 8px 20px; }
-  body #site-navbar .main-nav, body #site-navbar .header-trip, body #site-navbar .header-actions .login-button { display: none!important; }
+  body #site-navbar .main-nav, body #site-navbar .header-trip { display: none!important; }
+  body #site-navbar .header-actions .login-button {padding:8px 12px!important;min-height:38px;font-size:12px;}
   body #site-navbar .header-actions .register-button { padding: 8px 12px!important; min-height: 36px; font-size: 12px; }
   .site-mobile-menu { display: block; margin-left: auto; }
   .site-mobile-menu summary { cursor: pointer; list-style: none; display:grid; place-items:center; width:44px; height:44px; padding:10px; border:1px solid var(--line); border-radius:50%; color:var(--foreground); background:var(--field); }

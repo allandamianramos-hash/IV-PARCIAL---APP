@@ -24,7 +24,7 @@ try {
         console.log('Aplicada: '+name);
       }
       await tx.commit();
-    } catch(e){await tx.rollback();throw e;}
+    } catch(e){await tx.rollback().catch(()=>{});throw e;}
   } else if(command==='seed') {
     // Trusted repository source only; never evaluate uploaded SQL or user input.
     const scope={window:{},URLSearchParams,document:{body:{classList:{contains:()=>false},dataset:{}},readyState:'loading',addEventListener(){},querySelector:()=>null}};

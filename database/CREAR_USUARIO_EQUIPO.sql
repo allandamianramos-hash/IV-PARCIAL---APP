@@ -14,6 +14,8 @@ GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboSessions TO RumboEquipo;
 GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboVisitors TO RumboEquipo;
 GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboVisitorState TO RumboEquipo;
 GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboAuthAttempts TO RumboEquipo;
+IF OBJECT_ID('dbo.RumboGoogleChallenges','U') IS NOT NULL
+    GRANT SELECT,INSERT,DELETE ON dbo.RumboGoogleChallenges TO RumboEquipo;
 GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboProducts TO RumboEquipo;
 GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboDestinations TO RumboEquipo;
 GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboHotels TO RumboEquipo;
@@ -22,3 +24,9 @@ GRANT SELECT ON dbo.RumboMigrations TO RumboEquipo;
 DECLARE @sql nvarchar(max)=N'CREATE USER '+QUOTENAME(@usuario)+N' WITH PASSWORD=N'''+REPLACE(@clave,N'''',N'''''')+N'''; ALTER ROLE RumboEquipo ADD MEMBER '+QUOTENAME(@usuario)+N';';
 EXEC sys.sp_executesql @sql;
 PRINT 'Usuario creado. Puede trabajar con los datos de Rumbo; no puede cambiar la estructura.';
+
+IF OBJECT_ID('dbo.RumboMicrosoftChallenges','U') IS NOT NULL
+    GRANT SELECT,INSERT,DELETE ON dbo.RumboMicrosoftChallenges TO RumboEquipo;
+
+IF OBJECT_ID('dbo.RumboPasswordResets','U') IS NOT NULL
+    GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboPasswordResets TO RumboEquipo;

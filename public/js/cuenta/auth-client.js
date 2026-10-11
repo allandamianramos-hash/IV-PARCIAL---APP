@@ -14,12 +14,19 @@
       if(window.RumboDatabase?.connected===false){window.RumboStorage?.reportError?.('offline');throw Error('Conecta Rumbo para acceder a tu cuenta.');}
       if(window.RumboStorage?.hasPending?.())throw Error('Hay cambios pendientes de guardar. Reintenta antes de cambiar de cuenta.');
       let response;
-      try{response=await fetch('/api/auth/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data||{}),signal:AbortSignal.timeout(15000)});}
+      try{response=await fetch('/api/auth/'+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data||{}),signal:AbortSignal.timeout(path==='microsoft'?35000:path==='google'?35000:15000)});}
       catch(error){window.RumboStorage?.reportError?.('database');throw error;}
       if(response.status>=500)window.RumboStorage?.reportError?.('database');
-      const result=await response.json();if(!response.ok)throw Error(result.error||'No se pudo completar la solicitud.');return result;
+      const result=await response.json();if(!response.ok){const error=Error(result.error||'No se pudo completar la solicitud.');error.status=response.status;error.code=result.code;error.email=result.email;throw error;}return result;
     }
     const accounts=document.querySelector('.account-actions');
+    let accountName;
+    function updateGreeting(){
+      if(!accountName)return;
+      let alias='';
+      try{const profile=JSON.parse((window.RumboStorage||localStorage).getItem('rumbo.profile.v1'));if(typeof profile?.alias==='string')alias=profile.alias.trim();}catch{}
+      accountName.textContent=alias||user?.name?.trim().split(/\s+/)[0]||'viajero';
+    }
     function render(){
       document.querySelectorAll('a[href="servicios.html?seccion=registro"]').forEach(a=>a.href='registro.html');
       document.querySelectorAll('a[href="servicios.html?seccion=iniciar-sesion"]').forEach(a=>a.href='iniciar-sesion.html');
@@ -29,7 +36,7 @@
       toggle.innerHTML='<span class="account-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span><span>Mi cuenta</span><svg class="account-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>';
       const panel=document.createElement('div');panel.className='account-panel';
       const identity=document.createElement('div');identity.className='account-identity';
-      const greeting=document.createElement('strong');const greetingLabel=document.createElement('span');greetingLabel.textContent='Hola, ';const accountName=document.createElement('span');accountName.setAttribute('translate','no');accountName.textContent=user.name?.trim().split(/\s+/)[0]||'viajero';greeting.append(greetingLabel,accountName);
+      const greeting=document.createElement('strong');const greetingLabel=document.createElement('span');greetingLabel.textContent='Hola, ';accountName=document.createElement('span');accountName.setAttribute('translate','no');updateGreeting();greeting.append(greetingLabel,accountName);
       const email=document.createElement('span');email.textContent=user.email||'';email.setAttribute('translate','no');
       identity.append(greeting,email);
       const nav=document.createElement('nav');nav.setAttribute('aria-label','Opciones de mi cuenta');
@@ -41,7 +48,7 @@
       const status=document.createElement('span');status.className='auth-header-status';status.setAttribute('role','status');
       logout.addEventListener('click',async()=>{
         logout.disabled=true;status.textContent='';
-        try{await request('logout');changed();location.replace('index.html');}
+        try{await request('logout');window.google?.accounts?.id?.disableAutoSelect();changed();location.replace('index.html');}
         catch(e){status.textContent=e.name==='TimeoutError'?'La conexión tardó demasiado. Inténtalo de nuevo.':e.message;logout.disabled=false;}
       });
       panel.append(identity,nav,logout,status);menu.append(toggle,panel);
@@ -50,35 +57,192 @@
       accounts.classList.add('is-authenticated');accounts.replaceChildren(menu);
     }
     render();
-    // Vista de demostración: nunca crea cookies ni autoriza operaciones del servidor.
-    let demoProvider=null;
-    try{demoProvider=sessionStorage.getItem('rumbo.socialDemo');}catch{}
-    if(!user&&['Google','Microsoft'].includes(demoProvider)){
-      const banner=document.createElement('div');banner.className='auth-demo-banner';banner.setAttribute('role','status');
-      const message=document.createElement('span');message.textContent='Modo demostración · Cuenta de ejemplo de '+demoProvider+'. No has iniciado una sesión real.';
-      const exit=document.createElement('button');exit.type='button';exit.textContent='Salir de la demo';
-      exit.addEventListener('click',()=>{try{sessionStorage.removeItem('rumbo.socialDemo');}catch{}location.reload();});
-      banner.append(message,exit);document.querySelector('.site-header')?.after(banner);
-      if(accounts){const label=document.createElement('span');label.className='auth-user-name';label.textContent='Viajero de ejemplo · Demo';accounts.replaceChildren(label);}
+    window.addEventListener('rumbo:profile-changed',updateGreeting);
+    window.addEventListener('storage',e=>{if(e.key==='rumbo.profile.v1')updateGreeting();});
+    let socialPending=null,submitting=false;
+    const heading=document.querySelector('.auth-heading h1'),intro=document.querySelector('.auth-heading>p');
+    const switchLink=document.querySelector('.auth-switch');
+    const originalText=node=>window.RumboLocale?.originalText(node)||node.textContent;
+    const originalForm=form?{title:originalText(heading),intro:originalText(intro),switchHTML:form.dataset.mode==='register'?'¿Ya tienes cuenta? <a href="iniciar-sesion.html">Iniciar sesión</a>':'¿No tienes una cuenta? <a href="registro.html">Regístrate</a>',submit:form.dataset.mode==='register'?'Crear mi cuenta':'Iniciar sesión',
+      label:'Contraseña',placeholder:'Ej.: Viaje2026!',
+      autocomplete:form.elements.password.autocomplete,minLength:form.elements.password.minLength}:null;
+    function clearPasswordFields(){
+      if(!form)return;form.elements.password.value='';form.elements.password.type='password';
+      const toggle=document.querySelector('#toggle-password');toggle.textContent='Mostrar';toggle.setAttribute('aria-pressed','false');
+      const confirm=form.querySelector('#social-password-confirm');if(confirm)confirm.value='';
     }
-    document.querySelectorAll('.auth-provider').forEach(button=>{
-      button.addEventListener('click',()=>{
-        const provider=button.querySelector('span').textContent;
-        const dialog=document.createElement('dialog');dialog.className='auth-demo-dialog';dialog.setAttribute('aria-labelledby','demo-title');dialog.setAttribute('aria-describedby','demo-description');
-        dialog.innerHTML='<p class="auth-demo-tag">DEMOSTRACIÓN DE RUMBO</p><h2 id="demo-title"></h2><p id="demo-description">Prueba cómo se vería el acceso con una cuenta de ejemplo. No nos conectaremos al proveedor ni solicitaremos tus credenciales.</p><div class="auth-demo-person"><strong>Viajero de ejemplo</strong><span>viajero@example.com</span></div><p class="auth-demo-error" role="status"></p><button type="button" class="button button-primary" data-demo-enter>Explorar como usuario de ejemplo</button><button type="button" class="auth-demo-cancel">Cancelar</button>';
-        dialog.querySelector('h2').textContent='Probar acceso con '+provider;
-        dialog.querySelector('[data-demo-enter]').addEventListener('click',()=>{
-          try{sessionStorage.setItem('rumbo.socialDemo',provider);location.assign('index.html');}catch{dialog.querySelector('.auth-demo-error').textContent='El navegador no permite guardar la demostración en esta pestaña.';}
-        });
-        dialog.querySelector('.auth-demo-cancel').addEventListener('click',()=>dialog.close());
-        dialog.addEventListener('close',()=>{dialog.remove();button.focus();});document.body.append(dialog);dialog.showModal();
+    function cancelSocial(){
+      if(submitting||!socialPending)return;
+      const pending=socialPending;socialPending=null;pending.credential='';pending.onClose();
+      clearPasswordFields();form.elements.email.readOnly=false;form.elements.email.value='';
+      const name=form.querySelector('#full-name');if(name){name.disabled=false;name.closest('.auth-field').hidden=false;}
+      form.querySelector('.auth-social-identity')?.remove();form.querySelector('.auth-social-confirm')?.remove();
+      form.querySelector('label[for=password]').textContent=originalForm.label;
+      Object.assign(form.elements.password,{placeholder:originalForm.placeholder,autocomplete:originalForm.autocomplete});
+      if(originalForm.minLength<0)form.elements.password.removeAttribute('minlength');else form.elements.password.minLength=originalForm.minLength;
+      const help=form.querySelector('#password-help');if(help)help.hidden=false;
+      heading.textContent=originalForm.title;intro.textContent=originalForm.intro;form.querySelector('[type=submit]').textContent=originalForm.submit;
+      switchLink.innerHTML=originalForm.switchHTML;
+      document.querySelector('.auth-social').hidden=false;feedback.textContent='';delete form.dataset.socialProvider;form.elements.email.focus();
+    }
+    function requireRumboPassword(provider,credential,error,onClose,onSuccess){
+      if(submitting){onClose();throw Error('Espera a que termine el acceso en curso.');}
+      // The email is returned only after server-side identity and nonce verification.
+      if(!form||typeof error.email!=='string'||!error.email){onClose();throw Error('No se pudo recuperar el correo verificado. Vuelve a elegir tu cuenta.');}
+      if(socialPending)cancelSocial();
+      const setup=error.code==='RUMBO_PASSWORD_SETUP_REQUIRED';
+      socialPending={provider,credential,setup,onClose,onSuccess};form.dataset.socialProvider=provider;
+      clearPasswordFields();form.elements.email.value=error.email;form.elements.email.readOnly=true;
+      const name=form.querySelector('#full-name');if(name){name.disabled=true;name.closest('.auth-field').hidden=true;}
+      heading.textContent=setup?'Crear tu contraseña':'Iniciar sesión';
+      intro.textContent=setup?'Crea una contraseña de Rumbo para completar tu cuenta.':'Escribe tu contraseña de Rumbo para continuar.';
+      if(!setup)switchLink.innerHTML='¿No tienes una cuenta? <a href="registro.html">Regístrate</a>';
+      const identity=document.createElement('div');identity.className='auth-social-identity';
+      const label=document.createElement('span');label.textContent='Cuenta de '+(provider==='google'?'Google':'Microsoft')+' verificada';
+      const change=document.createElement('button');change.type='button';change.textContent='Usar otra cuenta';change.addEventListener('click',cancelSocial);
+      identity.append(label,change);form.prepend(identity);
+      form.querySelector('label[for=password]').textContent='Contraseña de Rumbo';
+      Object.assign(form.elements.password,{placeholder:'Ej.: Viaje2026!',autocomplete:setup?'new-password':'current-password',minLength:setup?8:1});
+      const help=form.querySelector('#password-help');if(help)help.hidden=true;
+      if(setup){
+        const confirm=document.createElement('div');confirm.className='auth-field auth-social-confirm';
+        confirm.innerHTML='<label for="social-password-confirm">Repite la contraseña</label><input id="social-password-confirm" type="password" autocomplete="new-password" minlength="8" maxlength="128" required><small>Al menos 8 caracteres. Usa una contraseña propia de Rumbo.</small>';
+        form.elements.password.closest('.auth-field').after(confirm);
+      }
+      form.querySelector('[type=submit]').textContent=setup?'Crear contraseña y entrar':'Iniciar sesión';
+      document.querySelector('.auth-social').hidden=true;feedback.textContent='';
+      form.elements.password.focus({preventScroll:true});heading.scrollIntoView({block:'start',behavior:'instant'});
+    }
+    window.addEventListener('pagehide',()=>{if(socialPending)socialPending.credential='';socialPending=null;clearPasswordFields();});
+    const googleContainer=document.querySelector('#google-signin');
+    if(googleContainer&&!user){
+      const googleStatus=document.querySelector('#google-feedback');
+      let googleBusy=false,googleResizeObserver;
+      async function receiveGoogle(response){
+        if(googleBusy||submitting||socialPending)return;googleBusy=true;googleStatus.textContent='Comprobando tu cuenta de Google…';
+        try{await request('google',{credential:response.credential});changed();location.replace('index.html');}
+        catch(error){
+          googleStatus.textContent=error.message;
+          if(['RUMBO_PASSWORD_REQUIRED','RUMBO_PASSWORD_SETUP_REQUIRED'].includes(error.code)){
+            try{requireRumboPassword('google',response.credential,error,()=>{googleBusy=false;googleStatus.textContent='';},async()=>{});}catch(e){googleStatus.textContent=e.message;}
+          }
+          else googleBusy=false;
+        }
+      }
+      async function setupGoogle(){
+        googleStatus.textContent='Cargando Google…';
+        try{
+          const response=await fetch('/api/auth/google/config',{signal:AbortSignal.timeout(15000)});
+          const config=await response.json();
+          if(!response.ok)throw Error(config.error||'No se pudo cargar Google.');
+          if(!config.enabled){googleStatus.textContent='Google estará disponible pronto. Puedes usar tu correo y contraseña.';return;}
+          let sdkLocale=window.RumboLocale?.language||'es',managedLibrary=false,loadingLanguage=false;
+          function loadGoogleLibrary(locale){return new Promise((resolve,reject)=>{
+            const script=document.createElement('script');script.src='https://accounts.google.com/gsi/client?hl='+encodeURIComponent(locale);script.async=true;
+            const timer=setTimeout(()=>reject(Error('Google tardó demasiado en cargar. Recarga la página.')),15000);
+            script.onload=()=>{clearTimeout(timer);resolve();};
+            script.onerror=()=>{clearTimeout(timer);reject(Error('No se pudo cargar Google. Revisa tu conexión o el bloqueador del navegador.'));};
+            document.head.append(script);
+          });}
+          if(!window.google?.accounts?.id){managedLibrary=true;await loadGoogleLibrary(sdkLocale);}
+          const initializeGoogle=()=>window.google.accounts.id.initialize({client_id:config.clientId,nonce:config.nonce,callback:receiveGoogle,auto_select:false,button_auto_select:false});
+          initializeGoogle();
+          // Use Google's own multicolor mark and existing sign-in handler.
+          googleResizeObserver?.disconnect();
+          let renderedWidth=0,renderedLocale='';
+          const googleButton=document.createElement('div');googleButton.className='auth-google-button';googleContainer.replaceChildren(googleButton);
+          function renderGoogleButton(){
+            if(!googleContainer.clientWidth)return;
+            const width=Math.floor(googleContainer.clientWidth);
+            const locale=window.RumboLocale?.language||document.documentElement.lang||'es';
+            // GIS uses the library language for its accessible fallback button,
+            // and the render option for its iframe. Keep both in the same locale.
+            if(managedLibrary&&sdkLocale!==locale){
+              if(loadingLanguage)return;
+              loadingLanguage=true;
+              loadGoogleLibrary(locale).then(()=>{sdkLocale=locale;initializeGoogle();renderedLocale='';loadingLanguage=false;googleStatus.textContent='';renderGoogleButton();})
+                .catch(error=>{loadingLanguage=false;googleStatus.textContent=error.message;});
+              return;
+            }
+            if(width===renderedWidth&&locale===renderedLocale)return;
+            renderedLocale=locale;
+            renderedWidth=width;
+            window.google.accounts.id.renderButton(googleButton,{type:'icon',theme:'outline',size:'large',text:'continue_with',shape:'rectangular',locale});
+          }
+          renderGoogleButton();
+          googleResizeObserver=new ResizeObserver(renderGoogleButton);
+          googleResizeObserver.observe(googleContainer);
+          window.addEventListener('rumbo:localechange',renderGoogleButton);
+          googleStatus.textContent='';
+        }catch(error){googleStatus.textContent=error.name==='TimeoutError'?'La conexión tardó demasiado. Recarga la página.':error.message;}
+      }
+      setupGoogle();
+    }
+    const microsoftButton=document.querySelector('#microsoft-signin');
+    if(microsoftButton&&!user){
+      const status=document.querySelector('#microsoft-feedback');
+      let client,config,busy=false;
+      function microsoftError(error){
+        if(['user_cancelled','access_denied'].includes(error.errorCode))return 'Cancelaste el acceso con Microsoft. Puedes intentarlo de nuevo.';
+        if(error.errorCode==='interaction_in_progress')return 'Ya hay un acceso con Microsoft en curso. Completa ese acceso o recarga la página.';
+        if(error.errorCode)return 'Microsoft no pudo completar el acceso ('+error.errorCode+'). Inténtalo de nuevo o usa tu correo.';
+        return error.message||'No se pudo conectar con Microsoft. Inténtalo de nuevo.';
+      }
+      async function setupMicrosoft(){
+        status.textContent='Cargando Microsoft…';
+        try{
+          const response=await fetch('/api/auth/microsoft/config',{signal:AbortSignal.timeout(15000)});
+          config=await response.json();if(!response.ok)throw Error(config.error||'No se pudo cargar Microsoft.');
+          if(!config.enabled){status.textContent='Microsoft estará disponible pronto. Puedes usar Google o tu correo.';return;}
+          if(!window.RumboMicrosoft)throw Error('No se pudo cargar Microsoft. Recarga la página.');
+          client=await window.RumboMicrosoft.create(config.clientId);
+          const result=await client.handleRedirectPromise();
+          status.textContent='';microsoftButton.disabled=false;
+          if(result){
+            await client.clearCache();
+            busy=true;status.textContent='Comprobando tu cuenta de Microsoft…';
+            try{await request('microsoft',{credential:result.idToken});await client.clearCache();changed();location.replace('index.html');}
+            catch(error){status.textContent=error.message;if(['RUMBO_PASSWORD_REQUIRED','RUMBO_PASSWORD_SETUP_REQUIRED'].includes(error.code))requireRumboPassword('microsoft',result.idToken,error,()=>{busy=false;microsoftButton.disabled=false;status.textContent='';client.clearCache().catch(()=>{});},()=>client.clearCache());else busy=false;}
+          }
+        }catch(error){status.textContent=microsoftError(error);if(client)microsoftButton.disabled=false;}
+      }
+      microsoftButton.addEventListener('click',async()=>{
+        if(busy||!client)return;busy=true;microsoftButton.disabled=true;status.textContent='Conectando con Microsoft…';
+        try{
+          if(await window.RumboStorage?.flush?.()===false||window.RumboStorage?.hasPending?.())throw Error('Guarda tus cambios pendientes antes de continuar.');
+          // Renew the challenge before leaving, even when this page has been open for a while.
+          const response=await fetch('/api/auth/microsoft/config',{signal:AbortSignal.timeout(15000)});
+          const fresh=await response.json();if(!response.ok||!fresh.enabled)throw Error(fresh.error||'Microsoft no está disponible.');
+          await client.loginRedirect({scopes:['openid','profile','email'],nonce:fresh.nonce,prompt:'login',extraQueryParameters:{ui_locales:window.RumboLocale?.language||'es',mkt:window.RumboLocale?.language||'es'}});
+        }catch(error){busy=false;microsoftButton.disabled=false;status.textContent=microsoftError(error);}
       });
-    });
+      setupMicrosoft();
+    }
     if(form){
       if(user){if(!window.RumboStorage?.isRedirecting?.())location.replace('index.html');return;}
       const register=form.dataset.mode==='register';
       form.addEventListener('submit',async event=>{
-        event.preventDefault();if(!form.reportValidity())return;
+        event.preventDefault();if(submitting||!form.reportValidity())return;
+        if(socialPending){
+          const pending=socialPending,confirm=form.querySelector('#social-password-confirm');
+          if(pending.setup&&form.elements.password.value!==confirm.value){feedback.textContent='Las contraseñas no coinciden.';confirm.focus();return;}
+          if(pending.setup&&new TextEncoder().encode(form.elements.password.value).length>72){feedback.textContent='Usa al menos 8 caracteres y como máximo 72 bytes.';return;}
+          submitting=true;const submit=form.querySelector('[type=submit]'),change=form.querySelector('.auth-social-identity button');submit.disabled=true;change.disabled=true;form.setAttribute('aria-busy','true');feedback.textContent='Comprobando tu contraseña…';
+          try{
+            await request(pending.provider,{credential:pending.credential,[pending.setup?'newPassword':'password']:form.elements.password.value});
+            clearPasswordFields();pending.credential='';await pending.onSuccess();socialPending=null;changed();location.replace('index.html');
+          }catch(error){
+            clearPasswordFields();feedback.textContent=error.message;
+            if(error.code==='RUMBO_PASSWORD_REQUIRED'&&pending.setup){
+              submitting=false;requireRumboPassword(pending.provider,pending.credential,error,pending.onClose,pending.onSuccess);
+            }else if((error.status===401&&error.code!=='RUMBO_PASSWORD_REQUIRED')||['GOOGLE_EXPIRED','MICROSOFT_EXPIRED'].includes(error.code)){
+              submitting=false;cancelSocial();feedback.textContent=error.message;
+            }
+            form.elements.password.focus();
+          }finally{submitting=false;submit.disabled=false;change.disabled=false;form.removeAttribute('aria-busy');}
+          return;
+        }
+        submitting=true;
         const submit=form.querySelector('[type=submit]');submit.disabled=true;form.setAttribute('aria-busy','true');feedback.textContent=register?'Creando tu cuenta…':'Comprobando tus datos…';
         try{
           const data={email:form.elements.email.value.trim(),password:form.elements.password.value};
@@ -87,7 +251,7 @@
             if(new TextEncoder().encode(data.password).length>72)throw Error('La contraseña es demasiado larga. Usa una más corta, de al menos 8 caracteres.');
           }
           await request(register?'register':'login',data);form.elements.password.value='';changed();location.replace('index.html');
-        }catch(e){feedback.textContent=e.name==='TimeoutError'?'La conexión tardó demasiado. Inténtalo de nuevo.':e.message;feedback.focus();submit.disabled=false;form.removeAttribute('aria-busy');}
+        }catch(e){form.elements.password.value='';feedback.textContent=e.name==='TimeoutError'?'La conexión tardó demasiado. Inténtalo de nuevo.':e.message;feedback.focus();submit.disabled=false;form.removeAttribute('aria-busy');}finally{submitting=false;}
       });
       const toggle=document.querySelector('#toggle-password');
       toggle.addEventListener('click',()=>{const field=form.elements.password;const show=field.type==='password';field.type=show?'text':'password';toggle.textContent=show?'Ocultar':'Mostrar';toggle.setAttribute('aria-pressed',String(show));});

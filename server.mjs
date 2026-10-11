@@ -22,6 +22,10 @@ for(const file of ['js/compartido/api-client.js','js/comunidad/reviews.js','js/i
 for (const file of ['js/inicio/hero.js', 'css/inicio/hero.css', 'js/compartido/navigation.js', 'css/compartido/navigation.css']) publicFiles.add(file);
 publicFiles.add('js/idiomas/locale-engine.js');
 publicFiles.add('js/tienda/variant-preview.js');
+publicFiles.add('microsoft-callback.html');
+publicFiles.add('recuperar-contrasena.html');
+publicFiles.add('js/cuenta/password-recovery.js');
+publicFiles.add('js/cuenta/microsoft-sdk.js');
 for(const lang of ['es','en','de','fr','it','pt','ja','ko','zh','ar'])publicFiles.add('locales/'+lang+'.json');
 mime['.json']='application/json; charset=utf-8';
 const assetAliases=JSON.parse(await readFile(new URL('./config/asset-aliases.json',import.meta.url),'utf8'));
@@ -34,6 +38,7 @@ export function createApp(chatOptions) {
     }
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
     res.setHeader("Cache-Control", "no-store");
     try {
       if (await reviewsApi(req,res)) return;
@@ -55,7 +60,7 @@ export function createApp(chatOptions) {
       // Only public assets; credentials and configuration never leave the server.
       if (!publicFiles.has(path) && !image) { sendError(req,res,404); return; }
       let data = await readFile(resolve(root, path));
-      if (extname(path) === '.html' && path !== 'error.html' && req.method === 'GET') {
+      if (extname(path) === '.html' && path !== 'error.html' && path !== 'microsoft-callback.html' && req.method === 'GET') {
         const initial = await bootstrap(req, res);
         data = data.toString('utf8').replace('<head>', `<head><script id="rumbo-bootstrap" type="application/json">${safeJson(initial)}</script><script src="js/cuenta/auth-client.js" defer></script><link rel="stylesheet" href="css/cuenta/auth.css">`);
       }

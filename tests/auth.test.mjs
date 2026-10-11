@@ -14,7 +14,7 @@ test('las contraseñas usan sal aleatoria y rechazan claves incorrectas',async()
 test('valida registro y no expone hash ni identidad interna de guardado',()=>{
   const data={name:'María López',email:'maria@example.com',password:'12345678'};
   assert.equal(validCredentials(data,true),true);
-  for(const bad of [{name:''},{name:'x'},{email:'sin-correo'},{password:'corta'},{password:'a'.repeat(129)},{name:'a\nb'}])assert.equal(validCredentials({...data,...bad},true),false);
+  for(const bad of [{name:''},{name:'x'},{email:'sin-correo'},{password:'corta'},{password:'😀😀😀😀'},{password:'abc\0defgh'},{password:'a'.repeat(129)},{name:'a\nb'}])assert.equal(validCredentials({...data,...bad},true),false);
   assert.deepEqual(publicUser({Id:'id',FullName:'María',Email:'m@example.com',PasswordHash:'private',VisitorId:'private'}),{id:'id',name:'María',email:'m@example.com'});
 });
 test('páginas públicas y errores seguros sin conexión a SQL Server',async()=>{

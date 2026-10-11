@@ -290,11 +290,41 @@
   function helpPage(id){const [title,intro,items]=help[id];root.innerHTML=crumb('Información')+hero(title,intro,'CONOCE RUMBO','?','UN POCO DE AYUDA')+`<section class="help-card">${items.map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${q}</summary><p>${a}</p></details>`).join('')}<div class="service-footer-links"><a class="button button-primary" href="index.html#contacto">Contactar al equipo ↗</a><a class="button button-outline" href="servicios.html">Explorar servicios</a></div></section>`;}
   function account(){
     const profile=read('rumbo.profile.v1',{});
-    root.innerHTML=crumb('Mi perfil')+hero('Perfil de viaje','Crea tu perfil de viaje con un alias y tu estilo de viaje. Se vincula a tu cuenta cuando has iniciado sesión; revisa el indicador de guardado para comprobar la conexión.','TU ESPACIO EN RUMBO','◎','A TU MANERA')+`<section class="help-card service-profile"><h2>Mi perfil</h2><p>Elige tu alias y tu estilo de viaje.</p><form id="profile-form" class="service-form">${input('alias','¿Cómo quieres que te llamemos?','text',escape(typeof profile?.alias==='string'?profile.alias:''),'maxlength="40" autocomplete="off" placeholder="Tu alias"')}${select('preference','Tu estilo de viaje',[['playa','Playa y descanso'],['naturaleza','Naturaleza'],['cultura','Cultura e historia']])}<div class="service-form-foot"><button class="button button-primary">Guardar perfil</button><button type="button" class="button button-outline" id="delete-profile">Eliminar perfil</button></div></form><p id="service-status" class="service-status" role="status"></p><a class="text-link" href="servicios.html?seccion=mi-viaje">Ir a mi viaje ↗</a></section>`;
+    root.innerHTML=crumb('Mi perfil')+hero('Perfil de viaje','Elige cómo quieres que te llamemos y qué viajes te gustan. Usaremos tu estilo para recomendarte destinos.','TU ESPACIO EN RUMBO','◎','A TU MANERA')+`<section class="help-card service-profile"><h2>Mi perfil</h2><p>Elige tu alias y tu estilo de viaje.</p><form id="profile-form" class="service-form">${input('alias','¿Cómo quieres que te llamemos?','text',escape(typeof profile?.alias==='string'?profile.alias:''),'maxlength="40" autocomplete="off" placeholder="Tu alias"')}${select('preference','Tu estilo de viaje',[['playa','Playa y descanso'],['naturaleza','Naturaleza'],['cultura','Cultura e historia']])}<div class="service-form-foot"><button type="submit" class="button button-primary">Guardar perfil</button><button type="button" class="button button-outline" id="delete-profile">Eliminar perfil</button></div></form><p id="service-status" class="service-status" role="status"></p><a class="text-link" href="viajes.html?pantalla=destinos#catalogo">Ver destinos para mí ↗</a></section>`;
     if(['playa','naturaleza','cultura'].includes(profile?.preference))$('#preference').value=profile.preference;
-    $('#profile-form').addEventListener('submit',e=>{e.preventDefault();const alias=$('#alias').value.trim();if(!alias){$('#alias').setCustomValidity(window.RumboLocale?.translate('Escribe un alias.')||'Escribe un alias.');$('#alias').reportValidity();return;}status(write('rumbo.profile.v1',{alias,preference:$('#preference').value})?`Listo, ${alias}. Tu perfil se guardó localmente; el indicador de guardado confirma su envío al servidor.`:'No se pudo guardar el perfil. Revisa los permisos del navegador.');});
+    const form=$('#profile-form');
+    let saving=false;
+    async function saveProfile(value){
+      if(saving)return;
+      saving=true;
+      const controls=[...form.querySelectorAll('input,select,button')];
+      controls.forEach(control=>control.disabled=true);
+      form.setAttribute('aria-busy','true');
+      status('Guardando perfil…');
+      try{
+        if(value===null)(window.RumboStorage||localStorage).removeItem('rumbo.profile.v1');
+        else if(!write('rumbo.profile.v1',value))throw Error('storage');
+        if(await window.RumboStorage?.flush?.()===false){status('No pudimos confirmar el guardado. Revisa la conexión y vuelve a intentarlo.');return;}
+        window.dispatchEvent(new Event('rumbo:profile-changed'));
+        if(value===null){form.reset();$('#alias').value='';status('Perfil eliminado. Tus elecciones de viaje se conservan.');}
+        else{
+          $('#alias').value=value.alias;
+          status(window.RumboDatabase?.connected
+            ? `Listo, ${value.alias}. Tu perfil está guardado${window.RumboDatabase.user?' en tu cuenta':''}. Ya puedes ver destinos según tu estilo.`
+            : `Listo, ${value.alias}. Tu perfil se guardó en este navegador. Conecta Rumbo para guardarlo en tu cuenta.`);
+        }
+      }catch{status('No se pudo guardar el perfil. Revisa la conexión y vuelve a intentarlo.');}
+      finally{saving=false;controls.forEach(control=>control.disabled=false);form.removeAttribute('aria-busy');}
+    }
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      const alias=$('#alias').value.trim();
+      if(!alias){$('#alias').setCustomValidity(window.RumboLocale?.translate('Escribe un alias.')||'Escribe un alias.');$('#alias').reportValidity();return;}
+      if(!form.reportValidity())return;
+      await saveProfile({alias,preference:$('#preference').value});
+    });
     $('#alias').addEventListener('input',()=>$('#alias').setCustomValidity(''));
-    $('#delete-profile').addEventListener('click',()=>{try{(window.RumboStorage || localStorage).removeItem('rumbo.profile.v1');$('#profile-form').reset();$('#alias').value='';status('Perfil eliminado. Tus elecciones de viaje se conservan.');}catch{status('No se pudo eliminar el perfil.');}});
+    $('#delete-profile').addEventListener('click',()=>saveProfile(null));
   }
   if(section==='guias') guidesPage();
   else if(Object.hasOwn(configs,section)) servicePage();

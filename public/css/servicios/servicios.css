@@ -487,38 +487,42 @@ body.booking-page main .service-tile {padding-bottom:24px;}
  body.booking-page main .service-tile .service-tile-photo {height:112px;margin-bottom:0;}
 }
 
-/* Complete destination photographs and readable catalog information. */
-body.rv-page .rv-card-photo {display:flex;align-items:center;justify-content:center;height:auto;aspect-ratio:3/2;background:#151b18;}
-body.rv-page .rv-card-image {display:block;position:relative;flex:none;overflow:hidden;border-radius:16px;}
-body.rv-page .rv-card-photo img {display:block;height:auto;width:100%;max-width:100%;object-fit:contain;transform:none!important;}
-body.rv-page .rv-card-tag {inset:12px auto auto 12px;max-width:calc(100% - 24px);padding:7px 11px;line-height:1.4;overflow-wrap:anywhere;text-align:left;}
-body.rv-page .rv-card-content {padding:24px 14px 12px;}
-body.rv-page .rv-card-content>p {margin-bottom:16px;line-height:1.75;}
-body.rv-page .rv-card-content>.rv-card-country {margin-bottom:8px;}
-body.rv-page .rv-card-footer {flex-wrap:wrap;gap:12px 20px;}
+/* A single quiet surface; photographs fill the card without inset frames. */
+body.rv-page .rv-destination-grid {gap:32px 26px;align-items:stretch;}
+body.rv-page .rv-destination-card {position:relative;min-width:0;padding:0;border:0;background:#1d2223!important;border-radius:18px;overflow:hidden;box-shadow:none;display:flex;flex-direction:column;}
+body.rv-page .rv-card-photo {position:relative;display:block;flex:none;width:100%;height:auto;aspect-ratio:3/2;border-radius:0;overflow:hidden;background:#1d2223;}
+body.rv-page .rv-card-photo img {display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;transition:transform .4s ease;}
+body.rv-page .rv-destination-card:hover .rv-card-photo img {transform:scale(1.025);}
+body.rv-page .rv-card-content {display:flex;flex-direction:column;flex:1;padding:25px 26px 22px;}
+body.rv-page .rv-card-content>.rv-card-country {margin:0 0 8px;font-size:10px;font-weight:600;letter-spacing:.15em;line-height:1.5;text-transform:uppercase;color:#b8c2c0;}
+body.rv-page .rv-card-content h3 {margin:0 0 9px;font-size:28px;font-weight:500;line-height:1.2;letter-spacing:-.035em;}
+body.rv-page .rv-card-content h3 a {color:#f4f5ef;}
+body.rv-page .rv-card-content>.rv-card-signature {margin:0 0 25px;color:#b8c2c0;font-size:13px;line-height:1.5;}
+body.rv-page .rv-card-footer {display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px 16px;margin-top:auto;padding-top:20px;border-top:1px solid #ffffff12;}
 body.rv-page .rv-card-footer>div {min-width:0;}
-body.rv-page .rv-card-footer a {display:inline-flex;align-items:center;min-height:44px;}
-body.rv-page .rv-destination-card {min-width:0;padding:12px;border:1px solid #344039;background:#1b211e!important;border-radius:22px;overflow:hidden;}
-body.rv-page .rv-destination-card:nth-child(3n+2) {background:#22211d!important;border-color:#403e34;}
-body.rv-page .rv-destination-card:nth-child(3n) {background:#1c2225!important;border-color:#343f45;}
-body.rv-page .rv-destination-card:focus-within,body.rv-page .rv-destination-card:hover {border-color:#73816c;}
-body.rv-page .rv-card-photo {border-radius:16px;overflow:hidden;}
-body.rv-page .rv-destination-grid {gap:36px 28px;align-items:stretch;}
-body.rv-page .rv-detail-hero {display:grid;grid-template-columns:minmax(0,1fr);align-items:end;position:relative;isolation:isolate;width:100%;min-width:0;height:auto;min-height:560px;aspect-ratio:16/10;background:var(--page);border-radius:20px;overflow:hidden;margin:24px 0 0;padding:clamp(28px,4vw,56px);}
-body.rv-page .rv-detail-hero::after {content:none;background:none;}
-body.rv-page .rv-detail-hero>img {position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;object-fit:cover;object-position:center;filter:brightness(.6);}
-body.rv-page .rv-detail-title {position:relative;inset:auto;width:min(100%,560px);padding:0;text-align:left;color:#fff;background:none;border-radius:0;text-shadow:0 1px 3px #0009,0 2px 16px #0006;}
-body.rv-page .rv-detail-title h1 {font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1.12;margin:0 0 14px;letter-spacing:-.035em;}
-body.rv-page .rv-detail-title p {max-width:44ch;margin:0;color:inherit;font-size:15px;line-height:1.7;}
-body.rv-page .rv-detail-body {padding-top:64px;gap:48px;}
+body.rv-page .rv-card-footer small {display:block;margin-bottom:7px;color:#b8c2c0;font-size:11px;line-height:1.4;}
+body.rv-page .rv-card-footer strong {display:block;font-size:22px;line-height:1.25;font-weight:500;color:#f4f5ef;letter-spacing:-.025em;}
+body.rv-page .rv-card-footer a {display:inline-flex;align-items:center;gap:12px;min-height:44px;color:var(--lime,#b9d969);font-size:12px;font-weight:500;white-space:nowrap;}
+body.rv-page .rv-card-footer a span {font-size:21px;}
+body.rv-page .rv-card-footer .promo-original {font-size:11px;color:#b8c2c0;}
+body.rv-page .rv-destination-card>.rv-profile-match {position:absolute;z-index:1;pointer-events:none;left:14px;top:14px;margin:0;padding:6px 10px;background:#171e1deb;border:0;color:#e5efcd;box-shadow:0 2px 12px #0002;}
+body.rv-page .rv-detail-hero {display:grid;grid-template-columns:minmax(0,1fr);align-items:end;position:relative;isolation:isolate;width:100%;min-width:0;height:auto;min-height:480px;aspect-ratio:16/9;background:var(--page);border-radius:20px;overflow:hidden;margin:24px 0 0;padding:clamp(28px,4vw,56px);}
+body.rv-page .rv-detail-hero::after {content:'';position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,transparent 28%,#10181726 50%,#0e1816d9 100%);pointer-events:none;}
+body.rv-page .rv-detail-hero>img {position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;object-fit:cover;object-position:center;filter:none;}
+body.rv-page .rv-detail-title {position:relative;z-index:1;inset:auto;width:min(100%,680px);padding:0;text-align:left;color:#fff;background:none;border-radius:0;text-shadow:0 1px 12px #0005;}
+body.rv-page .rv-detail-title h1 {font-size:clamp(42px,6vw,76px);font-weight:400;line-height:1.08;margin:0 0 16px;letter-spacing:-.045em;}
+body.rv-page .rv-detail-title p {max-width:44ch;margin:0;color:#fff;font-size:16px;line-height:1.6;}
+body.rv-page .rv-detail-title .rv-detail-country {margin-bottom:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;}
+body.rv-page .rv-detail-body {padding-top:56px;gap:48px;}
 @media(max-width:700px) {
- body.rv-page .rv-detail-hero {margin-top:16px;min-height:460px;aspect-ratio:4/5;padding:28px 24px;border-radius:16px;}
- body.rv-page .rv-detail-title h1 {font-size:clamp(30px,7vw,40px);}
+ body.rv-page .rv-detail-hero {margin-top:16px;min-height:420px;aspect-ratio:4/5;padding:28px 24px;border-radius:16px;}
+ body.rv-page .rv-detail-title h1 {font-size:clamp(38px,10vw,52px);}
  body.rv-page .rv-detail-title p {font-size:14px;}
- body.rv-page .rv-detail-body {padding-top:48px;gap:36px;}
- body.rv-page .rv-card-content {padding-top:20px;}
- body.rv-page .rv-destination-grid {gap:40px;}
+ body.rv-page .rv-detail-body {padding-top:40px;gap:32px;}
+ body.rv-page .rv-card-content {padding:23px 24px 20px;}
+ body.rv-page .rv-destination-grid {gap:28px;}
 }
+@media(prefers-reduced-motion:reduce) {body.rv-page .rv-card-photo img {transition:none;}body.rv-page .rv-destination-card:hover .rv-card-photo img {transform:none;}}
 
 @media(max-width:480px) {
  body.rv-page .rv-filter-bar {grid-template-columns:minmax(0,1fr);}
@@ -528,3 +532,10 @@ body.rv-page .rv-detail-body {padding-top:64px;gap:48px;}
 body.rv-page .rv-credits {margin-top:64px;}
 body.rv-page .rv-credits li {overflow-wrap:anywhere;line-height:1.7;}
 @media(max-width:700px) {body.rv-page .rv-credits {margin-top:48px;}}
+
+body.rv-page .rv-personalization {display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;margin:0 0 28px;border:1px solid var(--line,#394137);border-radius:14px;background:var(--surface,#191d1e);}
+body.rv-page .rv-personalization[hidden] {display:none;}
+body.rv-page .rv-personalization p {margin:0;font-size:14px;line-height:1.6;}
+body.rv-page .rv-personalization a {flex-shrink:0;color:var(--lime,#b9d969);font-size:13px;font-weight:600;}
+body.rv-page .rv-profile-match {display:inline-block;align-self:flex-start;margin:0 0 12px;padding:5px 10px;border:1px solid #b9d96960;border-radius:999px;color:var(--lime,#b9d969);font-size:11px;font-weight:600;line-height:1.5;}
+@media(max-width:600px) {body.rv-page .rv-personalization {align-items:flex-start;flex-direction:column;padding:16px;}}

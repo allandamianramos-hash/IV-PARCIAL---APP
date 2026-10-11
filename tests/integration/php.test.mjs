@@ -1,15 +1,26 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {randomBytes, randomUUID} from 'node:crypto';
+import {randomBytes, randomUUID, scryptSync, randomInt} from 'node:crypto';
+import {request as httpRequest} from 'node:http';
+import {request as httpsRequest} from 'node:https';
 import {loadEnvFile} from 'node:process';
 import {getDb,closeDb} from '../../backend/node/db.mjs';
-import {passwordHash,passwordMatches} from '../../backend/node/auth-api.mjs';
+import {passwordMatches} from '../../backend/node/auth-api.mjs';
 try {loadEnvFile(new URL('../../.env',import.meta.url));} catch(e) {if(e.code!=='ENOENT')throw e;}
 const origin=process.env.PHP_TEST_ORIGIN||'http://127.0.0.1:8000';
 test('PHP + SQL Server: registro, login, persistencia, aislamiento y compatibilidad',async()=>{
  const owners=new Set(),users=new Set();
  const {pool,sql}=await getDb();
- const request=async(path,{cookie='',method='GET',body,headers={}}={})=>fetch(origin+path,{method,headers:{Cookie:cookie,Origin:origin,'Content-Type':'application/json',...headers},body:body===undefined?undefined:JSON.stringify(body)});
+ // Give local test traffic its own loopback address so repeated integration runs
+ // do not consume the browser user's IP allowance. Account limits stay active.
+ const localAddress=new URL(origin).hostname==='127.0.0.1'?`127.0.${randomInt(1,255)}.${randomInt(1,255)}`:undefined;
+ const request=(path,{cookie='',method='GET',body,headers={}}={})=>new Promise((resolve,reject)=>{
+  const url=new URL(path,origin),payload=body===undefined?undefined:JSON.stringify(body);
+  const req=(url.protocol==='https:'?httpsRequest:httpRequest)(url,{method,localAddress,headers:{Cookie:cookie,Origin:origin,'Content-Type':'application/json',...(payload===undefined?{}:{'Content-Length':Buffer.byteLength(payload)}),...headers}},res=>{
+   const chunks=[];res.on('data',chunk=>chunks.push(chunk));res.on('error',reject);
+   res.on('end',()=>{const responseHeaders=new Headers();for(let i=0;i<res.rawHeaders.length;i+=2)responseHeaders.append(res.rawHeaders[i],res.rawHeaders[i+1]);resolve(new Response(Buffer.concat(chunks),{status:res.statusCode,headers:responseHeaders}));});
+  });req.on('error',reject);req.setTimeout(45000,()=>req.destroy(new Error('PHP test request timed out')));req.end(payload);
+ });
  const page=async(cookie='')=>{const r=await request('/',{cookie});assert.equal(r.status,200);const html=await r.text();const boot=JSON.parse(html.match(/id="rumbo-bootstrap" type="application\/json">(.*?)<\/script>/s)[1]);assert.equal(boot.connected,true);owners.add(boot.visitor);return {boot,cookie:cookie||r.headers.getSetCookie().map(c=>c.split(';')[0]).join('; ')};};
  const session=r=>r.headers.getSetCookie().filter(c=>c.startsWith('rumbo_session=')).map(c=>c.split(';')[0]).join('; ');
  try {
@@ -46,12 +57,13 @@ test('PHP + SQL Server: registro, login, persistencia, aislamiento y compatibili
   r=await request('/api/state',{cookie:newCookie,method:'PUT',headers:{'X-Rumbo-Visitor':signed.boot.visitor},body:{changes:Object.fromEntries(Object.entries(values).map(([k,v])=>[k,{value:v,revision:0}]))}});assert.equal(r.status,200,await r.clone().text());
   const rows=(await (await request('/api/state',{cookie:newCookie})).json()).state;
   for(const [k,v]of Object.entries(values))assert.deepEqual(rows[k].value,v);
-  const legacy=await passwordHash(password);
+  const salt=randomBytes(16).toString('hex');
+  const legacy=`scrypt:${salt}:${scryptSync(password,salt,64).toString('hex')}`;
   await pool.request().input('id',sql.UniqueIdentifier,account.user.id).input('hash',sql.VarChar(200),legacy).query('UPDATE dbo.RumboUsers SET PasswordHash=@hash WHERE Id=@id');
   r=await request('/api/auth/login',{method:'POST',body:{email,password}});assert.equal(r.status,200,await r.clone().text());
   for(const path of ['/.env','/backend/php/conexion.php','/database/INSTALAR_BD_VIAJES.sql','/package.json','/scripts/configurar-php.ps1'])assert.equal((await request(path)).status,404);
  } finally {
-  for(const id of users){await pool.request().input('id',sql.UniqueIdentifier,id).query('DELETE dbo.RumboSessions WHERE UserId=@id; DELETE dbo.RumboUsers WHERE Id=@id;');}
+  for(const id of users){await pool.request().input('id',sql.UniqueIdentifier,id).query("DELETE dbo.RumboAuthAttempts WHERE IpHash IN(SELECT LOWER(CONVERT(varchar(64),HASHBYTES('SHA2_256',CONVERT(varchar(300),'password:'+Email)),2)) FROM dbo.RumboUsers WHERE Id=@id); DELETE dbo.RumboSessions WHERE UserId=@id; DELETE dbo.RumboUsers WHERE Id=@id;");}
   for(const id of owners){await pool.request().input('id',sql.UniqueIdentifier,id).query('DELETE dbo.RumboVisitors WHERE Id=@id AND NOT EXISTS(SELECT 1 FROM dbo.RumboUsers WHERE VisitorId=@id)');}
   await closeDb();
  }

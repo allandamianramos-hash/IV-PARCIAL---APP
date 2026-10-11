@@ -67,6 +67,8 @@ body #site-navbar .main-nav a { color: var(--secondary); }
 body #site-navbar .main-nav a[aria-current=page] { color: var(--foreground); box-shadow: inset 0 -2px var(--lime); }
 body #site-navbar .main-nav a:hover { color: var(--lime); }
 body #site-navbar .header-actions :is(.header-trip,.login-button) { color: var(--foreground)!important; }
+body #site-navbar .header-actions .login-button { background:var(--lime)!important;color:var(--on-lime)!important; }
+body #site-navbar .header-actions .login-button:hover { background:var(--on-tag)!important;color:var(--on-lime)!important; }
 body #site-navbar .header-actions .register-button,
 body :is(.button-primary,.register-button,.auth-card [type=submit],.hero-primary,.checkout-btn,.add-btn,.chat-send,.primary) {
   background: var(--lime)!important; color: var(--on-lime)!important; border-color: var(--lime)!important;
@@ -405,13 +407,11 @@ body :is(.packing-section,.faq-section,.store-benefits,.journey-next) {margin-bl
  body .rumbo-footer-main {gap:40px 24px;}
 }
 
-/* Marcos suaves para las fotografías de destinos del inicio. */
-body #destinations-track .destination-card {padding:10px;border:1px solid #344039;border-radius:22px;background:#1b211e;overflow:hidden;}
-body #destinations-track .destination-card:nth-child(3n+2) {background:#22211d;border-color:#403e34;}
-body #destinations-track .destination-card:nth-child(3n) {background:#1c2225;border-color:#343f45;}
-body #destinations-track .destination-body {padding:20px 12px 14px;border-bottom:0;}
-body #destinations-track .destination-image {border-radius:14px;}
-body #destinations-track .destination-card:focus-within,body #destinations-track .destination-card:hover {border-color:#73816c;}
+/* Inicio y catálogo comparten el mismo tratamiento fotográfico. */
+body #destinations-track .destination-card {padding:0;border:0;border-radius:18px;background:#1d2223;overflow:hidden;}
+body #destinations-track .destination-body {padding:24px;border-bottom:0;}
+body #destinations-track .destination-image {border-radius:0;}
+body #destinations-track .destination-image img {width:100%;height:100%;object-fit:cover;}
 body :is(.rv-field,.service-field) select:required:invalid {color:var(--support)!important;}
 body :is(.rv-field,.service-field) select option {color:var(--foreground);}
 @media(max-width:540px) {

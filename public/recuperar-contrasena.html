@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer">
+  <title>Recuperar contraseña | Rumbo</title>
+  <link rel="stylesheet" href="css/inicio/style.css"><link rel="stylesheet" href="css/compartido/common.css"><link rel="stylesheet" href="css/compartido/design.css"><link rel="stylesheet" href="css/compartido/navigation.css"><link rel="stylesheet" href="css/compartido/palette.css">
+  <script src="js/compartido/database-client.js" defer></script><script src="js/compartido/navigation.js" defer></script><script src="js/cuenta/password-recovery.js" defer></script>
+<link rel="stylesheet" href="css/comunidad/community.css">
+<script src="js/compartido/api-client.js" defer></script>
+<script src="js/idiomas/translations.js" defer></script>
+<script src="js/idiomas/locale-engine.js" defer></script>
+<script src="js/idiomas/preferences.js" defer></script>
+<link rel="stylesheet" href="css/cuenta/auth.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+</head>
+<body class="auth-page auth-recovery">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <main id="contenido" class="auth-main">
+    <section class="auth-card" aria-labelledby="recovery-title"><a class="auth-brand" href="index.html" aria-label="Rumbo, volver al inicio">rumbo<span aria-hidden="true">↗</span></a>
+      <p class="recovery-step" id="recovery-step">PASO 1 DE 3</p>
+      <div class="auth-heading"><h1 id="recovery-title" tabindex="-1">¿Olvidaste tu contraseña?</h1><p id="recovery-description">Te enviaremos un código para recuperar el acceso.</p></div>
+      <form id="recovery-email-form">
+        <div class="auth-field"><label for="recovery-email">Correo electrónico</label><input id="recovery-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="nombre@ejemplo.com" required></div>
+        <button type="submit" class="button button-primary">Enviar código</button>
+      </form>
+      <form id="recovery-code-form" hidden>
+        <div class="auth-field"><label for="recovery-code">Código de 6 dígitos</label><input id="recovery-code" name="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" placeholder="000000" required aria-describedby="recovery-code-help"><small id="recovery-code-help">Vence en 10 minutos. Revisa también la carpeta de spam.</small></div>
+        <button type="submit" class="button button-primary">Verificar código</button>
+        <div class="recovery-actions"><button type="button" id="recovery-resend" class="recovery-text-button">Reenviar código</button><button type="button" id="recovery-change-email" class="recovery-text-button">Cambiar correo</button></div>
+      </form>
+      <form id="recovery-password-form" hidden>
+        <div class="auth-field"><label for="new-password">Nueva contraseña</label><input id="new-password" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="72" required aria-describedby="new-password-help"><small id="new-password-help">Usa al menos 8 caracteres.</small></div>
+        <div class="auth-field"><label for="confirm-password">Repite tu contraseña</label><input id="confirm-password" type="password" autocomplete="new-password" minlength="8" maxlength="72" required></div>
+        <label class="recovery-show-password"><input type="checkbox" id="recovery-show-password"> Mostrar contraseñas</label>
+        <button type="submit" class="button button-primary">Guardar nueva contraseña</button><button type="button" class="recovery-text-button recovery-restart" id="recovery-restart">Solicitar otro código</button>
+      </form>
+      <div id="recovery-success" hidden><a class="button button-primary" href="iniciar-sesion.html">Iniciar sesión</a></div>
+      <p id="recovery-status" role="status" aria-live="polite" tabindex="-1"></p>
+      <p id="recovery-social-note" class="auth-social-note">También puedes continuar con Google o Microsoft.</p>
+      <p class="auth-switch"><a href="iniciar-sesion.html">Volver a iniciar sesión</a></p>
+      <noscript>Activa JavaScript para recuperar tu contraseña.</noscript>
+    </section>
+  </main>
+  <footer class="auth-footer"><div class="auth-footer-links"><a href="index.html">Inicio</a><a href="servicios.html?seccion=privacidad">Privacidad</a></div><div class="auth-locale"></div></footer>
+</body>
+</html>

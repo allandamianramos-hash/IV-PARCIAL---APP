@@ -44,6 +44,21 @@ test('una página ya cargada muestra la cuenta y el visitante conserva los enlac
   assert.deepEqual(links.children,['Iniciar sesión','Registrarse']);
 });
 
+test('el saludo usa el alias completo guardado y cambia al guardar o eliminar el perfil',()=>{
+  const p=page('complete'),header=p.buildHeader();
+  let profile={alias:'  Ana del Mar  ',preference:'playa'};
+  p.scope.window.RumboStorage={getItem:()=>JSON.stringify(profile)};
+  p.run();
+  const name=header.children[0].children[1].children[0].children[0].children[1];
+  assert.equal(name.textContent,'Ana del Mar');
+  profile={alias:'<Viajera & amiga>',preference:'cultura'};
+  p.windowEvents['rumbo:profile-changed']();
+  assert.equal(name.textContent,profile.alias);
+  assert.equal(name.innerHTML,undefined,'el alias se presenta como texto, nunca HTML');
+  profile=null;p.windowEvents['rumbo:profile-changed']();
+  assert.equal(name.textContent,'Viajera');
+});
+
 test('el servidor independiente conserva su puerto y solo reconecta al solicitarlo',async()=>{
   const common=await readFile(new URL('../public/js/compartido/connection.js',import.meta.url),'utf8');
   const redirects=[];

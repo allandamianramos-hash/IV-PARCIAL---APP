@@ -3051,16 +3051,16 @@
     "san-jose": ["destino-san-jose-teatro.jpg", 2560, 1920, "Fachada del Teatro Nacional en San José, Costa Rica", "Museos, mercados y parques en el Valle Central de Costa Rica."],
     "paris": ["destino-paris.jpg", 2560, 1600, "Vista de París; fotografía de Wikimedia Commons", "Museos, cafés y paseos junto al Sena en la capital francesa."],
     "bali": ["bali.jpg", 2560, 1707, "Templo Ulun Danu Bratan junto al lago en Bali", "Templos de Tanah Lot y Uluwatu, arrozales de Ubud y costa de Sanur."],
-    "venecia": ["destino-venecia.jpg", 2560, 1432, "Vista de Venecia; fotografía de Wikimedia Commons", "Canales, puentes y plazas para descubrir a pie."],
+    "venecia": ["destino-venecia-rialto.jpg", 2560, 1401, "El Gran Canal de Venecia desde el puente de Rialto", "Canales, puentes y plazas para descubrir a pie."],
     "osaka": ["destino-osaka.jpg", 2560, 1706, "Vista de Osaka; fotografía de Wikimedia Commons", "Gastronomía, barrios animados y cultura urbana japonesa."],
     "nueva-york": ["destino-nueva-york.jpg", 2560, 1703, "Vista de Nueva York; fotografía de Wikimedia Commons", "Central Park, el puente de Brooklyn y los barrios de Manhattan."],
-    "barcelona": ["destino-barcelona.jpg", 2560, 1195, "Vista de Barcelona; fotografía de Wikimedia Commons", "Arquitectura, gastronomía y paseos junto al Mediterráneo."],
+    "barcelona": ["destino-barcelona-sagrada-familia.jpg", 3840, 2560, "La Sagrada Familia iluminada al anochecer, con su reflejo en el estanque", "Arquitectura, gastronomía y paseos junto al Mediterráneo."],
     "roma": ["destino-roma.jpg", 2560, 1701, "Vista de Roma; fotografía de Wikimedia Commons", "Coliseo, plazas de Trastevere y jardines de Villa Borghese."],
     "ciudad-guatemala": ["destino-ciudad-guatemala.jpg", 2560, 1555, "Vista de Ciudad de Guatemala; fotografía de Wikimedia Commons", "Museos, mercados y barrios para una escapada urbana."],
     "panama": ["destino-panama.jpg", 2048, 1152, "Vista de Ciudad de Panamá; fotografía de Wikimedia Commons", "Casco Antiguo, Cerro Ancón y Parque Natural Metropolitano."],
     "cancun": ["destino-cancun.jpg", 2560, 1438, "Vista de Cancún; fotografía de Wikimedia Commons", "Playa Delfines, laguna Nichupté y sitio arqueológico El Rey."],
     "miami": ["destino-miami.jpg", 2560, 1422, "Vista de Miami; fotografía de Wikimedia Commons", "South Beach, Little Havana y jardines de Vizcaya."],
-    "madrid": ["destino-madrid.jpg", 2560, 1348, "Vista de Madrid; fotografía de Wikimedia Commons", "Parque de El Retiro, Plaza Mayor y mercados del centro."],
+    "madrid": ["destino-madrid-cibeles.jpg", 3840, 2400, "Palacio y fuente de Cibeles iluminados por la noche en Madrid", "Parque de El Retiro, Plaza Mayor y mercados del centro."],
     "londres": ["destino-londres.jpg", 2560, 1259, "Vista de Londres", "Museos, mercados y paseos por las orillas del Támesis."],
     "lisboa": ["destino-lisboa.jpg", 2560, 1392, "Vista de las colinas y los tejados de Lisboa", "Tranvías, miradores y barrios para recorrer junto al Tajo."],
     "rio-janeiro": ["destino-rio-janeiro.jpg", 2560, 1920, "Vista de Río de Janeiro", "Playas de Ipanema, jardines y vistas desde el Pan de Azúcar."],
@@ -3088,9 +3088,54 @@
     "praga": ["destino-praga.jpg", 2560, 1706, "Vista de Praga y los puentes sobre el río Moldava", "Puente de Carlos, plazas y miradores sobre el Moldava."],
     "toronto": ["destino-toronto.jpg", 2560, 1704, "Vista de Toronto y la torre CN desde las islas", "El lago Ontario, museos y mercados a tu ritmo."]
   };
+  const destinationSignatures = {
+  "roatan": "Arrecifes y agua turquesa",
+  "san-jose": "Café, arte y vida local",
+  "paris": "Arte a orillas del Sena",
+  "bali": "Templos entre lagos y arrozales",
+  "venecia": "La vida junto al Gran Canal",
+  "osaka": "Sabores y noches de neón",
+  "nueva-york": "La ciudad desde las alturas",
+  "barcelona": "Gaudí y el Mediterráneo",
+  "roma": "Historia en cada plaza",
+  "ciudad-guatemala": "Mercados y cultura viva",
+  "panama": "Dos océanos, una ciudad",
+  "cancun": "El Caribe en azul turquesa",
+  "miami": "Diseño y brisa tropical",
+  "madrid": "Arte y tardes de paseo",
+  "londres": "Historias junto al Támesis",
+  "lisboa": "Miradores y luz del Atlántico",
+  "rio-janeiro": "Entre montañas y mar",
+  "ciudad-mexico": "Arte, historia y sabor",
+  "bogota": "Cultura al pie de los Andes",
+  "cartagena": "Murallas frente al Caribe",
+  "lima": "Cocina y vistas al Pacífico",
+  "buenos-aires": "Cafés, tango y barrios con alma",
+  "santiago": "La ciudad bajo los Andes",
+  "medellin": "Jardines y vida entre montañas",
+  "punta-cana": "Palmeras y días sin prisa",
+  "san-salvador": "Cultura a la sombra del volcán",
+  "san-juan": "Calles de color junto al mar",
+  "los-angeles": "Cine y atardeceres del Pacífico",
+  "las-vegas": "Luces que nunca descansan",
+  "vancouver": "Bosque, montañas y océano",
+  "amsterdam": "Canales y paseos sin prisa",
+  "berlin": "Historia y espíritu creativo",
+  "estambul": "Encuentro de dos continentes",
+  "dubai": "Arquitectura entre mar y desierto",
+  "tokio": "Tradición bajo luces de neón",
+  "seul": "Palacios y energía urbana",
+  "singapur": "Jardines entre rascacielos",
+  "sidney": "La ciudad abierta a la bahía",
+  "praga": "Puentes y tejados de cuento",
+  "toronto": "La ciudad a orillas del Ontario"
+};
   destinations.forEach(d => {
+    d.signature = destinationSignatures[d.id] || d.tag;
+    d.imagePosition = ({barcelona:"50% 18%",madrid:"50% 0%"})[d.id] || "50% 50%";
     const photo = destinationPhotos[d.id];
-    if (photo) Object.assign(d, { image: `imagenes-viajes/destinos/${photo[0]}`, imageWidth: photo[1], imageHeight: photo[2], alt: photo[3], intro: photo[4], thumbnail: `imagenes-viajes/destinos/miniaturas/${d.id}.jpg`, mediumImage: `imagenes-viajes/destinos/miniaturas/${d.id}-1280.jpg` });
+    const photoKey = ({barcelona:"barcelona-sagrada-familia",madrid:"madrid-cibeles",venecia:"venecia-rialto"})[d.id] || d.id;
+    if (photo) Object.assign(d, { image: `imagenes-viajes/destinos/${photo[0]}`, imageWidth: photo[1], imageHeight: photo[2], alt: photo[3], intro: photo[4], thumbnail: `imagenes-viajes/destinos/miniaturas/${photoKey}.jpg`, mediumImage: `imagenes-viajes/destinos/miniaturas/${photoKey}-1280.jpg` });
   });
   const discounted = (amount, percent) => Math.round(amount * (100 - percent)) / 100;
   destinations.forEach(d => { d.promotion = promotions[d.id] || null; });
@@ -3125,13 +3170,25 @@
     d.inspirationBudget = discounted(d.economy, d.promotion.percent) + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
   });
   const homeDestinationIds = ['roatan', 'cancun', 'lisboa', 'madrid', 'londres', 'rio-janeiro'];
-  function selectHomeDestinations(items = destinations, featured = false) {
+  const travelStyleLabels = {playa:'Playa y descanso',naturaleza:'Naturaleza',cultura:'Cultura e historia'};
+  function preferredTravelStyle() {
+    try {
+      const profile = JSON.parse((window.RumboStorage || localStorage).getItem('rumbo.profile.v1'));
+      return Object.hasOwn(travelStyleLabels, profile?.preference) ? profile.preference : '';
+    } catch { return ''; }
+  }
+  function recommendDestinations(items, preference = preferredTravelStyle()) {
+    if (!Object.hasOwn(travelStyleLabels, preference)) return [...items];
+    const matches = item => (item.type || item.style) === preference;
+    return [...items.filter(matches), ...items.filter(item => !matches(item))];
+  }
+  function selectHomeDestinations(items = destinations, featured = false, preference = preferredTravelStyle()) {
     const ordered = featured
       ? [...homeDestinationIds.map(id => items.find(item => item.id === id)).filter(Boolean), ...items.filter(item => !homeDestinationIds.includes(item.id))]
       : items;
-    return ordered.slice(0, 6);
+    return recommendDestinations(ordered, preference).slice(0, 6);
   }
-  window.RumboViajesDatos = { destinations, rooms, origins, flights, promotions, selectHomeDestinations };
+  window.RumboViajesDatos = { destinations, rooms, origins, flights, promotions, selectHomeDestinations, travelStyleLabels, preferredTravelStyle, recommendDestinations };
 })();
 
 
@@ -3324,14 +3381,22 @@
         (budget === 'all' || item.inspirationBudget <= Number(budget))
       );
       const order = $('#orden-destinos').value;
+      const {preferredTravelStyle, recommendDestinations, travelStyleLabels} = window.RumboViajesDatos;
+      const preference = preferredTravelStyle();
+      const matches = preference ? results.filter(item => item.type === preference).length : 0;
+      if (order === 'recommended') results = recommendDestinations(results, preference);
       if (order === 'price-low') results.sort((a, b) => a.inspirationBudget - b.inspirationBudget);
       if (order === 'name') results.sort((a, b) => a.name.localeCompare(b.name, 'es'));
+      $('#destination-personalization').hidden = !preference;
+      if (preference) $('#destination-personalization-text').textContent = matches
+        ? `${matches} destinos encajan con tu estilo: ${travelStyleLabels[preference]}.${order === 'recommended' ? ' Los mostramos primero para ti.' : ''}`
+        : `Tu estilo es ${travelStyleLabels[preference]}. No hay coincidencias con estos filtros; puedes cambiarlos para ver más opciones.`;
       $('#destination-count').textContent = `${results.length} ${results.length === 1 ? 'destino para descubrir' : 'destinos para descubrir'}`;
       $('#destination-empty').hidden = results.length !== 0;
       $('#destination-list').innerHTML = results.map(item => {
         const href = escapeHTML(link('detalle-destino', contextFor(item)));
-        return `<article class="rv-destination-card"><a href="${href}" class="rv-card-photo" tabindex="-1" aria-hidden="true"><span class="rv-card-image" style="width:${Math.min(100, ((item.imageWidth || 1100) / (item.imageHeight || 760)) / 1.5 * 100)}%"><img src="${item.thumbnail || item.image}" ${item.thumbnail ? `srcset="${item.thumbnail} 720w, ${item.mediumImage} 1280w, ${item.image} ${item.imageWidth}w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:1050px) 45vw, 380px"` : ''} alt="" width="${item.imageWidth || 1100}" height="${item.imageHeight || 760}" loading="lazy" decoding="async"><span class="rv-card-tag">${item.tag}</span></span></a>
-          <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p>${item.intro}</p><p class="rv-demo-caption">Aeropuerto: ${item.airport.name} (${item.airport.code})</p>${item.promotion ? `<p class="promo-note"><span class="promo-badge">−${item.promotion.percent}% en vuelos</span> Descuento automático</p>` : ''}<div class="rv-card-footer"><div><small>Idea de presupuesto / persona</small>${item.originalInspirationBudget ? `<del class="promo-original">${money(item.originalInspirationBudget)}</del>` : ''}<strong>${money(item.inspirationBudget)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino ↗</a></div></div></article>`;
+        return `<article class="rv-destination-card"><a href="${href}" class="rv-card-photo" tabindex="-1" aria-hidden="true"><img src="${item.thumbnail || item.image}" ${item.thumbnail ? `srcset="${item.thumbnail} 720w, ${item.mediumImage} 1280w, ${item.image} ${item.imageWidth}w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:1050px) 45vw, 380px"` : ''} alt="" width="${item.imageWidth || 1100}" height="${item.imageHeight || 760}" loading="lazy" decoding="async"></a>${preference && item.type === preference ? '<span class="rv-profile-match">Para tu estilo de viaje</span>' : ''}
+          <div class="rv-card-content"><p class="rv-card-country">${item.country}</p><h3><a href="${href}">${item.name}</a></h3><p class="rv-card-signature">${item.signature}</p><div class="rv-card-footer"><div><small>Presupuesto / persona</small><strong>${money(item.inspirationBudget)}</strong></div><a href="${href}" aria-label="Ver destino ${item.name}">Ver destino <span aria-hidden="true">↗</span></a></div></div></article>`;
       }).join('');
       const query = new URLSearchParams(new FormData(form));
       query.set('orden', order);
@@ -3347,6 +3412,8 @@
     $('#limpiar-destinos').addEventListener('click', reset);
     $('#restablecer-destinos').addEventListener('click', reset);
     refreshPage = render;
+    window.addEventListener('rumbo:profile-changed',render);
+    window.addEventListener('storage',event=>{if(event.key==='rumbo.profile.v1')render();});
     render();
     const credits = $('#creditos-imagenes');
     function openCredits() {
@@ -3361,8 +3428,8 @@
     refreshPage = initDetail;
     const destination = currentDestination();
     document.title = `${destination.name} | Rumbo`;
-    $('#destination-detail').innerHTML = `<section class="rv-detail-hero" aria-labelledby="page-title"><img src="${destination.image}" ${destination.thumbnail ? `srcset="${destination.thumbnail} 720w, ${destination.mediumImage} 1280w, ${destination.image} ${destination.imageWidth}w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:1240px) calc(100vw - 64px), 1180px"` : ''} alt="${destination.alt}" width="${destination.imageWidth || 1100}" height="${destination.imageHeight || 760}" fetchpriority="high"><div class="rv-detail-title"><h1 id="page-title">${destination.name}</h1><p>${destination.intro}</p></div></section>
-      <div class="rv-detail-body"><section class="rv-detail-copy"><h2>Actividades y lugares de interés</h2>${destination.description !== destination.intro ? `<p>${destination.description}</p>` : ''}<ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div><p><a class="rv-link-button" href="servicios.html?seccion=traslados&destino=${destination.id}">Ver traslados en ${destination.name} ↗</a></p><p><a class="rv-link-button" href="servicios.html?seccion=seguros&destino=${destination.id}">Comparar seguros para este destino ↗</a></p><p><a class="rv-link-button" href="servicios.html?seccion=guias&destino=${destination.id}">Explorar recorridos con guía en ${destination.name} ↗</a></p>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Las actividades se organizan por separado del vuelo y el hospedaje.</p></section>
+    $('#destination-detail').innerHTML = `<section class="rv-detail-hero" aria-labelledby="page-title"><img src="${destination.image}" style="object-position:${destination.imagePosition}" ${destination.thumbnail ? `srcset="${destination.thumbnail} 720w, ${destination.mediumImage} 1280w, ${destination.image} ${destination.imageWidth}w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:1240px) calc(100vw - 64px), 1180px"` : ''} alt="${destination.alt}" width="${destination.imageWidth || 1100}" height="${destination.imageHeight || 760}" fetchpriority="high"><div class="rv-detail-title"><p class="rv-detail-country">${destination.country}</p><h1 id="page-title">${destination.name}</h1><p>${destination.signature}</p></div></section>
+      <div class="rv-detail-body"><section class="rv-detail-copy"><h2>Descubre ${destination.name}</h2><p>${destination.intro}</p>${destination.description !== destination.intro ? `<p>${destination.description}</p>` : ''}<ul class="rv-highlight-list">${destination.highlights.map(item => `<li><span aria-hidden="true">↗</span>${item}</li>`).join('')}</ul><div class="rv-tip"><strong>Para organizarte</strong>${destination.tip}</div><p><a class="rv-link-button" href="servicios.html?seccion=traslados&destino=${destination.id}">Ver traslados en ${destination.name} ↗</a></p><p><a class="rv-link-button" href="servicios.html?seccion=seguros&destino=${destination.id}">Comparar seguros para este destino ↗</a></p><p><a class="rv-link-button" href="servicios.html?seccion=guias&destino=${destination.id}">Explorar recorridos con guía en ${destination.name} ↗</a></p>${destination.transfer ? `<p class="rv-notice">${destination.transfer}</p>` : ''}<p class="rv-caption">Las actividades se organizan por separado del vuelo y el hospedaje.</p></section>
       <aside class="rv-plan-panel" aria-labelledby="detail-plan-title"><h2 id="detail-plan-title">Planificar ${destination.name}</h2>${destination.promotion ? `<p class="promo-badge">−${destination.promotion.percent}% en vuelos · descuento aplicado</p>` : ''}<p class="rv-detail-price">Vuelo desde ${destination.promotion ? `<del class="promo-original">${money(destination.economy)}</del>` : ''}<strong>${money(flights(destination, 'Tegucigalpa')[0]?.economy ?? destination.economy)}</strong></p>${destination.promotion ? '<p class="promo-note">Aplica a vuelos de ida, en ambas clases y orígenes del catálogo. Sin cupón. Hotel y otros servicios por separado. Oferta de demostración de Rumbo; no se transfiere a la aerolínea.</p>' : ''}<p class="rv-caption" style="margin: -8px 0 22px">Por persona · económica · solo ida desde Tegucigalpa.</p>
       <form id="detail-form"><div class="rv-field"><label for="detail-date">Fecha de salida</label><input id="detail-date" type="date" value="${state.date}" min="${today()}" required></div><div class="rv-field-pair"><div class="rv-field"><label for="detail-travelers">Viajeros</label><input id="detail-travelers" type="number" value="${state.travelers}" min="1" max="12" step="1" required></div><div class="rv-field"><label for="detail-nights">Noches de hotel</label><input id="detail-nights" type="number" value="${state.nights}" min="1" max="30" step="1" required></div></div><button class="button button-primary" type="submit" name="next" value="vuelos">Elegir vuelo <span aria-hidden="true">↗</span></button><button class="rv-link-button" type="submit" name="next" value="hoteles">Solo necesito hotel →</button></form></aside></div>`;
     $('#detail-form').addEventListener('submit', event => {

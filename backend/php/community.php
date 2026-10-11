@@ -9,7 +9,7 @@ function handle_reviews(string $method): never {
   $user=auth_user();$ownKey=$user?'review:'.$user['Id']:'';
   $aggregate=query("SELECT COUNT(*) AS total,AVG(TRY_CAST(JSON_VALUE(DataJson,'$.rating') AS float)) AS average,MAX(CASE WHEN Name=? OR Name LIKE ? THEN 1 ELSE 0 END) AS hasOwnReview FROM dbo.RumboSettings WHERE Name LIKE 'review:%'",[$ownKey,$ownKey.':%'])->fetch();
   // Offset is a bounded integer, not raw user input.
-  $rows=query("SELECT Name AS id,CASE WHEN Name=? OR Name LIKE ? THEN 1 ELSE 0 END AS isOwn,JSON_VALUE(DataJson,'$.name') AS name,TRY_CAST(JSON_VALUE(DataJson,'$.rating') AS int) AS rating,JSON_VALUE(DataJson,'$.comment') AS comment,JSON_VALUE(DataJson,'$.date') AS date FROM dbo.RumboSettings WHERE Name LIKE 'review:%' ORDER BY JSON_VALUE(DataJson,'$.date') DESC,Name OFFSET $offset ROWS FETCH NEXT 6 ROWS ONLY",[$ownKey,$ownKey.':%'])->fetchAll();
+  $rows=query("SELECT r.Name AS id,CASE WHEN r.Name=? OR r.Name LIKE ? THEN 1 ELSE 0 END AS isOwn,COALESCE(NULLIF(LTRIM(RTRIM(JSON_VALUE(p.DataJson,'$.alias'))),''),JSON_VALUE(r.DataJson,'$.name')) AS name,TRY_CAST(JSON_VALUE(r.DataJson,'$.rating') AS int) AS rating,JSON_VALUE(r.DataJson,'$.comment') AS comment,JSON_VALUE(r.DataJson,'$.date') AS date FROM dbo.RumboSettings r LEFT JOIN dbo.RumboUsers u ON u.Id=TRY_CONVERT(uniqueidentifier,SUBSTRING(r.Name,8,36)) LEFT JOIN dbo.RumboVisitorState p ON p.VisitorId=u.VisitorId AND p.StateKey='rumbo.profile.v1' WHERE r.Name LIKE 'review:%' ORDER BY JSON_VALUE(r.DataJson,'$.date') DESC,r.Name OFFSET $offset ROWS FETCH NEXT 6 ROWS ONLY",[$ownKey,$ownKey.':%'])->fetchAll();
   foreach($rows as &$row){$row['rating']=(int)$row['rating'];$row['isOwn']=(int)$row['isOwn']===1;}unset($row);
   respond(200,['total'=>(int)$aggregate['total'],'average'=>$aggregate['average']===null?null:(float)$aggregate['average'],'hasOwnReview'=>(int)$aggregate['hasOwnReview']===1,'reviews'=>$rows,'page'=>$page]);
  }
@@ -31,7 +31,8 @@ function handle_reviews(string $method): never {
 }
 // Accepts only the authenticated identity resolved by handle_reviews.
 function persist_review(array $user,stdClass $body): string {
- $review=['name'=>preg_split('/\s+/u',trim($user['FullName']))[0],'rating'=>$body->rating,'comment'=>trim($body->comment),'date'=>gmdate('Y-m-d\TH:i:s.000\Z')];
+ $alias=query("SELECT JSON_VALUE(DataJson,'$.alias') FROM dbo.RumboVisitorState WHERE VisitorId=? AND StateKey='rumbo.profile.v1'",[$user['VisitorId']??null])->fetchColumn();
+ $review=['name'=>is_string($alias)&&trim($alias)!==''?trim($alias):preg_split('/\s+/u',trim($user['FullName']))[0],'rating'=>$body->rating,'comment'=>trim($body->comment),'date'=>gmdate('Y-m-d\TH:i:s.000\Z')];
  $key='review:'.$user['Id'].':'.bin2hex(random_bytes(16));
  query('INSERT dbo.RumboSettings(Name,DataJson) VALUES(?,?)',[$key,encode_json($review)])->closeCursor();
  return $key;

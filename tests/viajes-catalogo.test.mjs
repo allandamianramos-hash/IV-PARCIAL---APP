@@ -9,6 +9,33 @@ const context = { window: {} };
 vm.runInNewContext(source.slice(0, source.indexOf('/* Abre una')), context);
 const { destinations, origins, flights } = context.window.RumboViajesDatos;
 
+test('cada estilo prioriza todas sus coincidencias sin perder destinos ni alterar el catálogo',()=>{
+ const {recommendDestinations,selectHomeDestinations}=context.window.RumboViajesDatos;
+ const original=destinations.map(d=>d.id).join(',');
+ for(const preference of ['playa','naturaleza','cultura']){
+  const matches=destinations.filter(d=>d.type===preference);
+  const ordered=recommendDestinations(destinations,preference);
+  assert.equal(ordered.length,destinations.length);
+  assert.equal(ordered.slice(0,matches.length).map(d=>d.id).join(','),matches.map(d=>d.id).join(','));
+  assert.equal(new Set(ordered.map(d=>d.id)).size,destinations.length);
+  const home=selectHomeDestinations(destinations,true,preference);
+  assert.equal(home.filter(d=>d.type===preference).length,Math.min(6,matches.length));
+  const filtered=destinations.filter(d=>d.type!==preference&&d.inspirationBudget<20000);
+  assert.equal(recommendDestinations(filtered,preference).map(d=>d.id).join(','),filtered.map(d=>d.id).join(','));
+ }
+ assert.equal(destinations.map(d=>d.id).join(','),original);
+ assert.equal(recommendDestinations(destinations,'inexistente').map(d=>d.id).join(','),original);
+});
+
+test('el estilo se lee del perfil persistido y descarta valores inválidos',()=>{
+ let raw='{"alias":"Ana","preference":"naturaleza"}';
+ context.window.RumboStorage={getItem:()=>raw};
+ const {preferredTravelStyle}=context.window.RumboViajesDatos;
+ assert.equal(preferredTravelStyle(),'naturaleza');
+ for(const value of ['null','{','{"preference":"__proto__"}','{"preference":"otra"}']){raw=value;assert.equal(preferredTravelStyle(),'');}
+ delete context.window.RumboStorage;
+});
+
 test('el descuento de grupo empieza en tres pasajeros y se acumula sobre la tarifa rebajada', () => {
   const cancun=destinations.find(d=>d.id==='cancun');
   for(const origin of origins){

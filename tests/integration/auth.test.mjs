@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {loadEnvFile} from 'node:process';
-import {randomUUID} from 'node:crypto';
+import {randomUUID,createHash} from 'node:crypto';
 import {createApp} from '../../server.mjs';
 import {getDb,closeDb,dbEnabled} from '../../backend/node/db.mjs';
 try{loadEnvFile(new URL('../../.env',import.meta.url));}catch(e){if(e.code!=='ENOENT')throw e;}
@@ -15,7 +15,7 @@ test('SQL: registro, duplicados, acceso, persistencia y revocación',{skip:!dbEn
   try{
     assert.equal((await fetch(origin+'/api/auth/register',{method:'POST',headers:{Origin:'https://other.example','Content-Type':'application/json'},body:JSON.stringify(data)})).status,403);
     const registered=await post('register');assert.equal(registered.status,201);
-    const first=session(registered);assert.match(registered.headers.get('set-cookie'),/HttpOnly/);assert.match(registered.headers.get('set-cookie'),/Max-Age=2592000/);
+    const first=session(registered);assert.match(registered.headers.get('set-cookie'),/HttpOnly/);assert.match(registered.headers.get('set-cookie'),/Max-Age=28800/);
     assert.equal((await me(first)).user.name,data.name);
     assert.equal((await post('register')).status,409);
     assert.equal((await post('login',{...data,password:'incorrecta'})).status,401);
@@ -28,10 +28,19 @@ test('SQL: registro, duplicados, acceso, persistencia y revocación',{skip:!dbEn
     const save=await fetch(origin+'/api/state',{method:'PUT',headers:{Origin:origin,Cookie:second,'Content-Type':'application/json','X-Rumbo-Visitor':'stale-account'},body:JSON.stringify({changes:{'rumbo.profile.v1':{value:{alias:'Otro',preference:'cultura'},revision:0}}})});
     assert.equal(save.status,409);
     assert.equal((await post('logout',{},second)).status,200);assert.equal((await me(second)).user,null);
+    const {pool,sql}=await getDb();
+    const expiring=session(await post('login'));
+    await pool.request().input('hash',sql.Char(64),createHash('sha256').update(expiring.split('=')[1]).digest('hex')).query('UPDATE dbo.RumboSessions SET ExpiresAt=DATEADD(second,-1,SYSUTCDATETIME()) WHERE TokenHash=@hash');
+    assert.equal((await me(expiring)).user,null);
+    const oldSession=session(await post('login'));
+    await pool.request().input('hash',sql.Char(64),createHash('sha256').update(oldSession.split('=')[1]).digest('hex')).query('UPDATE dbo.RumboSessions SET CreatedAt=DATEADD(hour,-9,SYSUTCDATETIME()) WHERE TokenHash=@hash');
+    assert.equal((await me(oldSession)).user,null);
+
   }finally{
     await new Promise(r=>server.close(r));
     const {pool,sql}=await getDb();
-    await pool.request().input('email',sql.NVarChar(254),email).query('DECLARE @visitor uniqueidentifier; SELECT @visitor=VisitorId FROM dbo.RumboUsers WHERE Email=@email; DELETE dbo.RumboSessions WHERE UserId IN(SELECT Id FROM dbo.RumboUsers WHERE Email=@email); DELETE dbo.RumboUsers WHERE Email=@email; DELETE dbo.RumboVisitors WHERE Id=@visitor;');
+    await pool.request().input('email',sql.NVarChar(254),email).query('DECLARE @visitor uniqueidentifier; SELECT @visitor=VisitorId FROM dbo.RumboUsers WHERE Email=@email; DELETE dbo.RumboSessions WHERE UserId IN(SELECT Id FROM dbo.RumboUsers WHERE Email=@email); DELETE dbo.RumboUsers WHERE Email=@email; DELETE dbo.RumboVisitors WHERE Id=@visitor');
+    await pool.request().input('key',sql.Char(64),createHash('sha256').update('password:'+email).digest('hex')).query('DELETE dbo.RumboAuthAttempts WHERE IpHash=@key');
     await closeDb();
   }
 });

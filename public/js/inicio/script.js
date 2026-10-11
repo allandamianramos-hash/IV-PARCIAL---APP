@@ -64,6 +64,10 @@
         "#result-count",
         featured ? `${visible.length} destacados de ${catalog.length} destinos` : `Mostrando ${visible.length} de ${items.length} ${items.length === 1 ? "destino" : "destinos"}`
       );
+      const preference = window.RumboViajesDatos.preferredTravelStyle();
+      if (preference && visible.some(trip => trip.style === preference)) {
+        $('#result-count').textContent += ` · Priorizamos tu estilo: ${window.RumboViajesDatos.travelStyleLabels[preference]}`;
+      }
 
       $("#empty-state").hidden = items.length > 0;
       track.scrollLeft = 0;
@@ -130,6 +134,8 @@
     });
 
     renderDestinations(catalog, true);
+    window.addEventListener('rumbo:profile-changed',filterDestinations);
+    window.addEventListener('storage',event=>{if(event.key==='rumbo.profile.v1')filterDestinations();});
 
     /* GUÍAS */
     function openGuide(hash) {

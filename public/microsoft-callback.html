@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Conectando con Microsoft | Rumbo</title>
+  
+  <script src="js/cuenta/microsoft-sdk.js" defer></script>
+  <script src="js/cuenta/auth-client.js" defer></script>
+<link rel="stylesheet" href="css/compartido/design.css">
+<link rel="stylesheet" href="css/compartido/palette.css">
+<link rel="stylesheet" href="css/comunidad/community.css">
+<script src="js/compartido/api-client.js" defer></script>
+<script src="js/idiomas/translations.js" defer></script>
+<script src="js/idiomas/locale-engine.js" defer></script>
+<script src="js/idiomas/preferences.js" defer></script>
+<link rel="stylesheet" href="css/cuenta/auth.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+</head>
+<body class="auth-page auth-callback">
+  <main class="auth-card"><a class="auth-brand" href="index.html" aria-label="Rumbo, volver al inicio">rumbo<span aria-hidden="true">↗</span></a>
+    <div class="auth-heading"><h1>Un momento…</h1><p>Estamos comprobando tu acceso con Microsoft.</p></div>
+    <button id="microsoft-signin" type="button" hidden disabled>Reintentar con Microsoft</button>
+    <p id="microsoft-feedback" role="status" aria-live="polite"></p>
+    <a href="iniciar-sesion.html">Volver a iniciar sesión</a>
+  </main>
+<footer class="auth-footer"><div class="auth-locale"></div></footer>
+</body>
+</html>

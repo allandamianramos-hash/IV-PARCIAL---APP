@@ -31,11 +31,11 @@ function update(){
   if(el.closest('[translate=no]'))return;
   const remembered=attrs.get(el)||{};for(const key of ['placeholder','aria-label','aria-description','title','alt',...(el.matches('meta[name=description]')?['content']:[])]){if(!el.hasAttribute(key))continue;const value=el.getAttribute(key),old=remembered[key],original=old?.output===value?old.original:value;const output=translate(original);if(value!==output)el.setAttribute(key,output);remembered[key]={original,output};}attrs.set(el,remembered);
  });
- const flag=toggle.querySelector('img');flag.src='https://flagcdn.com/w40/'+languageFlags[prefs.language]+'.png';flag.alt=languages.find(([code])=>code===prefs.language)[1];toggle.querySelector('span').textContent=prefs.language.toUpperCase()+' · '+currency();toggle.setAttribute('aria-label',translate('Idioma y región'));observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['placeholder','aria-label','aria-description','title','alt','content']});
+ const flag=toggle.querySelector('img');flag.src='https://flagcdn.com/w40/'+languageFlags[prefs.language]+'.png';flag.alt=languages.find(([code])=>code===prefs.language)[1];toggle.querySelector('span').textContent=document.body.classList.contains('auth-page')?flag.alt:prefs.language.toUpperCase()+' · '+currency();toggle.setAttribute('aria-label',translate('Idioma y región'));observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['placeholder','aria-label','aria-description','title','alt','content']});
  const localeKey=prefs.language+'|'+currency()+'|'+rates[currency()];
  if(localeKey!==lastLocale){lastLocale=localeKey;window.dispatchEvent(new Event('rumbo:localechange'));}
 }
-const header=document.querySelector('.header-actions')||document.querySelector('.header-inner');if(!header)return;
+const header=document.querySelector('.auth-locale')||document.querySelector('.header-actions')||document.querySelector('.header-inner');if(!header)return;
 const toggle=document.createElement('button');toggle.type='button';toggle.className='locale-toggle';toggle.setAttribute('aria-haspopup','dialog');toggle.innerHTML='<img width="20" height="15" alt="HN"><span></span>';header.prepend(toggle);
 const dialog=document.createElement('dialog');dialog.className='locale-dialog';dialog.innerHTML='<form method="dialog"><header><h2>Idioma y región</h2><button value="cancel" aria-label="Cerrar" class="locale-close">×</button></header><div class="locale-columns"><section><label for="rumbo-language">Idioma</label><select id="rumbo-language">'+languages.map(([code,name])=>'<option value="'+code+'">'+name+'</option>').join('')+'</select><p>El idioma de la navegación y los controles. Las reseñas se muestran en su idioma original.</p></section><section><label for="rumbo-region">Región y moneda</label><select id="rumbo-region">'+regions.map(([code,name,c])=>'<option value="'+code+'">'+name+' · '+c+'</option>').join('')+'</select><p>La conversión es orientativa. Los importes originales y el resumen descargable se conservan en HNL.</p><small><a href="https://www.exchangerate-api.com" target="_blank" rel="noopener noreferrer">Rates by ExchangeRate-API</a></small></section></div><p class="locale-status" role="status" aria-live="polite"></p><footer><button value="cancel" class="button button-outline">Cancelar</button><button type="button" class="button button-primary" data-apply>Guardar preferencias</button></footer></form>';
 document.body.append(dialog);const language=dialog.querySelector('#rumbo-language'),region=dialog.querySelector('#rumbo-region'),status=dialog.querySelector('[role=status]');
@@ -46,4 +46,17 @@ observer=new MutationObserver(()=>{if(!queued){queued=true;requestAnimationFrame
 if(prefs.region!=='HN'){loadRates().then(update).catch(()=>{prefs.region='HN';update();status.textContent='No se pudo actualizar el cambio. Precios en HNL.';});}
 update();
 window.RumboI18n.load(prefs.language).then(()=>{window.RumboI18n.invalidate(prefs.language);lastLocale='';update();}).catch(error=>{status.textContent=error.message;});
+// Native browser messages follow the browser's language, so localize account
+// validation with the same preference as the visible form.
+if(document.body.classList.contains('auth-page')){
+ const validationMessage=field=>{
+  field.setCustomValidity('');
+  const state=field.validity;
+  const source=state.valueMissing?'Completa este campo.':state.typeMismatch?'Introduce un correo electrónico válido.':state.tooShort?`Usa al menos ${field.minLength} caracteres.`:state.patternMismatch?'Introduce un código de 6 dígitos.':'';
+  if(source)field.setCustomValidity(translate(source));
+ };
+ document.addEventListener('invalid',event=>{if(event.target.matches('.auth-card input'))validationMessage(event.target);},true);
+ document.addEventListener('input',event=>{if(event.target.matches('.auth-card input'))event.target.setCustomValidity('');});
+ window.addEventListener('rumbo:localechange',()=>document.querySelectorAll('.auth-card input').forEach(field=>{if(field.validity.customError)validationMessage(field);}));
+}
 })();

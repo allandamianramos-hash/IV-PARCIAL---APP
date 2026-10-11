@@ -57,13 +57,13 @@
   {
     "id": "madrid",
     "title": "Madrid",
-    "file": "imagenes-viajes/destinos/destino-madrid.jpg",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Madrid_-_Sky_Bar_360%C2%BA_%28Hotel_Riu_Plaza_Espa%C3%B1a%29%2C_vistas_19.jpg/3840px-Madrid_-_Sky_Bar_360%C2%BA_%28Hotel_Riu_Plaza_Espa%C3%B1a%29%2C_vistas_19.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "page": "https://en.wikipedia.org/wiki/Madrid",
-    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Zarateman\" title=\"User:Zarateman\">Zarateman</a>",
-    "license": "CC0",
-    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-    "description": "Vistas de Madrid desde la azotea del Edificio España (Sky Bar 360º, del Hotel Riu Plaza España). Imagen tomada el 7 de junio de 2021"
+    "file": "imagenes-viajes/destinos/destino-madrid-cibeles.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cybele_Palace_%28Palacio_de_Cibeles%29_-_Night_%2852142126561%29.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cybele_Palace_(Palacio_de_Cibeles)_-_Night_(52142126561).jpg",
+    "author": "ajay_suresh",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "description": "Palacio y fuente de Cibeles iluminados por la noche en Madrid"
   },
   {
     "id": "yojoa",
@@ -90,13 +90,13 @@
   {
     "id": "venecia",
     "title": "Venice",
-    "file": "imagenes-viajes/destinos/destino-venecia.jpg",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Venezia_aerial_view.jpg/3840px-Venezia_aerial_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "page": "https://en.wikipedia.org/wiki/Venice",
-    "author": "<a href=\"//commons.wikimedia.org/wiki/User:Kallerna\" title=\"User:Kallerna\">kallerna</a>",
+    "file": "imagenes-viajes/destinos/destino-venecia-rialto.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg",
+    "author": "Didier Descouens",
     "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Aerial view of <a href=\"//commons.wikimedia.org/wiki/Venice\" class=\"mw-redirect\" title=\"Venice\">Venice</a>, <a href=\"//commons.wikimedia.org/wiki/Stazione_di_Venezia_Santa_Lucia\" title=\"Stazione di Venezia Santa Lucia\">railway station Santa Lucia</a> and port, Canale della Giudecca, <a href=\"//commons.wikimedia.org/wiki/Giudecca_a_Venezia\" title=\"Giudecca a Venezia\">island Giudecca</a>"
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "Fotografía optimizada en varios tamaños y encuadrada para las tarjetas."
   },
   {
     "id": "san-pedro-sula",
@@ -178,13 +178,13 @@
   {
     "id": "barcelona",
     "title": "Barcelona",
-    "file": "imagenes-viajes/destinos/destino-barcelona.jpg",
-    "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Evening_light_over_Barcelona.jpg/3840px-Evening_light_over_Barcelona.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "page": "https://en.wikipedia.org/wiki/Barcelona",
-    "author": "M McBey",
-    "license": "CC BY 2.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-    "description": "With part of the Port of Barcelona in the foreground and Montserrat Mountain at top left"
+    "file": "imagenes-viajes/destinos/destino-barcelona-sagrada-familia.jpg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/50/Bas%C3%ADlica_i_Temple_Expiatori_de_la_Sagrada_Fam%C3%ADlia.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_i_Temple_Expiatori_de_la_Sagrada_Fam%C3%ADlia.jpg",
+    "author": "Jiuguang Wang",
+    "license": "CC BY-SA 3.0 es",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/es/",
+    "description": "La Sagrada Familia iluminada al anochecer, con su reflejo en el estanque"
   },
   {
     "id": "roma",

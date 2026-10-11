@@ -77,7 +77,7 @@ body :is(.product-card,.rv-destination-card,.rv-hotel-card):hover img{transform:
 body :is(.service-hero,.store-hero) h1{font-size:clamp(40px,5vw,64px);line-height:1.05}
 body :is(.service-art,.store-hero)::before,body :is(.service-art,.store-hero)::after{display:none}
 body .auth-page{background:var(--fondo)}
-body .auth-intro{border-radius:20px;background:var(--tinta) url('/imagenes-viajes/destinos/destino-venecia.jpg') center/cover;box-shadow:none}
+body .auth-intro{border-radius:20px;background:var(--tinta) url('/imagenes-viajes/destinos/destino-venecia-rialto.jpg') center/cover;box-shadow:none}
 body .auth-landscape{display:none}
 body .auth-intro::before{background:linear-gradient(to top,rgba(10,20,18,.62),transparent 55%)}
 body .auth-heading h1{color:var(--tinta);font-size:clamp(32px,4vw,48px)}

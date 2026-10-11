@@ -46,7 +46,7 @@ Si recibiste tu paquete personal del equipo, extraelo y abre `CONECTAR-EQUIPO.cm
 
 PHP sirve el sitio en **8000**. Node conserva Rumbito en **3000**; el lanzador inicia ambos en segundo plano. `npm start` inicia la versión Node alternativa. El chat con IA necesita una clave propia en `.env`; sin ella se conserva el planificador local. `ACTIVAR-RUMBO-AUTOMATICO.cmd` activa el arranque del proyecto completo al iniciar sesión en Windows.
 
-Las cuentas y el almacenamiento son reales. Los pagos, billetes y reservas siguen siendo de demostración. El servidor integrado de PHP es para desarrollo local.
+Las cuentas y el almacenamiento son reales. El registro y acceso con Google están integrados en PHP y Node; consulta [la configuración de Google](docs/GOOGLE-LOGIN.md). Microsoft también permite registro y acceso reales; consulta [la configuración de Microsoft](docs/MICROSOFT-LOGIN.md). Los pagos, billetes y reservas siguen siendo de demostración. El servidor integrado de PHP es para desarrollo local.
 
 ## Validación y cambios
 
@@ -61,4 +61,6 @@ npm run php:test
 
 Las pruebas de integración crean y eliminan sus propios registros temporales. La prueba PHP comprueba login, persistencia, aislamiento, conflictos, hashes anteriores y bloqueo de archivos privados.
 
-Los cambios de estructura se agregan en nuevas migraciones `database/migrations/004_...sql`. No edites migraciones aplicadas. Ejecuta `npm run db:export` para regenerar el instalador y `CONFIGURAR-PHP.cmd` para aplicarlo. Comparte el código y SQL juntos en Git. **PREPARAR-ENTREGA.cmd** genera un ZIP sin credenciales ni cuentas de usuarios.
+Los cambios de estructura se agregan en nuevas migraciones `database/migrations/008_...sql`. No edites migraciones aplicadas. Ejecuta `npm run db:export` para regenerar el instalador y `CONFIGURAR-PHP.cmd` para aplicarlo. Comparte el código y SQL juntos en Git. **PREPARAR-ENTREGA.cmd** genera un ZIP sin credenciales ni cuentas de usuarios.
+
+Recuperación de contraseña por código: configuración y pruebas en [docs/RECUPERACION-CUENTA.md](docs/RECUPERACION-CUENTA.md).

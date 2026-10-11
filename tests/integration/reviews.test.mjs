@@ -12,9 +12,21 @@ test('PHP and Node: deleting a selected review preserves other reviews and check
   const request=(path,method='GET',cookie='',body,headers={})=>fetch(origin+path,{method,headers:{Origin:origin,Cookie:cookie,'Content-Type':'application/json',...headers},body:body===undefined?undefined:JSON.stringify(body)});
   async function account(){const r=await request('/api/auth/register','POST','',{name:'Prueba reseñas',email:`review-${randomUUID()}@example.test`,password:randomBytes(24).toString('hex')});assert.equal(r.status,201,await r.clone().text());const data=await r.json();users.push(data.user.id);const row=(await pool.request().input('id',sql.UniqueIdentifier,data.user.id).query('SELECT VisitorId FROM dbo.RumboUsers WHERE Id=@id')).recordset[0];visitors.push(row.VisitorId);return {id:data.user.id,cookie:r.headers.getSetCookie().map(c=>c.split(';')[0]).join('; ')};}
   const a=await account(),b=await account();
+  const saveProfile=async(user,alias,revision)=>{
+   const owner=(await pool.request().input('id',sql.UniqueIdentifier,user.id).query('SELECT VisitorId FROM dbo.RumboUsers WHERE Id=@id')).recordset[0].VisitorId;
+   const r=await request('/api/state','PUT',user.cookie,{changes:{'rumbo.profile.v1':{value:{alias,preference:'cultura'},revision}}},{'X-Rumbo-Visitor':owner});assert.equal(r.status,200,await r.clone().text());
+  };
+  await saveProfile(a,'Ana del Mar',0);
   const ids=[];
-  for(const user of [a,a,b]){const r=await request('/api/reviews','POST',user.cookie,{rating:5,comment:'Reseña temporal de prueba '+user.id});assert.equal(r.status,200);ids.push((await r.json()).id);}
+  for(const user of [a,a,b]){const r=await request('/api/reviews','POST',user.cookie,{rating:5,comment:'Reseña temporal de prueba '+user.id,name:'Nombre falsificado',alias:'Alias falsificado'});assert.equal(r.status,200,await r.clone().text());ids.push((await r.json()).id);}
   assert.equal(new Set(ids).size,3);
+  let published=(await (await request('/api/reviews','GET',a.cookie)).json()).reviews;
+  for(const id of ids.slice(0,2))assert.equal(published.find(r=>r.id===id)?.name,'Ana del Mar');
+  assert.equal(published.find(r=>r.id===ids[2])?.name,'Prueba');
+  await saveProfile(a,'Ana Viajera ñ',1);
+  published=(await (await request('/api/reviews','GET')).json()).reviews;
+  for(const id of ids.slice(0,2))assert.equal(published.find(r=>r.id===id)?.name,'Ana Viajera ñ');
+  assert.equal(published.find(r=>r.id===ids[2])?.name,'Prueba');
   assert.equal((await (await request('/api/reviews','GET',a.cookie)).json()).hasOwnReview,true);
   assert.equal((await request('/api/reviews','DELETE')).status,401);
   assert.equal((await request('/api/reviews','DELETE',a.cookie,undefined,{Origin:'https://foreign.invalid'})).status,403);

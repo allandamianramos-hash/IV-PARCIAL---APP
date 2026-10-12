@@ -69,26 +69,79 @@
 
 
 
-/* Local postcard composition. User text never leaves the browser. */
+/* Local postcard composition, using the same destination catalog as the site. */
 (()=>{
  const form=document.querySelector('#postcard-form');if(!form)return;
  const canvas=document.querySelector('#postcard-canvas'),ctx=canvas.getContext('2d'),download=document.querySelector('#postcard-download'),status=document.querySelector('#postcard-status');
- const message=document.querySelector('#postcard-message'),to=document.querySelector('#postcard-to'),from=document.querySelector('#postcard-from');
- const names={venecia:'Venecia',cancun:'Cancún',osaka:'Osaka',paris:'París'};let photo=null,current='venecia',request=0;
- const clean=value=>value.replace(/[\u0000-\u001f\u202a-\u202e\u2066-\u2069]/g,' ').trim();
- function wrapped(text,x,y,width,lineHeight){let line='',row=0;for(const char of Array.from(text)){if(ctx.measureText(line+char).width>width){ctx.fillText(line,x,y+row*lineHeight);line='';row++;}line+=char;}if(line)ctx.fillText(line,x,y+row*lineHeight);}
- function draw(){
-  canvas.setAttribute('aria-label', 'Postal de '+names[current]+'. '+clean(message.value)+' Para: '+clean(to.value)+'. De: '+clean(from.value));
-  ctx.fillStyle='#F6F1E7';ctx.fillRect(0,0,1400,1000);
-  if(photo){const scale=Math.max(1400/photo.naturalWidth,625/photo.naturalHeight),w=photo.naturalWidth*scale,h=photo.naturalHeight*scale;ctx.save();ctx.beginPath();ctx.rect(0,0,1400,625);ctx.clip();ctx.drawImage(photo,(1400-w)/2,(625-h)/2,w,h);ctx.restore();}
-  ctx.fillStyle='#17302B';ctx.fillRect(48,48,250,58);ctx.fillStyle='#F6F1E7';ctx.font='500 23px Inter, sans-serif';ctx.fillText('UNA INVITACIÓN',72,85);
-  ctx.fillStyle='#17302B';ctx.font='500 72px Inter, sans-serif';ctx.fillText(names[current],64,723);
-  ctx.font='32px Inter, sans-serif';wrapped(clean(message.value),64,781,1020,42);
-  ctx.strokeStyle='#c9c4b7';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(64,904);ctx.lineTo(1336,904);ctx.stroke();
-  ctx.font='24px Inter, sans-serif';ctx.fillText('Para: '+(clean(to.value)||'Alguien especial'),64,951);ctx.fillText('De: '+(clean(from.value)||'Tu compañero de viaje'),660,951);
-  ctx.save();ctx.translate(1230,750);ctx.rotate(-0.12);ctx.strokeStyle='#0B7D63';ctx.lineWidth=2;ctx.strokeRect(-75,-64,150,132);ctx.fillStyle='#0B7D63';ctx.font='600 27px Inter, sans-serif';ctx.fillText('rumbo ↗',-60,0);ctx.font='13px Inter, sans-serif';ctx.fillText('VIAJAR NOS UNE',-59,28);ctx.restore();
+ const place=form.elements.place,message=document.querySelector('#postcard-message'),to=document.querySelector('#postcard-to'),from=document.querySelector('#postcard-from');
+ const destinations=[...(window.RumboViajesDatos?.destinations||[])].sort((a,b)=>a.name.localeCompare(b.name,'es'));
+ const catalog=new Map(destinations.map(destination=>[destination.id,destination]));
+ for(const destination of destinations){const option=document.createElement('option');option.value=destination.id;option.textContent=destination.name+' · '+destination.country;place.append(option);}
+ if(!destinations.length){status.textContent='No se pudieron cargar los destinos.';return;}
+ place.value=catalog.has('venecia')?'venecia':destinations[0].id;
+ let photo=null,current=catalog.get(place.value),request=0;
+ const clean=value=>value.replace(/[\u0000-\u0009\u000b-\u001f\u202a-\u202e\u2066-\u2069]/g,' ').trim();
+ const translate=text=>window.RumboLocale?.translate(text)||text;
+ function lines(text,width){
+  const result=[];
+  for(const paragraph of text.split('\n')){
+   let line='';
+   for(const word of paragraph.split(/\s+/)){
+    const candidate=line?line+' '+word:word;
+    if(ctx.measureText(candidate).width<=width){line=candidate;continue;}
+    if(line)result.push(line);
+    line='';
+    for(const char of Array.from(word)){if(ctx.measureText(line+char).width>width){result.push(line);line='';}line+=char;}
+   }
+   result.push(line);
+  }
+  return result;
  }
- function load(){const id=++request;current=form.querySelector('[name=place]:checked').value;photo=null;download.disabled=true;status.textContent='Preparando la fotografía…';draw();const image=new Image();image.onload=()=>{if(id!==request)return;photo=image;draw();download.disabled=false;status.textContent='Lista para personalizar y descargar.';};image.onerror=()=>{if(id!==request)return;status.textContent='No se pudo cargar esta foto. Elegí otra vista para continuar.';};image.src='imagenes-viajes/portadas/hero-premium-'+current+'.jpg';}
- form.addEventListener('input',event=>{if(event.target.name==='place')load();else draw();});
- form.addEventListener('submit',event=>{event.preventDefault();if(!photo||download.disabled)return;download.disabled=true;const selected=current;canvas.toBlob(blob=>{download.disabled=!photo;if(!blob){status.textContent='No se pudo crear la imagen. Intentá de nuevo.';return;}const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='rumbo-postal-'+selected+'.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),30000);status.textContent='Postal preparada. Revisá las descargas de tu navegador.';},'image/png');});load();document.fonts?.ready.then(draw);
+ function fit(text,size,width,family){while(size>18){ctx.font=size+'px '+family;if(ctx.measureText(text).width<=width)break;size--;}}
+ function draw(){
+  const text=clean(message.value),recipient=clean(to.value),sender=clean(from.value);
+  canvas.setAttribute('aria-label','Postal de '+current.name+(text?'. '+text:'')+(recipient?'. Para: '+recipient:'')+(sender?'. De: '+sender:''));
+  ctx.clearRect(0,0,canvas.width,canvas.height);if(!photo)return;
+  const w=canvas.width,h=canvas.height,scale=Math.max(w/photo.naturalWidth,h/photo.naturalHeight);
+  ctx.save();
+  ctx.drawImage(photo,(w-photo.naturalWidth*scale)/2,(h-photo.naturalHeight*scale)/2,photo.naturalWidth*scale,photo.naturalHeight*scale);
+  // Neutral shading keeps the photograph visible and handwritten copy readable.
+  const shade=ctx.createLinearGradient(0,0,0,h);
+  shade.addColorStop(0,'rgba(0,0,0,.48)');shade.addColorStop(.38,'rgba(0,0,0,0)');shade.addColorStop(1,text||recipient||sender?'rgba(0,0,0,.78)':'rgba(0,0,0,.08)');
+  ctx.fillStyle=shade;ctx.fillRect(0,0,w,h);
+  ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.3)';ctx.shadowBlur=6;ctx.shadowOffsetY=2;
+  fit(current.name,104,w-168,'Georgia, serif');ctx.fillText(current.name,84,158);
+  ctx.font='24px Inter, sans-serif';ctx.fillText(current.country,88,210);
+  if(text){
+   let size=54,wrapped;
+   do{ctx.font='italic '+size+'px Georgia, serif';wrapped=lines(text,w-168);if(wrapped.length<=5)break;size-=2;}while(size>=30);
+   // Limit blank lines, while keeping the full message and long words within the photo.
+   if(wrapped.length>5){wrapped=lines(text.replace(/\s+/g,' '),w-168);}
+   const lineHeight=size*1.3,bottom=recipient||sender?h-190:h-100;
+   wrapped.forEach((line,index)=>ctx.fillText(line,84,bottom-(wrapped.length-1-index)*lineHeight));
+  }
+  if(recipient){fit(translate('Para')+' '+recipient,28,650,'Inter, sans-serif');ctx.fillText(translate('Para')+' '+recipient,84,h-80);}
+  if(sender){const signature=translate('De')+' '+sender;fit(signature,28,650,'Inter, sans-serif');ctx.textAlign='right';ctx.fillText(signature,w-84,h-80);}
+  ctx.restore();
+ }
+ function load(){
+  const id=++request;current=catalog.get(place.value);photo=null;download.disabled=true;canvas.setAttribute('aria-busy','true');status.textContent='Cargando foto…';draw();
+  const image=new Image();
+  image.onload=()=>{if(id!==request)return;photo=image;draw();download.disabled=false;canvas.setAttribute('aria-busy','false');status.textContent='';};
+  image.onerror=()=>{if(id!==request)return;canvas.setAttribute('aria-busy','false');status.textContent='No se pudo cargar la foto. Elegí otro destino.';};
+  image.src=current.image;
+ }
+ place.addEventListener('change',load);
+ form.addEventListener('input',event=>{if(event.target!==place)draw();});
+ form.addEventListener('submit',event=>{
+  event.preventDefault();if(!photo||download.disabled)return;
+  download.disabled=true;const selected=current.id,revision=request;
+  canvas.toBlob(blob=>{
+   if(revision===request)download.disabled=!photo;
+   if(!blob){if(revision===request)status.textContent='No se pudo crear la imagen. Intentá de nuevo.';return;}
+   const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='rumbo-postal-'+selected+'.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),30000);
+   if(revision===request)status.textContent='Postal descargada.';
+  },'image/png');
+ });
+ load();document.fonts?.ready.then(draw);window.addEventListener('rumbo:localechange',draw);
 })();

@@ -9,6 +9,7 @@ import { createMicrosoftChallenge, microsoftNonce, microsoftAccount, MicrosoftAc
 import {passwordAttempt,PasswordRateError} from './password-attempts.mjs';
 import {SocialPasswordError} from './social-account.mjs';
 import {passwordRecovery,RecoveryError,validNewPassword} from './password-recovery.mjs';
+import {oauthClientId} from './oauth-config.mjs';
 const derive=promisify(scrypt), lifetime=8*60*60;
 const hash=v=>createHash('sha256').update(v).digest('hex');
 const token=req=>/(?:^|;\s*)rumbo_session=([a-f0-9]{64})(?:;|$)/.exec(req.headers.cookie||'')?.[1];
@@ -65,7 +66,7 @@ export async function authApi(req,res){
     const origin=process.env.APP_ORIGIN||`http://${req.headers.host}`;
     if(path==='/api/auth/google/config'){
       if(req.headers['sec-fetch-site']==='cross-site'||(req.headers.origin&&req.headers.origin!==origin)){reply(res,403,{error:'Origen no permitido.'});return true;}
-      const clientId=process.env.GOOGLE_CLIENT_ID||'';
+      const clientId=oauthClientId('GOOGLE_CLIENT_ID');
       if(!validGoogleClientId(clientId)){reply(res,200,{enabled:false});return true;}
       if(limited(req,'config',60)){reply(res,429,{error:'Demasiados intentos. Inténtalo más tarde.'});return true;}
       const nonce=await createGoogleChallenge(req);cookie(res,'rumbo_google_nonce',nonce,600);
@@ -73,7 +74,7 @@ export async function authApi(req,res){
     }
     if(path==='/api/auth/microsoft/config'){
       if(req.headers['sec-fetch-site']==='cross-site'||(req.headers.origin&&req.headers.origin!==origin)){reply(res,403,{error:'Origen no permitido.'});return true;}
-      const clientId=process.env.MICROSOFT_CLIENT_ID||'';
+      const clientId=oauthClientId('MICROSOFT_CLIENT_ID');
       if(!validMicrosoftClientId(clientId)){reply(res,200,{enabled:false});return true;}
       if(limited(req,'config',60)){reply(res,429,{error:'Demasiados intentos. Inténtalo más tarde.'});return true;}
       const nonce=await createMicrosoftChallenge(req);cookie(res,'rumbo_microsoft_nonce',nonce,600);
@@ -92,9 +93,10 @@ export async function authApi(req,res){
     let body;try{body=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{reply(res,400,{error:'Datos inválidos.'});return true;}
     if(path.startsWith('/api/auth/password/')){reply(res,200,await passwordRecovery(path.split('/').pop(),body));return true;}
     if(path==='/api/auth/google'){
-      if(!validGoogleClientId(process.env.GOOGLE_CLIENT_ID)){reply(res,503,{error:'Google todavía no está configurado.'});return true;}
+      const clientId=oauthClientId('GOOGLE_CLIENT_ID');
+      if(!validGoogleClientId(clientId)){reply(res,503,{error:'Google todavía no está configurado.'});return true;}
       let identity;
-      try{identity=await verifyGoogleIdentity(body?.credential,process.env.GOOGLE_CLIENT_ID,googleNonce(req));}
+      try{identity=await verifyGoogleIdentity(body?.credential,clientId,googleNonce(req));}
       catch{reply(res,401,{error:'No se pudo verificar el acceso con Google. Recarga la página e inténtalo de nuevo.'});return true;}
       const {user,created,passwordHash:verifiedHash}=await googleAccount(identity,googleNonce(req),body?.password,passwordMatches,body?.newPassword);
       if(token(req)){const {pool,sql}=await getDb();await pool.request().input('hash',sql.Char(64),hash(token(req))).query('DELETE dbo.RumboSessions WHERE TokenHash=@hash');}
@@ -102,13 +104,14 @@ export async function authApi(req,res){
       reply(res,created?201:200,{user:publicUser(user)});return true;
     }
     if(path==='/api/auth/microsoft'){
-      if(!validMicrosoftClientId(process.env.MICROSOFT_CLIENT_ID)){reply(res,503,{error:'Microsoft todavía no está configurado.'});return true;}
+      const clientId=oauthClientId('MICROSOFT_CLIENT_ID');
+      if(!validMicrosoftClientId(clientId)){reply(res,503,{error:'Microsoft todavía no está configurado.'});return true;}
       let identity;
-      try{identity=await verifyMicrosoftIdentity(body?.credential,process.env.MICROSOFT_CLIENT_ID,microsoftNonce(req));}
+      try{identity=await verifyMicrosoftIdentity(body?.credential,clientId,microsoftNonce(req));}
       catch{reply(res,401,{error:'No se pudo verificar el acceso con Microsoft. Recarga la página e inténtalo de nuevo.'});return true;}
       let googleProof=null;
       if(body?.googleCredential){
-        try{const verified=await verifyGoogleIdentity(body.googleCredential,process.env.GOOGLE_CLIENT_ID,googleNonce(req));googleProof={sub:verified.sub,nonce:googleNonce(req)};}
+        try{const verified=await verifyGoogleIdentity(body.googleCredential,oauthClientId('GOOGLE_CLIENT_ID'),googleNonce(req));googleProof={sub:verified.sub,nonce:googleNonce(req)};}
         catch{reply(res,401,{code:'MICROSOFT_GOOGLE_LINK_REQUIRED',error:'No se pudo verificar Google. Recarga la página y vuelve a intentarlo.'});return true;}
       }
       const {user,created,passwordHash:verifiedHash}=await microsoftAccount(identity,microsoftNonce(req),body?.password,passwordMatches,googleProof,body?.newPassword);

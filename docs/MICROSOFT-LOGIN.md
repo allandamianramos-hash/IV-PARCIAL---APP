@@ -5,7 +5,9 @@ Audiencia: cuentas personales de Microsoft y cuentas de cualquier organización 
 
 ## Configuración local
 
-El `.env` privado contiene `MICROSOFT_CLIENT_ID`. No se necesita secreto de cliente para esta integración SPA.
+El ID público está incluido en `config/oauth-public.json`, compartido por Git y por el ZIP de entrega. PHP y Node lo cargan automáticamente aunque `MICROSOFT_CLIENT_ID` no exista o esté vacío en el `.env`. Ni los usuarios ni los compañeros necesitan pedir identificadores, secretos o copiar un `.env` ajeno para iniciar sesión. Basta actualizar el proyecto y volver a abrir `INICIAR-RUMBO.cmd`, conservando la conexión existente a la base.
+
+Un `MICROSOFT_CLIENT_ID` no vacío permite al responsable usar otra aplicación registrada; un valor inválido deshabilita el proveedor y debe corregirse o quitarse. No se necesita secreto de cliente para esta integración SPA.
 La biblioteca oficial `@azure/msal-browser` usa código de autorización con PKCE, `state` y `nonce`.
 El servidor verifica el ID token con `jose`: firma RSA, audiencia, emisor e inquilino, emisor de la clave, vencimiento y desafío de un solo uso.
 

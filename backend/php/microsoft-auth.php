@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/oauth-config.php';
 
 function microsoft_client_id(): string {
-    $id = rumbo_config('MICROSOFT_CLIENT_ID');
+    $id = oauth_client_id('MICROSOFT_CLIENT_ID');
     return preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/iD', $id) ? $id : '';
 }
 

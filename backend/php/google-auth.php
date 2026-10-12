@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
+require_once __DIR__ . '/oauth-config.php';
 
 function google_client_id(): string {
-    $id = rumbo_config('GOOGLE_CLIENT_ID');
+    $id = oauth_client_id('GOOGLE_CLIENT_ID');
     return preg_match('/^[0-9]+-[a-z0-9]+\.apps\.googleusercontent\.com$/D', $id) ? $id : '';
 }
 

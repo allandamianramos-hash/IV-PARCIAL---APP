@@ -42,7 +42,7 @@ test('Google API: rechaza CSRF, formatos inválidos y tokens sin emitir sesión'
     ]){const response=await post(body,headers);assert.equal(response.status,status);assert.equal(response.headers.get('set-cookie'),null);}
     assert.equal((await fetch(origin+'/api/auth/google')).status,405);
     assert.equal((await fetch(origin+'/api/auth/google/config',{headers:{Origin:'https://attacker.invalid'}})).status,403);
-    delete process.env.GOOGLE_CLIENT_ID;
+    process.env.GOOGLE_CLIENT_ID='invalid';
     assert.deepEqual(await(await fetch(origin+'/api/auth/google/config')).json(),{enabled:false});
   } finally {
     await new Promise(resolve=>server.close(resolve));

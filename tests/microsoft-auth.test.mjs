@@ -42,7 +42,7 @@ test('Microsoft API: CSRF, formatos y tokens inválidos nunca emiten sesión',as
     ]){const response=await post(body,headers);assert.equal(response.status,status);assert.equal(response.headers.get('set-cookie'),null);}
     assert.equal((await fetch(origin+'/api/auth/microsoft')).status,405);
     assert.equal((await fetch(origin+'/api/auth/microsoft/config',{headers:{Origin:'https://attacker.invalid'}})).status,403);
-    delete process.env.MICROSOFT_CLIENT_ID;
+    process.env.MICROSOFT_CLIENT_ID='invalid';
     assert.deepEqual(await(await fetch(origin+'/api/auth/microsoft/config')).json(),{enabled:false});
     const callback=await fetch(origin+'/microsoft-callback.html');
     assert.equal(callback.status,200);assert.doesNotMatch(await callback.text(),/rumbo-bootstrap/);

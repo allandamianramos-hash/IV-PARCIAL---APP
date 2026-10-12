@@ -46,7 +46,7 @@ Si recibiste tu paquete personal del equipo, extraelo y abre `CONECTAR-EQUIPO.cm
 
 PHP sirve el sitio en **8000**. Node conserva Rumbito en **3000**; el lanzador inicia ambos en segundo plano. `npm start` inicia la versión Node alternativa. El chat con IA necesita una clave propia en `.env`; sin ella se conserva el planificador local. `ACTIVAR-RUMBO-AUTOMATICO.cmd` activa el arranque del proyecto completo al iniciar sesión en Windows.
 
-Las cuentas y el almacenamiento son reales. El registro y acceso con Google están integrados en PHP y Node; consulta [la configuración de Google](docs/GOOGLE-LOGIN.md). Microsoft también permite registro y acceso reales; consulta [la configuración de Microsoft](docs/MICROSOFT-LOGIN.md). Los pagos, billetes y reservas siguen siendo de demostración. El servidor integrado de PHP es para desarrollo local.
+Las cuentas y el almacenamiento son reales. **Google y Microsoft ya incluyen su configuración pública compartida en `config/oauth-public.json`.** Los usuarios no configuran OAuth. Los compañeros con la base conectada solo actualizan el proyecto y vuelven a abrir `INICIAR-RUMBO.cmd`: no necesitan pedir IDs, secretos ni copiar el `.env` de otra persona. PHP y Node usan los mismos valores; los campos ausentes o vacíos en `.env` no desactivan los botones. Consulta [Google](docs/GOOGLE-LOGIN.md) y [Microsoft](docs/MICROSOFT-LOGIN.md) para detalles de mantenimiento y publicación. Los pagos, billetes y reservas siguen siendo de demostración. El servidor integrado de PHP es para desarrollo local.
 
 ## Validación y cambios
 

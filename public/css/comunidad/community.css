@@ -55,13 +55,22 @@ body #quienes-somos .about-rumbo-values dd {color:var(--secondary)!important;fon
 .review-rating span {font-size:28px;color:var(--secondary);}
 .review-rating .is-rated span,.review-rating label:hover span {color:var(--lime);}
 .review-rating label:has(input:focus-visible) {outline:2px solid var(--lime);outline-offset:3px;}
-.reviews-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.reviews-carousel {display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:12px;}
+.reviews-carousel.has-controls {grid-template-columns:44px minmax(0,1fr) 44px;}
+.reviews-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;min-width:0;}
 .review-card {padding:32px;border:1px solid var(--line);border-radius:20px;background:var(--surface);min-width:0;}
 .review-avatar {display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--tag);color:var(--on-tag);font-size:22px;margin-bottom:20px;}
 .review-card h3 {font-size:20px;margin:0 0 8px;}
 .review-comment {white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7;}
 .review-card time {font-size:13px;color:var(--secondary);}
-.reviews-pagination {display:flex;justify-content:flex-end;gap:12px;margin-top:24px;}
+.reviews-arrow {display:grid;place-items:center;width:44px;height:44px;padding:8px;border:0;border-radius:50%;background:transparent;color:var(--foreground);cursor:pointer;}
+.reviews-arrow[hidden] {display:none;}
+.reviews-arrow svg {width:24px;height:24px;}
+.reviews-arrow:hover:not(:disabled) {color:var(--lime);background:var(--surface);}
+.reviews-arrow:focus-visible {outline:2px solid var(--lime);outline-offset:2px;}
+.reviews-arrow:disabled {opacity:.3;cursor:default;}
+html[dir=rtl] .reviews-arrow svg {transform:scaleX(-1);}
+@media(max-width:450px){.reviews-carousel{gap:4px;}.reviews-carousel.has-controls .review-card{padding:20px;}}
 body #site-navbar .locale-toggle {display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--line);border-radius:999px;background:var(--field);color:var(--foreground);font-size:12px;white-space:nowrap;cursor:pointer;}
 .locale-toggle img {object-fit:cover;border-radius:2px;}
 .locale-dialog {width:min(680px,calc(100% - 32px));max-height:85dvh;padding:32px;border:1px solid var(--line);border-radius:20px;background:var(--nav);color:var(--foreground);}

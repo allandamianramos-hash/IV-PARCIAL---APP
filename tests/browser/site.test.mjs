@@ -66,10 +66,12 @@ test('review controls respect ownership, cancel, delete and preserve original re
  assert.equal(await page.locator('.review-card').nth(2).locator('.review-delete').count(),0);
  for(const width of [1280,390]){
   await page.setViewportSize({width,height:900});
+  await page.waitForFunction(count=>document.querySelectorAll('.review-card').length===count,width===390?1:3);
   const bounds=await page.locator('.review-delete').first().boundingBox(),card=await page.locator('.review-card').first().boundingBox();
   assert.ok(bounds.x>=card.x&&bounds.x+bounds.width<=card.x+card.width+1);
   assert.ok(bounds.y+bounds.height<=card.y+card.height);
  }
+ await page.setViewportSize({width:1280,height:900});await page.waitForFunction(()=>document.querySelectorAll('.review-card').length===3);
  await page.locator('.review-delete').nth(1).click();assert.equal(await page.locator('.review-delete-preview .review-comment').innerText(),reviews[1].comment);await page.locator('.review-delete-dialog button[value=cancel]').click();assert.equal(deleted,0);
  await page.locator('.review-delete').nth(1).click();await page.locator('[data-confirm-delete]').click();await page.waitForFunction(()=>document.querySelector('.review-delete-dialog [role=status]').textContent.length>0);assert.equal(deleted,0);assert.equal(reviews.length,3);
  await page.locator('[data-confirm-delete]').click();await page.locator('.review-delete-dialog').waitFor({state:'hidden'});await page.waitForFunction(()=>document.querySelectorAll('.review-card').length===2);assert.equal(deleted,1);assert.match(await page.locator('.reviews-list .review-comment').first().innerText(),/Esta reseña debe conservar/);assert.equal(await page.locator('.review-delete').count(),1);

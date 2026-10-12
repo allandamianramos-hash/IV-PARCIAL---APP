@@ -46,8 +46,14 @@ export function createApp(chatOptions) {
       if (await authApi(req, res)) return;
       if (await databaseApi(req, res)) return;
       if (req.url === '/api/health' && ['GET', 'HEAD'].includes(req.method)) {
+        // Allow only the public health probe from the local editor preview.
+        // Account and database endpoints retain their same-origin protections.
+        if (['http://127.0.0.1:5500','http://localhost:5500'].includes(req.headers.origin)) {
+          res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+          res.setHeader('Vary', 'Origin');
+        }
         res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        res.end(req.method === 'HEAD' ? undefined : JSON.stringify({ app: 'rumbo-viajes', status: 'ok' }));
+        res.end(req.method === 'HEAD' ? undefined : JSON.stringify({ app: 'rumbo-viajes', status: 'ok', backend: 'node' }));
         return;
       }
       if (new URL(req.url, 'http://localhost').pathname === '/api/chat') return await chat(req, res);

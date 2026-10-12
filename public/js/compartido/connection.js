@@ -1,18 +1,23 @@
 /* Leave the editor preview for the independent server after saving pending work. */
 (() => {
   'use strict';
-  const pages=['index.html','viajes.html','tienda.html','servicios.html','registro.html','iniciar-sesion.html'];
+  const pages=['index.html','viajes.html','tienda.html','servicios.html','registro.html','iniciar-sesion.html','recuperar-contrasena.html'];
   const local=location.protocol==='file:'||['localhost','127.0.0.1'].includes(location.hostname);
   async function openStandalone(){
     if(!local||location.protocol!=='http:'||location.port!=='5500')return;
     const page=location.pathname.split('/').pop()||'index.html';
     if(!pages.includes(page))return;
     const entry=location.pathname+location.search+location.hash;
-    const origin='http://'+location.hostname+':8000';
+    let origin;
+    for(const candidate of ['http://'+location.hostname+':8000','http://127.0.0.1:3010']){
+      try{
+        const response=await fetch(candidate+'/api/health',{cache:'no-store',credentials:'omit',signal:AbortSignal.timeout(2500)});
+        const health=await response.json();
+        if(response.ok&&health.app==='rumbo-viajes'&&(health.backend==='php'||(candidate.endsWith(':3010')&&health.backend==='node'))){origin=candidate;break;}
+      }catch{/* Try the other supported local server. */}
+    }
+    if(!origin)return;
     try{
-      const response=await fetch(origin+'/api/health',{cache:'no-store',credentials:'omit',signal:AbortSignal.timeout(2500)});
-      const health=await response.json();
-      if(!response.ok||health.app!=='rumbo-viajes'||health.backend!=='php')return;
       const storage=window.RumboStorage;
       if(storage?.hasPending()){
         if(window.RumboDatabase?.connected!==true||!await storage.flush({navigateOnError:false})||storage.hasPending())return;

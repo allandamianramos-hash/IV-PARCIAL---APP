@@ -27,7 +27,7 @@ test('espera al guardado y no abandona cambios locales o pendientes de recuperac
  }
 });
 test('no navega si falla PHP, responde otra aplicación o cambia la página durante la comprobación',async()=>{
- for(const options of [{fetchImpl:async()=>{throw Error('offline');}},{health:{app:'other',backend:'php'}},{health:{app:'rumbo-viajes',backend:'node'}}]){
+ for(const options of [{fetchImpl:async()=>{throw Error('offline');}},{health:{app:'other',backend:'php'}},{health:{app:'rumbo-viajes',backend:'unknown'}}]){
   const p=preview(options);await settle();assert.deepEqual(p.redirects,[]);
  }
  const p=preview();p.scope.location.pathname='/error.html';await settle();assert.deepEqual(p.redirects,[]);
@@ -36,4 +36,16 @@ test('no crea bucles ni redirige instalaciones publicadas, archivos o rutas priv
  for(const location of [{port:'8000'},{port:'3000'},{hostname:'example.com'},{protocol:'file:'},{pathname:'/.env'},{pathname:'/error.html'}]){
   const p=preview({location});await settle();assert.deepEqual(p.redirects,[]);assert.deepEqual(p.requests,[]);
  }
+});
+
+test('registro de Live Server en carpeta anidada llega al Node portable',async()=>{
+ const p=preview({location:{hostname:'localhost',pathname:'/IV-PARCIAL---APP/public/registro.html',search:'?next=viajes.html',hash:''},fetchImpl:async url=>{
+  if(url.includes(':8000'))throw Error('PHP offline');
+  return {ok:true,json:async()=>({app:'rumbo-viajes',backend:'node'})};
+ }});await settle();
+ assert.deepEqual(p.redirects,['http://127.0.0.1:3010/registro.html?next=viajes.html']);
+});
+test('Node tampoco abandona datos pendientes sin guardar',async()=>{
+ const p=preview({storage:{hasPending:()=>true,flush:async()=>false},fetchImpl:async url=>({ok:true,json:async()=>url.includes(':8000')?{app:'other'}:{app:'rumbo-viajes',backend:'node'}})});
+ await settle();assert.deepEqual(p.redirects,[]);
 });

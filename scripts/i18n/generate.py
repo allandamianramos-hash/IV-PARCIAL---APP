@@ -30,6 +30,8 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=3) as ex:models=dict(ex.m
 source=json.loads((root/'public/locales/es.json').read_text(encoding='utf8'))
 reviewed=json.loads((root/'.runtime/i18n-reviewed.json').read_text(encoding='utf8'))
 reviewed['en'].update(json.loads((root/'scripts/i18n/reviewed-en.json').read_text(encoding='utf8')))
+for lang, messages in json.loads((root/'scripts/i18n/destinos-reviewed.json').read_text(encoding='utf8')).items():
+    reviewed.setdefault(lang, {}).update(messages)
 def translate(lang,base,invalidate=()):
     destination=root/'public/locales'/f'{lang}.json'
     done=json.loads(destination.read_text(encoding='utf8')) if destination.exists() else {}

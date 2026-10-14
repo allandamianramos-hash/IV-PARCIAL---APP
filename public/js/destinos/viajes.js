@@ -3007,6 +3007,2710 @@
     ]
   }
 ]);
+// BEGIN DESTINOS OCTUBRE 2026
+additionalDestinations.push(...[
+  {
+    "id": "bangkok",
+    "name": "Bangkok",
+    "country": "Tailandia",
+    "type": "cultura",
+    "tag": "Templos y sabores",
+    "signature": "La ciudad junto al Chao Phraya",
+    "intro": "Cúpulas doradas, mercados y canales dan ritmo a la capital tailandesa.",
+    "description": "Alterna los templos de Rattanakosin con los sabores de Chinatown y los parques urbanos. Los barcos del Chao Phraya ofrecen otra perspectiva de la ciudad.",
+    "highlights": [
+      "Gran Palacio",
+      "Wat Pho",
+      "Wat Arun"
+    ],
+    "tip": "Viste con hombros y rodillas cubiertos en los templos y reserva tiempo para el calor.",
+    "arrival": "Bangkok",
+    "transfer": "Airport Rail Link o taxi autorizado al centro; traslado no incluido.",
+    "airport": {
+      "code": "BKK",
+      "name": "Suvarnabhumi"
+    },
+    "nights": 5,
+    "economy": 30680,
+    "duration": 1620,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-bangkok.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/bangkok.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/bangkok-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1706,
+    "alt": "Panorámica de Bangkok desde la State Tower, Tailandia",
+    "photoAuthor": "Ninara from Helsinki, Finland",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:4Y1A1159_Bangkok_(33536795515).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "bangkok-opcion-1",
+        "name": "Horizonte Bangkok",
+        "stars": 3,
+        "area": "Rattanakosin",
+        "rate": 1768,
+        "image": "hoteles/hotel-bangkok-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Bangkok; oferta de demostración.",
+        "photoAuthor": "Humsko",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:1._Travunija.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "bangkok-opcion-2",
+        "name": "Casa Aurora Bangkok",
+        "stars": 4,
+        "area": "Silom",
+        "rate": 2298,
+        "image": "hoteles/hotel-bangkok-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Bangkok; oferta de demostración.",
+        "photoAuthor": "Maz3LT0v92",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:2-osobowy_comfort_Hotel_Bartis.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "bangkok-opcion-3",
+        "name": "Panorama Bangkok",
+        "stars": 5,
+        "area": "Sukhumvit",
+        "rate": 3182,
+        "image": "hoteles/hotel-bangkok-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Bangkok; oferta de demostración.",
+        "photoAuthor": "104artsuites",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:203-sala.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hong-kong",
+    "name": "Hong Kong",
+    "country": "China (Hong Kong)",
+    "type": "cultura",
+    "tag": "Bahía y rascacielos",
+    "signature": "Dos orillas, una ciudad inolvidable",
+    "intro": "La bahía Victoria une miradores, ferris y barrios llenos de vida.",
+    "description": "Descubre la arquitectura de Central, los paseos marítimos de Kowloon y las tradiciones gastronómicas cantonesas entre mercados y casas de té.",
+    "highlights": [
+      "Victoria Harbour",
+      "Victoria Peak",
+      "Tsim Sha Tsui"
+    ],
+    "tip": "Combina el MTR con el Star Ferry y consulta la visibilidad antes de subir a los miradores.",
+    "arrival": "Hong Kong",
+    "transfer": "Airport Express o autobús hacia Kowloon o Hong Kong Island; traslado no incluido.",
+    "airport": {
+      "code": "HKG",
+      "name": "Hong Kong International"
+    },
+    "nights": 4,
+    "economy": 32240,
+    "duration": 1560,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-hong-kong.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/hong-kong.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/hong-kong-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1920,
+    "alt": "Rascacielos de Hong Kong iluminados sobre Victoria Harbour",
+    "photoAuthor": "Max Bates",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hong_Kong_Skyline_from_Victoria_Harbour_(54750093251).jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "hong-kong-opcion-1",
+        "name": "Horizonte Hong Kong",
+        "stars": 3,
+        "area": "Central",
+        "rate": 3380,
+        "image": "hoteles/hotel-hong-kong-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Hong Kong; oferta de demostración.",
+        "photoAuthor": "104artsuites",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:402-sala.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "hong-kong-opcion-2",
+        "name": "Casa Aurora Hong Kong",
+        "stars": 4,
+        "area": "Tsim Sha Tsui",
+        "rate": 4394,
+        "image": "hoteles/hotel-hong-kong-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Hong Kong; oferta de demostración.",
+        "photoAuthor": "Christian Kloeppel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Al_Bustan_Rotana_room.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "hong-kong-opcion-3",
+        "name": "Panorama Hong Kong",
+        "stars": 5,
+        "area": "Wan Chai",
+        "rate": 6084,
+        "image": "hoteles/hotel-hong-kong-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Hong Kong; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Lisbon_2025_113.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "macao",
+    "name": "Macao",
+    "country": "China (Macao)",
+    "type": "cultura",
+    "tag": "Encuentro de culturas",
+    "signature": "Plazas portuguesas y tradiciones cantonesas",
+    "intro": "Calles adoquinadas y fachadas históricas conviven con la energía contemporánea de Macao.",
+    "description": "Su centro histórico invita a caminar entre iglesias, templos y plazas. Taipa y Coloane aportan sabores macaneses, casas tradicionales y paseos tranquilos.",
+    "highlights": [
+      "Ruinas de San Pablo",
+      "Largo do Senado",
+      "Templo A-Má"
+    ],
+    "tip": "Lleva calzado cómodo para cuestas y adoquines; reserva tiempo para trasladarte entre península e islas.",
+    "arrival": "Macao",
+    "transfer": "Autobús, taxi o conexión al tren ligero desde Taipa; traslado al hotel no incluido.",
+    "airport": {
+      "code": "MFM",
+      "name": "Macau International"
+    },
+    "nights": 3,
+    "economy": 33280,
+    "duration": 1740,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-macao.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/macao.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/macao-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1709,
+    "alt": "Panorámica de Macao con el Grand Lisboa junto al lago Nam Van",
+    "photoAuthor": "kewl",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Macau_-_Skyline.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "macao-opcion-1",
+        "name": "Horizonte Macao",
+        "stars": 3,
+        "area": "Sé",
+        "rate": 2860,
+        "image": "hoteles/hotel-macao-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Macao; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_S%C3%A3o_Paulo_2023_023.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "macao-opcion-2",
+        "name": "Casa Aurora Macao",
+        "stars": 4,
+        "area": "Taipa",
+        "rate": 3718,
+        "image": "hoteles/hotel-macao-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Macao; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Morocco_2023_10.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "macao-opcion-3",
+        "name": "Panorama Macao",
+        "stars": 5,
+        "area": "Coloane",
+        "rate": 5148,
+        "image": "hoteles/hotel-macao-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Macao; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Salvador,_Bahia_2025_207.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "antalya",
+    "name": "Antalya",
+    "country": "Turquía",
+    "type": "playa",
+    "tag": "Riviera turca",
+    "signature": "Historia junto al Mediterráneo",
+    "intro": "Antalya combina el casco antiguo de Kaleiçi con una costa de playas y acantilados.",
+    "description": "Recorre puertas romanas, callejones otomanos y el puerto antiguo. Fuera del centro, el Mediterráneo y las cascadas ofrecen jornadas al aire libre.",
+    "highlights": [
+      "Kaleiçi",
+      "Puerta de Adriano",
+      "Playa Konyaaltı"
+    ],
+    "tip": "Reserva las caminatas para las horas frescas y distingue las cascadas Düden superiores de las inferiores.",
+    "arrival": "Antalya",
+    "transfer": "Tranvía o taxi autorizado hacia el centro; conexiones posteriores según hotel, no incluidas.",
+    "airport": {
+      "code": "AYT",
+      "name": "Antalya"
+    },
+    "nights": 5,
+    "economy": 27040,
+    "duration": 1380,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-antalya.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/antalya.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/antalya-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1440,
+    "alt": "Playa de Konyaaltı y montañas junto al Mediterráneo en Antalya",
+    "photoAuthor": "Esginmurat",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Falezlerden_Antalya_Konyaalt%C4%B1_Plaj%C4%B1na_do%C4%9Fru_bir_g%C3%B6r%C3%BCn%C3%BCm.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "antalya-opcion-1",
+        "name": "Horizonte Antalya",
+        "stars": 3,
+        "area": "Kaleiçi",
+        "rate": 2210,
+        "image": "hoteles/hotel-antalya-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Antalya; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Tallinn_2024_475.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "antalya-opcion-2",
+        "name": "Casa Aurora Antalya",
+        "stars": 4,
+        "area": "Lara",
+        "rate": 2873,
+        "image": "hoteles/hotel-antalya-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Antalya; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Wiki_Indaba_2023_248.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "antalya-opcion-3",
+        "name": "Panorama Antalya",
+        "stars": 5,
+        "area": "Konyaaltı",
+        "rate": 3978,
+        "image": "hoteles/hotel-antalya-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Antalya; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Wiki_Indaba_2024_144.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kuala-lumpur",
+    "name": "Kuala Lumpur",
+    "country": "Malasia",
+    "type": "cultura",
+    "tag": "Sabores y arquitectura",
+    "signature": "Una capital de muchas culturas",
+    "intro": "Torres relucientes, mercados y templos muestran la diversidad de Kuala Lumpur.",
+    "description": "Disfruta del entorno de las Petronas, la arquitectura del centro histórico y la cocina malaya, china e india. Los jardines urbanos permiten descansar del ritmo de la capital.",
+    "highlights": [
+      "Torres Petronas",
+      "Merdeka Square",
+      "Central Market"
+    ],
+    "tip": "Usa el transporte urbano entre barrios y adapta la vestimenta al visitar lugares de culto.",
+    "arrival": "Kuala Lumpur",
+    "transfer": "KLIA Ekspres o autobús hasta KL Sentral; traslado y conexiones al hotel no incluidos.",
+    "airport": {
+      "code": "KUL",
+      "name": "Kuala Lumpur International"
+    },
+    "nights": 4,
+    "economy": 29380,
+    "duration": 1680,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-kuala-lumpur.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/kuala-lumpur.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/kuala-lumpur-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1441,
+    "alt": "Cruce de Bukit Bintang entre los edificios de Kuala Lumpur",
+    "photoAuthor": "Renek78",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Bukit_Bintang_junction_in_2024_2.jpg",
+    "photoLicense": "CC0",
+    "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "hotels": [
+      {
+        "id": "kuala-lumpur-opcion-1",
+        "name": "Horizonte Kuala Lumpur",
+        "stars": 3,
+        "area": "Bukit Bintang",
+        "rate": 1612,
+        "image": "hoteles/hotel-kuala-lumpur-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Kuala Lumpur; oferta de demostración.",
+        "photoAuthor": "Tandil Del Lago",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Caba%C3%B1as_compartidas.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "kuala-lumpur-opcion-2",
+        "name": "Casa Aurora Kuala Lumpur",
+        "stars": 4,
+        "area": "KLCC",
+        "rate": 2096,
+        "image": "hoteles/hotel-kuala-lumpur-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Kuala Lumpur; oferta de demostración.",
+        "photoAuthor": "Matti Blume",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Coop_Hotel,_Sofia_(_1070739).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "kuala-lumpur-opcion-3",
+        "name": "Panorama Kuala Lumpur",
+        "stars": 5,
+        "area": "Brickfields",
+        "rate": 2902,
+        "image": "hoteles/hotel-kuala-lumpur-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Kuala Lumpur; oferta de demostración.",
+        "photoAuthor": "IHG",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:CrownePlaza_Interior_Melbourne.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "phuket",
+    "name": "Phuket",
+    "country": "Tailandia",
+    "type": "playa",
+    "tag": "Mar de Andamán",
+    "signature": "Playas, miradores y casas de colores",
+    "intro": "La isla de Phuket ofrece playas tropicales y un casco antiguo de gran personalidad.",
+    "description": "Combina el ambiente de Phuket Town con calas de la costa oeste y atardeceres en el extremo sur. Cada zona de la isla propone un ritmo diferente.",
+    "highlights": [
+      "Phuket Old Town",
+      "Playa Kata",
+      "Cabo Promthep"
+    ],
+    "tip": "Respeta las banderas de playa; el mar y las excursiones náuticas dependen del tiempo.",
+    "arrival": "Phuket",
+    "transfer": "Autobús, van o taxi autorizado hacia Phuket Town o las playas; traslado no incluido.",
+    "airport": {
+      "code": "HKT",
+      "name": "Phuket International"
+    },
+    "nights": 6,
+    "economy": 31460,
+    "duration": 1740,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-phuket.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/phuket.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/phuket-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1440,
+    "alt": "Arena y mar de la playa Patong en la isla de Phuket",
+    "photoAuthor": "jbremer57",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Patong_Beach_on_Phuket.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "phuket-opcion-1",
+        "name": "Horizonte Phuket",
+        "stars": 3,
+        "area": "Old Phuket Town",
+        "rate": 2080,
+        "image": "hoteles/hotel-phuket-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Phuket; oferta de demostración.",
+        "photoAuthor": "Ithadidi",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Delmar_hotel_room_sea_side.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "phuket-opcion-2",
+        "name": "Casa Aurora Phuket",
+        "stars": 4,
+        "area": "Kata",
+        "rate": 2704,
+        "image": "hoteles/hotel-phuket-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Phuket; oferta de demostración.",
+        "photoAuthor": "PaulPMoroney",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Deluxe_Suite_bedroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "phuket-opcion-3",
+        "name": "Panorama Phuket",
+        "stars": 5,
+        "area": "Kamala",
+        "rate": 3744,
+        "image": "hoteles/hotel-phuket-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Phuket; oferta de demostración.",
+        "photoAuthor": "Didierlefort",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:DL2A_Four_Seasons_Bora_Bora_6.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pattaya",
+    "name": "Pattaya",
+    "country": "Tailandia",
+    "type": "playa",
+    "tag": "Costa del golfo",
+    "signature": "Una escapada costera desde Bangkok",
+    "intro": "Playas, miradores e islas cercanas definen esta ciudad del golfo de Tailandia.",
+    "description": "Elige entre el ambiente urbano de Pattaya, los paseos de Jomtien y una excursión marítima a Koh Lan. Sus templos y mercados completan la estancia.",
+    "highlights": [
+      "Playa Jomtien",
+      "Koh Lan",
+      "Santuario de la Verdad"
+    ],
+    "tip": "Organiza la visita a Koh Lan según el estado del mar y confirma el último regreso.",
+    "arrival": "Bangkok",
+    "transfer": "Llegada aérea a Bangkok; continuar por carretera a Pattaya, aproximadamente 2–3 horas según tráfico. Traslado terrestre no incluido.",
+    "airport": {
+      "code": "BKK",
+      "name": "Suvarnabhumi, Bangkok"
+    },
+    "nights": 5,
+    "economy": 30160,
+    "duration": 1620,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-pattaya.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/pattaya.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/pattaya-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1920,
+    "alt": "Bahía y playa de Pattaya vistas desde un mirador",
+    "photoAuthor": "Sergey S. Dukachev",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Pattaya_beach_from_view_point.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "pattaya-opcion-1",
+        "name": "Horizonte Pattaya",
+        "stars": 3,
+        "area": "Jomtien",
+        "rate": 1820,
+        "image": "hoteles/hotel-pattaya-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Pattaya; oferta de demostración.",
+        "photoAuthor": "Allvin Garamar",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:EXECUTIVE_ROOM_-_Teraskita_Hotel_Makassar.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "pattaya-opcion-2",
+        "name": "Casa Aurora Pattaya",
+        "stars": 4,
+        "area": "Naklua",
+        "rate": 2366,
+        "image": "hoteles/hotel-pattaya-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Pattaya; oferta de demostración.",
+        "photoAuthor": "Hotel Shakti City Jakarta",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Executive_Room_Shakti_Hotel_City_Jakarta.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "pattaya-opcion-3",
+        "name": "Panorama Pattaya",
+        "stars": 5,
+        "area": "Pratumnak",
+        "rate": 3276,
+        "image": "hoteles/hotel-pattaya-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Pattaya; oferta de demostración.",
+        "photoAuthor": "PaulPMoroney",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Executive_Suite_bedroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "taipei",
+    "name": "Taipéi",
+    "country": "Taiwán",
+    "type": "cultura",
+    "tag": "Templos y mercados",
+    "signature": "Una ciudad que se saborea caminando",
+    "intro": "Taipéi reúne templos tradicionales, mercados nocturnos y un horizonte dominado por Taipei 101.",
+    "description": "Los barrios históricos de Wanhua y Dadaocheng muestran otra cara de la ciudad. El metro facilita combinar patrimonio, cocina local y miradores verdes.",
+    "highlights": [
+      "Taipei 101",
+      "Templo Longshan",
+      "Mercado nocturno Raohe"
+    ],
+    "tip": "Lleva una capa de lluvia ligera y consulta las condiciones del sendero de Xiangshan.",
+    "arrival": "Taipéi",
+    "transfer": "Airport MRT hasta Taipei Main Station o taxi autorizado; traslado no incluido.",
+    "airport": {
+      "code": "TPE",
+      "name": "Taiwan Taoyuan International"
+    },
+    "nights": 4,
+    "economy": 30940,
+    "duration": 1620,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-taipei.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/taipei.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/taipei-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1706,
+    "alt": "Panorámica de Taipéi con la torre Taipei 101",
+    "photoAuthor": "毛貓大少爺",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Taipei_Skyline_2022.06.29.jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "hotels": [
+      {
+        "id": "taipei-opcion-1",
+        "name": "Horizonte Taipéi",
+        "stars": 3,
+        "area": "Zhongzheng",
+        "rate": 2470,
+        "image": "hoteles/hotel-taipei-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Taipéi; oferta de demostración.",
+        "photoAuthor": "Marc Gerard Del Rosario",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Fairmont_The_Palm_(11535774794).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "taipei-opcion-2",
+        "name": "Casa Aurora Taipéi",
+        "stars": 4,
+        "area": "Xinyi",
+        "rate": 3211,
+        "image": "hoteles/hotel-taipei-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Taipéi; oferta de demostración.",
+        "photoAuthor": "Hotelre",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Family_suite.jpg",
+        "photoLicense": "CC BY 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "taipei-opcion-3",
+        "name": "Panorama Taipéi",
+        "stars": 5,
+        "area": "Wanhua",
+        "rate": 4446,
+        "image": "hoteles/hotel-taipei-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Taipéi; oferta de demostración.",
+        "photoAuthor": "Aishagrawal27",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Four_bed.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "milan",
+    "name": "Milán",
+    "country": "Italia",
+    "type": "cultura",
+    "tag": "Arte y diseño",
+    "signature": "Estilo italiano entre plazas y canales",
+    "intro": "La capital lombarda combina patrimonio monumental, diseño contemporáneo y barrios creativos.",
+    "description": "Desde el Duomo hasta Brera, Milán invita a mirar sus fachadas y museos. Los Navigli añaden paseos junto al agua y el ambiente del aperitivo.",
+    "highlights": [
+      "Duomo de Milán",
+      "Pinacoteca de Brera",
+      "Naviglio Grande"
+    ],
+    "tip": "Reserva con anticipación los museos y las terrazas del Duomo; organiza cada jornada por barrios.",
+    "arrival": "Milán",
+    "transfer": "Malpensa Express o autobús hacia Milán; conexión al alojamiento no incluida.",
+    "airport": {
+      "code": "MXP",
+      "name": "Milán Malpensa"
+    },
+    "nights": 4,
+    "economy": 24440,
+    "duration": 1020,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-milan.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/milan.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/milan-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1924,
+    "alt": "Catedral de Milán desde la Piazza del Duomo",
+    "photoAuthor": "Jiuguang Wang",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Milan_Cathedral_from_Piazza_del_Duomo.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "milan-opcion-1",
+        "name": "Horizonte Milán",
+        "stars": 3,
+        "area": "Brera",
+        "rate": 3250,
+        "image": "hoteles/hotel-milan-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Milán; oferta de demostración.",
+        "photoAuthor": "Chad Davis from Minneapolis, United States",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guatemala_Hotel_(52633736890).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "milan-opcion-2",
+        "name": "Casa Aurora Milán",
+        "stars": 4,
+        "area": "Porta Venezia",
+        "rate": 4225,
+        "image": "hoteles/hotel-milan-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Milán; oferta de demostración.",
+        "photoAuthor": "Claudia Cárdenas Ovando",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:HABITACION.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "milan-opcion-3",
+        "name": "Panorama Milán",
+        "stars": 5,
+        "area": "Navigli",
+        "rate": 5850,
+        "image": "hoteles/hotel-milan-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Milán; oferta de demostración.",
+        "photoAuthor": "Tiraspolsky",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hall._Hotel_Brosundet._Alesund._Norway.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "viena",
+    "name": "Viena",
+    "country": "Austria",
+    "type": "cultura",
+    "tag": "Palacios y música",
+    "signature": "La elegancia de una capital imperial",
+    "intro": "Viena une palacios, cafés y avenidas monumentales con parques donde bajar el ritmo.",
+    "description": "Explora el centro histórico y sus museos, reserva tiempo para los jardines imperiales y descubre la tradición de sus cafés sin apresurar la visita.",
+    "highlights": [
+      "Catedral de San Esteban",
+      "Palacio Hofburg",
+      "Palacio Schönbrunn"
+    ],
+    "tip": "Comprueba reservas y horarios de palacios y conciertos antes de organizar el día.",
+    "arrival": "Viena",
+    "transfer": "Tren regional, S-Bahn, City Airport Train o autobús; traslado y enlace al hotel no incluidos.",
+    "airport": {
+      "code": "VIE",
+      "name": "Viena International"
+    },
+    "nights": 4,
+    "economy": 25740,
+    "duration": 1080,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-viena.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/viena.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/viena-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1151,
+    "alt": "Palacio de Schönbrunn y sus jardines en Viena",
+    "photoAuthor": "Superbass",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Schoenbrunn_philharmoniker_2012.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "viena-opcion-1",
+        "name": "Horizonte Viena",
+        "stars": 3,
+        "area": "Innere Stadt",
+        "rate": 3380,
+        "image": "hoteles/hotel-viena-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Viena; oferta de demostración.",
+        "photoAuthor": "Matt @ PEK from Taipei, Taiwan",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Cool_Corner_Room_(5574721196).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "viena-opcion-2",
+        "name": "Casa Aurora Viena",
+        "stars": 4,
+        "area": "Leopoldstadt",
+        "rate": 4394,
+        "image": "hoteles/hotel-viena-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Viena; oferta de demostración.",
+        "photoAuthor": "Gshiknis",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Heritage_Machan_Tree_house_hotel_in_Lonavala,_India_-_2008.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "viena-opcion-3",
+        "name": "Panorama Viena",
+        "stars": 5,
+        "area": "Neubau",
+        "rate": 6084,
+        "image": "hoteles/hotel-viena-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Viena; oferta de demostración.",
+        "photoAuthor": "János Korom Dr.  >17 Million views from Wien, Austria",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Rialto_Suisse_1_0136_(33064196308).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "atenas",
+    "name": "Atenas",
+    "country": "Grecia",
+    "type": "cultura",
+    "tag": "Historia mediterránea",
+    "signature": "La ciudad que conversa con la antigüedad",
+    "intro": "Atenas entrelaza monumentos clásicos con barrios, mercados y colinas llenos de vida.",
+    "description": "La Acrópolis marca el horizonte, pero también merecen tiempo las calles de Plaka, los sabores del centro y los paseos por sus colinas.",
+    "highlights": [
+      "Acrópolis",
+      "Plaka",
+      "Ágora antigua"
+    ],
+    "tip": "Reserva la franja de acceso a la Acrópolis y evita las horas de más calor en verano.",
+    "arrival": "Atenas",
+    "transfer": "Metro, tren suburbano, autobús o taxi autorizado; traslado al hotel no incluido.",
+    "airport": {
+      "code": "ATH",
+      "name": "Atenas Eleftherios Venizelos"
+    },
+    "nights": 4,
+    "economy": 25480,
+    "duration": 1140,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-atenas.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/atenas.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/atenas-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1440,
+    "alt": "Acrópolis de Atenas sobre la ciudad al amanecer",
+    "photoAuthor": "Andrew Parlette",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Athens_Acropolis_at_Daybreak.jpg",
+    "photoLicense": "CC BY 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "hotels": [
+      {
+        "id": "atenas-opcion-1",
+        "name": "Horizonte Atenas",
+        "stars": 3,
+        "area": "Plaka",
+        "rate": 2600,
+        "image": "hoteles/hotel-atenas-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Atenas; oferta de demostración.",
+        "photoAuthor": "Jony1988",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Double_room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "atenas-opcion-2",
+        "name": "Casa Aurora Atenas",
+        "stars": 4,
+        "area": "Koukaki",
+        "rate": 3380,
+        "image": "hoteles/hotel-atenas-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Atenas; oferta de demostración.",
+        "photoAuthor": "Matt @ PEK from Taipei, Taiwan",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Executive_Suites_bedroom_(5078857346).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "atenas-opcion-3",
+        "name": "Panorama Atenas",
+        "stars": 5,
+        "area": "Psiri",
+        "rate": 4680,
+        "image": "hoteles/hotel-atenas-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Atenas; oferta de demostración.",
+        "photoAuthor": "Open Grid Scheduler / Grid Engine",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Room_(32259665218).jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "budapest",
+    "name": "Budapest",
+    "country": "Hungría",
+    "type": "cultura",
+    "tag": "Danubio y termas",
+    "signature": "Dos orillas con historias propias",
+    "intro": "Buda y Pest se miran sobre el Danubio entre palacios, puentes y arquitectura monumental.",
+    "description": "Alterna el barrio del castillo con los mercados de Pest y sus parques. Las termas forman parte de la experiencia urbana y requieren tiempo propio.",
+    "highlights": [
+      "Parlamento de Hungría",
+      "Bastión de los Pescadores",
+      "Puente de las Cadenas"
+    ],
+    "tip": "Reserva con anticipación visitas al Parlamento y consulta las normas de cada baño termal.",
+    "arrival": "Budapest",
+    "transfer": "Autobús del aeropuerto o taxi autorizado hacia el centro; traslado no incluido.",
+    "airport": {
+      "code": "BUD",
+      "name": "Budapest Ferenc Liszt International"
+    },
+    "nights": 4,
+    "economy": 23920,
+    "duration": 1140,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-budapest.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/budapest.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/budapest-1280.jpg",
+    "imageWidth": 2500,
+    "imageHeight": 1293,
+    "alt": "Río Danubio y puentes de Budapest desde la colina Gellért",
+    "photoAuthor": "Visions of Domino",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:View_from_Gell%C3%A9rt_Hill_to_the_Danube,_Hungary_-_Budapest_(28493220635).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "budapest-opcion-1",
+        "name": "Horizonte Budapest",
+        "stars": 3,
+        "area": "Belváros-Lipótváros",
+        "rate": 2132,
+        "image": "hoteles/hotel-budapest-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Budapest; oferta de demostración.",
+        "photoAuthor": "GocheGanas",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GocheGanas_elegant_suite_-_twin_beds_with_view.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "budapest-opcion-2",
+        "name": "Casa Aurora Budapest",
+        "stars": 4,
+        "area": "Erzsébetváros",
+        "rate": 2772,
+        "image": "hoteles/hotel-budapest-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Budapest; oferta de demostración.",
+        "photoAuthor": "cloud.shepherd",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_in_fisheye_(18961172206).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "budapest-opcion-3",
+        "name": "Panorama Budapest",
+        "stars": 5,
+        "area": "Várkerület",
+        "rate": 3838,
+        "image": "hoteles/hotel-budapest-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Budapest; oferta de demostración.",
+        "photoAuthor": "Sahil Dhiman",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_in_Gurgaon,_India.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "florencia",
+    "name": "Florencia",
+    "country": "Italia",
+    "type": "cultura",
+    "tag": "Renacimiento y artesanía",
+    "signature": "Arte a ambas orillas del Arno",
+    "intro": "Florencia ofrece plazas renacentistas, talleres tradicionales y vistas desde sus colinas.",
+    "description": "Recorre el centro histórico sin prisa y cruza el Arno hacia Oltrarno. Las grandes colecciones artísticas se disfrutan mejor reservando su propio horario.",
+    "highlights": [
+      "Catedral de Santa Maria del Fiore",
+      "Ponte Vecchio",
+      "Galería Uffizi"
+    ],
+    "tip": "Reserva museos con anticipación y lleva calzado para calles empedradas y pendientes.",
+    "arrival": "Florencia",
+    "transfer": "Tranvía o taxi hacia la ciudad; conexión al hotel no incluida.",
+    "airport": {
+      "code": "FLR",
+      "name": "Florencia Amerigo Vespucci"
+    },
+    "nights": 4,
+    "economy": 25480,
+    "duration": 1140,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-florencia.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/florencia.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/florencia-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1709,
+    "alt": "Catedral y centro histórico de Florencia desde Piazzale Michelangelo",
+    "photoAuthor": "Giorgio Galeotti",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Firenze_-_Piazzale_Michelangelo,_Firenze,_Italy_-_April_6,_2015_02.jpg",
+    "photoLicense": "CC BY 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "hotels": [
+      {
+        "id": "florencia-opcion-1",
+        "name": "Horizonte Florencia",
+        "stars": 3,
+        "area": "Santa Maria Novella",
+        "rate": 3250,
+        "image": "hoteles/hotel-florencia-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Florencia; oferta de demostración.",
+        "photoAuthor": "Matti Blume",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:H%2B_Hotel,_Mannheim_(IMG_8735).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "florencia-opcion-2",
+        "name": "Casa Aurora Florencia",
+        "stars": 4,
+        "area": "San Lorenzo",
+        "rate": 4225,
+        "image": "hoteles/hotel-florencia-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Florencia; oferta de demostración.",
+        "photoAuthor": "Quant",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Suite_-_Living_Room_1.JPG",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "florencia-opcion-3",
+        "name": "Panorama Florencia",
+        "stars": 5,
+        "area": "Santo Spirito",
+        "rate": 5850,
+        "image": "hoteles/hotel-florencia-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Florencia; oferta de demostración.",
+        "photoAuthor": "Markus Spiske markusspiske",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_bedroom_windows_(Unsplash).jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "munich",
+    "name": "Múnich",
+    "country": "Alemania",
+    "type": "cultura",
+    "tag": "Tradición bávara",
+    "signature": "Plazas, mercados y grandes jardines",
+    "intro": "Múnich combina patrimonio bávaro, museos y una vida cotidiana que se disfruta al aire libre.",
+    "description": "El casco antiguo permite explorar plazas y mercados a pie. Dedica otra jornada a sus jardines y a los barrios que muestran la faceta creativa de la ciudad.",
+    "highlights": [
+      "Marienplatz",
+      "Viktualienmarkt",
+      "Englischer Garten"
+    ],
+    "tip": "Comprueba reservas durante grandes eventos y deja tiempo para desplazarte en transporte público.",
+    "arrival": "Múnich",
+    "transfer": "S-Bahn o autobús al centro; traslado y conexiones al hotel no incluidos.",
+    "airport": {
+      "code": "MUC",
+      "name": "Múnich Franz Josef Strauss"
+    },
+    "nights": 4,
+    "economy": 25220,
+    "duration": 1080,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-munich.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/munich.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/munich-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1730,
+    "alt": "Torres y tejados del centro de Múnich",
+    "photoAuthor": "Thomas Wolf, www.foto-tw.de",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Stadtbild_M%C3%BCnchen.jpg",
+    "photoLicense": "CC BY-SA 3.0 de",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "hotels": [
+      {
+        "id": "munich-opcion-1",
+        "name": "Horizonte Múnich",
+        "stars": 3,
+        "area": "Altstadt",
+        "rate": 3120,
+        "image": "hoteles/hotel-munich-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Múnich; oferta de demostración.",
+        "photoAuthor": "Another Believer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Istanbul,_Turkey_(November_2023)_-_008.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "munich-opcion-2",
+        "name": "Casa Aurora Múnich",
+        "stars": 4,
+        "area": "Maxvorstadt",
+        "rate": 4056,
+        "image": "hoteles/hotel-munich-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Múnich; oferta de demostración.",
+        "photoAuthor": "Allvin Garamar",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:JUNIOR_SUITE_ROOM_-_Teraskita_Hotel_Makassar.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "munich-opcion-3",
+        "name": "Panorama Múnich",
+        "stars": 5,
+        "area": "Haidhausen",
+        "rate": 5616,
+        "image": "hoteles/hotel-munich-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Múnich; oferta de demostración.",
+        "photoAuthor": "Neynyrhtak",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Kimpton_Da_An_Premium_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dublin",
+    "name": "Dublín",
+    "country": "Irlanda",
+    "type": "cultura",
+    "tag": "Letras y música",
+    "signature": "Historias junto al río Liffey",
+    "intro": "Dublín reúne patrimonio literario, música y barrios que invitan a recorrerlos a pie.",
+    "description": "Descubre sus plazas georgianas, librerías y edificios históricos. Entre visitas, los parques y mercados ofrecen un buen descanso para conocer la ciudad.",
+    "highlights": [
+      "Trinity College",
+      "Castillo de Dublín",
+      "St Stephen's Green"
+    ],
+    "tip": "Lleva ropa impermeable y reserva las atracciones más solicitadas con antelación.",
+    "arrival": "Dublín",
+    "transfer": "Autobús del aeropuerto o taxi autorizado; traslado al alojamiento no incluido.",
+    "airport": {
+      "code": "DUB",
+      "name": "Dublín"
+    },
+    "nights": 4,
+    "economy": 24180,
+    "duration": 1020,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-dublin.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/dublin.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/dublin-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1440,
+    "alt": "Vista aérea de los edificios y el río de Dublín",
+    "photoAuthor": "瑞丽江的河水",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Dublin_-_aerial_-_2025-07-07_01.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "dublin-opcion-1",
+        "name": "Horizonte Dublín",
+        "stars": 3,
+        "area": "Temple Bar",
+        "rate": 3770,
+        "image": "hoteles/hotel-dublin-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Dublín; oferta de demostración.",
+        "photoAuthor": "Enola.d",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Le_salon_de_l%27h%C3%B4tel_Yndo.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "dublin-opcion-2",
+        "name": "Casa Aurora Dublín",
+        "stars": 4,
+        "area": "St Stephen's Green",
+        "rate": 4901,
+        "image": "hoteles/hotel-dublin-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Dublín; oferta de demostración.",
+        "photoAuthor": "Matti Blume",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel,_(IMG_8916).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "dublin-opcion-3",
+        "name": "Panorama Dublín",
+        "stars": 5,
+        "area": "Smithfield",
+        "rate": 6786,
+        "image": "hoteles/hotel-dublin-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Dublín; oferta de demostración.",
+        "photoAuthor": "Win4leisure",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:MAJESTIC_ROOM.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "edimburgo",
+    "name": "Edimburgo",
+    "country": "Reino Unido",
+    "type": "cultura",
+    "tag": "Castillo y callejones",
+    "signature": "Una capital entre piedra y colinas",
+    "intro": "Edimburgo combina el trazado medieval de Old Town con jardines y miradores volcánicos.",
+    "description": "Su castillo domina calles donde conviven historias, museos y cafés. New Town y los paseos panorámicos completan una estancia de ritmo caminable.",
+    "highlights": [
+      "Castillo de Edimburgo",
+      "Royal Mile",
+      "Calton Hill"
+    ],
+    "tip": "Usa calzado con agarre; las cuestas y adoquines pueden estar húmedos incluso en días suaves.",
+    "arrival": "Edimburgo",
+    "transfer": "Tranvía, autobús o taxi hacia el centro; traslado no incluido.",
+    "airport": {
+      "code": "EDI",
+      "name": "Edimburgo"
+    },
+    "nights": 4,
+    "economy": 24960,
+    "duration": 1080,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-edimburgo.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/edimburgo.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/edimburgo-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1440,
+    "alt": "Panorámica de los edificios históricos de Edimburgo",
+    "photoAuthor": "Andrew Colin",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Skyline_of_Edinburgh.jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "edimburgo-opcion-1",
+        "name": "Horizonte Edimburgo",
+        "stars": 3,
+        "area": "Old Town",
+        "rate": 3640,
+        "image": "hoteles/hotel-edimburgo-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Edimburgo; oferta de demostración.",
+        "photoAuthor": "Matti Blume",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Ibis_Friedrichshafen_Airport,_Friedrichshafen_(1X7A9712-Pano).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "edimburgo-opcion-2",
+        "name": "Casa Aurora Edimburgo",
+        "stars": 4,
+        "area": "New Town",
+        "rate": 4732,
+        "image": "hoteles/hotel-edimburgo-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Edimburgo; oferta de demostración.",
+        "photoAuthor": "Sidheeq",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Inside_Southern_Sun_Cape_Sun.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "edimburgo-opcion-3",
+        "name": "Panorama Edimburgo",
+        "stars": 5,
+        "area": "Stockbridge",
+        "rate": 6552,
+        "image": "hoteles/hotel-edimburgo-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Edimburgo; oferta de demostración.",
+        "photoAuthor": "Наталья Бутрим",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Luxev1.jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pekin",
+    "name": "Pekín",
+    "country": "China",
+    "type": "cultura",
+    "tag": "Herencia imperial",
+    "signature": "Patios, palacios y jardines",
+    "intro": "Pekín despliega su historia entre monumentos imperiales y callejones tradicionales.",
+    "description": "Organiza las visitas por sectores para disfrutar sus grandes complejos. Los hutongs y parques añaden una dimensión cotidiana a la experiencia monumental.",
+    "highlights": [
+      "Ciudad Prohibida",
+      "Templo del Cielo",
+      "Parque Jingshan"
+    ],
+    "tip": "Confirma reservas oficiales e identificación requerida para cada monumento antes de viajar.",
+    "arrival": "Pekín",
+    "transfer": "Airport Express o taxi autorizado hacia Pekín; traslado y enlaces al hotel no incluidos.",
+    "airport": {
+      "code": "PEK",
+      "name": "Pekín Capital International"
+    },
+    "nights": 5,
+    "economy": 30940,
+    "duration": 1620,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-pekin.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/pekin.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/pekin-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1707,
+    "alt": "Distrito de negocios y rascacielos de Pekín",
+    "photoAuthor": "N509FZ",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Skyline_of_Beijing_CBD_with_B-5906_approaching_(20211016171955)_(1).jpg",
+    "photoLicense": "CC BY 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "hotels": [
+      {
+        "id": "pekin-opcion-1",
+        "name": "Horizonte Pekín",
+        "stars": 3,
+        "area": "Dongcheng",
+        "rate": 2210,
+        "image": "hoteles/hotel-pekin-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Pekín; oferta de demostración.",
+        "photoAuthor": "Matti Blume",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Aloft,_Al_Rawdah_(IMG_20230812_182243).jpg",
+        "photoLicense": "CC BY-SA 4.0 DEED.EN",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "pekin-opcion-2",
+        "name": "Casa Aurora Pekín",
+        "stars": 4,
+        "area": "Xicheng",
+        "rate": 2873,
+        "image": "hoteles/hotel-pekin-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Pekín; oferta de demostración.",
+        "photoAuthor": "Takeaway",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Mandarin_Oriental_Dhara_Dhevi_Chiang_Mai_07.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "pekin-opcion-3",
+        "name": "Panorama Pekín",
+        "stars": 5,
+        "area": "Chaoyang",
+        "rate": 3978,
+        "image": "hoteles/hotel-pekin-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Pekín; oferta de demostración.",
+        "photoAuthor": "Another Believer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Puerto_Vallarta,_Mexico_(February_2024)_-_005.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shanghai",
+    "name": "Shanghái",
+    "country": "China",
+    "type": "cultura",
+    "tag": "Horizonte del Huangpu",
+    "signature": "Tradición y futuro a la orilla del río",
+    "intro": "Shanghái combina el perfil de Pudong con jardines clásicos y calles históricas.",
+    "description": "Pasea por el Bund, descubre el entorno de Yuyuan y dedica tiempo a sus barrios arbolados. La ciudad ofrece contrastes que cambian de una orilla a otra.",
+    "highlights": [
+      "El Bund",
+      "Jardín Yuyuan",
+      "Lujiazui"
+    ],
+    "tip": "Comprueba el aeropuerto de llegada: Pudong y Hongqiao están en zonas distintas de la ciudad.",
+    "arrival": "Shanghái",
+    "transfer": "Metro, Maglev con conexión o taxi autorizado; traslado al alojamiento no incluido.",
+    "airport": {
+      "code": "PVG",
+      "name": "Shanghái Pudong International"
+    },
+    "nights": 4,
+    "economy": 30420,
+    "duration": 1560,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-shanghai.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/shanghai.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/shanghai-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1282,
+    "alt": "Rascacielos de Shanghái junto al río Huangpu",
+    "photoAuthor": "xiquinhosilva",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Huangpu_Park_20124-Shanghai_(32208802494).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "shanghai-opcion-1",
+        "name": "Horizonte Shanghái",
+        "stars": 3,
+        "area": "Huangpu",
+        "rate": 2600,
+        "image": "hoteles/hotel-shanghai-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Shanghái; oferta de demostración.",
+        "photoAuthor": "Rufouslark",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:N1_Hotel_Bulawayo_Twin_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "shanghai-opcion-2",
+        "name": "Casa Aurora Shanghái",
+        "stars": 4,
+        "area": "Jing'an",
+        "rate": 3380,
+        "image": "hoteles/hotel-shanghai-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Shanghái; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Lisbon_2025_114.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "shanghai-opcion-3",
+        "name": "Panorama Shanghái",
+        "stars": 5,
+        "area": "Xuhui",
+        "rate": 4680,
+        "image": "hoteles/hotel-shanghai-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Shanghái; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Salvador,_Bahia_2025_206.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hanoi",
+    "name": "Hanói",
+    "country": "Vietnam",
+    "type": "cultura",
+    "tag": "Lagos y vida local",
+    "signature": "La capital de los callejones y el café",
+    "intro": "Hanói combina lagos, templos y la energía de sus calles comerciales tradicionales.",
+    "description": "En el casco antiguo, cada calle revela oficios y aromas propios. Los paseos junto al agua y los monumentos históricos equilibran el ritmo de la capital.",
+    "highlights": [
+      "Lago Hoan Kiem",
+      "Barrio Antiguo",
+      "Templo de la Literatura"
+    ],
+    "tip": "Cruza las calles con calma y elige recorridos a pie cortos para disfrutar mejor del casco antiguo.",
+    "arrival": "Hanói",
+    "transfer": "Autobús o taxi autorizado hacia Hanói; traslado al hotel no incluido.",
+    "airport": {
+      "code": "HAN",
+      "name": "Noi Bai International"
+    },
+    "nights": 4,
+    "economy": 29380,
+    "duration": 1740,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-hanoi.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/hanoi.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/hanoi-1280.jpg",
+    "imageWidth": 2048,
+    "imageHeight": 1093,
+    "alt": "Panorámica de Hanói con la montaña Ba Vì al fondo",
+    "photoAuthor": "Quangnlnhe182394",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Hanoi_skyline_with_Ba_Vi_Mountain.jpg",
+    "photoLicense": "CC0",
+    "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "hotels": [
+      {
+        "id": "hanoi-opcion-1",
+        "name": "Horizonte Hanói",
+        "stars": 3,
+        "area": "Hoan Kiem",
+        "rate": 1508,
+        "image": "hoteles/hotel-hanoi-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Hanói; oferta de demostración.",
+        "photoAuthor": "The Down Town Hotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Premium_Suite_Room_1.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "hanoi-opcion-2",
+        "name": "Casa Aurora Hanói",
+        "stars": 4,
+        "area": "Ba Dinh",
+        "rate": 1960,
+        "image": "hoteles/hotel-hanoi-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Hanói; oferta de demostración.",
+        "photoAuthor": "Another Believer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Puerto_Vallarta,_Mexico_(February_2024)_-_001.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "hanoi-opcion-3",
+        "name": "Panorama Hanói",
+        "stars": 5,
+        "area": "Tay Ho",
+        "rate": 2714,
+        "image": "hoteles/hotel-hanoi-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Hanói; oferta de demostración.",
+        "photoAuthor": "Shixart1985",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Modern_hotel_room_with_large_window_and_stylish_furnishings_near_a_city_center_during_daytime.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ho-chi-minh",
+    "name": "Ciudad Ho Chi Minh",
+    "country": "Vietnam",
+    "type": "cultura",
+    "tag": "Mercados y avenidas",
+    "signature": "La energía del sur de Vietnam",
+    "intro": "Ciudad Ho Chi Minh reúne arquitectura histórica, mercados y una intensa vida callejera.",
+    "description": "Explora su núcleo monumental y los barrios de tradición china. La cocina local, los cafés y los paseos urbanos permiten descubrirla a distintas horas.",
+    "highlights": [
+      "Palacio de la Reunificación",
+      "Oficina Central de Correos",
+      "Mercado Ben Thanh"
+    ],
+    "tip": "Deja margen para el tráfico y revisa qué terminal corresponde a tu vuelo.",
+    "arrival": "Ciudad Ho Chi Minh",
+    "transfer": "Autobús o taxi autorizado hacia el centro; traslado al alojamiento no incluido.",
+    "airport": {
+      "code": "SGN",
+      "name": "Tan Son Nhat International"
+    },
+    "nights": 4,
+    "economy": 29120,
+    "duration": 1740,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-ho-chi-minh.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/ho-chi-minh.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/ho-chi-minh-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1474,
+    "alt": "Ayuntamiento histórico de Ciudad Ho Chi Minh",
+    "photoAuthor": "Steffen Schmitz (more photos)",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City,_City_Hall,_2020-01_CN-03.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "ho-chi-minh-opcion-1",
+        "name": "Horizonte Ciudad Ho Chi Minh",
+        "stars": 3,
+        "area": "Ben Nghe",
+        "rate": 1612,
+        "image": "hoteles/hotel-ho-chi-minh-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Ciudad Ho Chi Minh; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_S%C3%A3o_Paulo_2023_048.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "ho-chi-minh-opcion-2",
+        "name": "Casa Aurora Ciudad Ho Chi Minh",
+        "stars": 4,
+        "area": "Ben Thanh",
+        "rate": 2096,
+        "image": "hoteles/hotel-ho-chi-minh-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Ciudad Ho Chi Minh; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Tallinn_2024_477.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "ho-chi-minh-opcion-3",
+        "name": "Panorama Ciudad Ho Chi Minh",
+        "stars": 5,
+        "area": "Cholon",
+        "rate": 2902,
+        "image": "hoteles/hotel-ho-chi-minh-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Ciudad Ho Chi Minh; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Wiki_Indaba_2024_145.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "country": "India",
+    "type": "cultura",
+    "tag": "Capital de contrastes",
+    "signature": "Historia mogola y grandes avenidas",
+    "intro": "Delhi reúne ciudades históricas, monumentos y mercados que cuentan distintas épocas de la India.",
+    "description": "Alterna el ambiente de Old Delhi con jardines y conjuntos monumentales del sur. Organizar las visitas por zonas ayuda a disfrutarla con más calma.",
+    "highlights": [
+      "Fuerte Rojo",
+      "Tumba de Humayun",
+      "Qutub Minar"
+    ],
+    "tip": "Comprueba normas de vestimenta en templos y reserva tiempo adicional por el tráfico.",
+    "arrival": "Delhi",
+    "transfer": "Airport Express o taxi autorizado hacia Delhi; traslado al hotel no incluido.",
+    "airport": {
+      "code": "DEL",
+      "name": "Indira Gandhi International, Delhi"
+    },
+    "nights": 4,
+    "economy": 28080,
+    "duration": 1500,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-delhi.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/delhi.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/delhi-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1920,
+    "alt": "Puerta de la India al amanecer en Delhi",
+    "photoAuthor": "Kajalbeniwal19",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:India_gate_at_sunrise.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "delhi-opcion-1",
+        "name": "Horizonte Delhi",
+        "stars": 3,
+        "area": "Connaught Place",
+        "rate": 1690,
+        "image": "hoteles/hotel-delhi-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Delhi; oferta de demostración.",
+        "photoAuthor": "Photograph by Mike Peel (www.mikepeel.net).",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:At_Wiki_Indaba_2024_143.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "delhi-opcion-2",
+        "name": "Casa Aurora Delhi",
+        "stars": 4,
+        "area": "Karol Bagh",
+        "rate": 2197,
+        "image": "hoteles/hotel-delhi-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Delhi; oferta de demostración.",
+        "photoAuthor": "Tonylyongreas",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Room%40africana.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "delhi-opcion-3",
+        "name": "Panorama Delhi",
+        "stars": 5,
+        "area": "Hauz Khas",
+        "rate": 3042,
+        "image": "hoteles/hotel-delhi-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Delhi; oferta de demostración.",
+        "photoAuthor": "Mx. Granger",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Room_at_the_President_Hotel_Auckland.jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mumbai",
+    "name": "Mumbai",
+    "country": "India",
+    "type": "cultura",
+    "tag": "Patrimonio junto al mar",
+    "signature": "La ciudad que mira al mar Arábigo",
+    "intro": "Mumbai combina arquitectura histórica, mercados y paseos costeros llenos de actividad.",
+    "description": "Descubre el sur de la ciudad entre Colaba, Kala Ghoda y Marine Drive. Una salida a Elephanta añade patrimonio insular a la estancia urbana.",
+    "highlights": [
+      "Gateway of India",
+      "Marine Drive",
+      "Cuevas de Elephanta"
+    ],
+    "tip": "Consulta el estado del mar antes de ir a Elephanta y deja margen amplio para desplazamientos.",
+    "arrival": "Mumbai",
+    "transfer": "Taxi autorizado u opciones de transporte urbano según terminal; traslado al hotel no incluido.",
+    "airport": {
+      "code": "BOM",
+      "name": "Chhatrapati Shivaji Maharaj International"
+    },
+    "nights": 4,
+    "economy": 28600,
+    "duration": 1500,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-mumbai.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/mumbai.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/mumbai-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1439,
+    "alt": "Puente Bandra-Worli Sea Link sobre el mar en Mumbai",
+    "photoAuthor": "Rutiknatekar",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Mumbai_Bandra-Worli_Sea_Link.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "mumbai-opcion-1",
+        "name": "Horizonte Mumbai",
+        "stars": 3,
+        "area": "Colaba",
+        "rate": 2210,
+        "image": "hoteles/hotel-mumbai-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Mumbai; oferta de demostración.",
+        "photoAuthor": "Decoyboy",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Southbeachhotel-room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "mumbai-opcion-2",
+        "name": "Casa Aurora Mumbai",
+        "stars": 4,
+        "area": "Fort",
+        "rate": 2873,
+        "image": "hoteles/hotel-mumbai-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Mumbai; oferta de demostración.",
+        "photoAuthor": "Aishagrawal27",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:SuperDeluxe_Triple_Bed_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "mumbai-opcion-3",
+        "name": "Panorama Mumbai",
+        "stars": 5,
+        "area": "Bandra",
+        "rate": 3978,
+        "image": "hoteles/hotel-mumbai-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Mumbai; oferta de demostración.",
+        "photoAuthor": "M.Tarnowski",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Sypialnia_ks._marsz._Izabeli_Lubomirskiej.JPG",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "agra",
+    "name": "Agra",
+    "country": "India",
+    "type": "cultura",
+    "tag": "Arquitectura mogola",
+    "signature": "Mármol y jardines a orillas del Yamuna",
+    "intro": "Agra invita a descubrir el Taj Mahal y otras grandes obras del patrimonio mogol.",
+    "description": "Organiza la visita al Taj con tiempo y completa el viaje con fortalezas, jardines y mercados. Las vistas desde la otra orilla muestran un paisaje diferente.",
+    "highlights": [
+      "Taj Mahal",
+      "Fuerte de Agra",
+      "Mehtab Bagh"
+    ],
+    "tip": "Confirma el calendario de apertura del Taj Mahal: la visita turística cierra los viernes.",
+    "arrival": "Delhi",
+    "transfer": "Llegada aérea a Delhi; continuar a Agra por carretera o tren con conexión terrestre. Reserva una jornada de traslado y verifica horarios. No está incluido.",
+    "airport": {
+      "code": "DEL",
+      "name": "Indira Gandhi International, Delhi"
+    },
+    "nights": 3,
+    "economy": 28080,
+    "duration": 1500,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-agra.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/agra.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/agra-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1683,
+    "alt": "Taj Mahal y su estanque reflectante en Agra",
+    "photoAuthor": "Yann (talk)",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Taj_Mahal,_Agra,_India.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "agra-opcion-1",
+        "name": "Horizonte Agra",
+        "stars": 3,
+        "area": "Taj Ganj",
+        "rate": 1690,
+        "image": "hoteles/hotel-agra-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Agra; oferta de demostración.",
+        "photoAuthor": "Paradisus Bali",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:The_Reserve_Garden_Villa_at_Paradisus_by_Meli%C3%A1_Bali.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "agra-opcion-2",
+        "name": "Casa Aurora Agra",
+        "stars": 4,
+        "area": "Fatehabad Road",
+        "rate": 2197,
+        "image": "hoteles/hotel-agra-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Agra; oferta de demostración.",
+        "photoAuthor": "Matt @ PEK from Taipei, Taiwan",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Deluxe_Suite_Bedroom_(5547903570).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "agra-opcion-3",
+        "name": "Panorama Agra",
+        "stars": 5,
+        "area": "Sadar Bazaar",
+        "rate": 3042,
+        "image": "hoteles/hotel-agra-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Agra; oferta de demostración.",
+        "photoAuthor": "The Down Town Hotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:The_Suite_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "country": "India",
+    "type": "cultura",
+    "tag": "Palacios y bazares",
+    "signature": "La ciudad rosa de Rajasthan",
+    "intro": "Jaipur ofrece palacios, observatorios y mercados de artesanía en un entorno de colinas.",
+    "description": "El trazado de la ciudad vieja facilita combinar monumentos y bazares. Amber merece una salida propia para recorrer su fortaleza y sus alrededores.",
+    "highlights": [
+      "Hawa Mahal",
+      "City Palace",
+      "Fuerte Amber"
+    ],
+    "tip": "Protege tu visita del calor y planifica los fuertes con vehículo reservado por separado.",
+    "arrival": "Jaipur",
+    "transfer": "Taxi autorizado hacia Jaipur; traslado al alojamiento no incluido.",
+    "airport": {
+      "code": "JAI",
+      "name": "Jaipur International"
+    },
+    "nights": 4,
+    "economy": 29120,
+    "duration": 1620,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-jaipur.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/jaipur.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/jaipur-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1440,
+    "alt": "Fachada rosa del Hawa Mahal en Jaipur",
+    "photoAuthor": "Chainwit.",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "jaipur-opcion-1",
+        "name": "Horizonte Jaipur",
+        "stars": 3,
+        "area": "Pink City",
+        "rate": 1768,
+        "image": "hoteles/hotel-jaipur-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Jaipur; oferta de demostración.",
+        "photoAuthor": "Eddie Maloney from  North Las Vegas, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:EM_ROOM-WYNN_RESORT_(2844214667).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "jaipur-opcion-2",
+        "name": "Casa Aurora Jaipur",
+        "stars": 4,
+        "area": "C-Scheme",
+        "rate": 2298,
+        "image": "hoteles/hotel-jaipur-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Jaipur; oferta de demostración.",
+        "photoAuthor": "BTLVEC",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Tower_premium_king_room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "jaipur-opcion-3",
+        "name": "Panorama Jaipur",
+        "stars": 5,
+        "area": "Bani Park",
+        "rate": 3182,
+        "image": "hoteles/hotel-jaipur-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Jaipur; oferta de demostración.",
+        "photoAuthor": "Matti Blume",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TripInn,_Essen_(P1160424).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "el-cairo",
+    "name": "El Cairo",
+    "country": "Egipto",
+    "type": "cultura",
+    "tag": "Patrimonio del Nilo",
+    "signature": "Una ciudad junto a milenios de historia",
+    "intro": "El Cairo permite combinar barrios históricos con los grandes monumentos de la región de Giza.",
+    "description": "Explora sus mercados y museos en jornadas separadas. Las pirámides se encuentran en Giza y requieren un traslado desde el centro de El Cairo.",
+    "highlights": [
+      "Pirámides de Giza",
+      "Museo Egipcio",
+      "Khan el-Khalili"
+    ],
+    "tip": "Reserva tiempo adicional para el tráfico entre El Cairo y Giza, especialmente al volver al aeropuerto.",
+    "arrival": "El Cairo",
+    "transfer": "Taxi autorizado o traslado reservado hacia El Cairo o Giza; servicio terrestre no incluido.",
+    "airport": {
+      "code": "CAI",
+      "name": "El Cairo International"
+    },
+    "nights": 5,
+    "economy": 26520,
+    "duration": 1380,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-el-cairo.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/el-cairo.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/el-cairo-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1700,
+    "alt": "Ópera de El Cairo, parque Al Hurriyah y río Nilo",
+    "photoAuthor": "Jorge Láscar from Melbourne, Australia",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Cairo_Opera_House,_Al_Hurriyah_Park_and_the_Nile_river_(14797782354).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "el-cairo-opcion-1",
+        "name": "Horizonte El Cairo",
+        "stars": 3,
+        "area": "Zamalek",
+        "rate": 2028,
+        "image": "hoteles/hotel-el-cairo-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de El Cairo; oferta de demostración.",
+        "photoAuthor": "BTLVEC",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Tower_premium.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "el-cairo-opcion-2",
+        "name": "Casa Aurora El Cairo",
+        "stars": 4,
+        "area": "Downtown Cairo",
+        "rate": 2636,
+        "image": "hoteles/hotel-el-cairo-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de El Cairo; oferta de demostración.",
+        "photoAuthor": "Kklerks",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Gastenkamer.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "el-cairo-opcion-3",
+        "name": "Panorama El Cairo",
+        "stars": 5,
+        "area": "Garden City",
+        "rate": 3650,
+        "image": "hoteles/hotel-el-cairo-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de El Cairo; oferta de demostración.",
+        "photoAuthor": "Another Believer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guadalajara,_Jalisco,_Mexico_(2021)_-_001.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "marrakech",
+    "name": "Marrakech",
+    "country": "Marruecos",
+    "type": "cultura",
+    "tag": "Medina y jardines",
+    "signature": "Patios y colores al pie del Atlas",
+    "intro": "Marrakech combina el bullicio de la medina con palacios, jardines y barrios modernos.",
+    "description": "Deja tiempo para orientarte entre zocos y callejones. Los patios históricos y los jardines ofrecen pausas tranquilas entre jornadas de exploración.",
+    "highlights": [
+      "Jemaa el-Fna",
+      "Palacio de la Bahía",
+      "Jardín Majorelle"
+    ],
+    "tip": "Acuerda tarifas antes de contratar servicios y reserva los jardines de mayor demanda.",
+    "arrival": "Marrakech",
+    "transfer": "Autobús o taxi autorizado; algunos alojamientos de la medina requieren un tramo a pie. Traslado no incluido.",
+    "airport": {
+      "code": "RAK",
+      "name": "Marrakech-Menara"
+    },
+    "nights": 4,
+    "economy": 24440,
+    "duration": 1200,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-marrakech.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/marrakech.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/marrakech-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1440,
+    "alt": "Mezquita Koutoubia y jardines de Marrakech",
+    "photoAuthor": "Philippe Salgarolo",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Marrakech_Koutoubia.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "marrakech-opcion-1",
+        "name": "Horizonte Marrakech",
+        "stars": 3,
+        "area": "Medina",
+        "rate": 2132,
+        "image": "hoteles/hotel-marrakech-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Marrakech; oferta de demostración.",
+        "photoAuthor": "Indushotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Wedding_Suite.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "marrakech-opcion-2",
+        "name": "Casa Aurora Marrakech",
+        "stars": 4,
+        "area": "Gueliz",
+        "rate": 2772,
+        "image": "hoteles/hotel-marrakech-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Marrakech; oferta de demostración.",
+        "photoAuthor": "deror_avi",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:HK_Four_Seasons_Hotel_IMG_4918.JPG",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "marrakech-opcion-3",
+        "name": "Panorama Marrakech",
+        "stars": 5,
+        "area": "Hivernage",
+        "rate": 3838,
+        "image": "hoteles/hotel-marrakech-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Marrakech; oferta de demostración.",
+        "photoAuthor": "Matti Blume",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Central,_Friedrichshafen_(OW1A0355-Pano).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ciudad-del-cabo",
+    "name": "Ciudad del Cabo",
+    "country": "Sudáfrica",
+    "type": "naturaleza",
+    "tag": "Montaña y océano",
+    "signature": "Naturaleza al borde de la ciudad",
+    "intro": "Ciudad del Cabo se extiende entre Table Mountain, barrios históricos y la costa atlántica.",
+    "description": "Combina paisajes, paseos urbanos y la cocina del Cabo. El viento y las nubes pueden cambiar los planes de montaña, por lo que conviene mantener flexibilidad.",
+    "highlights": [
+      "Table Mountain",
+      "Bo-Kaap",
+      "V&A Waterfront"
+    ],
+    "tip": "Revisa el estado del teleférico y el tiempo antes de subir a Table Mountain.",
+    "arrival": "Ciudad del Cabo",
+    "transfer": "Taxi autorizado o traslado contratado hasta la ciudad; servicio no incluido.",
+    "airport": {
+      "code": "CPT",
+      "name": "Ciudad del Cabo International"
+    },
+    "nights": 6,
+    "economy": 33280,
+    "duration": 1800,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-ciudad-del-cabo.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/ciudad-del-cabo.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/ciudad-del-cabo-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1479,
+    "alt": "Playa de Camps Bay y montañas en Ciudad del Cabo",
+    "photoAuthor": "Der Berzerker from Washington, DC, USA",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Camps_bay_(53460319478)_(cropped).jpg",
+    "photoLicense": "CC BY-SA 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "hotels": [
+      {
+        "id": "ciudad-del-cabo-opcion-1",
+        "name": "Horizonte Ciudad del Cabo",
+        "stars": 3,
+        "area": "City Bowl",
+        "rate": 2860,
+        "image": "hoteles/hotel-ciudad-del-cabo-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Ciudad del Cabo; oferta de demostración.",
+        "photoAuthor": "ART HOTEL BISHKEK-KYRGYZSTAN",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:%D0%94%D0%B2%D1%83%D1%85%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D1%8B%D0%B9_%D0%BD%D0%BE%D0%BC%D0%B5%D1%80_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D0%B8_.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "ciudad-del-cabo-opcion-2",
+        "name": "Casa Aurora Ciudad del Cabo",
+        "stars": 4,
+        "area": "Sea Point",
+        "rate": 3718,
+        "image": "hoteles/hotel-ciudad-del-cabo-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Ciudad del Cabo; oferta de demostración.",
+        "photoAuthor": "Teetrikart",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87_VIP_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "ciudad-del-cabo-opcion-3",
+        "name": "Panorama Ciudad del Cabo",
+        "stars": 5,
+        "area": "Green Point",
+        "rate": 5148,
+        "image": "hoteles/hotel-ciudad-del-cabo-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Ciudad del Cabo; oferta de demostración.",
+        "photoAuthor": "Famartin",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:2021-10-11_17_20_14_View_across_a_standard_king_bedroom_towards_the_balcony_on_the_22nd_floor_of_the_Diamond_Head_Tower_at_the_Hyatt_Regency_Waikiki_Resort_and_Spa_in_Waikiki,_Honolulu,_Oahu,_Hawaii.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "meca",
+    "name": "La Meca",
+    "country": "Arabia Saudita",
+    "type": "cultura",
+    "tag": "Patrimonio espiritual",
+    "signature": "Un destino sagrado para viajeros musulmanes",
+    "intro": "La Meca es un centro de peregrinación y patrimonio islámico con acceso reservado a musulmanes.",
+    "description": "La estancia debe organizarse según los requisitos oficiales de entrada y peregrinación. Las propuestas culturales son de demostración y no incluyen permisos ni servicios de Hajj o Umrah.",
+    "highlights": [
+      "Masjid al-Haram",
+      "Hira Cultural District",
+      "Abraj Al Bait"
+    ],
+    "tip": "Acceso solo para musulmanes. Verifica visado, permisos y restricciones estacionales oficiales; una reserva demo no autoriza la peregrinación.",
+    "arrival": "Yeda",
+    "transfer": "Llegada aérea a Yeda; continuar a La Meca en tren Haramain con enlace local o por carretera. Traslado y permisos no incluidos.",
+    "airport": {
+      "code": "JED",
+      "name": "Rey Abdulaziz International, Yeda"
+    },
+    "nights": 5,
+    "economy": 29380,
+    "duration": 1500,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-meca.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/meca.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/meca-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1722,
+    "alt": "Gran Mezquita y Kaaba en La Meca",
+    "photoAuthor": "Saudipics.com",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Great_Mosque_of_Mecca1.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "meca-opcion-1",
+        "name": "Horizonte La Meca",
+        "stars": 3,
+        "area": "Ajyad",
+        "rate": 3120,
+        "image": "hoteles/hotel-meca-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de La Meca; oferta de demostración.",
+        "photoAuthor": "Famartin",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:2021-10-11_17_21_07_View_across_a_standard_king_bedroom_towards_the_exit_on_the_22nd_floor_of_the_Diamond_Head_Tower_at_the_Hyatt_Regency_Waikiki_Resort_and_Spa_in_Waikiki,_Honolulu,_Oahu,_Hawaii.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "meca-opcion-2",
+        "name": "Casa Aurora La Meca",
+        "stars": 4,
+        "area": "Al Aziziyah",
+        "rate": 4056,
+        "image": "hoteles/hotel-meca-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de La Meca; oferta de demostración.",
+        "photoAuthor": ".mw-parser-output .commons-creator-table{background-color:#f0f0ff;box-sizing:border-box;font-size:95%;text-align:start;color:inherit}.mw-parser-output .commons-creator-table>tbody>tr{vertical-align:top}.mw-parser-output .commons-creator-table>tbody>tr>th{background-color:var(--background-color-neutral,#e0e0ee);font-weight:bold;text-align:start;color:inherit}.mw-parser-output .mw-collapsible-toggle-expanded.mw-collapsible-arrowtoggle,.mw-parser-output .mw-collapsible-toggle-expanded .mw-collapsible-arrowtoggle{padding-left:20px!important;background-image:url(\"https://upload.wikimedia.org/wikipedia/commons/1/10/MediaWiki_Vector_skin_action_arrow.png\");background-repeat:no-repeat;background-position:left center}.mw-parser-output .mw-collapsible-toggle-collapsed.mw-collapsible-arrowtoggle,.mw-parser-output .mw-collapsible-toggle-collapsed .mw-collapsible-arrowtoggle{padding-left:20px!important;background-repeat:no-repeat}.mw-parser-output .commons-creator-table[dir=\"ltr\"] .mw-collapsible-toggle-collapsed.mw-collapsible-arrowtoggle,.mw-parser-output .commons-creator-table[dir=\"ltr\"] .mw-collapsible-toggle-collapsed .mw-collapsible-arrowtoggle{background-image:url(\"https://upload.wikimedia.org/wikipedia/commons/4/41/MediaWiki_Vector_skin_right_arrow.png\");background-position:left center}.mw-parser-output .commons-creator-table[dir=\"rtl\"] .mw-collapsible-toggle-collapsed.mw-collapsible-arrowtoggle,.mw-parser-output .commons-creator-table[dir=\"rtl\"] .mw-collapsible-toggle-collapsed .mw-collapsible-arrowtoggle{background-image:url(\"https://upload.wikimedia.org/wikipedia/commons/1/1e/MediaWiki_Vector_skin_left_arrow.png\");background-position:right center}@media(max-width:719px){.mw-parser-output .commons-creator-table,.mw-parser-output .commons-creator-table>tbody{box-sizing:border-box;display:block;width:100%}.mw-parser-output .commons-creator-table>tbody{border-right:1px solid var(--border-color-base,#aaa);border-bottom:1px solid var(--border-color-base,#aaa)}.mw-parser-output .commons-creator-table>tbody>tr{border-top:1px solid var(--border-color-base,#aaa);display:flex;flex-wrap:wrap}.mw-parser-output .commons-creator-table>tbody>tr>th{border-left:1px solid var(--border-color-base,#aaa);padding:2px;flex:1 1 100%}.mw-parser-output .commons-creator-table>tbody>tr>td{border-left:1px solid var(--border-color-base,#aaa);padding:2px;flex:1 1}}@media(min-width:720px){.mw-parser-output .commons-creator-table{border:1px solid var(--border-color-base,#aaa);border-collapse:collapse;border-spacing:0;padding:5px}.mw-parser-output .commons-creator-table>tbody>tr>th,.mw-parser-output .commons-creator-table>tbody>tr>td{border:1px solid var(--border-color-base,#aaa);padding:2px}.mw-parser-output .commons-creator-table>tbody>tr>.halfwidth{max-width:10em}.mw-parser-output .commons-creator-table>tbody>tr>.fullwidth{max-width:20em}}@media screen{html.skin-theme-clientpref-night .mw-parser-output .commons-creator-table{background-color:#0c0b19}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .commons-creator-table{background-color:#0c0b19}}\n\n\nBenoît Prieur (1975–)",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:H%C3%B4tel_Ibis_d%27Erevan_-_chambre.JPG",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "meca-opcion-3",
+        "name": "Panorama La Meca",
+        "stars": 5,
+        "area": "Al Misfalah",
+        "rate": 5616,
+        "image": "hoteles/hotel-meca-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de La Meca; oferta de demostración.",
+        "photoAuthor": "فندق درة النعيم",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:26%D8%B5%D9%88%D8%B1_%D8%A7%D9%84%D9%81%D9%86%D8%AF%D9%82.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "medina",
+    "name": "Medina",
+    "country": "Arabia Saudita",
+    "type": "cultura",
+    "tag": "Historia y recogimiento",
+    "signature": "Memoria islámica entre oasis y montañas",
+    "intro": "Medina reúne patrimonio espiritual, antiguos caminos y paisajes del oeste saudí.",
+    "description": "Planifica los recorridos de acuerdo con las restricciones de cada recinto. La Mezquita del Profeta y sus dependencias están reservadas a musulmanes; otros accesos deben confirmarse localmente.",
+    "highlights": [
+      "Mezquita del Profeta",
+      "Mezquita Quba",
+      "Monte Uhud"
+    ],
+    "tip": "Los no musulmanes no pueden entrar a la Mezquita del Profeta ni a sus recintos. Confirma permisos y normas de los demás lugares antes de la visita.",
+    "arrival": "Medina",
+    "transfer": "Autobús o taxi autorizado hacia Medina; traslado al hotel no incluido.",
+    "airport": {
+      "code": "MED",
+      "name": "Príncipe Mohammad bin Abdulaziz International"
+    },
+    "nights": 4,
+    "economy": 28860,
+    "duration": 1500,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-medina.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/medina.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/medina-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1707,
+    "alt": "Vista aérea de la Mezquita del Profeta en Medina",
+    "photoAuthor": "Konevi",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Al-Masjid_An-Nabawi_(Bird%27s_Eye_View).jpg",
+    "photoLicense": "CC0",
+    "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "hotels": [
+      {
+        "id": "medina-opcion-1",
+        "name": "Horizonte Medina",
+        "stars": 3,
+        "area": "Bada'ah",
+        "rate": 2730,
+        "image": "hoteles/hotel-medina-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Medina; oferta de demostración.",
+        "photoAuthor": "Another Believer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Indianapolis,_October_2,_2024_-_004.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "medina-opcion-2",
+        "name": "Casa Aurora Medina",
+        "stars": 4,
+        "area": "Qurban",
+        "rate": 3549,
+        "image": "hoteles/hotel-medina-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Medina; oferta de demostración.",
+        "photoAuthor": "© 1971markus",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:29._Bonner_Stammtisch,_Petersberg_(Hotel-Suite_1.OG).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "medina-opcion-3",
+        "name": "Panorama Medina",
+        "stars": 5,
+        "area": "Al Aridh",
+        "rate": 4914,
+        "image": "hoteles/hotel-medina-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Medina; oferta de demostración.",
+        "photoAuthor": "فندق درة النعيم",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:62%D8%B5%D9%88%D8%B1_%D8%A7%D9%84%D9%81%D9%86%D8%AF%D9%82.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shenzhen",
+    "name": "Shenzhen",
+    "country": "China",
+    "type": "cultura",
+    "tag": "Diseño y bahía",
+    "signature": "Una metrópoli creativa frente al mar",
+    "intro": "Shenzhen combina arquitectura contemporánea, barrios comerciales y grandes parques urbanos.",
+    "description": "Explora sus distritos por separado para apreciar la variedad de la ciudad. El diseño de OCT, los mercados de Luohu y los parques de Futian muestran facetas complementarias.",
+    "highlights": [
+      "OCT-LOFT",
+      "Lianhuashan Park",
+      "Shenzhen Bay Park"
+    ],
+    "tip": "Agrupa las visitas por distritos y usa el metro para evitar desplazamientos largos por carretera.",
+    "arrival": "Shenzhen",
+    "transfer": "Metro o taxi autorizado hacia Shenzhen; traslado y enlaces al hotel no incluidos.",
+    "airport": {
+      "code": "SZX",
+      "name": "Shenzhen Bao'an International"
+    },
+    "nights": 4,
+    "economy": 30940,
+    "duration": 1680,
+    "region": "internacional",
+    "image": "imagenes-viajes/destinos/destino-shenzhen.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/shenzhen.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/shenzhen-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1707,
+    "alt": "Rascacielos del distrito de Futian en Shenzhen",
+    "photoAuthor": "Charlie fong",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Commercial_area_of_futian_to_east2020.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "shenzhen-opcion-1",
+        "name": "Horizonte Shenzhen",
+        "stars": 3,
+        "area": "Futian",
+        "rate": 2210,
+        "image": "hoteles/hotel-shenzhen-opcion-1.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 1 de Shenzhen; oferta de demostración.",
+        "photoAuthor": "فندق درة النعيم",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:56%D8%B5%D9%88%D8%B1_%D8%A7%D9%84%D9%81%D9%86%D8%AF%D9%82.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ]
+      },
+      {
+        "id": "shenzhen-opcion-2",
+        "name": "Casa Aurora Shenzhen",
+        "stars": 4,
+        "area": "Nanshan",
+        "rate": 2873,
+        "image": "hoteles/hotel-shenzhen-opcion-2.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 2 de Shenzhen; oferta de demostración.",
+        "photoAuthor": "Takeaway",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Mandarin_Oriental_Dhara_Dhevi_Chiang_Mai_03.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno"
+        ]
+      },
+      {
+        "id": "shenzhen-opcion-3",
+        "name": "Panorama Shenzhen",
+        "stars": 5,
+        "area": "Luohu",
+        "rate": 3978,
+        "image": "hoteles/hotel-shenzhen-opcion-3.jpg",
+        "imageAlt": "Fotografía de referencia de alojamiento para la opción 3 de Shenzhen; oferta de demostración.",
+        "photoAuthor": "Deror_avi",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Lotte_Hotel_P1070682.JPG",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento"
+        ]
+      }
+    ]
+  }
+]);
+// END DESTINOS OCTUBRE 2026
   destinations.push(...additionalDestinations);
 
   const airlines = {
@@ -3131,7 +5835,7 @@
   "toronto": "La ciudad a orillas del Ontario"
 };
   destinations.forEach(d => {
-    d.signature = destinationSignatures[d.id] || d.tag;
+    d.signature = destinationSignatures[d.id] || d.signature || d.tag;
     d.imagePosition = ({barcelona:"50% 18%",madrid:"50% 0%"})[d.id] || "50% 50%";
     const photo = destinationPhotos[d.id];
     const photoKey = ({barcelona:"barcelona-sagrada-familia",madrid:"madrid-cibeles",venecia:"venecia-rialto"})[d.id] || d.id;

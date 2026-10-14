@@ -14,6 +14,8 @@ import { sendError } from './backend/node/error-pages.mjs';
 const root = fileURLToPath(new URL("./public/", import.meta.url));
 const publicFiles = new Set(["error.html", "js/compartido/error.js", "js/compartido/connection.js", "index.html", "js/inicio/script.js", "js/rumbito/chat-engine.js", "js/rumbito/chat-client.js", "js/rumbito/chat-ui.js", "css/rumbito/chat.css", "css/inicio/style.css", "viajes.html", "js/destinos/viajes.js", "css/destinos/viajes.css", "tienda.html", "js/tienda/tienda.js", "css/tienda/tienda.css", "servicios.html", "js/servicios/servicios.js", "css/servicios/servicios.css", "js/compartido/common.js", "css/compartido/common.css", "js/servicios/journey.js", "css/inicio/promociones.css", "css/compartido/design.css"]);
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
+publicFiles.add('fonts/Kalam-Regular.ttf');
+mime['.ttf']='font/ttf';
 publicFiles.add('js/compartido/database-client.js');
 for (const file of ['registro.html','iniciar-sesion.html','js/cuenta/auth-client.js','css/cuenta/auth.css']) publicFiles.add(file);
 publicFiles.add('js/destinos/guias-catalogo.js');

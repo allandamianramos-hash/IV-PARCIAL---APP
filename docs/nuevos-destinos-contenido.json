@@ -1,0 +1,2354 @@
+[
+  {
+    "id": "bangkok",
+    "name": "Bangkok",
+    "country": "Tailandia",
+    "type": "cultura",
+    "tag": "Templos y sabores",
+    "signature": "La ciudad junto al Chao Phraya",
+    "intro": "Cúpulas doradas, mercados y canales dan ritmo a la capital tailandesa.",
+    "description": "Alterna los templos de Rattanakosin con los sabores de Chinatown y los parques urbanos. Los barcos del Chao Phraya ofrecen otra perspectiva de la ciudad.",
+    "highlights": [
+      "Gran Palacio",
+      "Wat Pho",
+      "Wat Arun"
+    ],
+    "tip": "Viste con hombros y rodillas cubiertos en los templos y reserva tiempo para el calor.",
+    "arrival": "Bangkok",
+    "transfer": "Airport Rail Link o taxi autorizado al centro; traslado no incluido.",
+    "airport": {
+      "code": "BKK",
+      "name": "Suvarnabhumi"
+    },
+    "nights": 5,
+    "economy": 30680,
+    "duration": 1620,
+    "hotelBase": 1768,
+    "hotelNames": [
+      "Horizonte Bangkok",
+      "Casa Aurora Bangkok",
+      "Panorama Bangkok"
+    ],
+    "hotelAreas": [
+      "Rattanakosin",
+      "Silom",
+      "Sukhumvit"
+    ],
+    "sources": [
+      "https://www.tourismthailand.org/Destinations/Provinces/Bangkok/219",
+      "https://suvarnabhumi.airportthai.co.th/"
+    ],
+    "guides": [
+      {
+        "title": "Bangkok real junto al río",
+        "style": "cultura",
+        "description": "Recorrido por el distrito histórico y cruce en ferry a Thonburi; entradas y transporte se cotizan aparte.",
+        "stops": [
+          "Gran Palacio",
+          "Wat Pho",
+          "Wat Arun"
+        ],
+        "hours": 6,
+        "price": 850
+      },
+      {
+        "title": "Sabores de Chinatown",
+        "style": "gastronomia",
+        "description": "Paseo vespertino para descubrir puestos, dulces y cocina de herencia china; degustaciones por cuenta del viajero.",
+        "stops": [
+          "Wat Traimit",
+          "Yaowarat Road",
+          "Sampeng Market"
+        ],
+        "hours": 4,
+        "price": 550
+      },
+      {
+        "title": "Parques de la capital",
+        "style": "naturaleza",
+        "description": "Ruta urbana entre estanques y senderos con conexión por pasarela; final junto al lago de Benjakitti.",
+        "stops": [
+          "Lumphini Park",
+          "Pasarela Lumphini-Benjakitti",
+          "Benjakitti Park"
+        ],
+        "hours": 3,
+        "price": 400
+      }
+    ]
+  },
+  {
+    "id": "hong-kong",
+    "name": "Hong Kong",
+    "country": "China (Hong Kong)",
+    "type": "cultura",
+    "tag": "Bahía y rascacielos",
+    "signature": "Dos orillas, una ciudad inolvidable",
+    "intro": "La bahía Victoria une miradores, ferris y barrios llenos de vida.",
+    "description": "Descubre la arquitectura de Central, los paseos marítimos de Kowloon y las tradiciones gastronómicas cantonesas entre mercados y casas de té.",
+    "highlights": [
+      "Victoria Harbour",
+      "Victoria Peak",
+      "Tsim Sha Tsui"
+    ],
+    "tip": "Combina el MTR con el Star Ferry y consulta la visibilidad antes de subir a los miradores.",
+    "arrival": "Hong Kong",
+    "transfer": "Airport Express o autobús hacia Kowloon o Hong Kong Island; traslado no incluido.",
+    "airport": {
+      "code": "HKG",
+      "name": "Hong Kong International"
+    },
+    "nights": 4,
+    "economy": 32240,
+    "duration": 1560,
+    "hotelBase": 3380,
+    "hotelNames": [
+      "Horizonte Hong Kong",
+      "Casa Aurora Hong Kong",
+      "Panorama Hong Kong"
+    ],
+    "hotelAreas": [
+      "Central",
+      "Tsim Sha Tsui",
+      "Wan Chai"
+    ],
+    "sources": [
+      "https://www.discoverhongkong.com/eng/attractions/top-things-to-see-and-do-around-tsim-sha-tsui-promenade.html",
+      "https://www.hongkongairport.com/"
+    ],
+    "guides": [
+      {
+        "title": "Dos orillas de Victoria Harbour",
+        "style": "cultura",
+        "description": "Paseo por Central, cruce en Star Ferry y panorámicas desde Kowloon; el ferry se paga aparte.",
+        "stops": [
+          "Central Pier",
+          "Tsim Sha Tsui Promenade",
+          "Avenue of Stars"
+        ],
+        "hours": 4,
+        "price": 680
+      },
+      {
+        "title": "Mercados y sabores de Kowloon",
+        "style": "gastronomia",
+        "description": "Ruta a pie y MTR por mercados de barrio; prueba dim sum y dulces locales según preferencias.",
+        "stops": [
+          "Ladies' Market",
+          "Yau Ma Tei Fruit Market",
+          "Temple Street"
+        ],
+        "hours": 4,
+        "price": 620
+      },
+      {
+        "title": "Senderos de Victoria Peak",
+        "style": "naturaleza",
+        "description": "Caminata panorámica en la cumbre, con pendientes y pausas fotográficas; subida al Peak por cuenta del viajero.",
+        "stops": [
+          "Lugard Road",
+          "Harlech Road",
+          "Victoria Peak Garden"
+        ],
+        "hours": 4,
+        "price": 580
+      }
+    ]
+  },
+  {
+    "id": "macao",
+    "name": "Macao",
+    "country": "China (Macao)",
+    "type": "cultura",
+    "tag": "Encuentro de culturas",
+    "signature": "Plazas portuguesas y tradiciones cantonesas",
+    "intro": "Calles adoquinadas y fachadas históricas conviven con la energía contemporánea de Macao.",
+    "description": "Su centro histórico invita a caminar entre iglesias, templos y plazas. Taipa y Coloane aportan sabores macaneses, casas tradicionales y paseos tranquilos.",
+    "highlights": [
+      "Ruinas de San Pablo",
+      "Largo do Senado",
+      "Templo A-Má"
+    ],
+    "tip": "Lleva calzado cómodo para cuestas y adoquines; reserva tiempo para trasladarte entre península e islas.",
+    "arrival": "Macao",
+    "transfer": "Autobús, taxi o conexión al tren ligero desde Taipa; traslado al hotel no incluido.",
+    "airport": {
+      "code": "MFM",
+      "name": "Macau International"
+    },
+    "nights": 3,
+    "economy": 33280,
+    "duration": 1740,
+    "hotelBase": 2860,
+    "hotelNames": [
+      "Horizonte Macao",
+      "Casa Aurora Macao",
+      "Panorama Macao"
+    ],
+    "hotelAreas": [
+      "Sé",
+      "Taipa",
+      "Coloane"
+    ],
+    "sources": [
+      "https://www.macaotourism.gov.mo/en/",
+      "https://www.macau-airport.com/en/passenger-guide/arrival"
+    ],
+    "guides": [
+      {
+        "title": "El corazón histórico de Macao",
+        "style": "cultura",
+        "description": "Caminata por plazas y monumentos del centro histórico con tiempo para sus fachadas y miradores.",
+        "stops": [
+          "Largo do Senado",
+          "Ruinas de San Pablo",
+          "Fortaleza do Monte"
+        ],
+        "hours": 4,
+        "price": 620
+      },
+      {
+        "title": "Taipa y su cocina mestiza",
+        "style": "gastronomia",
+        "description": "Recorrido pausado por las calles de Taipa y sus especialidades; consumiciones no incluidas.",
+        "stops": [
+          "Rua do Cunha",
+          "Casas de Taipa",
+          "Largo do Carmo"
+        ],
+        "hours": 3,
+        "price": 540
+      },
+      {
+        "title": "Coloane junto al mar",
+        "style": "naturaleza",
+        "description": "Paseo por el pueblo y salida por carretera a la costa; transporte y comida se cotizan aparte.",
+        "stops": [
+          "Pueblo de Coloane",
+          "Capilla de San Francisco Javier",
+          "Playa Hac Sá"
+        ],
+        "hours": 5,
+        "price": 650
+      }
+    ]
+  },
+  {
+    "id": "antalya",
+    "name": "Antalya",
+    "country": "Turquía",
+    "type": "playa",
+    "tag": "Riviera turca",
+    "signature": "Historia junto al Mediterráneo",
+    "intro": "Antalya combina el casco antiguo de Kaleiçi con una costa de playas y acantilados.",
+    "description": "Recorre puertas romanas, callejones otomanos y el puerto antiguo. Fuera del centro, el Mediterráneo y las cascadas ofrecen jornadas al aire libre.",
+    "highlights": [
+      "Kaleiçi",
+      "Puerta de Adriano",
+      "Playa Konyaaltı"
+    ],
+    "tip": "Reserva las caminatas para las horas frescas y distingue las cascadas Düden superiores de las inferiores.",
+    "arrival": "Antalya",
+    "transfer": "Tranvía o taxi autorizado hacia el centro; conexiones posteriores según hotel, no incluidas.",
+    "airport": {
+      "code": "AYT",
+      "name": "Antalya"
+    },
+    "nights": 5,
+    "economy": 27040,
+    "duration": 1380,
+    "hotelBase": 2210,
+    "hotelNames": [
+      "Horizonte Antalya",
+      "Casa Aurora Antalya",
+      "Panorama Antalya"
+    ],
+    "hotelAreas": [
+      "Kaleiçi",
+      "Lara",
+      "Konyaaltı"
+    ],
+    "sources": [
+      "https://goturkiye.com/antalya",
+      "https://www.antalya-airport.aero/iletisim"
+    ],
+    "guides": [
+      {
+        "title": "Kaleiçi a través de sus puertas",
+        "style": "cultura",
+        "description": "Recorrido a pie por el casco antiguo hasta el puerto, entre restos romanos y viviendas otomanas.",
+        "stops": [
+          "Puerta de Adriano",
+          "Minarete Yivli",
+          "Puerto antiguo de Antalya"
+        ],
+        "hours": 4,
+        "price": 550
+      },
+      {
+        "title": "Mediterráneo en Konyaaltı",
+        "style": "playa",
+        "description": "Paseo costero con tiempo libre en la playa; baño sujeto a condiciones y señalización local.",
+        "stops": [
+          "Playa Konyaaltı",
+          "Beach Park Antalya",
+          "Parque Atatürk"
+        ],
+        "hours": 5,
+        "price": 580
+      },
+      {
+        "title": "Düden y la costa de Lara",
+        "style": "naturaleza",
+        "description": "Salida por carretera a la cascada que desemboca en el mar y los parques costeros de Lara.",
+        "stops": [
+          "Cascadas Düden inferiores",
+          "Parque Düden",
+          "Playa Lara"
+        ],
+        "hours": 5,
+        "price": 720
+      }
+    ]
+  },
+  {
+    "id": "kuala-lumpur",
+    "name": "Kuala Lumpur",
+    "country": "Malasia",
+    "type": "cultura",
+    "tag": "Sabores y arquitectura",
+    "signature": "Una capital de muchas culturas",
+    "intro": "Torres relucientes, mercados y templos muestran la diversidad de Kuala Lumpur.",
+    "description": "Disfruta del entorno de las Petronas, la arquitectura del centro histórico y la cocina malaya, china e india. Los jardines urbanos permiten descansar del ritmo de la capital.",
+    "highlights": [
+      "Torres Petronas",
+      "Merdeka Square",
+      "Central Market"
+    ],
+    "tip": "Usa el transporte urbano entre barrios y adapta la vestimenta al visitar lugares de culto.",
+    "arrival": "Kuala Lumpur",
+    "transfer": "KLIA Ekspres o autobús hasta KL Sentral; traslado y conexiones al hotel no incluidos.",
+    "airport": {
+      "code": "KUL",
+      "name": "Kuala Lumpur International"
+    },
+    "nights": 4,
+    "economy": 29380,
+    "duration": 1680,
+    "hotelBase": 1612,
+    "hotelNames": [
+      "Horizonte Kuala Lumpur",
+      "Casa Aurora Kuala Lumpur",
+      "Panorama Kuala Lumpur"
+    ],
+    "hotelAreas": [
+      "Bukit Bintang",
+      "KLCC",
+      "Brickfields"
+    ],
+    "sources": [
+      "https://ebrochures.malaysia.travel/en/malaysia-travel-guide/kuala-lumpur/",
+      "https://airports.malaysiaairports.com.my/en/klia1"
+    ],
+    "guides": [
+      {
+        "title": "Del río al centro histórico",
+        "style": "cultura",
+        "description": "Ruta caminable por el antiguo núcleo cívico y comercial; accesos religiosos sujetos a horarios.",
+        "stops": [
+          "Merdeka Square",
+          "Masjid Jamek",
+          "Central Market"
+        ],
+        "hours": 4,
+        "price": 480
+      },
+      {
+        "title": "Sabores de Bukit Bintang",
+        "style": "gastronomia",
+        "description": "Recorrido gastronómico por calles y patios de comida; degustaciones según presupuesto y preferencias.",
+        "stops": [
+          "Jalan Alor",
+          "Bukit Bintang",
+          "Lot 10 Hutong"
+        ],
+        "hours": 3,
+        "price": 450
+      },
+      {
+        "title": "Jardines y horizonte urbano",
+        "style": "naturaleza",
+        "description": "Combina jardines de Perdana y vistas de KLCC con traslado intermedio por cuenta del viajero.",
+        "stops": [
+          "Perdana Botanical Garden",
+          "KLCC Park",
+          "Torres Petronas (exterior)"
+        ],
+        "hours": 5,
+        "price": 600
+      }
+    ]
+  },
+  {
+    "id": "phuket",
+    "name": "Phuket",
+    "country": "Tailandia",
+    "type": "playa",
+    "tag": "Mar de Andamán",
+    "signature": "Playas, miradores y casas de colores",
+    "intro": "La isla de Phuket ofrece playas tropicales y un casco antiguo de gran personalidad.",
+    "description": "Combina el ambiente de Phuket Town con calas de la costa oeste y atardeceres en el extremo sur. Cada zona de la isla propone un ritmo diferente.",
+    "highlights": [
+      "Phuket Old Town",
+      "Playa Kata",
+      "Cabo Promthep"
+    ],
+    "tip": "Respeta las banderas de playa; el mar y las excursiones náuticas dependen del tiempo.",
+    "arrival": "Phuket",
+    "transfer": "Autobús, van o taxi autorizado hacia Phuket Town o las playas; traslado no incluido.",
+    "airport": {
+      "code": "HKT",
+      "name": "Phuket International"
+    },
+    "nights": 6,
+    "economy": 31460,
+    "duration": 1740,
+    "hotelBase": 2080,
+    "hotelNames": [
+      "Horizonte Phuket",
+      "Casa Aurora Phuket",
+      "Panorama Phuket"
+    ],
+    "hotelAreas": [
+      "Old Phuket Town",
+      "Kata",
+      "Kamala"
+    ],
+    "sources": [
+      "https://www.tourismthailand.org/Destinations/Provinces/Phuket/350",
+      "https://phuket.airportthai.co.th/"
+    ],
+    "guides": [
+      {
+        "title": "Colores del casco antiguo",
+        "style": "cultura",
+        "description": "Paseo por calles comerciales y arquitectura sinoportuguesa, con paradas para observar detalles y patios.",
+        "stops": [
+          "Thalang Road",
+          "Soi Rommanee",
+          "Phuket Thai Hua Museum"
+        ],
+        "hours": 4,
+        "price": 480
+      },
+      {
+        "title": "Kata y Karon sin prisas",
+        "style": "playa",
+        "description": "Recorrido costero por dos playas y un mirador; traslado terrestre aparte y baño según condiciones.",
+        "stops": [
+          "Playa Karon",
+          "Playa Kata",
+          "Mirador Karon"
+        ],
+        "hours": 5,
+        "price": 680
+      },
+      {
+        "title": "El sur de Phuket al atardecer",
+        "style": "naturaleza",
+        "description": "Ruta por carretera entre Rawai y los miradores del extremo sur, con tiempo para fotografiar la costa.",
+        "stops": [
+          "Rawai Beach",
+          "Nai Harn Beach",
+          "Cabo Promthep"
+        ],
+        "hours": 5,
+        "price": 700
+      }
+    ]
+  },
+  {
+    "id": "pattaya",
+    "name": "Pattaya",
+    "country": "Tailandia",
+    "type": "playa",
+    "tag": "Costa del golfo",
+    "signature": "Una escapada costera desde Bangkok",
+    "intro": "Playas, miradores e islas cercanas definen esta ciudad del golfo de Tailandia.",
+    "description": "Elige entre el ambiente urbano de Pattaya, los paseos de Jomtien y una excursión marítima a Koh Lan. Sus templos y mercados completan la estancia.",
+    "highlights": [
+      "Playa Jomtien",
+      "Koh Lan",
+      "Santuario de la Verdad"
+    ],
+    "tip": "Organiza la visita a Koh Lan según el estado del mar y confirma el último regreso.",
+    "arrival": "Bangkok",
+    "transfer": "Llegada aérea a Bangkok; continuar por carretera a Pattaya, aproximadamente 2–3 horas según tráfico. Traslado terrestre no incluido.",
+    "airport": {
+      "code": "BKK",
+      "name": "Suvarnabhumi, Bangkok"
+    },
+    "nights": 5,
+    "economy": 30160,
+    "duration": 1620,
+    "hotelBase": 1820,
+    "hotelNames": [
+      "Horizonte Pattaya",
+      "Casa Aurora Pattaya",
+      "Panorama Pattaya"
+    ],
+    "hotelAreas": [
+      "Jomtien",
+      "Naklua",
+      "Pratumnak"
+    ],
+    "sources": [
+      "https://www.tourismthailand.org/Destinations/Provinces/Pattaya/469",
+      "https://suvarnabhumi.airportthai.co.th/"
+    ],
+    "guides": [
+      {
+        "title": "Miradores y patrimonio costero",
+        "style": "cultura",
+        "description": "Visita terrestre desde el santuario de madera hasta Pratumnak; entradas y vehículo se cotizan aparte.",
+        "stops": [
+          "Santuario de la Verdad",
+          "Mirador de Pattaya",
+          "Wat Phra Yai"
+        ],
+        "hours": 5,
+        "price": 700
+      },
+      {
+        "title": "Koh Lan desde Pattaya",
+        "style": "playa",
+        "description": "Excursión en ferry y transporte local por la isla; salidas sujetas al mar y servicios pagados aparte.",
+        "stops": [
+          "Muelle Bali Hai",
+          "Playa Tawaen",
+          "Playa Samae"
+        ],
+        "hours": 8,
+        "price": 800
+      },
+      {
+        "title": "Paseos y sabores de Jomtien",
+        "style": "gastronomia",
+        "description": "Recorrido vespertino por la costa y su mercado nocturno; degustaciones opcionales por cuenta del viajero.",
+        "stops": [
+          "Dongtan Beach",
+          "Paseo de Jomtien",
+          "Jomtien Night Market"
+        ],
+        "hours": 4,
+        "price": 480
+      }
+    ]
+  },
+  {
+    "id": "taipei",
+    "name": "Taipéi",
+    "country": "Taiwán",
+    "type": "cultura",
+    "tag": "Templos y mercados",
+    "signature": "Una ciudad que se saborea caminando",
+    "intro": "Taipéi reúne templos tradicionales, mercados nocturnos y un horizonte dominado por Taipei 101.",
+    "description": "Los barrios históricos de Wanhua y Dadaocheng muestran otra cara de la ciudad. El metro facilita combinar patrimonio, cocina local y miradores verdes.",
+    "highlights": [
+      "Taipei 101",
+      "Templo Longshan",
+      "Mercado nocturno Raohe"
+    ],
+    "tip": "Lleva una capa de lluvia ligera y consulta las condiciones del sendero de Xiangshan.",
+    "arrival": "Taipéi",
+    "transfer": "Airport MRT hasta Taipei Main Station o taxi autorizado; traslado no incluido.",
+    "airport": {
+      "code": "TPE",
+      "name": "Taiwan Taoyuan International"
+    },
+    "nights": 4,
+    "economy": 30940,
+    "duration": 1620,
+    "hotelBase": 2470,
+    "hotelNames": [
+      "Horizonte Taipéi",
+      "Casa Aurora Taipéi",
+      "Panorama Taipéi"
+    ],
+    "hotelAreas": [
+      "Zhongzheng",
+      "Xinyi",
+      "Wanhua"
+    ],
+    "sources": [
+      "https://www.travel.taipei/en/attraction/all",
+      "https://www.taoyuan-airport.com/"
+    ],
+    "guides": [
+      {
+        "title": "Tradiciones de Wanhua",
+        "style": "cultura",
+        "description": "Ruta a pie entre templos y una antigua calle comercial del oeste de Taipéi.",
+        "stops": [
+          "Templo Longshan",
+          "Bopiliao Historical Block",
+          "Templo Qingshui"
+        ],
+        "hours": 4,
+        "price": 520
+      },
+      {
+        "title": "Sabores y oficios de Dadaocheng",
+        "style": "gastronomia",
+        "description": "Paseo por tiendas tradicionales y puestos de comida; degustaciones y compras no incluidas.",
+        "stops": [
+          "Dihua Street",
+          "Templo Xiahai",
+          "Ningxia Night Market"
+        ],
+        "hours": 4,
+        "price": 550
+      },
+      {
+        "title": "Taipei 101 desde las colinas",
+        "style": "naturaleza",
+        "description": "Subida con escalones a Xiangshan y paseo por Xinyi; requiere calzado adecuado y tiempo despejado.",
+        "stops": [
+          "Xiangshan Trail",
+          "Xiangshan Park",
+          "Taipei 101 (exterior)"
+        ],
+        "hours": 4,
+        "price": 580
+      }
+    ]
+  },
+  {
+    "id": "milan",
+    "name": "Milán",
+    "country": "Italia",
+    "type": "cultura",
+    "tag": "Arte y diseño",
+    "signature": "Estilo italiano entre plazas y canales",
+    "intro": "La capital lombarda combina patrimonio monumental, diseño contemporáneo y barrios creativos.",
+    "description": "Desde el Duomo hasta Brera, Milán invita a mirar sus fachadas y museos. Los Navigli añaden paseos junto al agua y el ambiente del aperitivo.",
+    "highlights": [
+      "Duomo de Milán",
+      "Pinacoteca de Brera",
+      "Naviglio Grande"
+    ],
+    "tip": "Reserva con anticipación los museos y las terrazas del Duomo; organiza cada jornada por barrios.",
+    "arrival": "Milán",
+    "transfer": "Malpensa Express o autobús hacia Milán; conexión al alojamiento no incluida.",
+    "airport": {
+      "code": "MXP",
+      "name": "Milán Malpensa"
+    },
+    "nights": 4,
+    "economy": 24440,
+    "duration": 1020,
+    "hotelBase": 3250,
+    "hotelNames": [
+      "Horizonte Milán",
+      "Casa Aurora Milán",
+      "Panorama Milán"
+    ],
+    "hotelAreas": [
+      "Brera",
+      "Porta Venezia",
+      "Navigli"
+    ],
+    "sources": [
+      "https://www.yesmilano.it/en/neighborhoods",
+      "https://www.milanomalpensa-airport.com/en"
+    ],
+    "guides": [
+      {
+        "title": "El centro monumental de Milán",
+        "style": "cultura",
+        "description": "Recorrido por plazas y galerías del centro; las visitas interiores requieren entrada y reserva separada.",
+        "stops": [
+          "Duomo de Milán",
+          "Galleria Vittorio Emanuele II",
+          "Teatro alla Scala"
+        ],
+        "hours": 4,
+        "price": 720
+      },
+      {
+        "title": "Aperitivo junto a los Navigli",
+        "style": "gastronomia",
+        "description": "Paseo por canales y antiguas calles comerciales con paradas gastronómicas opcionales.",
+        "stops": [
+          "Darsena",
+          "Naviglio Grande",
+          "Vicolo dei Lavandai"
+        ],
+        "hours": 3,
+        "price": 580
+      },
+      {
+        "title": "Brera, arte y jardines",
+        "style": "cultura",
+        "description": "Ruta por el barrio artístico hasta los jardines del castillo; acceso a colecciones por cuenta del viajero.",
+        "stops": [
+          "Pinacoteca de Brera",
+          "Castello Sforzesco",
+          "Parco Sempione"
+        ],
+        "hours": 5,
+        "price": 750
+      }
+    ]
+  },
+  {
+    "id": "viena",
+    "name": "Viena",
+    "country": "Austria",
+    "type": "cultura",
+    "tag": "Palacios y música",
+    "signature": "La elegancia de una capital imperial",
+    "intro": "Viena une palacios, cafés y avenidas monumentales con parques donde bajar el ritmo.",
+    "description": "Explora el centro histórico y sus museos, reserva tiempo para los jardines imperiales y descubre la tradición de sus cafés sin apresurar la visita.",
+    "highlights": [
+      "Catedral de San Esteban",
+      "Palacio Hofburg",
+      "Palacio Schönbrunn"
+    ],
+    "tip": "Comprueba reservas y horarios de palacios y conciertos antes de organizar el día.",
+    "arrival": "Viena",
+    "transfer": "Tren regional, S-Bahn, City Airport Train o autobús; traslado y enlace al hotel no incluidos.",
+    "airport": {
+      "code": "VIE",
+      "name": "Viena International"
+    },
+    "nights": 4,
+    "economy": 25740,
+    "duration": 1080,
+    "hotelBase": 3380,
+    "hotelNames": [
+      "Horizonte Viena",
+      "Casa Aurora Viena",
+      "Panorama Viena"
+    ],
+    "hotelAreas": [
+      "Innere Stadt",
+      "Leopoldstadt",
+      "Neubau"
+    ],
+    "sources": [
+      "https://www.wien.info/en",
+      "https://viennaairport.com/en/passengers"
+    ],
+    "guides": [
+      {
+        "title": "Viena imperial a pie",
+        "style": "cultura",
+        "description": "Itinerario por el centro histórico, con plazas y patios imperiales; entradas interiores aparte.",
+        "stops": [
+          "Stephansdom",
+          "Graben",
+          "Palacio Hofburg"
+        ],
+        "hours": 4,
+        "price": 680
+      },
+      {
+        "title": "Mercados y cafés vieneses",
+        "style": "gastronomia",
+        "description": "Paseo gastronómico entre el mercado y el centro; cada viajero elige sus consumiciones.",
+        "stops": [
+          "Naschmarkt",
+          "Karlsplatz",
+          "Kärntner Straße"
+        ],
+        "hours": 4,
+        "price": 600
+      },
+      {
+        "title": "Los jardines de Schönbrunn",
+        "style": "naturaleza",
+        "description": "Ruta a pie dentro del conjunto de jardines, con subida a la colina y vistas del palacio.",
+        "stops": [
+          "Jardines de Schönbrunn",
+          "Fuente de Neptuno",
+          "Gloriette"
+        ],
+        "hours": 4,
+        "price": 580
+      }
+    ]
+  },
+  {
+    "id": "atenas",
+    "name": "Atenas",
+    "country": "Grecia",
+    "type": "cultura",
+    "tag": "Historia mediterránea",
+    "signature": "La ciudad que conversa con la antigüedad",
+    "intro": "Atenas entrelaza monumentos clásicos con barrios, mercados y colinas llenos de vida.",
+    "description": "La Acrópolis marca el horizonte, pero también merecen tiempo las calles de Plaka, los sabores del centro y los paseos por sus colinas.",
+    "highlights": [
+      "Acrópolis",
+      "Plaka",
+      "Ágora antigua"
+    ],
+    "tip": "Reserva la franja de acceso a la Acrópolis y evita las horas de más calor en verano.",
+    "arrival": "Atenas",
+    "transfer": "Metro, tren suburbano, autobús o taxi autorizado; traslado al hotel no incluido.",
+    "airport": {
+      "code": "ATH",
+      "name": "Atenas Eleftherios Venizelos"
+    },
+    "nights": 4,
+    "economy": 25480,
+    "duration": 1140,
+    "hotelBase": 2600,
+    "hotelNames": [
+      "Horizonte Atenas",
+      "Casa Aurora Atenas",
+      "Panorama Atenas"
+    ],
+    "hotelAreas": [
+      "Plaka",
+      "Koukaki",
+      "Psiri"
+    ],
+    "sources": [
+      "https://www.thisisathens.org/",
+      "https://www.aia.gr/en"
+    ],
+    "guides": [
+      {
+        "title": "La Atenas clásica",
+        "style": "cultura",
+        "description": "Ruta arqueológica a pie con superficies irregulares; entradas y reservas de monumentos aparte.",
+        "stops": [
+          "Acrópolis",
+          "Teatro de Dioniso",
+          "Museo de la Acrópolis"
+        ],
+        "hours": 5,
+        "price": 780
+      },
+      {
+        "title": "Sabores del centro ateniense",
+        "style": "gastronomia",
+        "description": "Recorrido por puestos y calles comerciales para conocer productos griegos; consumiciones aparte.",
+        "stops": [
+          "Mercado Central de Atenas",
+          "Evripidou Street",
+          "Psiri"
+        ],
+        "hours": 4,
+        "price": 550
+      },
+      {
+        "title": "Colinas frente a la Acrópolis",
+        "style": "naturaleza",
+        "description": "Caminata panorámica por senderos urbanos con pendientes y pausas a la sombra.",
+        "stops": [
+          "Colina de Filopapo",
+          "Pnyx",
+          "Colina de las Ninfas"
+        ],
+        "hours": 4,
+        "price": 480
+      }
+    ]
+  },
+  {
+    "id": "budapest",
+    "name": "Budapest",
+    "country": "Hungría",
+    "type": "cultura",
+    "tag": "Danubio y termas",
+    "signature": "Dos orillas con historias propias",
+    "intro": "Buda y Pest se miran sobre el Danubio entre palacios, puentes y arquitectura monumental.",
+    "description": "Alterna el barrio del castillo con los mercados de Pest y sus parques. Las termas forman parte de la experiencia urbana y requieren tiempo propio.",
+    "highlights": [
+      "Parlamento de Hungría",
+      "Bastión de los Pescadores",
+      "Puente de las Cadenas"
+    ],
+    "tip": "Reserva con anticipación visitas al Parlamento y consulta las normas de cada baño termal.",
+    "arrival": "Budapest",
+    "transfer": "Autobús del aeropuerto o taxi autorizado hacia el centro; traslado no incluido.",
+    "airport": {
+      "code": "BUD",
+      "name": "Budapest Ferenc Liszt International"
+    },
+    "nights": 4,
+    "economy": 23920,
+    "duration": 1140,
+    "hotelBase": 2132,
+    "hotelNames": [
+      "Horizonte Budapest",
+      "Casa Aurora Budapest",
+      "Panorama Budapest"
+    ],
+    "hotelAreas": [
+      "Belváros-Lipótváros",
+      "Erzsébetváros",
+      "Várkerület"
+    ],
+    "sources": [
+      "https://www.budapestinfo.hu/",
+      "https://www.bud.hu/en"
+    ],
+    "guides": [
+      {
+        "title": "El barrio del castillo de Buda",
+        "style": "cultura",
+        "description": "Recorrido por terrazas y calles históricas; las entradas a iglesias y museos se pagan aparte.",
+        "stops": [
+          "Bastión de los Pescadores",
+          "Iglesia de Matías",
+          "Castillo de Buda"
+        ],
+        "hours": 4,
+        "price": 580
+      },
+      {
+        "title": "Pest entre mercado y cafés",
+        "style": "gastronomia",
+        "description": "Paseo por el mercado y las calles del centro para descubrir sabores húngaros.",
+        "stops": [
+          "Mercado Central",
+          "Váci utca",
+          "Vörösmarty tér"
+        ],
+        "hours": 3,
+        "price": 480
+      },
+      {
+        "title": "El parque de la ciudad",
+        "style": "naturaleza",
+        "description": "Jornada pausada en Városliget; visita exterior de baños y castillo, con acceso termal opcional aparte.",
+        "stops": [
+          "Plaza de los Héroes",
+          "Castillo de Vajdahunyad",
+          "Baños Széchenyi"
+        ],
+        "hours": 4,
+        "price": 520
+      }
+    ]
+  },
+  {
+    "id": "florencia",
+    "name": "Florencia",
+    "country": "Italia",
+    "type": "cultura",
+    "tag": "Renacimiento y artesanía",
+    "signature": "Arte a ambas orillas del Arno",
+    "intro": "Florencia ofrece plazas renacentistas, talleres tradicionales y vistas desde sus colinas.",
+    "description": "Recorre el centro histórico sin prisa y cruza el Arno hacia Oltrarno. Las grandes colecciones artísticas se disfrutan mejor reservando su propio horario.",
+    "highlights": [
+      "Catedral de Santa Maria del Fiore",
+      "Ponte Vecchio",
+      "Galería Uffizi"
+    ],
+    "tip": "Reserva museos con anticipación y lleva calzado para calles empedradas y pendientes.",
+    "arrival": "Florencia",
+    "transfer": "Tranvía o taxi hacia la ciudad; conexión al hotel no incluida.",
+    "airport": {
+      "code": "FLR",
+      "name": "Florencia Amerigo Vespucci"
+    },
+    "nights": 4,
+    "economy": 25480,
+    "duration": 1140,
+    "hotelBase": 3250,
+    "hotelNames": [
+      "Horizonte Florencia",
+      "Casa Aurora Florencia",
+      "Panorama Florencia"
+    ],
+    "hotelAreas": [
+      "Santa Maria Novella",
+      "San Lorenzo",
+      "Santo Spirito"
+    ],
+    "sources": [
+      "https://www.feelflorence.it/en",
+      "https://www.aeroporto.firenze.it/EN/"
+    ],
+    "guides": [
+      {
+        "title": "Plazas del Renacimiento",
+        "style": "cultura",
+        "description": "Ruta por el centro monumental y sus esculturas; ingresos a museos y catedral aparte.",
+        "stops": [
+          "Piazza del Duomo",
+          "Piazza della Signoria",
+          "Ponte Vecchio"
+        ],
+        "hours": 4,
+        "price": 650
+      },
+      {
+        "title": "Sabores del barrio de San Lorenzo",
+        "style": "gastronomia",
+        "description": "Recorrido entre mercado, comercios y calles tradicionales; degustaciones elegidas por el viajero.",
+        "stops": [
+          "Mercato Centrale",
+          "Piazza San Lorenzo",
+          "Via de' Ginori"
+        ],
+        "hours": 3,
+        "price": 550
+      },
+      {
+        "title": "Oltrarno desde sus miradores",
+        "style": "naturaleza",
+        "description": "Caminata con pendientes por jardines y miradores del lado sur del Arno.",
+        "stops": [
+          "Giardino delle Rose",
+          "Piazzale Michelangelo",
+          "San Miniato al Monte"
+        ],
+        "hours": 4,
+        "price": 600
+      }
+    ]
+  },
+  {
+    "id": "munich",
+    "name": "Múnich",
+    "country": "Alemania",
+    "type": "cultura",
+    "tag": "Tradición bávara",
+    "signature": "Plazas, mercados y grandes jardines",
+    "intro": "Múnich combina patrimonio bávaro, museos y una vida cotidiana que se disfruta al aire libre.",
+    "description": "El casco antiguo permite explorar plazas y mercados a pie. Dedica otra jornada a sus jardines y a los barrios que muestran la faceta creativa de la ciudad.",
+    "highlights": [
+      "Marienplatz",
+      "Viktualienmarkt",
+      "Englischer Garten"
+    ],
+    "tip": "Comprueba reservas durante grandes eventos y deja tiempo para desplazarte en transporte público.",
+    "arrival": "Múnich",
+    "transfer": "S-Bahn o autobús al centro; traslado y conexiones al hotel no incluidos.",
+    "airport": {
+      "code": "MUC",
+      "name": "Múnich Franz Josef Strauss"
+    },
+    "nights": 4,
+    "economy": 25220,
+    "duration": 1080,
+    "hotelBase": 3120,
+    "hotelNames": [
+      "Horizonte Múnich",
+      "Casa Aurora Múnich",
+      "Panorama Múnich"
+    ],
+    "hotelAreas": [
+      "Altstadt",
+      "Maxvorstadt",
+      "Haidhausen"
+    ],
+    "sources": [
+      "https://www.munich.travel/en",
+      "https://www.munich-airport.com/"
+    ],
+    "guides": [
+      {
+        "title": "El casco antiguo bávaro",
+        "style": "cultura",
+        "description": "Paseo por plazas e iglesias del centro con parada en los exteriores de la residencia real.",
+        "stops": [
+          "Marienplatz",
+          "Frauenkirche",
+          "Residenz"
+        ],
+        "hours": 4,
+        "price": 620
+      },
+      {
+        "title": "Mercados y cocina bávara",
+        "style": "gastronomia",
+        "description": "Ruta gastronómica por el centro para conocer puestos y especialidades; consumiciones no incluidas.",
+        "stops": [
+          "Viktualienmarkt",
+          "Tal",
+          "Platzl"
+        ],
+        "hours": 3,
+        "price": 550
+      },
+      {
+        "title": "El jardín inglés",
+        "style": "naturaleza",
+        "description": "Caminata entre praderas, miradores y cauces del gran parque urbano.",
+        "stops": [
+          "Eisbachwelle",
+          "Monopteros",
+          "Chinesischer Turm"
+        ],
+        "hours": 4,
+        "price": 500
+      }
+    ]
+  },
+  {
+    "id": "dublin",
+    "name": "Dublín",
+    "country": "Irlanda",
+    "type": "cultura",
+    "tag": "Letras y música",
+    "signature": "Historias junto al río Liffey",
+    "intro": "Dublín reúne patrimonio literario, música y barrios que invitan a recorrerlos a pie.",
+    "description": "Descubre sus plazas georgianas, librerías y edificios históricos. Entre visitas, los parques y mercados ofrecen un buen descanso para conocer la ciudad.",
+    "highlights": [
+      "Trinity College",
+      "Castillo de Dublín",
+      "St Stephen's Green"
+    ],
+    "tip": "Lleva ropa impermeable y reserva las atracciones más solicitadas con antelación.",
+    "arrival": "Dublín",
+    "transfer": "Autobús del aeropuerto o taxi autorizado; traslado al alojamiento no incluido.",
+    "airport": {
+      "code": "DUB",
+      "name": "Dublín"
+    },
+    "nights": 4,
+    "economy": 24180,
+    "duration": 1020,
+    "hotelBase": 3770,
+    "hotelNames": [
+      "Horizonte Dublín",
+      "Casa Aurora Dublín",
+      "Panorama Dublín"
+    ],
+    "hotelAreas": [
+      "Temple Bar",
+      "St Stephen's Green",
+      "Smithfield"
+    ],
+    "sources": [
+      "https://www.visitdublin.com/",
+      "https://www.dublinairport.com/"
+    ],
+    "guides": [
+      {
+        "title": "Dublín literario e histórico",
+        "style": "cultura",
+        "description": "Paseo por el centro entre universidad, calles culturales y el castillo; visitas interiores aparte.",
+        "stops": [
+          "Trinity College",
+          "Dame Street",
+          "Castillo de Dublín"
+        ],
+        "hours": 4,
+        "price": 620
+      },
+      {
+        "title": "Mercados y sabores junto al Liffey",
+        "style": "gastronomia",
+        "description": "Recorrido por barrios de ambas orillas, con pausas gastronómicas y música según programación local.",
+        "stops": [
+          "Temple Bar",
+          "Ha'penny Bridge",
+          "Capel Street"
+        ],
+        "hours": 4,
+        "price": 580
+      },
+      {
+        "title": "Parques y plazas georgianas",
+        "style": "naturaleza",
+        "description": "Caminata tranquila por jardines del centro y sus calles residenciales históricas.",
+        "stops": [
+          "St Stephen's Green",
+          "Iveagh Gardens",
+          "Merrion Square"
+        ],
+        "hours": 4,
+        "price": 480
+      }
+    ]
+  },
+  {
+    "id": "edimburgo",
+    "name": "Edimburgo",
+    "country": "Reino Unido",
+    "type": "cultura",
+    "tag": "Castillo y callejones",
+    "signature": "Una capital entre piedra y colinas",
+    "intro": "Edimburgo combina el trazado medieval de Old Town con jardines y miradores volcánicos.",
+    "description": "Su castillo domina calles donde conviven historias, museos y cafés. New Town y los paseos panorámicos completan una estancia de ritmo caminable.",
+    "highlights": [
+      "Castillo de Edimburgo",
+      "Royal Mile",
+      "Calton Hill"
+    ],
+    "tip": "Usa calzado con agarre; las cuestas y adoquines pueden estar húmedos incluso en días suaves.",
+    "arrival": "Edimburgo",
+    "transfer": "Tranvía, autobús o taxi hacia el centro; traslado no incluido.",
+    "airport": {
+      "code": "EDI",
+      "name": "Edimburgo"
+    },
+    "nights": 4,
+    "economy": 24960,
+    "duration": 1080,
+    "hotelBase": 3640,
+    "hotelNames": [
+      "Horizonte Edimburgo",
+      "Casa Aurora Edimburgo",
+      "Panorama Edimburgo"
+    ],
+    "hotelAreas": [
+      "Old Town",
+      "New Town",
+      "Stockbridge"
+    ],
+    "sources": [
+      "https://edinburgh.org/",
+      "https://www.edinburghairport.com/"
+    ],
+    "guides": [
+      {
+        "title": "La ciudad de la Royal Mile",
+        "style": "cultura",
+        "description": "Recorrido por el eje histórico desde el castillo hasta Holyrood; accesos interiores con reserva aparte.",
+        "stops": [
+          "Castillo de Edimburgo",
+          "Catedral de St Giles",
+          "Palacio de Holyroodhouse"
+        ],
+        "hours": 5,
+        "price": 700
+      },
+      {
+        "title": "Sabores entre Old Town y sus plazas",
+        "style": "gastronomia",
+        "description": "Paseo por calles comerciales y plazas históricas con paradas para probar cocina escocesa.",
+        "stops": [
+          "Grassmarket",
+          "Victoria Street",
+          "George IV Bridge"
+        ],
+        "hours": 3,
+        "price": 550
+      },
+      {
+        "title": "Jardines y vistas de la ciudad",
+        "style": "naturaleza",
+        "description": "Caminata urbana con subida final al mirador; se adapta a viento, lluvia y condiciones del sendero.",
+        "stops": [
+          "Princes Street Gardens",
+          "Scott Monument (exterior)",
+          "Calton Hill"
+        ],
+        "hours": 4,
+        "price": 520
+      }
+    ]
+  },
+  {
+    "id": "pekin",
+    "name": "Pekín",
+    "country": "China",
+    "type": "cultura",
+    "tag": "Herencia imperial",
+    "signature": "Patios, palacios y jardines",
+    "intro": "Pekín despliega su historia entre monumentos imperiales y callejones tradicionales.",
+    "description": "Organiza las visitas por sectores para disfrutar sus grandes complejos. Los hutongs y parques añaden una dimensión cotidiana a la experiencia monumental.",
+    "highlights": [
+      "Ciudad Prohibida",
+      "Templo del Cielo",
+      "Parque Jingshan"
+    ],
+    "tip": "Confirma reservas oficiales e identificación requerida para cada monumento antes de viajar.",
+    "arrival": "Pekín",
+    "transfer": "Airport Express o taxi autorizado hacia Pekín; traslado y enlaces al hotel no incluidos.",
+    "airport": {
+      "code": "PEK",
+      "name": "Pekín Capital International"
+    },
+    "nights": 5,
+    "economy": 30940,
+    "duration": 1620,
+    "hotelBase": 2210,
+    "hotelNames": [
+      "Horizonte Pekín",
+      "Casa Aurora Pekín",
+      "Panorama Pekín"
+    ],
+    "hotelAreas": [
+      "Dongcheng",
+      "Xicheng",
+      "Chaoyang"
+    ],
+    "sources": [
+      "https://english.beijing.gov.cn/specials/ticketing/index.html",
+      "https://english.beijing.gov.cn/travellinginbeijing/mustvisitsites/202306/t20230608_3127526.html?v=jt",
+      "https://www.bcia.com.cn/"
+    ],
+    "guides": [
+      {
+        "title": "Palacios y panorámicas imperiales",
+        "style": "cultura",
+        "description": "Recorrido entre el palacio y los parques vecinos; reservas nominativas y entradas por cuenta del viajero.",
+        "stops": [
+          "Ciudad Prohibida",
+          "Parque Jingshan",
+          "Parque Beihai"
+        ],
+        "hours": 7,
+        "price": 800
+      },
+      {
+        "title": "Callejones y sabores de la ciudad vieja",
+        "style": "gastronomia",
+        "description": "Ruta por hutongs y calles de comida al norte del centro histórico, con degustaciones opcionales.",
+        "stops": [
+          "Nanluoguxiang",
+          "Torre del Tambor",
+          "Yandai Xiejie"
+        ],
+        "hours": 4,
+        "price": 550
+      },
+      {
+        "title": "Jardines del Palacio de Verano",
+        "style": "naturaleza",
+        "description": "Paseo largo dentro del complejo imperial con orillas, galerías y miradores; entrada aparte.",
+        "stops": [
+          "Lago Kunming",
+          "Largo Corredor",
+          "Colina de la Longevidad"
+        ],
+        "hours": 5,
+        "price": 650
+      }
+    ]
+  },
+  {
+    "id": "shanghai",
+    "name": "Shanghái",
+    "country": "China",
+    "type": "cultura",
+    "tag": "Horizonte del Huangpu",
+    "signature": "Tradición y futuro a la orilla del río",
+    "intro": "Shanghái combina el perfil de Pudong con jardines clásicos y calles históricas.",
+    "description": "Pasea por el Bund, descubre el entorno de Yuyuan y dedica tiempo a sus barrios arbolados. La ciudad ofrece contrastes que cambian de una orilla a otra.",
+    "highlights": [
+      "El Bund",
+      "Jardín Yuyuan",
+      "Lujiazui"
+    ],
+    "tip": "Comprueba el aeropuerto de llegada: Pudong y Hongqiao están en zonas distintas de la ciudad.",
+    "arrival": "Shanghái",
+    "transfer": "Metro, Maglev con conexión o taxi autorizado; traslado al alojamiento no incluido.",
+    "airport": {
+      "code": "PVG",
+      "name": "Shanghái Pudong International"
+    },
+    "nights": 4,
+    "economy": 30420,
+    "duration": 1560,
+    "hotelBase": 2600,
+    "hotelNames": [
+      "Horizonte Shanghái",
+      "Casa Aurora Shanghái",
+      "Panorama Shanghái"
+    ],
+    "hotelAreas": [
+      "Huangpu",
+      "Jing'an",
+      "Xuhui"
+    ],
+    "sources": [
+      "https://english.shanghai.gov.cn/en-TravelinShanghai/",
+      "https://english.shanghai.gov.cn/en-Transportation/20231214/649e06ea38f74aaeb573fa2debbe97d3.html"
+    ],
+    "guides": [
+      {
+        "title": "El Bund y la historia comercial",
+        "style": "cultura",
+        "description": "Paseo por el frente fluvial y las calles comerciales del centro, con lectura de su arquitectura.",
+        "stops": [
+          "El Bund",
+          "Nanjing Road East",
+          "People's Square"
+        ],
+        "hours": 4,
+        "price": 600
+      },
+      {
+        "title": "Sabores del casco antiguo",
+        "style": "gastronomia",
+        "description": "Ruta por el entorno del jardín y las calles comerciales tradicionales; entradas y degustaciones aparte.",
+        "stops": [
+          "Jardín Yuyuan",
+          "Yuyuan Bazaar",
+          "Templo del Dios de la Ciudad"
+        ],
+        "hours": 4,
+        "price": 580
+      },
+      {
+        "title": "Parques y ribera de Pudong",
+        "style": "naturaleza",
+        "description": "Caminata entre jardines y vistas del Huangpu en el distrito de los grandes rascacielos.",
+        "stops": [
+          "Lujiazui Central Green",
+          "Binjiang Avenue",
+          "Oriental Pearl Tower (exterior)"
+        ],
+        "hours": 4,
+        "price": 550
+      }
+    ]
+  },
+  {
+    "id": "hanoi",
+    "name": "Hanói",
+    "country": "Vietnam",
+    "type": "cultura",
+    "tag": "Lagos y vida local",
+    "signature": "La capital de los callejones y el café",
+    "intro": "Hanói combina lagos, templos y la energía de sus calles comerciales tradicionales.",
+    "description": "En el casco antiguo, cada calle revela oficios y aromas propios. Los paseos junto al agua y los monumentos históricos equilibran el ritmo de la capital.",
+    "highlights": [
+      "Lago Hoan Kiem",
+      "Barrio Antiguo",
+      "Templo de la Literatura"
+    ],
+    "tip": "Cruza las calles con calma y elige recorridos a pie cortos para disfrutar mejor del casco antiguo.",
+    "arrival": "Hanói",
+    "transfer": "Autobús o taxi autorizado hacia Hanói; traslado al hotel no incluido.",
+    "airport": {
+      "code": "HAN",
+      "name": "Noi Bai International"
+    },
+    "nights": 4,
+    "economy": 29380,
+    "duration": 1740,
+    "hotelBase": 1508,
+    "hotelNames": [
+      "Horizonte Hanói",
+      "Casa Aurora Hanói",
+      "Panorama Hanói"
+    ],
+    "hotelAreas": [
+      "Hoan Kiem",
+      "Ba Dinh",
+      "Tay Ho"
+    ],
+    "sources": [
+      "https://vietnam.travel/places-to-go/red-river-delta/ha-noi",
+      "https://noibaiairport.vn/en"
+    ],
+    "guides": [
+      {
+        "title": "El lago y la memoria de Hanói",
+        "style": "cultura",
+        "description": "Ruta a pie por el centro histórico con templos y edificios de distintas épocas.",
+        "stops": [
+          "Lago Hoan Kiem",
+          "Templo Ngoc Son",
+          "Catedral de San José"
+        ],
+        "hours": 4,
+        "price": 450
+      },
+      {
+        "title": "Café y sabores del Barrio Antiguo",
+        "style": "gastronomia",
+        "description": "Paseo por calles comerciales para descubrir café vietnamita y platos locales; consumiciones aparte.",
+        "stops": [
+          "Mercado Dong Xuan",
+          "Hang Buom",
+          "Ta Hien"
+        ],
+        "hours": 4,
+        "price": 480
+      },
+      {
+        "title": "La orilla de los lagos del norte",
+        "style": "naturaleza",
+        "description": "Caminata entre parques, calzadas y vistas del agua; accesos religiosos sujetos a normas locales.",
+        "stops": [
+          "Lago Truc Bach",
+          "Thanh Nien Road",
+          "Pagoda Tran Quoc"
+        ],
+        "hours": 4,
+        "price": 420
+      }
+    ]
+  },
+  {
+    "id": "ho-chi-minh",
+    "name": "Ciudad Ho Chi Minh",
+    "country": "Vietnam",
+    "type": "cultura",
+    "tag": "Mercados y avenidas",
+    "signature": "La energía del sur de Vietnam",
+    "intro": "Ciudad Ho Chi Minh reúne arquitectura histórica, mercados y una intensa vida callejera.",
+    "description": "Explora su núcleo monumental y los barrios de tradición china. La cocina local, los cafés y los paseos urbanos permiten descubrirla a distintas horas.",
+    "highlights": [
+      "Palacio de la Reunificación",
+      "Oficina Central de Correos",
+      "Mercado Ben Thanh"
+    ],
+    "tip": "Deja margen para el tráfico y revisa qué terminal corresponde a tu vuelo.",
+    "arrival": "Ciudad Ho Chi Minh",
+    "transfer": "Autobús o taxi autorizado hacia el centro; traslado al alojamiento no incluido.",
+    "airport": {
+      "code": "SGN",
+      "name": "Tan Son Nhat International"
+    },
+    "nights": 4,
+    "economy": 29120,
+    "duration": 1740,
+    "hotelBase": 1612,
+    "hotelNames": [
+      "Horizonte Ciudad Ho Chi Minh",
+      "Casa Aurora Ciudad Ho Chi Minh",
+      "Panorama Ciudad Ho Chi Minh"
+    ],
+    "hotelAreas": [
+      "Ben Nghe",
+      "Ben Thanh",
+      "Cholon"
+    ],
+    "sources": [
+      "https://vietnam.travel/places-to-go/southeastern-vietnam/ho-chi-minh-city",
+      "https://vietnamairport.vn/vi/cang-hang-khong"
+    ],
+    "guides": [
+      {
+        "title": "Historia en el centro de Saigón",
+        "style": "cultura",
+        "description": "Recorrido por edificios representativos del centro; entradas y posibles restauraciones se revisan previamente.",
+        "stops": [
+          "Palacio de la Reunificación",
+          "Oficina Central de Correos",
+          "Ópera de Saigón"
+        ],
+        "hours": 5,
+        "price": 550
+      },
+      {
+        "title": "Mercados y cocina del centro",
+        "style": "gastronomia",
+        "description": "Ruta entre mercados y calles de comida para probar sabores del sur; degustaciones no incluidas.",
+        "stops": [
+          "Mercado Ben Thanh",
+          "Mercado Tan Dinh",
+          "Calle Hai Ba Trung"
+        ],
+        "hours": 5,
+        "price": 520
+      },
+      {
+        "title": "Tradiciones de Cholon",
+        "style": "cultura",
+        "description": "Paseo por el barrio de herencia china, sus templos y calles comerciales.",
+        "stops": [
+          "Mercado Binh Tay",
+          "Templo Thien Hau",
+          "Pagoda Quan Am"
+        ],
+        "hours": 4,
+        "price": 480
+      }
+    ]
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "country": "India",
+    "type": "cultura",
+    "tag": "Capital de contrastes",
+    "signature": "Historia mogola y grandes avenidas",
+    "intro": "Delhi reúne ciudades históricas, monumentos y mercados que cuentan distintas épocas de la India.",
+    "description": "Alterna el ambiente de Old Delhi con jardines y conjuntos monumentales del sur. Organizar las visitas por zonas ayuda a disfrutarla con más calma.",
+    "highlights": [
+      "Fuerte Rojo",
+      "Tumba de Humayun",
+      "Qutub Minar"
+    ],
+    "tip": "Comprueba normas de vestimenta en templos y reserva tiempo adicional por el tráfico.",
+    "arrival": "Delhi",
+    "transfer": "Airport Express o taxi autorizado hacia Delhi; traslado al hotel no incluido.",
+    "airport": {
+      "code": "DEL",
+      "name": "Indira Gandhi International, Delhi"
+    },
+    "nights": 4,
+    "economy": 28080,
+    "duration": 1500,
+    "hotelBase": 1690,
+    "hotelNames": [
+      "Horizonte Delhi",
+      "Casa Aurora Delhi",
+      "Panorama Delhi"
+    ],
+    "hotelAreas": [
+      "Connaught Place",
+      "Karol Bagh",
+      "Hauz Khas"
+    ],
+    "sources": [
+      "https://delhitourism.gov.in/",
+      "https://www.newdelhiairport.in/"
+    ],
+    "guides": [
+      {
+        "title": "Las puertas de Old Delhi",
+        "style": "cultura",
+        "description": "Ruta a pie y con tramos de transporte local por la ciudad mogola; entradas aparte.",
+        "stops": [
+          "Fuerte Rojo",
+          "Jama Masjid",
+          "Chandni Chowk"
+        ],
+        "hours": 5,
+        "price": 550
+      },
+      {
+        "title": "Especias y sabores de la ciudad vieja",
+        "style": "gastronomia",
+        "description": "Paseo por los mercados de Old Delhi con degustaciones opcionales y atención a preferencias alimentarias.",
+        "stops": [
+          "Khari Baoli",
+          "Fatehpuri Masjid (exterior)",
+          "Paranthe Wali Gali"
+        ],
+        "hours": 4,
+        "price": 480
+      },
+      {
+        "title": "Jardines de la Delhi monumental",
+        "style": "naturaleza",
+        "description": "Recorrido por parques históricos con conexiones por carretera por cuenta del viajero.",
+        "stops": [
+          "Lodhi Garden",
+          "Sunder Nursery",
+          "Tumba de Humayun"
+        ],
+        "hours": 6,
+        "price": 620
+      }
+    ]
+  },
+  {
+    "id": "mumbai",
+    "name": "Mumbai",
+    "country": "India",
+    "type": "cultura",
+    "tag": "Patrimonio junto al mar",
+    "signature": "La ciudad que mira al mar Arábigo",
+    "intro": "Mumbai combina arquitectura histórica, mercados y paseos costeros llenos de actividad.",
+    "description": "Descubre el sur de la ciudad entre Colaba, Kala Ghoda y Marine Drive. Una salida a Elephanta añade patrimonio insular a la estancia urbana.",
+    "highlights": [
+      "Gateway of India",
+      "Marine Drive",
+      "Cuevas de Elephanta"
+    ],
+    "tip": "Consulta el estado del mar antes de ir a Elephanta y deja margen amplio para desplazamientos.",
+    "arrival": "Mumbai",
+    "transfer": "Taxi autorizado u opciones de transporte urbano según terminal; traslado al hotel no incluido.",
+    "airport": {
+      "code": "BOM",
+      "name": "Chhatrapati Shivaji Maharaj International"
+    },
+    "nights": 4,
+    "economy": 28600,
+    "duration": 1500,
+    "hotelBase": 2210,
+    "hotelNames": [
+      "Horizonte Mumbai",
+      "Casa Aurora Mumbai",
+      "Panorama Mumbai"
+    ],
+    "hotelAreas": [
+      "Colaba",
+      "Fort",
+      "Bandra"
+    ],
+    "sources": [
+      "https://maharashtratourism.gov.in/districts/mumbai-city/",
+      "https://maharashtratourism.gov.in/cave/elephanta/",
+      "https://csmia-mumbai.adaniairports.com/en/media-centre"
+    ],
+    "guides": [
+      {
+        "title": "Patrimonio del sur de Mumbai",
+        "style": "cultura",
+        "description": "Ruta por el frente marítimo y el distrito artístico; visitas interiores se reservan aparte.",
+        "stops": [
+          "Gateway of India",
+          "Museo CSMVS",
+          "Kala Ghoda"
+        ],
+        "hours": 5,
+        "price": 580
+      },
+      {
+        "title": "Sabores y mercados del centro",
+        "style": "gastronomia",
+        "description": "Recorrido por mercados comerciales y calles de comida, con degustaciones elegidas por el viajero.",
+        "stops": [
+          "Crawford Market",
+          "Mangaldas Market",
+          "Mohammed Ali Road"
+        ],
+        "hours": 4,
+        "price": 500
+      },
+      {
+        "title": "Elephanta desde el puerto",
+        "style": "cultura",
+        "description": "Salida en ferry hacia la isla y caminata con escaleras; servicio sujeto al mar, billetes y entradas aparte.",
+        "stops": [
+          "Gateway of India",
+          "Muelle de Elephanta",
+          "Cuevas de Elephanta"
+        ],
+        "hours": 7,
+        "price": 750
+      }
+    ]
+  },
+  {
+    "id": "agra",
+    "name": "Agra",
+    "country": "India",
+    "type": "cultura",
+    "tag": "Arquitectura mogola",
+    "signature": "Mármol y jardines a orillas del Yamuna",
+    "intro": "Agra invita a descubrir el Taj Mahal y otras grandes obras del patrimonio mogol.",
+    "description": "Organiza la visita al Taj con tiempo y completa el viaje con fortalezas, jardines y mercados. Las vistas desde la otra orilla muestran un paisaje diferente.",
+    "highlights": [
+      "Taj Mahal",
+      "Fuerte de Agra",
+      "Mehtab Bagh"
+    ],
+    "tip": "Confirma el calendario de apertura del Taj Mahal: la visita turística cierra los viernes.",
+    "arrival": "Delhi",
+    "transfer": "Llegada aérea a Delhi; continuar a Agra por carretera o tren con conexión terrestre. Reserva una jornada de traslado y verifica horarios. No está incluido.",
+    "airport": {
+      "code": "DEL",
+      "name": "Indira Gandhi International, Delhi"
+    },
+    "nights": 3,
+    "economy": 28080,
+    "duration": 1500,
+    "hotelBase": 1690,
+    "hotelNames": [
+      "Horizonte Agra",
+      "Casa Aurora Agra",
+      "Panorama Agra"
+    ],
+    "hotelAreas": [
+      "Taj Ganj",
+      "Fatehabad Road",
+      "Sadar Bazaar"
+    ],
+    "sources": [
+      "https://www.tajmahal.gov.in/",
+      "https://www.newdelhiairport.in/"
+    ],
+    "guides": [
+      {
+        "title": "El legado mogol de Agra",
+        "style": "cultura",
+        "description": "Visita monumental con desplazamiento por carretera; reservas y entradas independientes.",
+        "stops": [
+          "Taj Mahal",
+          "Fuerte de Agra",
+          "Jama Masjid de Agra (exterior)"
+        ],
+        "hours": 7,
+        "price": 720
+      },
+      {
+        "title": "Jardines al otro lado del Yamuna",
+        "style": "naturaleza",
+        "description": "Ruta por carretera entre jardines y mausoleos de la ribera oriental; sin navegación incluida.",
+        "stops": [
+          "Mehtab Bagh",
+          "Tumba de Itimad-ud-Daulah",
+          "Chini ka Rauza"
+        ],
+        "hours": 5,
+        "price": 600
+      },
+      {
+        "title": "Sabores y comercio de Agra",
+        "style": "gastronomia",
+        "description": "Paseo por mercados del centro para descubrir petha, especias y artesanía; compras y degustaciones aparte.",
+        "stops": [
+          "Kinari Bazaar",
+          "Rawatpara",
+          "Sadar Bazaar"
+        ],
+        "hours": 5,
+        "price": 480
+      }
+    ]
+  },
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "country": "India",
+    "type": "cultura",
+    "tag": "Palacios y bazares",
+    "signature": "La ciudad rosa de Rajasthan",
+    "intro": "Jaipur ofrece palacios, observatorios y mercados de artesanía en un entorno de colinas.",
+    "description": "El trazado de la ciudad vieja facilita combinar monumentos y bazares. Amber merece una salida propia para recorrer su fortaleza y sus alrededores.",
+    "highlights": [
+      "Hawa Mahal",
+      "City Palace",
+      "Fuerte Amber"
+    ],
+    "tip": "Protege tu visita del calor y planifica los fuertes con vehículo reservado por separado.",
+    "arrival": "Jaipur",
+    "transfer": "Taxi autorizado hacia Jaipur; traslado al alojamiento no incluido.",
+    "airport": {
+      "code": "JAI",
+      "name": "Jaipur International"
+    },
+    "nights": 4,
+    "economy": 29120,
+    "duration": 1620,
+    "hotelBase": 1768,
+    "hotelNames": [
+      "Horizonte Jaipur",
+      "Casa Aurora Jaipur",
+      "Panorama Jaipur"
+    ],
+    "hotelAreas": [
+      "Pink City",
+      "C-Scheme",
+      "Bani Park"
+    ],
+    "sources": [
+      "https://www.tourism.rajasthan.gov.in/jaipur.html",
+      "https://jaipur.adaniairports.com/en"
+    ],
+    "guides": [
+      {
+        "title": "Palacios de la ciudad rosa",
+        "style": "cultura",
+        "description": "Recorrido por el centro monumental con tiempo para arquitectura y observación astronómica; entradas aparte.",
+        "stops": [
+          "Hawa Mahal",
+          "City Palace",
+          "Jantar Mantar"
+        ],
+        "hours": 5,
+        "price": 600
+      },
+      {
+        "title": "Textiles y sabores de Jaipur",
+        "style": "gastronomia",
+        "description": "Ruta por bazares cercanos para conocer dulces, artesanía y comercio local; consumiciones aparte.",
+        "stops": [
+          "Johari Bazaar",
+          "Bapu Bazaar",
+          "Tripolia Bazaar"
+        ],
+        "hours": 4,
+        "price": 480
+      },
+      {
+        "title": "Amber y sus miradores",
+        "style": "cultura",
+        "description": "Excursión por carretera a Amber con caminatas y escaleras; vehículo y entradas no incluidos.",
+        "stops": [
+          "Fuerte Amber",
+          "Panna Meena ka Kund",
+          "Jal Mahal (exterior)"
+        ],
+        "hours": 6,
+        "price": 720
+      }
+    ]
+  },
+  {
+    "id": "el-cairo",
+    "name": "El Cairo",
+    "country": "Egipto",
+    "type": "cultura",
+    "tag": "Patrimonio del Nilo",
+    "signature": "Una ciudad junto a milenios de historia",
+    "intro": "El Cairo permite combinar barrios históricos con los grandes monumentos de la región de Giza.",
+    "description": "Explora sus mercados y museos en jornadas separadas. Las pirámides se encuentran en Giza y requieren un traslado desde el centro de El Cairo.",
+    "highlights": [
+      "Pirámides de Giza",
+      "Museo Egipcio",
+      "Khan el-Khalili"
+    ],
+    "tip": "Reserva tiempo adicional para el tráfico entre El Cairo y Giza, especialmente al volver al aeropuerto.",
+    "arrival": "El Cairo",
+    "transfer": "Taxi autorizado o traslado reservado hacia El Cairo o Giza; servicio terrestre no incluido.",
+    "airport": {
+      "code": "CAI",
+      "name": "El Cairo International"
+    },
+    "nights": 5,
+    "economy": 26520,
+    "duration": 1380,
+    "hotelBase": 2028,
+    "hotelNames": [
+      "Horizonte El Cairo",
+      "Casa Aurora El Cairo",
+      "Panorama El Cairo"
+    ],
+    "hotelAreas": [
+      "Zamalek",
+      "Downtown Cairo",
+      "Garden City"
+    ],
+    "sources": [
+      "https://www.experienceegypt.eg/en",
+      "https://www.cairo-airport.com/en-us/Airport/Airport-Information"
+    ],
+    "guides": [
+      {
+        "title": "La meseta de Giza",
+        "style": "cultura",
+        "description": "Excursión desde El Cairo a los monumentos de Giza; vehículo, entradas y accesos interiores se pagan aparte.",
+        "stops": [
+          "Gran Pirámide de Guiza",
+          "Pirámide de Kefrén",
+          "Gran Esfinge"
+        ],
+        "hours": 6,
+        "price": 800
+      },
+      {
+        "title": "Calles del Cairo histórico",
+        "style": "cultura",
+        "description": "Paseo por monumentos y bazares de la ciudad medieval; interiores sujetos a horarios y vestimenta.",
+        "stops": [
+          "Bab al-Futuh",
+          "Calle Al-Muizz",
+          "Khan el-Khalili"
+        ],
+        "hours": 5,
+        "price": 600
+      },
+      {
+        "title": "Museos y vistas del Nilo",
+        "style": "cultura",
+        "description": "Recorrido urbano por el centro y la isla de Gezira; traslados y entradas aparte.",
+        "stops": [
+          "Museo Egipcio de Tahrir",
+          "Puente Qasr el-Nil",
+          "Torre de El Cairo"
+        ],
+        "hours": 5,
+        "price": 650
+      }
+    ]
+  },
+  {
+    "id": "marrakech",
+    "name": "Marrakech",
+    "country": "Marruecos",
+    "type": "cultura",
+    "tag": "Medina y jardines",
+    "signature": "Patios y colores al pie del Atlas",
+    "intro": "Marrakech combina el bullicio de la medina con palacios, jardines y barrios modernos.",
+    "description": "Deja tiempo para orientarte entre zocos y callejones. Los patios históricos y los jardines ofrecen pausas tranquilas entre jornadas de exploración.",
+    "highlights": [
+      "Jemaa el-Fna",
+      "Palacio de la Bahía",
+      "Jardín Majorelle"
+    ],
+    "tip": "Acuerda tarifas antes de contratar servicios y reserva los jardines de mayor demanda.",
+    "arrival": "Marrakech",
+    "transfer": "Autobús o taxi autorizado; algunos alojamientos de la medina requieren un tramo a pie. Traslado no incluido.",
+    "airport": {
+      "code": "RAK",
+      "name": "Marrakech-Menara"
+    },
+    "nights": 4,
+    "economy": 24440,
+    "duration": 1200,
+    "hotelBase": 2132,
+    "hotelNames": [
+      "Horizonte Marrakech",
+      "Casa Aurora Marrakech",
+      "Panorama Marrakech"
+    ],
+    "hotelAreas": [
+      "Medina",
+      "Gueliz",
+      "Hivernage"
+    ],
+    "sources": [
+      "https://www.visitmorocco.com/en/travel/marrakesh",
+      "https://www.onda.ma/en/I-am-passenger/Traveller-Guide/Airport-network"
+    ],
+    "guides": [
+      {
+        "title": "Palacios del sur de la medina",
+        "style": "cultura",
+        "description": "Ruta caminable por palacios, plazas y el antiguo barrio judío; entradas por cuenta del viajero.",
+        "stops": [
+          "Palacio de la Bahía",
+          "Mellah",
+          "Palacio El Badi"
+        ],
+        "hours": 5,
+        "price": 580
+      },
+      {
+        "title": "Sabores de los zocos",
+        "style": "gastronomia",
+        "description": "Paseo por mercados y puestos de la medina, con degustaciones opcionales y tiempo para orientarse.",
+        "stops": [
+          "Jemaa el-Fna",
+          "Rahba Kedima",
+          "Souk Semmarine"
+        ],
+        "hours": 4,
+        "price": 520
+      },
+      {
+        "title": "Jardines y ciudad contemporánea",
+        "style": "naturaleza",
+        "description": "Recorrido con traslado intermedio por jardines y avenidas de Gueliz; reservas de Majorelle aparte.",
+        "stops": [
+          "Jardín Majorelle",
+          "Gueliz",
+          "Jardines de la Menara"
+        ],
+        "hours": 6,
+        "price": 700
+      }
+    ]
+  },
+  {
+    "id": "ciudad-del-cabo",
+    "name": "Ciudad del Cabo",
+    "country": "Sudáfrica",
+    "type": "naturaleza",
+    "tag": "Montaña y océano",
+    "signature": "Naturaleza al borde de la ciudad",
+    "intro": "Ciudad del Cabo se extiende entre Table Mountain, barrios históricos y la costa atlántica.",
+    "description": "Combina paisajes, paseos urbanos y la cocina del Cabo. El viento y las nubes pueden cambiar los planes de montaña, por lo que conviene mantener flexibilidad.",
+    "highlights": [
+      "Table Mountain",
+      "Bo-Kaap",
+      "V&A Waterfront"
+    ],
+    "tip": "Revisa el estado del teleférico y el tiempo antes de subir a Table Mountain.",
+    "arrival": "Ciudad del Cabo",
+    "transfer": "Taxi autorizado o traslado contratado hasta la ciudad; servicio no incluido.",
+    "airport": {
+      "code": "CPT",
+      "name": "Ciudad del Cabo International"
+    },
+    "nights": 6,
+    "economy": 33280,
+    "duration": 1800,
+    "hotelBase": 2860,
+    "hotelNames": [
+      "Horizonte Ciudad del Cabo",
+      "Casa Aurora Ciudad del Cabo",
+      "Panorama Ciudad del Cabo"
+    ],
+    "hotelAreas": [
+      "City Bowl",
+      "Sea Point",
+      "Green Point"
+    ],
+    "sources": [
+      "https://www.capetown.travel/",
+      "https://www.capetown.travel/bo-kaap/",
+      "https://www.capetown.travel/how-to-spend-the-day-on-table-mountain/",
+      "https://www.airports.co.za/airports/cape-town-international-airport"
+    ],
+    "guides": [
+      {
+        "title": "Table Mountain y el Atlántico",
+        "style": "naturaleza",
+        "description": "Salida con teleférico y recorrido costero en vehículo; operación sujeta al tiempo y servicios aparte.",
+        "stops": [
+          "Table Mountain",
+          "Camps Bay",
+          "Clifton"
+        ],
+        "hours": 7,
+        "price": 850
+      },
+      {
+        "title": "Historia y sabores de Bo-Kaap",
+        "style": "gastronomia",
+        "description": "Ruta respetuosa por el barrio y sus comercios para conocer cocina Cape Malay; consumiciones aparte.",
+        "stops": [
+          "Bo-Kaap Museum",
+          "Wale Street",
+          "Auwal Mosque (exterior)"
+        ],
+        "hours": 4,
+        "price": 600
+      },
+      {
+        "title": "Paseos de la costa urbana",
+        "style": "naturaleza",
+        "description": "Recorrido con tramos a pie por el paseo marítimo y parques del frente atlántico.",
+        "stops": [
+          "V&A Waterfront",
+          "Green Point Urban Park",
+          "Sea Point Promenade"
+        ],
+        "hours": 5,
+        "price": 650
+      }
+    ]
+  },
+  {
+    "id": "meca",
+    "name": "La Meca",
+    "country": "Arabia Saudita",
+    "type": "cultura",
+    "tag": "Patrimonio espiritual",
+    "signature": "Un destino sagrado para viajeros musulmanes",
+    "intro": "La Meca es un centro de peregrinación y patrimonio islámico con acceso reservado a musulmanes.",
+    "description": "La estancia debe organizarse según los requisitos oficiales de entrada y peregrinación. Las propuestas culturales son de demostración y no incluyen permisos ni servicios de Hajj o Umrah.",
+    "highlights": [
+      "Masjid al-Haram",
+      "Hira Cultural District",
+      "Abraj Al Bait"
+    ],
+    "tip": "Acceso solo para musulmanes. Verifica visado, permisos y restricciones estacionales oficiales; una reserva demo no autoriza la peregrinación.",
+    "arrival": "Yeda",
+    "transfer": "Llegada aérea a Yeda; continuar a La Meca en tren Haramain con enlace local o por carretera. Traslado y permisos no incluidos.",
+    "airport": {
+      "code": "JED",
+      "name": "Rey Abdulaziz International, Yeda"
+    },
+    "nights": 5,
+    "economy": 29380,
+    "duration": 1500,
+    "hotelBase": 3120,
+    "hotelNames": [
+      "Horizonte La Meca",
+      "Casa Aurora La Meca",
+      "Panorama La Meca"
+    ],
+    "hotelAreas": [
+      "Ajyad",
+      "Al Aziziyah",
+      "Al Misfalah"
+    ],
+    "sources": [
+      "https://www.visitsaudi.com/en/makkah/stories/guide-to-visiting-makkah",
+      "https://www.visitsaudi.com/en/destinations/makkah/attractions/hira-cultural-district-tour",
+      "https://www.visitsaudi.com/en/stories/4-stunning-mosques-in-saudi-arabia",
+      "https://visa.visitsaudi.com/Home/TermsConditions",
+      "https://www.kaia.sa/en"
+    ],
+    "guides": [
+      {
+        "title": "Orientación en el corazón de La Meca",
+        "style": "cultura",
+        "description": "Solo musulmanes. Orientación por el área sagrada, respetando oración y aforo; no incluye ritos ni permisos.",
+        "stops": [
+          "Masjid al-Haram",
+          "Área de Ajyad",
+          "Abraj Al Bait"
+        ],
+        "hours": 4,
+        "price": 600
+      },
+      {
+        "title": "Patrimonio en Hira",
+        "style": "cultura",
+        "description": "Solo musulmanes. Visita cultural al pie de Jabal al-Nour; no incluye ascenso a la cueva ni transporte.",
+        "stops": [
+          "Hira Cultural District",
+          "Revelation Exhibition",
+          "Saudi Coffee Museum"
+        ],
+        "hours": 4,
+        "price": 650
+      },
+      {
+        "title": "Café y entorno urbano de Ajyad",
+        "style": "gastronomia",
+        "description": "Solo musulmanes. Paseo para conocer café saudí y sabores locales en el entorno central; consumiciones aparte.",
+        "stops": [
+          "Abraj Al Bait (zona comercial)",
+          "Ajyad Street",
+          "Ibrahim Al Khalil Street"
+        ],
+        "hours": 3,
+        "price": 480
+      }
+    ]
+  },
+  {
+    "id": "medina",
+    "name": "Medina",
+    "country": "Arabia Saudita",
+    "type": "cultura",
+    "tag": "Historia y recogimiento",
+    "signature": "Memoria islámica entre oasis y montañas",
+    "intro": "Medina reúne patrimonio espiritual, antiguos caminos y paisajes del oeste saudí.",
+    "description": "Planifica los recorridos de acuerdo con las restricciones de cada recinto. La Mezquita del Profeta y sus dependencias están reservadas a musulmanes; otros accesos deben confirmarse localmente.",
+    "highlights": [
+      "Mezquita del Profeta",
+      "Mezquita Quba",
+      "Monte Uhud"
+    ],
+    "tip": "Los no musulmanes no pueden entrar a la Mezquita del Profeta ni a sus recintos. Confirma permisos y normas de los demás lugares antes de la visita.",
+    "arrival": "Medina",
+    "transfer": "Autobús o taxi autorizado hacia Medina; traslado al hotel no incluido.",
+    "airport": {
+      "code": "MED",
+      "name": "Príncipe Mohammad bin Abdulaziz International"
+    },
+    "nights": 4,
+    "economy": 28860,
+    "duration": 1500,
+    "hotelBase": 2730,
+    "hotelNames": [
+      "Horizonte Medina",
+      "Casa Aurora Medina",
+      "Panorama Medina"
+    ],
+    "hotelAreas": [
+      "Bada'ah",
+      "Qurban",
+      "Al Aridh"
+    ],
+    "sources": [
+      "https://www.visitsaudi.com/en/madinah",
+      "https://book.visitsaudi.com/product/57fdd945-48a3-47d8-a674-379c66a5af9e?locale=en",
+      "https://www.spa.gov.sa/en/N2073824",
+      "https://visa.visitsaudi.com/Home/TermsConditions",
+      "https://www.tibahairports.com/"
+    ],
+    "guides": [
+      {
+        "title": "Historia del núcleo sagrado",
+        "style": "cultura",
+        "description": "Recorrido reservado a musulmanes en zonas sagradas; accesos, oración y posibles permisos determinan el itinerario.",
+        "stops": [
+          "Mezquita del Profeta",
+          "Mezquita Al-Ghamamah",
+          "Mezquita Abu Bakr"
+        ],
+        "hours": 4,
+        "price": 580
+      },
+      {
+        "title": "Quba y el patrimonio urbano",
+        "style": "cultura",
+        "description": "Ruta cultural con traslado local; solo se accede a recintos permitidos según la condición del visitante.",
+        "stops": [
+          "Quba Avenue",
+          "Mezquita Quba (exterior autorizado)",
+          "Fuerte histórico de Quba"
+        ],
+        "hours": 4,
+        "price": 600
+      },
+      {
+        "title": "Paisaje histórico de Uhud",
+        "style": "naturaleza",
+        "description": "Salida al entorno de Uhud sin ascenso técnico; accesos a recintos religiosos se confirman previamente.",
+        "stops": [
+          "Monte Uhud (base)",
+          "Colina de los Arqueros",
+          "Plaza de Sayyid al-Shuhada"
+        ],
+        "hours": 4,
+        "price": 550
+      }
+    ]
+  },
+  {
+    "id": "shenzhen",
+    "name": "Shenzhen",
+    "country": "China",
+    "type": "cultura",
+    "tag": "Diseño y bahía",
+    "signature": "Una metrópoli creativa frente al mar",
+    "intro": "Shenzhen combina arquitectura contemporánea, barrios comerciales y grandes parques urbanos.",
+    "description": "Explora sus distritos por separado para apreciar la variedad de la ciudad. El diseño de OCT, los mercados de Luohu y los parques de Futian muestran facetas complementarias.",
+    "highlights": [
+      "OCT-LOFT",
+      "Lianhuashan Park",
+      "Shenzhen Bay Park"
+    ],
+    "tip": "Agrupa las visitas por distritos y usa el metro para evitar desplazamientos largos por carretera.",
+    "arrival": "Shenzhen",
+    "transfer": "Metro o taxi autorizado hacia Shenzhen; traslado y enlaces al hotel no incluidos.",
+    "airport": {
+      "code": "SZX",
+      "name": "Shenzhen Bao'an International"
+    },
+    "nights": 4,
+    "economy": 30940,
+    "duration": 1680,
+    "hotelBase": 2210,
+    "hotelNames": [
+      "Horizonte Shenzhen",
+      "Casa Aurora Shenzhen",
+      "Panorama Shenzhen"
+    ],
+    "hotelAreas": [
+      "Futian",
+      "Nanshan",
+      "Luohu"
+    ],
+    "sources": [
+      "https://www.sz.gov.cn/en_szgov/travel/",
+      "https://www.sz.gov.cn/en_szgov/news/infocus/SZCitywalk/Explore/Districts/NanshanDistrict/content/mpost_11884972.html",
+      "https://www.sz.gov.cn/en_szgov/news/infocus/SZCitywalk/Explore/Districts/LuohuDistrict/content/mpost_11892515.html",
+      "https://www.sz.gov.cn/en_szgov/life/transport/flight/index.html"
+    ],
+    "guides": [
+      {
+        "title": "Diseño y creatividad en Nanshan",
+        "style": "cultura",
+        "description": "Recorrido por espacios creativos y la zona OCT, con trayectos cortos en transporte local.",
+        "stops": [
+          "OCT-LOFT",
+          "He Xiangning Art Museum",
+          "OCT Harbour"
+        ],
+        "hours": 5,
+        "price": 620
+      },
+      {
+        "title": "Mercados y sabores de Luohu",
+        "style": "gastronomia",
+        "description": "Paseo por calles comerciales y áreas de comida del centro oriental; consumiciones aparte.",
+        "stops": [
+          "Dongmen Pedestrian Street",
+          "Laojie",
+          "Dongmen Food Street"
+        ],
+        "hours": 4,
+        "price": 520
+      },
+      {
+        "title": "Parques y arquitectura de Futian",
+        "style": "naturaleza",
+        "description": "Caminata por zonas verdes y plazas cívicas, con subida al mirador de Lianhuashan.",
+        "stops": [
+          "Lianhuashan Park",
+          "Shenzhen Civic Center",
+          "Shenzhen Central Park"
+        ],
+        "hours": 5,
+        "price": 580
+      }
+    ]
+  }
+]

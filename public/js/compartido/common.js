@@ -74,6 +74,10 @@
  const form=document.querySelector('#postcard-form');if(!form)return;
  const canvas=document.querySelector('#postcard-canvas'),ctx=canvas.getContext('2d'),download=document.querySelector('#postcard-download'),status=document.querySelector('#postcard-status');
  const place=form.elements.place,message=document.querySelector('#postcard-message'),to=document.querySelector('#postcard-to'),from=document.querySelector('#postcard-from');
+ const handwriting='"Rumbo Postal", "Segoe UI", sans-serif';
+ const postalFont=new FontFace('Rumbo Postal','url("fonts/Kalam-Regular.ttf")');
+ document.fonts.add(postalFont);
+ const postalFontReady=postalFont.load().catch(()=>null);
  const destinations=[...(window.RumboViajesDatos?.destinations||[])].sort((a,b)=>a.name.localeCompare(b.name,'es'));
  const catalog=new Map(destinations.map(destination=>[destination.id,destination]));
  for(const destination of destinations){const option=document.createElement('option');option.value=destination.id;option.textContent=destination.name+' · '+destination.country;place.append(option);}
@@ -102,32 +106,57 @@
   const text=clean(message.value),recipient=clean(to.value),sender=clean(from.value);
   canvas.setAttribute('aria-label','Postal de '+current.name+(text?'. '+text:'')+(recipient?'. Para: '+recipient:'')+(sender?'. De: '+sender:''));
   ctx.clearRect(0,0,canvas.width,canvas.height);if(!photo)return;
-  const w=canvas.width,h=canvas.height,scale=Math.max(w/photo.naturalWidth,h/photo.naturalHeight);
+  const w=canvas.width,h=canvas.height,inset=24,pw=w-inset*2,ph=h-inset*2,scale=Math.max(pw/photo.naturalWidth,ph/photo.naturalHeight);
   ctx.save();
+  // The rounded matte and inset frame are part of the downloaded invitation too.
+  ctx.fillStyle='#181b1e';ctx.beginPath();ctx.roundRect(0,0,w,h,64);ctx.fill();
+  ctx.beginPath();ctx.roundRect(inset,inset,pw,ph,44);ctx.clip();
   ctx.drawImage(photo,(w-photo.naturalWidth*scale)/2,(h-photo.naturalHeight*scale)/2,photo.naturalWidth*scale,photo.naturalHeight*scale);
   // Neutral shading keeps the photograph visible and handwritten copy readable.
   const shade=ctx.createLinearGradient(0,0,0,h);
   shade.addColorStop(0,'rgba(0,0,0,.48)');shade.addColorStop(.38,'rgba(0,0,0,0)');shade.addColorStop(1,text||recipient||sender?'rgba(0,0,0,.78)':'rgba(0,0,0,.08)');
   ctx.fillStyle=shade;ctx.fillRect(0,0,w,h);
-  ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.3)';ctx.shadowBlur=6;ctx.shadowOffsetY=2;
-  fit(current.name,104,w-168,'Georgia, serif');ctx.fillText(current.name,84,158);
-  ctx.font='24px Inter, sans-serif';ctx.fillText(current.country,88,210);
-  if(text){
-   let size=54,wrapped;
-   do{ctx.font='italic '+size+'px Georgia, serif';wrapped=lines(text,w-168);if(wrapped.length<=5)break;size-=2;}while(size>=30);
-   // Limit blank lines, while keeping the full message and long words within the photo.
-   if(wrapped.length>5){wrapped=lines(text.replace(/\s+/g,' '),w-168);}
-   const lineHeight=size*1.3,bottom=recipient||sender?h-190:h-100;
-   wrapped.forEach((line,index)=>ctx.fillText(line,84,bottom-(wrapped.length-1-index)*lineHeight));
+  ctx.strokeStyle='rgba(240,242,238,.32)';ctx.lineWidth=2;
+  ctx.beginPath();ctx.roundRect(54,54,w-108,h-108,26);ctx.stroke();
+  // A personal letter, with a tiny heart seal and soft postal cancellation lines.
+  ctx.save();ctx.translate(w-142,150);ctx.rotate(.1);
+  ctx.lineWidth=2;ctx.lineCap='round';ctx.lineJoin='round';
+  ctx.strokeStyle='rgba(240,242,238,.6)';
+  for(const y of [-14,0,14]){
+   ctx.beginPath();ctx.moveTo(-124,y);
+   ctx.bezierCurveTo(-106,y-12,-88,y+12,-70,y);
+   ctx.bezierCurveTo(-58,y-8,-48,y-8,-36,y);ctx.stroke();
   }
-  if(recipient){fit(translate('Para')+' '+recipient,28,650,'Inter, sans-serif');ctx.fillText(translate('Para')+' '+recipient,84,h-80);}
-  if(sender){const signature=translate('De')+' '+sender;fit(signature,28,650,'Inter, sans-serif');ctx.textAlign='right';ctx.fillText(signature,w-84,h-80);}
+  ctx.fillStyle='rgba(24,27,30,.82)';ctx.strokeStyle='rgba(240,242,238,.72)';
+  ctx.beginPath();ctx.roundRect(-44,-56,88,112,8);ctx.fill();
+  ctx.setLineDash([2,6]);ctx.stroke();ctx.setLineDash([]);
+  ctx.strokeStyle='rgba(240,242,238,.25)';ctx.beginPath();ctx.roundRect(-35,-47,70,94,4);ctx.stroke();
+  ctx.strokeStyle='#f0f2ee';ctx.lineWidth=2.5;
+  ctx.beginPath();ctx.roundRect(-24,-15,48,34,3);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(-23,-13);ctx.lineTo(0,4);ctx.lineTo(23,-13);
+  ctx.moveTo(-23,17);ctx.lineTo(-9,3);ctx.moveTo(23,17);ctx.lineTo(9,3);ctx.stroke();
+  ctx.fillStyle='#b8d86b';ctx.beginPath();ctx.moveTo(0,10);
+  ctx.bezierCurveTo(-22,-4,-9,-16,0,-6);ctx.bezierCurveTo(9,-16,22,-4,0,10);ctx.fill();ctx.restore();
+  ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.3)';ctx.shadowBlur=6;ctx.shadowOffsetY=2;
+  fit(current.name,104,w-390,handwriting);ctx.fillText(current.name,100,172);
+  ctx.font='24px Inter, sans-serif';ctx.fillText(current.country,104,224);
+  if(text){
+   let size=62,wrapped;
+   do{ctx.font=size+'px '+handwriting;wrapped=lines(text,w-200);if(wrapped.length<=5)break;size-=2;}while(size>=30);
+   // Limit blank lines, while keeping the full message and long words within the photo.
+   if(wrapped.length>5){wrapped=lines(text.replace(/\s+/g,' '),w-200);}
+   const lineHeight=size*1.3,bottom=recipient||sender?h-210:h-110;
+   wrapped.forEach((line,index)=>ctx.fillText(line,100,bottom-(wrapped.length-1-index)*lineHeight));
+  }
+  if(recipient||sender){ctx.shadowBlur=0;ctx.strokeStyle='rgba(240,242,238,.35)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(100,h-164);ctx.lineTo(w-100,h-164);ctx.stroke();}
+  if(recipient){fit(translate('Para')+' '+recipient,36,650,handwriting);ctx.fillText(translate('Para')+' '+recipient,100,h-108);}
+  if(sender){const signature=translate('De')+' '+sender;fit(signature,36,650,handwriting);ctx.textAlign='right';ctx.fillText(signature,w-100,h-108);}
   ctx.restore();
  }
  function load(){
   const id=++request;current=catalog.get(place.value);photo=null;download.disabled=true;canvas.setAttribute('aria-busy','true');status.textContent='Cargando foto…';draw();
   const image=new Image();
-  image.onload=()=>{if(id!==request)return;photo=image;draw();download.disabled=false;canvas.setAttribute('aria-busy','false');status.textContent='';};
+  image.onload=async()=>{await postalFontReady;if(id!==request)return;photo=image;draw();download.disabled=false;canvas.setAttribute('aria-busy','false');status.textContent='';};
   image.onerror=()=>{if(id!==request)return;canvas.setAttribute('aria-busy','false');status.textContent='No se pudo cargar la foto. Elegí otro destino.';};
   image.src=current.image;
  }

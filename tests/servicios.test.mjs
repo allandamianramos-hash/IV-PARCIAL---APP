@@ -35,7 +35,7 @@ function page(section,destination){
  });
  return {node,storage,location,complete(){for(const [id,value]of Object.entries({date:'2099-10-12',end:'2099-10-14',people:'2',bags:'2',time:'10:00',direction:'out'}))if(required.includes(id))node(id).value=value;this.submit();},choose(){node('service-results').events.click({target:{closest:()=>choices[0]}});},submit(){node('service-search').events.submit({preventDefault(){}});}};
 }
-test('los 40 destinos permiten calcular y guardar su propio traslado',()=>{
+test('los 70 destinos permiten calcular y guardar su propio traslado',()=>{
  for(const d of catalog){
   const ui=page('traslados',d.id);
   ui.complete();

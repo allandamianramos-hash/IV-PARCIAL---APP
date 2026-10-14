@@ -93,9 +93,9 @@ test('cada hospedaje tiene una fotografía distinta con autor y licencia', async
   }
 });
 
-test('los 40 destinos tienen presupuestos, hospedajes e imágenes locales', async () => {
-  assert.equal(destinations.length, 40);
-  assert.equal(new Set(destinations.map(d=>d.id)).size, 40);
+test('los 70 destinos tienen presupuestos, hospedajes e imágenes locales', async () => {
+  assert.equal(destinations.length, 70);
+  assert.equal(new Set(destinations.map(d=>d.id)).size, 70);
   const hotelIds = new Set();
   for (const d of destinations) {
     assert.ok(d.inspirationBudget > 0);
@@ -107,7 +107,7 @@ test('los 40 destinos tienen presupuestos, hospedajes e imágenes locales', asyn
       await access(new URL(`imagenes-viajes/${h.image}`, new URL('../public/', import.meta.url)));
     }
   }
-  assert.equal(hotelIds.size, 156);
+  assert.equal(hotelIds.size, 246);
 });
 
 test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => {
@@ -144,6 +144,6 @@ test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => 
  const scope={window:{RumboDatabase:{connected:true,catalog:{destinations:[...existing,custom],rooms:{},origins:['Tegucigalpa'],promotions:{}}}}};
  vm.runInNewContext(source.slice(0,source.indexOf('/* Abre una')),scope);
  const actual=scope.window.RumboViajesDatos.destinations;
- assert.equal(actual.length,40);assert.equal(actual.find(d=>d.id==='londres').economy,12345);
- assert.equal(new Set(actual.map(d=>d.id)).size,40);
+ assert.equal(actual.length,70);assert.equal(actual.find(d=>d.id==='londres').economy,12345);
+ assert.equal(new Set(actual.map(d=>d.id)).size,70);
  });

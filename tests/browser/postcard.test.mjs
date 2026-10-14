@@ -12,6 +12,7 @@ test('postcard includes the complete catalog, previews personal text and downloa
   await page.goto(base);
   const canvas=page.locator('#postcard-canvas'),place=page.locator('#postcard-place'),download=page.locator('#postcard-download');
   await expect(download).toBeEnabled();
+  assert.equal(await page.evaluate(()=>[...document.fonts].find(font=>font.family.replaceAll('"','')==='Rumbo Postal')?.status),'loaded');
   const catalog=await page.evaluate(()=>window.RumboViajesDatos.destinations.map(({id,name})=>({id,name})));
   assert.ok(catalog.length>4);
   const options=await place.locator('option').evaluateAll(nodes=>nodes.map(n=>n.value));
@@ -32,7 +33,7 @@ test('postcard includes the complete catalog, previews personal text and downloa
   await mkdir('.runtime/postcard',{recursive:true});
   await page.locator('#antes-de-viajar').screenshot({path:'.runtime/postcard/desktop.png'});
   const styles=await canvas.evaluate(c=>({border:getComputedStyle(c).borderWidth,radius:getComputedStyle(c).borderRadius,padding:getComputedStyle(c.parentElement).padding,background:getComputedStyle(document.querySelector('#antes-de-viajar')).backgroundColor}));
-  assert.deepEqual(styles,{border:'0px',radius:'0px',padding:'0px',background:'rgba(0, 0, 0, 0)'});
+  assert.deepEqual(styles,{border:'0px',radius:'28px',padding:'0px',background:'rgba(0, 0, 0, 0)'});
   const downloaded=page.waitForEvent('download');await download.click();const file=await downloaded;
   assert.equal(file.suggestedFilename(),'rumbo-postal-venecia.png');await file.saveAs('.runtime/postcard/postal.png');
   const png=await readFile('.runtime/postcard/postal.png');assert.equal(png.readUInt32BE(16),1600);assert.equal(png.readUInt32BE(20),1100);

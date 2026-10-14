@@ -21,7 +21,7 @@ test("sirve el sitio y bloquea secretos y módulos privados", async () => {
     assert.equal((await fetch(url + "/api/chat")).status, 405);
     const health = await fetch(url + '/api/health');
     assert.equal(health.status, 200);
-    assert.deepEqual(await health.json(), { app: 'rumbo-viajes', status: 'ok' });
+    assert.deepEqual(await health.json(), { app: 'rumbo-viajes', status: 'ok', backend: 'node' });
     assert.equal((await fetch(url + '/api/health', { method: 'HEAD' })).status, 200);
     for (const path of ['/rumbo-background.ps1', '/ACTIVAR-RUMBO-AUTOMATICO.cmd']) assert.equal((await fetch(url + path)).status, 404);
   } finally { await new Promise(resolve => server.close(resolve)); }

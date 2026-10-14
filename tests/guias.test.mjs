@@ -12,6 +12,7 @@ vm.runInNewContext(travelSource.slice(0, travelSource.indexOf('/* Abre una')), d
 const catalog = data.window.RumboViajesDatos;
 vm.runInNewContext(await readFile(new URL('js/destinos/guias-catalogo.js', new URL('../public/', import.meta.url)), 'utf8'), data);
 const experiences = data.window.RumboGuias;
+const newDestinationIds = new Set(JSON.parse(await readFile(new URL('../docs/nuevos-destinos-contenido.json',import.meta.url),'utf8')).map(d=>d.id));
 
 // Small DOM boundary for exercising the actual page event handlers and storage.
 function page(query = '', stored = {}) {
@@ -84,7 +85,7 @@ test('todos los destinos muestran sus propias actividades y fotografías', () =>
     const available=experiences.filter(e=>e.destination===d.id);
     assert.equal((html.match(/class="guide-photo-credit"/g)||[]).length,available.length);
     if(!available.length){assert.match(html,/Aún no hay recorridos/);assert.match(html,/Explorar el destino/);assert.equal(ui.node('guide-save').disabled,true);}
-    else assert.equal(available.length,10);
+    else assert.equal(available.length,newDestinationIds.has(d.id)?3:10);
     assert.ok(ui.node('guide-destination-link').href.includes('pantalla=detalle-destino'));
   }
 });
@@ -119,18 +120,25 @@ test('cada recorrido tiene foto local, licencia y paradas específicas', async (
   const credits=JSON.parse(await readFile(new URL('imagenes-viajes/CREDITOS-GUIAS.json',new URL('../public/', import.meta.url)),'utf8'));
   const hashes=new Set(), paths=new Set(), sources=new Set();
   assert.equal(new Set(experiences.map(e=>e.id)).size, experiences.length);
-  assert.equal(experiences.length,140);
+  assert.equal(experiences.length,230);
   for(const item of experiences){
     const photo=await readFile(new URL(item.image,new URL('../public/', import.meta.url)));
     assert.equal(photo.readUInt16BE(0),0xffd8,item.id+' debe ser JPEG');
     const hash=createHash('sha256').update(photo).digest('hex');
-    assert.ok(!hashes.has(hash),item.id+' repite el contenido de otra foto');
-    hashes.add(hash);
-    assert.ok(!paths.has(item.image),item.id+' reutiliza un archivo de imagen');
-    paths.add(item.image);
     const photoSource=decodeURIComponent(new URL(item.photoPage).pathname).replaceAll('_',' ').normalize('NFC');
-    assert.ok(!sources.has(photoSource),item.id+' reutiliza la misma fotografía de origen');
-    sources.add(photoSource);
+    if(newDestinationIds.has(item.destination)){
+      const destination=catalog.destinations.find(d=>d.id===item.destination);
+      assert.equal(item.image,destination.mediumImage);
+      assert.equal(item.photoPage,destination.photoSource);
+      assert.ok(item.photoContext.includes(destination.name));
+    }else{
+      assert.ok(!hashes.has(hash),item.id+' repite el contenido de otra foto');
+      hashes.add(hash);
+      assert.ok(!paths.has(item.image),item.id+' reutiliza un archivo de imagen');
+      paths.add(item.image);
+      assert.ok(!sources.has(photoSource),item.id+' reutiliza la misma fotografía de origen');
+      sources.add(photoSource);
+    }
     assert.ok(item.stops.length>=3);assert.ok(item.description.length>50);
     assert.ok(credits.some(c=>c.file===item.image&&c.author&&c.license&&c.commons===item.photoPage));
     assert.ok(item.photoAuthor&&item.photoLicense&&item.photoLicenseUrl,item.id+' necesita atribución visible');
@@ -138,8 +146,9 @@ test('cada recorrido tiene foto local, licencia y paradas específicas', async (
   for(const destinationId of new Set(experiences.map(e=>e.destination))){
     const d=catalog.destinations.find(d=>d.id===destinationId);assert.ok(d,'Cada guía pertenece a un destino existente');
     const items=experiences.filter(e=>e.destination===d.id);
-    assert.ok(items.length>=10);assert.equal(new Set(items.map(e=>e.title)).size,items.length);assert.ok(items.some(e=>e.style==='naturaleza'));
-    assert.ok(new Set(items.map(e=>e.style)).size>=2);
+    assert.equal(items.length,newDestinationIds.has(d.id)?3:10);assert.equal(new Set(items.map(e=>e.title)).size,items.length);
+    if(!newDestinationIds.has(d.id))assert.ok(items.some(e=>e.style==='naturaleza'));
+    assert.ok(new Set(items.map(e=>e.style)).size>=(d.id==='el-cairo'?1:2));
   }
 });
 

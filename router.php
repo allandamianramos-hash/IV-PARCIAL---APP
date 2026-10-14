@@ -48,12 +48,14 @@ try {
     $public[]='recuperar-contrasena.html';
     $public[]='js/cuenta/password-recovery.js';
     $public[]='js/cuenta/microsoft-sdk.js';
+    $public[]='fonts/Kalam-Regular.ttf';
     $public[]='js/idiomas/locale-engine.js';foreach(['es','en','de','fr','it','pt','ja','ko','zh','ar'] as $lang)$public[]='locales/'.$lang.'.json';
     if (!in_array($file,$public,true) && !preg_match('~^(imagenes|imagenes-viajes)(?:/[a-zA-Z0-9_-]+)+\.(jpg|png|webp)$~D',$file)) throw new HttpError(404,'Archivo no encontrado.');
     $absolute=__DIR__.'/public/'.$file;
     if (!is_file($absolute)) throw new HttpError(404,'Archivo no encontrado.');
     $ext=pathinfo($file,PATHINFO_EXTENSION);
     $mime=['html'=>'text/html; charset=utf-8','js'=>'text/javascript; charset=utf-8','css'=>'text/css; charset=utf-8','jpg'=>'image/jpeg','png'=>'image/png','webp'=>'image/webp','json'=>'application/json; charset=utf-8'];
+    $mime['ttf']='font/ttf';
     header('Content-Type: '.$mime[$ext]);
     if ($method==='HEAD') exit;
     if (in_array($file,['error.html','microsoft-callback.html'],true)) { readfile($absolute);exit; }

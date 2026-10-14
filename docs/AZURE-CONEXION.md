@@ -65,3 +65,9 @@ Las reservas, pagos y billetes del proyecto siguen siendo demostraciones.
 Los usuarios y las selecciones sí se almacenan en SQL Server.
 
 Referencia: [Conexión a Azure SQL desde SSMS](https://learn.microsoft.com/en-us/azure/azure-sql/database/connect-query-ssms?view=azuresql).
+
+## Acceso restablecido el 14 de octubre de 2026
+
+Se añadió la regla `ClientIPAddress_2026-10-14_9-32-33` únicamente para `177.10.186.101`, la IP actual de este equipo. Se mantuvieron las demás reglas y el acceso limitado a redes seleccionadas. PHP y Node verificaron conexión, lectura, escritura, registro, acceso y persistencia. La carga aditiva incorporó los 30 destinos y 90 alojamientos nuevos sin modificar registros previos.
+
+Si el proveedor cambia de nuevo la IP pública, será necesario autorizar la nueva dirección en Redes del servidor. Abre Rumbo en `http://127.0.0.1:8000`; el acceso desde Live Server en 5500 redirige al servidor PHP.

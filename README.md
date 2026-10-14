@@ -40,7 +40,7 @@ La raíz conserva los accesos `.cmd`, los puntos de entrada `router.php` y `serv
 
 ## Funcionamiento
 
-Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hotel, servicios, preparativos y resumen de compra de demostración. Hay 100 productos y 40 destinos; el catálogo combina los datos de SQL con las propuestas adicionales del sitio.
+Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hotel, servicios, preparativos y resumen de compra de demostración. Hay 100 productos y 70 destinos; el catálogo combina los datos de SQL con las propuestas adicionales del sitio. La ampliación de 30 ciudades, sus fuentes y su actualización aditiva en SQL se describen en [destinos-ampliados.md](docs/destinos-ampliados.md).
 
 Si recibiste tu paquete personal del equipo, extraelo y abre `CONECTAR-EQUIPO.cmd`. Consulta [Acceso del equipo](docs/ACCESO-EQUIPO.md) para los requisitos y la autorización de la IP de tu casa. Para consultar las tablas en SSMS, abre `VER-BD-AZURE.cmd`.
 

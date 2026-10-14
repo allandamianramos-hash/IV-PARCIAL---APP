@@ -1,0 +1,48 @@
+# Selección visual: reemplazos de fotos ajenas al lugar, históricas, poco claras o demasiado parecidas.
+lisboa|2:Belém Tower Lisbon|5:Jeronimos Lisbon|6:Lisbon Portugal Rossio|7:Lisbon Estrela garden|10:Lisbon Parque Nacoes
+londres|4:London Regent park|7:London Covent Garden
+toronto|4:Toronto Distillery District
+rio-janeiro|4:Rio Janeiro Santa Teresa|8:Rio Janeiro Lapa|10:Rio Janeiro Copacabana
+ciudad-mexico|9:Mexico City Coyoacan|10:Mexico City Bellas Artes
+bogota|4:Bogota Candelaria|5:Bogota Monserrate|6:Bogota Usaquen|7:Bogota Simon Bolivar park|9:Bogota botanical garden|10:Bogota Macarena
+cartagena|5:Cartagena Colombia Getsemani
+lima|5:Lima Miraflores|6:Lima Barranco|7:Lima San Isidro Olivar|8:Lima Costa Verde|9:Lima Plaza San Martin
+buenos-aires|1:Buenos Aires Caminito|3:Buenos Aires Recoleta|4:Buenos Aires Rosedal|6:Buenos Aires San Telmo market|7:Buenos Aires Puerto Madero|9:Buenos Aires Palermo park|10:Buenos Aires Congreso
+santiago|3:Santiago Chile Lastarria|5:Santiago Chile Santa Lucia|8:Santiago Chile Bellavista|9:Santiago Chile Bicentenario park
+medellin|3:Medellin Botero plaza|4:Medellin botanical garden|6:Medellin Pueblito Paisa|8:Medellin Arvi|9:Medellin Parque Pies Descalzos
+punta-cana|8:Bavaro beach Dominican Republic|9:Punta Cana beach palm
+san-salvador|1:Catedral Metropolitana San Salvador El Salvador -Oviedo -Spain|2:San Salvador Boqueron|4:San Salvador Bicentenario|6:San Salvador Teatro Nacional|8:San Salvador Palacio Nacional|10:San Salvador Libertad
+san-juan|1:San Juan Puerto Rico fort|3:San Juan Puerto Rico old city|5:San Juan Puerto Rico Condado|10:San Juan Puerto Rico Ocean Park
+los-angeles|4:Los Angeles Venice canals|10:Los Angeles Santa Monica
+las-vegas|1:Las Vegas Red Rock Canyon|4:Las Vegas Fremont|5:Las Vegas Springs Preserve
+vancouver|2:Vancouver Stanley Park|4:Vancouver Granville Island
+praga|8:Letna Prague panorama|9:Prague Kampa|10:Prague Vysehrad
+estambul|5:Istanbul Gulhane park|8:Istanbul Galata|9:Istanbul Ortakoy
+dubai|2:Dubai Al Fahidi|3:Dubai Marina|4:Dubai Zabeel Park|5:Dubai Creek
+seul|1:Seoul Gyeongbokgung|2:Seoul Bukchon|4:Changdeokgung Donhwamun gate|5:Seoul Namsan|6:Seoul Insadong|8:Seoul Cheonggyecheon|9:Seoul Yeouido park|10:Seoul Jogyesa
+singapur|3:Singapore Botanic Gardens|6:Singapore Gardens Bay|7:Singapore Chinatown|9:Singapore Kampong Glam
+bangkok|8:Bangkok Wat Arun
+hong-kong|6:Hong Kong Nan Lian Garden|7:Hong Kong Stanley|8:Hong Kong Tai O|9:Hong Kong Man Mo Temple
+macao|2:Macau Senado square|4:Macau Guia lighthouse|5:Macau A Ma temple|6:Macau Taipa|7:Macau Camoes garden|8:Macau Coloane
+antalya|4:Antalya Hadrian gate|5:Antalya Duden waterfall|6:Antalya Kaleici|7:Konyaaltı Beach Antalya|8:Antalya Kursunlu waterfall
+kuala-lumpur|4:Batu Caves entrance statue|6:Kuala Lumpur Merdeka Square|8:Kuala Lumpur Perdana garden
+pattaya|4:Pattaya Sanctuary Truth|8:Nong Nooch garden landscape|10:Khao Chi Chan Buddha mountain
+taipei|7:Taipei Daan park|8:Taipei Beitou|9:Taipei Liberty Square|10:Taipei Longshan temple
+milan|8:Milan Sempione park|10:Milan Italy Navigli
+viena|3:Vienna Belvedere gardens|4:Vienna Schonbrunn|8:Vienna Prater
+munich|2:Munich English Garden|5:Munich Nymphenburg park|7:Munich Neues Rathaus Marienplatz facade
+dublin|3:Dublin Phoenix Park|4:Ha'penny Bridge Dublin river|5:Dublin Temple Bar|6:Dublin Trinity College|8:Dublin Docklands|9:Dublin Merrion Square|10:Dublin Howth harbour
+edimburgo|1:Edinburgh Dean Village|8:Edinburgh Calton Hill
+pekin|3:Beijing Temple Heaven|4:Beijing Beihai Park|9:Beijing Jingshan Park
+shanghai|3:Shanghai Yuyuan garden|5:Shanghai Jing an temple
+hanoi|2:Hanoi Hoan Kiem|3:Hanoi Temple Literature|4:Hanoi Tran Quoc|5:Hanoi West Lake|7:Hanoi Opera House
+ho-chi-minh|2:Ho Chi Minh City Notre Dame|3:Ho Chi Minh City Central Post Office|4:Ho Chi Minh City Tao Dan|5:Ho Chi Minh City Opera House|6:Ho Chi Minh City Thien Hau|9:Ho Chi Minh City Saigon skyline river
+delhi|1:Delhi Qutub Minar|2:Delhi Humayun Tomb|3:Delhi Lodhi Gardens|4:Delhi Sunder Nursery|7:Delhi India Gate|8:Delhi Hauz Khas|9:Connaught Place Delhi Central Park|10:Delhi Lotus Temple
+mumbai|9:Mumbai Chhatrapati Shivaji Terminus|10:Mumbai Hanging Gardens
+agra|7:Agra Itimad Daulah|8:Akbar tomb Sikandra entrance|10:Agra Mehtab Bagh
+jaipur|9:Jaipur Jal Mahal
+el-cairo|1:Cairo Al Azhar Park|8:Cairo Nile|10:Cairo Ibn Tulun
+marrakech|1:Marrakech Majorelle|2:Marrakech Menara|4:Marrakech Bahia Palace|6:Marrakech Ben Youssef|7:Marrakech Koutoubia
+meca|2:Mecca Masjid Haram|3:Mecca Jabal Hira|4:Makkah Clock Tower|5:Makkah Abraj Bait|6:Mecca Mina|7:Mecca Kaaba|8:Mecca Arafat|10:Mecca Jabal Thawr
+medina|2:Medina Saudi Quba mosque|6:Medina Saudi Qiblatain mosque|7:Medina Saudi Uhud|8:Al Masjid an Nabawi courtyard Medina|10:Medina Saudi Hejaz station
+shenzhen|1:Shenzhen Dapeng fortress|5:Lianhuashan Shenzhen skyline|9:Shenzhen Bay Park skyline|10:Shenzhen Fairy Lake

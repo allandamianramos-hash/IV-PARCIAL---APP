@@ -2,6 +2,8 @@
 // Research and photo metadata live in docs/nuevos-*-*.json.
 import {readFile, writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 const read = file => readFile(new URL('../'+file, import.meta.url), 'utf8');
 const json = async file => JSON.parse(await read(file));
 const write = (file, value) => writeFile(new URL('../'+file, import.meta.url), value);
@@ -73,7 +75,7 @@ await mergeCredits('public/imagenes-viajes/CREDITOS-GUIAS.json',guides.map(g=>({
 })));
 const escape = value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const credit = (label,source,author,license,url)=>`<li><a href="${escape(source)}">${escape(label)}</a> · <span translate="no">${escape(author)}</span> · <a href="${escape(url)}">${escape(license)}</a></li>`;
-const creditsHtml='<h3>30 destinos nuevos y sus recorridos</h3><p>Las fotografías de los recorridos nuevos muestran el destino como referencia. Las paradas propuestas se detallan en cada experiencia.</p><ul>'+additions.map(d=>credit(d.name,d.photoSource,d.photoAuthor,d.photoLicense,d.photoLicenseUrl)).join('')+'</ul><h3>Alojamientos de los destinos nuevos</h3><p>Alojamientos ficticios y fotografías de referencia, sin relación comercial con los establecimientos fotografiados.</p><ul>'+additions.flatMap(d=>d.hotels.map(h=>credit(h.name+' · '+d.name,h.photoSource,h.photoAuthor,h.photoLicense,h.photoLicenseUrl))).join('')+'</ul>';
+const creditsHtml='<h3>Portadas de los 30 destinos incorporados</h3><p>Cada recorrido incluye su propia fotografía y sus créditos en la sección Experiencias.</p><ul>'+additions.map(d=>credit(d.name,d.photoSource,d.photoAuthor,d.photoLicense,d.photoLicenseUrl)).join('')+'</ul><h3>Alojamientos de los destinos nuevos</h3><p>Alojamientos ficticios y fotografías de referencia, sin relación comercial con los establecimientos fotografiados.</p><ul>'+additions.flatMap(d=>d.hotels.map(h=>credit(h.name+' · '+d.name,h.photoSource,h.photoAuthor,h.photoLicense,h.photoLicenseUrl))).join('')+'</ul>';
 let html=await read('public/viajes.html');
 const start='<!-- BEGIN CREDITOS OCTUBRE 2026 -->', end='<!-- END CREDITOS OCTUBRE 2026 -->';
 const creditsBlock=start+creditsHtml+end;
@@ -81,3 +83,5 @@ if(html.includes(start)) html=html.slice(0,html.indexOf(start))+creditsBlock+htm
 else {const at=html.indexOf('</details>',html.indexOf('id="creditos-imagenes"')); assert.ok(at>0);html=html.slice(0,at)+creditsBlock+html.slice(at);}
 await write('public/viajes.html',html);
 console.log(`Integrados ${additions.length} destinos, ${hotelPhotos.length} hospedajes y ${guides.length} recorridos.`);
+// La ampliación histórica no debe restaurar tres recorridos ni sus fotos repetidas.
+execFileSync(process.execPath,[fileURLToPath(new URL('completar-catalogo.mjs',import.meta.url))],{stdio:'inherit'});

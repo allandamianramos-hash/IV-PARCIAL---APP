@@ -9,6 +9,7 @@ const source=await read('public/js/destinos/viajes.js');
 const load=window=>{const context={window};vm.runInNewContext(source.slice(0,source.indexOf('/* Abre una')),context);return context;};
 const context=load({}),catalog=context.window.RumboViajesDatos;
 const cities=JSON.parse(await read('docs/nuevos-destinos-contenido.json'));
+const baseCatalog=JSON.parse(await read('docs/catalogo-auditoria-base.json'));
 const original=JSON.parse(await read('tests/fixtures/destinos-originales.json'));
 vm.runInNewContext(await read('public/js/destinos/guias-catalogo.js'),context);
 
@@ -16,11 +17,15 @@ test('los 40 destinos originales conservan exactamente sus datos, fotos, hoteles
   for(const [id,hash] of Object.entries(original)){
     const d=catalog.destinations.find(d=>d.id===id);
     assert.ok(d,id);
-    assert.equal(createHash('sha256').update(JSON.stringify(d)).digest('hex'),hash,id);
+    const previous=JSON.parse(JSON.stringify(d));
+    const initial=baseCatalog.destinations.find(item=>item.id===id);
+    previous.hotels=previous.hotels.filter(h=>initial.hotels.some(old=>old.id===h.id));
+    for(const hotel of previous.hotels){const old=initial.hotels.find(h=>h.id===hotel.id);if(!old.photoLicenseUrl)hotel.photoLicenseUrl=old.photoLicenseUrl;}
+    assert.equal(createHash('sha256').update(JSON.stringify(previous)).digest('hex'),hash,id);
   }
 });
 
-test('30 ciudades nuevas completas, sin duplicados, con fotos locales adaptables y tres recorridos',async()=>{
+test('30 ciudades nuevas completas, sin duplicados, con fotos locales adaptables y diez recorridos',async()=>{
   assert.equal(catalog.destinations.length,70);
   assert.equal(cities.length,30);
   assert.equal(new Set(catalog.destinations.map(d=>d.id)).size,70);
@@ -33,15 +38,15 @@ test('30 ciudades nuevas completas, sin duplicados, con fotos locales adaptables
     assert.ok(d.airport.name);
     assert.ok(d.imageWidth>=1600&&d.imageHeight>=900,d.id);
     for(const path of [d.image,d.thumbnail,d.mediumImage]) await access(new URL('public/'+path,root));
-    assert.equal(d.hotels.length,3);
+    assert.equal(d.hotels.length,5);
     for(const origin of catalog.origins){
       const options=catalog.flights(d,origin,4);
       assert.equal(options.length,6);
       assert.ok(options.every(f=>f.stops==='Con conexiones'&&f.groupDiscount===5&&f.minutes>0));
     }
     const guides=context.window.RumboGuias.filter(g=>g.destination===d.id);
-    assert.equal(guides.length,3);
-    assert.equal(new Set(guides.map(g=>g.title)).size,3);
+    assert.equal(guides.length,10);
+    assert.equal(new Set(guides.map(g=>g.title)).size,10);
     assert.ok(new Set(guides.map(g=>g.style)).size>=(d.id==='el-cairo'?1:2));
     for(const g of guides){assert.equal(g.stops.length,3);assert.ok(g.price>0&&g.hours>0);assert.ok(g.photoContext.includes(d.name));}
     assert.ok(city.sources.length>=2);

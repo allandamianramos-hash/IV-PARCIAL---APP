@@ -1,5 +1,15 @@
 # Catálogo ampliado
 
+## Revisión uniforme del 14 de octubre de 2026
+
+El catálogo activo tiene 70 destinos, 700 recorridos y 350 hospedajes de demostración: diez recorridos y cinco hospedajes por destino. Se conservan los identificadores, tarifas y contenido de los recorridos anteriores. Las fotografías se verifican por ruta, SHA-256 y fuente original para detectar también copias con otro tamaño; cada elemento tiene una imagen propia. Las variantes de portada de un mismo destino conservan su función adaptable.
+
+Los recorridos adicionales están en `docs/recorridos-rutas.txt`. Las fotografías, fuentes y licencias están en `docs/recorridos-fotos-completas.json`. `node scripts/completar-catalogo.mjs` regenera el catálogo y los créditos de manera determinista. La ampliación histórica llama a este generador para no restaurar recorridos incompletos ni fotos repetidas. Los hoteles adicionales se incorporan también cuando se carga un catálogo SQL anterior, respetando las tarifas guardadas. Esta revisión no requiere ejecutar una migración ni escribir en la base compartida.
+
+La navegación usa la restauración del navegador y guarda posición, filtros y detalles abiertos por entrada del historial. También recupera esa vista después de las recargas de sincronización de cuenta. Una navegación nueva conserva el comportamiento normal de inicio y las anclas explícitas.
+
+Validación: `npm test`, `npm run build`, `tests/browser/history-position.test.mjs` y `tests/browser/destinations-complete.test.mjs`, en 1440 y 390 píxeles. Las pruebas de catálogo recorren los 70 destinos y decodifican sus imágenes. Las secciones siguientes describen las ampliaciones históricas anteriores a esta revisión.
+
 70 destinos; el inicio presenta como máximo seis. El filtro busca en todo el catálogo y el enlace conserva los criterios de búsqueda.
 
 Londres, Lisboa, Toronto y Río de Janeiro tienen cinco alojamientos ficticios cada uno, con fotos de referencia y tarifas de demostración. Las fuentes y licencias se conservan en CREDITOS-HOTELES.json y CREDITOS-DESTINOS-NUEVOS.json.

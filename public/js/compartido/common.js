@@ -31,9 +31,53 @@
 /* Enlaces compartidos. Cada sección conserva su propio módulo de datos. */
 (() => {
   'use strict';
-  // Preserve explicit anchors, but start every section at its cover.
-  if ('scrollRestoration' in history) history.scrollRestoration='manual';
-  window.addEventListener('pageshow',()=>{if(!location.hash)window.scrollTo({top:0,left:0,behavior:'instant'});});
+  // Cada entrada del historial conserva su posición, incluso cuando la caché
+  // de navegación se recarga para sincronizar la cuenta y la base de datos.
+  if ('scrollRestoration' in history) history.scrollRestoration='auto';
+  const positionKey='rumboView';
+  const previousView=history.state?.[positionKey];
+  const navigationType=performance.getEntriesByType('navigation')[0]?.type;
+  let restoring=false, cancelRestore=()=>{};
+  const filterSelector='#destination-filters input, #destination-filters select, #orden-destinos, #hotel-filters input, #hotel-filters select, #hotel-sort, #flight-sort, #guide-form input, #guide-form select, #guide-sort, #product-search, #product-sort';
+  const remember=()=>{
+    if(restoring)return;
+    const filters=Array.from(document.querySelectorAll(filterSelector),node=>({id:node.id,value:node.value,checked:node.checked})).filter(item=>item.id);
+    const details=Array.from(document.querySelectorAll('main details'),(node,index)=>node.open?index:-1).filter(index=>index>=0);
+    const guideFilter=document.querySelector('[data-guide-filter][aria-pressed="true"]')?.dataset.guideFilter;
+    const productCategory=document.querySelector('.filter-btn[aria-pressed="true"]')?.dataset.category;
+    try{history.replaceState({...history.state,[positionKey]:{x:scrollX,y:scrollY,filters,details,guideFilter,productCategory}},'');}catch(_){/* Navegación local o almacenamiento restringido. */}
+  };
+  window.addEventListener('pagehide',remember);
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')remember();});
+  window.addEventListener('pageshow',event=>{
+    if(event.persisted||!previousView||!['back_forward','reload'].includes(navigationType))return;
+    restoring=true;
+    for(const item of previousView.filters||[]){
+      const node=document.getElementById(item.id);
+      if(!node?.matches(filterSelector))continue;
+      node.value=item.value;
+      if(node.type==='checkbox'||node.type==='radio')node.checked=item.checked;
+    }
+    // Renderizar una sola vez cada grupo, después de recuperar sus valores.
+    for(const selector of ['#guide-form','#destination-filters','#hotel-filters','#orden-destinos','#hotel-sort','#flight-sort','#guide-sort','#product-sort']){
+      const node=document.querySelector(selector);
+      node?.dispatchEvent(new Event(node.tagName==='FORM'?'input':'change',{bubbles:true}));
+    }
+    const selectedFilter=Array.from(document.querySelectorAll('[data-guide-filter]')).find(node=>node.dataset.guideFilter===previousView.guideFilter);
+    selectedFilter?.click();
+    const selectedCategory=Array.from(document.querySelectorAll('.filter-btn')).find(node=>node.dataset.category===previousView.productCategory);
+    selectedCategory?.click();
+    document.querySelectorAll('main details').forEach((node,index)=>{node.open=(previousView.details||[]).includes(index);});
+    let frame,observer,timer;
+    const restore=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>window.scrollTo({left:previousView.x,top:previousView.y,behavior:'instant'}));};
+    cancelRestore=()=>{cancelAnimationFrame(frame);observer?.disconnect();clearTimeout(timer);restoring=false;};
+    // Fuentes, imágenes y la cabecera pueden terminar de ajustar el diseño.
+    observer=new ResizeObserver(restore);observer.observe(document.body);
+    restore();document.fonts?.ready.then(()=>{if(restoring)restore();});
+    timer=setTimeout(cancelRestore,2500);
+  });
+  // Nunca luchar contra una nueva acción del usuario.
+  for(const type of ['wheel','touchstart','pointerdown','keydown'])window.addEventListener(type,()=>cancelRestore(),{passive:true});
   if(document.querySelector('.services-main,.store-hero') || document.querySelector('.rv-page')) document.body.classList.add('rumbo-services');
   const routes={login:'iniciar-sesion',register:'registro',experiences:'guias',transfers:'traslados',insurance:'seguros',faq:'ayuda',support:'ayuda',changes:'cambios',about:'acerca',team:'equipo',privacy:'privacidad',terms:'terminos'};
   document.querySelectorAll('[data-module]').forEach(button=>{

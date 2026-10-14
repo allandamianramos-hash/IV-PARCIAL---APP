@@ -99,7 +99,7 @@ test('los 70 destinos tienen presupuestos, hospedajes e imágenes locales', asyn
   const hotelIds = new Set();
   for (const d of destinations) {
     assert.ok(d.inspirationBudget > 0);
-    assert.ok(d.hotels.length >= 3);
+    assert.equal(d.hotels.length,5);
     await access(new URL(d.image, new URL('../public/', import.meta.url)));
     for (const h of d.hotels) {
       assert.ok(!hotelIds.has(h.id)); hotelIds.add(h.id);
@@ -107,7 +107,7 @@ test('los 70 destinos tienen presupuestos, hospedajes e imágenes locales', asyn
       await access(new URL(`imagenes-viajes/${h.image}`, new URL('../public/', import.meta.url)));
     }
   }
-  assert.equal(hotelIds.size, 246);
+  assert.equal(hotelIds.size, 350);
 });
 
 test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => {

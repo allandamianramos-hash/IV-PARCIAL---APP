@@ -13,7 +13,7 @@ try{
   if(ids.size!==30)throw Error('La ampliación debe contener exactamente 30 destinos.');
   const destinations=context.window.RumboViajesDatos.destinations;
   const selected=destinations.filter(d=>ids.has(d.id));
-  if(selected.length!==30||selected.some(d=>d.hotels.length!==3))throw Error('Catálogo incompleto.');
+  if(selected.length!==30||selected.some(d=>d.hotels.length!==5))throw Error('Catálogo incompleto.');
   const {pool,sql}=await getDb();
   const tx=new sql.Transaction(pool);await tx.begin();
   try{

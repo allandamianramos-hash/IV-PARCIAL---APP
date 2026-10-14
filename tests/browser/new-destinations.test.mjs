@@ -81,7 +81,7 @@ test('los nuevos viajes completan vuelo, hotel, traslado, seguro, guía y resume
       assert.equal(await page.locator('[data-select-flight]').count(),6);
       await page.locator('[data-select-flight]').first().click();await showSummary(page);await page.locator('#continue-hotel').click();
       await page.waitForURL(/pantalla=hoteles/);await completeBookingForm(page);
-      assert.equal(await page.locator('[data-select-hotel]').count(),3);
+      assert.equal(await page.locator('[data-select-hotel]').count(),5);
       await page.locator('[data-select-hotel]:not([disabled])').first().click();await showSummary(page);await page.locator('#save-selection').click();
       await page.waitForURL(/seccion=traslados/);await completeBookingForm(page);
       assert.equal(await page.locator('#route').inputValue(),id);
@@ -90,7 +90,7 @@ test('los nuevos viajes completan vuelo, hotel, traslado, seguro, guía y resume
       assert.equal(await page.locator('#destination').inputValue(),id);
       await page.locator('[data-choose]').first().click();await showSummary(page);await page.locator('#save-service').click();
       await page.waitForURL(/seccion=guias/);await completeBookingForm(page);
-      assert.equal(await page.locator('[data-guide-choose]').count(),3);
+      assert.equal(await page.locator('[data-guide-choose]').count(),10);
       await page.locator('[data-guide-choose]').first().click();await showSummary(page);await page.locator('#guide-save').click();
       await page.waitForFunction(()=>!window.RumboStorage.hasPending());
       const records=await page.evaluate(()=>JSON.parse(window.RumboStorage.getItem('rumbo.services.v1')));

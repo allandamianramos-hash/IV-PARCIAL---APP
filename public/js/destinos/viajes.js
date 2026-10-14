@@ -5841,6 +5841,1941 @@ additionalDestinations.push(...[
     const photoKey = ({barcelona:"barcelona-sagrada-familia",madrid:"madrid-cibeles",venecia:"venecia-rialto"})[d.id] || d.id;
     if (photo) Object.assign(d, { image: `imagenes-viajes/destinos/${photo[0]}`, imageWidth: photo[1], imageHeight: photo[2], alt: photo[3], intro: photo[4], thumbnail: `imagenes-viajes/destinos/miniaturas/${photoKey}.jpg`, mediumImage: `imagenes-viajes/destinos/miniaturas/${photoKey}-1280.jpg` });
   });
+  // BEGIN CATALOGO UNIFORME
+  const completeHotelOptions = {
+  "ciudad-mexico": [
+    {
+      "id": "ciudad-mexico-estancia-4",
+      "name": "Ciudad de México · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1800,
+      "image": "hoteles/estancia-ciudad-mexico-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Basile Morin",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Lobby_lounge_of_Amantaka_Suite_Amantaka_luxury_Resort_%26_Hotel_Luang_Prabang_Laos.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "ciudad-mexico-estancia-5",
+      "name": "Ciudad de México · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2325,
+      "image": "hoteles/estancia-ciudad-mexico-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Kurt Kaiser",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_in_hotel_room_4.jpg",
+      "photoLicense": "CC0",
+      "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "bogota": [
+    {
+      "id": "bogota-estancia-4",
+      "name": "Bogotá · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1560,
+      "image": "hoteles/estancia-bogota-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Basile Morin",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Restaurant_room_of_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "bogota-estancia-5",
+      "name": "Bogotá · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2015,
+      "image": "hoteles/estancia-bogota-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Ahbmamiat",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Banquet_Room_interior,_Brother_Hotel_20130212.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "cartagena": [
+    {
+      "id": "cartagena-estancia-4",
+      "name": "Cartagena · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2040,
+      "image": "hoteles/estancia-cartagena-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Sridhar Rao",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_beds.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "cartagena-estancia-5",
+      "name": "Cartagena · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2635,
+      "image": "hoteles/estancia-cartagena-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "David Adam Kess",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:La_Coupole_Hotel,_Quito_(interior)_pic.b476.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "lima": [
+    {
+      "id": "lima-estancia-4",
+      "name": "Lima · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1920,
+      "image": "hoteles/estancia-lima-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "David Adam Kess",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:La_Coupole_Hotel,_Quito_(interior)_pic.g1a.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "lima-estancia-5",
+      "name": "Lima · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2480,
+      "image": "hoteles/estancia-lima-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Jonathan Schilling",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:University_Arms_Hotel_-_room_interior_1999.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "buenos-aires": [
+    {
+      "id": "buenos-aires-estancia-4",
+      "name": "Buenos Aires · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2280,
+      "image": "hoteles/estancia-buenos-aires-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "David Adam Kess",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:La_Coupole_Hotel,_Quito_(interior)_dining_area._4o5.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "buenos-aires-estancia-5",
+      "name": "Buenos Aires · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2945,
+      "image": "hoteles/estancia-buenos-aires-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Pub. by Bell Block News & Novelty Co., Cincinnati, Ohio. \"Tichnor Quality Views,\" Reg. U. S. Pat. Off. Made Only by Tichnor Bros., Inc., Boston, Mass.",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Skyline_dining_room,_Terrace_Plaza_Hotel,_Cincinnati,_Ohio_(79213).jpg",
+      "photoLicense": "Public domain",
+      "photoLicenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "santiago": [
+    {
+      "id": "santiago-estancia-4",
+      "name": "Santiago · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2160,
+      "image": "hoteles/estancia-santiago-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Yourusernamewillbepublic2",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:View_from_hotel_bedroom_window_overlooking_frayed_bed.jpg",
+      "photoLicense": "CC0",
+      "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "santiago-estancia-5",
+      "name": "Santiago · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2790,
+      "image": "hoteles/estancia-santiago-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Julius Barclay",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "medellin": [
+    {
+      "id": "medellin-estancia-4",
+      "name": "Medellín · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1680,
+      "image": "hoteles/estancia-medellin-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Carissa Rogers",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Kimpton_Hotel_Monaco_Salt_Lake_City,_room_interior.jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "medellin-estancia-5",
+      "name": "Medellín · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2170,
+      "image": "hoteles/estancia-medellin-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Schezar",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_window_Guoman_Tower_Hotel_2014-03-05.jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "punta-cana": [
+    {
+      "id": "punta-cana-estancia-4",
+      "name": "Punta Cana · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2880,
+      "image": "hoteles/estancia-punta-cana-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Belmond_Grand_Hotel_Europe_Saint_Petersburg_sitting_room_stairways.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "punta-cana-estancia-5",
+      "name": "Punta Cana · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3720,
+      "image": "hoteles/estancia-punta-cana-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Belmond_Grand_Hotel_Europe_Saint_Petersburg_sitting_room_2.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "san-salvador": [
+    {
+      "id": "san-salvador-estancia-4",
+      "name": "San Salvador · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1440,
+      "image": "hoteles/estancia-san-salvador-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Ouuzo",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Rempart_Boutique_Hotel_Diyarbakir_Suite_Room_Interior.jpg",
+      "photoLicense": "CC BY 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "san-salvador-estancia-5",
+      "name": "San Salvador · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1860,
+      "image": "hoteles/estancia-san-salvador-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Rob Farrow",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Burgh_Island_Hotel_-_Dining_Room_(geograph_6005073).jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "san-juan": [
+    {
+      "id": "san-juan-estancia-4",
+      "name": "San Juan · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2760,
+      "image": "hoteles/estancia-san-juan-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Basile Morin",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Canopy_bed_and_wardrobes_in_Khan_Pool_Suite_at_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "san-juan-estancia-5",
+      "name": "San Juan · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3565,
+      "image": "hoteles/estancia-san-juan-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Swiscrevolve",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_%E8%82%87%E6%85%B6_Zhaoqing_Pearl_Hotel_Starlake_interior_hall_waiting_room_July_2012.JPG",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "los-angeles": [
+    {
+      "id": "los-angeles-estancia-4",
+      "name": "Los Ángeles · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3360,
+      "image": "hoteles/estancia-los-angeles-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Paradisus Bali",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:The_Reserve_Junior_Suite_Lagoon_Access_at_Paradisus_by_Meli%C3%A1_Bali.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "los-angeles-estancia-5",
+      "name": "Los Ángeles · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4340,
+      "image": "hoteles/estancia-los-angeles-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Tangerineduel",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Grand_Island_Hotel_interior_room_side_2006.JPG",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "las-vegas": [
+    {
+      "id": "las-vegas-estancia-4",
+      "name": "Las Vegas · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2760,
+      "image": "hoteles/estancia-las-vegas-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Kristina D.C. Hoeppner from Wellington, New Zealand",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_the_Kohinoor_Samudra_(2809899089).jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "las-vegas-estancia-5",
+      "name": "Las Vegas · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3565,
+      "image": "hoteles/estancia-las-vegas-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Missvain",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Aria_Resort_and_Casino_-_Hotel_room_-_Sarah_Stierch_-_Feb_2019_03.jpg",
+      "photoLicense": "CC BY 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "vancouver": [
+    {
+      "id": "vancouver-estancia-4",
+      "name": "Vancouver · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3360,
+      "image": "hoteles/estancia-vancouver-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Basile Morin",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Canopy_bed_of_Amantaka_Suite_in_Amantaka_luxury_Resort_%26_Hotel_in_Luang_Prabang_Laos_5x4.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "vancouver-estancia-5",
+      "name": "Vancouver · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4340,
+      "image": "hoteles/estancia-vancouver-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Richmond_Hotel_Premier_Musashi-Kosugi_single_bedroom_20100618-002.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "amsterdam": [
+    {
+      "id": "amsterdam-estancia-4",
+      "name": "Ámsterdam · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3240,
+      "image": "hoteles/estancia-amsterdam-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Virginia State Parks staff",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:BC_-_Cabin_7_Bedroom_(5857339143).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "amsterdam-estancia-5",
+      "name": "Ámsterdam · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4185,
+      "image": "hoteles/estancia-amsterdam-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "N509FZ",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Normal_room_in_Beijing_Hotel_(20150822151912).JPG",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "berlin": [
+    {
+      "id": "berlin-estancia-4",
+      "name": "Berlín · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2640,
+      "image": "hoteles/estancia-berlin-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Eliedion",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Bedroom%27s_Pardoes_suite_Efteling_hotel.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "berlin-estancia-5",
+      "name": "Berlín · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3410,
+      "image": "hoteles/estancia-berlin-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Sean MacEntee from Monaghan, Ireland",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Burlington_Hotel_Bed_(3171851812).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "praga": [
+    {
+      "id": "praga-estancia-4",
+      "name": "Praga · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2160,
+      "image": "hoteles/estancia-praga-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Atwngirl",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:2022_-_Americus_Hotel_-_Meeting_Room_-_Allentown_PA.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "praga-estancia-5",
+      "name": "Praga · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2790,
+      "image": "hoteles/estancia-praga-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Stephen Craven",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:St_John%27s_Hotel,_Hull_-_pool_room_-_geograph.org.uk_-_7543000.jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "estambul": [
+    {
+      "id": "estambul-estancia-4",
+      "name": "Estambul · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2280,
+      "image": "hoteles/estancia-estambul-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Atwngirl",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:2022_-_Americus_Hotel_-_Double_Room_-_Allentown_PA.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "estambul-estancia-5",
+      "name": "Estambul · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2945,
+      "image": "hoteles/estancia-estambul-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Atwngirl",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:2022_-_Americus_Hotel_-_King_Room_-_Allentown_PA.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "dubai": [
+    {
+      "id": "dubai-estancia-4",
+      "name": "Dubái · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3120,
+      "image": "hoteles/estancia-dubai-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Monterey_Amalie_Deluxe_Twin_bedroom_20130531-003.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "dubai-estancia-5",
+      "name": "Dubái · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4030,
+      "image": "hoteles/estancia-dubai-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Atwngirl",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:2022_-_Americus_Hotel_-_Single_Room_-_Allentown_PA.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "tokio": [
+    {
+      "id": "tokio-estancia-4",
+      "name": "Tokio · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3000,
+      "image": "hoteles/estancia-tokio-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Tess Mattew",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:2025.07.13_Interior_bedroom_Hotel_Hlybokae_02.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "tokio-estancia-5",
+      "name": "Tokio · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3875,
+      "image": "hoteles/estancia-tokio-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Kobe_Portopia_Hotel_Oval_Club_single_bedroom_20130621-001.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "seul": [
+    {
+      "id": "seul-estancia-4",
+      "name": "Seúl · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2520,
+      "image": "hoteles/estancia-seul-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Andy Li",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_a_room_of_The_Market_House,_Reading_2025-05-03.jpg",
+      "photoLicense": "CC0",
+      "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "seul-estancia-5",
+      "name": "Seúl · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3255,
+      "image": "hoteles/estancia-seul-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Another Believer",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Room_interior_in_the_Park_Hotel_Tokyo_in_Tokyo,_2019_-_330.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "singapur": [
+    {
+      "id": "singapur-estancia-4",
+      "name": "Singapur · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3360,
+      "image": "hoteles/estancia-singapur-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Alan Light",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_(2085899949).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "singapur-estancia-5",
+      "name": "Singapur · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4340,
+      "image": "hoteles/estancia-singapur-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Ridiculopathy",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_the_Midland_Hotel,_Manchester,_UK_02.jpg",
+      "photoLicense": "CC0",
+      "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "sidney": [
+    {
+      "id": "sidney-estancia-4",
+      "name": "Sídney · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3480,
+      "image": "hoteles/estancia-sidney-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Andy Li",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_a_room_of_Travelodge_Bath_City_Centre_2025-07-22.jpg",
+      "photoLicense": "CC0",
+      "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "sidney-estancia-5",
+      "name": "Sídney · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4495,
+      "image": "hoteles/estancia-sidney-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_and_window_at_Hotel_Esplanade_on_a_morning_in_October_2023.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "bangkok": [
+    {
+      "id": "bangkok-estancia-4",
+      "name": "Bangkok · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2122,
+      "image": "hoteles/estancia-bangkok-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_Clarion_Hotel_Helsinki.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "bangkok-estancia-5",
+      "name": "Bangkok · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2740,
+      "image": "hoteles/estancia-bangkok-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "PPR 19",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Premier_room,_The_Peninsula_Paris,_4_June_2014.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "hong-kong": [
+    {
+      "id": "hong-kong-estancia-4",
+      "name": "Hong Kong · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4056,
+      "image": "hoteles/estancia-hong-kong-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_and_window_at_Elite_Hotel_Ideon_Lund_on_an_evening_in_September_2024.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "hong-kong-estancia-5",
+      "name": "Hong Kong · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 5239,
+      "image": "hoteles/estancia-hong-kong-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_Radisson_Blu_Hotel_Oulu.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "macao": [
+    {
+      "id": "macao-estancia-4",
+      "name": "Macao · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3432,
+      "image": "hoteles/estancia-macao-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Liz Lawley from Rochester, NY",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Broadmoor_Hotel,_suite.jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "macao-estancia-5",
+      "name": "Macao · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4433,
+      "image": "hoteles/estancia-macao-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Fred Cherrygarden",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Grand_Hotel_de_Londres_-_Room_II.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "antalya": [
+    {
+      "id": "antalya-estancia-4",
+      "name": "Antalya · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2652,
+      "image": "hoteles/estancia-antalya-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_Ideon_Hotel_Lund_on_arrival_day.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "antalya-estancia-5",
+      "name": "Antalya · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3426,
+      "image": "hoteles/estancia-antalya-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_hotel_Inarin_Kultahovi,_Lapland,_Finland.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "kuala-lumpur": [
+    {
+      "id": "kuala-lumpur-estancia-4",
+      "name": "Kuala Lumpur · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1934,
+      "image": "hoteles/estancia-kuala-lumpur-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "OhanaUnitedTalk page",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Kuujjuarapik_Co-op_hotel_room_1.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "kuala-lumpur-estancia-5",
+      "name": "Kuala Lumpur · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2499,
+      "image": "hoteles/estancia-kuala-lumpur-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "r",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Yanggakdo_International_Hotel_room_2.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "phuket": [
+    {
+      "id": "phuket-estancia-4",
+      "name": "Phuket · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2496,
+      "image": "hoteles/estancia-phuket-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Ammodramus",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Argo_Hotel_interior_dining_room.jpg",
+      "photoLicense": "Public domain",
+      "photoLicenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "phuket-estancia-5",
+      "name": "Phuket · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3224,
+      "image": "hoteles/estancia-phuket-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Mack Male from Edmonton, AB, Canada",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:The_hotel_room_(2342690818).jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "pattaya": [
+    {
+      "id": "pattaya-estancia-4",
+      "name": "Pattaya · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2184,
+      "image": "hoteles/estancia-pattaya-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Michael Coghlan from Adelaide, Australia",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Room_-_Bed_and_Couch_(30381069315).jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "pattaya-estancia-5",
+      "name": "Pattaya · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2821,
+      "image": "hoteles/estancia-pattaya-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Millennium_Mitsui_Garden_Hotel_Tokyo_Superior_Double_bedroom_20170318-002.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "taipei": [
+    {
+      "id": "taipei-estancia-4",
+      "name": "Taipéi · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2964,
+      "image": "hoteles/estancia-taipei-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Pittigrilli",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_in_Paris,_France,_with_metal-sphere-lamp_with_reflections_of_photographer,_2013.jpg",
+      "photoLicense": "CC0",
+      "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "taipei-estancia-5",
+      "name": "Taipéi · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3829,
+      "image": "hoteles/estancia-taipei-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_La_Raison_Osaka_Standard_Twin_bedroom_20161216-002.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "milan": [
+    {
+      "id": "milan-estancia-4",
+      "name": "Milán · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3900,
+      "image": "hoteles/estancia-milan-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Okura_Kobe_Deluxe_Twin_bedroom_20120928-001.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "milan-estancia-5",
+      "name": "Milán · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 5038,
+      "image": "hoteles/estancia-milan-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_Elite_Hotel_Ideon_Lund_in_September_2024.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "viena": [
+    {
+      "id": "viena-estancia-4",
+      "name": "Viena · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4056,
+      "image": "hoteles/estancia-viena-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Opera Cadet from PARIS, FRANCE",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Seminar_room_2_-_Paris_Opera_Cadet_Hotel.jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "viena-estancia-5",
+      "name": "Viena · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 5239,
+      "image": "hoteles/estancia-viena-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Richmond_Hotels_single_bedroom_20110806-002.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "atenas": [
+    {
+      "id": "atenas-estancia-4",
+      "name": "Atenas · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3120,
+      "image": "hoteles/estancia-atenas-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Casey And Sonja",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Congress_Plaza_Hotel_(Room)_(4347276905).jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "atenas-estancia-5",
+      "name": "Atenas · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4030,
+      "image": "hoteles/estancia-atenas-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "John Pavelka from Austin, TX, USA",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Room_at_the_Amari_Hotel_(7476652362).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "budapest": [
+    {
+      "id": "budapest-estancia-4",
+      "name": "Budapest · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2558,
+      "image": "hoteles/estancia-budapest-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Unique Hotels",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Zen_Room_-_Kreutzwald_Hotel_Tallinn.jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "budapest-estancia-5",
+      "name": "Budapest · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3305,
+      "image": "hoteles/estancia-budapest-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "RobertoGlezV",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Gillow_Room.jpg",
+      "photoLicense": "CC0",
+      "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "florencia": [
+    {
+      "id": "florencia-estancia-4",
+      "name": "Florencia · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3900,
+      "image": "hoteles/estancia-florencia-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_Hotel_Kiilop%C3%A4%C3%A4.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "florencia-estancia-5",
+      "name": "Florencia · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 5038,
+      "image": "hoteles/estancia-florencia-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "阿道",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_the_Double_Room_of_H%E2%82%82O_Hotel-02.2024-11-04.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "munich": [
+    {
+      "id": "munich-estancia-4",
+      "name": "Múnich · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3744,
+      "image": "hoteles/estancia-munich-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Trusty_Osaka_Abeno_regular_double_bedroom_20130502-001.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "munich-estancia-5",
+      "name": "Múnich · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4836,
+      "image": "hoteles/estancia-munich-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Belmond_Grand_Hotel_Europe_Saint_Petersburg_Dining_room_stained_glass_windows.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "dublin": [
+    {
+      "id": "dublin-estancia-4",
+      "name": "Dublín · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4524,
+      "image": "hoteles/estancia-dublin-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Yokohama_Bay_Hotel_Tokyu_Exective_Twin_Park_View_bedroom_20150429-001.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "dublin-estancia-5",
+      "name": "Dublín · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 5844,
+      "image": "hoteles/estancia-dublin-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:The_Gate_Hotel_Kyoto_Takasegawa_by_Hulic_Essential_Double_bedroom_20200811-001.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "edimburgo": [
+    {
+      "id": "edimburgo-estancia-4",
+      "name": "Edimburgo · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4368,
+      "image": "hoteles/estancia-edimburgo-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_Hotel_Scandic_Malmen,_Stockholm.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "edimburgo-estancia-5",
+      "name": "Edimburgo · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 5642,
+      "image": "hoteles/estancia-edimburgo-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Daiwa_Royal_Hotel_Grande_Kyoto_Exective_Premier_Double_bedroom_20200830-001.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "pekin": [
+    {
+      "id": "pekin-estancia-4",
+      "name": "Pekín · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2652,
+      "image": "hoteles/estancia-pekin-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Ken Srail from North Olmsted, OH",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Cedar_Point%27s_Express_Hotel_room_(34146752262).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "pekin-estancia-5",
+      "name": "Pekín · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3426,
+      "image": "hoteles/estancia-pekin-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Ivan Mlinaric from Slovenia",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_in_Quam_Hotel_on_Kish_(2151534863).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "shanghai": [
+    {
+      "id": "shanghai-estancia-4",
+      "name": "Shanghái · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3120,
+      "image": "hoteles/estancia-shanghai-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Dennis G. Jarvis",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Imperial_Hotel_room_DK_2009.jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "shanghai-estancia-5",
+      "name": "Shanghái · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4030,
+      "image": "hoteles/estancia-shanghai-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Woodarelaisku",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:SK_Korea_tour_%E9%A6%96%E7%88%BE_%E6%9C%80%E4%BD%B3%E8%A5%BF%E6%96%B9_%E9%A6%96%E7%88%BE%E8%8A%B1%E5%9C%92%E9%85%92%E5%BA%97_Best_Western_Premier_Seoul_Garden_Hotel_room_interior_curtain_n_furniture_lighting_July-2013.JPG",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "hanoi": [
+    {
+      "id": "hanoi-estancia-4",
+      "name": "Hanói · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1810,
+      "image": "hoteles/estancia-hanoi-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Ben Salter",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Room_of_Burgh_Island_Hotel-4614268235.jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "hanoi-estancia-5",
+      "name": "Hanói · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2337,
+      "image": "hoteles/estancia-hanoi-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "https://www.flickr.com/photos/tipsfortravellers/",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Mercure_Santo_Domingo_Room_101_(2).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "ho-chi-minh": [
+    {
+      "id": "ho-chi-minh-estancia-4",
+      "name": "Ciudad Ho Chi Minh · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 1934,
+      "image": "hoteles/estancia-ho-chi-minh-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "David Hawgood",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Bow_Street_Magistrates%27_Court_room,_now_hotel_meeting_room_geograph-7166811-by-David-Hawgood.jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "ho-chi-minh-estancia-5",
+      "name": "Ciudad Ho Chi Minh · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2499,
+      "image": "hoteles/estancia-ho-chi-minh-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Monica D.",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_HRH_Tower_(Las_Vegas).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "delhi": [
+    {
+      "id": "delhi-estancia-4",
+      "name": "Delhi · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2028,
+      "image": "hoteles/estancia-delhi-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Good_Nature_Hotel_Kyoto_Garden_View_Terrace_Double_bedroom_20200704-002.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "delhi-estancia-5",
+      "name": "Delhi · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2620,
+      "image": "hoteles/estancia-delhi-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Mugimeshi",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Suite_Bedroom_at_Beaufort_Sukhothai_Hotel.jpg",
+      "photoLicense": "CC BY 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "mumbai": [
+    {
+      "id": "mumbai-estancia-4",
+      "name": "Mumbai · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2652,
+      "image": "hoteles/estancia-mumbai-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Daiwa_Royal_Hotel_Grande_Kyoto_Deluxe_Double_Type-A_bedroom_20200222-001.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "mumbai-estancia-5",
+      "name": "Mumbai · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3426,
+      "image": "hoteles/estancia-mumbai-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Nagoya_Kanko_Hotel_Deluxe_Double_bedroom_20150607-001.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "agra": [
+    {
+      "id": "agra-estancia-4",
+      "name": "Agra · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2028,
+      "image": "hoteles/estancia-agra-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Conference_room_at_Hotel_Esplanade_in_Stockholm.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "agra-estancia-5",
+      "name": "Agra · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2620,
+      "image": "hoteles/estancia-agra-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Marriott InternationalⓇ The Ritz-Carlton Hotel de la Paix, Geneva",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:The_Ritz-Carlton_Hotel_de_la_Paix,_Geneva_%E2%80%94_Living_Room.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "jaipur": [
+    {
+      "id": "jaipur-estancia-4",
+      "name": "Jaipur · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2122,
+      "image": "hoteles/estancia-jaipur-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Gary Bembridge",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Concorde_Lafayette_Paris_Room_2412.jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "jaipur-estancia-5",
+      "name": "Jaipur · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2740,
+      "image": "hoteles/estancia-jaipur-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Monterey_La_Soeur_Osaka_standard_twin_bedroom_20121102-001.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "el-cairo": [
+    {
+      "id": "el-cairo-estancia-4",
+      "name": "El Cairo · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2434,
+      "image": "hoteles/estancia-el-cairo-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Tony Webster from Minneapolis, Minnesota, United States",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:AC_Hotel_Room_-_Bourbon,_New_Orleans_(27297729743).jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "el-cairo-estancia-5",
+      "name": "El Cairo · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3143,
+      "image": "hoteles/estancia-el-cairo-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Gary Bembridge",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Du_Louvre_Paris_Room_377.jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "marrakech": [
+    {
+      "id": "marrakech-estancia-4",
+      "name": "Marrakech · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2558,
+      "image": "hoteles/estancia-marrakech-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Sdkb",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hyatt_Place_New_York_Chelsea_room_interior.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "marrakech-estancia-5",
+      "name": "Marrakech · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3305,
+      "image": "hoteles/estancia-marrakech-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "J o",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Oriental_Hotel_Kobe_Executive_Floor_City-view_Twin_bedroom_20160207-002.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "ciudad-del-cabo": [
+    {
+      "id": "ciudad-del-cabo-estancia-4",
+      "name": "Ciudad del Cabo · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3432,
+      "image": "hoteles/estancia-ciudad-del-cabo-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "mwanasimba from La Réunion",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Room_in_Hotel_Tachfine_Marrakech_(2845716178).jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "ciudad-del-cabo-estancia-5",
+      "name": "Ciudad del Cabo · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4433,
+      "image": "hoteles/estancia-ciudad-del-cabo-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Titanic Belfast",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Interiors-Presentation-Room-Titanic-Hotel-Belfast_(26533878649).jpg",
+      "photoLicense": "CC BY 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "meca": [
+    {
+      "id": "meca-estancia-4",
+      "name": "La Meca · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3744,
+      "image": "hoteles/estancia-meca-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "HuiDongXLW RMDa",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:HZ_%E6%83%A0%E5%B7%9E_Huizhou_%E6%83%A0%E6%9D%B1_Huidong_%E9%87%91%E6%B5%B7%E7%81%A3%E5%A4%A7%E9%81%93_Jinhaiwan_Blvd_%E8%8F%AF%E7%BE%8E%E9%81%94%E9%85%92%E5%AE%B6_Ramada_Hotel_bedroom_November_2023_R12S_03.jpg",
+      "photoLicense": "CC0",
+      "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "meca-estancia-5",
+      "name": "La Meca · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4836,
+      "image": "hoteles/estancia-meca-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Alex Nordstrom",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_in_Hotel_Presidente_InterContinental_Guadalajara.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "medina": [
+    {
+      "id": "medina-estancia-4",
+      "name": "Medina · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3276,
+      "image": "hoteles/estancia-medina-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_at_Thon_Kirkenes.jpg",
+      "photoLicense": "CC BY-SA 4.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "medina-estancia-5",
+      "name": "Medina · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 4232,
+      "image": "hoteles/estancia-medina-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "Greg Willis from Denver, CO, usa",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Room_Interior_at_Mushara_Lodge_(3688069200).jpg",
+      "photoLicense": "CC BY-SA 2.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ],
+  "shenzhen": [
+    {
+      "id": "shenzhen-estancia-4",
+      "name": "Shenzhen · Estancia Terraza",
+      "stars": 3,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 2652,
+      "image": "hoteles/estancia-shenzhen-1.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "User:Vmenkov",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Futu-Changsheng-Hotel-guest-room-0052.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "amenities": [
+        "Wi-Fi",
+        "Aire acondicionado"
+      ]
+    },
+    {
+      "id": "shenzhen-estancia-5",
+      "name": "Shenzhen · Estancia Jardín",
+      "stars": 4,
+      "area": "Zona por confirmar con el alojamiento",
+      "rate": 3426,
+      "image": "hoteles/estancia-shenzhen-2.jpg",
+      "imageAlt": "Fotografía de referencia para un alojamiento de demostración",
+      "photoAuthor": "JIP",
+      "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_in_Berlin_2.jpg",
+      "photoLicense": "CC BY-SA 3.0",
+      "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "amenities": [
+        "Wi-Fi",
+        "Desayuno",
+        "Aire acondicionado"
+      ]
+    }
+  ]
+};
+  // Completar también los catálogos SQL antiguos sin alterar tarifas guardadas.
+  destinations.forEach(d => {
+    for (const hotel of completeHotelOptions[d.id] || []) {
+      if (!d.hotels.some(saved => saved.id === hotel.id)) d.hotels.push({...hotel});
+    }
+    d.hotels.forEach(h => { if (!h.photoLicenseUrl && h.photoLicense === 'Public domain') h.photoLicenseUrl = 'https://creativecommons.org/publicdomain/mark/1.0/'; });
+  });
+  // END CATALOGO UNIFORME
   const discounted = (amount, percent) => Math.round(amount * (100 - percent)) / 100;
   destinations.forEach(d => { d.promotion = promotions[d.id] || null; });
 
@@ -6042,7 +7977,7 @@ additionalDestinations.push(...[
     try { (window.RumboStorage || localStorage).setItem(STORAGE_KEY, JSON.stringify({...savedState, searchConfigured: true})); } catch (_) { storageAvailable = false; }
     updateNavigation();
     if (updateURL && page !== 'destinos') {
-      try { history.replaceState(null, '', link(`${page}${location.hash}`)); } catch (_) { /* file:// puede limitar History. */ }
+      try { history.replaceState(history.state, '', link(`${page}${location.hash}`)); } catch (_) { /* file:// puede limitar History. */ }
     }
   }
   function updateTrip(patch) {
@@ -6106,7 +8041,7 @@ additionalDestinations.push(...[
       query.set('orden', order);
       const anchor = ['#creditos-imagenes', '#catalogo'].includes(location.hash) ? location.hash : '';
       // Entrar a Destinos conserva el comienzo de la página; solo un ancla explícita salta al catálogo.
-      try { history.replaceState(null, '', `viajes.html?pantalla=destinos&${query}${anchor}`); } catch (_) { /* Navegación local. */ }
+      try { history.replaceState(history.state, '', `viajes.html?pantalla=destinos&${query}${anchor}`); } catch (_) { /* Navegación local. */ }
     }
     function reset() { form.reset(); $('#orden-destinos').value = 'recommended'; render(); }
     form.addEventListener('submit', event => { event.preventDefault(); render(); });
@@ -6328,7 +8263,7 @@ additionalDestinations.push(...[
           <div class="rv-hotel-content"><p class="rv-stars" aria-label="${hotel.stars} estrellas de demostración">${'★'.repeat(hotel.stars)}</p><h3>${hotel.name}</h3><p class="rv-hotel-location">${destination.name} · ${hotel.area}</p><ul class="rv-amenities" aria-label="Servicios">${hotel.amenities.map(item => `<li>${item}</li>`).join('')}</ul>
           <div class="rv-field rv-room-choice"><label for="room-${hotel.id}">Tipo de habitación en ${hotel.name}</label><select id="room-${hotel.id}" data-room-hotel="${hotel.id}">${Object.entries(rooms).map(([key, room]) => `<option value="${key}" ${key === type ? 'selected' : ''}>${room.name} · hasta ${room.capacity} personas / hab.</option>`).join('')}</select></div>
           <div class="rv-hotel-price-row"><div class="rv-price"><strong>${money(nightly)}</strong><small>Por noche / habitación</small></div><button class="rv-select-button" type="button" data-select-hotel="${hotel.id}" aria-pressed="${selected}" aria-label="${selected ? 'Hotel seleccionado' : 'Seleccionar'} ${hotel.name}" ${!enoughSpace || dirty ? 'disabled' : ''}>${selected ? 'Seleccionado ✓' : 'Elegir hotel'}</button></div><p class="rv-hotel-total">${state.nights} ${state.nights === 1 ? 'noche' : 'noches'} × ${state.rooms} ${state.rooms === 1 ? 'habitación' : 'habitaciones'} · <strong>${money(nightly * state.nights * state.rooms)}</strong></p>
-          <p class="booking-disclosure">Hospedaje de demostración · fotografía de referencia</p>${enoughSpace ? '' : `<p class="rv-capacity-error">Para ${state.travelers} personas necesitas al menos ${Math.ceil(state.travelers / rooms[type].capacity)} habitaciones de este tipo, o elegir otra capacidad.</p>`}</div></article>`;
+          <p class="booking-disclosure">Hospedaje de demostración · fotografía de referencia</p><details class="rv-photo-credit"><summary>Créditos de la fotografía</summary><p>Foto: ${escapeHTML(hotel.photoAuthor || 'Autor indicado en la fuente')} · <a href="${escapeHTML(hotel.photoLicenseUrl || hotel.photoSource)}" target="_blank" rel="noopener noreferrer">${escapeHTML(hotel.photoLicense || 'Ver licencia')}</a>. Adaptada para la web. <a href="${escapeHTML(hotel.photoSource)}" target="_blank" rel="noopener noreferrer">Ver original ↗</a></p></details>${enoughSpace ? '' : `<p class="rv-capacity-error">Para ${state.travelers} personas necesitas al menos ${Math.ceil(state.travelers / rooms[type].capacity)} habitaciones de este tipo, o elegir otra capacidad.</p>`}</div></article>`;
       }).join('');
       renderSummary('hoteles', render);
       if (dirty) $('#save-selection').disabled = true;

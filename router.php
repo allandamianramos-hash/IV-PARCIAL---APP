@@ -2,6 +2,7 @@
 declare(strict_types=1);
 ini_set('display_errors','0');
 require_once __DIR__ . '/backend/php/error-pages.php';
+require_once __DIR__ . '/backend/php/http-content.php';
 $path=parse_url($_SERVER['REQUEST_URI'] ?? '/',PHP_URL_PATH);
 $method=$_SERVER['REQUEST_METHOD'] ?? 'GET';
 header('X-Content-Type-Options: nosniff');header('Referrer-Policy: strict-origin-when-cross-origin');header('Cache-Control: no-store');
@@ -56,11 +57,9 @@ try {
     $ext=pathinfo($file,PATHINFO_EXTENSION);
     $mime=['html'=>'text/html; charset=utf-8','js'=>'text/javascript; charset=utf-8','css'=>'text/css; charset=utf-8','jpg'=>'image/jpeg','png'=>'image/png','webp'=>'image/webp','json'=>'application/json; charset=utf-8'];
     $mime['ttf']='font/ttf';
-    header('Content-Type: '.$mime[$ext]);
-    if ($method==='HEAD') exit;
-    if (in_array($file,['error.html','microsoft-callback.html'],true)) { readfile($absolute);exit; }
-    if ($ext==='html') echo str_replace('<head>','<head><script id="rumbo-bootstrap" type="application/json">'.encode_json(bootstrap_data()).'</script><script src="js/cuenta/auth-client.js" defer></script><link rel="stylesheet" href="css/cuenta/auth.css">',file_get_contents($absolute));
-    else readfile($absolute);
+    $body=file_get_contents($absolute);
+    if ($ext==='html' && $method==='GET' && !in_array($file,['error.html','microsoft-callback.html'],true)) $body=str_replace('<head>','<head><script id="rumbo-bootstrap" type="application/json">'.encode_json(bootstrap_data()).'</script><script src="js/cuenta/auth-client.js" defer></script><link rel="stylesheet" href="css/cuenta/auth.css">',$body);
+    send_content($body,$mime[$ext],$ext!=='html');
 } catch (HttpError $e) {
     if (!str_starts_with((string)$path,'/api/')) rumbo_error_page($e->status);
     respond($e->status,['error'=>$e->getMessage()]);

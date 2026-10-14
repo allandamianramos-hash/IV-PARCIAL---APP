@@ -18,12 +18,7 @@ function google_config(): never {
     $clientId = google_client_id();
     if ($clientId === '') respond(200, ['enabled' => false]);
     auth_rate_limit('config', 60);
-    $nonce = google_nonce();
-    if ($nonce === '' || !query('SELECT NonceHash FROM dbo.RumboGoogleChallenges WHERE NonceHash=? AND ExpiresAt>SYSUTCDATETIME()', [hash('sha256', $nonce)])->fetchColumn()) {
-        $nonce = bin2hex(random_bytes(32));
-        query('DELETE dbo.RumboGoogleChallenges WHERE ExpiresAt<=SYSUTCDATETIME()')->closeCursor();
-        query('INSERT dbo.RumboGoogleChallenges(NonceHash,ExpiresAt) VALUES(?,DATEADD(minute,10,SYSUTCDATETIME()))', [hash('sha256', $nonce)])->closeCursor();
-    }
+    $nonce = oauth_challenge_nonce('google',google_nonce());
     set_cookie('rumbo_google_nonce', $nonce, time() + 600);
     respond(200, ['enabled' => true, 'clientId' => $clientId, 'nonce' => $nonce]);
 }

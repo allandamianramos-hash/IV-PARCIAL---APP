@@ -11,6 +11,7 @@ import {reviewsApi} from './backend/node/reviews-api.mjs';
 import {exchangeApi} from './backend/node/exchange-api.mjs';
 import { authApi } from './backend/node/auth-api.mjs';
 import { sendError } from './backend/node/error-pages.mjs';
+import {sendContent} from './backend/node/http-content.mjs';
 const root = fileURLToPath(new URL("./public/", import.meta.url));
 const publicFiles = new Set(["error.html", "js/compartido/error.js", "js/compartido/connection.js", "index.html", "js/inicio/script.js", "js/rumbito/chat-engine.js", "js/rumbito/chat-client.js", "js/rumbito/chat-ui.js", "css/rumbito/chat.css", "css/inicio/style.css", "viajes.html", "js/destinos/viajes.js", "css/destinos/viajes.css", "tienda.html", "js/tienda/tienda.js", "css/tienda/tienda.css", "servicios.html", "js/servicios/servicios.js", "css/servicios/servicios.css", "js/compartido/common.js", "css/compartido/common.css", "js/servicios/journey.js", "css/inicio/promociones.css", "css/compartido/design.css"]);
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
@@ -72,8 +73,7 @@ export function createApp(chatOptions) {
         const initial = await bootstrap(req, res);
         data = data.toString('utf8').replace('<head>', `<head><script id="rumbo-bootstrap" type="application/json">${safeJson(initial)}</script><script src="js/cuenta/auth-client.js" defer></script><link rel="stylesheet" href="css/cuenta/auth.css">`);
       }
-      res.writeHead(200, { "Content-Type": mime[extname(path)] || "application/octet-stream" });
-      res.end(req.method === "HEAD" ? undefined : data);
+      await sendContent(req,res,data,mime[extname(path)] || 'application/octet-stream',{cacheable:extname(path)!=='.html'});
     } catch (error) { sendError(req,res,error.code === "ENOENT" ? 404 : 500); }
   });
 }

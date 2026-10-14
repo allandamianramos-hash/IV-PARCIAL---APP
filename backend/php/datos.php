@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/catalog-cache.php';
 
 const STATE_KEYS = ['rumbo.store.cart.v2','rumbo.store.favorites.v2','rumbo.integrante2.viaje.v1','rumbo.services.v1','rumbo.profile.v1','rumbo.checkout.v1','rumbo.no-flight.v1','rumbo.departureChecklist.v1'];
 function short_text(mixed $v, int $max): bool { return is_string($v) && mb_strlen($v) <= $max; }
@@ -39,12 +40,13 @@ function valid_state(string $key, mixed $v): bool {
 }
 
 function load_catalog(): array {
-    $products=query('SELECT * FROM dbo.RumboProducts ORDER BY Id')->fetchAll();
-    $destinations=query('SELECT * FROM dbo.RumboDestinations ORDER BY SortOrder')->fetchAll();
-    $hotels=query('SELECT * FROM dbo.RumboHotels ORDER BY SortOrder')->fetchAll();
+    $rows=catalog_rows();
+    $products=$rows['Products'];
+    $destinations=$rows['Destinations'];
+    $hotels=$rows['Hotels'];
     if (!$products || !$destinations) throw new RuntimeException('Catálogo vacío. Ejecuta la instalación.');
     $catalog=[];
-    foreach (query("SELECT * FROM dbo.RumboSettings WHERE Name NOT LIKE 'review:%'")->fetchAll() as $row) $catalog[$row['Name']]=json_decode($row['DataJson'],false,512,JSON_THROW_ON_ERROR);
+    foreach ($rows['Settings'] as $row) $catalog[$row['Name']]=json_decode($row['DataJson'],false,512,JSON_THROW_ON_ERROR);
     $catalog['products']=[]; $catalog['productOptions']=new stdClass(); $catalog['priceAdjustments']=new stdClass();
     foreach ($products as $p) {
         $item=json_decode($p['DataJson'],true,512,JSON_THROW_ON_ERROR);

@@ -63,15 +63,27 @@ function issue_session(string $userId, string $verifiedHash): void {
 function auth_rate_limit(string $bucket = 'signin', int $limit = 20, ?string $account = null): void {
     // Separate local development servers sharing one hosted database.
     $ip = hash('sha256', $account === null ? gethostname() . ':' . ($_SERVER['REMOTE_ADDR'] ?? 'local') . ':' . $bucket : 'password:' . strtolower(trim($account)));
-    $connection = db(); $connection->beginTransaction();
-    try {
-        query("DECLARE @r int; EXEC @r=sp_getapplock @Resource=?, @LockMode='Exclusive', @LockOwner='Transaction', @LockTimeout=5000; IF @r<0 THROW 51000, 'Auth lock unavailable', 1;", ['RumboAuth:' . $ip])->closeCursor();
-        query('DELETE dbo.RumboAuthAttempts WHERE AttemptedAt<DATEADD(day,-1,SYSUTCDATETIME())')->closeCursor();
-        $count = (int)query('SELECT COUNT(*) FROM dbo.RumboAuthAttempts WHERE IpHash=? AND AttemptedAt>DATEADD(minute,-15,SYSUTCDATETIME())', [$ip])->fetchColumn();
-        if ($count >= $limit) { $connection->rollBack(); throw new HttpError(429, 'Demasiados intentos. Inténtalo en 15 minutos.'); }
-        query('INSERT dbo.RumboAuthAttempts(IpHash) VALUES(?)', [$ip])->closeCursor();
-        $connection->commit();
-    } catch (Throwable $e) { if ($connection->inTransaction()) $connection->rollBack(); throw $e; }
+    // One round trip, retaining the same transaction, lock and attempt limits.
+    $statement=query("SET NOCOUNT ON; SET XACT_ABORT ON;
+        DECLARE @ip char(64)=?, @limit int=?, @resource nvarchar(255)=?, @blocked int=0;
+        BEGIN TRY
+          BEGIN TRANSACTION;
+          DECLARE @r int;
+          EXEC @r=sp_getapplock @Resource=@resource, @LockMode='Exclusive', @LockOwner='Transaction', @LockTimeout=5000;
+          IF @r<0 THROW 51000, 'Auth lock unavailable', 1;
+          DELETE dbo.RumboAuthAttempts WHERE AttemptedAt<DATEADD(day,-1,SYSUTCDATETIME());
+          IF (SELECT COUNT(*) FROM dbo.RumboAuthAttempts WHERE IpHash=@ip AND AttemptedAt>DATEADD(minute,-15,SYSUTCDATETIME()))>=@limit
+            SET @blocked=1;
+          ELSE INSERT dbo.RumboAuthAttempts(IpHash) VALUES(@ip);
+          COMMIT TRANSACTION;
+          SELECT @blocked;
+        END TRY
+        BEGIN CATCH
+          IF @@TRANCOUNT>0 ROLLBACK TRANSACTION;
+          THROW;
+        END CATCH;",[$ip,$limit,'RumboAuth:'.$ip]);
+    $blocked=(int)$statement->fetchColumn();$statement->closeCursor();
+    if ($blocked) throw new HttpError(429, 'Demasiados intentos. Inténtalo en 15 minutos.');
 }
 
 function handle_auth(string $path, string $method): never {

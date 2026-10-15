@@ -286,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <link rel="stylesheet" href="css/compartido/navigation.css">
 <script src="js/compartido/navigation.js" defer></script>
 <link rel="stylesheet" href="css/compartido/palette.css">
+<link rel="stylesheet" href="css/inicio/destinos.css">
 <link rel="stylesheet" href="css/comunidad/community.css?v=about-context-5">
 <script src="js/compartido/api-client.js" defer></script>
 <script src="js/idiomas/translations.js" defer></script>
@@ -418,9 +419,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="container">
         <div class="section-heading">
           <div>
-            <h2 id="destinations-title">Un destino para tu próximo viaje</h2>
+            <h2 id="destinations-title">Tu próximo destino</h2>
             <p class="destination-intro">
-              Seis ideas para empezar. En el catálogo tenés más destinos, vuelos y hospedajes.
+              Lugares para salir de la rutina.
             </p>
           </div>
           <a id="all-destinations" class="button button-outline" href="viajes.html?pantalla=destinos#catalogo">Ver todos los destinos ↗</a>
@@ -428,22 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="carousel-toolbar">
           <p class="results-line" id="result-count" role="status" aria-live="polite"></p>
-          <button class="text-link" id="surprise-destination" type="button">Elegir al azar ↗</button><div class="carousel-controls" aria-label="Controles de destinos" hidden>
-            <button
-              class="carousel-arrow"
-              id="destinations-prev"
-              type="button"
-              aria-label="Ver destinos anteriores"
-              aria-controls="destinations-track"
-            >←</button>
-            <button
-              class="carousel-arrow"
-              id="destinations-next"
-              type="button"
-              aria-label="Ver siguientes destinos"
-              aria-controls="destinations-track"
-            >→</button>
-          </div>
+          <button class="text-link" id="surprise-destination" type="button">Elegir al azar ↗</button>
         </div>
 
         <div
@@ -451,7 +437,6 @@ document.addEventListener('DOMContentLoaded', () => {
           id="destinations-track"
           role="region"
           aria-label="Destinos disponibles"
-          tabindex="0"
         ></div>
 
         <div class="empty-state" id="empty-state" hidden>

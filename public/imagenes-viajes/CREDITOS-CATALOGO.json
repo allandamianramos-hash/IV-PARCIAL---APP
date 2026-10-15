@@ -3,14 +3,14 @@
     "id": "roatan",
     "name": "Roatán",
     "file": "imagenes-viajes/destinos/playa.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:West_Bay_Beach_-Roatan_-Honduras-23May2009.jpg",
-    "original": "https://upload.wikimedia.org/wikipedia/commons/a/ab/West_Bay_Beach_-Roatan_-Honduras-23May2009.jpg",
-    "author": "Adalberto Hernandez Vega from Copan Ruinas, Honduras",
+    "source": "https://commons.wikimedia.org/wiki/File:Roatan,_Honduras_(27086502134).jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Roatan%2C_Honduras_%2827086502134%29.jpg",
+    "author": "Daniel Gillaspia from Berkeley, CA",
     "license": "CC BY 2.0",
     "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
     "width": 2560,
-    "height": 1704,
-    "changes": "Redimensionada y optimizada en JPEG; sin recorte ni ampliación."
+    "height": 1707,
+    "changes": "Redimensionada y optimizada en JPEG en 720, 1280 y 2560 px; sin recorte, ampliación ni alteración de colores."
   },
   {
     "id": "san-jose",
@@ -42,14 +42,14 @@
     "id": "bali",
     "name": "Bali",
     "file": "imagenes-viajes/destinos/bali.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Brantan_Bali_Pura-Ulun-Danu-Bratan-01.jpg",
-    "original": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Brantan_Bali_Pura-Ulun-Danu-Bratan-01.jpg",
-    "author": "CEphoto, Uwe Aranas",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Pura_Ulun_Danu_Bratan,_Bedugul,_Bali_(1).jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/1/18/Pura_Ulun_Danu_Bratan%2C_Bedugul%2C_Bali_%281%29.jpg",
+    "author": "Johannnindito Adisuryo (Yohanes Nindito Adisuryo)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
     "width": 2560,
     "height": 1707,
-    "changes": "Redimensionada y optimizada en JPEG; sin recorte ni ampliación."
+    "changes": "Redimensionada y optimizada en JPEG en 720, 1280 y 2560 px; sin recorte, ampliación ni alteración de colores."
   },
   {
     "id": "venecia",
@@ -211,14 +211,14 @@
     "id": "rio-janeiro",
     "name": "Río de Janeiro",
     "file": "imagenes-viajes/destinos/destino-rio-janeiro.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Rio-panorama-Botafogo-Sugarloaf.jpg",
-    "original": "https://upload.wikimedia.org/wikipedia/commons/7/74/Rio-panorama-Botafogo-Sugarloaf.jpg",
-    "author": "Acediscovery",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Christ_on_Corcovado_mountain.JPG",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_on_Corcovado_mountain.JPG",
+    "author": "Artyominc",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
     "width": 2560,
-    "height": 1920,
-    "changes": "Redimensionada y optimizada en JPEG; sin recorte ni ampliación."
+    "height": 1444,
+    "changes": "Redimensionada y optimizada en JPEG en 720, 1280 y 2560 px; sin recorte, ampliación ni alteración de colores."
   },
   {
     "id": "ciudad-mexico",

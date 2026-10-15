@@ -5751,7 +5751,7 @@ additionalDestinations.push(...[
   }
   // Fotografías locales completas, con tamaños adaptados a cada pantalla.
   const destinationPhotos = {
-    "roatan": ["playa.jpg", 2560, 1704, "Playa de West Bay en Roatán, con palmeras y agua turquesa", "Playas de West Bay y West End, manglares y recorridos por la isla."],
+    "roatan": ["playa.jpg", 2560, 1707, "Playa de arena blanca y palmeras frente al mar turquesa de Roatán", "Playas de West Bay y West End, manglares y recorridos por la isla."],
     "san-jose": ["destino-san-jose-teatro.jpg", 2560, 1920, "Fachada del Teatro Nacional en San José, Costa Rica", "Museos, mercados y parques en el Valle Central de Costa Rica."],
     "paris": ["destino-paris.jpg", 2560, 1600, "Vista de París; fotografía de Wikimedia Commons", "Museos, cafés y paseos junto al Sena en la capital francesa."],
     "bali": ["bali.jpg", 2560, 1707, "Templo Ulun Danu Bratan junto al lago en Bali", "Templos de Tanah Lot y Uluwatu, arrozales de Ubud y costa de Sanur."],
@@ -5767,7 +5767,7 @@ additionalDestinations.push(...[
     "madrid": ["destino-madrid-cibeles.jpg", 3840, 2400, "Palacio y fuente de Cibeles iluminados por la noche en Madrid", "Parque de El Retiro, Plaza Mayor y mercados del centro."],
     "londres": ["destino-londres.jpg", 2560, 1259, "Vista de Londres", "Museos, mercados y paseos por las orillas del Támesis."],
     "lisboa": ["destino-lisboa.jpg", 2560, 1392, "Vista de las colinas y los tejados de Lisboa", "Tranvías, miradores y barrios para recorrer junto al Tajo."],
-    "rio-janeiro": ["destino-rio-janeiro.jpg", 2560, 1920, "Vista de Río de Janeiro", "Playas de Ipanema, jardines y vistas desde el Pan de Azúcar."],
+    "rio-janeiro": ["destino-rio-janeiro.jpg", 2560, 1444, "Cristo Redentor sobre el Corcovado, con Río de Janeiro y la bahía al fondo", "Playas de Ipanema, jardines y vistas desde el Pan de Azúcar."],
     "ciudad-mexico": ["destino-ciudad-mexico.jpg", 2272, 1704, "Vista de Ciudad de México, México", "Chapultepec, Coyoacán y museos para recorrer por barrios."],
     "bogota": ["destino-bogota.jpg", 2048, 1120, "Panorama de Bogotá al atardecer", "La Candelaria, el Museo del Oro y vistas desde Monserrate."],
     "cartagena": ["destino-cartagena.jpg", 2560, 1440, "Vista de Cartagena, Colombia", "Murallas, plazas y tardes junto al Caribe colombiano."],
@@ -7808,7 +7808,7 @@ additionalDestinations.push(...[
     d.originalInspirationBudget = d.economy + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
     d.inspirationBudget = discounted(d.economy, d.promotion.percent) + Math.min(...d.hotels.map(h => h.rate)) * d.nights;
   });
-  const homeDestinationIds = ['roatan', 'cancun', 'lisboa', 'madrid', 'londres', 'rio-janeiro'];
+  const homeDestinationIds = ['cancun', 'venecia', 'bali', 'paris', 'ciudad-del-cabo', 'rio-janeiro'];
   const travelStyleLabels = {playa:'Playa y descanso',naturaleza:'Naturaleza',cultura:'Cultura e historia'};
   function preferredTravelStyle() {
     try {

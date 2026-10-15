@@ -313,11 +313,7 @@ body #antes-de-viajar.departure-guide {margin-block:var(--section-space);padding
 body .home-reviews {padding-block:var(--section-space);margin-top:var(--section-space);}
 body .section-heading {margin-bottom:40px;gap:24px;}
 body .section-heading h2 {margin-bottom:20px;line-height:1.2;}
-body #destinos .section-heading {margin-bottom:40px;}
-body #destinos .destination-intro {line-height:1.8;max-width:54ch;}
-body #destinations-track {column-gap:32px;row-gap:64px;}
-body #destinations-track .destination-body {padding-block:24px;}
-body #destinations-track h3 {margin-block:12px 16px;line-height:1.3;}
+
 body #servicios .booking-card {padding-block:38px;gap:32px;}
 body #servicios .booking-card>p:not(.journey-card-number) {line-height:1.8;color:var(--secondary);}
 body .team-intro {margin-bottom:40px;max-width:660px;}
@@ -383,7 +379,7 @@ body .help-card details {padding-block:24px;}
 body :is(.packing-section,.faq-section,.store-benefits,.journey-next) {margin-block:64px;}
 @media(max-width:800px) {
  body #servicios .booking-card {gap:20px;}
- body #destinations-track {gap:40px 20px;}
+
  body .team-grid {gap:20px;}
  body .team-person {padding:24px 20px;}
  body .rumbo-footer-main {gap:40px 28px;}
@@ -407,21 +403,10 @@ body :is(.packing-section,.faq-section,.store-benefits,.journey-next) {margin-bl
  body .rumbo-footer-main {gap:40px 24px;}
 }
 
-/* Inicio y catálogo comparten el mismo tratamiento fotográfico. */
-body #destinations-track .destination-card {padding:0;border:0;border-radius:18px;background:#1d2223;overflow:hidden;}
-body #destinations-track .destination-body {padding:24px;border-bottom:0;}
-body #destinations-track .destination-image {border-radius:0;}
-body #destinations-track .destination-image img {width:100%;height:100%;object-fit:cover;}
+/* Campos de selección compartidos. */
+
 body :is(.rv-field,.service-field) select:required:invalid {color:var(--support)!important;}
 body :is(.rv-field,.service-field) select option {color:var(--foreground);}
-@media(max-width:540px) {
- body #destinations-track {grid-template-columns:minmax(0,1fr);gap:28px;}
- body #destinations-track .destination-card:nth-child(n) {grid-column:auto;}
- body #destinations-track .destination-card:nth-child(n) .destination-image {height:240px;}
-}
-
-
-
 
 /* Personal postcard studio */
 body #antes-de-viajar.postcard-studio {margin-block:var(--section-space,64px);padding:0;background:none;border:0;border-radius:0;box-shadow:none;}

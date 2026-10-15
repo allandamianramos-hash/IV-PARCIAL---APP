@@ -20,27 +20,18 @@
       if (element) element.textContent = text;
     };
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     setText("#year", new Date().getFullYear());
 
     /* CATÁLOGO FICTICIO EN HNL */
     const catalog = window.RumboViajesDatos.destinations.map((trip,index) => ({
       id:trip.id, name:trip.name, country:trip.country, style:trip.type,
       price:trip.inspirationBudget, originalPrice:trip.originalInspirationBudget, promotion:trip.promotion, duration:`${trip.nights+1} días / ${trip.nights} noches`,
-      code:`RMB-${String(index+1).padStart(2,'0')}`, image:trip.image, thumbnail:trip.thumbnail, mediumImage:trip.mediumImage, imageWidth:trip.imageWidth, imageHeight:trip.imageHeight, alt:trip.alt, description:trip.intro
+      code:`RMB-${String(index+1).padStart(2,'0')}`, image:trip.image, thumbnail:trip.thumbnail, mediumImage:trip.mediumImage, imageWidth:trip.imageWidth, imageHeight:trip.imageHeight, imagePosition:trip.imagePosition, alt:trip.alt, description:trip.intro, signature:trip.signature
     }));
 
-    /* DESTINOS Y CARRUSEL */
+    /* SELECCIÓN DE DESTINOS */
     const track = $("#destinations-track");
     const searchForm = $("#travel-search");
-    const previous = $("#destinations-prev");
-    const next = $("#destinations-next");
-
-    function updateCarouselControls() {
-      const limit = track.scrollWidth - track.clientWidth;
-      previous.disabled = track.scrollLeft <= 3;
-      next.disabled = limit <= 3 || track.scrollLeft >= limit - 3;
-    }
 
     function renderDestinations(items, featured = false) {
       const visible = window.RumboViajesDatos.selectHomeDestinations(items, featured);
@@ -53,8 +44,13 @@
         // Solo se interpola el catálogo fijo, nunca mensajes del usuario.
         card.innerHTML = `
           <a class="destination-link" href="viajes.html?pantalla=detalle-destino&destino=${encodeURIComponent(trip.id)}">
-            <div class="destination-image"><img src="${trip.thumbnail || (trip.image.startsWith('imagenes-') ? trip.image : 'https://images.unsplash.com/'+trip.image+'?auto=format&fit=crop&w=800&q=85')}" ${trip.thumbnail ? `srcset="${trip.thumbnail} 720w, ${trip.mediumImage} 1280w, ${trip.image} ${trip.imageWidth}w" sizes="(max-width:600px) 82vw, (max-width:900px) 45vw, 380px"` : ''} alt="${trip.alt}" width="800" height="600" loading="lazy"></div>
-            <div class="destination-body"><span class="destination-country">${trip.country} · ${trip.duration}</span><h3>${trip.name}<span aria-hidden="true">↗</span></h3><p>Desde ${money(trip.price)} por persona</p></div>
+            <div class="destination-image"><img src="${trip.thumbnail || (trip.image.startsWith('imagenes-') ? trip.image : 'https://images.unsplash.com/'+trip.image+'?auto=format&fit=crop&w=800&q=85')}" ${trip.thumbnail ? `srcset="${trip.thumbnail} 720w, ${trip.mediumImage} 1280w, ${trip.image} ${trip.imageWidth}w" sizes="(max-width:600px) calc(100vw - 32px), (max-width:650px) calc((100vw - 56px) / 2), (max-width:960px) calc((100vw - 72px) / 2), (max-width:1228px) calc((100vw - 96px) / 3), 378px"` : ''} alt="${trip.alt}" style="object-position:${trip.imagePosition || '50% 50%'}" width="${trip.imageWidth || 800}" height="${trip.imageHeight || 600}" loading="lazy" decoding="async"></div>
+            <div class="destination-body">
+              <div class="destination-meta"><span class="destination-country">${trip.country}</span><span class="destination-duration">${trip.duration}</span></div>
+              <h3>${trip.name}<span class="destination-arrow" aria-hidden="true">↗</span></h3>
+              <p class="destination-caption">${trip.signature || trip.description}</p>
+              <p class="destination-price">Desde ${money(trip.price)} por persona</p>
+            </div>
           </a>`;
 
         track.appendChild(card);
@@ -71,7 +67,6 @@
 
       $("#empty-state").hidden = items.length > 0;
       track.scrollLeft = 0;
-      requestAnimationFrame(updateCarouselControls);
     }
 
     function filterDestinations() {
@@ -92,22 +87,6 @@
       allLink.href = 'viajes.html?' + params + '#catalogo';
       allLink.textContent = featured ? 'Ver todos los destinos ↗' : 'Ver todos los resultados ↗';
     }
-
-    function moveCarousel(direction) {
-      const card = track.querySelector(".destination-card");
-      if (!card) return;
-
-      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-      track.scrollBy({
-        left: direction * (card.getBoundingClientRect().width + gap),
-        behavior: reducedMotion.matches ? "instant" : "smooth"
-      });
-    }
-
-    previous.addEventListener("click", () => moveCarousel(-1));
-    next.addEventListener("click", () => moveCarousel(1));
-    track.addEventListener("scroll", updateCarouselControls, { passive: true });
-    window.addEventListener("resize", updateCarouselControls);
 
     searchForm.addEventListener("submit", event => {
       event.preventDefault();

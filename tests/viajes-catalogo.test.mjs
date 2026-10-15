@@ -133,7 +133,7 @@ test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => 
  const featured=select(destinations,true);
  assert.equal(featured.length,6);
  assert.equal(new Set(featured.map(d=>d.id)).size,6);
- assert.ok(featured.some(d=>d.id==='lisboa'));
+ assert.deepEqual(Array.from(featured,d=>d.id),['cancun','venecia','bali','paris','ciudad-del-cabo','rio-janeiro']);
  assert.equal(select(destinations).length,6);
  assert.equal(select(destinations.filter(d=>d.id==='toronto'))[0].id,'toronto');
  assert.equal(select([]).length,0);

@@ -43,7 +43,7 @@ try {
     $assetAliases=json_decode(file_get_contents(__DIR__.'/config/asset-aliases.json'),true,512,JSON_THROW_ON_ERROR);
     $file=$assetAliases[$file]??$file;
     $public=['error.html','js/compartido/error.js','js/compartido/connection.js','index.html','js/inicio/script.js','js/rumbito/chat-engine.js','js/rumbito/chat-client.js','js/rumbito/chat-ui.js','css/rumbito/chat.css','css/inicio/style.css','viajes.html','js/destinos/viajes.js','css/destinos/viajes.css','tienda.html','js/tienda/tienda.js','css/tienda/tienda.css','servicios.html','js/servicios/servicios.js','css/servicios/servicios.css','js/compartido/common.js','css/compartido/common.css','js/servicios/journey.js','css/inicio/promociones.css','css/compartido/design.css','js/compartido/database-client.js','registro.html','iniciar-sesion.html','js/cuenta/auth-client.js','css/cuenta/auth.css','js/destinos/guias-catalogo.js'];
-    array_push($public,'js/inicio/hero.js','css/inicio/hero.css','js/compartido/navigation.js','css/compartido/navigation.css','css/compartido/palette.css','css/comunidad/community.css','js/comunidad/reviews.js','js/idiomas/translations.js','js/idiomas/preferences.js','js/compartido/api-client.js');
+    array_push($public,'js/inicio/hero.js','css/inicio/hero.css','css/inicio/destinos.css','js/compartido/navigation.js','css/compartido/navigation.css','css/compartido/palette.css','css/comunidad/community.css','js/comunidad/reviews.js','js/idiomas/translations.js','js/idiomas/preferences.js','js/compartido/api-client.js');
     $public[]='js/tienda/variant-preview.js';
     $public[]='microsoft-callback.html';
     $public[]='recuperar-contrasena.html';

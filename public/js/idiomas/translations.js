@@ -3,6 +3,8 @@ window.RumboTranslations={};
 (()=>{
 const langs=['es','en','de','fr','it','pt','ja','ko','zh','ar'];
 const rows=[
+['Tu próximo destino','Your next destination','Dein nächstes Reiseziel','Votre prochaine destination','La tua prossima destinazione','Seu próximo destino','次の旅先','다음 여행지','你的下一站','وجهتك القادمة'],
+['Lugares para salir de la rutina.','Places for a change of scenery.','Orte, um dem Alltag zu entfliehen.','Des lieux pour changer d’air.','Luoghi per uscire dalla routine.','Lugares para sair da rotina.','日常を離れて訪れたい場所。','일상에서 벗어날 여행지.','换一种日常，探索新的地方。','وجهات للخروج من الروتين.'],
 ['Inicio','Home','Startseite','Accueil','Home','Início','ホーム','홈','首页','الرئيسية'],
 ['Destinos','Destinations','Reiseziele','Destinations','Destinazioni','Destinos','目的地','여행지','目的地','الوجهات'],
 ['Servicios','Services','Leistungen','Services','Servizi','Serviços','サービス','서비스','服务','الخدمات'],

@@ -101,7 +101,9 @@ html { scroll-behavior: smooth; }
 body { padding-bottom: 90px; }
 main { animation: rumbo-page-enter 240ms ease-out; }
 @keyframes rumbo-page-enter { from { opacity: .7; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
-@view-transition { navigation: auto; }
+/* Full-page navigation can be interrupted by account and state synchronization.
+   Avoid cross-document transition rejections; the hero keeps its own animation. */
+@view-transition { navigation: none; }
 ::view-transition-old(root),::view-transition-new(root) { animation-duration: 180ms; }
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior: auto; }

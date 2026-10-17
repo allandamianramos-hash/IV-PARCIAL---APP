@@ -19,6 +19,13 @@ test('los 40 destinos originales conservan exactamente sus datos, fotos, hoteles
     assert.ok(d,id);
     const previous=JSON.parse(JSON.stringify(d));
     const initial=baseCatalog.destinations.find(item=>item.id===id);
+    // The later photo review corrected alt text and actual image dimensions.
+    // Keep the original business/catalog snapshot while checking those changes explicitly.
+    const reviewedPhotos={roatan:['Playa de arena blanca y palmeras frente al mar turquesa de Roatán',1707],'rio-janeiro':['Cristo Redentor sobre el Corcovado, con Río de Janeiro y la bahía al fondo',1444]};
+    if(reviewedPhotos[id]){
+      assert.deepEqual([previous.alt,previous.imageHeight],reviewedPhotos[id]);
+      previous.alt=initial.alt;previous.imageHeight=initial.imageHeight;
+    }
     previous.hotels=previous.hotels.filter(h=>initial.hotels.some(old=>old.id===h.id));
     for(const hotel of previous.hotels){const old=initial.hotels.find(h=>h.id===hotel.id);if(!old.photoLicenseUrl)hotel.photoLicenseUrl=old.photoLicenseUrl;}
     assert.equal(createHash('sha256').update(JSON.stringify(previous)).digest('hex'),hash,id);

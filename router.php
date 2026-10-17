@@ -6,13 +6,16 @@ require_once __DIR__ . '/backend/php/http-content.php';
 $path=parse_url($_SERVER['REQUEST_URI'] ?? '/',PHP_URL_PATH);
 $method=$_SERVER['REQUEST_METHOD'] ?? 'GET';
 header('X-Content-Type-Options: nosniff');header('Referrer-Policy: strict-origin-when-cross-origin');header('Cache-Control: no-store');
+header('X-Frame-Options: SAMEORIGIN');header("Content-Security-Policy: frame-ancestors 'self'; base-uri 'self'; object-src 'none'");
 header('Cross-Origin-Opener-Policy: same-origin-allow-popups');
 try {
     require_once __DIR__ . '/backend/php/datos.php';
+    require_once __DIR__ . '/backend/php/seo.php';
     $host=$_SERVER['HTTP_HOST'] ?? '';
     $origin=rumbo_config('PHP_APP_ORIGIN');
     $expected=$origin ? parse_url($origin,PHP_URL_HOST).(parse_url($origin,PHP_URL_PORT)?':'.parse_url($origin,PHP_URL_PORT):'') : null;
     if ($expected ? $host!==$expected : !preg_match('/^(localhost|127\.0\.0\.1)(:\d+)?$/D',$host)) throw new HttpError(403,'Host no permitido.');
+    seo_endpoint((string)$path,$method);
     if ($path==='/api/health') {
         if (!in_array($method,['GET','HEAD'],true)) throw new HttpError(405,'Método no permitido.');
         $requestOrigin=$_SERVER['HTTP_ORIGIN'] ?? '';
@@ -25,7 +28,9 @@ try {
         if($path==='/api/reviews')handle_reviews($method);
         handle_exchange_rates($method);
     }
+    if (in_array($path,['/api/site-config','/api/analytics'],true)) { require_once __DIR__.'/backend/php/analytics.php'; handle_analytics($path,$method); }
     if (str_starts_with($path,'/api/auth/')) handle_auth($path,$method);
+    if (in_array($path,['/api/orders','/api/checkout'],true)) { require_once __DIR__.'/backend/php/orders.php'; handle_orders($path,$method); }
     if (in_array($path,['/api/database','/api/catalog','/api/state'],true)) handle_data($path,$method);
     if ($path==='/api/chat') {
         if ($method!=='POST') throw new HttpError(405,'Método no permitido.');
@@ -49,6 +54,7 @@ try {
     $public[]='recuperar-contrasena.html';
     $public[]='js/cuenta/password-recovery.js';
     $public[]='js/cuenta/microsoft-sdk.js';
+    array_push($public,'js/compartido/checkout.js','js/compartido/privacy.js','js/compartido/policies.js','css/compartido/launch.css');
     $public[]='fonts/Kalam-Regular.ttf';
     $public[]='js/idiomas/locale-engine.js';foreach(['es','en','de','fr','it','pt','ja','ko','zh','ar'] as $lang)$public[]='locales/'.$lang.'.json';
     if (!in_array($file,$public,true) && !preg_match('~^(imagenes|imagenes-viajes)(?:/[a-zA-Z0-9_-]+)+\.(jpg|png|webp)$~D',$file)) throw new HttpError(404,'Archivo no encontrado.');
@@ -58,6 +64,7 @@ try {
     $mime=['html'=>'text/html; charset=utf-8','js'=>'text/javascript; charset=utf-8','css'=>'text/css; charset=utf-8','jpg'=>'image/jpeg','png'=>'image/png','webp'=>'image/webp','json'=>'application/json; charset=utf-8'];
     $mime['ttf']='font/ttf';
     $body=file_get_contents($absolute);
+    if($ext==='html')$body=seo_html($body,$_SERVER['REQUEST_URI']??'/');
     if ($ext==='html' && $method==='GET' && !in_array($file,['error.html','microsoft-callback.html'],true)) $body=str_replace('<head>','<head><script id="rumbo-bootstrap" type="application/json">'.encode_json(bootstrap_data()).'</script><script src="js/cuenta/auth-client.js" defer></script><link rel="stylesheet" href="css/cuenta/auth.css">',$body);
     send_content($body,$mime[$ext],$ext!=='html');
 } catch (HttpError $e) {

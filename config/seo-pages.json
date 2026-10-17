@@ -1,0 +1,482 @@
+{
+  "index.html": {
+    "title": "Rumbo | Destinos, viajes y experiencias",
+    "description": "Descubre destinos, organiza vuelos y hospedaje, explora experiencias y prepara tu próximo viaje con Rumbo. Planificación y pagos de demostración."
+  },
+  "tienda.html": {
+    "title": "Tienda de viaje | Rumbo",
+    "description": "Explora accesorios, equipaje y productos para preparar tu viaje. Compara opciones y prueba una compra simulada, sin cargos reales."
+  },
+  "viajes.html?pantalla=destinos": {
+    "title": "Destinos para tu próximo viaje | Rumbo",
+    "description": "Explora 70 destinos con información, fotografías, hospedaje y recorridos para inspirar tu próximo viaje."
+  },
+  "viajes.html?pantalla=vuelos": {
+    "title": "Organiza tu vuelo | Rumbo",
+    "description": "Compara opciones de vuelo de demostración por destino, fecha y número de viajeros. Guarda tu selección en el resumen del viaje."
+  },
+  "viajes.html?pantalla=hoteles": {
+    "title": "Hospedaje y hoteles por destino | Rumbo",
+    "description": "Explora propuestas de hospedaje y calcula tu estancia por habitaciones, noches y viajeros. Opciones de demostración."
+  },
+  "servicios.html": {
+    "title": "Servicios de viaje | Rumbo",
+    "description": "Organiza vuelos, hospedaje, traslados, seguros y experiencias en un solo plan con Rumbo."
+  },
+  "servicios.html?seccion=traslados": {
+    "title": "Transporte y traslados | Rumbo",
+    "description": "Organiza el traslado entre el aeropuerto de tu destino y tu hospedaje. Compara propuestas según pasajeros y equipaje."
+  },
+  "servicios.html?seccion=seguros": {
+    "title": "Seguro de viaje | Rumbo",
+    "description": "Compara propuestas de seguro según fechas, destino y viajeros. Las selecciones son de demostración y no contratan pólizas."
+  },
+  "servicios.html?seccion=guias": {
+    "title": "Experiencias y recorridos | Rumbo",
+    "description": "Descubre recorridos, lugares y experiencias por destino para organizar tu viaje."
+  },
+  "servicios.html?seccion=privacidad": {
+    "title": "Política de privacidad | Rumbo",
+    "description": "Consulta qué información utiliza Rumbo, cómo se conserva, qué proveedores intervienen y cómo ejercer control sobre tus datos."
+  },
+  "servicios.html?seccion=terminos": {
+    "title": "Términos y condiciones | Rumbo",
+    "description": "Lee las condiciones de uso de Rumbo, sus cuentas y sus simulaciones de viajes, servicios y compras."
+  },
+  "servicios.html?seccion=cookies": {
+    "title": "Política de cookies | Rumbo",
+    "description": "Conoce las cookies necesarias y la analítica opcional de Rumbo. Revisa cómo aceptar, rechazar o retirar tu permiso."
+  },
+  "servicios.html?seccion=cancelaciones": {
+    "title": "Cambios y cancelaciones | Rumbo",
+    "description": "Consulta cómo modificar selecciones y qué implica cancelar una operación de demostración en Rumbo."
+  },
+  "servicios.html?seccion=legal": {
+    "title": "Información legal y licencias | Rumbo",
+    "description": "Consulta las fuentes y licencias de fotografías y contenidos visuales utilizados en Rumbo."
+  },
+  "servicios.html?seccion=ayuda": {
+    "title": "Centro de ayuda | Rumbo",
+    "description": "Encuentra respuestas para utilizar las cuentas, selecciones, compras simuladas y servicios de Rumbo."
+  },
+  "viajes.html?pantalla=detalle-destino&destino=roatan": {
+    "title": "Roatán, Honduras | Destinos Rumbo",
+    "description": "Playas de West Bay y West End, manglares y recorridos por la isla.",
+    "image": "imagenes-viajes/destinos/playa.jpg",
+    "imageAlt": "Playa de arena blanca y palmeras frente al mar turquesa de Roatán"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=san-jose": {
+    "title": "San José, Costa Rica | Destinos Rumbo",
+    "description": "Museos, mercados y parques en el Valle Central de Costa Rica.",
+    "image": "imagenes-viajes/destinos/destino-san-jose-teatro.jpg",
+    "imageAlt": "Fachada del Teatro Nacional en San José, Costa Rica"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=paris": {
+    "title": "París, Francia | Destinos Rumbo",
+    "description": "Museos, cafés y paseos junto al Sena en la capital francesa.",
+    "image": "imagenes-viajes/destinos/destino-paris.jpg",
+    "imageAlt": "Vista de París; fotografía de Wikimedia Commons"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=bali": {
+    "title": "Bali, Indonesia | Destinos Rumbo",
+    "description": "Templos de Tanah Lot y Uluwatu, arrozales de Ubud y costa de Sanur.",
+    "image": "imagenes-viajes/destinos/bali.jpg",
+    "imageAlt": "Templo Ulun Danu Bratan junto al lago en Bali"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=venecia": {
+    "title": "Venecia, Italia | Destinos Rumbo",
+    "description": "Canales, puentes y plazas para descubrir a pie.",
+    "image": "imagenes-viajes/destinos/destino-venecia-rialto.jpg",
+    "imageAlt": "El Gran Canal de Venecia desde el puente de Rialto"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=osaka": {
+    "title": "Osaka, Japón | Destinos Rumbo",
+    "description": "Gastronomía, barrios animados y cultura urbana japonesa.",
+    "image": "imagenes-viajes/destinos/destino-osaka.jpg",
+    "imageAlt": "Vista de Osaka; fotografía de Wikimedia Commons"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=nueva-york": {
+    "title": "Nueva York, Estados Unidos | Destinos Rumbo",
+    "description": "Central Park, el puente de Brooklyn y los barrios de Manhattan.",
+    "image": "imagenes-viajes/destinos/destino-nueva-york.jpg",
+    "imageAlt": "Vista de Nueva York; fotografía de Wikimedia Commons"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=barcelona": {
+    "title": "Barcelona, España | Destinos Rumbo",
+    "description": "Arquitectura, gastronomía y paseos junto al Mediterráneo.",
+    "image": "imagenes-viajes/destinos/destino-barcelona-sagrada-familia.jpg",
+    "imageAlt": "La Sagrada Familia iluminada al anochecer, con su reflejo en el estanque"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=roma": {
+    "title": "Roma, Italia | Destinos Rumbo",
+    "description": "Coliseo, plazas de Trastevere y jardines de Villa Borghese.",
+    "image": "imagenes-viajes/destinos/destino-roma.jpg",
+    "imageAlt": "Vista de Roma; fotografía de Wikimedia Commons"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=ciudad-guatemala": {
+    "title": "Ciudad de Guatemala, Guatemala | Destinos Rumbo",
+    "description": "Museos, mercados y barrios para una escapada urbana.",
+    "image": "imagenes-viajes/destinos/destino-ciudad-guatemala.jpg",
+    "imageAlt": "Vista de Ciudad de Guatemala; fotografía de Wikimedia Commons"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=panama": {
+    "title": "Ciudad de Panamá, Panamá | Destinos Rumbo",
+    "description": "Casco Antiguo, Cerro Ancón y Parque Natural Metropolitano.",
+    "image": "imagenes-viajes/destinos/destino-panama.jpg",
+    "imageAlt": "Vista de Ciudad de Panamá; fotografía de Wikimedia Commons"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=cancun": {
+    "title": "Cancún, México | Destinos Rumbo",
+    "description": "Playa Delfines, laguna Nichupté y sitio arqueológico El Rey.",
+    "image": "imagenes-viajes/destinos/destino-cancun.jpg",
+    "imageAlt": "Vista de Cancún; fotografía de Wikimedia Commons"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=miami": {
+    "title": "Miami, Estados Unidos | Destinos Rumbo",
+    "description": "South Beach, Little Havana y jardines de Vizcaya.",
+    "image": "imagenes-viajes/destinos/destino-miami.jpg",
+    "imageAlt": "Vista de Miami; fotografía de Wikimedia Commons"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=madrid": {
+    "title": "Madrid, España | Destinos Rumbo",
+    "description": "Parque de El Retiro, Plaza Mayor y mercados del centro.",
+    "image": "imagenes-viajes/destinos/destino-madrid-cibeles.jpg",
+    "imageAlt": "Palacio y fuente de Cibeles iluminados por la noche en Madrid"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=londres": {
+    "title": "Londres, Reino Unido | Destinos Rumbo",
+    "description": "Museos, mercados y paseos por las orillas del Támesis.",
+    "image": "imagenes-viajes/destinos/destino-londres.jpg",
+    "imageAlt": "Vista de Londres"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=lisboa": {
+    "title": "Lisboa, Portugal | Destinos Rumbo",
+    "description": "Tranvías, miradores y barrios para recorrer junto al Tajo.",
+    "image": "imagenes-viajes/destinos/destino-lisboa.jpg",
+    "imageAlt": "Vista de las colinas y los tejados de Lisboa"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=toronto": {
+    "title": "Toronto, Canadá | Destinos Rumbo",
+    "description": "El lago Ontario, museos y mercados a tu ritmo.",
+    "image": "imagenes-viajes/destinos/destino-toronto.jpg",
+    "imageAlt": "Vista de Toronto y la torre CN desde las islas"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=rio-janeiro": {
+    "title": "Río de Janeiro, Brasil | Destinos Rumbo",
+    "description": "Playas de Ipanema, jardines y vistas desde el Pan de Azúcar.",
+    "image": "imagenes-viajes/destinos/destino-rio-janeiro.jpg",
+    "imageAlt": "Cristo Redentor sobre el Corcovado, con Río de Janeiro y la bahía al fondo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=ciudad-mexico": {
+    "title": "Ciudad de México, México | Destinos Rumbo",
+    "description": "Chapultepec, Coyoacán y museos para recorrer por barrios.",
+    "image": "imagenes-viajes/destinos/destino-ciudad-mexico.jpg",
+    "imageAlt": "Vista de Ciudad de México, México"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=bogota": {
+    "title": "Bogotá, Colombia | Destinos Rumbo",
+    "description": "La Candelaria, el Museo del Oro y vistas desde Monserrate.",
+    "image": "imagenes-viajes/destinos/destino-bogota.jpg",
+    "imageAlt": "Panorama de Bogotá al atardecer"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=cartagena": {
+    "title": "Cartagena, Colombia | Destinos Rumbo",
+    "description": "Murallas, plazas y tardes junto al Caribe colombiano.",
+    "image": "imagenes-viajes/destinos/destino-cartagena.jpg",
+    "imageAlt": "Vista de Cartagena, Colombia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=lima": {
+    "title": "Lima, Perú | Destinos Rumbo",
+    "description": "Malecón de Miraflores, Barranco y cocina peruana.",
+    "image": "imagenes-viajes/destinos/destino-lima.jpg",
+    "imageAlt": "Costa y parques de Miraflores en Lima"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=buenos-aires": {
+    "title": "Buenos Aires, Argentina | Destinos Rumbo",
+    "description": "Librerías, cafés y paseos por Palermo y San Telmo.",
+    "image": "imagenes-viajes/destinos/destino-buenos-aires.jpg",
+    "imageAlt": "Puente de la Mujer y edificios de Puerto Madero en Buenos Aires"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=santiago": {
+    "title": "Santiago, Chile | Destinos Rumbo",
+    "description": "Barrios históricos, parques y vistas desde el cerro San Cristóbal.",
+    "image": "imagenes-viajes/destinos/destino-santiago.jpg",
+    "imageAlt": "Santiago de Chile al anochecer con la cordillera al fondo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=medellin": {
+    "title": "Medellín, Colombia | Destinos Rumbo",
+    "description": "Jardín Botánico, parques y recorridos por el valle de Aburrá.",
+    "image": "imagenes-viajes/destinos/destino-medellin.jpg",
+    "imageAlt": "Vista panorámica de Medellín y las montañas del valle"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=punta-cana": {
+    "title": "Punta Cana, República Dominicana | Destinos Rumbo",
+    "description": "Arena clara, costa de Bávaro y días de descanso junto al mar.",
+    "image": "imagenes-viajes/destinos/destino-punta-cana.jpg",
+    "imageAlt": "Playa Bávaro en Punta Cana, con palmeras y mar turquesa"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=san-salvador": {
+    "title": "San Salvador, El Salvador | Destinos Rumbo",
+    "description": "Centro Histórico, museos y cafés en la capital salvadoreña.",
+    "image": "imagenes-viajes/destinos/destino-san-salvador.jpg",
+    "imageAlt": "Vista de San Salvador al anochecer con su volcán al fondo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=san-juan": {
+    "title": "San Juan, Puerto Rico | Destinos Rumbo",
+    "description": "Calles del Viejo San Juan, fortalezas y costa de Condado.",
+    "image": "imagenes-viajes/destinos/destino-san-juan.jpg",
+    "imageAlt": "Vista aérea de la costa y el Viejo San Juan"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=los-angeles": {
+    "title": "Los Ángeles, Estados Unidos | Destinos Rumbo",
+    "description": "Museos, Griffith Park y paseos por Santa Mónica.",
+    "image": "imagenes-viajes/destinos/destino-los-angeles.jpg",
+    "imageAlt": "Panorama de Los Ángeles con sus rascacielos al atardecer"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=las-vegas": {
+    "title": "Las Vegas, Estados Unidos | Destinos Rumbo",
+    "description": "Espectáculos, gastronomía y recorridos por el Strip.",
+    "image": "imagenes-viajes/destinos/destino-las-vegas.jpg",
+    "imageAlt": "Vista de Las Vegas, Estados Unidos"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=vancouver": {
+    "title": "Vancouver, Canadá | Destinos Rumbo",
+    "description": "Stanley Park, Granville Island y paseos entre bosque y costa.",
+    "image": "imagenes-viajes/destinos/destino-vancouver.jpg",
+    "imageAlt": "Vancouver, su puerto y las montañas al fondo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=amsterdam": {
+    "title": "Ámsterdam, Países Bajos | Destinos Rumbo",
+    "description": "Canales, museos y recorridos a pie por Jordaan.",
+    "image": "imagenes-viajes/destinos/destino-amsterdam.jpg",
+    "imageAlt": "Canal de Ámsterdam junto a sus casas y puentes"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=berlin": {
+    "title": "Berlín, Alemania | Destinos Rumbo",
+    "description": "Isla de los Museos, parques y barrios con historia.",
+    "image": "imagenes-viajes/destinos/destino-berlin.jpg",
+    "imageAlt": "Vista de Berlín, Alemania"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=praga": {
+    "title": "Praga, Chequia | Destinos Rumbo",
+    "description": "Puente de Carlos, plazas y miradores sobre el Moldava.",
+    "image": "imagenes-viajes/destinos/destino-praga.jpg",
+    "imageAlt": "Vista de Praga y los puentes sobre el río Moldava"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=estambul": {
+    "title": "Estambul, Turquía | Destinos Rumbo",
+    "description": "Bazares, mezquitas y recorridos en ferry por el Bósforo.",
+    "image": "imagenes-viajes/destinos/destino-estambul.jpg",
+    "imageAlt": "Mezquitas y panorama de Estambul al atardecer"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=dubai": {
+    "title": "Dubái, Emiratos Árabes Unidos | Destinos Rumbo",
+    "description": "Arquitectura, mercados de Al Fahidi y paseos junto al Creek.",
+    "image": "imagenes-viajes/destinos/destino-dubai.jpg",
+    "imageAlt": "Vista de Dubái, Emiratos Árabes Unidos"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=tokio": {
+    "title": "Tokio, Japón | Destinos Rumbo",
+    "description": "Asakusa, jardines y barrios conectados por tren.",
+    "image": "imagenes-viajes/destinos/destino-tokio.jpg",
+    "imageAlt": "Torre de Tokio iluminada y panorama nocturno de la ciudad"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=seul": {
+    "title": "Seúl, Corea del Sur | Destinos Rumbo",
+    "description": "Palacios, mercados y paseos junto al río Han.",
+    "image": "imagenes-viajes/destinos/destino-seul.jpg",
+    "imageAlt": "Vista de Seúl, Corea del Sur"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=singapur": {
+    "title": "Singapur, Singapur | Destinos Rumbo",
+    "description": "Jardines botánicos, barrios históricos y paseos por Marina Bay.",
+    "image": "imagenes-viajes/destinos/destino-singapur.jpg",
+    "imageAlt": "Vista de Singapur, Singapur"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=sidney": {
+    "title": "Sídney, Australia | Destinos Rumbo",
+    "description": "La bahía, la Ópera y senderos costeros cerca de Bondi.",
+    "image": "imagenes-viajes/destinos/destino-sidney.jpg",
+    "imageAlt": "Ópera de Sídney y su bahía iluminadas de noche"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=bangkok": {
+    "title": "Bangkok, Tailandia | Destinos Rumbo",
+    "description": "Cúpulas doradas, mercados y canales dan ritmo a la capital tailandesa.",
+    "image": "imagenes-viajes/destinos/destino-bangkok.jpg",
+    "imageAlt": "Panorámica de Bangkok desde la State Tower, Tailandia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=hong-kong": {
+    "title": "Hong Kong, China (Hong Kong) | Destinos Rumbo",
+    "description": "La bahía Victoria une miradores, ferris y barrios llenos de vida.",
+    "image": "imagenes-viajes/destinos/destino-hong-kong.jpg",
+    "imageAlt": "Rascacielos de Hong Kong iluminados sobre Victoria Harbour"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=macao": {
+    "title": "Macao, China (Macao) | Destinos Rumbo",
+    "description": "Calles adoquinadas y fachadas históricas conviven con la energía contemporánea de Macao.",
+    "image": "imagenes-viajes/destinos/destino-macao.jpg",
+    "imageAlt": "Panorámica de Macao con el Grand Lisboa junto al lago Nam Van"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=antalya": {
+    "title": "Antalya, Turquía | Destinos Rumbo",
+    "description": "Antalya combina el casco antiguo de Kaleiçi con una costa de playas y acantilados.",
+    "image": "imagenes-viajes/destinos/destino-antalya.jpg",
+    "imageAlt": "Playa de Konyaaltı y montañas junto al Mediterráneo en Antalya"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=kuala-lumpur": {
+    "title": "Kuala Lumpur, Malasia | Destinos Rumbo",
+    "description": "Torres relucientes, mercados y templos muestran la diversidad de Kuala Lumpur.",
+    "image": "imagenes-viajes/destinos/destino-kuala-lumpur.jpg",
+    "imageAlt": "Cruce de Bukit Bintang entre los edificios de Kuala Lumpur"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=phuket": {
+    "title": "Phuket, Tailandia | Destinos Rumbo",
+    "description": "La isla de Phuket ofrece playas tropicales y un casco antiguo de gran personalidad.",
+    "image": "imagenes-viajes/destinos/destino-phuket.jpg",
+    "imageAlt": "Arena y mar de la playa Patong en la isla de Phuket"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=pattaya": {
+    "title": "Pattaya, Tailandia | Destinos Rumbo",
+    "description": "Playas, miradores e islas cercanas definen esta ciudad del golfo de Tailandia.",
+    "image": "imagenes-viajes/destinos/destino-pattaya.jpg",
+    "imageAlt": "Bahía y playa de Pattaya vistas desde un mirador"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=taipei": {
+    "title": "Taipéi, Taiwán | Destinos Rumbo",
+    "description": "Taipéi reúne templos tradicionales, mercados nocturnos y un horizonte dominado por Taipei 101.",
+    "image": "imagenes-viajes/destinos/destino-taipei.jpg",
+    "imageAlt": "Panorámica de Taipéi con la torre Taipei 101"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=milan": {
+    "title": "Milán, Italia | Destinos Rumbo",
+    "description": "La capital lombarda combina patrimonio monumental, diseño contemporáneo y barrios creativos.",
+    "image": "imagenes-viajes/destinos/destino-milan.jpg",
+    "imageAlt": "Catedral de Milán desde la Piazza del Duomo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=viena": {
+    "title": "Viena, Austria | Destinos Rumbo",
+    "description": "Viena une palacios, cafés y avenidas monumentales con parques donde bajar el ritmo.",
+    "image": "imagenes-viajes/destinos/destino-viena.jpg",
+    "imageAlt": "Palacio de Schönbrunn y sus jardines en Viena"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=atenas": {
+    "title": "Atenas, Grecia | Destinos Rumbo",
+    "description": "Atenas entrelaza monumentos clásicos con barrios, mercados y colinas llenos de vida.",
+    "image": "imagenes-viajes/destinos/destino-atenas.jpg",
+    "imageAlt": "Acrópolis de Atenas sobre la ciudad al amanecer"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=budapest": {
+    "title": "Budapest, Hungría | Destinos Rumbo",
+    "description": "Buda y Pest se miran sobre el Danubio entre palacios, puentes y arquitectura monumental.",
+    "image": "imagenes-viajes/destinos/destino-budapest.jpg",
+    "imageAlt": "Río Danubio y puentes de Budapest desde la colina Gellért"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=florencia": {
+    "title": "Florencia, Italia | Destinos Rumbo",
+    "description": "Florencia ofrece plazas renacentistas, talleres tradicionales y vistas desde sus colinas.",
+    "image": "imagenes-viajes/destinos/destino-florencia.jpg",
+    "imageAlt": "Catedral y centro histórico de Florencia desde Piazzale Michelangelo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=munich": {
+    "title": "Múnich, Alemania | Destinos Rumbo",
+    "description": "Múnich combina patrimonio bávaro, museos y una vida cotidiana que se disfruta al aire libre.",
+    "image": "imagenes-viajes/destinos/destino-munich.jpg",
+    "imageAlt": "Torres y tejados del centro de Múnich"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=dublin": {
+    "title": "Dublín, Irlanda | Destinos Rumbo",
+    "description": "Dublín reúne patrimonio literario, música y barrios que invitan a recorrerlos a pie.",
+    "image": "imagenes-viajes/destinos/destino-dublin.jpg",
+    "imageAlt": "Vista aérea de los edificios y el río de Dublín"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=edimburgo": {
+    "title": "Edimburgo, Reino Unido | Destinos Rumbo",
+    "description": "Edimburgo combina el trazado medieval de Old Town con jardines y miradores volcánicos.",
+    "image": "imagenes-viajes/destinos/destino-edimburgo.jpg",
+    "imageAlt": "Panorámica de los edificios históricos de Edimburgo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=pekin": {
+    "title": "Pekín, China | Destinos Rumbo",
+    "description": "Pekín despliega su historia entre monumentos imperiales y callejones tradicionales.",
+    "image": "imagenes-viajes/destinos/destino-pekin.jpg",
+    "imageAlt": "Distrito de negocios y rascacielos de Pekín"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=shanghai": {
+    "title": "Shanghái, China | Destinos Rumbo",
+    "description": "Shanghái combina el perfil de Pudong con jardines clásicos y calles históricas.",
+    "image": "imagenes-viajes/destinos/destino-shanghai.jpg",
+    "imageAlt": "Rascacielos de Shanghái junto al río Huangpu"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=hanoi": {
+    "title": "Hanói, Vietnam | Destinos Rumbo",
+    "description": "Hanói combina lagos, templos y la energía de sus calles comerciales tradicionales.",
+    "image": "imagenes-viajes/destinos/destino-hanoi.jpg",
+    "imageAlt": "Panorámica de Hanói con la montaña Ba Vì al fondo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=ho-chi-minh": {
+    "title": "Ciudad Ho Chi Minh, Vietnam | Destinos Rumbo",
+    "description": "Ciudad Ho Chi Minh reúne arquitectura histórica, mercados y una intensa vida callejera.",
+    "image": "imagenes-viajes/destinos/destino-ho-chi-minh.jpg",
+    "imageAlt": "Ayuntamiento histórico de Ciudad Ho Chi Minh"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=delhi": {
+    "title": "Delhi, India | Destinos Rumbo",
+    "description": "Delhi reúne ciudades históricas, monumentos y mercados que cuentan distintas épocas de la India.",
+    "image": "imagenes-viajes/destinos/destino-delhi.jpg",
+    "imageAlt": "Puerta de la India al amanecer en Delhi"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=mumbai": {
+    "title": "Mumbai, India | Destinos Rumbo",
+    "description": "Mumbai combina arquitectura histórica, mercados y paseos costeros llenos de actividad.",
+    "image": "imagenes-viajes/destinos/destino-mumbai.jpg",
+    "imageAlt": "Puente Bandra-Worli Sea Link sobre el mar en Mumbai"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=agra": {
+    "title": "Agra, India | Destinos Rumbo",
+    "description": "Agra invita a descubrir el Taj Mahal y otras grandes obras del patrimonio mogol.",
+    "image": "imagenes-viajes/destinos/destino-agra.jpg",
+    "imageAlt": "Taj Mahal y su estanque reflectante en Agra"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=jaipur": {
+    "title": "Jaipur, India | Destinos Rumbo",
+    "description": "Jaipur ofrece palacios, observatorios y mercados de artesanía en un entorno de colinas.",
+    "image": "imagenes-viajes/destinos/destino-jaipur.jpg",
+    "imageAlt": "Fachada rosa del Hawa Mahal en Jaipur"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=el-cairo": {
+    "title": "El Cairo, Egipto | Destinos Rumbo",
+    "description": "El Cairo permite combinar barrios históricos con los grandes monumentos de la región de Giza.",
+    "image": "imagenes-viajes/destinos/destino-el-cairo.jpg",
+    "imageAlt": "Ópera de El Cairo, parque Al Hurriyah y río Nilo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=marrakech": {
+    "title": "Marrakech, Marruecos | Destinos Rumbo",
+    "description": "Marrakech combina el bullicio de la medina con palacios, jardines y barrios modernos.",
+    "image": "imagenes-viajes/destinos/destino-marrakech.jpg",
+    "imageAlt": "Mezquita Koutoubia y jardines de Marrakech"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=ciudad-del-cabo": {
+    "title": "Ciudad del Cabo, Sudáfrica | Destinos Rumbo",
+    "description": "Ciudad del Cabo se extiende entre Table Mountain, barrios históricos y la costa atlántica.",
+    "image": "imagenes-viajes/destinos/destino-ciudad-del-cabo.jpg",
+    "imageAlt": "Playa de Camps Bay y montañas en Ciudad del Cabo"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=meca": {
+    "title": "La Meca, Arabia Saudita | Destinos Rumbo",
+    "description": "La Meca es un centro de peregrinación y patrimonio islámico con acceso reservado a musulmanes.",
+    "image": "imagenes-viajes/destinos/destino-meca.jpg",
+    "imageAlt": "Gran Mezquita y Kaaba en La Meca"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=medina": {
+    "title": "Medina, Arabia Saudita | Destinos Rumbo",
+    "description": "Medina reúne patrimonio espiritual, antiguos caminos y paisajes del oeste saudí.",
+    "image": "imagenes-viajes/destinos/destino-medina.jpg",
+    "imageAlt": "Vista aérea de la Mezquita del Profeta en Medina"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=shenzhen": {
+    "title": "Shenzhen, China | Destinos Rumbo",
+    "description": "Shenzhen combina arquitectura contemporánea, barrios comerciales y grandes parques urbanos.",
+    "image": "imagenes-viajes/destinos/destino-shenzhen.jpg",
+    "imageAlt": "Rascacielos del distrito de Futian en Shenzhen"
+  }
+}

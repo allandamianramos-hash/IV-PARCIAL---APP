@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-10-17T20:31:21.535Z",
+  "tier": [
+    {
+      "edition": "Basic",
+      "service_objective": "Basic",
+      "elastic_pool_name": null
+    }
+  ],
+  "storage": [
+    {
+      "name": "data_0",
+      "type_desc": "ROWS",
+      "allocatedMB": 32,
+      "usedMB": 29.5
+    },
+    {
+      "name": "log",
+      "type_desc": "LOG",
+      "allocatedMB": 8,
+      "usedMB": 1.52
+    },
+    {
+      "name": "XTP",
+      "type_desc": "FILESTREAM",
+      "allocatedMB": 0,
+      "usedMB": null
+    }
+  ],
+  "maxSize": [
+    {
+      "maxBytes": "2147483648"
+    }
+  ],
+  "catalog": [
+    {
+      "name": "RumboDestinations",
+      "rowCount": "70"
+    },
+    {
+      "name": "RumboHotels",
+      "rowCount": "350"
+    },
+    {
+      "name": "RumboProducts",
+      "rowCount": "100"
+    }
+  ],
+  "orderIndexes": [
+    {
+      "name": "PK__RumboOrd__3214EC07A63A2C7E",
+      "is_unique": true
+    },
+    {
+      "name": "UQ_RumboOrders_Checkout",
+      "is_unique": true
+    },
+    {
+      "name": "IX_RumboOrders_History",
+      "is_unique": false
+    }
+  ],
+  "migrations": [
+    {
+      "Name": "001_initial.sql"
+    },
+    {
+      "Name": "002_accounts.sql"
+    },
+    {
+      "Name": "003_php_auth_limits.sql"
+    },
+    {
+      "Name": "004_google_accounts.sql"
+    },
+    {
+      "Name": "005_google_permissions.sql"
+    },
+    {
+      "Name": "006_microsoft_accounts.sql"
+    },
+    {
+      "Name": "007_password_recovery.sql"
+    },
+    {
+      "Name": "008_demo_orders.sql"
+    },
+    {
+      "Name": "009_aggregate_analytics.sql"
+    }
+  ]
+}

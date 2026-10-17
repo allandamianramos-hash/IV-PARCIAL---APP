@@ -4,7 +4,7 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {chromium} from '@playwright/test';
 const base=process.env.BROWSER_TEST_ORIGIN||'http://127.0.0.1:8000';
 const launch=()=>chromium.launch({channel:process.env.BROWSER_CHANNEL||'msedge',headless:true});
-async function language(page,code){await page.locator('.locale-toggle').click();await page.locator('#rumbo-language').selectOption(code);await page.locator('[data-apply]').click();await page.waitForFunction(code=>document.documentElement.lang===code,code);await page.locator('.locale-dialog').first().waitFor({state:'hidden'});await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));}
+async function language(page,code){const reject=page.locator('.cookie-banner [data-reject]');if(await reject.isVisible())await reject.click();await page.locator('.locale-toggle').click();await page.locator('#rumbo-language').selectOption(code);await page.locator('[data-apply]').click();await page.waitForFunction(code=>document.documentElement.lang===code,code);await page.locator('.locale-dialog').first().waitFor({state:'hidden'});await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));}
 
 test('hero automatically cycles every destination without new controls and respects reduced motion',async()=>{
  const browser=await launch();try{

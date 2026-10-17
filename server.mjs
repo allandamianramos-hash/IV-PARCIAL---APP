@@ -12,6 +12,9 @@ import {exchangeApi} from './backend/node/exchange-api.mjs';
 import { authApi } from './backend/node/auth-api.mjs';
 import { sendError } from './backend/node/error-pages.mjs';
 import {sendContent} from './backend/node/http-content.mjs';
+import {ordersApi} from './backend/node/orders-api.mjs';
+import {analyticsApi} from './backend/node/analytics-api.mjs';
+import {seoHtml,seoEndpoint} from './backend/node/seo.mjs';
 const root = fileURLToPath(new URL("./public/", import.meta.url));
 const publicFiles = new Set(["error.html", "js/compartido/error.js", "js/compartido/connection.js", "index.html", "js/inicio/script.js", "js/rumbito/chat-engine.js", "js/rumbito/chat-client.js", "js/rumbito/chat-ui.js", "css/rumbito/chat.css", "css/inicio/style.css", "viajes.html", "js/destinos/viajes.js", "css/destinos/viajes.css", "tienda.html", "js/tienda/tienda.js", "css/tienda/tienda.css", "servicios.html", "js/servicios/servicios.js", "css/servicios/servicios.css", "js/compartido/common.js", "css/compartido/common.css", "js/servicios/journey.js", "css/inicio/promociones.css", "css/compartido/design.css"]);
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
@@ -30,6 +33,7 @@ publicFiles.add('microsoft-callback.html');
 publicFiles.add('recuperar-contrasena.html');
 publicFiles.add('js/cuenta/password-recovery.js');
 publicFiles.add('js/cuenta/microsoft-sdk.js');
+for(const file of ['js/compartido/checkout.js','js/compartido/privacy.js','js/compartido/policies.js','css/compartido/launch.css'])publicFiles.add(file);
 for(const lang of ['es','en','de','fr','it','pt','ja','ko','zh','ar'])publicFiles.add('locales/'+lang+'.json');
 mime['.json']='application/json; charset=utf-8';
 const assetAliases=JSON.parse(await readFile(new URL('./config/asset-aliases.json',import.meta.url),'utf8'));
@@ -41,10 +45,15 @@ export function createApp(chatOptions) {
       sendError(req,res,403); return;
     }
     res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("X-Frame-Options", "SAMEORIGIN");
+    res.setHeader("Content-Security-Policy", "frame-ancestors 'self'; base-uri 'self'; object-src 'none'");
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
     res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
     res.setHeader("Cache-Control", "no-store");
     try {
+      if (seoEndpoint(req,res)) return;
+      if (await analyticsApi(req,res)) return;
+      if (await ordersApi(req,res)) return;
       if (await reviewsApi(req,res)) return;
       if (await exchangeApi(req,res)) return;
       if (await authApi(req, res)) return;
@@ -70,6 +79,7 @@ export function createApp(chatOptions) {
       // Only public assets; credentials and configuration never leave the server.
       if (!publicFiles.has(path) && !image) { sendError(req,res,404); return; }
       let data = await readFile(resolve(root, path));
+      if(extname(path)==='.html')data=seoHtml(data.toString('utf8'),req.url);
       if (extname(path) === '.html' && path !== 'error.html' && path !== 'microsoft-callback.html' && req.method === 'GET') {
         const initial = await bootstrap(req, res);
         data = data.toString('utf8').replace('<head>', `<head><script id="rumbo-bootstrap" type="application/json">${safeJson(initial)}</script><script src="js/cuenta/auth-client.js" defer></script><link rel="stylesheet" href="css/cuenta/auth.css">`);

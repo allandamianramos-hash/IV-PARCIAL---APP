@@ -17,7 +17,7 @@ function page(readyState='interactive',signedIn=true){
     window:{addEventListener:(type,fn)=>{windowEvents[type]=fn;}},
     sessionStorage:{getItem:()=>null,removeItem(){}},localStorage:{removeItem(){},setItem(){}},
     location:{replace:url=>redirects.push(url),reload:()=>redirects.push('reload')},
-    fetch:async()=>({ok:true,json:async()=>({ok:true})}),AbortSignal
+    fetch:async()=>({ok:true,json:async()=>({ok:true})}),AbortSignal,URL,URLSearchParams
   };
   return {events,windowEvents,redirects,scope,
     buildHeader(){header={...node(),children:['Iniciar sesión','Registrarse'],replaceChildren(...children){this.children=children;}};return header;},
@@ -31,7 +31,7 @@ test('la sesión espera al encabezado creado por los scripts defer',async()=>{
   const menu=header.children[0],panel=menu.children[1];
   assert.equal(menu.className,'account-menu');
   assert.equal(panel.children[0].children[0].children.map(n=>n.textContent).join(''),'Hola, Viajera');
-  assert.deepEqual(panel.children[1].children.map(n=>n.href),['servicios.html?seccion=perfil','servicios.html?seccion=mi-viaje','tienda.html?carrito=1']);
+  assert.deepEqual(panel.children[1].children.map(n=>n.href),['servicios.html?seccion=perfil','servicios.html?seccion=historial','servicios.html?seccion=mi-viaje','tienda.html?carrito=1']);
   menu.open=true;p.events.keydown({key:'Escape'});assert.equal(menu.open,false);assert.equal(menu.children[0].focused,true);
   await panel.children[2].click();
   assert.deepEqual(p.redirects,['index.html']);

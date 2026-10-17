@@ -19,6 +19,11 @@
       if(response.status>=500)window.RumboStorage?.reportError?.('database');
       const result=await response.json();if(!response.ok){const error=Error(result.error||'No se pudo completar la solicitud.');error.status=response.status;error.code=result.code;error.email=result.email;throw error;}return result;
     }
+    const returnPath=(()=>{
+      const requested=new URLSearchParams(location.search).get('returnTo');
+      if(!requested)return 'index.html';
+      try{const url=new URL(requested,location.href);return url.origin===location.origin&&['/servicios.html','/tienda.html','/viajes.html','/index.html'].includes(url.pathname)?url.pathname+url.search:'index.html';}catch{return 'index.html';}
+    })();
     const accounts=document.querySelector('.account-actions');
     let accountName;
     function updateGreeting(){
@@ -41,7 +46,7 @@
       identity.append(greeting,email);
       const nav=document.createElement('nav');nav.setAttribute('aria-label','Opciones de mi cuenta');
       const paths={profile:'<circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/>',trip:'<rect x="4" y="7" width="16" height="14" rx="3"/><path d="M9 7V4h6v3M8 11v6m8-6v6"/>',cart:'<path d="M3 3h2l3 12h10l3-9H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/>'};
-      for(const [label,href,icon]of [['Mi perfil','servicios.html?seccion=perfil','profile'],['Mi viaje','servicios.html?seccion=mi-viaje','trip'],['Mi carrito','tienda.html?carrito=1','cart']]){
+      for(const [label,href,icon]of [['Mi perfil','servicios.html?seccion=perfil','profile'],['Viajes y compras','servicios.html?seccion=historial','trip'],['Mi viaje actual','servicios.html?seccion=mi-viaje','trip'],['Mi carrito','tienda.html?carrito=1','cart']]){
         const link=document.createElement('a');link.href=href;link.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">'+paths[icon]+'</svg><span>'+label+'</span>';nav.append(link);
       }
       const logout=document.createElement('button');logout.type='button';logout.className='account-link auth-logout';logout.textContent='Cerrar sesión';
@@ -120,7 +125,7 @@
       let googleBusy=false,googleResizeObserver;
       async function receiveGoogle(response){
         if(googleBusy||submitting||socialPending)return;googleBusy=true;googleStatus.textContent='Comprobando tu cuenta de Google…';
-        try{await request('google',{credential:response.credential});changed();location.replace('index.html');}
+        try{await request('google',{credential:response.credential});changed();location.replace(returnPath);}
         catch(error){
           googleStatus.textContent=error.message;
           if(['RUMBO_PASSWORD_REQUIRED','RUMBO_PASSWORD_SETUP_REQUIRED'].includes(error.code)){
@@ -201,7 +206,7 @@
           if(result){
             await client.clearCache();
             busy=true;status.textContent='Comprobando tu cuenta de Microsoft…';
-            try{await request('microsoft',{credential:result.idToken});await client.clearCache();changed();location.replace('index.html');}
+            try{await request('microsoft',{credential:result.idToken});await client.clearCache();changed();location.replace(returnPath);}
             catch(error){status.textContent=error.message;if(['RUMBO_PASSWORD_REQUIRED','RUMBO_PASSWORD_SETUP_REQUIRED'].includes(error.code))requireRumboPassword('microsoft',result.idToken,error,()=>{busy=false;microsoftButton.disabled=false;status.textContent='';client.clearCache().catch(()=>{});},()=>client.clearCache());else busy=false;}
           }
         }catch(error){status.textContent=microsoftError(error);if(client)microsoftButton.disabled=false;}
@@ -219,7 +224,7 @@
       setupMicrosoft();
     }
     if(form){
-      if(user){if(!window.RumboStorage?.isRedirecting?.())location.replace('index.html');return;}
+      if(user){if(!window.RumboStorage?.isRedirecting?.())location.replace(returnPath);return;}
       const register=form.dataset.mode==='register';
       form.addEventListener('submit',async event=>{
         event.preventDefault();if(submitting||!form.reportValidity())return;
@@ -230,7 +235,7 @@
           submitting=true;const submit=form.querySelector('[type=submit]'),change=form.querySelector('.auth-social-identity button');submit.disabled=true;change.disabled=true;form.setAttribute('aria-busy','true');feedback.textContent='Comprobando tu contraseña…';
           try{
             await request(pending.provider,{credential:pending.credential,[pending.setup?'newPassword':'password']:form.elements.password.value});
-            clearPasswordFields();pending.credential='';await pending.onSuccess();socialPending=null;changed();location.replace('index.html');
+            clearPasswordFields();pending.credential='';await pending.onSuccess();socialPending=null;changed();location.replace(returnPath);
           }catch(error){
             clearPasswordFields();feedback.textContent=error.message;
             if(error.code==='RUMBO_PASSWORD_REQUIRED'&&pending.setup){
@@ -250,7 +255,7 @@
             data.name=form.elements.name.value.trim();
             if(new TextEncoder().encode(data.password).length>72)throw Error('La contraseña es demasiado larga. Usa una más corta, de al menos 8 caracteres.');
           }
-          await request(register?'register':'login',data);form.elements.password.value='';changed();location.replace('index.html');
+          await request(register?'register':'login',data);form.elements.password.value='';changed();location.replace(returnPath);
         }catch(e){form.elements.password.value='';feedback.textContent=e.name==='TimeoutError'?'La conexión tardó demasiado. Inténtalo de nuevo.':e.message;feedback.focus();submit.disabled=false;form.removeAttribute('aria-busy');}finally{submitting=false;}
       });
       const toggle=document.querySelector('#toggle-password');

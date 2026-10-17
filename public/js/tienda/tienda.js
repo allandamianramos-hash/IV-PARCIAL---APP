@@ -4264,6 +4264,13 @@ outside = false;
     document.body.classList.add('dialog-open');
     $('#close-checkout').focus();
   });
+  $('#pay-store').addEventListener('click', () => {
+    if (!cart.length) return;
+    checkoutDialog.close();
+    window.RumboCheckout.open({kind:'store',onSuccess:() => {
+      cart=[];saveCart();renderCart();renderProducts();
+    }});
+  });
   $('#close-checkout').addEventListener('click', () => checkoutDialog.close());
   $('#edit-checkout-cart').addEventListener('click', () => { checkoutDialog.close(); openCart(); });
   checkoutDialog.addEventListener('close', () => {

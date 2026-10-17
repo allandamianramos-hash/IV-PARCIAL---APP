@@ -10,6 +10,7 @@ test('store has its own navigation, favorites, cart and checkout at every screen
   const page=await browser.newPage({reducedMotion:'reduce'}),errors=[];
   page.on('pageerror',error=>{if(!error.message.startsWith('Transition was aborted'))errors.push(error.message);});
   await page.goto(base+'/tienda.html');
+  await page.locator('.cookie-banner [data-reject]').click();
   assert.equal(await page.locator('.journey-progress,.journey-next,.page-back').count(),0);
   assert.equal(await page.locator('.main-nav [aria-current=page]').innerText(),'Tienda');
   await page.locator('[data-favorite]').first().click();
@@ -30,7 +31,8 @@ test('store has its own navigation, favorites, cart and checkout at every screen
    await page.screenshot({path:`.runtime/store-qa/store-${width}.png`});
    await page.locator('#open-cart-btn').click();await page.locator('#checkout-btn').click();
    await page.locator('#store-checkout[open]').waitFor();
-   assert.ok(await page.locator('#pay-store').isDisabled(),'no charge is simulated without a provider');
+   assert.ok(await page.locator('#pay-store').isEnabled(),'the demonstration payment is available');
+   assert.equal(await page.locator('#store-checkout input[autocomplete^="cc-"]').count(),0,'the demonstration never requests card data');
    const checkout=await page.locator('#store-checkout').boundingBox();assert.ok(checkout.x>=0&&checkout.x+checkout.width<=width+1);
    const clipped=await page.locator('#store-checkout').evaluate(el=>[...el.querySelectorAll('button,h2,h3,p,strong')].filter(n=>{const r=n.getBoundingClientRect();return r.width&&(r.left<0||r.right>innerWidth+1);}).map(n=>n.id||n.className));assert.deepEqual(clipped,[]);
    await page.screenshot({path:`.runtime/store-qa/checkout-${width}.png`});

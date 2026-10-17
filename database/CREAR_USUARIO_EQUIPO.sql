@@ -30,3 +30,7 @@ IF OBJECT_ID('dbo.RumboMicrosoftChallenges','U') IS NOT NULL
 
 IF OBJECT_ID('dbo.RumboPasswordResets','U') IS NOT NULL
     GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboPasswordResets TO RumboEquipo;
+IF OBJECT_ID('dbo.RumboOrders','U') IS NOT NULL
+    GRANT SELECT,INSERT,DELETE ON dbo.RumboOrders TO RumboEquipo;
+IF OBJECT_ID('dbo.RumboPageViews','U') IS NOT NULL
+    GRANT SELECT,INSERT,UPDATE,DELETE ON dbo.RumboPageViews TO RumboEquipo;

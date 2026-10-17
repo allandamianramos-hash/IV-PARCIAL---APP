@@ -40,6 +40,8 @@ La raíz conserva los accesos `.cmd`, los puntos de entrada `router.php` y `serv
 
 ## Funcionamiento
 
+La preparación del lanzamiento, sus comprobaciones y los pendientes están en [REVISION-LANZAMIENTO.md](docs/REVISION-LANZAMIENTO.md). El pago es ficticio y comparte el mismo flujo en tienda y servicios, sin tarjetas ni cargos. **Mi cuenta → Viajes y compras** abre el historial persistente de la cuenta; **Mi viaje actual** conserva el planificador. Las políticas y el consentimiento están disponibles en el pie de página.
+
 Se almacenan registro/login, perfil, favoritos, carrito, selección de vuelo/hotel, servicios, preparativos y resumen de compra de demostración. Hay 100 productos y 70 destinos; el catálogo combina los datos de SQL con las propuestas adicionales del sitio. La ampliación de 30 ciudades, sus fuentes y su actualización aditiva en SQL se describen en [destinos-ampliados.md](docs/destinos-ampliados.md).
 
 Si recibiste tu paquete personal del equipo, extraelo y abre `CONECTAR-EQUIPO.cmd`. Consulta [Acceso del equipo](docs/ACCESO-EQUIPO.md) para los requisitos y la autorización de la IP de tu casa. Para consultar las tablas en SSMS, abre `VER-BD-AZURE.cmd`.
@@ -61,6 +63,6 @@ npm run php:test
 
 Las pruebas de integración crean y eliminan sus propios registros temporales. La prueba PHP comprueba login, persistencia, aislamiento, conflictos, hashes anteriores y bloqueo de archivos privados.
 
-Los cambios de estructura se agregan en nuevas migraciones `database/migrations/008_...sql`. No edites migraciones aplicadas. Ejecuta `npm run db:export` para regenerar el instalador y `CONFIGURAR-PHP.cmd` para aplicarlo. Comparte el código y SQL juntos en Git. **PREPARAR-ENTREGA.cmd** genera un ZIP sin credenciales ni cuentas de usuarios.
+Los cambios de estructura se agregan en nuevas migraciones numeradas dentro de `database/migrations/`. No edites migraciones aplicadas. Ejecuta `npm run db:export` para regenerar el instalador y `CONFIGURAR-PHP.cmd` para aplicarlo. Comparte el código y SQL juntos en Git. **PREPARAR-ENTREGA.cmd** genera un ZIP sin credenciales ni cuentas de usuarios.
 
 Recuperación de contraseña por código: configuración y pruebas en [docs/RECUPERACION-CUENTA.md](docs/RECUPERACION-CUENTA.md).

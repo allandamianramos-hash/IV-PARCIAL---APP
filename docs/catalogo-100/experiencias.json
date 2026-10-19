@@ -1,0 +1,4502 @@
+[
+  {
+    "id": "porto-experiencia-1",
+    "destination": "porto",
+    "title": "Ribeira · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Ribeira, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Ribeira",
+      "Recorrido por Ribeira",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-2",
+    "destination": "porto",
+    "title": "Puente de Don Luis I · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Puente de Don Luis I, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Puente de Don Luis I",
+      "Recorrido por Puente de Don Luis I",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-3",
+    "destination": "porto",
+    "title": "Torre de los Clérigos · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Torre de los Clérigos, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Torre de los Clérigos",
+      "Recorrido por Torre de los Clérigos",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-4",
+    "destination": "porto",
+    "title": "Estación de São Bento · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Estación de São Bento, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Estación de São Bento",
+      "Recorrido por Estación de São Bento",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-5",
+    "destination": "porto",
+    "title": "Mercado do Bolhão · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Mercado do Bolhão para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Mercado do Bolhão",
+      "Recorrido por Mercado do Bolhão",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-6",
+    "destination": "porto",
+    "title": "Jardines del Palacio de Cristal · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardines del Palacio de Cristal, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardines del Palacio de Cristal",
+      "Recorrido por Jardines del Palacio de Cristal",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-7",
+    "destination": "porto",
+    "title": "Foz do Douro · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Foz do Douro, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Foz do Douro",
+      "Recorrido por Foz do Douro",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-8",
+    "destination": "porto",
+    "title": "Casa da Música · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Casa da Música, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Casa da Música",
+      "Recorrido por Casa da Música",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-9",
+    "destination": "porto",
+    "title": "Museo de Serralves · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Serralves, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Serralves",
+      "Recorrido por Museo de Serralves",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "porto-experiencia-10",
+    "destination": "porto",
+    "title": "Catedral de Oporto · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Catedral de Oporto, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Catedral de Oporto",
+      "Recorrido por Catedral de Oporto",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Oporto; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-1",
+    "destination": "sevilla",
+    "title": "Real Alcázar · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Real Alcázar, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Real Alcázar",
+      "Recorrido por Real Alcázar",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-2",
+    "destination": "sevilla",
+    "title": "Plaza de España · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza de España, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza de España",
+      "Recorrido por Plaza de España",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-3",
+    "destination": "sevilla",
+    "title": "Barrio de Triana · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Barrio de Triana, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Barrio de Triana",
+      "Recorrido por Barrio de Triana",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-4",
+    "destination": "sevilla",
+    "title": "Catedral de Sevilla · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Catedral de Sevilla, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Catedral de Sevilla",
+      "Recorrido por Catedral de Sevilla",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-5",
+    "destination": "sevilla",
+    "title": "Parque de María Luisa · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque de María Luisa, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque de María Luisa",
+      "Recorrido por Parque de María Luisa",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-6",
+    "destination": "sevilla",
+    "title": "Setas de Sevilla · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Setas de Sevilla, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Setas de Sevilla",
+      "Recorrido por Setas de Sevilla",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-7",
+    "destination": "sevilla",
+    "title": "Archivo de Indias · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Archivo de Indias, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Archivo de Indias",
+      "Recorrido por Archivo de Indias",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-8",
+    "destination": "sevilla",
+    "title": "Casa de Pilatos · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Casa de Pilatos, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Casa de Pilatos",
+      "Recorrido por Casa de Pilatos",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-9",
+    "destination": "sevilla",
+    "title": "Torre del Oro · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Torre del Oro, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Torre del Oro",
+      "Recorrido por Torre del Oro",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "sevilla-experiencia-10",
+    "destination": "sevilla",
+    "title": "Alameda de Hércules · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Alameda de Hércules, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Alameda de Hércules",
+      "Recorrido por Alameda de Hércules",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Sevilla; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-1",
+    "destination": "valencia",
+    "title": "Ciudad de las Artes y las Ciencias · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Ciudad de las Artes y las Ciencias, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Ciudad de las Artes y las Ciencias",
+      "Recorrido por Ciudad de las Artes y las Ciencias",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-2",
+    "destination": "valencia",
+    "title": "Mercado Central · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Mercado Central para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Mercado Central",
+      "Recorrido por Mercado Central",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-3",
+    "destination": "valencia",
+    "title": "Jardín del Turia · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín del Turia, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín del Turia",
+      "Recorrido por Jardín del Turia",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-4",
+    "destination": "valencia",
+    "title": "Lonja de la Seda · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Lonja de la Seda, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Lonja de la Seda",
+      "Recorrido por Lonja de la Seda",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-5",
+    "destination": "valencia",
+    "title": "Torres de Serranos · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Torres de Serranos, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Torres de Serranos",
+      "Recorrido por Torres de Serranos",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-6",
+    "destination": "valencia",
+    "title": "Playa de la Malvarrosa · paseo por la costa",
+    "style": "playa",
+    "description": "Paseo por Playa de la Malvarrosa con tiempo para recorrer la costa y tomar fotografías. No incluye actividades acuáticas.",
+    "stops": [
+      "Punto de encuentro en Playa de la Malvarrosa",
+      "Recorrido por Playa de la Malvarrosa",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-7",
+    "destination": "valencia",
+    "title": "Barrio del Carmen · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Barrio del Carmen, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Barrio del Carmen",
+      "Recorrido por Barrio del Carmen",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-8",
+    "destination": "valencia",
+    "title": "Museo de Bellas Artes · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Bellas Artes, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Bellas Artes",
+      "Recorrido por Museo de Bellas Artes",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-9",
+    "destination": "valencia",
+    "title": "Albufera · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Albufera, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Albufera",
+      "Recorrido por Albufera",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "valencia-experiencia-10",
+    "destination": "valencia",
+    "title": "Plaza de la Virgen · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza de la Virgen, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza de la Virgen",
+      "Recorrido por Plaza de la Virgen",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Valencia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-1",
+    "destination": "malaga",
+    "title": "Alcazaba · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Alcazaba, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Alcazaba",
+      "Recorrido por Alcazaba",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-2",
+    "destination": "malaga",
+    "title": "Muelle Uno · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Muelle Uno, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Muelle Uno",
+      "Recorrido por Muelle Uno",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-3",
+    "destination": "malaga",
+    "title": "Playa de la Malagueta · paseo por la costa",
+    "style": "playa",
+    "description": "Paseo por Playa de la Malagueta con tiempo para recorrer la costa y tomar fotografías. No incluye actividades acuáticas.",
+    "stops": [
+      "Punto de encuentro en Playa de la Malagueta",
+      "Recorrido por Playa de la Malagueta",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-4",
+    "destination": "malaga",
+    "title": "Museo Picasso · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Picasso, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Picasso",
+      "Recorrido por Museo Picasso",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-5",
+    "destination": "malaga",
+    "title": "Castillo de Gibralfaro · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Castillo de Gibralfaro, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Castillo de Gibralfaro",
+      "Recorrido por Castillo de Gibralfaro",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-6",
+    "destination": "malaga",
+    "title": "Mercado de Atarazanas · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Mercado de Atarazanas para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Mercado de Atarazanas",
+      "Recorrido por Mercado de Atarazanas",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-7",
+    "destination": "malaga",
+    "title": "Teatro Romano · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Teatro Romano, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Teatro Romano",
+      "Recorrido por Teatro Romano",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-8",
+    "destination": "malaga",
+    "title": "Jardín Botánico La Concepción · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín Botánico La Concepción, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín Botánico La Concepción",
+      "Recorrido por Jardín Botánico La Concepción",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-9",
+    "destination": "malaga",
+    "title": "Catedral de Málaga · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Catedral de Málaga, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Catedral de Málaga",
+      "Recorrido por Catedral de Málaga",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "malaga-experiencia-10",
+    "destination": "malaga",
+    "title": "Centro Pompidou · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Centro Pompidou, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Centro Pompidou",
+      "Recorrido por Centro Pompidou",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Málaga; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-1",
+    "destination": "niza",
+    "title": "Paseo de los Ingleses · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Paseo de los Ingleses, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Paseo de los Ingleses",
+      "Recorrido por Paseo de los Ingleses",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-2",
+    "destination": "niza",
+    "title": "Vieux Nice · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Vieux Nice, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Vieux Nice",
+      "Recorrido por Vieux Nice",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-3",
+    "destination": "niza",
+    "title": "Colina del Castillo · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Colina del Castillo, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Colina del Castillo",
+      "Recorrido por Colina del Castillo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-4",
+    "destination": "niza",
+    "title": "Cours Saleya · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Cours Saleya, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Cours Saleya",
+      "Recorrido por Cours Saleya",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-5",
+    "destination": "niza",
+    "title": "Museo Matisse · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Matisse, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Matisse",
+      "Recorrido por Museo Matisse",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-6",
+    "destination": "niza",
+    "title": "Museo Marc Chagall · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Marc Chagall, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Marc Chagall",
+      "Recorrido por Museo Marc Chagall",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-7",
+    "destination": "niza",
+    "title": "Puerto de Niza · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Puerto de Niza, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Puerto de Niza",
+      "Recorrido por Puerto de Niza",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-8",
+    "destination": "niza",
+    "title": "Plaza Masséna · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza Masséna, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza Masséna",
+      "Recorrido por Plaza Masséna",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-9",
+    "destination": "niza",
+    "title": "Monasterio de Cimiez · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Monasterio de Cimiez, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Monasterio de Cimiez",
+      "Recorrido por Monasterio de Cimiez",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "niza-experiencia-10",
+    "destination": "niza",
+    "title": "Parque Phoenix · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque Phoenix, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque Phoenix",
+      "Recorrido por Parque Phoenix",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Niza; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-1",
+    "destination": "lyon",
+    "title": "Vieux Lyon · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Vieux Lyon, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Vieux Lyon",
+      "Recorrido por Vieux Lyon",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-2",
+    "destination": "lyon",
+    "title": "Basílica de Fourvière · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Basílica de Fourvière, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Basílica de Fourvière",
+      "Recorrido por Basílica de Fourvière",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-3",
+    "destination": "lyon",
+    "title": "Parque de la Tête d'Or · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque de la Tête d'Or, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque de la Tête d'Or",
+      "Recorrido por Parque de la Tête d'Or",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-4",
+    "destination": "lyon",
+    "title": "Museo de las Confluencias · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de las Confluencias, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de las Confluencias",
+      "Recorrido por Museo de las Confluencias",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-5",
+    "destination": "lyon",
+    "title": "Croix-Rousse · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Croix-Rousse, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Croix-Rousse",
+      "Recorrido por Croix-Rousse",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-6",
+    "destination": "lyon",
+    "title": "Plaza Bellecour · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza Bellecour, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza Bellecour",
+      "Recorrido por Plaza Bellecour",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-7",
+    "destination": "lyon",
+    "title": "Teatros romanos de Fourvière · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Teatros romanos de Fourvière, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Teatros romanos de Fourvière",
+      "Recorrido por Teatros romanos de Fourvière",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-8",
+    "destination": "lyon",
+    "title": "Les Halles Paul Bocuse · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Les Halles Paul Bocuse para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Les Halles Paul Bocuse",
+      "Recorrido por Les Halles Paul Bocuse",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-9",
+    "destination": "lyon",
+    "title": "Museo de Bellas Artes · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Bellas Artes, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Bellas Artes",
+      "Recorrido por Museo de Bellas Artes",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "lyon-experiencia-10",
+    "destination": "lyon",
+    "title": "Riberas del Ródano · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Riberas del Ródano, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Riberas del Ródano",
+      "Recorrido por Riberas del Ródano",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Lyon; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-1",
+    "destination": "bruselas",
+    "title": "Grand Place · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Grand Place, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Grand Place",
+      "Recorrido por Grand Place",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-2",
+    "destination": "bruselas",
+    "title": "Atomium · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Atomium, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Atomium",
+      "Recorrido por Atomium",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-3",
+    "destination": "bruselas",
+    "title": "Galerías Reales Saint-Hubert · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Galerías Reales Saint-Hubert, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Galerías Reales Saint-Hubert",
+      "Recorrido por Galerías Reales Saint-Hubert",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-4",
+    "destination": "bruselas",
+    "title": "Mont des Arts · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Mont des Arts, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Mont des Arts",
+      "Recorrido por Mont des Arts",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-5",
+    "destination": "bruselas",
+    "title": "Parque del Cincuentenario · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque del Cincuentenario, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque del Cincuentenario",
+      "Recorrido por Parque del Cincuentenario",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-6",
+    "destination": "bruselas",
+    "title": "Museo Magritte · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Magritte, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Magritte",
+      "Recorrido por Museo Magritte",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-7",
+    "destination": "bruselas",
+    "title": "Barrio del Sablon · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Barrio del Sablon, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Barrio del Sablon",
+      "Recorrido por Barrio del Sablon",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-8",
+    "destination": "bruselas",
+    "title": "Palacio Real · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio Real, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio Real",
+      "Recorrido por Palacio Real",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-9",
+    "destination": "bruselas",
+    "title": "Centro Belga del Cómic · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Centro Belga del Cómic, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Centro Belga del Cómic",
+      "Recorrido por Centro Belga del Cómic",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bruselas-experiencia-10",
+    "destination": "bruselas",
+    "title": "Parque de Bruselas · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque de Bruselas, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque de Bruselas",
+      "Recorrido por Parque de Bruselas",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Bruselas; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-1",
+    "destination": "zurich",
+    "title": "Lindenhof · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Lindenhof, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Lindenhof",
+      "Recorrido por Lindenhof",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-2",
+    "destination": "zurich",
+    "title": "Grossmünster · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Grossmünster, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Grossmünster",
+      "Recorrido por Grossmünster",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-3",
+    "destination": "zurich",
+    "title": "Lago de Zúrich · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Lago de Zúrich, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Lago de Zúrich",
+      "Recorrido por Lago de Zúrich",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-4",
+    "destination": "zurich",
+    "title": "Kunsthaus · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Kunsthaus, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Kunsthaus",
+      "Recorrido por Kunsthaus",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-5",
+    "destination": "zurich",
+    "title": "Museo Nacional Suizo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Nacional Suizo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Nacional Suizo",
+      "Recorrido por Museo Nacional Suizo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-6",
+    "destination": "zurich",
+    "title": "Bahnhofstrasse · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Bahnhofstrasse, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Bahnhofstrasse",
+      "Recorrido por Bahnhofstrasse",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-7",
+    "destination": "zurich",
+    "title": "Jardín Botánico · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín Botánico, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín Botánico",
+      "Recorrido por Jardín Botánico",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-8",
+    "destination": "zurich",
+    "title": "Fraumünster · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Fraumünster, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Fraumünster",
+      "Recorrido por Fraumünster",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-9",
+    "destination": "zurich",
+    "title": "Uetliberg · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Uetliberg, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Uetliberg",
+      "Recorrido por Uetliberg",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "zurich-experiencia-10",
+    "destination": "zurich",
+    "title": "Zürich West · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Zürich West, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Zürich West",
+      "Recorrido por Zürich West",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Zúrich; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-1",
+    "destination": "ginebra",
+    "title": "Jet d'Eau · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Jet d'Eau, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Jet d'Eau",
+      "Recorrido por Jet d'Eau",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-2",
+    "destination": "ginebra",
+    "title": "Catedral de San Pedro · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Catedral de San Pedro, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Catedral de San Pedro",
+      "Recorrido por Catedral de San Pedro",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-3",
+    "destination": "ginebra",
+    "title": "Parque de los Bastiones · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque de los Bastiones, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque de los Bastiones",
+      "Recorrido por Parque de los Bastiones",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-4",
+    "destination": "ginebra",
+    "title": "Jardín Inglés · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín Inglés, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín Inglés",
+      "Recorrido por Jardín Inglés",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-5",
+    "destination": "ginebra",
+    "title": "Bains des Pâquis · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Bains des Pâquis, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Bains des Pâquis",
+      "Recorrido por Bains des Pâquis",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-6",
+    "destination": "ginebra",
+    "title": "Museo de Arte e Historia · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Arte e Historia, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Arte e Historia",
+      "Recorrido por Museo de Arte e Historia",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-7",
+    "destination": "ginebra",
+    "title": "Jardín Botánico de Ginebra · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín Botánico de Ginebra, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín Botánico de Ginebra",
+      "Recorrido por Jardín Botánico de Ginebra",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-8",
+    "destination": "ginebra",
+    "title": "Place du Bourg-de-Four · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Place du Bourg-de-Four, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Place du Bourg-de-Four",
+      "Recorrido por Place du Bourg-de-Four",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-9",
+    "destination": "ginebra",
+    "title": "Museo Patek Philippe · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Patek Philippe, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Patek Philippe",
+      "Recorrido por Museo Patek Philippe",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "ginebra-experiencia-10",
+    "destination": "ginebra",
+    "title": "Parque La Grange · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque La Grange, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque La Grange",
+      "Recorrido por Parque La Grange",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Ginebra; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-1",
+    "destination": "copenhague",
+    "title": "Nyhavn · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Nyhavn, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Nyhavn",
+      "Recorrido por Nyhavn",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-2",
+    "destination": "copenhague",
+    "title": "Jardines de Tivoli · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardines de Tivoli, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardines de Tivoli",
+      "Recorrido por Jardines de Tivoli",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-3",
+    "destination": "copenhague",
+    "title": "Palacio de Amalienborg · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio de Amalienborg, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio de Amalienborg",
+      "Recorrido por Palacio de Amalienborg",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-4",
+    "destination": "copenhague",
+    "title": "Castillo de Rosenborg · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Castillo de Rosenborg, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Castillo de Rosenborg",
+      "Recorrido por Castillo de Rosenborg",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-5",
+    "destination": "copenhague",
+    "title": "Torre Redonda · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Torre Redonda, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Torre Redonda",
+      "Recorrido por Torre Redonda",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-6",
+    "destination": "copenhague",
+    "title": "Christianshavn · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Christianshavn, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Christianshavn",
+      "Recorrido por Christianshavn",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-7",
+    "destination": "copenhague",
+    "title": "Museo Nacional de Dinamarca · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Nacional de Dinamarca, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Nacional de Dinamarca",
+      "Recorrido por Museo Nacional de Dinamarca",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-8",
+    "destination": "copenhague",
+    "title": "Jardín Botánico · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín Botánico, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín Botánico",
+      "Recorrido por Jardín Botánico",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-9",
+    "destination": "copenhague",
+    "title": "Palacio de Christiansborg · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio de Christiansborg, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio de Christiansborg",
+      "Recorrido por Palacio de Christiansborg",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "copenhague-experiencia-10",
+    "destination": "copenhague",
+    "title": "Torvehallerne · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Torvehallerne para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Torvehallerne",
+      "Recorrido por Torvehallerne",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Copenhague; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-1",
+    "destination": "estocolmo",
+    "title": "Gamla Stan · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Gamla Stan, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Gamla Stan",
+      "Recorrido por Gamla Stan",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-2",
+    "destination": "estocolmo",
+    "title": "Museo Vasa · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Vasa, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Vasa",
+      "Recorrido por Museo Vasa",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-3",
+    "destination": "estocolmo",
+    "title": "Djurgården · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Djurgården, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Djurgården",
+      "Recorrido por Djurgården",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-4",
+    "destination": "estocolmo",
+    "title": "Ayuntamiento de Estocolmo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Ayuntamiento de Estocolmo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Ayuntamiento de Estocolmo",
+      "Recorrido por Ayuntamiento de Estocolmo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-5",
+    "destination": "estocolmo",
+    "title": "Skansen · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Skansen, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Skansen",
+      "Recorrido por Skansen",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-6",
+    "destination": "estocolmo",
+    "title": "Palacio Real · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio Real, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio Real",
+      "Recorrido por Palacio Real",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-7",
+    "destination": "estocolmo",
+    "title": "Södermalm · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Södermalm, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Södermalm",
+      "Recorrido por Södermalm",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-8",
+    "destination": "estocolmo",
+    "title": "Fotografiska · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Fotografiska, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Fotografiska",
+      "Recorrido por Fotografiska",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-9",
+    "destination": "estocolmo",
+    "title": "Museo ABBA · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo ABBA, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo ABBA",
+      "Recorrido por Museo ABBA",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "estocolmo-experiencia-10",
+    "destination": "estocolmo",
+    "title": "Östermalms Saluhall · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Östermalms Saluhall para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Östermalms Saluhall",
+      "Recorrido por Östermalms Saluhall",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Estocolmo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-1",
+    "destination": "oslo",
+    "title": "Ópera de Oslo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Ópera de Oslo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Ópera de Oslo",
+      "Recorrido por Ópera de Oslo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-2",
+    "destination": "oslo",
+    "title": "Parque de Vigeland · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque de Vigeland, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque de Vigeland",
+      "Recorrido por Parque de Vigeland",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-3",
+    "destination": "oslo",
+    "title": "Aker Brygge · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Aker Brygge, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Aker Brygge",
+      "Recorrido por Aker Brygge",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-4",
+    "destination": "oslo",
+    "title": "Museo MUNCH · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo MUNCH, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo MUNCH",
+      "Recorrido por Museo MUNCH",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-5",
+    "destination": "oslo",
+    "title": "Fortaleza de Akershus · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Fortaleza de Akershus, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Fortaleza de Akershus",
+      "Recorrido por Fortaleza de Akershus",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-6",
+    "destination": "oslo",
+    "title": "Museo Fram · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Fram, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Fram",
+      "Recorrido por Museo Fram",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-7",
+    "destination": "oslo",
+    "title": "Museo Nacional · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Nacional, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Nacional",
+      "Recorrido por Museo Nacional",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-8",
+    "destination": "oslo",
+    "title": "Península de Bygdøy · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Península de Bygdøy, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Península de Bygdøy",
+      "Recorrido por Península de Bygdøy",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-9",
+    "destination": "oslo",
+    "title": "Jardín Botánico · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín Botánico, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín Botánico",
+      "Recorrido por Jardín Botánico",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "oslo-experiencia-10",
+    "destination": "oslo",
+    "title": "Ekebergparken · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Ekebergparken, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Ekebergparken",
+      "Recorrido por Ekebergparken",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Oslo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-1",
+    "destination": "helsinki",
+    "title": "Plaza del Senado · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza del Senado, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza del Senado",
+      "Recorrido por Plaza del Senado",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-2",
+    "destination": "helsinki",
+    "title": "Suomenlinna · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Suomenlinna, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Suomenlinna",
+      "Recorrido por Suomenlinna",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-3",
+    "destination": "helsinki",
+    "title": "Mercado del Puerto · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Mercado del Puerto para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Mercado del Puerto",
+      "Recorrido por Mercado del Puerto",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-4",
+    "destination": "helsinki",
+    "title": "Iglesia de Temppeliaukio · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Iglesia de Temppeliaukio, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Iglesia de Temppeliaukio",
+      "Recorrido por Iglesia de Temppeliaukio",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-5",
+    "destination": "helsinki",
+    "title": "Biblioteca Oodi · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Biblioteca Oodi, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Biblioteca Oodi",
+      "Recorrido por Biblioteca Oodi",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-6",
+    "destination": "helsinki",
+    "title": "Catedral de Uspenski · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Catedral de Uspenski, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Catedral de Uspenski",
+      "Recorrido por Catedral de Uspenski",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-7",
+    "destination": "helsinki",
+    "title": "Museo Ateneum · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Ateneum, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Ateneum",
+      "Recorrido por Museo Ateneum",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-8",
+    "destination": "helsinki",
+    "title": "Parque de Sibelius · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque de Sibelius, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque de Sibelius",
+      "Recorrido por Parque de Sibelius",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-9",
+    "destination": "helsinki",
+    "title": "Seurasaari · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Seurasaari, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Seurasaari",
+      "Recorrido por Seurasaari",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "helsinki-experiencia-10",
+    "destination": "helsinki",
+    "title": "Esplanadi · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Esplanadi, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Esplanadi",
+      "Recorrido por Esplanadi",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Helsinki; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-1",
+    "destination": "varsovia",
+    "title": "Ciudad Vieja · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Ciudad Vieja, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Ciudad Vieja",
+      "Recorrido por Ciudad Vieja",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-2",
+    "destination": "varsovia",
+    "title": "Parque Łazienki · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque Łazienki, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque Łazienki",
+      "Recorrido por Parque Łazienki",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-3",
+    "destination": "varsovia",
+    "title": "Palacio de la Cultura y la Ciencia · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio de la Cultura y la Ciencia, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio de la Cultura y la Ciencia",
+      "Recorrido por Palacio de la Cultura y la Ciencia",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-4",
+    "destination": "varsovia",
+    "title": "Castillo Real · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Castillo Real, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Castillo Real",
+      "Recorrido por Castillo Real",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-5",
+    "destination": "varsovia",
+    "title": "Museo POLIN · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo POLIN, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo POLIN",
+      "Recorrido por Museo POLIN",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-6",
+    "destination": "varsovia",
+    "title": "Palacio de Wilanów · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio de Wilanów, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio de Wilanów",
+      "Recorrido por Palacio de Wilanów",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-7",
+    "destination": "varsovia",
+    "title": "Centro de Ciencias Copérnico · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Centro de Ciencias Copérnico, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Centro de Ciencias Copérnico",
+      "Recorrido por Centro de Ciencias Copérnico",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-8",
+    "destination": "varsovia",
+    "title": "Krakowskie Przedmieście · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Krakowskie Przedmieście, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Krakowskie Przedmieście",
+      "Recorrido por Krakowskie Przedmieście",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-9",
+    "destination": "varsovia",
+    "title": "Riberas del Vístula · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Riberas del Vístula, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Riberas del Vístula",
+      "Recorrido por Riberas del Vístula",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "varsovia-experiencia-10",
+    "destination": "varsovia",
+    "title": "Museo de Chopin · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Chopin, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Chopin",
+      "Recorrido por Museo de Chopin",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Varsovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-1",
+    "destination": "cracovia",
+    "title": "Plaza del Mercado · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Plaza del Mercado para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Plaza del Mercado",
+      "Recorrido por Plaza del Mercado",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-2",
+    "destination": "cracovia",
+    "title": "Colina de Wawel · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Colina de Wawel, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Colina de Wawel",
+      "Recorrido por Colina de Wawel",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-3",
+    "destination": "cracovia",
+    "title": "Kazimierz · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Kazimierz, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Kazimierz",
+      "Recorrido por Kazimierz",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-4",
+    "destination": "cracovia",
+    "title": "Basílica de Santa María · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Basílica de Santa María, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Basílica de Santa María",
+      "Recorrido por Basílica de Santa María",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-5",
+    "destination": "cracovia",
+    "title": "Lonja de los Paños · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Lonja de los Paños, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Lonja de los Paños",
+      "Recorrido por Lonja de los Paños",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-6",
+    "destination": "cracovia",
+    "title": "Parque Planty · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque Planty, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque Planty",
+      "Recorrido por Parque Planty",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-7",
+    "destination": "cracovia",
+    "title": "Fábrica de Schindler · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Fábrica de Schindler, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Fábrica de Schindler",
+      "Recorrido por Fábrica de Schindler",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-8",
+    "destination": "cracovia",
+    "title": "Museo Czartoryski · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Czartoryski, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Czartoryski",
+      "Recorrido por Museo Czartoryski",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-9",
+    "destination": "cracovia",
+    "title": "Barbacana · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Barbacana, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Barbacana",
+      "Recorrido por Barbacana",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cracovia-experiencia-10",
+    "destination": "cracovia",
+    "title": "Montículo de Kościuszko · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Montículo de Kościuszko, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Montículo de Kościuszko",
+      "Recorrido por Montículo de Kościuszko",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Cracovia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-1",
+    "destination": "dubrovnik",
+    "title": "Murallas de Dubrovnik · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Murallas de Dubrovnik, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Murallas de Dubrovnik",
+      "Recorrido por Murallas de Dubrovnik",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-2",
+    "destination": "dubrovnik",
+    "title": "Stradun · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Stradun, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Stradun",
+      "Recorrido por Stradun",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-3",
+    "destination": "dubrovnik",
+    "title": "Puerto Viejo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Puerto Viejo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Puerto Viejo",
+      "Recorrido por Puerto Viejo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-4",
+    "destination": "dubrovnik",
+    "title": "Fortaleza Lovrijenac · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Fortaleza Lovrijenac, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Fortaleza Lovrijenac",
+      "Recorrido por Fortaleza Lovrijenac",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-5",
+    "destination": "dubrovnik",
+    "title": "Palacio del Rector · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio del Rector, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio del Rector",
+      "Recorrido por Palacio del Rector",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-6",
+    "destination": "dubrovnik",
+    "title": "Isla de Lokrum · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Isla de Lokrum, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Isla de Lokrum",
+      "Recorrido por Isla de Lokrum",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-7",
+    "destination": "dubrovnik",
+    "title": "Monte Srđ · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Monte Srđ, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Monte Srđ",
+      "Recorrido por Monte Srđ",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-8",
+    "destination": "dubrovnik",
+    "title": "Monasterio Franciscano · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Monasterio Franciscano, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Monasterio Franciscano",
+      "Recorrido por Monasterio Franciscano",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-9",
+    "destination": "dubrovnik",
+    "title": "Playa de Banje · paseo por la costa",
+    "style": "playa",
+    "description": "Paseo por Playa de Banje con tiempo para recorrer la costa y tomar fotografías. No incluye actividades acuáticas.",
+    "stops": [
+      "Punto de encuentro en Playa de Banje",
+      "Recorrido por Playa de Banje",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "dubrovnik-experiencia-10",
+    "destination": "dubrovnik",
+    "title": "Palacio Sponza · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio Sponza, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio Sponza",
+      "Recorrido por Palacio Sponza",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Dubrovnik; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-1",
+    "destination": "split",
+    "title": "Palacio de Diocleciano · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio de Diocleciano, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio de Diocleciano",
+      "Recorrido por Palacio de Diocleciano",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-2",
+    "destination": "split",
+    "title": "Paseo de la Riva · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Paseo de la Riva, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Paseo de la Riva",
+      "Recorrido por Paseo de la Riva",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-3",
+    "destination": "split",
+    "title": "Colina de Marjan · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Colina de Marjan, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Colina de Marjan",
+      "Recorrido por Colina de Marjan",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-4",
+    "destination": "split",
+    "title": "Catedral de San Duje · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Catedral de San Duje, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Catedral de San Duje",
+      "Recorrido por Catedral de San Duje",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-5",
+    "destination": "split",
+    "title": "Playa de Bačvice · paseo por la costa",
+    "style": "playa",
+    "description": "Paseo por Playa de Bačvice con tiempo para recorrer la costa y tomar fotografías. No incluye actividades acuáticas.",
+    "stops": [
+      "Punto de encuentro en Playa de Bačvice",
+      "Recorrido por Playa de Bačvice",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-6",
+    "destination": "split",
+    "title": "Templo de Júpiter · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Templo de Júpiter, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Templo de Júpiter",
+      "Recorrido por Templo de Júpiter",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-7",
+    "destination": "split",
+    "title": "Galería Meštrović · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Galería Meštrović, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Galería Meštrović",
+      "Recorrido por Galería Meštrović",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-8",
+    "destination": "split",
+    "title": "Mercado Pazar · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Mercado Pazar para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Mercado Pazar",
+      "Recorrido por Mercado Pazar",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-9",
+    "destination": "split",
+    "title": "Plaza de la República · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza de la República, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza de la República",
+      "Recorrido por Plaza de la República",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "split-experiencia-10",
+    "destination": "split",
+    "title": "Museo Arqueológico de Split · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Arqueológico de Split, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Arqueológico de Split",
+      "Recorrido por Museo Arqueológico de Split",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Split; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-1",
+    "destination": "napoles",
+    "title": "Spaccanapoli · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Spaccanapoli, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Spaccanapoli",
+      "Recorrido por Spaccanapoli",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-2",
+    "destination": "napoles",
+    "title": "Castel dell'Ovo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Castel dell'Ovo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Castel dell'Ovo",
+      "Recorrido por Castel dell'Ovo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-3",
+    "destination": "napoles",
+    "title": "Plaza del Plebiscito · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza del Plebiscito, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza del Plebiscito",
+      "Recorrido por Plaza del Plebiscito",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-4",
+    "destination": "napoles",
+    "title": "Museo Arqueológico Nacional · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Arqueológico Nacional, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Arqueológico Nacional",
+      "Recorrido por Museo Arqueológico Nacional",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-5",
+    "destination": "napoles",
+    "title": "Capilla Sansevero · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Capilla Sansevero, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Capilla Sansevero",
+      "Recorrido por Capilla Sansevero",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-6",
+    "destination": "napoles",
+    "title": "Via San Gregorio Armeno · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Via San Gregorio Armeno, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Via San Gregorio Armeno",
+      "Recorrido por Via San Gregorio Armeno",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-7",
+    "destination": "napoles",
+    "title": "Castel Sant'Elmo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Castel Sant'Elmo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Castel Sant'Elmo",
+      "Recorrido por Castel Sant'Elmo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-8",
+    "destination": "napoles",
+    "title": "Galleria Umberto I · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Galleria Umberto I, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Galleria Umberto I",
+      "Recorrido por Galleria Umberto I",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-9",
+    "destination": "napoles",
+    "title": "Lungomare · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Lungomare, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Lungomare",
+      "Recorrido por Lungomare",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "napoles-experiencia-10",
+    "destination": "napoles",
+    "title": "Museo de Capodimonte · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Capodimonte, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Capodimonte",
+      "Recorrido por Museo de Capodimonte",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Nápoles; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-1",
+    "destination": "bolonia",
+    "title": "Piazza Maggiore · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Piazza Maggiore, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Piazza Maggiore",
+      "Recorrido por Piazza Maggiore",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-2",
+    "destination": "bolonia",
+    "title": "Pórticos de Bolonia · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Pórticos de Bolonia, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Pórticos de Bolonia",
+      "Recorrido por Pórticos de Bolonia",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-3",
+    "destination": "bolonia",
+    "title": "Quadrilatero · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Quadrilatero para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Quadrilatero",
+      "Recorrido por Quadrilatero",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-4",
+    "destination": "bolonia",
+    "title": "Basílica de San Petronio · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Basílica de San Petronio, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Basílica de San Petronio",
+      "Recorrido por Basílica de San Petronio",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-5",
+    "destination": "bolonia",
+    "title": "Archiginnasio · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Archiginnasio, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Archiginnasio",
+      "Recorrido por Archiginnasio",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-6",
+    "destination": "bolonia",
+    "title": "Santuario de San Luca · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Santuario de San Luca, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Santuario de San Luca",
+      "Recorrido por Santuario de San Luca",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-7",
+    "destination": "bolonia",
+    "title": "Santo Stefano · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Santo Stefano, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Santo Stefano",
+      "Recorrido por Santo Stefano",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-8",
+    "destination": "bolonia",
+    "title": "MAMbo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en MAMbo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en MAMbo",
+      "Recorrido por MAMbo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-9",
+    "destination": "bolonia",
+    "title": "Mercato delle Erbe · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Mercato delle Erbe, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Mercato delle Erbe",
+      "Recorrido por Mercato delle Erbe",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "bolonia-experiencia-10",
+    "destination": "bolonia",
+    "title": "Giardini Margherita · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Giardini Margherita, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Giardini Margherita",
+      "Recorrido por Giardini Margherita",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Bolonia; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-1",
+    "destination": "montreal",
+    "title": "Viejo Montreal · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Viejo Montreal, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Viejo Montreal",
+      "Recorrido por Viejo Montreal",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-2",
+    "destination": "montreal",
+    "title": "Monte Royal · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Monte Royal, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Monte Royal",
+      "Recorrido por Monte Royal",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-3",
+    "destination": "montreal",
+    "title": "Puerto Viejo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Puerto Viejo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Puerto Viejo",
+      "Recorrido por Puerto Viejo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-4",
+    "destination": "montreal",
+    "title": "Basílica de Notre-Dame · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Basílica de Notre-Dame, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Basílica de Notre-Dame",
+      "Recorrido por Basílica de Notre-Dame",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-5",
+    "destination": "montreal",
+    "title": "Jardín Botánico · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín Botánico, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín Botánico",
+      "Recorrido por Jardín Botánico",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-6",
+    "destination": "montreal",
+    "title": "Mercado Jean-Talon · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Mercado Jean-Talon para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Mercado Jean-Talon",
+      "Recorrido por Mercado Jean-Talon",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-7",
+    "destination": "montreal",
+    "title": "Museo de Bellas Artes · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Bellas Artes, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Bellas Artes",
+      "Recorrido por Museo de Bellas Artes",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-8",
+    "destination": "montreal",
+    "title": "Plateau-Mont-Royal · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plateau-Mont-Royal, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plateau-Mont-Royal",
+      "Recorrido por Plateau-Mont-Royal",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-9",
+    "destination": "montreal",
+    "title": "Parque Jean-Drapeau · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque Jean-Drapeau, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque Jean-Drapeau",
+      "Recorrido por Parque Jean-Drapeau",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montreal-experiencia-10",
+    "destination": "montreal",
+    "title": "Canal de Lachine · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Canal de Lachine, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Canal de Lachine",
+      "Recorrido por Canal de Lachine",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Montreal; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-1",
+    "destination": "quebec",
+    "title": "Château Frontenac · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Château Frontenac, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Château Frontenac",
+      "Recorrido por Château Frontenac",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-2",
+    "destination": "quebec",
+    "title": "Petit-Champlain · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Petit-Champlain, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Petit-Champlain",
+      "Recorrido por Petit-Champlain",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-3",
+    "destination": "quebec",
+    "title": "Llanuras de Abraham · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Llanuras de Abraham, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Llanuras de Abraham",
+      "Recorrido por Llanuras de Abraham",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-4",
+    "destination": "quebec",
+    "title": "Terraza Dufferin · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Terraza Dufferin, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Terraza Dufferin",
+      "Recorrido por Terraza Dufferin",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-5",
+    "destination": "quebec",
+    "title": "Place Royale · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Place Royale, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Place Royale",
+      "Recorrido por Place Royale",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-6",
+    "destination": "quebec",
+    "title": "Ciudadela de Quebec · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Ciudadela de Quebec, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Ciudadela de Quebec",
+      "Recorrido por Ciudadela de Quebec",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-7",
+    "destination": "quebec",
+    "title": "Museo de la Civilización · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de la Civilización, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de la Civilización",
+      "Recorrido por Museo de la Civilización",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-8",
+    "destination": "quebec",
+    "title": "Puerto Viejo de Quebec · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Puerto Viejo de Quebec, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Puerto Viejo de Quebec",
+      "Recorrido por Puerto Viejo de Quebec",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-9",
+    "destination": "quebec",
+    "title": "Catarata de Montmorency · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Catarata de Montmorency, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Catarata de Montmorency",
+      "Recorrido por Catarata de Montmorency",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quebec-experiencia-10",
+    "destination": "quebec",
+    "title": "Parlamento de Quebec · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Parlamento de Quebec, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Parlamento de Quebec",
+      "Recorrido por Parlamento de Quebec",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Quebec; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-1",
+    "destination": "boston",
+    "title": "Freedom Trail · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Freedom Trail, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Freedom Trail",
+      "Recorrido por Freedom Trail",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-2",
+    "destination": "boston",
+    "title": "Boston Common · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Boston Common, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Boston Common",
+      "Recorrido por Boston Common",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-3",
+    "destination": "boston",
+    "title": "Quincy Market · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Quincy Market para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Quincy Market",
+      "Recorrido por Quincy Market",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-4",
+    "destination": "boston",
+    "title": "Public Garden · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Public Garden, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Public Garden",
+      "Recorrido por Public Garden",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-5",
+    "destination": "boston",
+    "title": "Museo de Bellas Artes · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Bellas Artes, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Bellas Artes",
+      "Recorrido por Museo de Bellas Artes",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-6",
+    "destination": "boston",
+    "title": "North End · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en North End, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en North End",
+      "Recorrido por North End",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-7",
+    "destination": "boston",
+    "title": "Boston Harborwalk · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Boston Harborwalk, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Boston Harborwalk",
+      "Recorrido por Boston Harborwalk",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-8",
+    "destination": "boston",
+    "title": "Biblioteca Pública de Boston · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Biblioteca Pública de Boston, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Biblioteca Pública de Boston",
+      "Recorrido por Biblioteca Pública de Boston",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-9",
+    "destination": "boston",
+    "title": "Beacon Hill · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Beacon Hill, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Beacon Hill",
+      "Recorrido por Beacon Hill",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "boston-experiencia-10",
+    "destination": "boston",
+    "title": "Museo Isabella Stewart Gardner · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Isabella Stewart Gardner, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Isabella Stewart Gardner",
+      "Recorrido por Museo Isabella Stewart Gardner",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Boston; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-1",
+    "destination": "chicago",
+    "title": "Millennium Park · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Millennium Park, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Millennium Park",
+      "Recorrido por Millennium Park",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-2",
+    "destination": "chicago",
+    "title": "Chicago Riverwalk · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Chicago Riverwalk, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Chicago Riverwalk",
+      "Recorrido por Chicago Riverwalk",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-3",
+    "destination": "chicago",
+    "title": "Navy Pier · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Navy Pier, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Navy Pier",
+      "Recorrido por Navy Pier",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-4",
+    "destination": "chicago",
+    "title": "Instituto de Arte · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Instituto de Arte, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Instituto de Arte",
+      "Recorrido por Instituto de Arte",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-5",
+    "destination": "chicago",
+    "title": "Lincoln Park · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Lincoln Park, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Lincoln Park",
+      "Recorrido por Lincoln Park",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-6",
+    "destination": "chicago",
+    "title": "Willis Tower · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Willis Tower, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Willis Tower",
+      "Recorrido por Willis Tower",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-7",
+    "destination": "chicago",
+    "title": "Museo Field · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Field, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Field",
+      "Recorrido por Museo Field",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-8",
+    "destination": "chicago",
+    "title": "Magnificent Mile · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Magnificent Mile, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Magnificent Mile",
+      "Recorrido por Magnificent Mile",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-9",
+    "destination": "chicago",
+    "title": "Grant Park · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Grant Park, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Grant Park",
+      "Recorrido por Grant Park",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "chicago-experiencia-10",
+    "destination": "chicago",
+    "title": "Centro Cultural de Chicago · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Centro Cultural de Chicago, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Centro Cultural de Chicago",
+      "Recorrido por Centro Cultural de Chicago",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Chicago; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-1",
+    "destination": "san-francisco",
+    "title": "Golden Gate · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Golden Gate, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Golden Gate",
+      "Recorrido por Golden Gate",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-2",
+    "destination": "san-francisco",
+    "title": "Pier 39 · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Pier 39, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Pier 39",
+      "Recorrido por Pier 39",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-3",
+    "destination": "san-francisco",
+    "title": "Golden Gate Park · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Golden Gate Park, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Golden Gate Park",
+      "Recorrido por Golden Gate Park",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-4",
+    "destination": "san-francisco",
+    "title": "Alcatraz · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Alcatraz, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Alcatraz",
+      "Recorrido por Alcatraz",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-5",
+    "destination": "san-francisco",
+    "title": "Chinatown · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Chinatown, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Chinatown",
+      "Recorrido por Chinatown",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-6",
+    "destination": "san-francisco",
+    "title": "Ferry Building · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Ferry Building, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Ferry Building",
+      "Recorrido por Ferry Building",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-7",
+    "destination": "san-francisco",
+    "title": "Palace of Fine Arts · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palace of Fine Arts, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palace of Fine Arts",
+      "Recorrido por Palace of Fine Arts",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-8",
+    "destination": "san-francisco",
+    "title": "Lombard Street · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Lombard Street, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Lombard Street",
+      "Recorrido por Lombard Street",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-9",
+    "destination": "san-francisco",
+    "title": "Twin Peaks · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Twin Peaks, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Twin Peaks",
+      "Recorrido por Twin Peaks",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "san-francisco-experiencia-10",
+    "destination": "san-francisco",
+    "title": "Museo de Arte Moderno · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Arte Moderno, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Arte Moderno",
+      "Recorrido por Museo de Arte Moderno",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de San Francisco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-1",
+    "destination": "honolulu",
+    "title": "Waikīkī · paseo por la costa",
+    "style": "playa",
+    "description": "Paseo por Waikīkī con tiempo para recorrer la costa y tomar fotografías. No incluye actividades acuáticas.",
+    "stops": [
+      "Punto de encuentro en Waikīkī",
+      "Recorrido por Waikīkī",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 630,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-2",
+    "destination": "honolulu",
+    "title": "Diamond Head · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Diamond Head, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Diamond Head",
+      "Recorrido por Diamond Head",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 713,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-3",
+    "destination": "honolulu",
+    "title": "Palacio Iolani · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio Iolani, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio Iolani",
+      "Recorrido por Palacio Iolani",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 795,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-4",
+    "destination": "honolulu",
+    "title": "Ala Moana Beach Park · paseo por la costa",
+    "style": "playa",
+    "description": "Paseo por Ala Moana Beach Park con tiempo para recorrer la costa y tomar fotografías. No incluye actividades acuáticas.",
+    "stops": [
+      "Punto de encuentro en Ala Moana Beach Park",
+      "Recorrido por Ala Moana Beach Park",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 878,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-5",
+    "destination": "honolulu",
+    "title": "Museo Bishop · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Bishop, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Bishop",
+      "Recorrido por Museo Bishop",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 960,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-6",
+    "destination": "honolulu",
+    "title": "Jardín Botánico Foster · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardín Botánico Foster, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardín Botánico Foster",
+      "Recorrido por Jardín Botánico Foster",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1043,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-7",
+    "destination": "honolulu",
+    "title": "Chinatown de Honolulu · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Chinatown de Honolulu, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Chinatown de Honolulu",
+      "Recorrido por Chinatown de Honolulu",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1125,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-8",
+    "destination": "honolulu",
+    "title": "Museo de Arte de Honolulu · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Arte de Honolulu, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Arte de Honolulu",
+      "Recorrido por Museo de Arte de Honolulu",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1208,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-9",
+    "destination": "honolulu",
+    "title": "Kapiolani Park · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Kapiolani Park, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Kapiolani Park",
+      "Recorrido por Kapiolani Park",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 1290,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "honolulu-experiencia-10",
+    "destination": "honolulu",
+    "title": "Puerto de Honolulu · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Puerto de Honolulu, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Puerto de Honolulu",
+      "Recorrido por Puerto de Honolulu",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 1373,
+    "photoContext": "Fotografía de referencia de Honolulu; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-1",
+    "destination": "orlando",
+    "title": "Lake Eola Park · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Lake Eola Park, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Lake Eola Park",
+      "Recorrido por Lake Eola Park",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-2",
+    "destination": "orlando",
+    "title": "Winter Park · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Winter Park, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Winter Park",
+      "Recorrido por Winter Park",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-3",
+    "destination": "orlando",
+    "title": "International Drive · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en International Drive, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en International Drive",
+      "Recorrido por International Drive",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-4",
+    "destination": "orlando",
+    "title": "Jardines Harry P. Leu · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardines Harry P. Leu, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardines Harry P. Leu",
+      "Recorrido por Jardines Harry P. Leu",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-5",
+    "destination": "orlando",
+    "title": "Museo de Arte de Orlando · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Arte de Orlando, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Arte de Orlando",
+      "Recorrido por Museo de Arte de Orlando",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-6",
+    "destination": "orlando",
+    "title": "Orlando Science Center · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Orlando Science Center, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Orlando Science Center",
+      "Recorrido por Orlando Science Center",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-7",
+    "destination": "orlando",
+    "title": "Disney Springs · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Disney Springs, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Disney Springs",
+      "Recorrido por Disney Springs",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-8",
+    "destination": "orlando",
+    "title": "Universal CityWalk · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Universal CityWalk, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Universal CityWalk",
+      "Recorrido por Universal CityWalk",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-9",
+    "destination": "orlando",
+    "title": "Museo de Arte Americano Charles Hosmer Morse · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Arte Americano Charles Hosmer Morse, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Arte Americano Charles Hosmer Morse",
+      "Recorrido por Museo de Arte Americano Charles Hosmer Morse",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "orlando-experiencia-10",
+    "destination": "orlando",
+    "title": "Parque Bill Frederick · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque Bill Frederick, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque Bill Frederick",
+      "Recorrido por Parque Bill Frederick",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Orlando; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-1",
+    "destination": "quito",
+    "title": "Plaza Grande · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza Grande, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza Grande",
+      "Recorrido por Plaza Grande",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-2",
+    "destination": "quito",
+    "title": "Iglesia de la Compañía · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Iglesia de la Compañía, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Iglesia de la Compañía",
+      "Recorrido por Iglesia de la Compañía",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-3",
+    "destination": "quito",
+    "title": "Basílica del Voto Nacional · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Basílica del Voto Nacional, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Basílica del Voto Nacional",
+      "Recorrido por Basílica del Voto Nacional",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-4",
+    "destination": "quito",
+    "title": "Plaza de San Francisco · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza de San Francisco, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza de San Francisco",
+      "Recorrido por Plaza de San Francisco",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-5",
+    "destination": "quito",
+    "title": "La Ronda · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en La Ronda, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en La Ronda",
+      "Recorrido por La Ronda",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-6",
+    "destination": "quito",
+    "title": "TelefériQo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en TelefériQo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en TelefériQo",
+      "Recorrido por TelefériQo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-7",
+    "destination": "quito",
+    "title": "Capilla del Hombre · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Capilla del Hombre, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Capilla del Hombre",
+      "Recorrido por Capilla del Hombre",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-8",
+    "destination": "quito",
+    "title": "Parque La Carolina · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque La Carolina, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque La Carolina",
+      "Recorrido por Parque La Carolina",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-9",
+    "destination": "quito",
+    "title": "Museo de la Ciudad · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de la Ciudad, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de la Ciudad",
+      "Recorrido por Museo de la Ciudad",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "quito-experiencia-10",
+    "destination": "quito",
+    "title": "El Panecillo · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por El Panecillo, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en El Panecillo",
+      "Recorrido por El Panecillo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Quito; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-1",
+    "destination": "cusco",
+    "title": "Plaza de Armas · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza de Armas, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza de Armas",
+      "Recorrido por Plaza de Armas",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-2",
+    "destination": "cusco",
+    "title": "Qorikancha · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Qorikancha, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Qorikancha",
+      "Recorrido por Qorikancha",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-3",
+    "destination": "cusco",
+    "title": "San Blas · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en San Blas, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en San Blas",
+      "Recorrido por San Blas",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-4",
+    "destination": "cusco",
+    "title": "Sacsayhuamán · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Sacsayhuamán, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Sacsayhuamán",
+      "Recorrido por Sacsayhuamán",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-5",
+    "destination": "cusco",
+    "title": "Mercado de San Pedro · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Mercado de San Pedro para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Mercado de San Pedro",
+      "Recorrido por Mercado de San Pedro",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-6",
+    "destination": "cusco",
+    "title": "Museo Inka · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Inka, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Inka",
+      "Recorrido por Museo Inka",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-7",
+    "destination": "cusco",
+    "title": "Catedral de Cusco · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Catedral de Cusco, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Catedral de Cusco",
+      "Recorrido por Catedral de Cusco",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-8",
+    "destination": "cusco",
+    "title": "Piedra de los Doce Ángulos · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Piedra de los Doce Ángulos, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Piedra de los Doce Ángulos",
+      "Recorrido por Piedra de los Doce Ángulos",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-9",
+    "destination": "cusco",
+    "title": "Qenqo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Qenqo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Qenqo",
+      "Recorrido por Qenqo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "cusco-experiencia-10",
+    "destination": "cusco",
+    "title": "Tambomachay · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Tambomachay, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Tambomachay",
+      "Recorrido por Tambomachay",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Cusco; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-1",
+    "destination": "montevideo",
+    "title": "Ciudad Vieja · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Ciudad Vieja, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Ciudad Vieja",
+      "Recorrido por Ciudad Vieja",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-2",
+    "destination": "montevideo",
+    "title": "Rambla de Montevideo · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Rambla de Montevideo, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Rambla de Montevideo",
+      "Recorrido por Rambla de Montevideo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-3",
+    "destination": "montevideo",
+    "title": "Mercado del Puerto · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Mercado del Puerto para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Mercado del Puerto",
+      "Recorrido por Mercado del Puerto",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-4",
+    "destination": "montevideo",
+    "title": "Teatro Solís · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Teatro Solís, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Teatro Solís",
+      "Recorrido por Teatro Solís",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-5",
+    "destination": "montevideo",
+    "title": "Plaza Independencia · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Plaza Independencia, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Plaza Independencia",
+      "Recorrido por Plaza Independencia",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-6",
+    "destination": "montevideo",
+    "title": "Parque Rodó · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Parque Rodó, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Parque Rodó",
+      "Recorrido por Parque Rodó",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-7",
+    "destination": "montevideo",
+    "title": "Playa de Pocitos · paseo por la costa",
+    "style": "playa",
+    "description": "Paseo por Playa de Pocitos con tiempo para recorrer la costa y tomar fotografías. No incluye actividades acuáticas.",
+    "stops": [
+      "Punto de encuentro en Playa de Pocitos",
+      "Recorrido por Playa de Pocitos",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-8",
+    "destination": "montevideo",
+    "title": "Museo Nacional de Artes Visuales · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo Nacional de Artes Visuales, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo Nacional de Artes Visuales",
+      "Recorrido por Museo Nacional de Artes Visuales",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-9",
+    "destination": "montevideo",
+    "title": "Palacio Salvo · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Palacio Salvo, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Palacio Salvo",
+      "Recorrido por Palacio Salvo",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "montevideo-experiencia-10",
+    "destination": "montevideo",
+    "title": "Feria de Tristán Narvaja · sabores locales",
+    "style": "gastronomia",
+    "description": "Recorré Feria de Tristán Narvaja para conocer sus puestos y sabores. El acompañamiento orienta la visita; las consumiciones se pagan aparte.",
+    "stops": [
+      "Punto de encuentro en Feria de Tristán Narvaja",
+      "Recorrido por Feria de Tristán Narvaja",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Montevideo; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-1",
+    "destination": "auckland",
+    "title": "Sky Tower · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Sky Tower, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Sky Tower",
+      "Recorrido por Sky Tower",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 420,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-2",
+    "destination": "auckland",
+    "title": "Viaduct Harbour · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Viaduct Harbour, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Viaduct Harbour",
+      "Recorrido por Viaduct Harbour",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 475,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-3",
+    "destination": "auckland",
+    "title": "Mount Eden · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Mount Eden, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Mount Eden",
+      "Recorrido por Mount Eden",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 530,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-4",
+    "destination": "auckland",
+    "title": "Museo de Auckland · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Museo de Auckland, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Museo de Auckland",
+      "Recorrido por Museo de Auckland",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 585,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-5",
+    "destination": "auckland",
+    "title": "Auckland Art Gallery · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Auckland Art Gallery, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Auckland Art Gallery",
+      "Recorrido por Auckland Art Gallery",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 640,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-6",
+    "destination": "auckland",
+    "title": "Devonport · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Devonport, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Devonport",
+      "Recorrido por Devonport",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 695,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-7",
+    "destination": "auckland",
+    "title": "Auckland Domain · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Auckland Domain, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Auckland Domain",
+      "Recorrido por Auckland Domain",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 750,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-8",
+    "destination": "auckland",
+    "title": "Jardines de invierno · al aire libre",
+    "style": "naturaleza",
+    "description": "Caminata por Jardines de invierno, con pausas para apreciar el paisaje y los espacios abiertos. El ritmo se ajusta al recorrido.",
+    "stops": [
+      "Punto de encuentro en Jardines de invierno",
+      "Recorrido por Jardines de invierno",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 3,
+    "price": 805,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-9",
+    "destination": "auckland",
+    "title": "Wynyard Quarter · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Wynyard Quarter, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Wynyard Quarter",
+      "Recorrido por Wynyard Quarter",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 860,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  },
+  {
+    "id": "auckland-experiencia-10",
+    "destination": "auckland",
+    "title": "Mission Bay · historia y arquitectura",
+    "style": "cultura",
+    "description": "Visita centrada en Mission Bay, su historia y sus espacios más representativos. Los accesos interiores dependen de los horarios y entradas disponibles.",
+    "stops": [
+      "Punto de encuentro en Mission Bay",
+      "Recorrido por Mission Bay",
+      "Cierre y orientación para continuar la visita"
+    ],
+    "hours": 2,
+    "price": 915,
+    "photoContext": "Fotografía de referencia de Auckland; no representa necesariamente todas las paradas del recorrido."
+  }
+]

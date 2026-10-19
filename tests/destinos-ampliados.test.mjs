@@ -33,9 +33,9 @@ test('los 40 destinos originales conservan exactamente sus datos, fotos, hoteles
 });
 
 test('30 ciudades nuevas completas, sin duplicados, con fotos locales adaptables y diez recorridos',async()=>{
-  assert.equal(catalog.destinations.length,70);
+  assert.equal(catalog.destinations.length,100);
   assert.equal(cities.length,30);
-  assert.equal(new Set(catalog.destinations.map(d=>d.id)).size,70);
+  assert.equal(new Set(catalog.destinations.map(d=>d.id)).size,100);
   for(const city of cities){
     assert.ok(!Object.hasOwn(original,city.id),city.id);
     const d=catalog.destinations.find(d=>d.id===city.id);
@@ -65,7 +65,7 @@ test('SQL incompleto incluye las 30 nuevas y respeta destinos y precios ya guard
   const sqlDestination={...JSON.parse(JSON.stringify(bangkok)),economy:43210,hotels:[{...bangkok.hotels[0],rate:7777}]};
   const old=catalog.destinations.filter(d=>Object.hasOwn(original,d.id));
   const connected=load({RumboDatabase:{connected:true,catalog:{destinations:[...JSON.parse(JSON.stringify(old)),sqlDestination],origins:catalog.origins,rooms:catalog.rooms,promotions:catalog.promotions}}}).window.RumboViajesDatos;
-  assert.equal(connected.destinations.length,70);
+  assert.equal(connected.destinations.length,100);
   assert.equal(connected.destinations.find(d=>d.id==='bangkok').economy,43210);
   assert.equal(connected.destinations.find(d=>d.id==='bangkok').hotels[0].rate,7777);
   assert.equal(connected.destinations.filter(d=>d.id==='bangkok').length,1);

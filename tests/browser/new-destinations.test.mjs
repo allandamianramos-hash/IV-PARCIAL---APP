@@ -51,7 +51,7 @@ test('las 30 fichas nuevas cargan sus fotos, aeropuerto, actividades y enlaces d
         const d=window.RumboViajesDatos.destinations.find(d=>d.id===id);
         return {count:window.RumboViajesDatos.destinations.length,code:d.airport.code,image:d.image};
       },city.id);
-      assert.equal(data.count,70);assert.equal(data.code,city.airport.code);
+      assert.equal(data.count,100);assert.equal(data.code,city.airport.code);
       const image=page.locator(`main img[src="${data.image}"]`);
       await image.evaluate(img=>img.decode());
       assert.ok(await image.evaluate(img=>img.naturalWidth>0),city.id);

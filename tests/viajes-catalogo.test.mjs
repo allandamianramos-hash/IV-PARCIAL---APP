@@ -76,11 +76,13 @@ test('solo quedan los destinos aprobados y cada uno tiene un aeropuerto identifi
 
 test('cada hospedaje tiene una fotografía distinta con autor y licencia', async () => {
   const photos=JSON.parse(await readFile(new URL('imagenes-viajes/CREDITOS-HOTELES.json', new URL('../public/', import.meta.url)),'utf8'));
+  const added=JSON.parse(await readFile(new URL('../public/imagenes-viajes/CREDITOS-CATALOGO-100.json',import.meta.url),'utf8'));
+  photos.push(...added.filter(p=>p.kind==='hotel'));
   const hashes=new Set(),sources=new Set();
   const hotels=destinations.flatMap(d=>d.hotels);
   assert.equal(photos.length,hotels.length);
   for(const hotel of hotels){
-    const credit=photos.find(p=>p.id===hotel.id);
+    const credit=photos.find(p=>p.file===hotel.image);
     assert.equal(hotel.image,credit.file);
     assert.ok(hotel.photoAuthor && hotel.photoLicense && hotel.imageAlt);
     assert.equal(new URL(hotel.photoSource).hostname,'commons.wikimedia.org');
@@ -93,9 +95,9 @@ test('cada hospedaje tiene una fotografía distinta con autor y licencia', async
   }
 });
 
-test('los 70 destinos tienen presupuestos, hospedajes e imágenes locales', async () => {
-  assert.equal(destinations.length, 70);
-  assert.equal(new Set(destinations.map(d=>d.id)).size, 70);
+test('los 100 destinos tienen presupuestos, hospedajes e imágenes locales', async () => {
+  assert.equal(destinations.length, 100);
+  assert.equal(new Set(destinations.map(d=>d.id)).size, 100);
   const hotelIds = new Set();
   for (const d of destinations) {
     assert.ok(d.inspirationBudget > 0);
@@ -107,7 +109,7 @@ test('los 70 destinos tienen presupuestos, hospedajes e imágenes locales', asyn
       await access(new URL(`imagenes-viajes/${h.image}`, new URL('../public/', import.meta.url)));
     }
   }
-  assert.equal(hotelIds.size, 350);
+  assert.equal(hotelIds.size, 500);
 });
 
 test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => {
@@ -144,6 +146,6 @@ test('cada ruta ofrece seis opciones estables y enlaces oficiales HTTPS', () => 
  const scope={window:{RumboDatabase:{connected:true,catalog:{destinations:[...existing,custom],rooms:{},origins:['Tegucigalpa'],promotions:{}}}}};
  vm.runInNewContext(source.slice(0,source.indexOf('/* Abre una')),scope);
  const actual=scope.window.RumboViajesDatos.destinations;
- assert.equal(actual.length,70);assert.equal(actual.find(d=>d.id==='londres').economy,12345);
- assert.equal(new Set(actual.map(d=>d.id)).size,70);
+ assert.equal(actual.length,100);assert.equal(actual.find(d=>d.id==='londres').economy,12345);
+ assert.equal(new Set(actual.map(d=>d.id)).size,100);
  });

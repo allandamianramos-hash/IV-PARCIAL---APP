@@ -8,7 +8,7 @@ try{
   const source=await readFile(new URL('../public/js/destinos/viajes.js',import.meta.url),'utf8');
   const context={window:{}};
   vm.runInNewContext(source.slice(0,source.indexOf('/* Abre una')),context);
-  const cities=JSON.parse(await readFile(new URL('../docs/nuevos-destinos-contenido.json',import.meta.url),'utf8'));
+  const cities=JSON.parse(await readFile(new URL(process.argv.includes('--catalogo-100')?'../docs/catalogo-100/ciudades.json':'../docs/nuevos-destinos-contenido.json',import.meta.url),'utf8'));
   const ids=new Set(cities.map(d=>d.id));
   if(ids.size!==30)throw Error('La ampliación debe contener exactamente 30 destinos.');
   const destinations=context.window.RumboViajesDatos.destinations;

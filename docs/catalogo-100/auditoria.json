@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "destinations": 70,
+    "experiences": 700,
+    "hotels": 350,
+    "flightsPerOrigin": 6,
+    "origins": [
+      "Tegucigalpa",
+      "San Pedro Sula"
+    ],
+    "roomTypes": [
+      "estandar",
+      "familiar",
+      "suite"
+    ],
+    "transportTypes": 3,
+    "insurancePlans": 4
+  },
+  "addition": {
+    "destinations": 30,
+    "experiences": 300,
+    "hotels": 150,
+    "flightOptionsPerOrigin": 180
+  },
+  "expected": {
+    "destinations": 100,
+    "experiences": 1000,
+    "hotels": 500
+  },
+  "status": "Completado: catálogo integrado, fotos revisadas, pruebas aprobadas y registros nuevos sincronizados con Azure.",
+  "verification": {
+    "catalogTestsPassed": 21,
+    "detailPagesPassed": 30,
+    "homeFeatured": 6,
+    "sqlInsertedDestinations": 30,
+    "sqlInsertedHotels": 150,
+    "liveApiDestinations": 100,
+    "liveApiHotels": 500,
+    "browserFlows": [
+      "Oporto: 1440px",
+      "Cusco: 390px",
+      "Auckland: 320px"
+    ],
+    "homeSearchPassed": true,
+    "originalDataUnchanged": true,
+    "uniqueImageFilesAndSources": true
+  }
+}

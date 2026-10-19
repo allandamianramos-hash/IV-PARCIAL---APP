@@ -1,0 +1,842 @@
+[
+  {
+    "id": "porto",
+    "name": "Oporto",
+    "country": "Portugal",
+    "code": "OPO",
+    "query": "Porto",
+    "nights": 4,
+    "economy": 22000,
+    "duration": 1080,
+    "hotelBase": 1900,
+    "intro": "Puentes, azulejos y paseos junto al Duero.",
+    "places": [
+      "Ribeira",
+      "Puente de Don Luis I",
+      "Torre de los Clérigos",
+      "Estación de São Bento",
+      "Mercado do Bolhão",
+      "Jardines del Palacio de Cristal",
+      "Foz do Douro",
+      "Casa da Música",
+      "Museo de Serralves",
+      "Catedral de Oporto"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Porto"
+    ]
+  },
+  {
+    "id": "sevilla",
+    "name": "Sevilla",
+    "country": "España",
+    "code": "SVQ",
+    "query": "Seville",
+    "nights": 4,
+    "economy": 22500,
+    "duration": 1080,
+    "hotelBase": 1850,
+    "intro": "Patios y plazas a orillas del Guadalquivir.",
+    "places": [
+      "Real Alcázar",
+      "Plaza de España",
+      "Barrio de Triana",
+      "Catedral de Sevilla",
+      "Parque de María Luisa",
+      "Setas de Sevilla",
+      "Archivo de Indias",
+      "Casa de Pilatos",
+      "Torre del Oro",
+      "Alameda de Hércules"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Seville"
+    ]
+  },
+  {
+    "id": "valencia",
+    "name": "Valencia",
+    "country": "España",
+    "code": "VLC",
+    "query": "Valencia",
+    "nights": 4,
+    "economy": 22800,
+    "duration": 1100,
+    "hotelBase": 1800,
+    "intro": "Mercados, jardines y arquitectura junto al Mediterráneo.",
+    "places": [
+      "Ciudad de las Artes y las Ciencias",
+      "Mercado Central",
+      "Jardín del Turia",
+      "Lonja de la Seda",
+      "Torres de Serranos",
+      "Playa de la Malvarrosa",
+      "Barrio del Carmen",
+      "Museo de Bellas Artes",
+      "Albufera",
+      "Plaza de la Virgen"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Valencia"
+    ]
+  },
+  {
+    "id": "malaga",
+    "name": "Málaga",
+    "country": "España",
+    "code": "AGP",
+    "query": "Málaga",
+    "nights": 4,
+    "economy": 22000,
+    "duration": 1080,
+    "hotelBase": 1900,
+    "intro": "Calles históricas y tardes frente al mar.",
+    "places": [
+      "Alcazaba",
+      "Muelle Uno",
+      "Playa de la Malagueta",
+      "Museo Picasso",
+      "Castillo de Gibralfaro",
+      "Mercado de Atarazanas",
+      "Teatro Romano",
+      "Jardín Botánico La Concepción",
+      "Catedral de Málaga",
+      "Centro Pompidou"
+    ],
+    "type": "playa",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/M%C3%A1laga"
+    ]
+  },
+  {
+    "id": "niza",
+    "name": "Niza",
+    "country": "Francia",
+    "code": "NCE",
+    "query": "Nice France",
+    "nights": 4,
+    "economy": 24600,
+    "duration": 1140,
+    "hotelBase": 2600,
+    "intro": "Paseos costeros y barrios de colores en la Costa Azul.",
+    "places": [
+      "Paseo de los Ingleses",
+      "Vieux Nice",
+      "Colina del Castillo",
+      "Cours Saleya",
+      "Museo Matisse",
+      "Museo Marc Chagall",
+      "Puerto de Niza",
+      "Plaza Masséna",
+      "Monasterio de Cimiez",
+      "Parque Phoenix"
+    ],
+    "type": "playa",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Nice"
+    ]
+  },
+  {
+    "id": "lyon",
+    "name": "Lyon",
+    "country": "Francia",
+    "code": "LYS",
+    "query": "Lyon",
+    "nights": 4,
+    "economy": 23800,
+    "duration": 1140,
+    "hotelBase": 2100,
+    "intro": "Dos ríos, colinas y una ciudad de buena mesa.",
+    "places": [
+      "Vieux Lyon",
+      "Basílica de Fourvière",
+      "Parque de la Tête d'Or",
+      "Museo de las Confluencias",
+      "Croix-Rousse",
+      "Plaza Bellecour",
+      "Teatros romanos de Fourvière",
+      "Les Halles Paul Bocuse",
+      "Museo de Bellas Artes",
+      "Riberas del Ródano"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Lyon"
+    ]
+  },
+  {
+    "id": "bruselas",
+    "name": "Bruselas",
+    "country": "Bélgica",
+    "code": "BRU",
+    "query": "Brussels",
+    "nights": 4,
+    "economy": 23000,
+    "duration": 1080,
+    "hotelBase": 2300,
+    "intro": "Plazas monumentales, museos y galerías cubiertas.",
+    "places": [
+      "Grand Place",
+      "Atomium",
+      "Galerías Reales Saint-Hubert",
+      "Mont des Arts",
+      "Parque del Cincuentenario",
+      "Museo Magritte",
+      "Barrio del Sablon",
+      "Palacio Real",
+      "Centro Belga del Cómic",
+      "Parque de Bruselas"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Brussels"
+    ]
+  },
+  {
+    "id": "zurich",
+    "name": "Zúrich",
+    "country": "Suiza",
+    "code": "ZRH",
+    "query": "Zurich",
+    "nights": 4,
+    "economy": 27000,
+    "duration": 1140,
+    "hotelBase": 3600,
+    "intro": "El casco antiguo se abre al río y al lago.",
+    "places": [
+      "Lindenhof",
+      "Grossmünster",
+      "Lago de Zúrich",
+      "Kunsthaus",
+      "Museo Nacional Suizo",
+      "Bahnhofstrasse",
+      "Jardín Botánico",
+      "Fraumünster",
+      "Uetliberg",
+      "Zürich West"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Zurich"
+    ]
+  },
+  {
+    "id": "ginebra",
+    "name": "Ginebra",
+    "country": "Suiza",
+    "code": "GVA",
+    "query": "Geneva Switzerland",
+    "nights": 4,
+    "economy": 26500,
+    "duration": 1140,
+    "hotelBase": 3400,
+    "intro": "Parques y pequeñas plazas a orillas del lago.",
+    "places": [
+      "Jet d'Eau",
+      "Catedral de San Pedro",
+      "Parque de los Bastiones",
+      "Jardín Inglés",
+      "Bains des Pâquis",
+      "Museo de Arte e Historia",
+      "Jardín Botánico de Ginebra",
+      "Place du Bourg-de-Four",
+      "Museo Patek Philippe",
+      "Parque La Grange"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Geneva"
+    ]
+  },
+  {
+    "id": "copenhague",
+    "name": "Copenhague",
+    "country": "Dinamarca",
+    "code": "CPH",
+    "query": "Copenhagen",
+    "nights": 4,
+    "economy": 25800,
+    "duration": 1200,
+    "hotelBase": 3200,
+    "intro": "Canales, bicicletas y diseño a escala humana.",
+    "places": [
+      "Nyhavn",
+      "Jardines de Tivoli",
+      "Palacio de Amalienborg",
+      "Castillo de Rosenborg",
+      "Torre Redonda",
+      "Christianshavn",
+      "Museo Nacional de Dinamarca",
+      "Jardín Botánico",
+      "Palacio de Christiansborg",
+      "Torvehallerne"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Copenhagen"
+    ]
+  },
+  {
+    "id": "estocolmo",
+    "name": "Estocolmo",
+    "country": "Suecia",
+    "code": "ARN",
+    "query": "Stockholm",
+    "nights": 5,
+    "economy": 27000,
+    "duration": 1260,
+    "hotelBase": 2900,
+    "intro": "Islas unidas por puentes y paseos junto al agua.",
+    "places": [
+      "Gamla Stan",
+      "Museo Vasa",
+      "Djurgården",
+      "Ayuntamiento de Estocolmo",
+      "Skansen",
+      "Palacio Real",
+      "Södermalm",
+      "Fotografiska",
+      "Museo ABBA",
+      "Östermalms Saluhall"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Stockholm"
+    ]
+  },
+  {
+    "id": "oslo",
+    "name": "Oslo",
+    "country": "Noruega",
+    "code": "OSL",
+    "query": "Oslo Norway",
+    "nights": 4,
+    "economy": 26800,
+    "duration": 1200,
+    "hotelBase": 3200,
+    "intro": "Arte y arquitectura frente al fiordo.",
+    "places": [
+      "Ópera de Oslo",
+      "Parque de Vigeland",
+      "Aker Brygge",
+      "Museo MUNCH",
+      "Fortaleza de Akershus",
+      "Museo Fram",
+      "Museo Nacional",
+      "Península de Bygdøy",
+      "Jardín Botánico",
+      "Ekebergparken"
+    ],
+    "type": "naturaleza",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Oslo"
+    ]
+  },
+  {
+    "id": "helsinki",
+    "name": "Helsinki",
+    "country": "Finlandia",
+    "code": "HEL",
+    "query": "Helsinki",
+    "nights": 4,
+    "economy": 27500,
+    "duration": 1260,
+    "hotelBase": 2800,
+    "intro": "Diseño nórdico, mercados y una fortaleza en el Báltico.",
+    "places": [
+      "Plaza del Senado",
+      "Suomenlinna",
+      "Mercado del Puerto",
+      "Iglesia de Temppeliaukio",
+      "Biblioteca Oodi",
+      "Catedral de Uspenski",
+      "Museo Ateneum",
+      "Parque de Sibelius",
+      "Seurasaari",
+      "Esplanadi"
+    ],
+    "type": "naturaleza",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Helsinki"
+    ]
+  },
+  {
+    "id": "varsovia",
+    "name": "Varsovia",
+    "country": "Polonia",
+    "code": "WAW",
+    "query": "Warsaw",
+    "nights": 4,
+    "economy": 25000,
+    "duration": 1200,
+    "hotelBase": 1600,
+    "intro": "Historia reconstruida y parques en una capital activa.",
+    "places": [
+      "Ciudad Vieja",
+      "Parque Łazienki",
+      "Palacio de la Cultura y la Ciencia",
+      "Castillo Real",
+      "Museo POLIN",
+      "Palacio de Wilanów",
+      "Centro de Ciencias Copérnico",
+      "Krakowskie Przedmieście",
+      "Riberas del Vístula",
+      "Museo de Chopin"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Warsaw"
+    ]
+  },
+  {
+    "id": "cracovia",
+    "name": "Cracovia",
+    "country": "Polonia",
+    "code": "KRK",
+    "query": "Krakow",
+    "nights": 4,
+    "economy": 25200,
+    "duration": 1230,
+    "hotelBase": 1500,
+    "intro": "Plazas medievales y barrios para recorrer caminando.",
+    "places": [
+      "Plaza del Mercado",
+      "Colina de Wawel",
+      "Kazimierz",
+      "Basílica de Santa María",
+      "Lonja de los Paños",
+      "Parque Planty",
+      "Fábrica de Schindler",
+      "Museo Czartoryski",
+      "Barbacana",
+      "Montículo de Kościuszko"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Krakow"
+    ]
+  },
+  {
+    "id": "dubrovnik",
+    "name": "Dubrovnik",
+    "country": "Croacia",
+    "code": "DBV",
+    "query": "Dubrovnik",
+    "nights": 4,
+    "economy": 26900,
+    "duration": 1260,
+    "hotelBase": 2400,
+    "intro": "Murallas de piedra y vistas al Adriático.",
+    "places": [
+      "Murallas de Dubrovnik",
+      "Stradun",
+      "Puerto Viejo",
+      "Fortaleza Lovrijenac",
+      "Palacio del Rector",
+      "Isla de Lokrum",
+      "Monte Srđ",
+      "Monasterio Franciscano",
+      "Playa de Banje",
+      "Palacio Sponza"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Dubrovnik"
+    ]
+  },
+  {
+    "id": "split",
+    "name": "Split",
+    "country": "Croacia",
+    "code": "SPU",
+    "query": "Split Croatia",
+    "nights": 4,
+    "economy": 26300,
+    "duration": 1260,
+    "hotelBase": 2100,
+    "intro": "Una ciudad entre vestigios romanos y el mar.",
+    "places": [
+      "Palacio de Diocleciano",
+      "Paseo de la Riva",
+      "Colina de Marjan",
+      "Catedral de San Duje",
+      "Playa de Bačvice",
+      "Templo de Júpiter",
+      "Galería Meštrović",
+      "Mercado Pazar",
+      "Plaza de la República",
+      "Museo Arqueológico de Split"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Split"
+    ]
+  },
+  {
+    "id": "napoles",
+    "name": "Nápoles",
+    "country": "Italia",
+    "code": "NAP",
+    "query": "Naples Italy",
+    "nights": 4,
+    "economy": 24000,
+    "duration": 1200,
+    "hotelBase": 1900,
+    "intro": "Calles con carácter y vistas a la bahía.",
+    "places": [
+      "Spaccanapoli",
+      "Castel dell'Ovo",
+      "Plaza del Plebiscito",
+      "Museo Arqueológico Nacional",
+      "Capilla Sansevero",
+      "Via San Gregorio Armeno",
+      "Castel Sant'Elmo",
+      "Galleria Umberto I",
+      "Lungomare",
+      "Museo de Capodimonte"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Naples"
+    ]
+  },
+  {
+    "id": "bolonia",
+    "name": "Bolonia",
+    "country": "Italia",
+    "code": "BLQ",
+    "query": "Bologna",
+    "nights": 4,
+    "economy": 24500,
+    "duration": 1170,
+    "hotelBase": 2100,
+    "intro": "Pórticos, mercados y cocina de Emilia-Romaña.",
+    "places": [
+      "Piazza Maggiore",
+      "Pórticos de Bolonia",
+      "Quadrilatero",
+      "Basílica de San Petronio",
+      "Archiginnasio",
+      "Santuario de San Luca",
+      "Santo Stefano",
+      "MAMbo",
+      "Mercato delle Erbe",
+      "Giardini Margherita"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Bologna"
+    ]
+  },
+  {
+    "id": "montreal",
+    "name": "Montreal",
+    "country": "Canadá",
+    "code": "YUL",
+    "query": "Montreal",
+    "nights": 5,
+    "economy": 14500,
+    "duration": 540,
+    "hotelBase": 2500,
+    "intro": "Barrios francófonos, parques y paseos junto al río.",
+    "places": [
+      "Viejo Montreal",
+      "Monte Royal",
+      "Puerto Viejo",
+      "Basílica de Notre-Dame",
+      "Jardín Botánico",
+      "Mercado Jean-Talon",
+      "Museo de Bellas Artes",
+      "Plateau-Mont-Royal",
+      "Parque Jean-Drapeau",
+      "Canal de Lachine"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Montreal"
+    ]
+  },
+  {
+    "id": "quebec",
+    "name": "Quebec",
+    "country": "Canadá",
+    "code": "YQB",
+    "query": "Quebec City",
+    "nights": 4,
+    "economy": 15900,
+    "duration": 660,
+    "hotelBase": 2400,
+    "intro": "Calles de piedra sobre el río San Lorenzo.",
+    "places": [
+      "Château Frontenac",
+      "Petit-Champlain",
+      "Llanuras de Abraham",
+      "Terraza Dufferin",
+      "Place Royale",
+      "Ciudadela de Quebec",
+      "Museo de la Civilización",
+      "Puerto Viejo de Quebec",
+      "Catarata de Montmorency",
+      "Parlamento de Quebec"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Quebec_City"
+    ]
+  },
+  {
+    "id": "boston",
+    "name": "Boston",
+    "country": "Estados Unidos",
+    "code": "BOS",
+    "query": "Boston",
+    "nights": 4,
+    "economy": 14000,
+    "duration": 540,
+    "hotelBase": 3300,
+    "intro": "Historia y parques entre barrios de ladrillo rojo.",
+    "places": [
+      "Freedom Trail",
+      "Boston Common",
+      "Quincy Market",
+      "Public Garden",
+      "Museo de Bellas Artes",
+      "North End",
+      "Boston Harborwalk",
+      "Biblioteca Pública de Boston",
+      "Beacon Hill",
+      "Museo Isabella Stewart Gardner"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Boston"
+    ]
+  },
+  {
+    "id": "chicago",
+    "name": "Chicago",
+    "country": "Estados Unidos",
+    "code": "ORD",
+    "query": "Chicago",
+    "nights": 4,
+    "economy": 13800,
+    "duration": 540,
+    "hotelBase": 2800,
+    "intro": "Arquitectura junto al río y tardes frente al lago.",
+    "places": [
+      "Millennium Park",
+      "Chicago Riverwalk",
+      "Navy Pier",
+      "Instituto de Arte",
+      "Lincoln Park",
+      "Willis Tower",
+      "Museo Field",
+      "Magnificent Mile",
+      "Grant Park",
+      "Centro Cultural de Chicago"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Chicago"
+    ]
+  },
+  {
+    "id": "san-francisco",
+    "name": "San Francisco",
+    "country": "Estados Unidos",
+    "code": "SFO",
+    "query": "San Francisco",
+    "nights": 5,
+    "economy": 17000,
+    "duration": 660,
+    "hotelBase": 3100,
+    "intro": "Colinas, tranvías y paseos por la bahía.",
+    "places": [
+      "Golden Gate",
+      "Pier 39",
+      "Golden Gate Park",
+      "Alcatraz",
+      "Chinatown",
+      "Ferry Building",
+      "Palace of Fine Arts",
+      "Lombard Street",
+      "Twin Peaks",
+      "Museo de Arte Moderno"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/San_Francisco"
+    ]
+  },
+  {
+    "id": "honolulu",
+    "name": "Honolulu",
+    "country": "Estados Unidos",
+    "code": "HNL",
+    "query": "Honolulu Hawaii",
+    "nights": 6,
+    "economy": 24600,
+    "duration": 1020,
+    "hotelBase": 3400,
+    "intro": "Playa y senderos en la costa sur de Oahu.",
+    "places": [
+      "Waikīkī",
+      "Diamond Head",
+      "Palacio Iolani",
+      "Ala Moana Beach Park",
+      "Museo Bishop",
+      "Jardín Botánico Foster",
+      "Chinatown de Honolulu",
+      "Museo de Arte de Honolulu",
+      "Kapiolani Park",
+      "Puerto de Honolulu"
+    ],
+    "type": "playa",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Honolulu"
+    ]
+  },
+  {
+    "id": "orlando",
+    "name": "Orlando",
+    "country": "Estados Unidos",
+    "code": "MCO",
+    "query": "Orlando Florida",
+    "nights": 5,
+    "economy": 10800,
+    "duration": 360,
+    "hotelBase": 2200,
+    "intro": "Parques, jardines y entretenimiento en Florida.",
+    "places": [
+      "Lake Eola Park",
+      "Winter Park",
+      "International Drive",
+      "Jardines Harry P. Leu",
+      "Museo de Arte de Orlando",
+      "Orlando Science Center",
+      "Disney Springs",
+      "Universal CityWalk",
+      "Museo de Arte Americano Charles Hosmer Morse",
+      "Parque Bill Frederick"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Orlando"
+    ]
+  },
+  {
+    "id": "quito",
+    "name": "Quito",
+    "country": "Ecuador",
+    "code": "UIO",
+    "query": "Quito",
+    "nights": 4,
+    "economy": 12500,
+    "duration": 420,
+    "hotelBase": 1400,
+    "intro": "Plazas coloniales y vistas de los Andes.",
+    "places": [
+      "Plaza Grande",
+      "Iglesia de la Compañía",
+      "Basílica del Voto Nacional",
+      "Plaza de San Francisco",
+      "La Ronda",
+      "TelefériQo",
+      "Capilla del Hombre",
+      "Parque La Carolina",
+      "Museo de la Ciudad",
+      "El Panecillo"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Quito"
+    ]
+  },
+  {
+    "id": "cusco",
+    "name": "Cusco",
+    "country": "Perú",
+    "code": "CUZ",
+    "query": "Cusco",
+    "nights": 5,
+    "economy": 16000,
+    "duration": 660,
+    "hotelBase": 1600,
+    "intro": "Historia inca y calles de piedra en los Andes.",
+    "places": [
+      "Plaza de Armas",
+      "Qorikancha",
+      "San Blas",
+      "Sacsayhuamán",
+      "Mercado de San Pedro",
+      "Museo Inka",
+      "Catedral de Cusco",
+      "Piedra de los Doce Ángulos",
+      "Qenqo",
+      "Tambomachay"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Cusco"
+    ]
+  },
+  {
+    "id": "montevideo",
+    "name": "Montevideo",
+    "country": "Uruguay",
+    "code": "MVD",
+    "query": "Montevideo",
+    "nights": 5,
+    "economy": 18500,
+    "duration": 840,
+    "hotelBase": 1800,
+    "intro": "Paseos costeros junto al Río de la Plata.",
+    "places": [
+      "Ciudad Vieja",
+      "Rambla de Montevideo",
+      "Mercado del Puerto",
+      "Teatro Solís",
+      "Plaza Independencia",
+      "Parque Rodó",
+      "Playa de Pocitos",
+      "Museo Nacional de Artes Visuales",
+      "Palacio Salvo",
+      "Feria de Tristán Narvaja"
+    ],
+    "type": "cultura",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Montevideo"
+    ]
+  },
+  {
+    "id": "auckland",
+    "name": "Auckland",
+    "country": "Nueva Zelanda",
+    "code": "AKL",
+    "query": "Auckland",
+    "nights": 6,
+    "economy": 36000,
+    "duration": 1800,
+    "hotelBase": 2600,
+    "intro": "Puertos y colinas volcánicas junto al mar.",
+    "places": [
+      "Sky Tower",
+      "Viaduct Harbour",
+      "Mount Eden",
+      "Museo de Auckland",
+      "Auckland Art Gallery",
+      "Devonport",
+      "Auckland Domain",
+      "Jardines de invierno",
+      "Wynyard Quarter",
+      "Mission Bay"
+    ],
+    "type": "naturaleza",
+    "sources": [
+      "https://en.wikivoyage.org/wiki/Auckland"
+    ]
+  }
+]

@@ -12,8 +12,8 @@ const {destinations,flights,origins}=context.window.RumboViajesDatos;
 const guides=context.window.RumboGuias;
 const normalized=path=>path.replace(/^imagenes-viajes\//,'');
 
-test('los 70 destinos ofrecen diez recorridos y cinco hospedajes completos',()=>{
-  assert.equal(destinations.length,70);
+test('los 100 destinos ofrecen diez recorridos y cinco hospedajes completos',()=>{
+  assert.equal(destinations.length,100);
   for(const d of destinations){
     assert.equal(guides.filter(g=>g.destination===d.id).length,10,d.id);
     assert.equal(d.hotels.length,5,d.id);
@@ -52,7 +52,7 @@ test('ningún destino, hospedaje o recorrido reutiliza una foto de otro elemento
 test('un catálogo SQL anterior recibe hospedajes adicionales sin alterar tarifas ni duplicarlos',async()=>{
   const old=JSON.parse(JSON.stringify(context.window.RumboViajesDatos));
   const initial=JSON.parse(await readFile(new URL('../docs/catalogo-auditoria-base.json',root),'utf8'));
-  old.destinations.forEach(d=>{d.hotels=initial.destinations.find(item=>item.id===d.id).hotels;});
+  old.destinations.forEach(d=>{d.hotels=initial.destinations.find(item=>item.id===d.id)?.hotels || d.hotels;});
   const madrid=old.destinations.find(d=>d.id==='madrid');madrid.hotels[0].rate=7654;
   const connected={window:{RumboDatabase:{connected:true,catalog:old}}};
   vm.runInNewContext(source.slice(0,source.indexOf('/* Abre una')),connected);

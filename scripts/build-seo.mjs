@@ -5,7 +5,7 @@ vm.runInNewContext(source.slice(0,source.indexOf('/* Abre una')),context);
 const pages={
  'index.html':{title:'Rumbo | Destinos, viajes y experiencias',description:'Descubre destinos, organiza vuelos y hospedaje, explora experiencias y prepara tu próximo viaje con Rumbo. Planificación y pagos de demostración.'},
  'tienda.html':{title:'Tienda de viaje | Rumbo',description:'Explora accesorios, equipaje y productos para preparar tu viaje. Compara opciones y prueba una compra simulada, sin cargos reales.'},
- 'viajes.html?pantalla=destinos':{title:'Destinos para tu próximo viaje | Rumbo',description:'Explora 70 destinos con información, fotografías, hospedaje y recorridos para inspirar tu próximo viaje.'},
+ 'viajes.html?pantalla=destinos':{title:'Destinos para tu próximo viaje | Rumbo',description:'Explora 100 destinos con información, fotografías, hospedaje y recorridos para inspirar tu próximo viaje.'},
  'viajes.html?pantalla=vuelos':{title:'Organiza tu vuelo | Rumbo',description:'Compara opciones de vuelo de demostración por destino, fecha y número de viajeros. Guarda tu selección en el resumen del viaje.'},
  'viajes.html?pantalla=hoteles':{title:'Hospedaje y hoteles por destino | Rumbo',description:'Explora propuestas de hospedaje y calcula tu estancia por habitaciones, noches y viajeros. Opciones de demostración.'},
  'servicios.html':{title:'Servicios de viaje | Rumbo',description:'Organiza vuelos, hospedaje, traslados, seguros y experiencias en un solo plan con Rumbo.'}

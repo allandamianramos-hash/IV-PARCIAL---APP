@@ -1,0 +1,2072 @@
+[
+  {
+    "id": "porto-estancia-1",
+    "destination": "porto",
+    "name": "Casa del Patio · Oporto",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1900,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Oporto."
+  },
+  {
+    "id": "porto-estancia-2",
+    "destination": "porto",
+    "name": "Estancia del Parque · Oporto",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2185,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Oporto."
+  },
+  {
+    "id": "porto-estancia-3",
+    "destination": "porto",
+    "name": "Suites del Paseo · Oporto",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2565,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Oporto."
+  },
+  {
+    "id": "porto-estancia-4",
+    "destination": "porto",
+    "name": "Terraza del Centro · Oporto",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2945,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Oporto."
+  },
+  {
+    "id": "porto-estancia-5",
+    "destination": "porto",
+    "name": "Residencia del Mirador · Oporto",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3610,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Oporto."
+  },
+  {
+    "id": "sevilla-estancia-1",
+    "destination": "sevilla",
+    "name": "Casa del Patio · Sevilla",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1850,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Sevilla."
+  },
+  {
+    "id": "sevilla-estancia-2",
+    "destination": "sevilla",
+    "name": "Estancia del Parque · Sevilla",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2128,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Sevilla."
+  },
+  {
+    "id": "sevilla-estancia-3",
+    "destination": "sevilla",
+    "name": "Suites del Paseo · Sevilla",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2498,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Sevilla."
+  },
+  {
+    "id": "sevilla-estancia-4",
+    "destination": "sevilla",
+    "name": "Terraza del Centro · Sevilla",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2868,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Sevilla."
+  },
+  {
+    "id": "sevilla-estancia-5",
+    "destination": "sevilla",
+    "name": "Residencia del Mirador · Sevilla",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3515,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Sevilla."
+  },
+  {
+    "id": "valencia-estancia-1",
+    "destination": "valencia",
+    "name": "Casa del Patio · Valencia",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1800,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Valencia."
+  },
+  {
+    "id": "valencia-estancia-2",
+    "destination": "valencia",
+    "name": "Estancia del Parque · Valencia",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2070,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Valencia."
+  },
+  {
+    "id": "valencia-estancia-3",
+    "destination": "valencia",
+    "name": "Suites del Paseo · Valencia",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2430,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Valencia."
+  },
+  {
+    "id": "valencia-estancia-4",
+    "destination": "valencia",
+    "name": "Terraza del Centro · Valencia",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2790,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Valencia."
+  },
+  {
+    "id": "valencia-estancia-5",
+    "destination": "valencia",
+    "name": "Residencia del Mirador · Valencia",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3420,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Valencia."
+  },
+  {
+    "id": "malaga-estancia-1",
+    "destination": "malaga",
+    "name": "Casa del Patio · Málaga",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1900,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Málaga."
+  },
+  {
+    "id": "malaga-estancia-2",
+    "destination": "malaga",
+    "name": "Estancia del Parque · Málaga",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2185,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Málaga."
+  },
+  {
+    "id": "malaga-estancia-3",
+    "destination": "malaga",
+    "name": "Suites del Paseo · Málaga",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2565,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Málaga."
+  },
+  {
+    "id": "malaga-estancia-4",
+    "destination": "malaga",
+    "name": "Terraza del Centro · Málaga",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2945,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Málaga."
+  },
+  {
+    "id": "malaga-estancia-5",
+    "destination": "malaga",
+    "name": "Residencia del Mirador · Málaga",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3610,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Málaga."
+  },
+  {
+    "id": "niza-estancia-1",
+    "destination": "niza",
+    "name": "Casa del Patio · Niza",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2600,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Niza."
+  },
+  {
+    "id": "niza-estancia-2",
+    "destination": "niza",
+    "name": "Estancia del Parque · Niza",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2990,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Niza."
+  },
+  {
+    "id": "niza-estancia-3",
+    "destination": "niza",
+    "name": "Suites del Paseo · Niza",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3510,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Niza."
+  },
+  {
+    "id": "niza-estancia-4",
+    "destination": "niza",
+    "name": "Terraza del Centro · Niza",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4030,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Niza."
+  },
+  {
+    "id": "niza-estancia-5",
+    "destination": "niza",
+    "name": "Residencia del Mirador · Niza",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4940,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Niza."
+  },
+  {
+    "id": "lyon-estancia-1",
+    "destination": "lyon",
+    "name": "Casa del Patio · Lyon",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2100,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Lyon."
+  },
+  {
+    "id": "lyon-estancia-2",
+    "destination": "lyon",
+    "name": "Estancia del Parque · Lyon",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2415,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Lyon."
+  },
+  {
+    "id": "lyon-estancia-3",
+    "destination": "lyon",
+    "name": "Suites del Paseo · Lyon",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2835,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Lyon."
+  },
+  {
+    "id": "lyon-estancia-4",
+    "destination": "lyon",
+    "name": "Terraza del Centro · Lyon",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3255,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Lyon."
+  },
+  {
+    "id": "lyon-estancia-5",
+    "destination": "lyon",
+    "name": "Residencia del Mirador · Lyon",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3990,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Lyon."
+  },
+  {
+    "id": "bruselas-estancia-1",
+    "destination": "bruselas",
+    "name": "Casa del Patio · Bruselas",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2300,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Bruselas."
+  },
+  {
+    "id": "bruselas-estancia-2",
+    "destination": "bruselas",
+    "name": "Estancia del Parque · Bruselas",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2645,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Bruselas."
+  },
+  {
+    "id": "bruselas-estancia-3",
+    "destination": "bruselas",
+    "name": "Suites del Paseo · Bruselas",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3105,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Bruselas."
+  },
+  {
+    "id": "bruselas-estancia-4",
+    "destination": "bruselas",
+    "name": "Terraza del Centro · Bruselas",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3565,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Bruselas."
+  },
+  {
+    "id": "bruselas-estancia-5",
+    "destination": "bruselas",
+    "name": "Residencia del Mirador · Bruselas",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4370,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Bruselas."
+  },
+  {
+    "id": "zurich-estancia-1",
+    "destination": "zurich",
+    "name": "Casa del Patio · Zúrich",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3600,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Zúrich."
+  },
+  {
+    "id": "zurich-estancia-2",
+    "destination": "zurich",
+    "name": "Estancia del Parque · Zúrich",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4140,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Zúrich."
+  },
+  {
+    "id": "zurich-estancia-3",
+    "destination": "zurich",
+    "name": "Suites del Paseo · Zúrich",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4860,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Zúrich."
+  },
+  {
+    "id": "zurich-estancia-4",
+    "destination": "zurich",
+    "name": "Terraza del Centro · Zúrich",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 5580,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Zúrich."
+  },
+  {
+    "id": "zurich-estancia-5",
+    "destination": "zurich",
+    "name": "Residencia del Mirador · Zúrich",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 6840,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Zúrich."
+  },
+  {
+    "id": "ginebra-estancia-1",
+    "destination": "ginebra",
+    "name": "Casa del Patio · Ginebra",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3400,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Ginebra."
+  },
+  {
+    "id": "ginebra-estancia-2",
+    "destination": "ginebra",
+    "name": "Estancia del Parque · Ginebra",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3910,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Ginebra."
+  },
+  {
+    "id": "ginebra-estancia-3",
+    "destination": "ginebra",
+    "name": "Suites del Paseo · Ginebra",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4590,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Ginebra."
+  },
+  {
+    "id": "ginebra-estancia-4",
+    "destination": "ginebra",
+    "name": "Terraza del Centro · Ginebra",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 5270,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Ginebra."
+  },
+  {
+    "id": "ginebra-estancia-5",
+    "destination": "ginebra",
+    "name": "Residencia del Mirador · Ginebra",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 6460,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Ginebra."
+  },
+  {
+    "id": "copenhague-estancia-1",
+    "destination": "copenhague",
+    "name": "Casa del Patio · Copenhague",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3200,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Copenhague."
+  },
+  {
+    "id": "copenhague-estancia-2",
+    "destination": "copenhague",
+    "name": "Estancia del Parque · Copenhague",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3680,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Copenhague."
+  },
+  {
+    "id": "copenhague-estancia-3",
+    "destination": "copenhague",
+    "name": "Suites del Paseo · Copenhague",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4320,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Copenhague."
+  },
+  {
+    "id": "copenhague-estancia-4",
+    "destination": "copenhague",
+    "name": "Terraza del Centro · Copenhague",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4960,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Copenhague."
+  },
+  {
+    "id": "copenhague-estancia-5",
+    "destination": "copenhague",
+    "name": "Residencia del Mirador · Copenhague",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 6080,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Copenhague."
+  },
+  {
+    "id": "estocolmo-estancia-1",
+    "destination": "estocolmo",
+    "name": "Casa del Patio · Estocolmo",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2900,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Estocolmo."
+  },
+  {
+    "id": "estocolmo-estancia-2",
+    "destination": "estocolmo",
+    "name": "Estancia del Parque · Estocolmo",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3335,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Estocolmo."
+  },
+  {
+    "id": "estocolmo-estancia-3",
+    "destination": "estocolmo",
+    "name": "Suites del Paseo · Estocolmo",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3915,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Estocolmo."
+  },
+  {
+    "id": "estocolmo-estancia-4",
+    "destination": "estocolmo",
+    "name": "Terraza del Centro · Estocolmo",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4495,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Estocolmo."
+  },
+  {
+    "id": "estocolmo-estancia-5",
+    "destination": "estocolmo",
+    "name": "Residencia del Mirador · Estocolmo",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 5510,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Estocolmo."
+  },
+  {
+    "id": "oslo-estancia-1",
+    "destination": "oslo",
+    "name": "Casa del Patio · Oslo",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3200,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Oslo."
+  },
+  {
+    "id": "oslo-estancia-2",
+    "destination": "oslo",
+    "name": "Estancia del Parque · Oslo",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3680,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Oslo."
+  },
+  {
+    "id": "oslo-estancia-3",
+    "destination": "oslo",
+    "name": "Suites del Paseo · Oslo",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4320,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Oslo."
+  },
+  {
+    "id": "oslo-estancia-4",
+    "destination": "oslo",
+    "name": "Terraza del Centro · Oslo",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4960,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Oslo."
+  },
+  {
+    "id": "oslo-estancia-5",
+    "destination": "oslo",
+    "name": "Residencia del Mirador · Oslo",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 6080,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Oslo."
+  },
+  {
+    "id": "helsinki-estancia-1",
+    "destination": "helsinki",
+    "name": "Casa del Patio · Helsinki",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2800,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Helsinki."
+  },
+  {
+    "id": "helsinki-estancia-2",
+    "destination": "helsinki",
+    "name": "Estancia del Parque · Helsinki",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3220,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Helsinki."
+  },
+  {
+    "id": "helsinki-estancia-3",
+    "destination": "helsinki",
+    "name": "Suites del Paseo · Helsinki",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3780,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Helsinki."
+  },
+  {
+    "id": "helsinki-estancia-4",
+    "destination": "helsinki",
+    "name": "Terraza del Centro · Helsinki",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4340,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Helsinki."
+  },
+  {
+    "id": "helsinki-estancia-5",
+    "destination": "helsinki",
+    "name": "Residencia del Mirador · Helsinki",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 5320,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Helsinki."
+  },
+  {
+    "id": "varsovia-estancia-1",
+    "destination": "varsovia",
+    "name": "Casa del Patio · Varsovia",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1600,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Varsovia."
+  },
+  {
+    "id": "varsovia-estancia-2",
+    "destination": "varsovia",
+    "name": "Estancia del Parque · Varsovia",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1840,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Varsovia."
+  },
+  {
+    "id": "varsovia-estancia-3",
+    "destination": "varsovia",
+    "name": "Suites del Paseo · Varsovia",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2160,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Varsovia."
+  },
+  {
+    "id": "varsovia-estancia-4",
+    "destination": "varsovia",
+    "name": "Terraza del Centro · Varsovia",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2480,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Varsovia."
+  },
+  {
+    "id": "varsovia-estancia-5",
+    "destination": "varsovia",
+    "name": "Residencia del Mirador · Varsovia",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3040,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Varsovia."
+  },
+  {
+    "id": "cracovia-estancia-1",
+    "destination": "cracovia",
+    "name": "Casa del Patio · Cracovia",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1500,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Cracovia."
+  },
+  {
+    "id": "cracovia-estancia-2",
+    "destination": "cracovia",
+    "name": "Estancia del Parque · Cracovia",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1725,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Cracovia."
+  },
+  {
+    "id": "cracovia-estancia-3",
+    "destination": "cracovia",
+    "name": "Suites del Paseo · Cracovia",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2025,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Cracovia."
+  },
+  {
+    "id": "cracovia-estancia-4",
+    "destination": "cracovia",
+    "name": "Terraza del Centro · Cracovia",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2325,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Cracovia."
+  },
+  {
+    "id": "cracovia-estancia-5",
+    "destination": "cracovia",
+    "name": "Residencia del Mirador · Cracovia",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2850,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Cracovia."
+  },
+  {
+    "id": "dubrovnik-estancia-1",
+    "destination": "dubrovnik",
+    "name": "Casa del Patio · Dubrovnik",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2400,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Dubrovnik."
+  },
+  {
+    "id": "dubrovnik-estancia-2",
+    "destination": "dubrovnik",
+    "name": "Estancia del Parque · Dubrovnik",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2760,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Dubrovnik."
+  },
+  {
+    "id": "dubrovnik-estancia-3",
+    "destination": "dubrovnik",
+    "name": "Suites del Paseo · Dubrovnik",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3240,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Dubrovnik."
+  },
+  {
+    "id": "dubrovnik-estancia-4",
+    "destination": "dubrovnik",
+    "name": "Terraza del Centro · Dubrovnik",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3720,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Dubrovnik."
+  },
+  {
+    "id": "dubrovnik-estancia-5",
+    "destination": "dubrovnik",
+    "name": "Residencia del Mirador · Dubrovnik",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4560,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Dubrovnik."
+  },
+  {
+    "id": "split-estancia-1",
+    "destination": "split",
+    "name": "Casa del Patio · Split",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2100,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Split."
+  },
+  {
+    "id": "split-estancia-2",
+    "destination": "split",
+    "name": "Estancia del Parque · Split",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2415,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Split."
+  },
+  {
+    "id": "split-estancia-3",
+    "destination": "split",
+    "name": "Suites del Paseo · Split",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2835,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Split."
+  },
+  {
+    "id": "split-estancia-4",
+    "destination": "split",
+    "name": "Terraza del Centro · Split",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3255,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Split."
+  },
+  {
+    "id": "split-estancia-5",
+    "destination": "split",
+    "name": "Residencia del Mirador · Split",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3990,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Split."
+  },
+  {
+    "id": "napoles-estancia-1",
+    "destination": "napoles",
+    "name": "Casa del Patio · Nápoles",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1900,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Nápoles."
+  },
+  {
+    "id": "napoles-estancia-2",
+    "destination": "napoles",
+    "name": "Estancia del Parque · Nápoles",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2185,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Nápoles."
+  },
+  {
+    "id": "napoles-estancia-3",
+    "destination": "napoles",
+    "name": "Suites del Paseo · Nápoles",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2565,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Nápoles."
+  },
+  {
+    "id": "napoles-estancia-4",
+    "destination": "napoles",
+    "name": "Terraza del Centro · Nápoles",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2945,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Nápoles."
+  },
+  {
+    "id": "napoles-estancia-5",
+    "destination": "napoles",
+    "name": "Residencia del Mirador · Nápoles",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3610,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Nápoles."
+  },
+  {
+    "id": "bolonia-estancia-1",
+    "destination": "bolonia",
+    "name": "Casa del Patio · Bolonia",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2100,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Bolonia."
+  },
+  {
+    "id": "bolonia-estancia-2",
+    "destination": "bolonia",
+    "name": "Estancia del Parque · Bolonia",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2415,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Bolonia."
+  },
+  {
+    "id": "bolonia-estancia-3",
+    "destination": "bolonia",
+    "name": "Suites del Paseo · Bolonia",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2835,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Bolonia."
+  },
+  {
+    "id": "bolonia-estancia-4",
+    "destination": "bolonia",
+    "name": "Terraza del Centro · Bolonia",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3255,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Bolonia."
+  },
+  {
+    "id": "bolonia-estancia-5",
+    "destination": "bolonia",
+    "name": "Residencia del Mirador · Bolonia",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3990,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Bolonia."
+  },
+  {
+    "id": "montreal-estancia-1",
+    "destination": "montreal",
+    "name": "Casa del Patio · Montreal",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2500,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Montreal."
+  },
+  {
+    "id": "montreal-estancia-2",
+    "destination": "montreal",
+    "name": "Estancia del Parque · Montreal",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2875,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Montreal."
+  },
+  {
+    "id": "montreal-estancia-3",
+    "destination": "montreal",
+    "name": "Suites del Paseo · Montreal",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3375,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Montreal."
+  },
+  {
+    "id": "montreal-estancia-4",
+    "destination": "montreal",
+    "name": "Terraza del Centro · Montreal",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3875,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Montreal."
+  },
+  {
+    "id": "montreal-estancia-5",
+    "destination": "montreal",
+    "name": "Residencia del Mirador · Montreal",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4750,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Montreal."
+  },
+  {
+    "id": "quebec-estancia-1",
+    "destination": "quebec",
+    "name": "Casa del Patio · Quebec",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2400,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Quebec."
+  },
+  {
+    "id": "quebec-estancia-2",
+    "destination": "quebec",
+    "name": "Estancia del Parque · Quebec",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2760,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Quebec."
+  },
+  {
+    "id": "quebec-estancia-3",
+    "destination": "quebec",
+    "name": "Suites del Paseo · Quebec",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3240,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Quebec."
+  },
+  {
+    "id": "quebec-estancia-4",
+    "destination": "quebec",
+    "name": "Terraza del Centro · Quebec",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3720,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Quebec."
+  },
+  {
+    "id": "quebec-estancia-5",
+    "destination": "quebec",
+    "name": "Residencia del Mirador · Quebec",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4560,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Quebec."
+  },
+  {
+    "id": "boston-estancia-1",
+    "destination": "boston",
+    "name": "Casa del Patio · Boston",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3300,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Boston."
+  },
+  {
+    "id": "boston-estancia-2",
+    "destination": "boston",
+    "name": "Estancia del Parque · Boston",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3795,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Boston."
+  },
+  {
+    "id": "boston-estancia-3",
+    "destination": "boston",
+    "name": "Suites del Paseo · Boston",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4455,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Boston."
+  },
+  {
+    "id": "boston-estancia-4",
+    "destination": "boston",
+    "name": "Terraza del Centro · Boston",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 5115,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Boston."
+  },
+  {
+    "id": "boston-estancia-5",
+    "destination": "boston",
+    "name": "Residencia del Mirador · Boston",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 6270,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Boston."
+  },
+  {
+    "id": "chicago-estancia-1",
+    "destination": "chicago",
+    "name": "Casa del Patio · Chicago",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2800,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Chicago."
+  },
+  {
+    "id": "chicago-estancia-2",
+    "destination": "chicago",
+    "name": "Estancia del Parque · Chicago",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3220,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Chicago."
+  },
+  {
+    "id": "chicago-estancia-3",
+    "destination": "chicago",
+    "name": "Suites del Paseo · Chicago",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3780,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Chicago."
+  },
+  {
+    "id": "chicago-estancia-4",
+    "destination": "chicago",
+    "name": "Terraza del Centro · Chicago",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4340,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Chicago."
+  },
+  {
+    "id": "chicago-estancia-5",
+    "destination": "chicago",
+    "name": "Residencia del Mirador · Chicago",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 5320,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Chicago."
+  },
+  {
+    "id": "san-francisco-estancia-1",
+    "destination": "san-francisco",
+    "name": "Casa del Patio · San Francisco",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3100,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para San Francisco."
+  },
+  {
+    "id": "san-francisco-estancia-2",
+    "destination": "san-francisco",
+    "name": "Estancia del Parque · San Francisco",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3565,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para San Francisco."
+  },
+  {
+    "id": "san-francisco-estancia-3",
+    "destination": "san-francisco",
+    "name": "Suites del Paseo · San Francisco",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4185,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para San Francisco."
+  },
+  {
+    "id": "san-francisco-estancia-4",
+    "destination": "san-francisco",
+    "name": "Terraza del Centro · San Francisco",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4805,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para San Francisco."
+  },
+  {
+    "id": "san-francisco-estancia-5",
+    "destination": "san-francisco",
+    "name": "Residencia del Mirador · San Francisco",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 5890,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para San Francisco."
+  },
+  {
+    "id": "honolulu-estancia-1",
+    "destination": "honolulu",
+    "name": "Casa del Patio · Honolulu",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3400,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Honolulu."
+  },
+  {
+    "id": "honolulu-estancia-2",
+    "destination": "honolulu",
+    "name": "Estancia del Parque · Honolulu",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3910,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Honolulu."
+  },
+  {
+    "id": "honolulu-estancia-3",
+    "destination": "honolulu",
+    "name": "Suites del Paseo · Honolulu",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4590,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Honolulu."
+  },
+  {
+    "id": "honolulu-estancia-4",
+    "destination": "honolulu",
+    "name": "Terraza del Centro · Honolulu",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 5270,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Honolulu."
+  },
+  {
+    "id": "honolulu-estancia-5",
+    "destination": "honolulu",
+    "name": "Residencia del Mirador · Honolulu",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 6460,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Honolulu."
+  },
+  {
+    "id": "orlando-estancia-1",
+    "destination": "orlando",
+    "name": "Casa del Patio · Orlando",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2200,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Orlando."
+  },
+  {
+    "id": "orlando-estancia-2",
+    "destination": "orlando",
+    "name": "Estancia del Parque · Orlando",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2530,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Orlando."
+  },
+  {
+    "id": "orlando-estancia-3",
+    "destination": "orlando",
+    "name": "Suites del Paseo · Orlando",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2970,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Orlando."
+  },
+  {
+    "id": "orlando-estancia-4",
+    "destination": "orlando",
+    "name": "Terraza del Centro · Orlando",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3410,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Orlando."
+  },
+  {
+    "id": "orlando-estancia-5",
+    "destination": "orlando",
+    "name": "Residencia del Mirador · Orlando",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4180,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Orlando."
+  },
+  {
+    "id": "quito-estancia-1",
+    "destination": "quito",
+    "name": "Casa del Patio · Quito",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1400,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Quito."
+  },
+  {
+    "id": "quito-estancia-2",
+    "destination": "quito",
+    "name": "Estancia del Parque · Quito",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1610,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Quito."
+  },
+  {
+    "id": "quito-estancia-3",
+    "destination": "quito",
+    "name": "Suites del Paseo · Quito",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1890,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Quito."
+  },
+  {
+    "id": "quito-estancia-4",
+    "destination": "quito",
+    "name": "Terraza del Centro · Quito",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2170,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Quito."
+  },
+  {
+    "id": "quito-estancia-5",
+    "destination": "quito",
+    "name": "Residencia del Mirador · Quito",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2660,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Quito."
+  },
+  {
+    "id": "cusco-estancia-1",
+    "destination": "cusco",
+    "name": "Casa del Patio · Cusco",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1600,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Cusco."
+  },
+  {
+    "id": "cusco-estancia-2",
+    "destination": "cusco",
+    "name": "Estancia del Parque · Cusco",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1840,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Cusco."
+  },
+  {
+    "id": "cusco-estancia-3",
+    "destination": "cusco",
+    "name": "Suites del Paseo · Cusco",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2160,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Cusco."
+  },
+  {
+    "id": "cusco-estancia-4",
+    "destination": "cusco",
+    "name": "Terraza del Centro · Cusco",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2480,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Cusco."
+  },
+  {
+    "id": "cusco-estancia-5",
+    "destination": "cusco",
+    "name": "Residencia del Mirador · Cusco",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3040,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Cusco."
+  },
+  {
+    "id": "montevideo-estancia-1",
+    "destination": "montevideo",
+    "name": "Casa del Patio · Montevideo",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 1800,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Montevideo."
+  },
+  {
+    "id": "montevideo-estancia-2",
+    "destination": "montevideo",
+    "name": "Estancia del Parque · Montevideo",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2070,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Montevideo."
+  },
+  {
+    "id": "montevideo-estancia-3",
+    "destination": "montevideo",
+    "name": "Suites del Paseo · Montevideo",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2430,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Montevideo."
+  },
+  {
+    "id": "montevideo-estancia-4",
+    "destination": "montevideo",
+    "name": "Terraza del Centro · Montevideo",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2790,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Montevideo."
+  },
+  {
+    "id": "montevideo-estancia-5",
+    "destination": "montevideo",
+    "name": "Residencia del Mirador · Montevideo",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3420,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Montevideo."
+  },
+  {
+    "id": "auckland-estancia-1",
+    "destination": "auckland",
+    "name": "Casa del Patio · Auckland",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2600,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Auckland."
+  },
+  {
+    "id": "auckland-estancia-2",
+    "destination": "auckland",
+    "name": "Estancia del Parque · Auckland",
+    "stars": 3,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 2990,
+    "amenities": [
+      "Wi-Fi",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Auckland."
+  },
+  {
+    "id": "auckland-estancia-3",
+    "destination": "auckland",
+    "name": "Suites del Paseo · Auckland",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 3510,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Auckland."
+  },
+  {
+    "id": "auckland-estancia-4",
+    "destination": "auckland",
+    "name": "Terraza del Centro · Auckland",
+    "stars": 4,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4030,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Auckland."
+  },
+  {
+    "id": "auckland-estancia-5",
+    "destination": "auckland",
+    "name": "Residencia del Mirador · Auckland",
+    "stars": 5,
+    "area": "Zona por confirmar con el alojamiento",
+    "rate": 4940,
+    "amenities": [
+      "Wi-Fi",
+      "Desayuno",
+      "Estacionamiento",
+      "Aire acondicionado"
+    ],
+    "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Auckland."
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "id": "porto",
+    "code": "OPO",
+    "name": "Francisco de Sá Carneiro Airport",
+    "municipality": "Porto",
+    "country": "PT",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LPPR/",
+    "website": "http://www.ana.pt/en-US/Aeroportos/porto/Porto/Pages/Homepage-Porto.aspx"
+  },
+  {
+    "id": "sevilla",
+    "code": "SVQ",
+    "name": "Seville Airport",
+    "municipality": "Seville",
+    "country": "ES",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LEZL/",
+    "website": "https://www.aena.es/en/seville.html"
+  },
+  {
+    "id": "valencia",
+    "code": "VLC",
+    "name": "Valencia Airport",
+    "municipality": "Valencia",
+    "country": "ES",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LEVC/",
+    "website": "https://www.aena.es/en/valencia.html"
+  },
+  {
+    "id": "malaga",
+    "code": "AGP",
+    "name": "Málaga-Costa del Sol Airport",
+    "municipality": "Málaga",
+    "country": "ES",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LEMG/",
+    "website": "https://www.aena.es/en/malaga-costa-del-sol.html"
+  },
+  {
+    "id": "niza",
+    "code": "NCE",
+    "name": "Nice-Côte d'Azur Airport",
+    "municipality": "Nice, Alpes-Maritimes",
+    "country": "FR",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LFMN/",
+    "website": "https://www.nice.aeroport.fr/en"
+  },
+  {
+    "id": "lyon",
+    "code": "LYS",
+    "name": "Lyon Saint-Exupéry Airport",
+    "municipality": "Colombier-Saugnieu, Rhône",
+    "country": "FR",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LFLL/",
+    "website": "https://www.lyonaeroports.com/"
+  },
+  {
+    "id": "bruselas",
+    "code": "BRU",
+    "name": "Brussels Airport",
+    "municipality": "Zaventem",
+    "country": "BE",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/EBBR/",
+    "website": "http://www.brusselsairport.be/en/"
+  },
+  {
+    "id": "zurich",
+    "code": "ZRH",
+    "name": "Zürich Airport",
+    "municipality": "Zurich",
+    "country": "CH",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LSZH/",
+    "website": "http://www.zurich-airport.com/"
+  },
+  {
+    "id": "ginebra",
+    "code": "GVA",
+    "name": "Geneva International Airport",
+    "municipality": "Geneva",
+    "country": "CH",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LSGG/",
+    "website": "https://www.gva.ch/"
+  },
+  {
+    "id": "copenhague",
+    "code": "CPH",
+    "name": "Copenhagen Kastrup Airport",
+    "municipality": "Copenhagen",
+    "country": "DK",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/EKCH/",
+    "website": "http://www.cph.dk/en/"
+  },
+  {
+    "id": "estocolmo",
+    "code": "ARN",
+    "name": "Stockholm-Arlanda Airport",
+    "municipality": "Stockholm",
+    "country": "SE",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/ESSA/",
+    "website": "http://www.swedavia.se/arlanda/"
+  },
+  {
+    "id": "oslo",
+    "code": "OSL",
+    "name": "Oslo-Gardermoen International Airport",
+    "municipality": "Oslo (Gardermoen)",
+    "country": "NO",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/ENGM/",
+    "website": "https://avinor.no/en/airport/oslo-airport"
+  },
+  {
+    "id": "helsinki",
+    "code": "HEL",
+    "name": "Helsinki Vantaa Airport",
+    "municipality": "Helsinki (Vantaa)",
+    "country": "FI",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/EFHK/",
+    "website": "https://www.finavia.fi/en/airports/helsinki-airport"
+  },
+  {
+    "id": "varsovia",
+    "code": "WAW",
+    "name": "Warsaw Chopin Airport",
+    "municipality": "Warsaw",
+    "country": "PL",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/EPWA/",
+    "website": "http://www.lotnisko-chopina.pl/?lang=en"
+  },
+  {
+    "id": "cracovia",
+    "code": "KRK",
+    "name": "Kraków John Paul II International Airport",
+    "municipality": "Balice",
+    "country": "PL",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/EPKK/",
+    "website": "http://www.krakowairport.pl/en/"
+  },
+  {
+    "id": "dubrovnik",
+    "code": "DBV",
+    "name": "Dubrovnik Ruđer Bošković Airport",
+    "municipality": "Dubrovnik",
+    "country": "HR",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LDDU/",
+    "website": "https://www.airport-dubrovnik.hr/en"
+  },
+  {
+    "id": "split",
+    "code": "SPU",
+    "name": "Split Saint Jerome Airport",
+    "municipality": "Split",
+    "country": "HR",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LDSP/",
+    "website": "https://split-airport.hr"
+  },
+  {
+    "id": "napoles",
+    "code": "NAP",
+    "name": "Naples International Airport",
+    "municipality": "Napoli",
+    "country": "IT",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LIRN/",
+    "website": "http://www.portal.gesac.it/"
+  },
+  {
+    "id": "bolonia",
+    "code": "BLQ",
+    "name": "Bologna Guglielmo Marconi Airport",
+    "municipality": "Bologna",
+    "country": "IT",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/LIPE/",
+    "website": "http://www.bologna-airport.it/?LN=UK"
+  },
+  {
+    "id": "montreal",
+    "code": "YUL",
+    "name": "Montreal / Pierre Elliott Trudeau International Airport",
+    "municipality": "Montréal",
+    "country": "CA",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/CYUL/",
+    "website": "http://www.admtl.com/passager/Home.aspx"
+  },
+  {
+    "id": "quebec",
+    "code": "YQB",
+    "name": "Quebec Jean Lesage International Airport",
+    "municipality": "Quebec",
+    "country": "CA",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/CYQB/",
+    "website": "http://www.aeroportdequebec.com/"
+  },
+  {
+    "id": "boston",
+    "code": "BOS",
+    "name": "Boston Logan International Airport",
+    "municipality": "Boston",
+    "country": "US",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/KBOS/",
+    "website": "http://www.massport.com/logan/"
+  },
+  {
+    "id": "chicago",
+    "code": "ORD",
+    "name": "Chicago O'Hare International Airport",
+    "municipality": "Chicago",
+    "country": "US",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/KORD/",
+    "website": "https://www.flychicago.com/ohare/home/pages/default.aspx"
+  },
+  {
+    "id": "san-francisco",
+    "code": "SFO",
+    "name": "San Francisco International Airport",
+    "municipality": "San Francisco",
+    "country": "US",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/KSFO/",
+    "website": "http://www.flysfo.com/"
+  },
+  {
+    "id": "honolulu",
+    "code": "HNL",
+    "name": "Daniel K. Inouye International Airport",
+    "municipality": "Honolulu, Oahu",
+    "country": "US",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/PHNL/",
+    "website": "http://airports.hawaii.gov/hnl/"
+  },
+  {
+    "id": "orlando",
+    "code": "MCO",
+    "name": "Orlando International Airport",
+    "municipality": "Orlando",
+    "country": "US",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/KMCO/",
+    "website": "http://www.orlandoairports.net/"
+  },
+  {
+    "id": "quito",
+    "code": "UIO",
+    "name": "Mariscal Sucre International Airport",
+    "municipality": "Quito",
+    "country": "EC",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/SEQM/",
+    "website": "https://www.aeropuertoquito.aero/?lang=en"
+  },
+  {
+    "id": "cusco",
+    "code": "CUZ",
+    "name": "Alejandro Velasco Astete International Airport",
+    "municipality": "Cusco",
+    "country": "PE",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/SPZO/",
+    "website": "http://www.corpac.gob.pe/"
+  },
+  {
+    "id": "montevideo",
+    "code": "MVD",
+    "name": "Carrasco General Cesáreo L. Berisso International Airport",
+    "municipality": "Ciudad de la Costa",
+    "country": "UY",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/SUMU/",
+    "website": ""
+  },
+  {
+    "id": "auckland",
+    "code": "AKL",
+    "name": "Auckland International Airport",
+    "municipality": "Auckland",
+    "country": "NZ",
+    "scheduled": "yes",
+    "source": "https://ourairports.com/airports/NZAA/",
+    "website": "http://www.auckland-airport.co.nz/"
+  }
+]

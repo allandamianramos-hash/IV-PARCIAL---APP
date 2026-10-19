@@ -9,7 +9,7 @@
   },
   "viajes.html?pantalla=destinos": {
     "title": "Destinos para tu próximo viaje | Rumbo",
-    "description": "Explora 70 destinos con información, fotografías, hospedaje y recorridos para inspirar tu próximo viaje."
+    "description": "Explora 100 destinos con información, fotografías, hospedaje y recorridos para inspirar tu próximo viaje."
   },
   "viajes.html?pantalla=vuelos": {
     "title": "Organiza tu vuelo | Rumbo",
@@ -478,5 +478,185 @@
     "description": "Shenzhen combina arquitectura contemporánea, barrios comerciales y grandes parques urbanos.",
     "image": "imagenes-viajes/destinos/destino-shenzhen.jpg",
     "imageAlt": "Rascacielos del distrito de Futian en Shenzhen"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=porto": {
+    "title": "Oporto, Portugal | Destinos Rumbo",
+    "description": "Puentes, azulejos y paseos junto al Duero.",
+    "image": "imagenes-viajes/destinos/destino-porto.jpg",
+    "imageAlt": "Fotografía de Oporto, Portugal"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=sevilla": {
+    "title": "Sevilla, España | Destinos Rumbo",
+    "description": "Patios y plazas a orillas del Guadalquivir.",
+    "image": "imagenes-viajes/destinos/destino-sevilla.jpg",
+    "imageAlt": "Fotografía de Sevilla, España"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=valencia": {
+    "title": "Valencia, España | Destinos Rumbo",
+    "description": "Mercados, jardines y arquitectura junto al Mediterráneo.",
+    "image": "imagenes-viajes/destinos/destino-valencia.jpg",
+    "imageAlt": "Fotografía de Valencia, España"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=malaga": {
+    "title": "Málaga, España | Destinos Rumbo",
+    "description": "Calles históricas y tardes frente al mar.",
+    "image": "imagenes-viajes/destinos/destino-malaga.jpg",
+    "imageAlt": "Fotografía de Málaga, España"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=niza": {
+    "title": "Niza, Francia | Destinos Rumbo",
+    "description": "Paseos costeros y barrios de colores en la Costa Azul.",
+    "image": "imagenes-viajes/destinos/destino-niza.jpg",
+    "imageAlt": "Fotografía de Niza, Francia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=lyon": {
+    "title": "Lyon, Francia | Destinos Rumbo",
+    "description": "Dos ríos, colinas y una ciudad de buena mesa.",
+    "image": "imagenes-viajes/destinos/destino-lyon.jpg",
+    "imageAlt": "Fotografía de Lyon, Francia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=bruselas": {
+    "title": "Bruselas, Bélgica | Destinos Rumbo",
+    "description": "Plazas monumentales, museos y galerías cubiertas.",
+    "image": "imagenes-viajes/destinos/destino-bruselas.jpg",
+    "imageAlt": "Fotografía de Bruselas, Bélgica"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=zurich": {
+    "title": "Zúrich, Suiza | Destinos Rumbo",
+    "description": "El casco antiguo se abre al río y al lago.",
+    "image": "imagenes-viajes/destinos/destino-zurich.jpg",
+    "imageAlt": "Fotografía de Zúrich, Suiza"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=ginebra": {
+    "title": "Ginebra, Suiza | Destinos Rumbo",
+    "description": "Parques y pequeñas plazas a orillas del lago.",
+    "image": "imagenes-viajes/destinos/destino-ginebra.jpg",
+    "imageAlt": "Fotografía de Ginebra, Suiza"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=copenhague": {
+    "title": "Copenhague, Dinamarca | Destinos Rumbo",
+    "description": "Canales, bicicletas y diseño a escala humana.",
+    "image": "imagenes-viajes/destinos/destino-copenhague.jpg",
+    "imageAlt": "Fotografía de Copenhague, Dinamarca"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=estocolmo": {
+    "title": "Estocolmo, Suecia | Destinos Rumbo",
+    "description": "Islas unidas por puentes y paseos junto al agua.",
+    "image": "imagenes-viajes/destinos/destino-estocolmo.jpg",
+    "imageAlt": "Fotografía de Estocolmo, Suecia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=oslo": {
+    "title": "Oslo, Noruega | Destinos Rumbo",
+    "description": "Arte y arquitectura frente al fiordo.",
+    "image": "imagenes-viajes/destinos/destino-oslo.jpg",
+    "imageAlt": "Fotografía de Oslo, Noruega"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=helsinki": {
+    "title": "Helsinki, Finlandia | Destinos Rumbo",
+    "description": "Diseño nórdico, mercados y una fortaleza en el Báltico.",
+    "image": "imagenes-viajes/destinos/destino-helsinki.jpg",
+    "imageAlt": "Fotografía de Helsinki, Finlandia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=varsovia": {
+    "title": "Varsovia, Polonia | Destinos Rumbo",
+    "description": "Historia reconstruida y parques en una capital activa.",
+    "image": "imagenes-viajes/destinos/destino-varsovia.jpg",
+    "imageAlt": "Fotografía de Varsovia, Polonia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=cracovia": {
+    "title": "Cracovia, Polonia | Destinos Rumbo",
+    "description": "Plazas medievales y barrios para recorrer caminando.",
+    "image": "imagenes-viajes/destinos/destino-cracovia.jpg",
+    "imageAlt": "Fotografía de Cracovia, Polonia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=dubrovnik": {
+    "title": "Dubrovnik, Croacia | Destinos Rumbo",
+    "description": "Murallas de piedra y vistas al Adriático.",
+    "image": "imagenes-viajes/destinos/destino-dubrovnik.jpg",
+    "imageAlt": "Fotografía de Dubrovnik, Croacia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=split": {
+    "title": "Split, Croacia | Destinos Rumbo",
+    "description": "Una ciudad entre vestigios romanos y el mar.",
+    "image": "imagenes-viajes/destinos/destino-split.jpg",
+    "imageAlt": "Fotografía de Split, Croacia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=napoles": {
+    "title": "Nápoles, Italia | Destinos Rumbo",
+    "description": "Calles con carácter y vistas a la bahía.",
+    "image": "imagenes-viajes/destinos/destino-napoles.jpg",
+    "imageAlt": "Fotografía de Nápoles, Italia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=bolonia": {
+    "title": "Bolonia, Italia | Destinos Rumbo",
+    "description": "Pórticos, mercados y cocina de Emilia-Romaña.",
+    "image": "imagenes-viajes/destinos/destino-bolonia.jpg",
+    "imageAlt": "Fotografía de Bolonia, Italia"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=montreal": {
+    "title": "Montreal, Canadá | Destinos Rumbo",
+    "description": "Barrios francófonos, parques y paseos junto al río.",
+    "image": "imagenes-viajes/destinos/destino-montreal.jpg",
+    "imageAlt": "Fotografía de Montreal, Canadá"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=quebec": {
+    "title": "Quebec, Canadá | Destinos Rumbo",
+    "description": "Calles de piedra sobre el río San Lorenzo.",
+    "image": "imagenes-viajes/destinos/destino-quebec.jpg",
+    "imageAlt": "Fotografía de Quebec, Canadá"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=boston": {
+    "title": "Boston, Estados Unidos | Destinos Rumbo",
+    "description": "Historia y parques entre barrios de ladrillo rojo.",
+    "image": "imagenes-viajes/destinos/destino-boston.jpg",
+    "imageAlt": "Fotografía de Boston, Estados Unidos"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=chicago": {
+    "title": "Chicago, Estados Unidos | Destinos Rumbo",
+    "description": "Arquitectura junto al río y tardes frente al lago.",
+    "image": "imagenes-viajes/destinos/destino-chicago.jpg",
+    "imageAlt": "Fotografía de Chicago, Estados Unidos"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=san-francisco": {
+    "title": "San Francisco, Estados Unidos | Destinos Rumbo",
+    "description": "Colinas, tranvías y paseos por la bahía.",
+    "image": "imagenes-viajes/destinos/destino-san-francisco.jpg",
+    "imageAlt": "Fotografía de San Francisco, Estados Unidos"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=honolulu": {
+    "title": "Honolulu, Estados Unidos | Destinos Rumbo",
+    "description": "Playa y senderos en la costa sur de Oahu.",
+    "image": "imagenes-viajes/destinos/destino-honolulu.jpg",
+    "imageAlt": "Fotografía de Honolulu, Estados Unidos"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=orlando": {
+    "title": "Orlando, Estados Unidos | Destinos Rumbo",
+    "description": "Parques, jardines y entretenimiento en Florida.",
+    "image": "imagenes-viajes/destinos/destino-orlando.jpg",
+    "imageAlt": "Fotografía de Orlando, Estados Unidos"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=quito": {
+    "title": "Quito, Ecuador | Destinos Rumbo",
+    "description": "Plazas coloniales y vistas de los Andes.",
+    "image": "imagenes-viajes/destinos/destino-quito.jpg",
+    "imageAlt": "Fotografía de Quito, Ecuador"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=cusco": {
+    "title": "Cusco, Perú | Destinos Rumbo",
+    "description": "Historia inca y calles de piedra en los Andes.",
+    "image": "imagenes-viajes/destinos/destino-cusco.jpg",
+    "imageAlt": "Fotografía de Cusco, Perú"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=montevideo": {
+    "title": "Montevideo, Uruguay | Destinos Rumbo",
+    "description": "Paseos costeros junto al Río de la Plata.",
+    "image": "imagenes-viajes/destinos/destino-montevideo.jpg",
+    "imageAlt": "Fotografía de Montevideo, Uruguay"
+  },
+  "viajes.html?pantalla=detalle-destino&destino=auckland": {
+    "title": "Auckland, Nueva Zelanda | Destinos Rumbo",
+    "description": "Puertos y colinas volcánicas junto al mar.",
+    "image": "imagenes-viajes/destinos/destino-auckland.jpg",
+    "imageAlt": "Fotografía de Auckland, Nueva Zelanda"
   }
 }

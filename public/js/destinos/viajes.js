@@ -5711,6 +5711,3820 @@ additionalDestinations.push(...[
   }
 ]);
 // END DESTINOS OCTUBRE 2026
+// BEGIN CATALOGO 100 DESTINOS
+additionalDestinations.push(...[
+  {
+    "id": "porto",
+    "name": "Oporto",
+    "country": "Portugal",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Puentes, azulejos y paseos junto al Duero.",
+    "intro": "Puentes, azulejos y paseos junto al Duero.",
+    "description": "Puentes, azulejos y paseos junto al Duero. Organizá tu visita alrededor de Ribeira, Puente de Don Luis I y Torre de los Clérigos. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Ribeira",
+      "Puente de Don Luis I",
+      "Torre de los Clérigos"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Oporto",
+    "transfer": "Llegada por OPO. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "OPO",
+      "name": "Francisco de Sá Carneiro Airport"
+    },
+    "nights": 4,
+    "economy": 22000,
+    "duration": 1080,
+    "image": "imagenes-viajes/destinos/destino-porto.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/porto.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/porto-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 914,
+    "alt": "Fotografía de Oporto, Portugal",
+    "photoAuthor": "Krzysztof Golik",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Douro_river_in_Porto_(7).jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "porto-estancia-1",
+        "name": "Casa del Patio · Oporto",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1900,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Oporto.",
+        "image": "hoteles/porto-hotel-1.jpg",
+        "photoAuthor": "www.Pixel.la Free Stock Photos",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Iceland-hotel-bedroom-hostel_(24244295651).jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "porto-estancia-2",
+        "name": "Estancia del Parque · Oporto",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2185,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Oporto.",
+        "image": "hoteles/porto-hotel-2.jpg",
+        "photoAuthor": "julie corsi from Palos Heights, IL, USA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_bedroom_(27506424865).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "porto-estancia-3",
+        "name": "Suites del Paseo · Oporto",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2565,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Oporto.",
+        "image": "hoteles/porto-hotel-3.jpg",
+        "photoAuthor": "Emmett2468",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:The_Fistral_Bay_Hotel_-_Bedroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "porto-estancia-4",
+        "name": "Terraza del Centro · Oporto",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2945,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Oporto.",
+        "image": "hoteles/porto-hotel-4.jpg",
+        "photoAuthor": "Haneunglami Baoo",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GD_Guangdong_%E6%9D%B1%E8%8E%9E_%E8%99%8E%E9%96%80_Dongguan_Fumen_%E5%81%87%E6%97%A5%E9%85%92%E5%BA%97_Holiday_Inn_Express_Hotel_bedroom_night_June_2023_Px3_02.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "porto-estancia-5",
+        "name": "Residencia del Mirador · Oporto",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3610,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Oporto.",
+        "image": "hoteles/porto-hotel-5.jpg",
+        "photoAuthor": "Rotograph Co.",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Havana_-_A_hotel_bedroom.jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    ]
+  },
+  {
+    "id": "sevilla",
+    "name": "Sevilla",
+    "country": "España",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Patios y plazas a orillas del Guadalquivir.",
+    "intro": "Patios y plazas a orillas del Guadalquivir.",
+    "description": "Patios y plazas a orillas del Guadalquivir. Organizá tu visita alrededor de Real Alcázar, Plaza de España y Barrio de Triana. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Real Alcázar",
+      "Plaza de España",
+      "Barrio de Triana"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Sevilla",
+    "transfer": "Llegada por SVQ. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "SVQ",
+      "name": "Seville Airport"
+    },
+    "nights": 4,
+    "economy": 22500,
+    "duration": 1080,
+    "image": "imagenes-viajes/destinos/destino-sevilla.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/sevilla.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/sevilla-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1707,
+    "alt": "Fotografía de Sevilla, España",
+    "photoAuthor": "Weldon Kennedy from London, UK",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Seville_skyline_(4259354402).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "sevilla-estancia-1",
+        "name": "Casa del Patio · Sevilla",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1850,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Sevilla.",
+        "image": "hoteles/sevilla-hotel-1.jpg",
+        "photoAuthor": "Binky1986",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Scotsman_Hotel_Bedroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "sevilla-estancia-2",
+        "name": "Estancia del Parque · Sevilla",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2128,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Sevilla.",
+        "image": "hoteles/sevilla-hotel-2.jpg",
+        "photoAuthor": "Alexander Plushev",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Las_vegas_Luxor_hotel_bedroom_by_Alexander_Plyushchev_-_IMG_0006.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "sevilla-estancia-3",
+        "name": "Suites del Paseo · Sevilla",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2498,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Sevilla.",
+        "image": "hoteles/sevilla-hotel-3.jpg",
+        "photoAuthor": "Haneunglami Baoo",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GD_Guangdong_%E6%9D%B1%E8%8E%9E_%E8%99%8E%E9%96%80_Dongguan_Fumen_%E5%81%87%E6%97%A5%E9%85%92%E5%BA%97_Holiday_Inn_Express_Hotel_bedroom_night_June_2023_Px3_01.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "sevilla-estancia-4",
+        "name": "Terraza del Centro · Sevilla",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2868,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Sevilla.",
+        "image": "hoteles/sevilla-hotel-4.jpg",
+        "photoAuthor": "Alexander Plushev",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Las_vegas_Luxor_hotel_bedroom_by_Alexander_Plyushchev_-_IMG_0011.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "sevilla-estancia-5",
+        "name": "Residencia del Mirador · Sevilla",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3515,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Sevilla.",
+        "image": "hoteles/sevilla-hotel-5.jpg",
+        "photoAuthor": "Alexander Plushev",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Las_vegas_Luxor_hotel_bedroom_by_Alexander_Plyushchev_-_IMG_0008.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ]
+  },
+  {
+    "id": "valencia",
+    "name": "Valencia",
+    "country": "España",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Mercados, jardines y arquitectura junto al Mediterráneo.",
+    "intro": "Mercados, jardines y arquitectura junto al Mediterráneo.",
+    "description": "Mercados, jardines y arquitectura junto al Mediterráneo. Organizá tu visita alrededor de Ciudad de las Artes y las Ciencias, Mercado Central y Jardín del Turia. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Ciudad de las Artes y las Ciencias",
+      "Mercado Central",
+      "Jardín del Turia"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Valencia",
+    "transfer": "Llegada por VLC. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "VLC",
+      "name": "Valencia Airport"
+    },
+    "nights": 4,
+    "economy": 22800,
+    "duration": 1100,
+    "image": "imagenes-viajes/destinos/destino-valencia.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/valencia.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/valencia-1280.jpg",
+    "imageWidth": 2560,
+    "imageHeight": 1440,
+    "alt": "Fotografía de Valencia, España",
+    "photoAuthor": "Mukeber",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Valencia_Skyline.jpg",
+    "photoLicense": "CC BY 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "hotels": [
+      {
+        "id": "valencia-estancia-1",
+        "name": "Casa del Patio · Valencia",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1800,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Valencia.",
+        "image": "hoteles/valencia-hotel-1.jpg",
+        "photoAuthor": "Alexander Plushev",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Las_vegas_Luxor_hotel_bedroom_by_Alexander_Plyushchev_-_IMG_0012.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "valencia-estancia-2",
+        "name": "Estancia del Parque · Valencia",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2070,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Valencia.",
+        "image": "hoteles/valencia-hotel-2.jpg",
+        "photoAuthor": "LANENWM Meso Amermbalin",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1_Guangdong_%E6%B2%B3%E6%BA%90%E5%B8%82_HeYuan_%E8%B6%8A%E7%8E%8B%E5%A4%A7%E9%81%93_YueWang_Avenue_Double_Tree_by_Hilton_Hotel_bedroom_April_2026_N13P_01.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "valencia-estancia-3",
+        "name": "Suites del Paseo · Valencia",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2430,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Valencia.",
+        "image": "hoteles/valencia-hotel-3.jpg",
+        "photoAuthor": "HSOMWEI mATIWM Uatnm LUNGA",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GD_%E5%BB%A3%E6%9D%B1%E7%9C%81_Guangdong_DG_%E6%9D%B1%E8%8E%9E%E5%B8%82_DongGuan_%E5%AE%B6%E5%85%B7%E5%A4%A7%E9%81%93_Jiaju_Avenue_%E7%B2%B5%E9%BE%8D%E9%85%92%E5%BA%97_YueLong_Hotel_bedroom_December_2025_N13P_01.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "valencia-estancia-4",
+        "name": "Terraza del Centro · Valencia",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2790,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Valencia.",
+        "image": "hoteles/valencia-hotel-4.jpg",
+        "photoAuthor": "Alexander Plushev",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Las_vegas_Luxor_hotel_bedroom_by_Alexander_Plyushchev_-_IMG_0007.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "valencia-estancia-5",
+        "name": "Residencia del Mirador · Valencia",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3420,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Valencia.",
+        "image": "hoteles/valencia-hotel-5.jpg",
+        "photoAuthor": "Haneunglami Baoo",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GD_Guangdong_%E6%9D%B1%E8%8E%9E_%E8%99%8E%E9%96%80_Dongguan_Fumen_%E5%81%87%E6%97%A5%E9%85%92%E5%BA%97_Holiday_Inn_Express_Hotel_bedroom_night_June_2023_Px3_03.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "malaga",
+    "name": "Málaga",
+    "country": "España",
+    "region": "internacional",
+    "type": "playa",
+    "tag": "Costa y ciudad",
+    "signature": "Calles históricas y tardes frente al mar.",
+    "intro": "Calles históricas y tardes frente al mar.",
+    "description": "Calles históricas y tardes frente al mar. Organizá tu visita alrededor de Alcazaba, Muelle Uno y Playa de la Malagueta. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Alcazaba",
+      "Muelle Uno",
+      "Playa de la Malagueta"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Málaga",
+    "transfer": "Llegada por AGP. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "AGP",
+      "name": "Málaga-Costa del Sol Airport"
+    },
+    "nights": 4,
+    "economy": 22000,
+    "duration": 1080,
+    "image": "imagenes-viajes/destinos/destino-malaga.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/malaga.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/malaga-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1280,
+    "alt": "Fotografía de Málaga, España",
+    "photoAuthor": "Vlad Podvorny",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Malaga_skyline_from_Gibralfaro_-_panoramio.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "malaga-estancia-1",
+        "name": "Casa del Patio · Málaga",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1900,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Málaga.",
+        "image": "hoteles/malaga-hotel-1.jpg",
+        "photoAuthor": "HuiDongXLW RMDa",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:HZ_%E6%83%A0%E5%B7%9E_Huizhou_%E6%83%A0%E6%9D%B1_Huidong_%E9%87%91%E6%B5%B7%E7%81%A3%E5%A4%A7%E9%81%93_Jinhaiwan_Blvd_%E8%8F%AF%E7%BE%8E%E9%81%94%E9%85%92%E5%AE%B6_Ramada_Hotel_bedroom_November_2023_R12S_05.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "malaga-estancia-2",
+        "name": "Estancia del Parque · Málaga",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2185,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Málaga.",
+        "image": "hoteles/malaga-hotel-2.jpg",
+        "photoAuthor": "HuiDongXLW RMDa",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:HZ_%E6%83%A0%E5%B7%9E_Huizhou_%E6%83%A0%E6%9D%B1_Huidong_%E9%87%91%E6%B5%B7%E7%81%A3%E5%A4%A7%E9%81%93_Jinhaiwan_Blvd_%E8%8F%AF%E7%BE%8E%E9%81%94%E9%85%92%E5%AE%B6_Ramada_Hotel_bedroom_November_2023_R12S_01.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "malaga-estancia-3",
+        "name": "Suites del Paseo · Málaga",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2565,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Málaga.",
+        "image": "hoteles/malaga-hotel-3.jpg",
+        "photoAuthor": "Alexander Plushev",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Las_vegas_Luxor_hotel_bedroom_by_Alexander_Plyushchev_-_IMG_0005.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "malaga-estancia-4",
+        "name": "Terraza del Centro · Málaga",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2945,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Málaga.",
+        "image": "hoteles/malaga-hotel-4.jpg",
+        "photoAuthor": "Limsn Shusia Ysmarpoo",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GX_%E5%BB%A3%E8%A5%BF%E7%9C%81_Guangxi_%E5%8D%97%E5%AF%A7%E5%B8%82_Nanning_%E9%9D%92%E7%A7%80%E5%8D%80Qingxiu_District_%E6%B0%91%E6%97%8F%E5%A4%A7%E9%81%93_Minzu_Avenue_%E5%8D%97%E5%AF%A7%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E5%A4%A7%E9%85%92%E5%BA%97_Shangri-La_Hotel_bedroom_night_September_2023_R12S_06.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "malaga-estancia-5",
+        "name": "Residencia del Mirador · Málaga",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3610,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Málaga.",
+        "image": "hoteles/malaga-hotel-5.jpg",
+        "photoAuthor": "Limsn Shusia Ysmarpoo",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GX_%E5%BB%A3%E8%A5%BF%E7%9C%81_Guangxi_%E5%8D%97%E5%AF%A7%E5%B8%82_Nanning_%E9%9D%92%E7%A7%80%E5%8D%80Qingxiu_District_%E6%B0%91%E6%97%8F%E5%A4%A7%E9%81%93_Minzu_Avenue_%E5%8D%97%E5%AF%A7%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E5%A4%A7%E9%85%92%E5%BA%97_Shangri-La_Hotel_bedroom_night_September_2023_R12S_01.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "niza",
+    "name": "Niza",
+    "country": "Francia",
+    "region": "internacional",
+    "type": "playa",
+    "tag": "Costa y ciudad",
+    "signature": "Paseos costeros y barrios de colores en la Costa Azul.",
+    "intro": "Paseos costeros y barrios de colores en la Costa Azul.",
+    "description": "Paseos costeros y barrios de colores en la Costa Azul. Organizá tu visita alrededor de Paseo de los Ingleses, Vieux Nice y Colina del Castillo. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Paseo de los Ingleses",
+      "Vieux Nice",
+      "Colina del Castillo"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Niza",
+    "transfer": "Llegada por NCE. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "NCE",
+      "name": "Nice-Côte d'Azur Airport"
+    },
+    "nights": 4,
+    "economy": 24600,
+    "duration": 1140,
+    "image": "imagenes-viajes/destinos/destino-niza.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/niza.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/niza-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1440,
+    "alt": "Fotografía de Niza, Francia",
+    "photoAuthor": "Staeiou",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_in_Nice.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "niza-estancia-1",
+        "name": "Casa del Patio · Niza",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2600,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Niza.",
+        "image": "hoteles/niza-hotel-1.jpg",
+        "photoAuthor": "Kurt Kaiser",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_in_hotel_room_6.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "niza-estancia-2",
+        "name": "Estancia del Parque · Niza",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2990,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Niza.",
+        "image": "hoteles/niza-hotel-2.jpg",
+        "photoAuthor": "Kurt Kaiser",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_in_hotel_room_5.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "niza-estancia-3",
+        "name": "Suites del Paseo · Niza",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3510,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Niza.",
+        "image": "hoteles/niza-hotel-3.jpg",
+        "photoAuthor": "Kurt Kaiser",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_in_hotel_room_3.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "niza-estancia-4",
+        "name": "Terraza del Centro · Niza",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4030,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Niza.",
+        "image": "hoteles/niza-hotel-4.jpg",
+        "photoAuthor": "Kurt Kaiser",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_in_hotel_room_2.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "niza-estancia-5",
+        "name": "Residencia del Mirador · Niza",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4940,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Niza.",
+        "image": "hoteles/niza-hotel-5.jpg",
+        "photoAuthor": "Ounfs Robmmy 238",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E6%B9%BE_Taipei_%E5%8F%B0%E5%8C%97_Hotel_Metropolitan_Premier_Taipei_%E9%85%92%E5%BA%97%E6%88%BF%E9%96%93_hotel_room_%E6%9E%95%E9%A0%AD_white_pillows_n_%E5%B7%A8%E5%BA%8A_big_big_bed_March_2024_R12S_02.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    ]
+  },
+  {
+    "id": "lyon",
+    "name": "Lyon",
+    "country": "Francia",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Dos ríos, colinas y una ciudad de buena mesa.",
+    "intro": "Dos ríos, colinas y una ciudad de buena mesa.",
+    "description": "Dos ríos, colinas y una ciudad de buena mesa. Organizá tu visita alrededor de Vieux Lyon, Basílica de Fourvière y Parque de la Tête d'Or. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Vieux Lyon",
+      "Basílica de Fourvière",
+      "Parque de la Tête d'Or"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Lyon",
+    "transfer": "Llegada por LYS. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "LYS",
+      "name": "Lyon Saint-Exupéry Airport"
+    },
+    "nights": 4,
+    "economy": 23800,
+    "duration": 1140,
+    "image": "imagenes-viajes/destinos/destino-lyon.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/lyon.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/lyon-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1440,
+    "alt": "Fotografía de Lyon, Francia",
+    "photoAuthor": "Zairon",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Lyon_Panorama_von_Fourvi%C3%A8re_1.JPG",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "lyon-estancia-1",
+        "name": "Casa del Patio · Lyon",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2100,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Lyon.",
+        "image": "hoteles/lyon-hotel-1.jpg",
+        "photoAuthor": "Tony Webster from United States",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Staybridge_Suites_Hotel_Room_Bed_-_Eau_Claire,_Wisconsin_(48651011701).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "lyon-estancia-2",
+        "name": "Estancia del Parque · Lyon",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2415,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Lyon.",
+        "image": "hoteles/lyon-hotel-2.jpg",
+        "photoAuthor": "Nan Ning Huang Sokaz 12",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:GX_%E5%BB%A3%E8%A5%BF%E7%9C%81_Guangxi_%E5%8D%97%E5%AF%A7%E5%B8%82_Nanning_%E9%9D%92%E7%A7%80%E5%8D%80Qingxiu_District_%E6%B0%91%E6%97%8F%E5%A4%A7%E9%81%93_Minzu_Avenue_%E5%8D%97%E5%AF%A7%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89%E5%A4%A7%E9%85%92%E5%BA%97_Shangri-La_Hotel_morning_hotel_room_white_beds_September_2023_R12S.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "lyon-estancia-3",
+        "name": "Suites del Paseo · Lyon",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2835,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Lyon.",
+        "image": "hoteles/lyon-hotel-3.jpg",
+        "photoAuthor": "PattayaPatrol",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:DZ6_0461_Cozy_neatly_made_hotel_room_with_a_king_bed_soft_pillows_bedside_lamps_and_calming_neutral_decor.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "lyon-estancia-4",
+        "name": "Terraza del Centro · Lyon",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3255,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Lyon.",
+        "image": "hoteles/lyon-hotel-4.jpg",
+        "photoAuthor": "JohnLEE Brothers",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:MC_%E6%BE%B3%E9%96%80_Macau_Cotai_%E4%B8%8A%E8%92%B2%E4%BA%AC_Grand_Lisboa_Palace_%E9%85%92%E5%BA%97_hotel_room_one_bed_November_2024_R12S_01.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "lyon-estancia-5",
+        "name": "Residencia del Mirador · Lyon",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3990,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Lyon.",
+        "image": "hoteles/lyon-hotel-5.jpg",
+        "photoAuthor": "JohnLEE Brothers",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:MC_%E6%BE%B3%E9%96%80_Macau_Cotai_%E4%B8%8A%E8%92%B2%E4%BA%AC_Grand_Lisboa_Palace_%E9%85%92%E5%BA%97_hotel_room_bed_n_pillows_November_2024_R12S_08.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    ]
+  },
+  {
+    "id": "bruselas",
+    "name": "Bruselas",
+    "country": "Bélgica",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Plazas monumentales, museos y galerías cubiertas.",
+    "intro": "Plazas monumentales, museos y galerías cubiertas.",
+    "description": "Plazas monumentales, museos y galerías cubiertas. Organizá tu visita alrededor de Grand Place, Atomium y Galerías Reales Saint-Hubert. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Grand Place",
+      "Atomium",
+      "Galerías Reales Saint-Hubert"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Bruselas",
+    "transfer": "Llegada por BRU. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "BRU",
+      "name": "Brussels Airport"
+    },
+    "nights": 4,
+    "economy": 23000,
+    "duration": 1080,
+    "image": "imagenes-viajes/destinos/destino-bruselas.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/bruselas.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/bruselas-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1092,
+    "alt": "Fotografía de Bruselas, Bélgica",
+    "photoAuthor": "Celuici",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Grand-Place,_Brussels_-_panorama,_June_2018.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "bruselas-estancia-1",
+        "name": "Casa del Patio · Bruselas",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2300,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Bruselas.",
+        "image": "hoteles/bruselas-hotel-1.jpg",
+        "photoAuthor": "Loftcwyouth",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:HK_Chai_Wan_Open_Day_%E9%9D%92%E5%B9%B4%E5%BB%A3%E5%A0%B4_Youth_Square_Y-Loft_%E6%97%85%E8%88%8D_Hotel_room_beds.JPG",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "bruselas-estancia-2",
+        "name": "Estancia del Parque · Bruselas",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2645,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Bruselas.",
+        "image": "hoteles/bruselas-hotel-2.jpg",
+        "photoAuthor": "Ounfs Robmmy 238",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E6%B9%BE_Taipei_%E5%8F%B0%E5%8C%97_Hotel_Metropolitan_Premier_Taipei_%E9%85%92%E5%BA%97%E6%88%BF%E9%96%93_hotel_room_%E6%9E%95%E9%A0%AD_white_pillows_n_%E5%B7%A8%E5%BA%8A_big_big_bed_March_2024_R12S_01.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "bruselas-estancia-3",
+        "name": "Suites del Paseo · Bruselas",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3105,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Bruselas.",
+        "image": "hoteles/bruselas-hotel-3.jpg",
+        "photoAuthor": "Gindcheoutarkoadf OK",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:HK_TKT_%E5%A4%A7%E8%A7%92%E5%92%80%E9%81%93_86_Tai_Kok_Tsui_Road_%E4%B9%9D%E9%BE%8D%E7%8F%80%E9%BA%97%E9%85%92%E5%BA%97_Rosedale_Kowloon_Hotel_room_bedroom_September_2021_SS2_03.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "bruselas-estancia-4",
+        "name": "Terraza del Centro · Bruselas",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3565,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Bruselas.",
+        "image": "hoteles/bruselas-hotel-4.jpg",
+        "photoAuthor": "toufeeq hussain",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Mandarin_Oriental,_Miami,_January_2011_-_Hotel_room_beds.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "bruselas-estancia-5",
+        "name": "Residencia del Mirador · Bruselas",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4370,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Bruselas.",
+        "image": "hoteles/bruselas-hotel-5.jpg",
+        "photoAuthor": "tshrinivasan",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_beds_at_GRT_Temple_Bay_Resorts,_Mahabalipuram.jpeg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ]
+  },
+  {
+    "id": "zurich",
+    "name": "Zúrich",
+    "country": "Suiza",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "El casco antiguo se abre al río y al lago.",
+    "intro": "El casco antiguo se abre al río y al lago.",
+    "description": "El casco antiguo se abre al río y al lago. Organizá tu visita alrededor de Lindenhof, Grossmünster y Lago de Zúrich. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Lindenhof",
+      "Grossmünster",
+      "Lago de Zúrich"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Zúrich",
+    "transfer": "Llegada por ZRH. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "ZRH",
+      "name": "Zürich Airport"
+    },
+    "nights": 4,
+    "economy": 27000,
+    "duration": 1140,
+    "image": "imagenes-viajes/destinos/destino-zurich.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/zurich.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/zurich-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 840,
+    "alt": "Fotografía de Zúrich, Suiza",
+    "photoAuthor": "IqRS",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Panorama_von_Z%C3%BCrich_@_82_mm.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "zurich-estancia-1",
+        "name": "Casa del Patio · Zúrich",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3600,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Zúrich.",
+        "image": "hoteles/zurich-hotel-1.jpg",
+        "photoAuthor": "Bita RmJohnson Liuosa",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:MC_%E6%BE%B3%E9%96%80_Macau_%E5%96%9C%E4%BE%86%E7%99%BB%E9%85%92%E5%BA%97_Sheraton_Grand_Macao_%E5%AE%A2%E6%88%BF_hotel_room_midnight_November_2023_R12S.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "zurich-estancia-2",
+        "name": "Estancia del Parque · Zúrich",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4140,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Zúrich.",
+        "image": "hoteles/zurich-hotel-2.jpg",
+        "photoAuthor": "MatthewHoobin",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_room_bedroom_in_building_on_Chapel_Street,_Salford,_Greater_Manchester,_England,_on_5_October_2025.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "zurich-estancia-3",
+        "name": "Suites del Paseo · Zúrich",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4860,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Zúrich.",
+        "image": "hoteles/zurich-hotel-3.jpg",
+        "photoAuthor": "Michael Rivera",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Day%27s_Inn_hotel_room,_Jekyll_Island.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "zurich-estancia-4",
+        "name": "Terraza del Centro · Zúrich",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 5580,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Zúrich.",
+        "image": "hoteles/zurich-hotel-4.jpg",
+        "photoAuthor": "OhanaUnited",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Metterra_Hotel_on_Whyte_hotel_room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "zurich-estancia-5",
+        "name": "Residencia del Mirador · Zúrich",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 6840,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Zúrich.",
+        "image": "hoteles/zurich-hotel-5.jpg",
+        "photoAuthor": "Dichcomforthotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Bed_in_a_guest_room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "ginebra",
+    "name": "Ginebra",
+    "country": "Suiza",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Parques y pequeñas plazas a orillas del lago.",
+    "intro": "Parques y pequeñas plazas a orillas del lago.",
+    "description": "Parques y pequeñas plazas a orillas del lago. Organizá tu visita alrededor de Jet d'Eau, Catedral de San Pedro y Parque de los Bastiones. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Jet d'Eau",
+      "Catedral de San Pedro",
+      "Parque de los Bastiones"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Ginebra",
+    "transfer": "Llegada por GVA. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "GVA",
+      "name": "Geneva International Airport"
+    },
+    "nights": 4,
+    "economy": 26500,
+    "duration": 1140,
+    "image": "imagenes-viajes/destinos/destino-ginebra.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/ginebra.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/ginebra-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 574,
+    "alt": "Fotografía de Ginebra, Suiza",
+    "photoAuthor": "MarsPF2",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Geneva_Panorama_from_St._Pierre.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "ginebra-estancia-1",
+        "name": "Casa del Patio · Ginebra",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3400,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Ginebra.",
+        "image": "hoteles/ginebra-hotel-1.jpg",
+        "photoAuthor": "阿道",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guest_Room_of_Wyndham_Sun_Moon_Lake_01_20260209.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "ginebra-estancia-2",
+        "name": "Estancia del Parque · Ginebra",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3910,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Ginebra.",
+        "image": "hoteles/ginebra-hotel-2.jpg",
+        "photoAuthor": "阿道",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guest_Room_of_Wyndham_Sun_Moon_Lake_02_20260209.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "ginebra-estancia-3",
+        "name": "Suites del Paseo · Ginebra",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4590,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Ginebra.",
+        "image": "hoteles/ginebra-hotel-3.jpg",
+        "photoAuthor": "阿道",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guest_Room_of_Wyndham_Sun_Moon_Lake_03_20260209.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "ginebra-estancia-4",
+        "name": "Terraza del Centro · Ginebra",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 5270,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Ginebra.",
+        "image": "hoteles/ginebra-hotel-4.jpg",
+        "photoAuthor": "Original photo: Wonderlane/Flickr\n\nModified by Gazebo on July 24, 2014 with lossless optimization, the removal of JPEG IFD1 (thumbnail) metadata, and the addition of comment and XMP-cc:License metadata.",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Cypress-building-guest-room-at-Asilomar-grounds-CA.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "ginebra-estancia-5",
+        "name": "Residencia del Mirador · Ginebra",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 6460,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Ginebra.",
+        "image": "hoteles/ginebra-hotel-5.jpg",
+        "photoAuthor": "Nat4Eben",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guest_room_of_Park_Hyatt_Shanghai_20231103.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "copenhague",
+    "name": "Copenhague",
+    "country": "Dinamarca",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Canales, bicicletas y diseño a escala humana.",
+    "intro": "Canales, bicicletas y diseño a escala humana.",
+    "description": "Canales, bicicletas y diseño a escala humana. Organizá tu visita alrededor de Nyhavn, Jardines de Tivoli y Palacio de Amalienborg. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Nyhavn",
+      "Jardines de Tivoli",
+      "Palacio de Amalienborg"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Copenhague",
+    "transfer": "Llegada por CPH. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "CPH",
+      "name": "Copenhagen Kastrup Airport"
+    },
+    "nights": 4,
+    "economy": 25800,
+    "duration": 1200,
+    "image": "imagenes-viajes/destinos/destino-copenhague.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/copenhague.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/copenhague-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1039,
+    "alt": "Fotografía de Copenhague, Dinamarca",
+    "photoAuthor": "Jakub Hałun",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Nyhavn,_Copenhagen,_20220618_1728_7354.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "copenhague-estancia-1",
+        "name": "Casa del Patio · Copenhague",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3200,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Copenhague.",
+        "image": "hoteles/copenhague-hotel-1.jpg",
+        "photoAuthor": "Dpickd1",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Old_Faithful_Inn,_guest_room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "copenhague-estancia-2",
+        "name": "Estancia del Parque · Copenhague",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3680,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Copenhague.",
+        "image": "hoteles/copenhague-hotel-2.jpg",
+        "photoAuthor": "NPS Photo",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Sandburg_Home_Guest_Room_(7c0014e7-ccbc-40dc-be23-25236f546c2f).jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      {
+        "id": "copenhague-estancia-3",
+        "name": "Suites del Paseo · Copenhague",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4320,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Copenhague.",
+        "image": "hoteles/copenhague-hotel-3.jpg",
+        "photoAuthor": "Nemracc",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Inn,_Hotel_Hirschgasse_in_Heidelberg,_Germany_12_hotel_room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "copenhague-estancia-4",
+        "name": "Terraza del Centro · Copenhague",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4960,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Copenhague.",
+        "image": "hoteles/copenhague-hotel-4.jpg",
+        "photoAuthor": "Antonio Campoy from Madrid, España",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Adlers_Hotel_-_Suite_Sofas_(37708341435).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "copenhague-estancia-5",
+        "name": "Residencia del Mirador · Copenhague",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 6080,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Copenhague.",
+        "image": "hoteles/copenhague-hotel-5.jpg",
+        "photoAuthor": "Derek Jensen (Tysto)",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel-suite-living-room.jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    ]
+  },
+  {
+    "id": "estocolmo",
+    "name": "Estocolmo",
+    "country": "Suecia",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Islas unidas por puentes y paseos junto al agua.",
+    "intro": "Islas unidas por puentes y paseos junto al agua.",
+    "description": "Islas unidas por puentes y paseos junto al agua. Organizá tu visita alrededor de Gamla Stan, Museo Vasa y Djurgården. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Gamla Stan",
+      "Museo Vasa",
+      "Djurgården"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Estocolmo",
+    "transfer": "Llegada por ARN. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "ARN",
+      "name": "Stockholm-Arlanda Airport"
+    },
+    "nights": 5,
+    "economy": 27000,
+    "duration": 1260,
+    "image": "imagenes-viajes/destinos/destino-estocolmo.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/estocolmo.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/estocolmo-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 995,
+    "alt": "Fotografía de Estocolmo, Suecia",
+    "photoAuthor": "Martin Falbisoner",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Panorama_of_Stockholm_-_August_2020.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "estocolmo-estancia-1",
+        "name": "Casa del Patio · Estocolmo",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2900,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Estocolmo.",
+        "image": "hoteles/estocolmo-hotel-1.jpg",
+        "photoAuthor": "Derek Jensen (Tysto)",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel-suite-bedroom.jpg",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      {
+        "id": "estocolmo-estancia-2",
+        "name": "Estancia del Parque · Estocolmo",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3335,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Estocolmo.",
+        "image": "hoteles/estocolmo-hotel-2.jpg",
+        "photoAuthor": "APK",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:The_Palazzo_Las_Vegas_-_hotel_suite_couch.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "estocolmo-estancia-3",
+        "name": "Suites del Paseo · Estocolmo",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3915,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Estocolmo.",
+        "image": "hoteles/estocolmo-hotel-3.jpg",
+        "photoAuthor": "Royalparkhotelhk",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Royal_Park_Hotel_Suite.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "id": "estocolmo-estancia-4",
+        "name": "Terraza del Centro · Estocolmo",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4495,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Estocolmo.",
+        "image": "hoteles/estocolmo-hotel-4.jpg",
+        "photoAuthor": "Antonio Campoy from Madrid, España",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Adlers_Hotel_Suite_(37708345895).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "estocolmo-estancia-5",
+        "name": "Residencia del Mirador · Estocolmo",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 5510,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Estocolmo.",
+        "image": "hoteles/estocolmo-hotel-5.jpg",
+        "photoAuthor": "APK",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:The_Palazzo_Las_Vegas_-_hotel_suite_king_bed.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "oslo",
+    "name": "Oslo",
+    "country": "Noruega",
+    "region": "internacional",
+    "type": "naturaleza",
+    "tag": "Parques y paisajes",
+    "signature": "Arte y arquitectura frente al fiordo.",
+    "intro": "Arte y arquitectura frente al fiordo.",
+    "description": "Arte y arquitectura frente al fiordo. Organizá tu visita alrededor de Ópera de Oslo, Parque de Vigeland y Aker Brygge. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Ópera de Oslo",
+      "Parque de Vigeland",
+      "Aker Brygge"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Oslo",
+    "transfer": "Llegada por OSL. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "OSL",
+      "name": "Oslo-Gardermoen International Airport"
+    },
+    "nights": 4,
+    "economy": 26800,
+    "duration": 1200,
+    "image": "imagenes-viajes/destinos/destino-oslo.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/oslo.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/oslo-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 779,
+    "alt": "Fotografía de Oslo, Noruega",
+    "photoAuthor": "Dr Mirko Junge, stitched by -donald-",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Oslo_%C3%98stbanestasjonen_pano_2011-01-01-MJ.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "oslo-estancia-1",
+        "name": "Casa del Patio · Oslo",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3200,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Oslo.",
+        "image": "hoteles/oslo-hotel-1.jpg",
+        "photoAuthor": "© 1971markus",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:29._Bonner_Stammtisch,_Petersberg_(Hotel-Suite,_1._OG).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "oslo-estancia-2",
+        "name": "Estancia del Parque · Oslo",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3680,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Oslo.",
+        "image": "hoteles/oslo-hotel-2.jpg",
+        "photoAuthor": "Wasiul Bahar",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_suite_at_Hyatt_Hyderabad.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "oslo-estancia-3",
+        "name": "Suites del Paseo · Oslo",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4320,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Oslo.",
+        "image": "hoteles/oslo-hotel-3.jpg",
+        "photoAuthor": "ООО «Онега Палас»",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Intourist_Onego_Palace_Hotel_Suite_First_bedroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "oslo-estancia-4",
+        "name": "Terraza del Centro · Oslo",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4960,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Oslo.",
+        "image": "hoteles/oslo-hotel-4.jpg",
+        "photoAuthor": "Wasiul Bahar",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_suite_at_Hyatt_Hyderabad3.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "oslo-estancia-5",
+        "name": "Residencia del Mirador · Oslo",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 6080,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Oslo.",
+        "image": "hoteles/oslo-hotel-5.jpg",
+        "photoAuthor": "David Jones",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_suite_at_the_St_Pancras_Renaissance_Hotel.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ]
+  },
+  {
+    "id": "helsinki",
+    "name": "Helsinki",
+    "country": "Finlandia",
+    "region": "internacional",
+    "type": "naturaleza",
+    "tag": "Parques y paisajes",
+    "signature": "Diseño nórdico, mercados y una fortaleza en el Báltico.",
+    "intro": "Diseño nórdico, mercados y una fortaleza en el Báltico.",
+    "description": "Diseño nórdico, mercados y una fortaleza en el Báltico. Organizá tu visita alrededor de Plaza del Senado, Suomenlinna y Mercado del Puerto. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Plaza del Senado",
+      "Suomenlinna",
+      "Mercado del Puerto"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Helsinki",
+    "transfer": "Llegada por HEL. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "HEL",
+      "name": "Helsinki Vantaa Airport"
+    },
+    "nights": 4,
+    "economy": 27500,
+    "duration": 1260,
+    "image": "imagenes-viajes/destinos/destino-helsinki.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/helsinki.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/helsinki-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1280,
+    "alt": "Fotografía de Helsinki, Finlandia",
+    "photoAuthor": "John Samuel",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Exterior_of_Helsinki_Cathedral_(6).JPG",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "helsinki-estancia-1",
+        "name": "Casa del Patio · Helsinki",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2800,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Helsinki.",
+        "image": "hoteles/helsinki-hotel-1.jpg",
+        "photoAuthor": "Adrian Grycuk",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Castle_Inn_w_kamienicy_Ko%C5%9Bcielskich_w_Warszawie_2026c.jpg",
+        "photoLicense": "CC BY 3.0 pl",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/3.0/pl/deed.en"
+      },
+      {
+        "id": "helsinki-estancia-2",
+        "name": "Estancia del Parque · Helsinki",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3220,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Helsinki.",
+        "image": "hoteles/helsinki-hotel-2.jpg",
+        "photoAuthor": "Adrian Grycuk",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Castle_Inn_w_kamienicy_Ko%C5%9Bcielskich_w_Warszawie_2026b.jpg",
+        "photoLicense": "CC BY 3.0 pl",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/3.0/pl/deed.en"
+      },
+      {
+        "id": "helsinki-estancia-3",
+        "name": "Suites del Paseo · Helsinki",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3780,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Helsinki.",
+        "image": "hoteles/helsinki-hotel-3.jpg",
+        "photoAuthor": "Hoia Saerda Mea 28",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_August_2019_SSG_02.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "helsinki-estancia-4",
+        "name": "Terraza del Centro · Helsinki",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4340,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Helsinki.",
+        "image": "hoteles/helsinki-hotel-4.jpg",
+        "photoAuthor": "Goeu Lsuys YTianhg",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_11th_August_2019_SSG_05.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "helsinki-estancia-5",
+        "name": "Residencia del Mirador · Helsinki",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 5320,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Helsinki.",
+        "image": "hoteles/helsinki-hotel-5.jpg",
+        "photoAuthor": "Goeu Lsuys YTianhg",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_11th_August_2019_SSG_08.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "varsovia",
+    "name": "Varsovia",
+    "country": "Polonia",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Historia reconstruida y parques en una capital activa.",
+    "intro": "Historia reconstruida y parques en una capital activa.",
+    "description": "Historia reconstruida y parques en una capital activa. Organizá tu visita alrededor de Ciudad Vieja, Parque Łazienki y Palacio de la Cultura y la Ciencia. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Ciudad Vieja",
+      "Parque Łazienki",
+      "Palacio de la Cultura y la Ciencia"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Varsovia",
+    "transfer": "Llegada por WAW. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "WAW",
+      "name": "Warsaw Chopin Airport"
+    },
+    "nights": 4,
+    "economy": 25000,
+    "duration": 1200,
+    "image": "imagenes-viajes/destinos/destino-varsovia.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/varsovia.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/varsovia-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1246,
+    "alt": "Fotografía de Varsovia, Polonia",
+    "photoAuthor": "A.Savin",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Warsaw_07-13_img29_View_from_Palace_of_Culture_and_Science.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "varsovia-estancia-1",
+        "name": "Casa del Patio · Varsovia",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1600,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Varsovia.",
+        "image": "hoteles/varsovia-hotel-1.jpg",
+        "photoAuthor": "Goeu Lsuys YTianhg",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_11th_August_2019_SSG_06.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "varsovia-estancia-2",
+        "name": "Estancia del Parque · Varsovia",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1840,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Varsovia.",
+        "image": "hoteles/varsovia-hotel-2.jpg",
+        "photoAuthor": "JF10",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Clift_Hotel_-_San_Francisco_2009_(3207882900).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "varsovia-estancia-3",
+        "name": "Suites del Paseo · Varsovia",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2160,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Varsovia.",
+        "image": "hoteles/varsovia-hotel-3.jpg",
+        "photoAuthor": "Hoia Saerda Mea 28",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_August_2019_SSG_03.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "varsovia-estancia-4",
+        "name": "Terraza del Centro · Varsovia",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2480,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Varsovia.",
+        "image": "hoteles/varsovia-hotel-4.jpg",
+        "photoAuthor": "Olybrius",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Toulouse_-_H%C3%B4tel_Croix-Baragnon_-_20250313_(1).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "varsovia-estancia-5",
+        "name": "Residencia del Mirador · Varsovia",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3040,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Varsovia.",
+        "image": "hoteles/varsovia-hotel-5.jpg",
+        "photoAuthor": "Torsade de Pointes",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Cahors_H%C3%B4tel_de_Roald%C3%A8s16.JPG",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    ]
+  },
+  {
+    "id": "cracovia",
+    "name": "Cracovia",
+    "country": "Polonia",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Plazas medievales y barrios para recorrer caminando.",
+    "intro": "Plazas medievales y barrios para recorrer caminando.",
+    "description": "Plazas medievales y barrios para recorrer caminando. Organizá tu visita alrededor de Plaza del Mercado, Colina de Wawel y Kazimierz. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Plaza del Mercado",
+      "Colina de Wawel",
+      "Kazimierz"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Cracovia",
+    "transfer": "Llegada por KRK. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "KRK",
+      "name": "Kraków John Paul II International Airport"
+    },
+    "nights": 4,
+    "economy": 25200,
+    "duration": 1230,
+    "image": "imagenes-viajes/destinos/destino-cracovia.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/cracovia.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/cracovia-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1277,
+    "alt": "Fotografía de Cracovia, Polonia",
+    "photoAuthor": "Jakub Hałun",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:20091114_Krakow_Wawel_7770.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "cracovia-estancia-1",
+        "name": "Casa del Patio · Cracovia",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1500,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Cracovia.",
+        "image": "hoteles/cracovia-hotel-1.jpg",
+        "photoAuthor": "Olybrius",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Auch_-_H%C3%B4tel_Campanile_Auch_-_20170203_(2).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "cracovia-estancia-2",
+        "name": "Estancia del Parque · Cracovia",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1725,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Cracovia.",
+        "image": "hoteles/cracovia-hotel-2.jpg",
+        "photoAuthor": "Goeu Lsuys YTianhg",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:TW_%E5%8F%B0%E7%81%A3_Taiwan_%E5%8F%B0%E5%8C%97%E5%B8%82_Taipei_City_%E4%B8%AD%E6%AD%A3%E5%8D%80_Zhongzheng_District_%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5_Zhongxiao_West_Road_1_section_%E5%8F%B0%E5%8C%97%E5%87%B1%E6%92%92%E5%A4%A7%E9%A3%AF%E5%BA%97_Caesar_Park_Taipei_hotel_11th_August_2019_SSG_04.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "cracovia-estancia-3",
+        "name": "Suites del Paseo · Cracovia",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2025,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Cracovia.",
+        "image": "hoteles/cracovia-hotel-3.jpg",
+        "photoAuthor": "Chemical Engineer",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Adelphi_1129.JPG",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "cracovia-estancia-4",
+        "name": "Terraza del Centro · Cracovia",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2325,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Cracovia.",
+        "image": "hoteles/cracovia-hotel-4.jpg",
+        "photoAuthor": "Todtanis",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Highgrove_Master.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "cracovia-estancia-5",
+        "name": "Residencia del Mirador · Cracovia",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2850,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Cracovia.",
+        "image": "hoteles/cracovia-hotel-5.jpg",
+        "photoAuthor": "Pinakpani",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Kalyani_PWD_Inspection_Bungalow_near_Kalyani_Lake,_Nadia_05.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      }
+    ]
+  },
+  {
+    "id": "dubrovnik",
+    "name": "Dubrovnik",
+    "country": "Croacia",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Murallas de piedra y vistas al Adriático.",
+    "intro": "Murallas de piedra y vistas al Adriático.",
+    "description": "Murallas de piedra y vistas al Adriático. Organizá tu visita alrededor de Murallas de Dubrovnik, Stradun y Puerto Viejo. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Murallas de Dubrovnik",
+      "Stradun",
+      "Puerto Viejo"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Dubrovnik",
+    "transfer": "Llegada por DBV. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "DBV",
+      "name": "Dubrovnik Ruđer Bošković Airport"
+    },
+    "nights": 4,
+    "economy": 26900,
+    "duration": 1260,
+    "image": "imagenes-viajes/destinos/destino-dubrovnik.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/dubrovnik.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/dubrovnik-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1045,
+    "alt": "Fotografía de Dubrovnik, Croacia",
+    "photoAuthor": "Diego Delso",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Casco_viejo_de_Dubrovnik,_Croacia,_2014-04-14,_DD_04.JPG",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "dubrovnik-estancia-1",
+        "name": "Casa del Patio · Dubrovnik",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2400,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Dubrovnik.",
+        "image": "hoteles/dubrovnik-hotel-1.jpg",
+        "photoAuthor": "Pinakpani",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Kalyani_PWD_Inspection_Bungalow_near_Kalyani_Lake,_Nadia_07.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "id": "dubrovnik-estancia-2",
+        "name": "Estancia del Parque · Dubrovnik",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2760,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Dubrovnik.",
+        "image": "hoteles/dubrovnik-hotel-2.jpg",
+        "photoAuthor": "CREVETTE HAVOT",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Chambre_de_l%27un_des_g%C3%AEtes_du_ch%C3%A2teau_de_Guernon-Ranville.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "dubrovnik-estancia-3",
+        "name": "Suites del Paseo · Dubrovnik",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3240,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Dubrovnik.",
+        "image": "hoteles/dubrovnik-hotel-3.jpg",
+        "photoAuthor": "Deror avi",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Sofitel_Arc_de_Triomphe_IMG_1781.JPG",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "dubrovnik-estancia-4",
+        "name": "Terraza del Centro · Dubrovnik",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3720,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Dubrovnik.",
+        "image": "hoteles/dubrovnik-hotel-4.jpg",
+        "photoAuthor": "LBM1948",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:P%C3%A1tzcuaro_(2013)_01.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "dubrovnik-estancia-5",
+        "name": "Residencia del Mirador · Dubrovnik",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4560,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Dubrovnik.",
+        "image": "hoteles/dubrovnik-hotel-5.jpg",
+        "photoAuthor": "Deror avi",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Sofitel_Arc_de_Triomphe_IMG_1782.JPG",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ]
+  },
+  {
+    "id": "split",
+    "name": "Split",
+    "country": "Croacia",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Una ciudad entre vestigios romanos y el mar.",
+    "intro": "Una ciudad entre vestigios romanos y el mar.",
+    "description": "Una ciudad entre vestigios romanos y el mar. Organizá tu visita alrededor de Palacio de Diocleciano, Paseo de la Riva y Colina de Marjan. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Palacio de Diocleciano",
+      "Paseo de la Riva",
+      "Colina de Marjan"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Split",
+    "transfer": "Llegada por SPU. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "SPU",
+      "name": "Split Saint Jerome Airport"
+    },
+    "nights": 4,
+    "economy": 26300,
+    "duration": 1260,
+    "image": "imagenes-viajes/destinos/destino-split.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/split.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/split-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1440,
+    "alt": "Fotografía de Split, Croacia",
+    "photoAuthor": "Smiley.toerist",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Split_city_2009_04.JPG",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "split-estancia-1",
+        "name": "Casa del Patio · Split",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2100,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Split.",
+        "image": "hoteles/split-hotel-1.jpg",
+        "photoAuthor": "Virginia State Parks",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:NT_Cabin_1_at_Natural_Tunnel_(27226366065).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "split-estancia-2",
+        "name": "Estancia del Parque · Split",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2415,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Split.",
+        "image": "hoteles/split-hotel-2.jpg",
+        "photoAuthor": "Tom Eppenberger Jr. at Flickr",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:THEbedatmandalaybay.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "split-estancia-3",
+        "name": "Suites del Paseo · Split",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2835,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Split.",
+        "image": "hoteles/split-hotel-3.jpg",
+        "photoAuthor": "Fred Cherrygarden",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Chinggis_Khaan_Hotel_-_Deluxe_Double_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "split-estancia-4",
+        "name": "Terraza del Centro · Split",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3255,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Split.",
+        "image": "hoteles/split-hotel-4.jpg",
+        "photoAuthor": "Bernard DUPONT",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Double_Room_at_Hotel_San_Julio,_Celestun,_Yucatan.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "split-estancia-5",
+        "name": "Residencia del Mirador · Split",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3990,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Split.",
+        "image": "hoteles/split-hotel-5.jpg",
+        "photoAuthor": "Atwngirl",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:2022_-_Americus_Hotel_-_Double_Room_2_-_Allentown_PA.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "napoles",
+    "name": "Nápoles",
+    "country": "Italia",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Calles con carácter y vistas a la bahía.",
+    "intro": "Calles con carácter y vistas a la bahía.",
+    "description": "Calles con carácter y vistas a la bahía. Organizá tu visita alrededor de Spaccanapoli, Castel dell'Ovo y Plaza del Plebiscito. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Spaccanapoli",
+      "Castel dell'Ovo",
+      "Plaza del Plebiscito"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Nápoles",
+    "transfer": "Llegada por NAP. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "NAP",
+      "name": "Naples International Airport"
+    },
+    "nights": 4,
+    "economy": 24000,
+    "duration": 1200,
+    "image": "imagenes-viajes/destinos/destino-napoles.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/napoles.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/napoles-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1281,
+    "alt": "Fotografía de Nápoles, Italia",
+    "photoAuthor": "This Photo was taken by Wolfgang Moroder.  \n\nFeel free to use my photos, but please mention me as the author and send me a  message. \n\n\n\nThis image is not in the public domain. Please respect the copyright protection. It may only be used according to the rules mentioned here. This specifically excludes use in social media, if applicable terms of the licenses listed here not appropriate.\n\n\n\nPlease do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved.Please if you think that any changes should be required, please inform the author.Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract.",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Naples_from_the_Castello_Sant_Elmo_with_Abbazia_San_Martino_the_port_and_the_Vesuv.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "napoles-estancia-1",
+        "name": "Casa del Patio · Nápoles",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1900,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Nápoles.",
+        "image": "hoteles/napoles-hotel-1.jpg",
+        "photoAuthor": "Atwngirl",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:2022_-_Americus_Hotel_-_Double_Room_3_-_Allentown_PA.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "napoles-estancia-2",
+        "name": "Estancia del Parque · Nápoles",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2185,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Nápoles.",
+        "image": "hoteles/napoles-hotel-2.jpg",
+        "photoAuthor": "Umani.Hotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Umani_Double_Room_Sea_view_(2).jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "id": "napoles-estancia-3",
+        "name": "Suites del Paseo · Nápoles",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2565,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Nápoles.",
+        "image": "hoteles/napoles-hotel-3.jpg",
+        "photoAuthor": "Umani.Hotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Umani_Double_Room_Sea_view_(16).jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "id": "napoles-estancia-4",
+        "name": "Terraza del Centro · Nápoles",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2945,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Nápoles.",
+        "image": "hoteles/napoles-hotel-4.jpg",
+        "photoAuthor": "Umani.Hotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Umani_Double_Room_Sea_view_(13).jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "id": "napoles-estancia-5",
+        "name": "Residencia del Mirador · Nápoles",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3610,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Nápoles.",
+        "image": "hoteles/napoles-hotel-5.jpg",
+        "photoAuthor": "Umani.Hotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Umani_Double_Room_Sea_view_(14).jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      }
+    ]
+  },
+  {
+    "id": "bolonia",
+    "name": "Bolonia",
+    "country": "Italia",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Pórticos, mercados y cocina de Emilia-Romaña.",
+    "intro": "Pórticos, mercados y cocina de Emilia-Romaña.",
+    "description": "Pórticos, mercados y cocina de Emilia-Romaña. Organizá tu visita alrededor de Piazza Maggiore, Pórticos de Bolonia y Quadrilatero. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Piazza Maggiore",
+      "Pórticos de Bolonia",
+      "Quadrilatero"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Bolonia",
+    "transfer": "Llegada por BLQ. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "BLQ",
+      "name": "Bologna Guglielmo Marconi Airport"
+    },
+    "nights": 4,
+    "economy": 24500,
+    "duration": 1170,
+    "image": "imagenes-viajes/destinos/destino-bolonia.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/bolonia.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/bolonia-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1046,
+    "alt": "Fotografía de Bolonia, Italia",
+    "photoAuthor": "Ingo Mehling",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Bologna_-_Piazza_Maggiore_from_Palazzo_Comunale.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "bolonia-estancia-1",
+        "name": "Casa del Patio · Bolonia",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2100,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Bolonia.",
+        "image": "hoteles/bolonia-hotel-1.jpg",
+        "photoAuthor": "ООО «Онега Палас»",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Intourist_Onego_Palace_Hotel_Double_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "bolonia-estancia-2",
+        "name": "Estancia del Parque · Bolonia",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2415,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Bolonia.",
+        "image": "hoteles/bolonia-hotel-2.jpg",
+        "photoAuthor": "Rufouslark",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:N1_Hotel_Victoria_Falls_Double_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "bolonia-estancia-3",
+        "name": "Suites del Paseo · Bolonia",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2835,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Bolonia.",
+        "image": "hoteles/bolonia-hotel-3.jpg",
+        "photoAuthor": "Hotel Makár Sport & …",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hotel_Mak%C3%A1r,_P%C3%A9cs,_Double_room_-central-superior_-_panoramio.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "bolonia-estancia-4",
+        "name": "Terraza del Centro · Bolonia",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3255,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Bolonia.",
+        "image": "hoteles/bolonia-hotel-4.jpg",
+        "photoAuthor": "阿道",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_the_Double_Room_of_H%E2%82%82O_Hotel-05.2024-11-04.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "bolonia-estancia-5",
+        "name": "Residencia del Mirador · Bolonia",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3990,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Bolonia.",
+        "image": "hoteles/bolonia-hotel-5.jpg",
+        "photoAuthor": "阿道",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_the_Double_Room_of_H%E2%82%82O_Hotel-01.2024-11-04.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "montreal",
+    "name": "Montreal",
+    "country": "Canadá",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Barrios francófonos, parques y paseos junto al río.",
+    "intro": "Barrios francófonos, parques y paseos junto al río.",
+    "description": "Barrios francófonos, parques y paseos junto al río. Organizá tu visita alrededor de Viejo Montreal, Monte Royal y Puerto Viejo. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Viejo Montreal",
+      "Monte Royal",
+      "Puerto Viejo"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Montreal",
+    "transfer": "Llegada por YUL. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "YUL",
+      "name": "Montreal / Pierre Elliott Trudeau International Airport"
+    },
+    "nights": 5,
+    "economy": 14500,
+    "duration": 540,
+    "image": "imagenes-viajes/destinos/destino-montreal.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/montreal.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/montreal-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1293,
+    "alt": "Fotografía de Montreal, Canadá",
+    "photoAuthor": "Wilfredor",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Kondiaronk_Belvedere,_Montreal_city,_Canada.jpg",
+    "photoLicense": "CC0",
+    "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "hotels": [
+      {
+        "id": "montreal-estancia-1",
+        "name": "Casa del Patio · Montreal",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2500,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Montreal.",
+        "image": "hoteles/montreal-hotel-1.jpg",
+        "photoAuthor": "Opera Cadet from PARIS, FRANCE",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Double_room_1_-_Paris_Opera_Cadet_Hotel.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "montreal-estancia-2",
+        "name": "Estancia del Parque · Montreal",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2875,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Montreal.",
+        "image": "hoteles/montreal-hotel-2.jpg",
+        "photoAuthor": "Opera Cadet from PARIS, FRANCE",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Double_Room_2_-_Paris_Opera_Cadet_Hotel.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "montreal-estancia-3",
+        "name": "Suites del Paseo · Montreal",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3375,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Montreal.",
+        "image": "hoteles/montreal-hotel-3.jpg",
+        "photoAuthor": "Opera Cadet from PARIS, FRANCE",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Double_room_and_seating_area_-_Paris_Opera_Cadet_Hotel.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "montreal-estancia-4",
+        "name": "Terraza del Centro · Montreal",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3875,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Montreal.",
+        "image": "hoteles/montreal-hotel-4.jpg",
+        "photoAuthor": "Rufouslark",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:N1_Hotel_Samora_Machel_Double_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "montreal-estancia-5",
+        "name": "Residencia del Mirador · Montreal",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4750,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Montreal.",
+        "image": "hoteles/montreal-hotel-5.jpg",
+        "photoAuthor": "Rufouslark",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:N1_Hotel_Rotten_Row_Double_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "quebec",
+    "name": "Quebec",
+    "country": "Canadá",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Calles de piedra sobre el río San Lorenzo.",
+    "intro": "Calles de piedra sobre el río San Lorenzo.",
+    "description": "Calles de piedra sobre el río San Lorenzo. Organizá tu visita alrededor de Château Frontenac, Petit-Champlain y Llanuras de Abraham. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Château Frontenac",
+      "Petit-Champlain",
+      "Llanuras de Abraham"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Quebec",
+    "transfer": "Llegada por YQB. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "YQB",
+      "name": "Quebec Jean Lesage International Airport"
+    },
+    "nights": 4,
+    "economy": 15900,
+    "duration": 660,
+    "image": "imagenes-viajes/destinos/destino-quebec.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/quebec.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/quebec-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1248,
+    "alt": "Fotografía de Quebec, Canadá",
+    "photoAuthor": "Wilfredor",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Price_Building_illuminated_at_night_in_Quebec_City.jpg",
+    "photoLicense": "CC0",
+    "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "hotels": [
+      {
+        "id": "quebec-estancia-1",
+        "name": "Casa del Patio · Quebec",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2400,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Quebec.",
+        "image": "hoteles/quebec-hotel-1.jpg",
+        "photoAuthor": "Michael Rivera",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Double_room_at_Marriott_Courtyard_Atlanta_Executive_Park.JPG",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "quebec-estancia-2",
+        "name": "Estancia del Parque · Quebec",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2760,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Quebec.",
+        "image": "hoteles/quebec-hotel-2.jpg",
+        "photoAuthor": "Uri Tours",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Double_room_at_Ryonggang_Hot_Spring_Spa_House_(10073065705).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "quebec-estancia-3",
+        "name": "Suites del Paseo · Quebec",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3240,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Quebec.",
+        "image": "hoteles/quebec-hotel-3.jpg",
+        "photoAuthor": "amslerPIX",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Double_Room_-_Coban_Guatemala.jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "quebec-estancia-4",
+        "name": "Terraza del Centro · Quebec",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3720,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Quebec.",
+        "image": "hoteles/quebec-hotel-4.jpg",
+        "photoAuthor": "Mtaylor848",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Twin_room,_Grand_Hotel,_Scarborough,_North_Yorkshire_(11th_June_2022)_002.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "quebec-estancia-5",
+        "name": "Residencia del Mirador · Quebec",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4560,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Quebec.",
+        "image": "hoteles/quebec-hotel-5.jpg",
+        "photoAuthor": "ООО «Онега Палас»",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Intourist_Onego_Palace_Hotel_Twin_Room_Comfort.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "boston",
+    "name": "Boston",
+    "country": "Estados Unidos",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Historia y parques entre barrios de ladrillo rojo.",
+    "intro": "Historia y parques entre barrios de ladrillo rojo.",
+    "description": "Historia y parques entre barrios de ladrillo rojo. Organizá tu visita alrededor de Freedom Trail, Boston Common y Quincy Market. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Freedom Trail",
+      "Boston Common",
+      "Quincy Market"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Boston",
+    "transfer": "Llegada por BOS. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "BOS",
+      "name": "Boston Logan International Airport"
+    },
+    "nights": 4,
+    "economy": 14000,
+    "duration": 540,
+    "image": "imagenes-viajes/destinos/destino-boston.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/boston.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/boston-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 750,
+    "alt": "Fotografía de Boston, Estados Unidos",
+    "photoAuthor": "Transcend disillusion",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Boston_skyline_at_dusk.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "boston-estancia-1",
+        "name": "Casa del Patio · Boston",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3300,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Boston.",
+        "image": "hoteles/boston-hotel-1.jpg",
+        "photoAuthor": "ООО «Онега Палас»",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Intourist_Onego_Palace_Hotel_Twin_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "boston-estancia-2",
+        "name": "Estancia del Parque · Boston",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3795,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Boston.",
+        "image": "hoteles/boston-hotel-2.jpg",
+        "photoAuthor": "Rufouslark",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:N1_Hotel_Victoria_Falls_Twin_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "boston-estancia-3",
+        "name": "Suites del Paseo · Boston",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4455,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Boston.",
+        "image": "hoteles/boston-hotel-3.jpg",
+        "photoAuthor": "J o",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Imperial_Hotel_Osaka_regular_floor_standard_twin_room_20120630-001.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "boston-estancia-4",
+        "name": "Terraza del Centro · Boston",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 5115,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Boston.",
+        "image": "hoteles/boston-hotel-4.jpg",
+        "photoAuthor": "Opera Cadet from PARIS, FRANCE",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Twin_room_-_Paris_Opera_Cadet_Hotel.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "boston-estancia-5",
+        "name": "Residencia del Mirador · Boston",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 6270,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Boston.",
+        "image": "hoteles/boston-hotel-5.jpg",
+        "photoAuthor": "Rufouslark",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:N1_Hotel_Samora_Machel_Twin_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "chicago",
+    "name": "Chicago",
+    "country": "Estados Unidos",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Arquitectura junto al río y tardes frente al lago.",
+    "intro": "Arquitectura junto al río y tardes frente al lago.",
+    "description": "Arquitectura junto al río y tardes frente al lago. Organizá tu visita alrededor de Millennium Park, Chicago Riverwalk y Navy Pier. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Millennium Park",
+      "Chicago Riverwalk",
+      "Navy Pier"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Chicago",
+    "transfer": "Llegada por ORD. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "ORD",
+      "name": "Chicago O'Hare International Airport"
+    },
+    "nights": 4,
+    "economy": 13800,
+    "duration": 540,
+    "image": "imagenes-viajes/destinos/destino-chicago.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/chicago.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/chicago-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 929,
+    "alt": "Fotografía de Chicago, Estados Unidos",
+    "photoAuthor": "Diego Delso",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Skyline_de_Chicago_desde_el_centro,_Illinois,_Estados_Unidos,_2012-10-20,_DD_06.jpg",
+    "photoLicense": "CC BY-SA 3.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "hotels": [
+      {
+        "id": "chicago-estancia-1",
+        "name": "Casa del Patio · Chicago",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2800,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Chicago.",
+        "image": "hoteles/chicago-hotel-1.jpg",
+        "photoAuthor": "Rufouslark",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:N1_Hotel_Rotten_Row_Twin_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "chicago-estancia-2",
+        "name": "Estancia del Parque · Chicago",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3220,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Chicago.",
+        "image": "hoteles/chicago-hotel-2.jpg",
+        "photoAuthor": "TheTowerHotel",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Tower_-_Standard_Twin_Room.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "chicago-estancia-3",
+        "name": "Suites del Paseo · Chicago",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3780,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Chicago.",
+        "image": "hoteles/chicago-hotel-3.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Universal_Twin_Room_(21721034739).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "chicago-estancia-4",
+        "name": "Terraza del Centro · Chicago",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4340,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Chicago.",
+        "image": "hoteles/chicago-hotel-4.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Universal_Twin_Room_(21881753656).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "chicago-estancia-5",
+        "name": "Residencia del Mirador · Chicago",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 5320,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Chicago.",
+        "image": "hoteles/chicago-hotel-5.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Comfort_Twin_Room_(21286847333).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ]
+  },
+  {
+    "id": "san-francisco",
+    "name": "San Francisco",
+    "country": "Estados Unidos",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Colinas, tranvías y paseos por la bahía.",
+    "intro": "Colinas, tranvías y paseos por la bahía.",
+    "description": "Colinas, tranvías y paseos por la bahía. Organizá tu visita alrededor de Golden Gate, Pier 39 y Golden Gate Park. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Golden Gate",
+      "Pier 39",
+      "Golden Gate Park"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "San Francisco",
+    "transfer": "Llegada por SFO. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "SFO",
+      "name": "San Francisco International Airport"
+    },
+    "nights": 5,
+    "economy": 17000,
+    "duration": 660,
+    "image": "imagenes-viajes/destinos/destino-san-francisco.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/san-francisco.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/san-francisco-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1080,
+    "alt": "Fotografía de San Francisco, Estados Unidos",
+    "photoAuthor": "Dietmar Rabich",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Fisherman%27s_Wharf_Parking_Garage,_Skyline_--_2022_--_151006.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "san-francisco-estancia-1",
+        "name": "Casa del Patio · San Francisco",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3100,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para San Francisco.",
+        "image": "hoteles/san-francisco-hotel-1.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Universal_Twin_Room_(21720124068).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "san-francisco-estancia-2",
+        "name": "Estancia del Parque · San Francisco",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3565,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para San Francisco.",
+        "image": "hoteles/san-francisco-hotel-2.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Universal_Twin_Room_(21721082119).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "san-francisco-estancia-3",
+        "name": "Suites del Paseo · San Francisco",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4185,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para San Francisco.",
+        "image": "hoteles/san-francisco-hotel-3.jpg",
+        "photoAuthor": "LauraKeay",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:M_Room_(Double_or_Twin_Room).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "san-francisco-estancia-4",
+        "name": "Terraza del Centro · San Francisco",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4805,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para San Francisco.",
+        "image": "hoteles/san-francisco-hotel-4.jpg",
+        "photoAuthor": "Julian Renom",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Deluxe_Room_Palace_Hotel_Viareggio.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "id": "san-francisco-estancia-5",
+        "name": "Residencia del Mirador · San Francisco",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 5890,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para San Francisco.",
+        "image": "hoteles/san-francisco-hotel-5.jpg",
+        "photoAuthor": "Allvin Garamar",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Deluxe_Room_-_Teraskita_Hotel_Makassar.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "honolulu",
+    "name": "Honolulu",
+    "country": "Estados Unidos",
+    "region": "internacional",
+    "type": "playa",
+    "tag": "Costa y ciudad",
+    "signature": "Playa y senderos en la costa sur de Oahu.",
+    "intro": "Playa y senderos en la costa sur de Oahu.",
+    "description": "Playa y senderos en la costa sur de Oahu. Organizá tu visita alrededor de Waikīkī, Diamond Head y Palacio Iolani. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Waikīkī",
+      "Diamond Head",
+      "Palacio Iolani"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Honolulu",
+    "transfer": "Llegada por HNL. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "HNL",
+      "name": "Daniel K. Inouye International Airport"
+    },
+    "nights": 6,
+    "economy": 24600,
+    "duration": 1020,
+    "image": "imagenes-viajes/destinos/destino-honolulu.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/honolulu.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/honolulu-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1080,
+    "alt": "Fotografía de Honolulu, Estados Unidos",
+    "photoAuthor": "Robert Linsdell from St. Andrews, Canada",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Waikiki,_Honolulu_(503694)_(20586157459).jpg",
+    "photoLicense": "CC BY 2.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "hotels": [
+      {
+        "id": "honolulu-estancia-1",
+        "name": "Casa del Patio · Honolulu",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3400,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Honolulu.",
+        "image": "hoteles/honolulu-hotel-1.jpg",
+        "photoAuthor": "Royalparkhotelhk",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Royal_Park_Hotel_Deluxe_Room.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "id": "honolulu-estancia-2",
+        "name": "Estancia del Parque · Honolulu",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3910,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Honolulu.",
+        "image": "hoteles/honolulu-hotel-2.jpg",
+        "photoAuthor": "Hotel Shakti City Jakarta",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Deluxe_Room_Shakti_Hotel_City_Jakarta.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "honolulu-estancia-3",
+        "name": "Suites del Paseo · Honolulu",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4590,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Honolulu.",
+        "image": "hoteles/honolulu-hotel-3.jpg",
+        "photoAuthor": "Unique Hotels",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Zen_Deluxe_room_-_von_Stackelberg_Hotel_Tallinn.jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "honolulu-estancia-4",
+        "name": "Terraza del Centro · Honolulu",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 5270,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Honolulu.",
+        "image": "hoteles/honolulu-hotel-4.jpg",
+        "photoAuthor": "J o",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Kyoto_Yura_Hotel_MGallery_Deluxe_Room_Twin_20201102-001.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "honolulu-estancia-5",
+        "name": "Residencia del Mirador · Honolulu",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 6460,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Honolulu.",
+        "image": "hoteles/honolulu-hotel-5.jpg",
+        "photoAuthor": "Holidayinnklg",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Deluxe_Room_-_Twin_beds.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ]
+  },
+  {
+    "id": "orlando",
+    "name": "Orlando",
+    "country": "Estados Unidos",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Parques, jardines y entretenimiento en Florida.",
+    "intro": "Parques, jardines y entretenimiento en Florida.",
+    "description": "Parques, jardines y entretenimiento en Florida. Organizá tu visita alrededor de Lake Eola Park, Winter Park y International Drive. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Lake Eola Park",
+      "Winter Park",
+      "International Drive"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Orlando",
+    "transfer": "Llegada por MCO. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "MCO",
+      "name": "Orlando International Airport"
+    },
+    "nights": 5,
+    "economy": 10800,
+    "duration": 360,
+    "image": "imagenes-viajes/destinos/destino-orlando.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/orlando.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/orlando-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1280,
+    "alt": "Fotografía de Orlando, Estados Unidos",
+    "photoAuthor": "JER3L1337",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Lake_Eola_and_Orlando_Skyline_seen_in_2024.jpg",
+    "photoLicense": "CC BY 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "hotels": [
+      {
+        "id": "orlando-estancia-1",
+        "name": "Casa del Patio · Orlando",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2200,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Orlando.",
+        "image": "hoteles/orlando-hotel-1.jpg",
+        "photoAuthor": "Cherylsh.ng for The Ritz-Carlton, Millenia Singapore.",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Deluxe_room_with_Marina_Bay_view,_The_Ritz-Carlton_Millenia_Singapore_-_20110722.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "orlando-estancia-2",
+        "name": "Estancia del Parque · Orlando",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2530,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Orlando.",
+        "image": "hoteles/orlando-hotel-2.jpg",
+        "photoAuthor": "J o",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Richmond_Hotel_Premier_Asakusa_International_Standard_Room_One-Bed_20160502-001.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "orlando-estancia-3",
+        "name": "Suites del Paseo · Orlando",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2970,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Orlando.",
+        "image": "hoteles/orlando-hotel-3.jpg",
+        "photoAuthor": "Uri Tours",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Jangsusan_Hotel_-_Standard_room_(16142743362).jpg",
+        "photoLicense": "CC BY-SA 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "id": "orlando-estancia-4",
+        "name": "Terraza del Centro · Orlando",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3410,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Orlando.",
+        "image": "hoteles/orlando-hotel-4.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Japanese-Style_Standard_Room_(35824133030).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "orlando-estancia-5",
+        "name": "Residencia del Mirador · Orlando",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4180,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Orlando.",
+        "image": "hoteles/orlando-hotel-5.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Japanese-Style_Standard_Room_(35824133270).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ]
+  },
+  {
+    "id": "quito",
+    "name": "Quito",
+    "country": "Ecuador",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Plazas coloniales y vistas de los Andes.",
+    "intro": "Plazas coloniales y vistas de los Andes.",
+    "description": "Plazas coloniales y vistas de los Andes. Organizá tu visita alrededor de Plaza Grande, Iglesia de la Compañía y Basílica del Voto Nacional. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Plaza Grande",
+      "Iglesia de la Compañía",
+      "Basílica del Voto Nacional"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Quito",
+    "transfer": "Llegada por UIO. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "UIO",
+      "name": "Mariscal Sucre International Airport"
+    },
+    "nights": 4,
+    "economy": 12500,
+    "duration": 420,
+    "image": "imagenes-viajes/destinos/destino-quito.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/quito.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/quito-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1280,
+    "alt": "Fotografía de Quito, Ecuador",
+    "photoAuthor": "Ymblanter",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Quito_Panorama_of_El_Panecillo_from_Calle_Cuenca.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "quito-estancia-1",
+        "name": "Casa del Patio · Quito",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1400,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Quito.",
+        "image": "hoteles/quito-hotel-1.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Japanese-Style_Standard_Room_(36081972001).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "quito-estancia-2",
+        "name": "Estancia del Parque · Quito",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1610,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Quito.",
+        "image": "hoteles/quito-hotel-2.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Japanese-Style_Standard_Room_(36050872272).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "quito-estancia-3",
+        "name": "Suites del Paseo · Quito",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1890,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Quito.",
+        "image": "hoteles/quito-hotel-3.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Japanese-Style_Standard_Room_(36081971671).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "quito-estancia-4",
+        "name": "Terraza del Centro · Quito",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2170,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Quito.",
+        "image": "hoteles/quito-hotel-4.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Japanese-Style_Standard_Room_(36081972191).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "quito-estancia-5",
+        "name": "Residencia del Mirador · Quito",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2660,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Quito.",
+        "image": "hoteles/quito-hotel-5.jpg",
+        "photoAuthor": "Teetrikart",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87_standard_room_%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "cusco",
+    "name": "Cusco",
+    "country": "Perú",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Historia inca y calles de piedra en los Andes.",
+    "intro": "Historia inca y calles de piedra en los Andes.",
+    "description": "Historia inca y calles de piedra en los Andes. Organizá tu visita alrededor de Plaza de Armas, Qorikancha y San Blas. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Plaza de Armas",
+      "Qorikancha",
+      "San Blas"
+    ],
+    "tip": "Reservá tiempo para aclimatarte a la altura y empezá con un ritmo tranquilo.",
+    "arrival": "Cusco",
+    "transfer": "Llegada por CUZ. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "CUZ",
+      "name": "Alejandro Velasco Astete International Airport"
+    },
+    "nights": 5,
+    "economy": 16000,
+    "duration": 660,
+    "image": "imagenes-viajes/destinos/destino-cusco.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/cusco.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/cusco-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1080,
+    "alt": "Fotografía de Cusco, Perú",
+    "photoAuthor": "WMrapids",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Cusco_skyline_-_October_2025.jpg",
+    "photoLicense": "CC0",
+    "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "hotels": [
+      {
+        "id": "cusco-estancia-1",
+        "name": "Casa del Patio · Cusco",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1600,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Cusco.",
+        "image": "hoteles/cusco-hotel-1.jpg",
+        "photoAuthor": "Hotel Makár Sport & …",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Standard_room_-_panoramio.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "cusco-estancia-2",
+        "name": "Estancia del Parque · Cusco",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1840,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Cusco.",
+        "image": "hoteles/cusco-hotel-2.jpg",
+        "photoAuthor": "Teetrikart",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87_standard_room_%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%84%E0%B8%B9%E0%B9%88.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "cusco-estancia-3",
+        "name": "Suites del Paseo · Cusco",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2160,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Cusco.",
+        "image": "hoteles/cusco-hotel-3.jpg",
+        "photoAuthor": "Nishimuraya Kinosaki Onsen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Japanese-Style_Standard_Room_(35824134410).jpg",
+        "photoLicense": "CC BY 2.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      },
+      {
+        "id": "cusco-estancia-4",
+        "name": "Terraza del Centro · Cusco",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2480,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Cusco.",
+        "image": "hoteles/cusco-hotel-4.jpg",
+        "photoAuthor": "N509FZ",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Standard_room_at_The_Ritz-Carlton_Shenzhen_(20160809171526).jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "cusco-estancia-5",
+        "name": "Residencia del Mirador · Cusco",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3040,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Cusco.",
+        "image": "hoteles/cusco-hotel-5.jpg",
+        "photoAuthor": "Mohbaaghil",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guestroom_View.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      }
+    ]
+  },
+  {
+    "id": "montevideo",
+    "name": "Montevideo",
+    "country": "Uruguay",
+    "region": "internacional",
+    "type": "cultura",
+    "tag": "Calles e historia",
+    "signature": "Paseos costeros junto al Río de la Plata.",
+    "intro": "Paseos costeros junto al Río de la Plata.",
+    "description": "Paseos costeros junto al Río de la Plata. Organizá tu visita alrededor de Ciudad Vieja, Rambla de Montevideo y Mercado del Puerto. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Ciudad Vieja",
+      "Rambla de Montevideo",
+      "Mercado del Puerto"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Montevideo",
+    "transfer": "Llegada por MVD. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "MVD",
+      "name": "Carrasco General Cesáreo L. Berisso International Airport"
+    },
+    "nights": 5,
+    "economy": 18500,
+    "duration": 840,
+    "image": "imagenes-viajes/destinos/destino-montevideo.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/montevideo.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/montevideo-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1394,
+    "alt": "Fotografía de Montevideo, Uruguay",
+    "photoAuthor": "Felipe Restrepo Acosta",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:2016_centro_de_Montevideo_desde_la_Rambla_del_presidente_Wilson.jpg",
+    "photoLicense": "CC BY-SA 4.0",
+    "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "hotels": [
+      {
+        "id": "montevideo-estancia-1",
+        "name": "Casa del Patio · Montevideo",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 1800,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Montevideo.",
+        "image": "hoteles/montevideo-hotel-1.jpg",
+        "photoAuthor": "Ajtnk",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guestroom,_Peninsula_Hong_Kong.JPG",
+        "photoLicense": "Public domain",
+        "photoLicenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      },
+      {
+        "id": "montevideo-estancia-2",
+        "name": "Estancia del Parque · Montevideo",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2070,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Montevideo.",
+        "image": "hoteles/montevideo-hotel-2.jpg",
+        "photoAuthor": "Mohbaaghil",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guestroom_View_02.jpg",
+        "photoLicense": "CC0",
+        "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      {
+        "id": "montevideo-estancia-3",
+        "name": "Suites del Paseo · Montevideo",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2430,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Montevideo.",
+        "image": "hoteles/montevideo-hotel-3.jpg",
+        "photoAuthor": "阿道",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_of_Executive_Guestroom_of_the_Grand_Hi-Lai_Hotel,_Kaohsiung-01.2024-11-11.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "montevideo-estancia-4",
+        "name": "Terraza del Centro · Montevideo",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2790,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Montevideo.",
+        "image": "hoteles/montevideo-hotel-4.jpg",
+        "photoAuthor": "Frank Schulenburg",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:East_Brother_Light,_guestroom.jpg",
+        "photoLicense": "CC BY-SA 3.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "id": "montevideo-estancia-5",
+        "name": "Residencia del Mirador · Montevideo",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3420,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Montevideo.",
+        "image": "hoteles/montevideo-hotel-5.jpg",
+        "photoAuthor": "Atwngirl",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:2022_-_Americus_Hotel_-_King_Room_2_-_Allentown_PA.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  },
+  {
+    "id": "auckland",
+    "name": "Auckland",
+    "country": "Nueva Zelanda",
+    "region": "internacional",
+    "type": "naturaleza",
+    "tag": "Parques y paisajes",
+    "signature": "Puertos y colinas volcánicas junto al mar.",
+    "intro": "Puertos y colinas volcánicas junto al mar.",
+    "description": "Puertos y colinas volcánicas junto al mar. Organizá tu visita alrededor de Sky Tower, Viaduct Harbour y Mount Eden. Encontrás diez propuestas para elegir según tus intereses y el tiempo disponible.",
+    "highlights": [
+      "Sky Tower",
+      "Viaduct Harbour",
+      "Mount Eden"
+    ],
+    "tip": "Consultá horarios, accesibilidad y disponibilidad de entradas antes de confirmar cada visita.",
+    "arrival": "Auckland",
+    "transfer": "Llegada por AKL. Traslado al hospedaje disponible en la sección de transporte.",
+    "airport": {
+      "code": "AKL",
+      "name": "Auckland International Airport"
+    },
+    "nights": 6,
+    "economy": 36000,
+    "duration": 1800,
+    "image": "imagenes-viajes/destinos/destino-auckland.jpg",
+    "thumbnail": "imagenes-viajes/destinos/miniaturas/auckland.jpg",
+    "mediumImage": "imagenes-viajes/destinos/miniaturas/auckland-1280.jpg",
+    "imageWidth": 1920,
+    "imageHeight": 1212,
+    "alt": "Fotografía de Auckland, Nueva Zelanda",
+    "photoAuthor": "Daderot",
+    "photoSource": "https://commons.wikimedia.org/wiki/File:Skyline_-_Auckland,_NZ_-_DSC07092.jpg",
+    "photoLicense": "CC0",
+    "photoLicenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "hotels": [
+      {
+        "id": "auckland-estancia-1",
+        "name": "Casa del Patio · Auckland",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2600,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Casa del Patio; alojamiento de demostración para Auckland.",
+        "image": "hoteles/auckland-hotel-1.jpg",
+        "photoAuthor": "KatePal25",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Fairmont_Signature_Guestroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "auckland-estancia-2",
+        "name": "Estancia del Parque · Auckland",
+        "stars": 3,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 2990,
+        "amenities": [
+          "Wi-Fi",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Estancia del Parque; alojamiento de demostración para Auckland.",
+        "image": "hoteles/auckland-hotel-2.jpg",
+        "photoAuthor": "Antti Leppänen",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Interior_guestroom_wing_Muuratsalo_Experimental_House_01.jpg",
+        "photoLicense": "CC BY 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by/4.0"
+      },
+      {
+        "id": "auckland-estancia-3",
+        "name": "Suites del Paseo · Auckland",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 3510,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Suites del Paseo; alojamiento de demostración para Auckland.",
+        "image": "hoteles/auckland-hotel-3.jpg",
+        "photoAuthor": "Megspiegs",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Hilton_portland_guestroom.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "auckland-estancia-4",
+        "name": "Terraza del Centro · Auckland",
+        "stars": 4,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4030,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Terraza del Centro; alojamiento de demostración para Auckland.",
+        "image": "hoteles/auckland-hotel-4.jpg",
+        "photoAuthor": "阿道",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Guestroom_Corridor_of_The_Lalu_Hotel-11.2024-05-09.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "id": "auckland-estancia-5",
+        "name": "Residencia del Mirador · Auckland",
+        "stars": 5,
+        "area": "Zona por confirmar con el alojamiento",
+        "rate": 4940,
+        "amenities": [
+          "Wi-Fi",
+          "Desayuno",
+          "Estacionamiento",
+          "Aire acondicionado"
+        ],
+        "imageAlt": "Habitación de referencia de Residencia del Mirador; alojamiento de demostración para Auckland.",
+        "image": "hoteles/auckland-hotel-5.jpg",
+        "photoAuthor": "Choice Hotels International, Inc.",
+        "photoSource": "https://commons.wikimedia.org/wiki/File:Cambria_Hotel_New_Orleans_Warehouse_District_guestroom,_November_2017.jpg",
+        "photoLicense": "CC BY-SA 4.0",
+        "photoLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ]
+  }
+]);
+// END CATALOGO 100 DESTINOS
   destinations.push(...additionalDestinations);
 
   const airlines = {

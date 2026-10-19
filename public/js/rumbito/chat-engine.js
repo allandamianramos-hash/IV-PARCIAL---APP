@@ -60,7 +60,7 @@
       if (!trip) return answer("¡Hagamos espacio para disfrutar! ¿Para qué destino armamos una idea de itinerario?", trips.map(t => `Itinerario de ${t.name}`));
       return answer(`Una escapada sin correr por ${trip.name}:\n• Al llegar: acomódate y da un paseo corto para ubicarte.\n${(trip.highlights || [trip.description]).map((h, i) => `• Momento ${i + 1}: ${h.toLowerCase()}.`).join("\n")}\n• Antes de volver: deja margen para el traslado y una última comida tranquila.\n${trip.tip || ""}\nEs inspiración: no incluye entradas, horarios ni servicios reservados.`, ["Qué llevar", "Ver hoteles", "Planificar mi viaje"], [link("Ver destino")]);
     }
-    const productMatches = products.filter(p => normalize(p.name).split(/\s+/).filter(w => w.length > 3).some(w => q.includes(w)));
+    const productMatches = products.filter(p => normalize(p.name).split(/\s+/).filter(w => w.length > 3 && !['viaje', 'para'].includes(w)).some(w => q.includes(w)));
     if (/tienda|comprar|accesorio|carrito|precio.*(mochila|maleta)/.test(q) || productMatches.length) {
       const selected = productMatches.length ? productMatches.slice(0, 5) : products.slice(0, 4);
       return answer(`Para tu equipo de viaje, la tienda tiene estas opciones:\n${selected.map(p => `• ${p.name}: ${money(p.price)}. ${p.description}`).join("\n")}\nPuedes comparar artículos y preparar tu lista de viaje.`, ["Qué llevar", "Planificar mi viaje"], [{ label: "Ver tienda", href: "tienda.html" }]);

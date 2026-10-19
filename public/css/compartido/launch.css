@@ -6,6 +6,7 @@
 .rumbo-checkout [data-close],.cookie-dialog [data-close]{background:transparent;border:0;font-size:26px;min-width:44px;min-height:44px;cursor:pointer}
 .payment-notice,.payment-success>p,.legal-intro{color:var(--secondary);line-height:1.7}
 .payment-notice{padding:14px 16px;background:var(--field);border-radius:8px}
+.payment-disclosure,.payment-success>p.payment-disclosure,#store-payment-status.payment-disclosure{font-size:.8125rem;line-height:1.6;color:var(--secondary);margin:12px 0;background:none;padding:0}
 .payment-steps{display:flex;justify-content:space-between;gap:8px;list-style:none;padding:16px 0;font-size:.82rem;color:var(--secondary);border-block:1px solid var(--line)}
 .receipt-items{list-style:none;padding:0;margin:16px 0}.receipt-items li{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
 .receipt-items li>div{min-width:0}.receipt-items li>strong{white-space:nowrap;font-size:.9rem}.receipt-items p{font-size:.86rem;line-height:1.65;color:var(--secondary);margin:5px 0;overflow-wrap:anywhere}

@@ -25,7 +25,16 @@ export async function getDb() {
     pool.on('error', () => { poolPromise = undefined; });
     await pool.connect();
     return pool;
-  })().catch(error => { poolPromise = undefined; throw error; });
+  })().catch(error => {
+    poolPromise = undefined;
+    if (process.env.NODE_ENV === 'production') {
+      // Keep the actionable network detail in private runtime logs only.
+      // Never log the connection object, credentials or the full driver error.
+      const clientIp=/Client with IP address '([0-9.]+)'/.exec(error.message||'')?.[1];
+      console.error('Rumbo SQL connection failed',JSON.stringify({code:error.code||'UNKNOWN',number:error.number||error.originalError?.info?.number,clientIp}));
+    }
+    throw error;
+  });
   return { pool: await poolPromise, sql: driver };
 }
 export async function closeDb() {

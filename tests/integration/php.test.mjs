@@ -26,8 +26,8 @@ test('PHP + SQL Server: registro, login, persistencia, aislamiento y compatibili
  try {
   assert.equal((await (await request('/api/health')).json()).backend,'php');
   const guest=await page(),other=await page();
-  assert.equal(guest.boot.catalog.products.length,100);assert.equal(guest.boot.catalog.destinations.length,48);
-  assert.equal(guest.boot.catalog.destinations.reduce((n,d)=>n+d.hotels.length,0),180);
+  assert.equal(guest.boot.catalog.products.length,100);assert.equal(guest.boot.catalog.destinations.length,70);
+  assert.equal(guest.boot.catalog.destinations.reduce((n,d)=>n+d.hotels.length,0),350);
   const key='rumbo.profile.v1',value={alias:'Prueba PHP ñ',preference:'cultura'};
   const put=(cookie,owner,revision=0,extra={})=>request('/api/state',{cookie,method:'PUT',headers:{'X-Rumbo-Visitor':owner,...extra},body:{changes:{[key]:{value,revision}}}});
   assert.equal((await put(guest.cookie,guest.boot.visitor)).status,200);

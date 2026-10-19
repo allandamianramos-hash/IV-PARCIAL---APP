@@ -15,6 +15,8 @@ import {sendContent} from './backend/node/http-content.mjs';
 import {ordersApi} from './backend/node/orders-api.mjs';
 import {analyticsApi} from './backend/node/analytics-api.mjs';
 import {seoHtml,seoEndpoint} from './backend/node/seo.mjs';
+import {runtimeConfig} from './backend/node/runtime-config.mjs';
+import {htmlTemplate} from './backend/node/html-template.mjs';
 const root = fileURLToPath(new URL("./public/", import.meta.url));
 const publicFiles = new Set(["error.html", "js/compartido/error.js", "js/compartido/connection.js", "index.html", "js/inicio/script.js", "js/rumbito/chat-engine.js", "js/rumbito/chat-client.js", "js/rumbito/chat-ui.js", "css/rumbito/chat.css", "css/inicio/style.css", "viajes.html", "js/destinos/viajes.js", "css/destinos/viajes.css", "tienda.html", "js/tienda/tienda.js", "css/tienda/tienda.css", "servicios.html", "js/servicios/servicios.js", "css/servicios/servicios.css", "js/compartido/common.js", "css/compartido/common.css", "js/servicios/journey.js", "css/inicio/promociones.css", "css/compartido/design.css"]);
 const mime = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
@@ -78,7 +80,7 @@ export function createApp(chatOptions) {
       const image = /^(imagenes|imagenes-viajes)(?:\/[a-zA-Z0-9_-]+)+\.(jpg|png|webp)$/.test(path);
       // Only public assets; credentials and configuration never leave the server.
       if (!publicFiles.has(path) && !image) { sendError(req,res,404); return; }
-      let data = await readFile(resolve(root, path));
+      let data = await readFile(extname(path)==='.html'?htmlTemplate(path):resolve(root, path));
       if(extname(path)==='.html')data=seoHtml(data.toString('utf8'),req.url);
       if (extname(path) === '.html' && path !== 'error.html' && path !== 'microsoft-callback.html' && req.method === 'GET') {
         const initial = await bootstrap(req, res);
@@ -88,15 +90,15 @@ export function createApp(chatOptions) {
     } catch (error) { sendError(req,res,error.code === "ENOENT" ? 404 : 500); }
   });
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+export function startServer() {
   try { loadEnvFile(new URL('.env', import.meta.url)); } catch (error) { if (error.code !== 'ENOENT') throw error; }
-  const port = Number(process.env.PORT || 3000);
+  const {port,host} = runtimeConfig();
   const server = createApp();
   server.on("error", error => {
     console.error(error.code === "EADDRINUSE" ? "Puerto ocupado. Si Rumbo ya esta iniciado, abre http://localhost:3000. Tambien puedes configurar PORT." : "No se pudo iniciar Rumbo.");
     process.exitCode = 1;
   });
-  server.listen(port, "127.0.0.1", () => {
+  server.listen(port, host, () => {
     const url = `http://localhost:${port}`;
     console.log(`Rumbo: ${url}`);
     if (process.argv.includes('--open') && process.platform === 'win32') {
@@ -105,4 +107,8 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       browser.unref();
     }
   });
+  return server;
+}
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  startServer();
 }

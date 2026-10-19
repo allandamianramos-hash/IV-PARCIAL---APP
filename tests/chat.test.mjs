@@ -74,6 +74,15 @@ test("productos especificos y contactos salen del catalogo", () => {
   assert.match(send("precio de power bank").reply, /350/);
   assert.match(send("contactos").reply, /contacto@ejemplo.test/);
 });
+
+test("planificar un viaje no se confunde con productos que incluyen viaje en su nombre", () => {
+  const storeContext = {...context,products:[{name:'Mochila de viaje',price:450,description:'Mochila'}]};
+  const result = globalThis.RumboChat.respond('Planificar mi viaje',{},storeContext,{});
+  assert.equal(result.step,'company');
+  assert.match(result.reply,/Viajas solo/);
+  assert.deepEqual(result.actions,[]);
+  assert.match(globalThis.RumboChat.respond('precio de mochila',{},storeContext,{}).reply,/450/);
+});
 test("editar presupuesto conserva el resto y reinicia la pregunta", () => {
   const send = conversation(); send("viajo solo playa tengo 10000");
   assert.equal(send("cambiar presupuesto").step, "budget");

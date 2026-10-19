@@ -25,10 +25,12 @@ test('checkout shared by shop and trip; account history persists on mobile and a
   await page.locator('#checkout-btn').click();await page.locator('#pay-store').click();await page.locator('#confirm-payment').waitFor();
   assert.equal(await page.locator('#rumbo-checkout input:not([type=checkbox])').count(),0);
   await page.locator('#confirm-payment').click();assert.match(await page.locator('#payment-status').innerText(),/acepta/);
-  await page.locator('#payment-consent').check();await page.locator('#payment-scenario').selectOption('declined');await page.locator('#confirm-payment').click();assert.match(await page.locator('#payment-status').innerText(),/rechazado/);
+  assert.equal(await page.locator('#payment-scenario').count(),0);
+  assert.match(await page.locator('#payment-disclosure').innerText(),/no se realiza ningún cobro/);
+  await page.locator('#payment-consent').check();
   assert.equal((await (await context.request.get(base+'/api/orders')).json()).orders.length,0);
-  await page.locator('#payment-scenario').selectOption('approved');await page.screenshot({path:'evidencias/lanzamiento/pago-movil.png'});
-  await page.locator('#confirm-payment').click();await page.locator('.payment-success').waitFor({timeout:30000});
+  await page.screenshot({path:'evidencias/lanzamiento/pago-movil.png'});
+  await page.locator('#confirm-payment').click();await page.locator('.payment-success').waitFor({timeout:30000});assert.match(await page.locator('.payment-success h3').innerText(),/Pago realizado correctamente/);
   await page.locator('.payment-success a').click();await page.locator('.history-order').waitFor();assert.equal(await page.locator('.history-order').count(),1);
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   await page.goto(base+'/servicios.html?seccion=mi-viaje');await page.locator('.mobile-selection-dock').click();await page.locator('#demo-consent').check();await page.locator('#complete-demo').click();
@@ -39,7 +41,7 @@ test('checkout shared by shop and trip; account history persists on mobile and a
   const second=await browser.newContext(),signed=await second.request.post(base+'/api/auth/login',{headers:{Origin:base},data:{email,password}});assert.equal(signed.status(),200);
   const otherPage=await second.newPage();await otherPage.goto(base+'/servicios.html?seccion=historial');await otherPage.waitForFunction(()=>document.querySelectorAll('.history-order').length===2);
   await page.locator('[data-kind=store]').click();await page.waitForFunction(()=>document.querySelectorAll('.history-order').length===1);
-  const dl=page.waitForEvent('download');await page.locator('.history-order [data-download]').click();assert.match((await dl).suggestedFilename(),/^RMB-DEMO-/);
+  const dl=page.waitForEvent('download');await page.locator('.history-order [data-download]').click();assert.match((await dl).suggestedFilename(),/^RMB-/);
   assert.deepEqual(errors,[]);
  }finally{
   await browser.close();const {pool,sql}=await getDb();

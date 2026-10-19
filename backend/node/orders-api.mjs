@@ -40,7 +40,7 @@ export async function ordersApi(req,res){
       const quote=checkoutQuote(kind,state,catalog);
       if(!body){await tx.commit();reply(res,200,{quote});return true;}
       if(body.fingerprint!==quote.fingerprint)throw new CheckoutError('Tu selección ha cambiado. Cierra y vuelve a revisar el pago.',409);
-      const order={...quote,code:'RMB-DEMO-'+randomUUID().toUpperCase(),date:new Date().toISOString(),status:'simulated',policyVersion:'2026-10-17'};
+      const order={...quote,code:'RMB-'+randomUUID().toUpperCase(),date:new Date().toISOString(),status:'simulated',policyVersion:'2026-10-17'};
       const saved=(await new sql.Request(tx).input('user',sql.UniqueIdentifier,user.Id).input('kind',sql.VarChar(10),kind).input('fingerprint',sql.Char(64),quote.fingerprint).input('data',sql.NVarChar(sql.MAX),JSON.stringify(order)).query('INSERT dbo.RumboOrders(UserId,Kind,Fingerprint,DataJson) OUTPUT INSERTED.Id VALUES(@user,@kind,@fingerprint,@data)')).recordset[0];
       await tx.commit();reply(res,201,{order:{...order,id:String(saved.Id)}});
     }catch(error){await tx.rollback().catch(()=>{});throw error;}

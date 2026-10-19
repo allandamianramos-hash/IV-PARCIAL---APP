@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 import { dbEnabled } from './db.mjs';
 import { loadCatalog } from './database-api.mjs';
+import {htmlTemplate} from './html-template.mjs';
 
 // Load the same trusted catalogues used by the pages, without running their UI.
 const sandbox = { URLSearchParams, window: {}, document: { body: { classList: { contains: () => false }, dataset: {} }, readyState: 'loading', addEventListener() {}, querySelector: () => null } };
@@ -15,7 +16,7 @@ for (const file of ['js/destinos/viajes.js', 'js/tienda/tienda.js', 'js/rumbito/
 const { destinations, flights } = sandbox.window.RumboViajesDatos;
 const context = {
   trips: destinations, flights, products: sandbox.window.RumboProducts,
-  contacts: [...(await readFile(new URL('../../public/index.html', import.meta.url), 'utf8')).matchAll(/href="(?:tel:|mailto:)([^"]+)"/g)].map(m => m[1]),
+  contacts: [...(await readFile(htmlTemplate('index.html'), 'utf8')).matchAll(/href="(?:tel:|mailto:)([^"]+)"/g)].map(m => m[1]),
   catalog: destinations.map(t => ({ ...t, style: t.type, price: t.inspirationBudget }))
 };
 const catalogue = JSON.stringify({ destinations: destinations.map(d => ({ id: d.id, name: d.name, description: d.description, tip: d.tip, budgetHNL: d.inspirationBudget, flightPromotion: d.promotion, flightFromHNL: flights(d, 'Tegucigalpa')[0]?.economy })), products: context.products.map(({ name, price }) => ({ name, priceHNL: price })) });

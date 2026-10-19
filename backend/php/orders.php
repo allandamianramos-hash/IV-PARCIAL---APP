@@ -38,7 +38,7 @@ function handle_orders(string $path,string $method): never {
         $quote=demo_quote($kind,read_state($user['VisitorId']),$catalog);
         if(!$body){$connection->commit();respond(200,['quote'=>$quote]);}
         if(!hash_equals($quote['fingerprint'],$body->fingerprint))throw new HttpError(409,'Tu selección ha cambiado. Cierra y vuelve a revisar el pago.');
-        $order=array_merge($quote,['code'=>'RMB-DEMO-'.strtoupper(bin2hex(random_bytes(16))),'date'=>gmdate('Y-m-d\TH:i:s\Z'),'status'=>'simulated','policyVersion'=>'2026-10-17']);
+        $order=array_merge($quote,['code'=>'RMB-'.strtoupper(bin2hex(random_bytes(16))),'date'=>gmdate('Y-m-d\TH:i:s\Z'),'status'=>'simulated','policyVersion'=>'2026-10-17']);
         $id=query('INSERT dbo.RumboOrders(UserId,Kind,Fingerprint,DataJson) OUTPUT INSERTED.Id VALUES(?,?,?,?)',[$user['Id'],$kind,$quote['fingerprint'],encode_json($order)])->fetchColumn();
         $connection->commit();respond(201,['order'=>array_merge($order,['id'=>(string)$id])]);
     }catch(Throwable $e){if($connection->inTransaction())$connection->rollBack();throw $e;}

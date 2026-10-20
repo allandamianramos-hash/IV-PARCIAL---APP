@@ -93,3 +93,16 @@ test("preguntas ajenas no inventan respuestas ni reservas", () => {
   assert.match(conversation()("quiero reservar").reply, /reunir tus selecciones en Mi viaje/);
 });
 
+test("destinos y precio mínimo salen del catálogo actual sin referencias antiguas", () => {
+  const current = {...context,catalog:context.catalog.slice(0,1),trips:context.trips.slice(0,1)};
+  const result = globalThis.RumboChat.respond('¿Cuál es el destino más barato?',{},current,{});
+  assert.match(result.reply,/1 destinos/);
+  assert.match(result.reply,/Roatán: L 8,500/);
+  assert.doesNotMatch(result.reply,/seis|Copán|4,500|La Ceiba/);
+  assert.ok(result.actions[0].href.includes('pantalla=destinos'));
+});
+
+test("entiende qué puedo visitar como itinerario", () => {
+  assert.match(conversation()('¿Qué puedo visitar en Roatán?').reply,/Explorar la isla/i);
+});
+

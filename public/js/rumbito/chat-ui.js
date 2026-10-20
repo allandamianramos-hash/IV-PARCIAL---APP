@@ -210,7 +210,7 @@
         localState = result.state || {};
         conversation = [...conversation, { role: "user", content: text }, { role: "assistant", content: result.reply.slice(0, 2000) }].slice(-12);
         pending.textContent = result.reply;
-        if(result.source!=='local')pending.setAttribute('translate','no');
+        if(!['local','catalog'].includes(result.source))pending.setAttribute('translate','no');
         panel.classList.add("is-replied");
         appendActions(pending, result.actions);
         renderOptions(result.options);

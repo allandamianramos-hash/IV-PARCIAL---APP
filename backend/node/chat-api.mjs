@@ -25,9 +25,10 @@ const json = (res, status, data) => { res.writeHead(status, { 'Content-Type': 'a
 const plain = x => x && typeof x === 'object' && !Array.isArray(x);
 const short = (x, n = 80) => typeof x === 'string' ? x.slice(0, n) : '';
 
-export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, model = process.env.RUMBITO_MODEL || 'openai/gpt-5-mini', configuration, fetchImpl = fetch, timeoutMs = 30000, dailyLimit = 200 } = {}) {
+export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, model = process.env.RUMBITO_MODEL || 'openai/gpt-5-mini', configuration, fetchImpl = fetch, timeoutMs = 15000, dailyLimit = 200, cooldownMs = 60000 } = {}) {
   const visitors = new Map();
   let active = 0, day = '', calls = 0;
+  let retryAt = 0, failedKey, failedModel, lastFailure;
   return async (req, res) => {
     if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return json(res, 405, { error: 'Método no permitido.' }); }
     const origin = req.headers.origin;
@@ -35,7 +36,6 @@ export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, mode
     const local = /^https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?$/;
     if (req.headers['sec-fetch-site'] === 'cross-site' || (origin && (allowed ? origin !== allowed : !local.test(origin)))) return json(res, 403, { error: 'Origen no permitido.' });
     const settings=configuration?await configuration():{apiKey,model};
-    if (!settings.apiKey) return json(res, 503, { code: 'AI_NOT_CONFIGURED', error: 'Falta configurar la llave de IA en el servidor que está ejecutando esta página.' });
     if (!/^application\/json(?:;|$)/i.test(req.headers['content-type'] || '')) return json(res, 415, { error: 'Se requiere JSON.' });
     let body;
     try {
@@ -54,10 +54,15 @@ export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, mode
     const visitor = visitors.get(ip) || { since: now, count: 0 };
     const today = new Date().toISOString().slice(0, 10);
     if (today !== day) { day = today; calls = 0; }
-    if (visitor.count >= 12 || active >= 3 || calls >= dailyLimit || (!visitors.has(ip) && visitors.size >= 1000)) {
+    if (visitor.count >= 12 || active >= 3 || (!visitors.has(ip) && visitors.size >= 1000)) {
       res.setHeader('Retry-After', '60'); return json(res, 429, { error: 'Rumbito está recibiendo muchas consultas. Intenta más tarde.' });
     }
-    visitor.count++; visitors.set(ip, visitor); active++; calls++;
+    visitor.count++; visitors.set(ip, visitor); active++;
+    let guide, state;
+    const fallback = code => json(res, 200, {
+      ...guide, state, source: 'catalog', code,
+      connectionNotice: 'Modo catálogo · La conversación con IA no está disponible. Te ayudo con los destinos, precios y servicios de Rumbo.'
+    });
     try {
       let activeSandbox = sandbox, activeContext = context, activeSystem = system;
       if (dbEnabled()) {
@@ -71,13 +76,17 @@ export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, mode
       const p = plain(body.plan) ? body.plan : {};
       const plan = { company: short(p.company), people: Number.isInteger(p.people) && p.people >= 1 && p.people <= 12 ? p.people : 0, style: ['playa', 'naturaleza', 'cultura', 'all'].includes(p.style) ? p.style : '', budget: Number.isFinite(p.budget) && p.budget > 0 && p.budget <= 1e9 ? p.budget : 0 };
       const raw = plain(body.state) ? body.state : {};
-      const state = {};
+      state = {};
       for (const key of ['destination', 'wanted']) if (activeContext.trips.some(d => d.id === raw[key])) state[key] = raw[key];
       if (['company', 'people', 'style', 'budget'].includes(raw.step)) state.step = raw.step;
       if (['hotels', 'flights'].includes(raw.topic)) state.topic = raw.topic;
       state.active = raw.active === true;
       if (Number.isFinite(raw.perPerson) && raw.perPerson > 0 && raw.perPerson <= 1e9) state.perPerson = raw.perPerson;
-      const guide = activeSandbox.window.RumboChat.respond(body.message, plan, activeContext, state);
+      guide = activeSandbox.window.RumboChat.respond(body.message, plan, activeContext, state);
+      if (!settings.apiKey) return fallback('AI_NOT_CONFIGURED');
+      if (calls >= dailyLimit) return fallback('AI_DAILY_LIMIT');
+      if (retryAt > Date.now() && failedKey === settings.apiKey && failedModel === settings.model) return fallback(lastFailure);
+      calls++;
       const upstream = await fetchImpl('https://lightning.ai/api/v1/chat/completions', {
         method: 'POST', redirect: 'error', signal: AbortSignal.timeout(timeoutMs),
         headers: { Authorization: `Bearer ${settings.apiKey}`, 'Content-Type': 'application/json' },
@@ -92,18 +101,29 @@ export function createChatHandler({ apiKey = process.env.LIGHTNING_API_KEY, mode
           400: ['AI_REQUEST_REJECTED', 'El proveedor rechazó la configuración de la solicitud de IA.'],
           404: ['AI_MODEL_UNAVAILABLE', 'El proveedor no encuentra el modelo de IA configurado.']
         };
-        const [code, error] = failures[upstream.status] || ['AI_UNAVAILABLE', 'El servicio de IA no está disponible temporalmente. Intenta de nuevo.'];
+        // A gateway returning an empty/HTML 404 does not establish that the model
+        // is missing. This also occurs when the provider platform is offline.
+        const [code] = upstream.status === 404 && !upstream.headers.get('content-type')?.includes('application/json')
+          ? ['AI_ENDPOINT_UNAVAILABLE']
+          : failures[upstream.status] || ['AI_UNAVAILABLE'];
         console.warn('Rumbito:', code, 'HTTP', upstream.status);
-        return json(res, 503, { code, error });
+        retryAt = Date.now() + cooldownMs; failedKey = settings.apiKey; failedModel = settings.model; lastFailure = code;
+        return fallback(code);
       }
       const data = await upstream.json();
       const reply = data.choices?.[0]?.message?.content;
-      if (typeof reply !== 'string' || !reply.trim() || data.choices?.[0]?.finish_reason !== 'stop') return json(res, 502, { code: 'AI_INVALID_RESPONSE', error: 'La respuesta no llegó completa. Intenta de nuevo.' });
+      if (typeof reply !== 'string' || !reply.trim() || data.choices?.[0]?.finish_reason !== 'stop') return fallback('AI_INVALID_RESPONSE');
+      retryAt = 0;
       return json(res, 200, { ...guide, reply: reply.slice(0, 6000), state, source: 'lightning' });
     } catch (error) {
       console.warn('Rumbito: proveedor no disponible', error.name, error.cause?.code || '');
       const timedOut = error.name === 'TimeoutError' || error.name === 'AbortError';
-      return json(res, 503, { code: timedOut ? 'AI_TIMEOUT' : 'AI_CONNECTION_FAILED', error: timedOut ? 'La IA tardó demasiado en responder. Intenta de nuevo.' : 'El servidor no pudo conectar con el proveedor de IA. Revisa su conexión a Internet.' });
+      if (guide) {
+        lastFailure = timedOut ? 'AI_TIMEOUT' : 'AI_CONNECTION_FAILED';
+        retryAt = Date.now() + cooldownMs; failedKey = settings.apiKey; failedModel = settings.model;
+        return fallback(lastFailure);
+      }
+      return json(res, 503, { code: 'CATALOG_UNAVAILABLE', error: 'No pude consultar el catálogo en este momento. Intenta de nuevo.' });
     }
     finally { active--; }
   };

@@ -56,7 +56,7 @@
       const flights = context.flights?.(trip, origin) || [];
       return answer(flights.length ? `Para ${trip.name}, desde ${origin}, puedes explorar estas opciones:\n${flights.map(f => `• ${f.departure}: ${money(f.economy)} por viajero en económica (${f.stops.toLowerCase()}).`).join("\n")}\nLlegada: ${trip.arrival}. ${trip.transfer || ""}\nElige fechas y viajeros en la página para calcular el total.` : "No hay un vuelo para ese origen y llegada. Puedes cambiar el origen en el explorador.", ["Ver hoteles", "Planificar mi viaje"], [link("Explorar vuelos", "vuelos")]);
     }
-    if (/itinerario|que (hacer|visitar)|actividades|plan de.*dias/.test(q)) {
+    if (/itinerario|que (?:puedo |podemos |me recomiendas )?(hacer|visitar)|actividades|plan de.*dias/.test(q)) {
       if (!trip) return answer("¡Hagamos espacio para disfrutar! ¿Para qué destino armamos una idea de itinerario?", trips.map(t => `Itinerario de ${t.name}`));
       return answer(`Una escapada sin correr por ${trip.name}:\n• Al llegar: acomódate y da un paseo corto para ubicarte.\n${(trip.highlights || [trip.description]).map((h, i) => `• Momento ${i + 1}: ${h.toLowerCase()}.`).join("\n")}\n• Antes de volver: deja margen para el traslado y una última comida tranquila.\n${trip.tip || ""}\nEs inspiración: no incluye entradas, horarios ni servicios reservados.`, ["Qué llevar", "Ver hoteles", "Planificar mi viaje"], [link("Ver destino")]);
     }
@@ -109,7 +109,7 @@
       }
       const affordable = context.catalog.filter(t => t.price * plan.people <= plan.budget).sort((a, b) => a.price - b.price);
       const matching = affordable.filter(t => plan.style === "all" || t.style === plan.style);
-      let choices = matching.length ? matching : affordable;
+      let choices = (matching.length ? matching : affordable).slice(0, 5);
       if (state.wanted) {
         plan.destination = state.wanted;
         const wanted = context.catalog.find(t => t.id === state.wanted);
@@ -126,7 +126,17 @@
       return answer(`${choices[0].name} encaja en tu presupuesto.\n${choices.map(t => `• ${t.name}: ${money(t.price)} por persona × ${plan.people} = ${money(t.price * plan.people)} de base para el grupo.`).join("\n")}\n${!matching.length || (state.wanted && plan.style !== "all" && choices[0].style !== plan.style) ? "Ten en cuenta que esta opción es de otro estilo al que indicaste. " : ""}Ya tienes una idea para empezar. Elige tus servicios y consúltalos juntos en Mi viaje. Podrás descargar el resumen al finalizar tu plan.`, ["Ver hoteles", "Ver vuelos", `Itinerario de ${choices[0].name}`, "Qué llevar"], [{ label: "Elegir mis servicios", href: "#servicios" }], true);
     }
     if (trip && mentioned.length) return answer(`${trip.name}: ${trip.description}\n${trip.tip || ""}\n¿Te imaginas ahí? Podemos explorar dónde dormir, qué hacer o preparar un plan.`, [`Hoteles en ${trip.name}`, `Itinerario de ${trip.name}`, `Quiero un pase para ${trip.name}`], [link("Explorar destino")]);
-    if (/destino|opciones|donde|barato|economico/.test(q)) return answer("Tenemos seis rumbos para imaginar:\n" + trips.map(t => `• ${t.name}: ${t.tag || t.style}.`).join("\n") + "\nEn el orientador de destinos, Copán Ruinas tiene la base más baja: L 4,500 por persona. ¿Lo comparamos con tus gustos y presupuesto?", ["Planificar mi viaje", "Comparar destinos", "Hoteles en La Ceiba"]);
+    if (/destino|opciones|donde|barato|economico/.test(q)) {
+      const priced = [...context.catalog].filter(t => Number.isFinite(t.price) && t.price > 0).sort((a, b) => a.price - b.price);
+      const cheapest = priced[0];
+      const selected = /barato|economico/.test(q) ? priced.slice(0, 5) : trips.slice(0, 5);
+      return answer(`Puedes explorar ${trips.length} destinos en Rumbo. Estas son algunas opciones:\n` +
+        selected.map(t => `• ${t.name}: ${t.tag || t.style || t.type || t.description || 'Ver destino'}.`).join("\n") +
+        (cheapest ? `\nLa base más baja del catálogo es ${cheapest.name}: ${money(cheapest.price)} por persona.` : '') +
+        "\n¿Lo comparamos con tus gustos y presupuesto?",
+        ["Planificar mi viaje", "Comparar destinos", ...(cheapest ? [`Hoteles en ${cheapest.name}`] : [])],
+        [link("Explorar todos los destinos", "destinos", "")]);
+    }
     return answer("Quiero ayudarte bien: puedo comparar destinos de Rumbo, buscar sus hoteles y vuelos, sugerir equipaje o armar tu plan. Prueba con «hoteles en Bali» o «viajo con amigos, somos 3 y tenemos 30 mil». ¿Por dónde empezamos?");
   }
   root.RumboChat = { respond, normalize, amount, defaults };

@@ -76,18 +76,25 @@ test('rechaza datos inválidos y orígenes ajenos sin gastar solicitudes', async
   });
 });
 test('errores del proveedor y respuestas truncadas no filtran secretos', async () => {
-  for (const [result, expected] of [[Response.json({ error: 'test-secret' }, { status: 401 }), 503], [Response.json({ choices: [{ message: { content: 'Incompleta' }, finish_reason: 'length' }] }), 502]]) {
+  for (const result of [Response.json({ error: 'test-secret' }, { status: 401 }), Response.json({ choices: [{ message: { content: 'Incompleta' }, finish_reason: 'length' }] })]) {
     await withServer({ apiKey: 'test-secret', fetchImpl: async () => result }, async post => {
-      const r = await post(input); assert.equal(r.status, expected); assert.ok(!(await r.text()).includes('test-secret'));
+      const r = await post(input); assert.equal(r.status, 200);
+      const data = await r.json(); assert.equal(data.source, 'catalog');
+      assert.ok(data.reply); assert.ok(!JSON.stringify(data).includes('test-secret'));
     });
   }
-  await withServer({ apiKey: '', fetchImpl: async () => { throw Error('unexpected'); } }, async post => assert.equal((await post(input)).status, 503));
+  await withServer({ apiKey: '', fetchImpl: async () => { throw Error('unexpected'); } }, async post => {
+    const result = await (await post(input)).json();
+    assert.equal(result.source, 'catalog'); assert.equal(result.code, 'AI_NOT_CONFIGURED');
+    assert.equal((await post({...input,message:''})).status, 400);
+  });
 });
 test('límite de uso evita nuevas llamadas y el timeout libera el servidor', async () => {
   let calls = 0;
   await withServer({ apiKey: 'test-secret', dailyLimit: 1, fetchImpl: async () => { calls++; throw new DOMException('test-secret', 'TimeoutError'); } }, async post => {
-    const first = await post(input); assert.equal(first.status, 503); assert.ok(!(await first.text()).includes('test-secret'));
-    assert.equal((await post(input)).status, 429); assert.equal(calls, 1);
+    const first = await post(input); assert.equal(first.status, 200); assert.ok(!(await first.text()).includes('test-secret'));
+    const second = await (await post(input)).json();
+    assert.equal(second.source, 'catalog'); assert.equal(second.code, 'AI_DAILY_LIMIT'); assert.equal(calls, 1);
   });
 });
 
@@ -95,11 +102,42 @@ test('distingue llave, permisos, créditos, cuota y modelo sin divulgar el error
   for (const [status, code] of [[401, 'AI_AUTH_FAILED'], [403, 'AI_ACCESS_DENIED'], [402, 'AI_CREDITS_REQUIRED'], [429, 'AI_RATE_LIMITED'], [400, 'AI_REQUEST_REJECTED'], [404, 'AI_MODEL_UNAVAILABLE'], [500, 'AI_UNAVAILABLE']]) {
     await withServer({ apiKey: 'test-secret', fetchImpl: async () => Response.json({ error: 'test-secret private account details' }, { status }) }, async post => {
       const response = await post(input);
-      assert.equal(response.status, 503);
+      assert.equal(response.status, 200);
       const result = await response.json();
       assert.equal(result.code, code);
+      assert.equal(result.source, 'catalog');
       assert.ok(!JSON.stringify(result).includes('test-secret'));
       assert.ok(!JSON.stringify(result).includes('private account'));
     });
   }
+});
+
+test('un 404 vacío del proveedor conserva el plan y espera antes de reintentar', async () => {
+  let calls = 0;
+  await withServer({ apiKey: 'secret', fetchImpl: async () => { calls++; return new Response(null, {status:404}); } }, async post => {
+    const first = await (await post({message:'En pareja',history:[]})).json();
+    assert.equal(first.source,'catalog'); assert.equal(first.code,'AI_ENDPOINT_UNAVAILABLE');
+    assert.equal(first.plan.people,2); assert.equal(first.state.step,'style');
+    const second = await (await post({message:'Playa',history:[],plan:first.plan,state:first.state})).json();
+    assert.equal(second.plan.people,2); assert.equal(second.plan.style,'playa');
+    assert.equal(second.state.step,'budget'); assert.equal(calls,1);
+    const third = await (await post({message:'20000',history:[],plan:second.plan,state:second.state})).json();
+    assert.equal(third.plan.budget,20000); assert.ok(third.actions.length);
+    assert.ok(!JSON.stringify(third).includes('secret'));
+  });
+});
+
+test('se recupera la IA al vencer la pausa y mantiene los límites de acceso', async () => {
+  let calls=0;
+  await withServer({apiKey:'secret',cooldownMs:0,fetchImpl:async()=>{
+    calls++;
+    return calls===1 ? new Response(null,{status:404}) :
+      Response.json({choices:[{message:{content:'Servicio recuperado'},finish_reason:'stop'}]});
+  }},async post=>{
+    assert.equal((await (await post(input)).json()).source,'catalog');
+    assert.equal((await (await post(input)).json()).source,'lightning');
+    for(let i=0;i<10;i++)assert.equal((await post(input)).status,200);
+    assert.equal((await post(input)).status,429);
+    assert.equal(calls,12);
+  });
 });

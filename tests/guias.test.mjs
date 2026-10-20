@@ -13,6 +13,7 @@ const catalog = data.window.RumboViajesDatos;
 vm.runInNewContext(await readFile(new URL('js/destinos/guias-catalogo.js', new URL('../public/', import.meta.url)), 'utf8'), data);
 const experiences = data.window.RumboGuias;
 const newDestinationIds = new Set(JSON.parse(await readFile(new URL('../docs/nuevos-destinos-contenido.json',import.meta.url),'utf8')).map(d=>d.id));
+const catalog100Ids=new Set(JSON.parse(await readFile(new URL('../docs/catalogo-100/ciudades.json',import.meta.url),'utf8')).map(d=>d.id));
 
 // Small DOM boundary for exercising the actual page event handlers and storage.
 function page(query = '', stored = {}) {
@@ -118,9 +119,11 @@ test('guardar calcula el grupo, conserva otros servicios y restaura la selecció
 
 test('cada recorrido tiene foto local, licencia y paradas específicas', async () => {
   const credits=JSON.parse(await readFile(new URL('imagenes-viajes/CREDITOS-GUIAS.json',new URL('../public/', import.meta.url)),'utf8'));
+  const additions=JSON.parse(await readFile(new URL('../public/imagenes-viajes/CREDITOS-CATALOGO-100.json',import.meta.url),'utf8'));
+  credits.push(...additions.map(c=>({...c,file:'imagenes-viajes/'+c.file,commons:c.source})));
   const hashes=new Set(), paths=new Set(), sources=new Set();
   assert.equal(new Set(experiences.map(e=>e.id)).size, experiences.length);
-  assert.equal(experiences.length,700);
+  assert.equal(experiences.length,1000);
   for(const item of experiences){
     const photo=await readFile(new URL(item.image,new URL('../public/', import.meta.url)));
     assert.equal(photo.readUInt16BE(0),0xffd8,item.id+' debe ser JPEG');
@@ -140,8 +143,13 @@ test('cada recorrido tiene foto local, licencia y paradas específicas', async (
     const d=catalog.destinations.find(d=>d.id===destinationId);assert.ok(d,'Cada guía pertenece a un destino existente');
     const items=experiences.filter(e=>e.destination===d.id);
     assert.equal(items.length,10);assert.equal(new Set(items.map(e=>e.title)).size,items.length);
-    if(!newDestinationIds.has(d.id))assert.ok(items.some(e=>e.style==='naturaleza'));
-    assert.ok(new Set(items.map(e=>e.style)).size>=(d.id==='el-cairo'?1:2));
+    assert.ok(items.every(e=>['cultura','naturaleza','playa','gastronomia'].includes(e.style)),d.id);
+    // Keep the original category mix checks for the original 70 destinations.
+    // The added cities derive their categories from their actual points of interest.
+    if(!catalog100Ids.has(d.id)){
+      if(!newDestinationIds.has(d.id))assert.ok(items.some(e=>e.style==='naturaleza'),d.id);
+      assert.ok(new Set(items.map(e=>e.style)).size>=(d.id==='el-cairo'?1:2),d.id);
+    }
   }
 });
 

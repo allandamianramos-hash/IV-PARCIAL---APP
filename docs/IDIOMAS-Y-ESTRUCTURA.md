@@ -88,3 +88,22 @@ incluye en HTML, catálogos ni registros. El servidor relee la configuración de
 Rumbito en cada petición, por lo que basta guardar el archivo y volver a probar.
 `npm run chat:check` realiza una consulta breve al proveedor y distingue una
 respuesta de IA de la respuesta local de respaldo.
+
+Revisión del 19 de octubre de 2026: Lightning mantiene la plataforma inaccesible
+por el [incidente que comunicó oficialmente](https://lightning.ai/security-incident/).
+La API devuelve un 404 vacío; esto no demuestra que el modelo sea inexistente.
+Rumbito ahora devuelve HTTP 200 con `source: "catalog"` y un aviso visible cuando
+la IA falla. Usa el catálogo actual del servidor, conserva los pasos del plan
+y espera un minuto antes de volver a intentar el proveedor. También continúa
+desde el catálogo cuando falta la clave o se alcanza la cuota diaria de IA.
+Los rechazos de origen, mensajes inválidos y límites de solicitudes se mantienen.
+Este respaldo no equivale a conversación libre con IA.
+
+Para distinguir ambos modos en la web publicada:
+
+```powershell
+npm run chat:check -- https://grey-eel-517422.hostingersite.com
+```
+
+El diagnóstico devuelve código de salida 1 si solo responde el catálogo; así una
+respuesta de respaldo nunca se reporta como una conexión de IA recuperada.

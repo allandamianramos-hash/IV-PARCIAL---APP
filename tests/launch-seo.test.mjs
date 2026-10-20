@@ -16,7 +16,7 @@ test('SEO is private until domain and publication are configured; personal route
   assert.match(publicPage,/https:\/\/rumbo.example\/viajes.html\?pantalla=detalle-destino&amp;destino=roatan/);
   assert.match(seoHtml(html,'/servicios.html?seccion=historial'),/noindex,nofollow/);
   const result={};seoEndpoint({url:'/sitemap.xml',method:'GET'},{writeHead(status,headers){result.status=status;result.headers=headers;},end(body){result.body=body;}});
-  assert.equal(result.status,200);assert.equal((result.body.match(/<loc>/g)||[]).length,85);
+  assert.equal(result.status,200);assert.equal((result.body.match(/<loc>/g)||[]).length,115);
   assert.doesNotMatch(result.body,/historial|perfil|iniciar-sesion|registro|mi-viaje/);
   assert.doesNotMatch(seoHtml(html,'/servicios.html?seccion=%22%3E%3Cscript%3E'),/<script>/);
  }finally{Object.assign(siteConfig,original);}

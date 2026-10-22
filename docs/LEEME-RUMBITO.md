@@ -1,72 +1,51 @@
-# Rumbito
+# Rumbito con Groq
 
-La configuración y el diagnóstico actuales están en [IDIOMAS-Y-ESTRUCTURA.md](IDIOMAS-Y-ESTRUCTURA.md). El sitio funciona en PHP 8000 o por el proxy de Live Server 5500; Node 3000 atiende la IA. La clave se relee al enviar cada mensaje. Usa `npm run chat:check` para comprobar la autenticación sin mostrar secretos.
+Rumbito usa Groq con el modelo predeterminado `openai/gpt-oss-20b`. La llave permanece en el servidor. La conexión real queda pendiente hasta configurar una llave válida y ejecutar el diagnóstico.
 
-> Las páginas y scripts del navegador están ahora en `public/`; la API está en `backend/node/chat-api.mjs`. `INICIAR-RUMBO.cmd` abre PHP en el puerto 8000 y conserva Node en 3000 como servicio auxiliar del chat. Consulta [SQL-SERVER-PHP.md](SQL-SERVER-PHP.md).
+## Configurar la llave
 
-Rumbito conversa con GPT-5 mini a través de Lightning AI. El servidor mantiene la llave privada y usa los catálogos del sitio y el planificador existente para orientar las respuestas.
+1. Entra en https://console.groq.com/keys y crea una cuenta o inicia sesión.
+2. Conserva el plan **Free**. Crea una API key (por ejemplo, con nombre Rumbito).
+3. Abre **CONFIGURAR-GROQ.cmd** en la carpeta del proyecto. Pega la llave cuando la solicite y pulsa Enter; la entrada está oculta.
+4. Abre **INICIAR-RUMBO.cmd**. Si el servidor ya estaba abierto al actualizar el código de Lightning a Groq, reinicia ese proceso Node una vez. Cambiar después la llave no requiere reinicio.
+5. En una terminal del proyecto ejecuta `npm run chat:check`. El resultado esperado es **Conexión con Groq confirmada.**
 
-## Abrir
+El configurador conserva las demás variables de tu archivo privado. No copies .env.example sobre un .env existente: contiene también la configuración de base de datos y correo. No pegues la llave en el chat ni la subas a Git.
 
-Requiere Node 22 o posterior. Copia .env.example a .env si aún no tienes configuración y coloca tu llave de Lightning en LIGHTNING_API_KEY. Visita http://localhost:3000. No hay dependencias que instalar.
+Configuración manual equivalente, solo en el servidor:
 
-En Windows, abre `ACTIVAR-RUMBO-AUTOMATICO.cmd` una sola vez: instala un acceso directo de inicio de sesión para tu usuario y deja el servidor en segundo plano. Al entrar de nuevo a Windows, Rumbito arranca automáticamente; si el proceso del servidor termina, el supervisor lo vuelve a iniciar. Cerrar el navegador o la ventana del lanzador no detiene el servidor. `INICIAR-RUMBO.cmd` abre la página y asegura que el supervisor esté activo, sin crear supervisores duplicados. `npm start` sigue siendo una alternativa manual para desarrollo.
+```dotenv
+GROQ_API_KEY=tu_llave_de_groq
+GROQ_MODEL=openai/gpt-oss-20b
+```
 
-La comprobación `/api/health` solo confirma que el servidor local está disponible; no consulta al proveedor ni consume créditos. Internet, una llave válida y créditos del proveedor siguen siendo necesarios. La recuperación del servidor puede tardar unos segundos. Si otro programa ocupa el puerto, no se lo cierra automáticamente: revisa `.runtime/rumbo-errors.log`.
+Las variables antiguas LIGHTNING_API_KEY y RUMBITO_MODEL ya no se utilizan. En Hostinger configura GROQ_API_KEY y GROQ_MODEL en sus variables privadas y despliega el código actualizado; configurar la copia local no actualiza el sitio publicado.
 
-El inicio automático apunta a esta carpeta: si la mueves, ejecuta de nuevo `ACTIVAR-RUMBO-AUTOMATICO.cmd`. Para desactivarlo, abre `shell:startup` desde Ejecutar y elimina únicamente `Rumbo - servidor automatico.lnk`; se dejará de iniciar en la siguiente sesión. Los cambios de clave y modelo se leen al enviar el siguiente mensaje. Si cambias `PORT`, reinicia el supervisor y el proxy PHP.
+## Funcionamiento y límites
 
-La IA requiere este servidor. Al abrir index.html directamente, usar una vista estática o perder conexión, Rumbito responde con el catálogo local y muestra «Modo local». Vuelve a intentar la IA en cada mensaje enviado por HTTP; el respaldo no oculta rechazos ni límites de uso. El diagnóstico actual de autenticación está documentado en IDIOMAS-Y-ESTRUCTURA.md. Nunca publiques .env: está excluido de Git y el servidor no lo sirve.
+PHP en el puerto 8000 deriva /api/chat al servidor Node en 3000; el lanzador inicia ambos. El modo portable utiliza su puerto configurado. También puedes usar `npm start` para iniciar Node directamente. Node debe ser 22.12 o posterior.
 
-## Conversación y privacidad
+El plan Free de Groq tiene límites por minuto y por día, tanto de solicitudes como de tokens. Revisa los valores de tu cuenta en https://console.groq.com/docs/rate-limits. El código no activa facturación ni cambia tu plan; si tu cuenta ya tiene un plan de pago, se aplican sus condiciones.
 
-Los mensajes, hasta doce mensajes recientes y el contexto del catálogo se envían a Lightning AI para generar respuestas con el modelo de OpenAI. La aplicación no guarda conversaciones en disco; recargar o empezar de nuevo borra el historial local, pero no borra registros que pueda mantener el proveedor. No introduzcas contraseñas, tarjetas ni documentos en el chat.
+Para reducir consumo, se envía una selección de hasta seis destinos y cuatro productos, hasta 4000 caracteres del historial reciente y un máximo de 1200 tokens de salida. El planificador sigue usando el catálogo completo y conserva sus cálculos y enlaces. La app limita a 200 intentos diarios por proceso y 12 consultas por minuto por IP; estos límites en memoria se reinician con el servidor. El límite del proveedor es independiente.
 
-Se conservan las sugerencias, enlaces y cálculos del planificador. Los importes son de demostración en HNL; el modelo no hace reservas ni consulta disponibilidad en vivo. Si el proveedor falla, el planificador local mantiene la conversación; su modo se indica encima de los mensajes.
+Si Groq falla, se conserva el modo catálogo y se informa que la IA no está disponible. El servidor espera hasta 15 segundos y pausa los reintentos durante 60 segundos tras un fallo del proveedor.
 
-Prueba: “Viajo con familia, somos dos, queremos playa y tenemos 20 mil”, “Hoteles en Bali”, “Qué llevar” o “Vuelos a Kioto”.
+## Diagnóstico
 
-## Configuración y despliegue
+`npm run chat:check` consulta el servidor local y consume una solicitud si la llave está configurada. Para comprobar otro origen usa `npm run chat:check -- https://tu-dominio.example` (sin barra final).
 
-Si ves «Modo local», comprueba primero la dirección del navegador. Puede ser `http://127.0.0.1:8000`, Live Server 5500 con su proxy o Node 3000. Abrir el HTML directamente, usar Live Server en otro puerto o publicar solo archivos estáticos no ejecuta `server.mjs`. La llave de `.env` se lee en el servidor antes de cada consulta; no viaja con los archivos a GitHub ni a otro equipo.
+- AI_NOT_CONFIGURED: falta GROQ_API_KEY.
+- AI_AUTH_FAILED: Groq rechazó la llave; revisa si está completa o revocada.
+- AI_ACCESS_DENIED: revisa permisos de la cuenta y del modelo.
+- AI_RATE_LIMITED: se alcanzó una cuota; espera antes de reintentar.
+- AI_MODEL_UNAVAILABLE / AI_REQUEST_REJECTED: revisa el modelo configurado.
+- AI_TIMEOUT / AI_CONNECTION_FAILED: comprueba conexión y disponibilidad.
 
-`INICIAR-RUMBO.cmd` abre la página correcta en Windows y deja el servidor en segundo plano. No necesitas mantener abierta una terminal. `npm run open` conserva el arranque manual en primer plano para desarrollo. Los errores distinguen llave rechazada, permisos, créditos, cuota, modelo y tiempo de espera; no hace falta cambiar la llave si el problema es una vista sin servidor.
+El diagnóstico confirma una respuesta de Groq, no solo un HTTP 200 del catálogo. No muestra la llave ni errores privados del proveedor.
 
-### Usar Live Server en VS Code
+## Privacidad
 
-El proyecto incluye `.vscode/settings.json` para que Live Server envíe el sitio y `/api` a PHP en `127.0.0.1:8000`; PHP deriva el chat a Node en 3000. Después de cambiar esta configuración, detén Live Server pulsando «Port: 5500» y vuelve a iniciarlo con «Go Live». Con el inicio automático activado, no hace falta abrir otra terminal; Live Server muestra los archivos y Rumbo atiende las consultas de IA. `proxyUri` debe apuntar al puerto de PHP; el puerto de Node se configura mediante `PORT`. El token permanece en `.env`, únicamente en el servidor.
+Los mensajes y el contexto seleccionado se envían a Groq. La aplicación no guarda conversaciones en disco; el proveedor tiene sus propias políticas de datos. No introduzcas contraseñas, tarjetas ni documentos en el chat. .env está excluido de Git y el servidor bloquea su descarga; quien tenga acceso a tu carpeta puede leerlo.
 
-- LIGHTNING_API_KEY: secreto del servidor, nunca del navegador.
-- RUMBITO_MODEL: openai/gpt-5-mini, modelo validado con esta integración.
-- APP_ORIGIN: origen HTTPS exacto del sitio en producción. Sin configurarlo, se aceptan orígenes locales.
-- Límite por proceso: doce solicitudes/minuto por IP, tres simultáneas y doscientas por día UTC. Los contadores se reinician con el proceso; para múltiples instancias o uso público persistente se necesita un contador compartido y controles de acceso.
-- Cada consulta consume créditos de Lightning. El servidor limita la respuesta a 2400 tokens y espera un máximo de treinta segundos.
-
-Para publicar, ejecuta Node detrás de un proxy HTTPS, configura los secretos en el alojamiento y dirige /api/chat al mismo servidor. Un alojamiento puramente estático necesita un backend adicional. No cambies la URL del proveedor para enviar la llave a otro servicio.
-
-## Archivos
-
-- chat-api.mjs: conexión privada, catálogo, validación, límites y errores.
-- server.mjs: archivos públicos y POST /api/chat.
-- js/rumbito/chat-engine.js: intenciones, cálculos, opciones y enlaces existentes.
-- js/inicio/script.js: historial, estados del chat y peticiones al servidor.
-- imagenes/rumbito/rumbito-pin.png: mascota de ubicación de fondo transparente.
-- server.test.mjs: pruebas de conexión simulada y protección de secretos. npm test ejecuta toda la suite sin gastar créditos.
-
-## Primera versión de servicios
-
-- `servicios.html`: entrada de servicios, traslados, seguros, guías locales, perfil local, ayuda y Mi viaje. El parámetro `seccion` elige la vista.
-- `js/servicios/servicios.js`: catálogo de ejemplo, filtros, validación, cálculos, guardado y descarga de selecciones. Conserva una elección por tipo de servicio. Los cambios de formulario requieren pulsar «Ver opciones» antes de seleccionar de nuevo.
-- `css/servicios/servicios.css`: presentación adaptable a móvil con la paleta original.
-- `js/compartido/common.js` y `css/compartido/common.css`: enlaces compartidos, acceso a Rumbito y navegación entre páginas.
-- `js/destinos/viajes.js`: catálogo único de los seis destinos, sus fotografías y presupuestos de inspiración; se carga antes de `js/inicio/script.js` en el inicio. Las tarifas de vuelos y hoteles se calculan por separado del presupuesto orientativo.
-
-Rumbito ahora es un marcador de ubicación de expresión cercana. También puede abrir las nuevas páginas al preguntar por traslados, seguros o guías locales. Copán utiliza la fotografía local del sitio arqueológico, con créditos disponibles desde el catálogo de destinos.
-
-### Almacenamiento y próxima integración
-
-No hay base de datos, autenticación, proveedores ni pagos conectados. El perfil es un alias local, no una cuenta. Los seguros son ejemplos visuales y no activan ninguna cobertura.
-
-Las claves `rumbo.services.v1` y `rumbo.profile.v1` guardan servicios y perfil. El módulo de viajes usa `rumbo.integrante2.viaje.v1`; la tienda conserva sus claves `rumbo.store.cart.v2` y `rumbo.store.favorites.v2`. Si el navegador bloquea el almacenamiento, los servicios ofrecen descargar la selección. Para compartir almacenamiento entre páginas, se recomienda abrir el servidor local en vez de `file://`.
-
-Para integrar la base de datos después, sustituir los catálogos de muestra y las funciones de lectura/escritura local por consultas a una API, manteniendo la validación de capacidad, fechas y cantidades. La API deberá volver a calcular y validar precios y disponibilidad antes de crear reservas.
+Documentación oficial: https://console.groq.com/docs/quickstart y https://console.groq.com/docs/models.

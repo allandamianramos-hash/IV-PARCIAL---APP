@@ -46,17 +46,22 @@ test('destinos, hoteles, vuelos y servicios generan enlaces también en el servi
     }
   });
 });
-test('GPT usa el catálogo, conserva el plan y recibe la llave solo en el servidor', async () => {
+test('Groq usa el catálogo, conserva el plan y recibe la llave solo en el servidor', async () => {
   let sent;
   await withServer({ apiKey: 'test-secret', fetchImpl: async (url, request) => {
     sent = { url, ...request };
     return Response.json({ choices: [{ message: { content: '¿Prefieren playa, naturaleza o cultura?' }, finish_reason: 'stop' }] });
   } }, async post => {
     const r = await post(input); assert.equal(r.status, 200);
-    const d = await r.json(); assert.equal(d.source, 'lightning'); assert.equal(d.plan.people, 2);
+    const d = await r.json(); assert.equal(d.source, 'groq'); assert.equal(d.plan.people, 2);
     assert.equal(d.state.step, 'style'); assert.ok(d.options.length);
-    assert.equal(sent.url, 'https://lightning.ai/api/v1/chat/completions');
+    assert.equal(sent.url, 'https://api.groq.com/openai/v1/chat/completions');
     assert.equal(sent.headers.Authorization, 'Bearer test-secret');
+    const request = JSON.parse(sent.body);
+    assert.equal(request.model, 'openai/gpt-oss-20b');
+    assert.equal(request.reasoning_effort, 'low');
+    assert.equal(request.include_reasoning, false);
+    assert.ok(request.messages[0].content.length < 7000);
     assert.ok(JSON.parse(sent.body).messages[0].content.includes('Roatán'));
     assert.ok(!JSON.stringify(d).includes('test-secret'));
   });
@@ -135,7 +140,7 @@ test('se recupera la IA al vencer la pausa y mantiene los límites de acceso', a
       Response.json({choices:[{message:{content:'Servicio recuperado'},finish_reason:'stop'}]});
   }},async post=>{
     assert.equal((await (await post(input)).json()).source,'catalog');
-    assert.equal((await (await post(input)).json()).source,'lightning');
+    assert.equal((await (await post(input)).json()).source,'groq');
     for(let i=0;i<10;i++)assert.equal((await post(input)).status,200);
     assert.equal((await post(input)).status,429);
     assert.equal(calls,12);

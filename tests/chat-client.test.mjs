@@ -24,9 +24,9 @@ test('caídas, timeouts y JSON inválido permiten continuar y recuperar IA despu
   const online = await request(payload, { fallback: () => { throw Error('No fallback expected'); }, fetchImpl: async (url, init) => {
     assert.equal(url.href, 'http://localhost:3000/api/chat');
     assert.deepEqual(JSON.parse(init.body), payload);
-    return Response.json({ reply: 'Hola desde GPT', source: 'lightning' });
+    return Response.json({ reply: 'Hola desde GPT', source: 'groq' });
   } });
-  assert.equal(online.source, 'lightning'); assert.equal(online.connectionNotice, undefined);
+  assert.equal(online.source, 'groq'); assert.equal(online.connectionNotice, undefined);
 });
 test('los límites y rechazos de acceso no se ocultan con el respaldo', async () => {
   for (const status of [400, 403, 429]) {
@@ -38,6 +38,6 @@ test('el modo local conserva la causa concreta enviada por el servidor y se recu
   const result = await request(payload, { fallback, fetchImpl: async () => Response.json({ code: 'AI_AUTH_FAILED', error: 'El proveedor rechazó la llave de IA.' }, { status: 503 }) });
   assert.equal(result.source, 'local');
   assert.match(result.connectionNotice, /rechazó la llave/);
-  const online = await request(payload, { fallback, fetchImpl: async () => Response.json({ reply: 'Conexión recuperada', source: 'lightning' }) });
-  assert.equal(online.source, 'lightning');
+  const online = await request(payload, { fallback, fetchImpl: async () => Response.json({ reply: 'Conexión recuperada', source: 'groq' }) });
+  assert.equal(online.source, 'groq');
 });

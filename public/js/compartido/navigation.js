@@ -117,6 +117,7 @@
     const icon = key => '<svg class="header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[key]+'</svg>';
     trip.innerHTML=icon('trip')+'<span>Mi viaje</span>';
     accounts.querySelector('.login-button').innerHTML=icon('login')+'<span>Iniciar sesión</span>';
+    accounts.querySelector('.login-button').setAttribute('aria-label','Iniciar sesión');
     header.querySelector('.logo').href='index.html';
   }
 
@@ -127,5 +128,53 @@
     menu.addEventListener('click',event=>{if(event.target.closest('a'))menu.open=false;});
     document.addEventListener('click',event=>{if(!menu.contains(event.target))menu.open=false;});
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.open){menu.open=false;menu.querySelector('summary').focus();}});
+    const quick=document.createElement('nav');quick.className='mobile-quick-nav';
+    quick.setAttribute('aria-label','Accesos principales');quick.innerHTML=mainNav.innerHTML;
+    header.parentElement.append(quick);
+  }
+
+  // Preserve the same forms and event handlers when changing screen size.
+  const phone=matchMedia('(max-width:767.98px)');
+  const folds=new Set(),catalogs=new Map();
+  const updateCatalog=(grid,entry)=>{
+    const cards=[...grid.children];
+    cards.forEach((card,index)=>card.classList.toggle('mobile-page-hidden',index>=entry.limit));
+    entry.button.hidden=entry.limit>=cards.length;
+    entry.button.textContent=`Ver más ${entry.label} (${Math.min(entry.limit,cards.length)} de ${cards.length})`;
+  };
+  const enhance=()=>{
+    for(const [selector,label] of [['.rv-filter-bar','Buscar y filtrar destinos'],['.catalog-tools','Buscar y filtrar productos'],['.review-form','Escribir una reseña']]){
+      document.querySelectorAll(selector).forEach(form=>{
+        if(form.closest('.mobile-fold'))return;
+        const details=document.createElement('details');details.className='mobile-fold';details.open=!phone.matches;
+        const summary=document.createElement('summary');summary.textContent=label;
+        form.before(details);details.append(summary,form);folds.add(details);
+        form.addEventListener('invalid',()=>{details.open=true;},true);
+      });
+    }
+    for(const [selector,label] of [['.rv-destination-grid','destinos'],['.products-grid','productos']]){
+      document.querySelectorAll(selector).forEach(grid=>{
+        if(catalogs.has(grid))return;
+        const button=document.createElement('button');button.type='button';button.className='mobile-catalog-more';
+        if(grid.id)button.setAttribute('aria-controls',grid.id);
+        const entry={button,label,limit:8};catalogs.set(grid,entry);grid.after(button);
+        button.addEventListener('click',()=>{
+          const next=grid.children[entry.limit];entry.limit+=8;updateCatalog(grid,entry);
+          // Keep keyboard users at the first newly revealed result.
+          const link=next?.querySelector('h3 a,h3 button');if(link)link.focus({preventScroll:true});
+        });
+        new MutationObserver(()=>{entry.limit=8;updateCatalog(grid,entry);}).observe(grid,{childList:true});
+        updateCatalog(grid,entry);
+      });
+    }
+  };
+  phone.addEventListener('change',()=>{folds.forEach(details=>{details.open=!phone.matches;});});
+  if(main){
+    let scheduled=false;
+    new MutationObserver(records=>{
+      if(!records.some(record=>[...record.addedNodes].some(node=>node.nodeType===1&&(node.matches('.rv-filter-bar,.catalog-tools,.review-form,.rv-destination-grid,.products-grid')||node.querySelector('.rv-filter-bar,.catalog-tools,.review-form,.rv-destination-grid,.products-grid')))))return;
+      if(!scheduled){scheduled=true;requestAnimationFrame(()=>{scheduled=false;enhance();});}
+    }).observe(main,{childList:true,subtree:true});
+    enhance();
   }
 })();

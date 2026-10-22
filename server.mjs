@@ -28,7 +28,7 @@ publicFiles.add('js/destinos/guias-catalogo.js');
 publicFiles.add('css/compartido/palette.css');
 publicFiles.add('css/inicio/destinos.css');
 for(const file of ['js/compartido/api-client.js','js/comunidad/reviews.js','js/idiomas/preferences.js','js/idiomas/translations.js','css/comunidad/community.css']) publicFiles.add(file);
-for (const file of ['js/inicio/hero.js', 'css/inicio/hero.css', 'js/compartido/navigation.js', 'css/compartido/navigation.css']) publicFiles.add(file);
+for (const file of ['js/inicio/hero.js', 'css/inicio/hero.css', 'js/compartido/navigation.js', 'css/compartido/mobile.css', 'css/compartido/navigation.css']) publicFiles.add(file);
 publicFiles.add('js/idiomas/locale-engine.js');
 publicFiles.add('js/tienda/variant-preview.js');
 publicFiles.add('microsoft-callback.html');

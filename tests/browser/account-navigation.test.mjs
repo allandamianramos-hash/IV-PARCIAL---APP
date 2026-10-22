@@ -7,6 +7,7 @@ test('navbar: un único acceso visible en escritorio y móvil',async()=>{
  const browser=await chromium.launch({channel:'msedge',headless:true});
  try{
   const page=await browser.newPage();await page.goto(base+'/index.html');
+ if(await page.locator('.cookie-banner').isVisible())await page.locator('.cookie-banner [data-reject]').click();
   for(const width of [1440,1024,768,390,320]){
    await page.setViewportSize({width,height:950});
    const navbar=page.locator('#site-navbar');

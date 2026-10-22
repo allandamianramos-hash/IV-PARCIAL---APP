@@ -20,7 +20,7 @@ Configurar `NODE_ENV=production`, `HOST=0.0.0.0`, `APP_ORIGIN` con la dirección
 
 La conexión usa `DB_ENABLED=true`, `DB_AUTH=sql`, `DB_SERVER`, `DB_NAME`, `DB_PORT=1433`, `DB_USER`, `DB_PASSWORD` y `DB_TRUST_CERTIFICATE=false`. Utilizar la cuenta de aplicación. **No copiar `AZURE_SQL_PASSWORD` ni credenciales administrativas.**
 
-Para recuperar contraseñas se requieren las variables `MAIL_SMTP_*`, `MAIL_FROM`, `MAIL_FROM_NAME` y `MAIL_RESET_SECRET`. Para IA se usan `LIGHTNING_API_KEY` y `RUMBITO_MODEL`. Estas variables se guardan en el apartado privado de Hostinger; nunca en HTML, JavaScript del navegador, capturas o Git.
+Para recuperar contraseñas se requieren las variables `MAIL_SMTP_*`, `MAIL_FROM`, `MAIL_FROM_NAME` y `MAIL_RESET_SECRET`. Para IA se usan `GROQ_API_KEY` y `GROQ_MODEL` (por defecto `openai/gpt-oss-20b`). Estas variables se guardan en el apartado privado de Hostinger; nunca en HTML, JavaScript del navegador, capturas o Git.
 
 ## Dominio y accesos sociales
 
@@ -53,3 +53,23 @@ La cuenta temporal de publicación y sus dos pedidos se eliminaron de Azure al f
 La última publicación figura como **Completed / Current**, 18 de octubre de 2026 a las 18:48, hora local. Se reconstruyó desde `hbuilds/last-source` después de incorporar la corrección de Rumbito. El archivo servido coincide por SHA-256 con el código local. El ZIP local actualizado `release-2026-10-18-startup-fixed.zip` incluye todas las correcciones; su inventario está en `.runtime/hostinger/manifest-final.json`. Las comprobaciones posteriores al último despliegue están en `final-deployment-check.json`.
 
 Las capturas disponibles están en `evidencias/hostinger/`. El servidor de pruebas, sus cuentas temporales y los paquetes de `.runtime/` son material de trabajo y no deben incorporarse a los archivos públicos.
+
+
+## Actualización móvil y Groq — 21 de octubre de 2026
+
+Se conserva el dominio y la aplicación existentes. El paquete `release-2026-10-21T22-40-20-605Z.zip` incorpora Groq y `public/css/compartido/mobile.css`, que se aplica solo hasta 767,98 px.
+
+- Accesos móviles visibles a Inicio, Destinos, Servicios y Tienda; cabecera ajustada a 320 px.
+- Portadas compactas, equipo en una fila desplazable, reseñas horizontales y formulario de reseña plegable.
+- Catálogos móviles con ocho resultados iniciales, carga progresiva y filtros plegables. Los filtros reinician el tramo visible; escritorio conserva todos los resultados.
+- Tarjetas de destinos con imagen lateral, productos en dos columnas y carrito accesible al desplazarse.
+- Google y Microsoft conservan sus controles originales, con cuadros blancos de igual tamaño.
+- Las variables privadas de IA son `GROQ_API_KEY` y `GROQ_MODEL`; la llave no forma parte del ZIP.
+
+Las pruebas de `mobile-refresh.test.mjs` recorren Inicio, Destinos, Tienda, Servicios y acceso/registro a 320, 390, 768 y 1440 px. Los informes y capturas están en `.runtime/mobile-review/`. Las comprobaciones de compras reales y publicación deben distinguirse de las pruebas visuales anónimas, que se detienen ante el requisito de iniciar sesión.
+
+Publicación confirmada: Hostinger muestra **Completed / Current**, 21 de octubre de 2026 a las 16:45:48 (America/Guatemala). `npm run chat:check -- https://grey-eel-517422.hostingersite.com` confirmó una respuesta real de Groq. Las hojas y scripts publicados se compararon con la copia local, y las siete páginas principales incluyen los estilos móviles nuevos. Ver `.runtime/mobile-review/verification.json` y `public-files.json`.
+
+La comprobación pública posterior también pasó las seis páginas a 320, 390, 768 y 1440 px (`public-browser.log`). Se detectó caché antigua en un navegador que había visitado el sitio: se vació la CDN de Hostinger y se versionaron los enlaces a `navigation.js` y `mobile.css` con `?v=mobile-20261021` para que visitantes anteriores reciban los archivos nuevos.
+
+Despliegue final con archivos versionados: `release-2026-10-21T22-51-33-817Z.zip`, **Completed / Current**, 21 de octubre de 2026 a las 16:55:38 (America/Guatemala). El navegador que conservaba recursos antiguos confirmó la navegación nueva al recargar. Evidencia: `public-team-final.png` y `public-final-html.json`.

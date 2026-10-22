@@ -27,6 +27,7 @@ test('mobile selection stays reachable through every booking step and restores d
    const context=await browser.newContext({viewport:{width,height:844},reducedMotion:'reduce'});
    const page=await context.newPage();const errors=[];page.on('pageerror',e=>{if(!e.message.startsWith('Transition was aborted'))errors.push(e.message);});
    await page.goto(base+'/viajes.html?pantalla=vuelos');
+   if(await page.locator('.cookie-banner').isVisible())await page.locator('.cookie-banner [data-reject]').click();
    await completeBookingForm(page);
    await page.locator('[data-select-flight]').first().click();
    await page.waitForFunction(()=>document.querySelector('.mobile-selection-amount')?.textContent===document.querySelector('#summary-total')?.textContent);
@@ -69,7 +70,12 @@ test('mobile selection stays reachable through every booking step and restores d
    assert.equal(await page.locator('.journey-item').count(),5);
    await openSelection(page);
    await page.locator('#demo-consent').check();await page.locator('#complete-demo').click();
-   await page.locator('#download-ticket').waitFor({state:'visible'});
+   // Checkout now requires a real account; this anonymous layout test stops at that gate.
+   await page.locator('.rumbo-checkout a[href*=iniciar-sesion]').waitFor({state:'visible'});
+   await fits(page,'.rumbo-checkout,.rumbo-checkout a,.rumbo-checkout button');
+   await page.locator('.rumbo-checkout [data-close]').click();
+   await page.locator('.mobile-selection-close').click();
+   await page.waitForFunction(()=>!document.body.classList.contains('selection-open'));
    assert.equal(await page.locator('body.selection-open').count(),0);
    await openSelection(page);
    assert.equal(await page.locator('#mobile-selection-panel').count(),1);
@@ -84,6 +90,7 @@ test('mobile sheets handle empty selections, changed filters, language, and smal
  try{
   const page=await browser.newPage({viewport:{width:320,height:640},reducedMotion:'reduce'});
   await page.goto(base+'/viajes.html?pantalla=vuelos');
+   if(await page.locator('.cookie-banner').isVisible())await page.locator('.cookie-banner [data-reject]').click();
   await openSelection(page);assert.ok(await page.locator('#continue-hotel').isDisabled());
   await page.locator('.mobile-selection-close').click();
   await completeBookingForm(page);
@@ -117,10 +124,12 @@ test('phone cart and navigation remain usable with products and in landscape',as
  try{
   const page=await browser.newPage({viewport:{width:320,height:640},reducedMotion:'reduce'});
   await page.goto(base+'/tienda.html');
+  if(await page.locator('.cookie-banner').isVisible())await page.locator('.cookie-banner [data-reject]').click();
   await page.locator('[data-add]').first().click();
   await fits(page,'#product-modal,#product-modal button,#product-modal select');
   await page.locator('[data-detail-add]').click();
   await page.keyboard.press('Escape');
+  await page.locator('.mobile-catalog-more').click();
   await page.locator('.product-card').nth(8).scrollIntoViewIfNeeded();
   const cart=await page.locator('#open-cart-btn').boundingBox();assert.ok(cart.y>=90&&cart.y<200,'cart follows the product list');
   await page.locator('#open-cart-btn').click();
@@ -134,6 +143,6 @@ test('phone cart and navigation remain usable with products and in landscape',as
   await page.locator('#close-cart-btn').click();
   await page.locator('.site-mobile-menu summary').click();
   await page.locator('#mobile-navigation a').last().click();
-  await page.waitForURL(/registro.html/);
+  await page.waitForURL(/seccion=mi-viaje/);
  }finally{await browser.close();}
 });

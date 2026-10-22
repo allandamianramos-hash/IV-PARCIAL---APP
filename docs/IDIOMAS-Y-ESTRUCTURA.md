@@ -107,3 +107,8 @@ npm run chat:check -- https://grey-eel-517422.hostingersite.com
 
 El diagnóstico devuelve código de salida 1 si solo responde el catálogo; así una
 respuesta de respaldo nunca se reporta como una conexión de IA recuperada.
+
+
+## Migración a Groq — 21 de octubre de 2026
+
+La integración actual utiliza Groq y sustituye los diagnósticos históricos de Lightning anteriores. Configura `GROQ_API_KEY` y `GROQ_MODEL` mediante `CONFIGURAR-GROQ.cmd`. La conexión real se confirma con `npm run chat:check` después de guardar una llave válida. Consulta [los pasos de configuración](LEEME-RUMBITO.md).
